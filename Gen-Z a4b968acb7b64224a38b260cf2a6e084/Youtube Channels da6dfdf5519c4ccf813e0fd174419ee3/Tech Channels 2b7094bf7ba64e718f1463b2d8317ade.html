@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tech Channels</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2b7094bf-7ba6-4e71-8f14-63b2d8317ade" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1579567761406-4684ee0c75b6?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌐</span></div><h1 class="page-title">Tech Channels</h1></header><div class="page-body"><p id="c99b98a4-3cc8-4d9d-adbb-be640789a923" class="">
+</p><figure id="96dc4dbb-8d1a-44a4-b9c3-e41956836f93" class="link-to-page"><a href="Tech%20Channels%202b7094bf7ba64e718f1463b2d8317ade/Tech%20Accounts%20to%20follow%20on%20Instagram%2096dc4dbb8d1a44a4b9c3e41956836f93.html"><img class="icon" src="Tech%20Channels%202b7094bf7ba64e718f1463b2d8317ade/Tech%20Accounts%20to%20follow%20on%20Instagram%2096dc4dbb8d1a44a4b9c3e41956836f93/instagram-png-logo-11545512103cxbs7v6fpe.png"/>Tech Accounts to follow on Instagram</a></figure><p id="bba834b5-84fd-4c9f-801e-b4253907942d" class="">
+</p><ul id="524e26a6-3434-4fc3-bc92-214bbf5b62f9" class="bulleted-list"><li style="list-style-type:disc"><strong>Unbox Therapy</strong></li></ul><figure id="c8e75720-9773-4d74-8d35-3bf625d3dfc6"><a href="https://www.youtube.com/user/unboxtherapy" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Unbox Therapy</div><div class="bookmark-description">Where products get naked. Here you will find a variety of videos showcasing the coolest products on the planet. From the newest smartphone to surprising gadgets and technology you never knew existed. It&#x27;s all here on Unbox Therapy.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/user/unboxtherapy</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQf2e6s9_FvCfjFM14z_q7LUwlu5J7sUaBak7VtPw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="d21a424c-04ce-4032-b051-94e3d1e5ef14" class="">
+</p><ul id="cd920949-e4b2-4219-a779-72d7a77a3eb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Marques Brownlee</strong></li></ul><figure id="ec72abb8-3d67-4c26-9109-bb3bfffc3efe"><a href="https://www.youtube.com/c/mkbhd" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/mkbhd</div></div></a></figure><p id="5759c521-64a6-4362-ace0-ce66d0665b9e" class="">
+</p><ul id="98fbf507-c53a-4328-9d82-f2bbb77a05a0" class="bulleted-list"><li style="list-style-type:disc"><strong>Mr whose the boss</strong></li></ul><figure id="6df75221-349d-46db-922d-bfbaf39f7d0f"><a href="https://www.youtube.com/c/Mrwhosetheboss" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Mrwhosetheboss</div></div></a></figure><p id="8dd25a92-8e95-4406-96b1-58fc81023453" class="">
+</p><ul id="a673d7c7-66c7-4288-8567-7aa40f0445df" class="bulleted-list"><li style="list-style-type:disc"><strong>Trakin Tech </strong></li></ul><figure id="631d84b7-6f3f-4404-80fe-fbfc6221e00a"><a href="https://www.youtube.com/c/TrakinTech" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TrakinTech</div></div></a></figure><p id="532e602d-36c4-4124-8f49-b441efa602e3" class="">
+</p><ul id="d844784d-7f34-43ee-ae2f-23846568cf6c" class="bulleted-list"><li style="list-style-type:disc"><strong>Technical Guruji</strong></li></ul><figure id="1b0610d3-e975-476e-9343-f1fbc0d008b3"><a href="https://www.youtube.com/c/TechnicalGuruji" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Technical Guruji</div><div class="bookmark-description">नमस्कार दोस्तों, आपका बहुत बहुत स्वागत है हमारे चैनल &quot;Technical Guruji&quot; में, मैंने यह चैनल मेरे उन सभी दोस्तों के लिए बनाया है जो टेक्नोलॉजी के बारे में अपनी भाषा में जानना चाहते है, &quot;Technical Guruji&quot; चैनल में आपको रोज़ाना एक नयी वीडियो मिलेगी जहा मैं कोशिश करूँगा आपको मोबाइल</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechnicalGuruji</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQ8PSwMRTU8HG_vDunTQ7eYgSqx9ju7vjDNe8dpXm8=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="14caeffd-ec69-46be-a5ca-d1530be61049" class="">
+</p><ul id="56496309-fb53-42da-b14e-a51d4bd829a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Everything Apple E A P</strong></li></ul><figure id="0236ff81-d0ac-4661-ad02-67b319982bf5"><a href="https://www.youtube.com/c/EverythingApplePro" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">EverythingApplePro E A P</div><div class="bookmark-description">EverythingApplePro: Apple Leaks | Quality Renders | News, Reviews, Updates &amp; Phone Rebel Cases! Filip Koroy from the great PNW I live for the future of  Send Products To Address Below; Filip Koroy EverythingApplePro 305 SE Chkalov Drive Suite 111 #402 Vancouver WA, 98683 Order my case from https://phonerebel.com/</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/EverythingApplePro</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQXKECp5B_DOmEondC39vYiOlQ6FCDJla_r6uiBMg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="3e7c685b-fcc4-4fa1-9924-83fc2ffa1a70" class="">
+</p><ul id="b26f2e31-6962-4f5c-bd28-7801394b09fb" class="bulleted-list"><li style="list-style-type:disc"><strong>iJustine</strong></li></ul><figure id="40c357f3-e621-487a-b861-4b77ca50acaf"><a href="https://www.youtube.com/c/iJustine" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">iJustine</div><div class="bookmark-description">Tech, video games, failed cooking attempts, vlogs and more! Email me for business related projects inquires: business at ijustine dot com Buy my book here! https://www.ijustine.com/copy-of-order-my-book Get my learn to edit Final Cut Pro X app here: https://apps.apple.com/us/app/ijustine-teaches-fcp-x/id1474163299?mt=12</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/iJustine</div></div><img src="https://yt3.ggpht.com/TJTGhrVOoYxtaMg5GL5GoNYkzFrmIieMA4-AeRecbstcc-rWnTcrw8Vt1Ea1t6QBx9o_CIixFP8=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="1da3fe9f-7b40-421f-815c-2e8c241d0993" class="">
+</p><ul id="0f029fb4-c85b-433e-ac6c-faea13fe613a" class="bulleted-list"><li style="list-style-type:disc"><strong>Technology Gyan</strong></li></ul><figure id="e8632664-a3a6-40ce-9623-28f7aaae3f1d"><a href="https://www.youtube.com/channel/UC1tVU8H153ZFO9eRsxdJlhA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UC1tVU8H153ZFO9eRsxdJlhA</div></div></a></figure><p id="dd457d71-3734-4338-b5ab-a52aec082d90" class="">
+</p><ul id="0df1fdd2-019d-430e-a7b0-bb5795adc8ab" class="bulleted-list"><li style="list-style-type:disc"><strong>Tech Burner </strong></li></ul><figure id="87a2892a-2bc9-4ff1-8e47-88d3a755e0a6"><a href="https://www.youtube.com/c/TechBurner" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tech Burner</div><div class="bookmark-description">Tech Videos that count! Join Us :) Brands and Business : business@techburner.in This Channel is owned by Burner Media owned by Shlok Srivastava.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechBurner</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSLzBlLalLFEXgvGHr6f9yBm9Y8PrJMXZC_hxTTlQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="b9c45235-2dce-4a12-b34f-20c8d31c7f08" class="">
+</p><ul id="1cf07027-f983-474f-9733-cdf4ce19d7fd" class="bulleted-list"><li style="list-style-type:disc"><strong>Beebom</strong></li></ul><figure id="bde823dc-4f2a-4365-b030-e5757bea656d"><a href="https://www.youtube.com/c/BeebomCo" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BeebomCo</div></div></a></figure><p id="213a7c77-d0bf-4dfd-9a8d-bfb15502e296" class="">
+</p><ul id="0161293e-266a-470c-bf0f-cd29d2e729ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Tamil Tech </strong></li></ul><figure id="596bccca-126b-46d0-8416-f36d6716086d"><a href="https://www.youtube.com/c/TamilTechOfficial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TamilTechOfficial</div></div></a></figure><p id="6c71c632-e51e-4438-9ff8-d83adec28467" class="">
+</p><ul id="4c97d047-4bdd-4807-ad40-17eea9426362" class="bulleted-list"><li style="list-style-type:disc"><strong>C4ETech Tamil</strong></li></ul><figure id="2c7bf9f8-4ef3-44e2-84ed-ec742071acc3"><a href="https://www.youtube.com/channel/UCfHbVIuScyuQob_2XpyfMZQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCfHbVIuScyuQob_2XpyfMZQ</div></div></a></figure><p id="757202f5-a98f-44e7-af6c-f69dbf2ef152" class="">
+</p><ul id="6ab3cce5-7f3b-4ace-9185-f94c56ba5006" class="bulleted-list"><li style="list-style-type:disc"><strong>Tech Shan</strong></li></ul><figure id="75dfe177-e80d-4eb6-829e-5799a205d790"><a href="https://www.youtube.com/c/TechShanTamil" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechShanTamil</div></div></a></figure><p id="b062d44f-4e52-4345-bd22-a9e9908361f6" class="">
+</p><ul id="0fbe0cad-4a97-4d7e-ad97-eb45fbab57d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Technical Chennai</strong></li></ul><figure id="bbb00e39-b480-4a0d-9fbe-c7a0385f5ffa"><a href="https://www.youtube.com/c/TechnicalChennai" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechnicalChennai</div></div></a></figure><p id="d4ebeed7-915f-4d89-9e77-dfd47a4b9cac" class="">
+</p><ul id="f6ed8bb9-de8b-4070-9a8d-a0e0cfec4597" class="bulleted-list"><li style="list-style-type:disc"><strong>Tech spurt </strong></li></ul><figure id="0a025a51-c7ae-45f0-a058-add12467e74d"><a href="https://www.youtube.com/c/TechSpurt" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechSpurt</div></div></a></figure><p id="aeaab97c-b156-45b6-b4cc-c629845b55db" class="">
+</p><ul id="3ff3f5a5-ba16-44cc-97e0-7aea6a3795bb" class="bulleted-list"><li style="list-style-type:disc"><strong>TechDroider</strong></li></ul><figure id="ef1df774-5fcd-4d65-bb25-90ce00bd3a62"><a href="https://www.youtube.com/c/TechdroiderOfficial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TechDroider</div><div class="bookmark-description">Hey Guys, my name is VaibhaV and Welcome to TechDroider. This Channel mainly focuses on Smartphones and Software. We do Reviews, Smartphone Leaks and News, Speed Test Comparison, Camera Test and other Cool Stuff. Make sure to Subscribe and Follow us on other Social Platform for daily News and Crisp Videos.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TechdroiderOfficial</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQ0_d3Wr1opke7DB3nWl4ddCG5gN_4vbPSTZNlgrw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="79042c4f-4052-44c1-ae0d-79646b86bc74" class="">
+</p><ul id="b64b6f30-e73f-43a6-95b7-d4a0384e973c" class="bulleted-list"><li style="list-style-type:disc"><strong>Jerry Rig Everything</strong></li></ul><figure id="5691255f-013d-4863-a1c1-ff3a87b0285e"><a href="https://www.youtube.com/c/JerryRigEverything" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/JerryRigEverything</div></div></a></figure><p id="d8311227-1254-4905-b8e2-d7ee302bd36b" class="">
+</p><ul id="8a31a6d1-abc8-4648-8e41-f1a8cdd2138b" class="bulleted-list"><li style="list-style-type:disc"><strong>Gupta Information Technology</strong></li></ul><figure id="49e2c913-48b0-4172-a0bb-7fc0175d2d67"><a href="https://www.youtube.com/channel/UCqOLFDSLrYKJUuSS0tQqvcw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Gupta Information Systems in Hindi</div><div class="bookmark-description">Official YouTube account of &#x27;Gupta Information Systems&#x27; in हिंदी !</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCqOLFDSLrYKJUuSS0tQqvcw</div></div><img src="https://yt3.ggpht.com/XDUOFkYSS82dync754wheMQZUeDxUN5weGmI5xknbZYkTSNdykxtRcwc2t1u49ntEAp7oDG9Ww=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="a0494053-2f5b-49b0-a677-98f9af49f8d8" class="">
+</p><ul id="9fdf8d6a-fe59-4668-b58a-78d0e7efb475" class="bulleted-list"><li style="list-style-type:disc"><strong>Future Tech  </strong></li></ul><figure id="48bf83ed-7769-41b8-b74c-7f25938f3505"><a href="https://www.youtube.com/c/FutureTechOfficial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Future Tech</div><div class="bookmark-description">Top 5, Top 10, Inventions, Gadgets, Technology, Tech, Review, List, Amazing Inventions You Must See, You Won&#x27;t Believe Exist, Inventions You Must Have, Things That Actually Exist, Amazing Inventions at Home. For business inquiries: https://www.facebook.com/TheFutureTechOfficial</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/FutureTechOfficial</div></div><img src="https://yt3.ggpht.com/cdIJI7-zAVFe1gR-qyVQS-sCyJ8qpVKDnYd-gjkG5rxXNBP6NRNqdehjclslp-gHhC4RtGSV=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="aa28671b-7755-497d-bad0-1fd6aff96611" class="">
+</p><p id="196ce16c-03bd-43bf-8b4d-7a536b63dcf4" class="">
+</p></div></article></body></html>

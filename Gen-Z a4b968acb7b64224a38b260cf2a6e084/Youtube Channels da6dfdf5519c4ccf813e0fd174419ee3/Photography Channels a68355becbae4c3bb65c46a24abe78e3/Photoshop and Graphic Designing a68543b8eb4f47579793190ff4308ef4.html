@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Photoshop and Graphic Designing</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a68543b8-eb4f-4757-9793-190ff4308ef4" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🗳️</span></div><h1 class="page-title">Photoshop and Graphic Designing</h1></header><div class="page-body"><p id="4894203e-1356-414b-bc17-986df7ec0d11" class="">
+</p><ul id="e5b81b9c-3096-4f19-8402-695b992c42ef" class="bulleted-list"><li style="list-style-type:disc"><strong>PiXimperfect</strong></li></ul><figure id="f9e9d8c7-b712-4c73-bfde-d4b575b7bb5c"><a href="https://www.youtube.com/PiXimperfect" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/PiXimperfect</div></div></a></figure><p id="f2699967-7e92-4b81-8964-4235659c41a3" class="">
+</p><ul id="b0df5ec4-7790-4dde-8dff-965002361a5e" class="bulleted-list"><li style="list-style-type:disc"><strong>GFXMentor</strong></li></ul><figure id="fa73dd61-2ffe-4a50-be3d-b563e3fa100e"><a href="https://www.youtube.com/c/GFXMentor" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/GFXMentor</div></div></a></figure><p id="3c26e0ca-5e9d-41e2-8f44-f3d6173fb0f9" class="">
+</p><ul id="baf6683d-e17a-4372-aec1-205c6b3ab14b" class="bulleted-list"><li style="list-style-type:disc"><strong>PH learn</strong></li></ul><figure id="c87913b2-eefb-4d9e-9558-58be573c1096"><a href="https://www.youtube.com/c/phlearn" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PHLEARN</div><div class="bookmark-description">PHLEARNing Photoshop will feel like you&#x27;ve got a friend right there walking you through it - and you do! You&#x27;ll get the most of Aaron&#x27;s 15+ years of experience in Photoshop, and 10+ years of experience teaching it, to learn the how&#x27;s and why&#x27;s of this powerful program.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/phlearn</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLT2sYjgF014nV-ah76qS5swYIFy-drIlWmGGT9LbQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="6649604d-e72d-44f7-8b07-f112939f2972" class="">
+</p><ul id="fb1dc601-1795-4343-89a3-affdb717232e" class="bulleted-list"><li style="list-style-type:disc"><strong>Photoshop Training Channel</strong></li></ul><figure id="666518ba-d050-4a0d-942a-f54278764ccf"><a href="https://www.youtube.com/c/Photoshoptrainingchannel" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Photoshoptrainingchannel</div></div></a></figure><p id="543c4f4b-35ca-4c5e-970f-bb8b7729ee30" class="">
+</p><ul id="e3ad420b-b8a1-4a96-8e17-8c439372a89c" class="bulleted-list"><li style="list-style-type:disc"><strong>BlueLightning TV</strong></li></ul><figure id="2d444eda-7b0f-43e8-8540-3b400f95b30b"><a href="https://www.youtube.com/c/bluelightningtv" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/bluelightningtv</div></div></a></figure><p id="9fb0c342-05b1-4371-8921-a695ce762301" class="">
+</p><ul id="29617af8-e768-471b-98f3-29bcf07e2990" class="bulleted-list"><li style="list-style-type:disc"><strong>Satori Graphics</strong></li></ul><figure id="4671c237-4d32-40de-acf2-ae2f796a0391"><a href="https://www.youtube.com/c/SatoriGraphics" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SatoriGraphics</div></div></a></figure><p id="fb94d589-ea0c-4e0e-90e0-b2f5734b962e" class="">
+</p><ul id="b2f57640-25e2-4e56-a759-e8f6e22416c4" class="bulleted-list"><li style="list-style-type:disc"><strong>Design Course</strong></li></ul><figure id="05fe3f9b-db9b-416f-be6e-51a0401d26a6"><a href="https://www.youtube.com/c/DesignCourse" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DesignCourse</div><div class="bookmark-description">https://coursetro.com New videos weekly from Monday to Thursday @ 10:30 AM ET! Hi, I&#x27;m Gary. I&#x27;ve created close to 100 courses from graphic design to advanced frontend development. I&#x27;ve worked with Envato Network&#x27;s TutsPlus.com, DigitalTutors.com, Pluralsight.com, LinkedIn Learning &amp; Lynda.com. I teach full stack development!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DesignCourse</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQ2BILkH6zZdQLVMwiUtY9ejAOHBiTOnlANQ-jSZA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="48bf16ca-abdf-44d0-b63d-7488d934312b" class="">
+</p><ul id="894c0c09-7f4f-4592-b375-54f03c22a45c" class="bulleted-list"><li style="list-style-type:disc"><strong>Adam Minatus</strong></li></ul><figure id="c25c33cc-f646-415f-be3a-4c630107cba6"><a href="https://www.youtube.com/c/AbhishekOfficial17" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Adam Minatus</div><div class="bookmark-description">Spread the Love. Peace &amp; Happiness. Stay #happy&amp;healthy Shop Now For Premium Quality: https://www.youtube.com/channel/UCYK9ibYcEahP-2R4l_MH6uA/store</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/AbhishekOfficial17</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLT4Jti7d7pdZtuisaCW3lUte9kLfweg1bdcctBw-w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="a21a7c17-fdbc-43f2-bfd9-725f7c51a884" class="">
+</p><ul id="ed6c4341-dbed-41f8-8bd4-ee968f2d0e8e" class="bulleted-list"><li style="list-style-type:disc"><strong>Pixivu</strong></li></ul><figure id="9280a015-ba91-4429-be19-d6077db3ce5f"><a href="https://www.youtube.com/c/Pixivu" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pixivu</div><div class="bookmark-description">Pixivu is a graphic design YouTube channel that helps you to learn Photoshop through very high-quality Photoshop tutorials. You can learn with us a lot of amazing stuff about Photo Effects, Text Effects, Flyer Design, Advertising Design, and more! Have a nice time. For business inquiries: Zeater111@gmail.com</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Pixivu</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSL6aVfR5ZANbLSBkqGTYZfpJC_pi-lWwdzh1LSWw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="7f1008bc-68a5-4e22-898f-af31a70e7127" class="">
+</p><ul id="43ace156-2c57-4019-9a34-3220684cab63" class="bulleted-list"><li style="list-style-type:disc"><strong>MirRom 14</strong></li></ul><figure id="ab991aab-b377-4c8c-9b73-b17120b0c98f"><a href="https://www.youtube.com/c/MirRom14" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/MirRom14</div></div></a></figure><p id="881214b5-9a06-48e3-8645-48ceca76f335" class="">
+</p><ul id="9709b668-505a-47c6-a32f-07d42f040b03" class="bulleted-list"><li style="list-style-type:disc"><strong>Studyezee Photoshop</strong></li></ul><figure id="36bb7bf2-5621-49ee-9ba1-1dedc530b121"><a href="https://www.youtube.com/c/StudyezeePhotoshop" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Studyezee-Photoshop</div><div class="bookmark-description">Hi, welcome to my channel &quot;Studyezee Photoshop&quot;. No matter what you&#x27;re looking to learn in Photoshop, you&#x27;re bound to find it in our library. Topics include Photo Special Effects in Photoshop, Photo Manipulations in Photoshop, video editing, Animation in Photoshop. The Basics of Photoshop, Designing in Photoshop, and more !!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/StudyezeePhotoshop</div></div><img src="https://yt3.ggpht.com/rGGLsM_3VKNUhNbQizmkXWF0mwztDbhUZqT0b0luN4RJI9boB-WRqZnbCXm0kq42h9oZ-EKh-w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="5ffc71b7-f270-4885-a205-2c883d0b60aa" class="">
+</p><ul id="28567dc9-2886-4ee0-93dd-68b4c477903f" class="bulleted-list"><li style="list-style-type:disc"><strong>Will Paterson</strong></li></ul><figure id="c82310ff-7b9c-4e4f-883a-835d2dc26e88"><a href="https://www.youtube.com/c/breakdesignsco" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/breakdesignsco</div></div></a></figure><p id="6ec4d6d0-b80a-430e-969c-b0ac798d45c9" class="">
+</p><ul id="1b15a48f-816b-404f-bdb0-c5db7e6bd417" class="bulleted-list"><li style="list-style-type:disc"><strong>Yes I’m a Designer</strong></li></ul><figure id="a0c5b043-004c-40f6-9955-d0b45f2611ef"><a href="https://www.youtube.com/c/YesImaDesigner" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/YesImaDesigner</div></div></a></figure><p id="3abf2dff-92ae-44ac-bb89-ec7381f2656e" class="">
+</p><ul id="5b8415f8-dd5c-481f-a9ad-0c26259e8f5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Graphic Design with Elena</strong></li></ul><figure id="84470762-7594-4275-ba13-7742901c1524"><a href="https://www.youtube.com/c/GraphicDesignwithElena" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Graphic Design with Elena</div><div class="bookmark-description">I am Elena Baryshkina. Graphic designer with 12 years of experience in a graphic design. - Photo stocker with 10 years of experience and a portfolio of over 10K - Freelancer with more than 5 years of experience - Co-founder of a family IT product - Founder of the online course &quot;Commercial Portfolio: Step Up&quot; on Russian language The main goal of my channel is to help you take your first steps in Adobe Illustrator and inspire you to become a graphic designer.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/GraphicDesignwithElena</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRzWM0_oGNdmgZL2CW3CiW_fYB1Dqd7fQq1oLJd=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="bca22a4b-c3fb-448f-ab1d-520ec507c2ef" class="">
+</p><ul id="f9c095ab-b2d5-4b4f-bb4a-678e271a4851" class="bulleted-list"><li style="list-style-type:disc"><strong>NobuDesign</strong></li></ul><figure id="8f06af2b-2a10-4fa5-bf0b-20b176cf463b"><a href="https://www.youtube.com/c/NobuDesign" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Nobu Design</div><div class="bookmark-description">This channel is dedicated to sharing about ideas, inspiration, and tutorials on Graphic Design, Adobe Illustrator and Adobe Photoshop</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/NobuDesign</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTy_oA2nl_j-eLh_ShjPdfEKSffCXCBeZAK569DQg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="82a548c2-d410-4d9f-b810-9d703450dda2" class="">
+</p><ul id="c507c2d0-656d-41ab-b70d-bca7c5f9483f" class="bulleted-list"><li style="list-style-type:disc"><strong>Benny Productions</strong></li></ul><figure id="bdd2e8a7-5c55-4b54-ba9c-6d81e4acb54f"><a href="https://www.youtube.com/c/BennyProductions" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Benny Productions</div><div class="bookmark-description">I know the name is goofy. Things escalated. I&#x27;m Benny, Benji, Benjamin, whatever you want to call me, and on this channel you&#x27;ll see all kinds of content surrounding Photoshop. I&#x27;m not trying to teach, I&#x27;m simply trying to inspire and most of all: Entertain!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BennyProductions</div></div><img src="https://yt3.ggpht.com/oILQm2LyFknZ-C6WjkwaeN2k9ZtEtwWtKL9cFZ-wRp8RLXS-bd8sPaTf4iQWkaOAw-SEO8EC6Jc=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="b3432230-3d75-45bb-aa51-c8352540dc21" class="">
+</p><ul id="35dd35e7-9ef6-49e0-a9b1-1806321c6063" class="bulleted-list"><li style="list-style-type:disc"><strong>Graphic Island</strong></li></ul><figure id="4ad67e0f-9d0e-4039-ad1f-1f244735ac64"><a href="https://www.youtube.com/c/GRAPHICISLAND" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/GRAPHICISLAND</div></div></a></figure><p id="1a734509-55b5-4165-b011-c865a46f5e22" class="">
+</p><ul id="a7235849-1e6e-4397-a321-ac12d91e9235" class="bulleted-list"><li style="list-style-type:disc"><strong>Design Academy</strong></li></ul><figure id="2ac3bc5c-b067-4572-b4cc-fba883bd5252"><a href="https://www.youtube.com/c/DesignAcademyPK" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DesignAcademyPK</div></div></a></figure><p id="d1b917ad-8df8-4b84-a868-04168bd5543e" class="">
+</p><ul id="cf057c51-bd87-44a4-a1a4-bbffa762fba7" class="bulleted-list"><li style="list-style-type:disc"><strong>Adobe Photoshop</strong></li></ul><figure id="406064e9-dbe9-4da7-a9be-c0f9fd18eb99"><a href="https://www.youtube.com/adobephotoshop" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/adobephotoshop</div></div></a></figure><p id="ab905403-8b38-430e-9bff-18035ccf7625" class="">
+</p><ul id="a0ae0318-3246-4278-b8a6-774a3ebdac0c" class="bulleted-list"><li style="list-style-type:disc"><strong>PicsArt</strong></li></ul><figure id="4d2397d0-e1a8-4eb5-9fed-c30efbcef89e"><a href="https://www.youtube.com/c/PicsArt" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/PicsArt</div></div></a></figure><p id="44b4a2a4-8750-4d92-8f82-8232fedc57bc" class="">
+</p><ul id="ee317e2e-7665-4d5f-86f6-730aeb7d955d" class="bulleted-list"><li style="list-style-type:disc"><strong>Adobe Lightroom</strong></li></ul><figure id="d61079ea-21a1-43a1-a181-48da8ece3c4f"><a href="https://www.youtube.com/c/Lightroom" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Lightroom</div></div></a></figure><p id="285bedea-aa60-4193-aac8-1cbc5437a0b2" class="">
+</p><ul id="93c44ea6-6e92-4892-a5a7-998dcd95ab6c" class="bulleted-list"><li style="list-style-type:disc"><strong>Envato tutsplus</strong></li></ul><figure id="a10ccbb6-fd31-43a3-b1dc-d6a155152c43"><a href="https://www.youtube.com/c/tutsplus" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/tutsplus</div></div></a></figure><p id="f6f5023d-f692-4184-a447-c0b5ca7faa9c" class="">
+</p><ul id="827d1fc4-8522-4450-9272-ac44a524df87" class="bulleted-list"><li style="list-style-type:disc"><strong>CANVA</strong></li></ul><figure id="33409c26-2233-4f8e-8658-45bfe217dfd0"><a href="https://www.youtube.com/c/canva" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/canva</div></div></a></figure><p id="d67239fd-f352-46d6-b5ed-38c6f8977a8e" class="">
+</p><h3 id="951fc426-5209-4e96-888f-26e6e4e42321" class=""><mark class="highlight-brown">Playlist</mark></h3><p id="c1e821a4-d401-4d27-a831-700558e7235c" class="">
+</p><figure id="e3790396-f1ea-44c2-8f54-1ab4cfe6d255"><a href="https://youtu.be/VBjHsxWXLyg" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BEST FREE Graphic Design Courses! | Learn Graphic Design For FREE!</div></div><div class="bookmark-href">https://youtu.be/VBjHsxWXLyg</div></div><img src="https://i.ytimg.com/vi/VBjHsxWXLyg/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="71f39e60-96fc-4ec6-83a3-a182d6504ed7" class="">
+</p><ul id="fcaae66a-0365-4f2b-a5d9-27e1ff50958d" class="bulleted-list"><li style="list-style-type:disc">Graphic Design Software</li></ul><figure id="dc9ef53e-fc07-4dcb-bd7d-1f1764c8daea"><a href="https://youtube.com/playlist?list=PLydZ2Hrp_gPRNyHasJHCtJdLd59il80gY" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Graphic Design Software for Beginners</div><div class="bookmark-description">Get introduced to a diverse range of software applications and tools for graphic design.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLydZ2Hrp_gPRNyHasJHCtJdLd59il80gY</div></div><img src="https://i.ytimg.com/vi/CII6KEK0Glw/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCPelToQ3eIIuuuMAwxxAMq7HrNCg&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="f52da62e-f5cc-4c19-beaf-b9a3f6b9d2e1" class="">
+</p><p id="a0618869-4c58-4f23-975f-e1bd583fa7a7" class="">
+</p><ul id="aac268c0-7c64-46ef-b58f-8c7718951e7b" class="bulleted-list"><li style="list-style-type:disc">Best Youtube Channels for freelancers</li></ul><figure id="a244a2df-0780-446b-af6c-1ebc08bc53c0"><a href="https://www.youtube.com/watch?v=xSLBtMGr__Y" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 Best YouTube Channels for YOU - اردو / हिंदी</div><div class="bookmark-description">Hey Everyone! Watch this video and get to know 5 best YouTube channels for all the Graphic Designers and Freelancers. There are many but I recommend you to s...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=xSLBtMGr__Y</div></div><img src="https://i.ytimg.com/vi/xSLBtMGr__Y/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="55a49e70-d87c-4a77-93bf-a29257a54910" class="">
+</p><ul id="a5b2ec9a-4cf1-4a73-91be-7f864019e742" class="bulleted-list"><li style="list-style-type:disc">Adam Minatus</li></ul><figure id="03fd741f-3b32-4a29-b1a6-bdc09e484622"><a href="https://www.youtube.com/c/AbhishekOfficial17" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Adam Minatus</div><div class="bookmark-description">Spread the Love. Peace &amp; Happiness. Stay #happy&amp;healthy Shop Now For Premium Quality: https://www.youtube.com/channel/UCYK9ibYcEahP-2R4l_MH6uA/store</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/AbhishekOfficial17</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLT4Jti7d7pdZtuisaCW3lUte9kLfweg1bdcctBw-w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="723d596b-1d4e-4502-bdb7-0e42a05bcbbb" class="">
+</p><ul id="1c3ad464-d43f-4084-a56b-cf56f1f29484" class="bulleted-list"><li style="list-style-type:disc">blog</li></ul><figure id="51d85ce8-ac6a-4aeb-aa8c-d90a7be5a7e0"><a href="https://vocal.media/photography/how-to-check-if-image-has-been-photoshopped" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to check if Image has been photoshopped</div><div class="bookmark-description">Have you ever seen an image that just doesn&#x27;t look right? Trusting your gut might not be the most scientific approach, but you&#x27;re probably better at spotting a fake than you realize. If you see an image that sounds alarm bells, you might want to look a bit closer.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1513017517/jbnha9s3rfih4t5iy1hv.png" class="icon bookmark-icon"/>https://vocal.media/photography/how-to-check-if-image-has-been-photoshopped</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5ff72b7283f7a1001c77a029.jpg" class="bookmark-image"/></a></figure><p id="19c3d1c1-dc57-44ba-80d4-858edd0651c8" class="">
+</p><figure id="ef455870-5727-45fb-ae2a-bce9e7a8fa47"><a href="https://coursesity.com/free-tutorials-learn/photoshop" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Free Photoshop Courses &amp; Tutorials [2021] - Learn Photoshop</div><div class="bookmark-description">Details about free Photoshop tutorials and courses Want to learn photoshop ? This is the list of free photoshop courses available online. From this list, you can take any of the photoshop course to learn photoshop in details and become master of photoshop. Learn photoshop from the free photoshop courses and free photoshop tutorials online.</div></div><div class="bookmark-href"><img src="https://coursesity.com/assets/images/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://coursesity.com/free-tutorials-learn/photoshop</div></div><img src="https://res.cloudinary.com/db194k5td/image/upload/l_text:ABeeZee_58_center_bold:Photoshop,x_0,y_-40,co_rgb:5E5E9A/v1577925049/meta/freemeta.png" class="bookmark-image"/></a></figure><p id="100ed786-6ace-46cd-a7ee-3c9a2e2596b4" class="">
+</p><p id="de30fde1-20d8-4c73-a800-fd16dea19024" class="">
+</p><figure id="0582bb76-5dbb-4e9a-9e99-918e0c971a5e"><a href="https://design.tutsplus.com/articles/free-courses--cms-38426" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Video Courses</div><div class="bookmark-description">Creating a Venom Logo in Adobe Illustrator Over the next 30 minutes you&#x27;re going to learn how to create a Venom-inspired logo design, using Adobe Illustrator. Learn how to create a Venom-inspired logo using the new 3D features from the latest version of Illustrator, together with a variety of different tools and techniques, and a tiny bit of Photoshop at the end as well.</div></div><div class="bookmark-href"><img src="https://static.tutsplus.com/packs/media/images/favicon-9279542df62646e82ddb087eab02c613.png" class="icon bookmark-icon"/>https://design.tutsplus.com/articles/free-courses--cms-38426</div></div><img src="https://cms-assets.tutsplus.com/uploads/users/16/posts/38426/preview_image/bs-alt.jpg" class="bookmark-image"/></a></figure><p id="e3a4519e-87a0-4124-804f-64861dfbd2be" class="">
+</p><figure id="0009cbcb-fa12-43de-bbb6-edfa061a52c3"><a href="https://www.brusheezy.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photoshop resources for everyone.</div><div class="bookmark-description">Photoshop Brushes - Brusheezy is a HUGE collection of Photoshop Brushes, Photoshop Patterns, Textures, PSDs, Actions, Shapes, Styles, &amp; Gradients to download, or share!</div></div><div class="bookmark-href"><img src="https://www.brusheezy.com/favicon.ico" class="icon bookmark-icon"/>https://www.brusheezy.com/</div></div><img src="https://static.brusheezy.com/assets/brusheezy-logo-opengraph.png" class="bookmark-image"/></a></figure><p id="55ff8eee-18b5-4a38-bc33-b858dd3f0547" class="">
+</p><figure id="a1f8894f-ded6-4ae8-a2e3-51eb61ed8c9f"><a href="https://mixkit.co/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mixkit - Awesome free assets for your next video project</div><div class="bookmark-description">Mixkit is a free gallery of awesome stock video clips, music tracks, sound effects and video templates. We carefully curate clips, tunes, and templates from some of the world&#x27;s most talented creators with all content available for free. Our free library is growing fast with new video assets being added every week!</div></div><div class="bookmark-href"><img src="https://mixkit.co/build/favicons/favicon-96x96-b47a57aea9303a5f92e644e78aa343575b21f12b38d469be00fdc5acd983684d.png" class="icon bookmark-icon"/>https://mixkit.co/</div></div><img src="https://mixkit.imgix.net/mixkit-social-meta.png?q=80&amp;auto=format%2Ccompress" class="bookmark-image"/></a></figure></div></article></body></html>

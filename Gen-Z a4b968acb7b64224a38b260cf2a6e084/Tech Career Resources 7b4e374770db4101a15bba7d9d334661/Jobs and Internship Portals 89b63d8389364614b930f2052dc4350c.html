@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Jobs and Internship Portals***</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="89b63d83-8936-4614-b930-f2052dc4350c" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1462206092226-f46025ffe607?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💼</span></div><h1 class="page-title">Jobs and Internship Portals***</h1></header><div class="page-body"><p id="70f93393-25e8-4a7f-97aa-a3a5d0f98c84" class="">
+</p><p id="36132972-5b60-424e-8572-d922e2adba93" class="">
+</p><p id="74414b85-4e57-4bc6-a579-12999faa712a" class="">🔗<a href="https://www.roc8.careers/"><strong>Roc8</strong></a></p><p id="9bf25607-28aa-4fd9-ba54-8c1a31e7943b" class="">🔗<strong>Applying on the company’s career page/portal</strong></p><p id="05aff1fb-be4e-45a1-8f67-57824dc95666" class="">🔗<strong>Do referrals ( friends, seniors, relatives, colleagues)</strong></p><figure id="e43390c4-becf-4688-95bd-f008a43707ad"><div class="source"><a href="Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c/100_Top_Product_Based_Companies_-_Top_Copanies__rank_inside_categories.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/48bfbafa-55a2-4381-9551-a9a12914d50d/100_Top_Product_Based_Companies_-_Top_Copanies__rank_inside_categories.pdf</a></div></figure><figure id="7dd6f8ad-e593-4e9e-9c5e-6b3a6f178250"><div class="source"><a href="Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c/50_Companies_for_Freshers_By_Kushal_-_Part_1.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7fc4855d-7ff2-4314-a999-837bf2b632a2/50_Companies_for_Freshers_By_Kushal_-_Part_1.pdf</a></div></figure><figure id="fae933f4-7921-49f3-8dc9-e7486433c462"><div class="source"><a href="Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c/The_art_of_cold_emailing.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e865a852-0e61-421a-a8ad-8771d119fb4a/The_art_of_cold_emailing.pdf</a></div></figure><figure id="921c0b0e-f1ee-4f73-b602-a40898808cb3"><div class="source"><a href="Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c/21_ways_to_win_at_your_job.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8464ee86-9ee7-4c6c-a3c8-fec02881e479/21_ways_to_win_at_your_job.pdf</a></div></figure><figure id="043c4db8-da8a-4f44-b1dd-a4684cbea559"><div class="source"><a href="Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c/Corporate_v_s_Startup_Jobs.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f333d895-e4db-4cf0-8678-f1cf7c898647/Corporate_v_s_Startup_Jobs.pdf</a></div></figure><h3 id="83676997-a132-4d9d-b0e1-4e550d43d4c1" class="">🔎 Google search for jobs</h3><p id="effaa20e-17ee-41a2-8bba-698336e1fd30" class="">
+</p><figure id="f8f1bb16-e90e-4e4a-bc36-089dfb2c54a4"><a href="https://awesomelists.top/#/tramcar/awesome-job-boards" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/tramcar/awesome-job-boards</div></div></a></figure><p id="ed884622-c18e-4cbf-863b-a3afb6b7078e" class="">
+</p><figure id="2eb88ecb-2f44-43c9-bf1b-b7209fa07d26"><a href="https://learntocodewith.me/posts/job-referral/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How You Can Land a Job Using Referrals (Even if You&#x27;re a Complete Newbie)</div><div class="bookmark-description">When you&#x27;re trying to get a job in a new industry-whether you&#x27;re a career-changer or entering the workforce for the first time-it can be hard to get a foot in the door. Everyone else may seem to already have the skills, experience, and contacts necessary.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/job-referral/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2018/05/How-to-Get-a-Job-Using-Referrals.png" class="bookmark-image"/></a></figure><p id="10ada240-5587-4245-b206-09cffa4411dc" class="">
+</p><figure id="c82f3904-1840-4061-85e7-2d05c5aabffc"><a href="https://www.linkedin.com/business/learning/blog/top-skills-and-courses/job-searching-in-the-great-reshuffle-the-definitive-guide" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Definitive Guide to Job Searching in the Great Reshuffle</div><div class="bookmark-description">A new year is upon us, and if you haven&#x27;t heard, 2022 may be the best time to make a professional change... ever. 62% of working Americans are considering a job change in 2022, with one quarter 24% currently looking, according to a recent LinkedIn survey.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/business/learning/blog/top-skills-and-courses/job-searching-in-the-great-reshuffle-the-definitive-guide</div></div><img src="https://media-exp1.licdn.com/dms/image/D4D08AQEhdoknmKi-Tw/croft-frontend-shrinkToFit1024/0/1642525711210?e=2147483647&amp;v=beta&amp;t=OW7pQ0RYvRmNzntn-OJOjhV_jjHBrfnn9vNC3zgGj-M" class="bookmark-image"/></a></figure><p id="6a966e83-fb9b-4ff9-908d-900706e51966" class="">
+</p><figure id="f935d3ab-ce2a-43db-9cd7-bc7c1754f2b2"><a href="https://learntocodewith.me/work-in-tech/high-paying-tech-jobs/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">8 Best-Paying Jobs in Technology &amp; What They Involve (2021 List)</div><div class="bookmark-description">Want to earn $100k or more? Here are eight of the best paying jobs in technology, including how much they pay and what skills you need. Plus, I share some online learning tracks/specializations to help you prepare for each high-paying computer job.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/work-in-tech/high-paying-tech-jobs/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2021/06/Highest-paying-careers-in-it.png" class="bookmark-image"/></a></figure><p id="be78a164-ba10-46dd-a930-cd33d32f4e0a" class="">
+</p><figure id="bbd84dd2-7791-4e39-93b4-342a7b911d84"><a href="https://www.linkedin.com/pulse/top-companies-2021-50-best-workplaces-grow-your-career-us-/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top Companies 2021: The 50 best workplaces to grow your career in the U.S.</div><div class="bookmark-description">The world of work is transforming. Not only have we worked through a once-in-a-generation global pandemic, but decades of automation, the rise of artificial intelligence and a new shift to remote work have all reshaped what our professional lives look like - and what we&#x27;re expecting from our employe</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/pulse/top-companies-2021-50-best-workplaces-grow-your-career-us-/</div></div><img src="https://media-exp1.licdn.com/dms/image/C5612AQFShHMes6NPHQ/article-cover_image-shrink_720_1280/0/1619469530824?e=1665014400&amp;v=beta&amp;t=mrIXOdgbo3gwfw_lyJigYJgcWMZ4jrHXuVsaswX7TNA" class="bookmark-image"/></a></figure><p id="ddac19ed-6c6c-4e95-996e-a25ef78a5adb" class="">
+</p><figure id="3ce0fd4b-c8ed-45a2-85b1-cd15d5e0c58d"><a href="https://www.linkedin.com/feed/news/5468162" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Think like an employer to get that job | LinkedIn</div><div class="bookmark-description">Hunting for a job during the pandemic can be a taxing and mind-numbing task. Here are few tips that can help you along the way.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/feed/news/5468162</div></div><img src="https://media-exp1.licdn.com/dms/image/C4E1AAQESoCimo0Hk8g/storylineheaderimage-shrink_400_400/0/1623216086157?e=1659794400&amp;v=beta&amp;t=6z0X9gBhyH1Bhtg6d_9Dt9ZnVf2HKz0awfPBwTU6Bio" class="bookmark-image"/></a></figure><figure id="6391c030-c01d-4309-9986-ff857a4e99be"><a href="https://www.levels.fyi/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Levels.fyi | Salaries &amp; Tools to Level Up Your Career</div><div class="bookmark-description">Search 100k+ salaries for different companies, job titles, career levels, and locations. Explore our tools to help you get paid more!</div></div><div class="bookmark-href"><img src="https://www.levels.fyi/assets/favicon.png" class="icon bookmark-icon"/>https://www.levels.fyi/</div></div><img src="https://levels.fyi/assets/logo/socialPreview.png" class="bookmark-image"/></a></figure><p id="2698c3a7-c125-41e4-8bac-d298803ce9b2" class="">
+</p><h3 id="9024a00e-d5dc-4563-8356-61a8c1e776b6" class="">Watch this video if your percentage is below 60%</h3><figure id="8dd3d97c-a65e-4f05-a1cc-15d5a786c416"><a href="https://youtu.be/8KZLKhDzO2c" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Eligibility criteria for freshers | Do Degree percentage &amp; board exam marks matters in IT career</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/8KZLKhDzO2c</div></div><img src="https://i.ytimg.com/vi/8KZLKhDzO2c/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="a01afd95-8c88-4442-b4ac-e10179916e58"><a href="https://youtu.be/pGPGOqq8CXc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">To get a job with less than 60% in academics , Active backlogs and Education gap</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/pGPGOqq8CXc</div></div><img src="https://i.ytimg.com/vi/pGPGOqq8CXc/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="1c103922-cfc0-4b38-871c-2447a7f32f39" class=""><strong>Training institutes with guaranteed placement :-</strong></h3><p id="330a22c1-48a1-4bdb-90d4-0c8667f46876" class="">
+</p><figure id="369eb6da-7813-4555-8a12-7d1a227f3890"><a href="https://jspiders.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">qfront</div><div class="bookmark-description">LARGEST SOFTWARE TRAINING ORGANISATION JSpiders is the world&#x27;s ace software course training organization with an aim to bridge the gap between the demands of the industry and the curriculum of educational institutions. With centers across the Globe, the institute is a platform where young minds are given the opportunity to build successful careers.</div></div><div class="bookmark-href"><img src="https://jspiders.com/js_favicon.png" class="icon bookmark-icon"/>https://jspiders.com/</div></div><img src="https://jspiders.com/_nuxt/img/logo_jspiders.3b552d0.png" class="bookmark-image"/></a></figure><figure id="5d07d603-71ab-4fe5-a6b2-0cd8a93f1e23"><a href="https://www.qspiders.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Testing Training Institute | QSpiders</div><div class="bookmark-description">LARGEST SOFTWARE TRAINING ORGANISATION QSpiders is the world&#x27;s ace software training organization with an aim to bridge the gap between the demands of the industry and the curriculum of educational institutions. With centers across the Globe, the institute is a platform where young minds are given the opportunity to build successful careers.</div></div><div class="bookmark-href"><img src="https://www.qspiders.com/qspfav.png" class="icon bookmark-icon"/>https://www.qspiders.com/</div></div><img src="https://www.qspiders.com/_nuxt/img/qspiders_logo.6096665.png" class="bookmark-image"/></a></figure><p id="ee232bd3-5595-429f-8f32-be02b533a898" class="">
+</p><figure id="7062042a-84cf-4808-bd16-d87f683ad1d0"><a href="https://cuvette.tech/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The #1 way college students &amp; early graduates get Internships, Jobs</div><div class="bookmark-description">Cuvette (pronounced as Q-vet) is the #1 way for College students &amp; Early Graduates to get Internships, Jobs in Software, Management, Media, etc. More than 80K students &amp; 2000+ companies trust Cuvette.</div></div><div class="bookmark-href"><img src="https://cuvette.tech/favicon.ico" class="icon bookmark-icon"/>https://cuvette.tech/</div></div><img src="https://production-cuvette.s3.ap-south-1.amazonaws.com/cuvette_logo.png" class="bookmark-image"/></a></figure><figure id="e29a7b99-8288-443c-8f1d-7dc3e8ab4cd8"><a href="https://acciojob.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pay After Placement</div><div class="bookmark-description">AccioJob is a 6-month Full Stack Web Development Training Programme. We guarantee you a min ₹5 LPA Job. You only pay us after getting placed. We strictly work on a pay after placement model. You pay us only after you get placed in a software development job paying atleast ₹5 Lakhs per year.</div></div><div class="bookmark-href"><img src="https://acciojob.com/favicon.ico" class="icon bookmark-icon"/>https://acciojob.com/</div></div><img src="https://acciojob.com/static/images/Students/sumit-maurya.jpeg?imwidth=3840" class="bookmark-image"/></a></figure><figure id="8af7517f-f28e-4633-9053-3b9d8f65c501"><a href="https://codinginvaders.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Coding Invaders</div><div class="bookmark-description">In addition to Honest Job Guarantee Policy, Coding Invaders delivers a stimulating learning environment to enrich the entire learning process. We start from the basics and move to the advanced level. We provide real business case studies and projects to help you cope with the demands of the IT industry.</div></div><div class="bookmark-href"><img src="https://static.tildacdn.com/tild3162-3630-4933-b137-616336623839/favicon.ico" class="icon bookmark-icon"/>https://codinginvaders.com/</div></div><img src="https://static.tildacdn.com/tild3834-6439-4630-b335-653666653031/__2022-04-29__165638.png" class="bookmark-image"/></a></figure><p id="4a3c0842-602e-4fd8-ae66-7c47902563ad" class="">
+</p><figure id="faa8ca1c-5cd3-4832-9d0b-5c76e5ba1ca4"><a href="https://www.wonsulting.com/resources" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wonsulting - Resources | Job Search Resources</div><div class="bookmark-description">Check out Wonsulting&#x27;s free career resources like resume, interview, networking, job search tools and videos to help you land your dream jobs.</div></div><div class="bookmark-href"><img src="https://assets-global.website-files.com/6107d4b379e3293a0c62f588/611e4b3084932781ec6d3520_favicon%20wonsulting.png" class="icon bookmark-icon"/>https://www.wonsulting.com/resources</div></div><img src="https://assets-global.website-files.com/6107d4b379e3293a0c62f588/612cf536a17ff068fd97d3e2_wonsulting%20logo-min.jpg" class="bookmark-image"/></a></figure><figure id="3d7c53cd-bdba-4ec5-a21f-ad0cb0f51940"><a href="https://www.hirect.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hirect - Best Job App for Recruiters and Job Seekers</div><div class="bookmark-description">Hirect, the best app for start-up hiring, connects the matching candidates with the recruiters. Chat directly and hire anywhere, anytime.</div></div><div class="bookmark-href"><img src="https://www.hirect.in/_nuxt/icons/icon_64x64.1c77ca.png" class="icon bookmark-icon"/>https://www.hirect.in/</div></div></a></figure><figure id="77c4ca1d-5f58-46c0-925c-8437fd091332"><a href="https://www.brightern.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Brightern</div><div class="bookmark-description">A platform to connect top companies with top Interns</div></div><div class="bookmark-href"><img src="https://www.brightern.com/bfavicon.ico" class="icon bookmark-icon"/>https://www.brightern.com/</div></div></a></figure><figure id="5cdceb64-4fe8-4b87-91e7-63dd3134c479"><a href="https://smartinternz.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">SmartInternz</div><div class="bookmark-description">I had enrolled myself in machine learning internship at SmartBridge with RSIP- 2020. At the very beginning of the internship, a session was conducted with proper analysis of how the program will be carried out. All the vital information regarding the Internship was provided along with the alignment of the various opportunities and outcomes of it.</div></div><div class="bookmark-href"><img src="https://smartinternz.com/assets/smartinternz.ico" class="icon bookmark-icon"/>https://smartinternz.com/</div></div><img src="https://smartinternz.com/assets/smartinternz_thumb.png" class="bookmark-image"/></a></figure><figure id="1648a45c-630d-412d-8029-52f032de4e5e"><a href="https://ineuron.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://ineuron.ai/images/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://ineuron.ai/</div></div></a></figure><p id="0f3195ec-6f20-4c7b-8911-8f54cde60c4f" class="">
+</p><h2 id="0df37d76-316e-47e1-ad55-a74c6a2bf546" class="">🔗<strong>Career portals</strong>:
+</h2><figure id="6599fd0f-d72e-4228-95f6-c9fb806f3928"><a href="https://www.simplyhired.co.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Job Search Engine | SimplyHired, India</div><div class="bookmark-description">Search for job opportunities across India on SimplyHired. Browse by job category, city, state, employer and more. Get a head start and post your resume.</div></div><div class="bookmark-href"><img src="https://d3iouj7udfksni.cloudfront.net/favicon.ico" class="icon bookmark-icon"/>https://www.simplyhired.co.in/</div></div><img src="https://d3iouj7udfksni.cloudfront.net/static/home/img/discover-local-jobs.png" class="bookmark-image"/></a></figure><p id="8a036b3f-4e2f-4c63-96f0-87dc029b5456" class=""><strong>LinkedIn</strong></p><figure id="30dd3ade-0a9d-4557-b558-5d11e86a5e01"><a href="https://www.linkedin.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">LinkedIn: Log In or Sign Up</div><div class="bookmark-description">750 million+ members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/</div></div><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" class="bookmark-image"/></a></figure><p id="88342e58-1ec9-4665-ae09-e1ea2a5df5e0" class="">
+</p><p id="c3bdedb8-34f6-456b-bfa9-14376c24eb77" class=""><strong>NIC</strong> </p><figure id="6a7663ca-1b5d-4ee2-897d-f2aa1b64b3f4"><a href="https://www.ncs.gov.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">National Career Service | Ministry of Labour &amp; Employment</div><div class="bookmark-description">National Career Service (NCS) is an initiative by the Ministry of Labour &amp; Employment, Govt. of India. NCS is a one-stop solution that provides a wide array of employment and career-related services to the citizens of India.</div></div><div class="bookmark-href"><img src="https://www.ncs.gov.in/_layouts/15/images/ncsp/favicon.ico" class="icon bookmark-icon"/>https://www.ncs.gov.in/</div></div><img src="https://www.ncs.gov.in/PublishingImages/bk444_ttt.jpg" class="bookmark-image"/></a></figure><p id="e11b67c2-3db3-4705-a79c-78c663b7dce3" class="">
+</p><p id="494ed472-bffc-4312-9ce8-920b87279de3" class=""><strong>Monster</strong></p><figure id="52ba83f6-3441-4883-91a1-f55b6d59c20e"><a href="https://www.monsterindia.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Job Vacancy - Latest Job Openings - Job Search Online - Monster India</div><div class="bookmark-description">HCL - Team Leader / Sr. Team Leader (AML &amp; KYC) - Navalur, Chennai Customer Support Executive Customer Support Customer Service B.Com BBA BSC MBA Voice Voice Process Email And Chat Process Looking for Fresher&#x27;s HR recruiters Internship - Pan India Location - work from home opportunity Find Better &amp; Faster with Monster Career Services Call 1-800-4196666 now!</div></div><div class="bookmark-href"><img src="https://www.monsterindia.com/favicon.ico" class="icon bookmark-icon"/>https://www.monsterindia.com/</div></div><img src="https://media.monsterindia.com/trex/prod-cdn/media/product/2021/august/UWwaneAf2OBhqcauh7PujGU5mIavChpFlRnZabZp.png" class="bookmark-image"/></a></figure><p id="162f18c2-26bf-4f2f-b944-7aa0088e0cf7" class="">
+</p><p id="3fa88ea3-cb60-4ad4-bcd1-a8f7cd5472c3" class=""><strong>Naukri.com</strong></p><figure id="f31e2f25-5984-4868-9acf-168d810fb33c"><a href="https://www.naukri.com/mnjuser/homepage" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Jobseeker&#x27;s Login: Search the Best Jobs available in India &amp; Abroad - Naukri.com</div><div class="bookmark-description">Login Now &amp; Get access to Jobs not posted publicly anywhere. Search &amp; Apply Jobs in your desired Industry. Follow top Recruiters in your domain</div></div><div class="bookmark-href"><img src="https://www.naukri.com/favicon.ico" class="icon bookmark-icon"/>https://www.naukri.com/mnjuser/homepage</div></div></a></figure><p id="3c363634-78d2-4f12-8ebc-36636635ee57" class="">
+</p><p id="8c40bf4e-d6a0-439c-aeee-892d8646cf9d" class=""><strong>Glassdoor</strong></p><figure id="94ac4745-112f-42f3-9610-8eb6ee5f28db"><a href="https://www.glassdoor.co.in/index.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.glassdoor.co.in/index.htm</div></div></a></figure><p id="3d83e5a1-fee5-4372-adb0-512a7d973ef5" class="">
+</p><p id="e8297b55-809a-4f55-9095-887d76e89166" class=""><strong>Indeed</strong></p><figure id="d3b41753-5ce8-4833-9f00-ccca942e1aa1"><a href="https://in.indeed.com/?r=us" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Indeed</div><div class="bookmark-description">With Indeed, you can search millions of jobs online to find the next step in your career. With tools for job search, resumes, company reviews and more, were with you every step of the way.</div></div><div class="bookmark-href">https://in.indeed.com/?r=us</div></div><img src="https://d3fw5vlhllyvee.cloudfront.net/dist/header/ukraine_support.7ad2b5d444bc427dbc5d.png" class="bookmark-image"/></a></figure><p id="bcd92376-be56-47bf-bd99-d210cdce2176" class="">
+</p><p id="c9cf59cc-7887-4bc6-a1ad-2fe057234ae0" class=""><strong>Angel list </strong></p><figure id="c1825f70-5b04-4ace-842d-e71860b1e13b"><a href="https://angel.co/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AngelList Talent: Remote Job and Startup Job Search</div><div class="bookmark-description">Apply privately to 130,000+ remote jobs and startup jobs near you with one application. See salary and equity upfront. Find the latest tech jobs, company overviews, benefits and more at AngelList Talent.</div></div><div class="bookmark-href"><img src="https://assets.website-files.com/61f063412698c3c0331848b0/61f37b114916cf74788c5ee4_icon%20copy%202.png" class="icon bookmark-icon"/>https://angel.co/</div></div><img src="https://angel.co/images/static_pages/homepage/logo-angellist.png" class="bookmark-image"/></a></figure><p id="da97e242-d198-4cbe-bbff-a17d56d2bca6" class="">
+</p><p id="46f93871-7c71-4193-8d67-7e66d03059aa" class=""><strong>Idealist</strong></p><figure id="fde9f543-1f34-4ea5-9d72-95c868d38123"><a href="https://www.idealist.org/en" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Jobs, Volunteering, Grad Schools, and More</div><div class="bookmark-description">Idealist connects millions of idealists - people who want to do good - with opportunities for action and collaboration all over the world.</div></div><div class="bookmark-href"><img src="https://www.idealist.org/favicon.ico?version=GvkNLMOvjL" class="icon bookmark-icon"/>https://www.idealist.org/en</div></div><img src="https://process.filestackapi.com/resize=width:600,height:315,fit:max/quality=value:90/9qf3WnnRRRCC532XdP85" class="bookmark-image"/></a></figure><p id="dc2e11d7-52a8-455d-aed3-7466928a05b1" class="">
+</p><p id="e5c9d688-5c69-4ef8-a32e-152edd9af99b" class=""><strong>Instahyre</strong></p><figure id="2342c21c-ad5f-42f4-82da-20bd5faf82e7"><a href="https://www.instahyre.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.instahyre.com/</div></div></a></figure><p id="04cd5236-82ba-4b3b-a8a8-d93b318581e0" class=""><strong>   </strong></p><p id="7a2c1809-d7d9-4caf-89e9-043713471231" class=""><strong> Has job</strong></p><figure id="936bfe05-b619-42fb-80b9-4923b0cff873"><a href="https://hasjob.co/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hasjob</div><div class="bookmark-description">Hasjob is India&#x27;s premier job board for tech startups. Find the job that&#x27;s best suited for you and apply directly. Hasjob is free for employers because we are a startup too and understand startup constraints.</div></div><div class="bookmark-href"><img src="https://hasjob.co/static/img/favicon.ico" class="icon bookmark-icon"/>https://hasjob.co/</div></div><img src="https://static.hasjob.co/static/img/hasjob-logo-200x200.png" class="bookmark-image"/></a></figure><p id="f36ec9a6-78fe-47ac-88bd-32871b08ccbc" class="">
+</p><figure id="5d762384-ca93-4a9a-89eb-c22f859ec888"><a href="https://www.freshersnow.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FreshersNow.Com</div><div class="bookmark-description">Freshersnow.com is one of the best job portals in India. We provide updates on freshers jobs, it jobs, govt jobs, bank jobs, bpo jobs, internship jobs, railway jobs, startup jobs, tv jobs, walkins, off campus drives across India.</div></div><div class="bookmark-href"><img src="https://www.freshersnow.com/wp-content/uploads/2017/11/freshersnow-icon.png" class="icon bookmark-icon"/>https://www.freshersnow.com/</div></div><img src="https://www.freshersnow.com/wp-content/uploads/2017/11/freshersnow-logo.png" class="bookmark-image"/></a></figure><p id="f7b40a8e-ba15-48ff-83e3-8219601b4bc4" class="">
+</p><p id="3ad0448f-8ad4-4c7d-a84b-1dbf278b8592" class=""><strong>Other websites 👇🏻</strong></p><p id="6e72ba15-8f41-4a48-9813-c2da666a8f17" class="">
+Careerealism</p><p id="419b84e3-5941-4e10-b7e2-4144adde9de1" class="">Job-Hunt</p><p id="d0a6598a-2277-4049-9701-ec92c57ffd54" class="">JobBait </p><p id="27ecd4ee-2f37-4684-84b1-64f606e67205" class="">Careercloud</p><p id="d59cd13d-4b59-4ec5-a9be-30cad9185fe3" class="">GM4JH</p><p id="8520db8d-062b-4aca-95bf-69b1bbfb649d" class="">Personalbrandingblog</p><p id="14eaa8ac-b0b0-4f44-86a6-3bde4e028722" class="">Jibberjobber</p><p id="be484a3a-6f68-49ef-811b-97becd99a329" class="">Neighbors-helping-neighbors</p><p id="fa1a37de-b793-4c2b-ac80-15a40c40933b" class="">
+</p><p id="807a06cc-16fc-4d76-ad8b-3d148fe58bbe" class=""><strong>Startup News and jobs visit </strong>➡️<strong> </strong>(<a href="https://inc42.com/">inc42</a>, <a href="https://yourstory.com/">your story</a>)</p><figure id="afe4081c-674a-408d-8078-348455ce76ed"><a href="https://startuptalky.com/top-unicorn-startups-india/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">List of 105 Unicorn Startups in India | Top Unicorns in India</div><div class="bookmark-description">India is becoming the world&#x27;s fastest-growing startup ecosystem with 104 Unicorn Startups, as of 2022. In today&#x27;s world, unicorn startupsare not as uncommon as before; however, building a unicorn startup is not easy.</div></div><div class="bookmark-href"><img src="https://startuptalky.com/favicon.png" class="icon bookmark-icon"/>https://startuptalky.com/top-unicorn-startups-india/</div></div><img src="https://static.startuptalky.com/2021/08/Top-Indian-Unicorn-Startups---StartupTalky.jpg" class="bookmark-image"/></a></figure><figure id="7995c424-ea0b-4c7b-b717-1b8129636a13"><a href="https://fortune.com/fortune500/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fortune 500</div><div class="bookmark-description">Map This The United States of F500 Ever wonder how many Fortune 500 companies are in your state? (Or how often those companies made the cut over the last 20 years?) Our director of infographics, Nicolas Rapp, offers a look at where they&#x27;re located-and how far some have come (or fallen).</div></div><div class="bookmark-href"><img src="data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABM0lEQVQ4y52Rzy5DURDGvzkOKfVvQTSil3AXIqmkkbKzxCtYSFh4BomlhRfoOwhJE3sbvQ/AqulGcasbbHHdyOmMRWlO0Xt7ze7LfPPLzDcEqx49xwNhvaUEiye74Vj5fEC/vyrLdnFb9ze/hd34VW/zOd3YPsCLmzfSxRMJAABOpdXzxo5+2tozZnCYf/a1Lap3YACmpQgQuba2QZiZxeTlWRV1vz1DNmDBmbMyAIgoXfPvg6gNdVSz2FRuIet+fMlwolHzEwFKxFd5UVqDIEAFQC5RiGUSfUhsDKSrJ/YLXhuSNANFDJFTCNgjwTGaD8kAS1OsVmb2b45KAQAUE50w1M+0nIk970+ACECFLJPu+x+ApkcMOeMaPVYnQBPTmqNA1Ot8Z4i06gQ0mgosOMcBPgESUF6m2OFoAQAAAABJRU5ErkJggg==" class="icon bookmark-icon"/>https://fortune.com/fortune500/</div></div><img src="https://content.fortune.com/wp-content/uploads/2022/05/FORTUNE-500-FINAL_V1.jpg?resize=1200,600" class="bookmark-image"/></a></figure><figure id="6f5bb4d7-9a2c-4724-8f88-a581c5031a7c"><a href="https://builtin.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">National Tech &amp; Startups | Built In</div><div class="bookmark-description">Built In is the online community for National startups and tech companies. Find startup jobs, tech news and events in the National tech scene.</div></div><div class="bookmark-href"><img src="https://frontend.builtin.com/d3da505cf178a577a9effac3cc8c29f27bee580b/favicon.png" class="icon bookmark-icon"/>https://builtin.com/</div></div></a></figure><figure id="3bdb937e-4d8d-4af5-b105-ba6ee6961d15"><a href="https://internshala.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Internships in India | Internshala</div><div class="bookmark-description">Internshala is India&#x27;s no.1 internship and training platform with 40000+ paid internships in Engineering, MBA, media, law, arts, and other streams.</div></div><div class="bookmark-href"><img src="https://internshala.com//favicon.ico?v=5" class="icon bookmark-icon"/>https://internshala.com/</div></div><img src="https://internshala.com//static/images/internshala_og_image.jpg" class="bookmark-image"/></a></figure><p id="43b7e37e-c39b-4e35-acfb-40ea8a84e848" class="">
+</p><figure id="f55baa8d-b7bd-4435-9b1b-b9787a261d1c"><a href="https://vocal.media/education/04-best-high-paid-internship-sites-for-students" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">04 Best High-Paid Internship Sites for Students.</div><div class="bookmark-description">If there is one thing that can define the post-pandemic &quot;new normal,&quot; it is remote work. As full-time and part-time employees retreat back home to work in the comfort of their bedroom, internship positions are of no exception.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1507641047/excnjjhq7mppohgumcgj.png" class="icon bookmark-icon"/>https://vocal.media/education/04-best-high-paid-internship-sites-for-students</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fcceed47004cd001c12568f.jpg" class="bookmark-image"/></a></figure><figure id="81009096-e313-4725-beb8-302c32fa94e7"><a href="https://itsfoss.com/best-open-source-internships" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best Open Source Internships For College Students - It&#x27;s FOSS</div><div class="bookmark-description">We list the best open source internships for college students with all the relevant information.</div></div><div class="bookmark-href"><img src="https://itsfoss.com/wp-content/uploads/2017/06/cropped-Logo-redsigned-without-name-192x192.png" class="icon bookmark-icon"/>https://itsfoss.com/best-open-source-internships</div></div><img src="https://itsfoss.com/wp-content/uploads/2017/08/open-source-internships.jpg" class="bookmark-image"/></a></figure><figure id="11689b3d-dce4-434a-aa30-81bc88c3f274"><a href="https://www.theforage.com/virtual-internships" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Forage</div><div class="bookmark-description">Your Privacy When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to.</div></div><div class="bookmark-href"><img src="https://cdn-assets.theforage.com/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://www.theforage.com/virtual-internships</div></div><img src="https://cdn.theforage.com/vinternships/companyassets/mfxGwGDp6WkQmtmTf/yW72wwdbM42ys4WXg/1644835825528/Co-branded%20logo%20color%202.png" class="bookmark-image"/></a></figure><p id="556ebcf5-4033-4216-9ab2-85954db782ae" class=""><strong>AICTE Internship</strong> </p><figure id="c45b4cee-58c2-4ff7-a7dd-c84d87ba365f"><a href="https://internship.aicte-india.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AICTE Internship Enterprise Portal - Learning by doing. 1 Crore Internships by 2025</div><div class="bookmark-description">AICTE Internships help INDIAN STUDENTS find internships they love and ORGANIZATIONS find best Interns on PAN India basis .</div></div><div class="bookmark-href"><img src="https://internship.aicte-india.org/images/favicons/favicon.ico" class="icon bookmark-icon"/>https://internship.aicte-india.org/</div></div></a></figure><p id="d415c846-943e-4263-98d8-623e24338b30" class="">
+</p><h3 id="a3ffc430-3c80-42f1-a873-8bbc1d08fe17" class="">Cold Emailing</h3><figure id="7951ac48-5135-4415-aecb-202ff3f69f45"><a href="https://www.youtube.com/watch?v=2VG1Px105Vc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to write cold emails | Steps to writing a perfect cold email | Ankur Warikoo</div><div class="bookmark-description">warikoo #cold #email #networkingHow to write a cold email? Cold email for freelancing clients, marketing, getting a job, messaging on LinkedIn - anything th...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=2VG1Px105Vc</div></div><img src="https://i.ytimg.com/vi/2VG1Px105Vc/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="eab41ca7-c0e6-4a5d-9508-ae5803bb403d"><a href="https://www.youtube.com/watch?v=9uiIJocOxUk" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 Cold Emailing Tricks That Will Change Your Life🔥</div><div class="bookmark-description">How She Got Digital Marketing Internship While Studying!https://youtu.be/uUESQgxm2PoJoin me,INSTAGRAM :therahulmhttps://www.instagram.com/therahulmFACEBOOK P...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=9uiIJocOxUk</div></div><img src="https://i.ytimg.com/vi/9uiIJocOxUk/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="ad954624-3962-4f50-84f4-8b39b9144e78" class="">
+</p><p id="8a8540cf-2f2c-47c7-832b-738a82123a73" class="">
+</p><p id="0ab11b4e-dc5e-4792-89c9-2a0d3ee36490" class="">
+</p><h3 id="8528455b-a36c-442a-9f19-e84d2ba11c84" class=""><strong>Remote Jobs</strong></h3><p id="08bb5df6-e94d-4562-a926-1f1857df6de1" class="">
+</p><figure id="13d97e78-3117-4c7b-835b-b8701faee847"><div class="source">https://github.com/lukasz-madon/awesome-remote-job</div></figure><figure id="ba679bf7-7c6f-4cbf-b1d7-3ab251afd4b0"><div class="source"><a href="https://twitter.com/Prathkum/status/1458316810772574218?ref_src=twsrc%5Etfw&quot;&gt;November">https://twitter.com/Prathkum/status/1458316810772574218?ref_src=twsrc%5Etfw&quot;&gt;November</a></div></figure><p id="eb55bb42-a43a-48d8-851e-2eed723bc7c6" class="">
+</p><p id="ec2575c3-3c84-4217-b472-8c2251e850d3" class="">
+</p><h3 id="de7dc3e7-832f-4692-8302-abc6a18ef470" class="">Internships</h3><p id="168421f5-05ac-419e-bd43-072dd6514d3b" class="">
+</p><figure id="3dc38ffa-4505-41cc-bca5-7c17a8fc84e4"><a href="https://youtube.com/shorts/vouCwkWaog4?feature=share" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">7 Best Websites for Internships🔥</div><div class="bookmark-description">Naukri : https://www.naukri.com/Indeed : https://in.indeed.com/Internshala : https://internshala.com/Linkedin : https://www.linkedin.com/Glassdoor : https://...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/2cbeb7d0/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/shorts/vouCwkWaog4?feature=share</div></div><img src="https://i.ytimg.com/vi/vouCwkWaog4/hq2.jpg" class="bookmark-image"/></a></figure><p id="11c3b6e0-1bf4-4c13-9353-fd2e636fba59" class="">
+</p><figure id="9ce77f8b-aeba-457a-8cfd-b441532ef4a8"><a href="https://www.youtube.com/watch?v=MG5ZhaFWat0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">All about Internships | How to get Internship as a Software Engineer | Off-campus/On-campus</div><div class="bookmark-description">Complete C++ Placement Course (Data Structures+Algorithm) :https://www.youtube.com/playlist?list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJTelegram: https://t.me/apn...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=MG5ZhaFWat0</div></div><img src="https://i.ytimg.com/vi/MG5ZhaFWat0/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="386bb1cf-07d3-47b8-891b-6d5289397d78" class="">
+</p><figure id="52b20a5a-39dd-4c84-989b-4574cbebea0e"><a href="https://www.youtube.com/watch?v=iAyP6IZCXX4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 PROVEN ways to get PAID INTERNSHIPS! | Earn Money in 2022 | Ankur Warikoo Hindi</div><div class="bookmark-description">Subscribe to my all new Shorts channel, warikoo Shorts, and learn personal finance and career tips in less than 60 seconds! https://t.co/pMdPNe4QufMy first b...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=iAyP6IZCXX4</div></div><img src="https://i.ytimg.com/vi/iAyP6IZCXX4/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="d077ef21-c406-4551-8316-920010798e17" class="">
+</p><figure id="4fe9ef00-f587-4aa2-8def-99055c6f38f6"><a href="https://www.youtube.com/watch?v=fkg6-CVyQ3Y" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">3 tips to get an Internship in 2021 | Ankur Warikoo Hindi Video | Off-Campus Internships Strategy</div><div class="bookmark-description">What are the best strategies to crack #internships in India? Why should you do them in the first place? What are the best ways to apply for them?00:00 Introd...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=fkg6-CVyQ3Y</div></div><img src="https://i.ytimg.com/vi/fkg6-CVyQ3Y/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="bcbfd229-fb0a-4ef6-804d-e94f3163b214" class="">
+</p><figure id="4ab0f97a-0519-4a02-98ec-cae0477e188d"><a href="https://www.youtube.com/watch?v=P2LfzGWxCQg" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">how to get free internship in tamil | work from home jobs in Tamil |Make money online</div><div class="bookmark-description">how to get free internship in tamil | work from home jobs in TamilRelevel Apply Link : https://relvl.co/rdg7FB Page : https://www.facebook.com/abinofficial...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=P2LfzGWxCQg</div></div><img src="https://i.ytimg.com/vi/P2LfzGWxCQg/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="4daee03e-5034-41b8-9755-e92a1e6b005e" class="">
+</p><figure id="6dcdc145-151d-4e32-ad09-de9255203fe5"><a href="https://www.youtube.com/watch?v=hUyx1I3jZgk" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How To Apply Internship &quot;step-by-step&quot; For College Students💰</div><div class="bookmark-description">FREE Relevel Registration Link - https://relvl.co/0uq2Job Details Page Link-Business Development:upGrad(BD) https://relvl.co/8rrUrban Company(BD) https://rel...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=hUyx1I3jZgk</div></div><img src="https://i.ytimg.com/vi/hUyx1I3jZgk/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="15d76602-4963-4264-a985-57be9f797350" class="">
+</p><figure id="7ab2cfa5-1d8f-4beb-b042-0891a0101aef"><a href="https://www.youtube.com/watch?v=mOt7BUzXLYU" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to get Internship from home?(Tamil)Evlo EAsya Internship VAanguradhu🔥worst scam😣😖</div><div class="bookmark-description">How to get your first software internship? Don&#x27;t ever get into this scam😣😖Internships always provides a great add on when it comes to recruitment but very ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=mOt7BUzXLYU</div></div><img src="https://i.ytimg.com/vi/mOt7BUzXLYU/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="351c924c-8d6d-4d8f-9ae4-d184cd2d14ec" class="">
+</p><p id="effdb2e0-e27e-485a-afec-43f8bc05e279" class="">
+</p><p id="491ba84b-3b7a-41d3-a256-62651267c0c8" class=""><strong>The motive of the Internship should be to learn and grow and showcase your skills, some companies offer PPO after internship if you have performed well in the internship. </strong></p><p id="38048a5b-32fc-4e52-ac74-6c27c1fb4ec2" class=""><strong>Whether you are getting paid or not the goal should be to use the opportunity well by working and gaining experience in the working process. Make them feel that you are a knowledgeable and skilled person to work in the organization. Know the culture of the company and how it works. behind the scenes, the Ground reality of the organization&#x27;s work culture.</strong></p><p id="8dac549e-a786-4514-8570-bea132bbca92" class="">
+</p><p id="1826126d-d32e-48f0-8416-012c52c16169" class=""><a href="https://www.mocktest.freshersnow.com/home">https://www.mocktest.freshersnow.com/home</a></p><p id="f7136fd7-0937-4d76-be3a-f693c1bfa960" class=""><a href="https://www.safalta.com/mock-test">https://www.safalta.com/mock-test</a></p></div></article></body></html>

@@ -1,0 +1,859 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SQL (full notes)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f80a22a7-9291-4e51-a103-dde838dccae9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💽</span></div><h1 class="page-title">SQL (full notes)</h1></header><div class="page-body"><h1 id="190756ca-18f0-4fc9-b8bd-e73edfd165c3" class="block-color-gray_background">SQL Courses</h1><p id="8a272777-5ab6-4b50-8e8a-ab555237fabe" class=""><a href="https://www.youtube.com/watch?v=TplT4qjz1RQ">SQL - Intro to Computer Science - Harvard&#x27;s CS50 (2018)</a></p><p id="1dccace4-2b0d-4f16-9777-8bfe76dc7260" class=""><a href="https://www.youtube.com/watch?v=HXV3zeQKqGY">SQL Tutorial - Full Database Course for Beginners</a></p><h1 id="9ada4050-327b-4f75-95d5-bbcaf848e6df" class="block-color-gray_background">My code</h1><figure id="2c86ad9d-f7d8-4a9d-816a-18c523cfa407"><div class="source"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/sql-code.txt">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f386c39d-149a-4bdc-b6da-92f5e80dc0b5/sql-code.txt</a></div></figure><p id="8655de28-9176-459f-88d7-b05de43d26df" class="">
+</p><h1 id="d63f949d-4654-4207-97bd-e2c92f299d49" class="block-color-gray_background">SQL online practice</h1><p id="792c5c5b-d494-4fed-9052-f82322db75c6" class=""><a href="https://sqliteonline.com/">SQLite online</a></p><h1 id="11b19bc7-feda-4ba1-a087-fb326dc7e33d" class="block-color-gray_background">SQL basis</h1><p id="34a7275f-e6d9-46ac-8542-33d0f94d2c6b" class=""><strong>SQL</strong> (Structured Query Language) is one of the languages with which we can communicate with databases. SQL is the general language, but different organisations have come up with their own dialects. </p><p id="88b02ac2-2355-4616-9a05-5ad7c5b1682f" class="">SQLite, for example, which generally follows PostgreSQL syntax, defines a specific set of supported datatypes:</p><ul id="a218472e-40cf-4ffc-92ba-d68f87d13053" class="bulleted-list"><li style="list-style-type:disc">BLOB</li></ul><ul id="43fbeba6-2329-4094-85e2-edc2f5dda2cd" class="bulleted-list"><li style="list-style-type:disc">INTEGER<ul id="8cd3c041-5494-4f88-881d-111cf30707c7" class="bulleted-list"><li style="list-style-type:circle">smallint (2 bytes)</li></ul><ul id="8f06d212-b8d5-4eff-a184-1dc8d2988f05" class="bulleted-list"><li style="list-style-type:circle">integer (4 bytes)</li></ul><ul id="bbbbd5cc-7747-4896-8fae-274128136e64" class="bulleted-list"><li style="list-style-type:circle">bigint (8 bytes or 32 bytes )</li></ul></li></ul><ul id="ccfd842d-e0de-42d9-88a0-7ef1e7bf0a44" class="bulleted-list"><li style="list-style-type:disc">NUMERIC<ul id="698c799b-bb3d-4cfa-a533-2a6df7a26b8b" class="bulleted-list"><li style="list-style-type:circle">boolean</li></ul><ul id="c9418869-9b4b-408a-84c4-936bd541fb19" class="bulleted-list"><li style="list-style-type:circle">date</li></ul><ul id="4b6e59bb-3f49-485f-88da-2a3e1fd9f07f" class="bulleted-list"><li style="list-style-type:circle">datetime</li></ul><ul id="068b8c35-3e36-4bb2-aa4a-0af4e14792ad" class="bulleted-list"><li style="list-style-type:circle">numeric(scale,precision)</li></ul><ul id="d4bf3c22-d104-42b2-b6fb-249cb842bbe7" class="bulleted-list"><li style="list-style-type:circle">time</li></ul><ul id="e8ee2b4a-37d5-4e82-b9b7-da040f394a97" class="bulleted-list"><li style="list-style-type:circle">timestamp</li></ul></li></ul><ul id="9b16564f-32be-4c2c-a815-cca66e5f1c24" class="bulleted-list"><li style="list-style-type:disc">REAL<ul id="0606b55a-affb-4cd4-9aed-acda3ab2e056" class="bulleted-list"><li style="list-style-type:circle">real</li></ul><ul id="429b31cc-6f63-4e2d-b9a3-efc76af4ae1f" class="bulleted-list"><li style="list-style-type:circle">double precision</li></ul></li></ul><ul id="29b337fc-1081-476c-a04a-8397bf3edfeb" class="bulleted-list"><li style="list-style-type:disc">TEXT<ul id="9cbb32f4-9077-4c77-ab22-d202c45ef42e" class="bulleted-list"><li style="list-style-type:circle">char(n)</li></ul><ul id="5903f6df-86e0-4119-b9a2-d3be15bf7d44" class="bulleted-list"><li style="list-style-type:circle">varchar(n)</li></ul><ul id="6ee2d8e1-8d08-4ff6-b392-a5d0568e1dc8" class="bulleted-list"><li style="list-style-type:circle">text</li></ul><p id="f023557b-c38c-49fc-8d8f-e474583df63d" class="">
+</p></li></ul><p id="8543ce74-72b0-42b3-9fe3-692da3195ea2" class="">Most common datatypes:</p><ul id="8893cde7-820a-40c6-9c4d-d814d71a5ee5" class="bulleted-list"><li style="list-style-type:disc">INT - whole numbers</li></ul><ul id="97c09952-570b-424d-a77f-063d92deaf05" class="bulleted-list"><li style="list-style-type:disc">DECIMAL (M,N) - decimal numbers</li></ul><ul id="5ca288d9-84b1-422e-895b-bb071c369349" class="bulleted-list"><li style="list-style-type:disc">VARCHAR(n) - string of text</li></ul><ul id="09e46060-b2d8-44c6-bb85-552ba50bc109" class="bulleted-list"><li style="list-style-type:disc">BLOB - Binary Large OBject</li></ul><ul id="ef73e0ca-aa8e-4031-922e-3ef1d75105e6" class="bulleted-list"><li style="list-style-type:disc">DATE - &#x27;YYYY-MM-DD&#x27;</li></ul><ul id="1c23d1dc-861f-4062-9e08-e6219e2cb54f" class="bulleted-list"><li style="list-style-type:disc">TIMESTAMP - &#x27;YYYY-MM-DD HH:MM:SS&#x27;</li></ul><p id="4e7bca11-2e81-4c37-9b20-9b4c8142fa0e" class="">
+</p><p id="456ec0fa-e05f-43bd-81c3-3e206c4cc965" class="">Using a specific data type for asking the server for data can improve the response time of the query.</p><h1 id="3fb48292-24a0-495e-aada-c2f1b65ec658" class="block-color-gray_background">SQL queries</h1><h2 id="74b09203-db3f-449e-9df6-32016cf738fd" class="block-color-blue_background">Create a database (in MySQL)</h2><pre id="1c4a647b-3965-4b2c-9a70-8df7feede9c1" class="code"><code>create database my_cool_db;</code></pre><h2 id="f5497887-456d-48fe-a2be-a912271ca872" class="block-color-blue_background">Create a table</h2><p id="4efe4355-ff3a-490c-a320-1c457f85a833" class="">To create a table, we use the following statement:</p><pre id="6d889696-163e-4aa1-b743-1899a7eecf74" class="code"><code>-- Create a table called &#x27;registrants&#x27; with columns named &#x27;id&#x27;, &#x27;name&#x27;, and &#x27;dorm&#x27;
+CREATE TABLE &#x27;registrants&#x27; (&#x27;id&#x27; integer, &#x27;name&#x27; varchar(255), &#x27;dorm&#x27; varchar(255));</code></pre><p id="a9bf2d7f-ca78-4089-8aec-abc3b21d6a7a" class="">And we can make something more complex, like defining a group of primary keys and a set of foreign keys:</p><pre id="26eaec9c-a778-4a63-b79c-658e7a074b84" class="code"><code>CREATE TABLE works_with (
+  emp_id INT,
+  client_id INT,
+  total_sales INT,
+  PRIMARY KEY(emp_id, client_id),
+  FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
+  FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE CASCADE
+);</code></pre><h3 id="0e7f4ce5-4635-48a9-a440-d1ef4973d0b3" class="">Primary key</h3><p id="269b7e04-a19b-4181-b3c2-59943b8bcc32" class="">A primary key is the column or columns that contain values that uniquely identify each row in a table. A database table must have a primary key to insert, update, restore, or delete data from a database table.</p><pre id="b5c70f9c-2ecb-4287-94e1-ae19fb32a763" class="code"><code>CREATE TABLE &#x27;registrants&#x27; (&#x27;id&#x27; integer PRIMARY KEY, &#x27;name&#x27; varchar(255), &#x27;dorm&#x27; varchar(255)); </code></pre><h3 id="924c3960-6e9c-41c5-a8ae-32dcba6771ef" class="">Autoincrement</h3><p id="0c56fc15-0a03-4b4f-9d30-e30ebc805547" class="">Setting this flag to true tells the database that the field will auto increment when a new record is added.</p><pre id="3edf82c4-83fb-4b26-8c81-bcc27cb2792c" class="code"><code>CREATE TABLE &#x27;registrants&#x27; (&#x27;id&#x27; integer PRIMARY KEY AUTOINCREMENT, &#x27;name&#x27; varchar(255), &#x27;dorm&#x27; varchar(255)); </code></pre><h3 id="822aba53-daaf-4c0a-ab8f-3eb42c029424" class="">Not null</h3><p id="e346f8b5-3817-4ce3-abde-1101a42846f0" class="">If we don&#x27;t want to allow a certain field to be null, we need to set it as &#x27;NOT NULL&#x27;:</p><pre id="4dfe9122-22dc-4577-a8d4-b2c653110206" class="code"><code>CREATE TABLE &#x27;registrants&#x27; (&#x27;id&#x27; integer PRIMARY KEY AUTOINCREMENT NOT NULL, &#x27;name&#x27; varchar(255), &#x27;dorm&#x27; varchar(255)); </code></pre><h2 id="1f3bf575-6bcb-4df6-a702-f88d946cc879" class="block-color-blue_background">View a table</h2><p id="e092e03c-5e37-42a7-87c3-d9b6b548e33b" class="">To view the freshly created table (in sqlite3):</p><pre id="0ce43cb4-61f5-44a8-804f-b308a8c0de05" class="code"><code>.schema</code></pre><p id="de8756af-7f2c-4ea1-98a3-6018f471d018" class="">To view the table using SQL queries:</p><pre id="363e764a-299a-4b3b-82f7-2732df561637" class="code"><code>DESCRIBE name_of_table;</code></pre><h2 id="c3d16337-ad4c-4f48-b79b-25ed522975fd" class="block-color-blue_background">Alter table</h2><p id="75534778-58bd-41c8-9615-8cb6d6bdc4a9" class="">If we want to add a new field or modify an existent one, we can use the <code>ALTER</code> command.</p><p id="704a3f3a-0406-44b3-b600-a29f8f0ef8df" class="">To add a new column to a table:</p><pre id="a349ea81-8c96-4839-af61-a9582f70909c" class="code"><code>ALTER TABLE &#x27;registrants&#x27; ADD &#x27;phone&#x27; integer;</code></pre><p id="e52fa7d3-38ef-4671-a51f-8b6018379b3b" class="">To delete a column from a table:</p><pre id="53c84c90-3853-4b52-8578-05d25e1531fc" class="code"><code>ALTER TABLE my_table DROP COLUMN my_column;</code></pre><p id="54d90d6c-4b49-4897-8938-a1a4b3a7958f" class="">To modify a column:</p><pre id="ff3752e0-e76c-43d5-86c0-2dead7cf2e18" class="code"><code>-- In MySQL:
+ALTER TABLE students MODIFY name VARCHAR(255) NOT NULL;
+-- In SQL:
+ALTER TABLE students ALTER COLUMN name VARCHAR(255) NOT NULL;</code></pre><p id="f957080a-a590-4e6e-95bb-f1856e0a13df" class="">We can alter a table to set foreign keys as follows:</p><pre id="981e2b5d-b65f-4c00-9301-cb831d624e58" class="code"><code>ALTER TABLE employee
+ADD FOREIGN KEY(branch_id)
+REFERENCES branch(branch_id)
+ON DELETE SET NULL;</code></pre><h2 id="2f7e7631-59fb-42b8-928f-22baf4816f76" class="block-color-blue_background">Delete a table</h2><p id="e3b30582-3a96-41ec-ae82-d87e40c7c33a" class="">To delete a table:</p><pre id="1afe76f3-146e-4469-9168-7ad427091c28" class="code"><code>DROP TABLE name_of_table;</code></pre><h2 id="866a1161-a22b-40e6-b808-99d8a95d04f5" class="block-color-blue_background">Insert data into table</h2><p id="719fa4ec-f596-4bae-b3e4-2b47cb71bfbd" class="">To insert data into a table, we use the following statement:</p><pre id="ddb82fc0-d68f-48ae-8833-5c5ba2d98600" class="code"><code>INSERT INTO registrants (id, name, dorm) VALUES(1, &#x27;Brian&#x27;, &#x27;Pennypacker&#x27;);
+-- or
+INSERT INTO registrants VALUES(1, &#x27;Brian&#x27;, &#x27;Pennypacker&#x27;); -- The values must be in order and we can use &#x27;NULL&#x27; to skip columns.</code></pre><h2 id="97c51286-c5e5-4cfb-97b0-86b3f7e654d7" class="block-color-blue_background">Select (get) data from a table</h2><p id="64042283-9df8-4633-a794-b333c86c2c83" class="">To select everything from a table:</p><pre id="c63818ea-8c84-42d3-9efd-eee4acf7060e" class="code"><code>SELECT * FROM registrants;</code></pre><p id="75846e22-34cf-4931-ad25-fd40884ada03" class="">To filter the selected data:</p><pre id="558ae500-3ec8-4d25-8bb8-6ff30f6ee824" class="code"><code>SELECT * FROM registrants WHERE dorm = &quot;Pennypacker&quot;;
+-- or
+SELECT * FROM students WHERE major &lt;&gt; &#x27;Eng&#x27;;</code></pre><p id="f6a27d36-e46a-4a62-93d3-6263a1633d82" class="">To select a specific column from the table given a condition:</p><pre id="276fbc7e-eca0-4170-be1e-196395421391" class="code"><code>SELECT name FROM registrants WHERE dorm = &quot;Pennypacker&quot;;
+-- or
+SELECT table_name.column FROM table_name WHERE condition = &#x27;value&#x27;;</code></pre><p id="79f5c0c2-e763-44fb-bfba-97b5f40c9407" class="">Select data and order it:</p><pre id="b4c109f3-abb3-42aa-a343-0ecfc12a4b42" class="code"><code>SELECT students.name, students.major FROM students ORDER BY name DESC; -- or: ASC
+-- or
+SELECT students.name, students.major FROM students ORDER BY name ASC, major DESC;</code></pre><p id="5f84fb84-88de-4a26-baa9-242ba70ce2a6" class="">To limit the number of results:</p><pre id="1110b703-5a93-48dc-80df-87e95c160353" class="code"><code>SELECT * FROM students LIMIT 2;</code></pre><h2 id="f9077ded-402f-4593-9cb0-761ffdbac83b" class="block-color-blue_background">Update data</h2><p id="159e94a7-f689-4d8c-90e2-2aaf3d52f0df" class="">To update an existing entry in a table:</p><pre id="6d1ca214-9337-4a59-85b9-cbdea80cbc3b" class="code"><code>UPDATE registrants SET dorm=&#x27;Canaday&#x27; WHERE id = 1;
+-- or
+UPDATE students SET major=&#x27;Social Science&#x27; WHERE major=&#x27;Sociology&#x27; OR major = &#x27;Psichology&#x27;;
+-- or
+UPDATE students SET name=&#x27;Hermione&#x27;, major=&#x27;Potions&#x27; WHERE name=&#x27;Harry&#x27;;</code></pre><h2 id="dab3eb1d-5ab4-470b-af0b-a4cc3f5bd24b" class="block-color-blue_background">Delete data</h2><p id="ef90560a-fb55-483c-9065-27a876dff77a" class="">To delete an entry from a table:</p><pre id="dc9a1d14-c981-42b1-9b11-995e220f91eb" class="code"><code>DELETE FROM registrants WHERE id = 1;
+-- or
+DELETE FROM students; -- WARNING: this will delete all rows</code></pre><h2 id="ba2f9c79-018a-4d83-a970-d10180808b30" class="block-color-blue_background">Delete data when there are foreign keys involved</h2><p id="553971e5-1e22-404f-b7f2-997c2f7f7abb" class="">Scenario:</p><figure id="146a498c-582c-4f86-84fb-c045aa3538b5" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled.png"><img style="width:1258px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled.png"/></a></figure><p id="8edf3f8d-6d85-4405-8d13-cf1469aeeb49" class="">What would happen if we delete the &#x27;AC/DC&#x27; row from the &#x27;artists&#x27; table? How this will affect the &#x27;albums&#x27; table, in which certain rows have the &#x27;artist_id&#x27; as a foreign key?</p><p id="25c1d554-b1ee-4be4-a6f0-b3aca0aed367" class="">When this situation occurs we can do two things:</p><ul id="fe112fe4-b028-43c3-9436-5dd96e74a8e1" class="bulleted-list"><li style="list-style-type:disc">Use <code>ON DELETE SET NULL</code>: when we use this option during the creation of the foreign key (in the &#x27;albums&#x27; table), its value will be set to <code>NULL</code> once the primary key to which the foreign key points to is deleted.</li></ul><pre id="c483c8dd-fc6c-420d-b00c-ec2add14488b" class="code"><code>CREATE TABLE branch (
+  branch_id INT PRIMARY KEY,
+  branch_name VARCHAR(40),
+  mgr_id INT,
+  mgr_start_date DATE,
+  FOREIGN KEY(mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL
+);
+
+DELETE FROM employee
+WHERE emp_id = 102;
+
+SELECT *
+FROM branch;</code></pre><figure id="439ffbfd-68ff-4784-a447-fbac64796830" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%201.png"><img style="width:475px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%201.png"/></a></figure><ul id="bd2b1cd8-17b7-4bd4-abd9-e6818687e5b5" class="bulleted-list"><li style="list-style-type:disc">Use <code>ON DELETE CASCADE</code>: when we use this option during the creation of the foreign key (in the &#x27;albums&#x27; table), its value will be <strong>deleted</strong> once the primary key to which the foreign key points to is deleted.</li></ul><pre id="efe23bc0-26ea-4e37-ac13-328aa580b97d" class="code"><code>CREATE TABLE branch_supplier (
+  branch_id INT,
+  supplier_name VARCHAR(40),
+  supply_type VARCHAR(40),
+  PRIMARY KEY(branch_id, supplier_name),
+  FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE
+);
+
+SELECT * FROM branch_supplier;</code></pre><figure id="0548e9b0-33f6-48d6-8ee8-595a1bfae16b" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%202.png"><img style="width:454px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%202.png"/></a></figure><pre id="b43859d4-9e09-4cb0-aa9d-2d4559c5265b" class="code"><code>DELETE FROM branch
+WHERE branch.branch_id = 2;
+
+SELECT * FROM branch_supplier;</code></pre><figure id="8ffb1f9b-76fb-4c50-b0a8-13ec435d9a20" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%203.png"><img style="width:454px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%203.png"/></a></figure><h3 id="8406416c-436e-478a-a62b-028873da8c54" class="">When to use each solution</h3><p id="b0cb4953-6bbd-4f25-a5f7-9d15c81e1a88" class="">If the key that was deleted is part of the primary key in our table, we should use the ON <code>DELETE CASCADE</code>. If the key that was deleted is a foreign key in our table, or if its importance is not high, we can use <code>ON DELETE SET NULL</code> (this is the situation that we have in the screenshot above).</p><h2 id="dca27358-b652-4a12-a37a-3eeb80b260da" class="block-color-blue_background">Indexes</h2><p id="88c56222-e5de-429c-a35c-eacea007466e" class="">The <code>CREATE INDEX</code> statement is used to create indexes in tables.</p><p id="c9fee0ca-3bf9-4a45-9c11-7bc92c390c0d" class="">Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.</p><pre id="5bc6c286-90d9-487d-82eb-557450730756" class="code"><code>CREATE INDEX index_name ON table_name (column1, column2, ...);</code></pre><p id="3a929504-4e56-4348-ad43-b7809289b9f0" class=""><em>Source: </em><em><a href="https://www.w3schools.com/sql/sql_create_index.asp">https://www.w3schools.com/sql/sql_create_index.asp</a></em></p><h2 id="bfd13769-5ed9-4ce5-a5c6-349756da1d9f" class="block-color-blue_background">Constraints</h2><p id="82540b2a-cab6-47ea-ab38-33379e456f90" class="">There are several constraints that we can apply to our columns:</p><ul id="7e881f95-ab39-4988-ba98-6bb690a099f0" class="bulleted-list"><li style="list-style-type:disc"><code>NOT NULL</code></li></ul><ul id="49a1e6cc-1f09-40e4-92e3-3300cefa6378" class="bulleted-list"><li style="list-style-type:disc"><code>UNIQUE</code></li></ul><ul id="b1a21a62-7fe6-4e85-8202-db7922ff1086" class="bulleted-list"><li style="list-style-type:disc"><code>DEFAULT &#x27;default_value&#x27;</code></li></ul><ul id="15717c3b-2b27-40b1-a54e-f98b2d3beb88" class="bulleted-list"><li style="list-style-type:disc"><code>AUTO_INCREMENT</code></li></ul><h2 id="343d6180-2bb9-494b-b17f-c303dce24fe7" class="block-color-blue_background">Functions</h2><p id="b0ba15f8-b817-4b0b-ac19-a2949624e5eb" class="">SQL functions are blocks of code that can be called in our queries.</p><ul id="e4d98a14-a16f-44a6-9a83-a18cde760513" class="bulleted-list"><li style="list-style-type:disc"><code>COUNT()</code></li></ul><pre id="723457d5-297c-422a-af34-0c37a6c5e3ea" class="code"><code>SELECT COUNT(emp_id)
+FROM employee;</code></pre><ul id="dc2b5fec-dc2f-448e-b194-b6b3c904c8de" class="bulleted-list"><li style="list-style-type:disc"><code>AVG()</code></li></ul><pre id="eeb19334-92d6-4e45-a851-b857a93fde65" class="code"><code>SELECT AVG(salary)
+FROM employee;</code></pre><ul id="d8ad0214-6209-4c5d-b53d-05a5ab4fd04e" class="bulleted-list"><li style="list-style-type:disc"><code>SUM()</code></li></ul><pre id="207b1944-e24a-4166-b47d-4824dff98bd6" class="code"><code>SELECT SUM(salary)
+FROM employee;</code></pre><ul id="3f4eb785-0e5f-4c97-9461-6fb265a2a76f" class="bulleted-list"><li style="list-style-type:disc"><code>CONCAT()</code></li></ul><pre id="f4b7683c-b579-4d69-94a5-089beacec8b7" class="code"><code>-- Find a list of all money spent or earned by the company
+
+SELECT CONCAT(&#x27;-&#x27;, salary)
+FROM employee
+UNION
+SELECT total_sales
+FROM works_with;</code></pre><p id="0cfefca4-699f-47c0-8d40-715c7641725b" class="">
+</p><p id="88a4df11-07b8-4bd8-97ae-b8e96651799d" class="">
+</p><p id="0903342b-ef5d-4ca8-a306-19799596e17e" class="">When working with number fields we can use the following functions:</p><ul id="eb4f48ca-b9c2-4159-9569-49bf7a5917ff" class="bulleted-list"><li style="list-style-type:disc"><code>AVG</code></li></ul><ul id="5c6a634d-f1b8-45f7-88fc-e5bd61a30698" class="bulleted-list"><li style="list-style-type:disc"><code>COUNT</code></li></ul><ul id="1f41492c-da3d-48de-b94a-ca452b526650" class="bulleted-list"><li style="list-style-type:disc"><code>MAX</code></li></ul><ul id="08a29ccc-8f17-4736-9e4b-6433c61dc058" class="bulleted-list"><li style="list-style-type:disc"><code>MIN</code></li></ul><ul id="3b9b7551-b673-4d93-acf6-29efeff2943a" class="bulleted-list"><li style="list-style-type:disc"><code>SUM</code></li></ul><ul id="b66513ee-9f6e-4734-8e24-78d6c08def00" class="bulleted-list"><li style="list-style-type:disc">...</li></ul><h2 id="e6fae909-5cc9-4135-8bc7-6799f29931b3" class="block-color-blue_background">Grouping information (aggregation)</h2><p id="d22d6cc3-81c8-42ec-b085-7bfbb8de3d33" class="">We can use <code>GROUP BY</code> to group information:</p><pre id="b0b91143-c958-4ea3-81a5-17ba18a18581" class="code"><code>SELECT COUNT(sex), sex
+FROM employee
+GROUP BY sex;</code></pre><h2 id="fe66b2f3-dfae-4b8a-886c-fa2b0f0b433a" class="block-color-blue_background">Wildcards</h2><p id="1e7b1752-2b78-41c5-b5d7-3bc0418ac4c5" class="">SQL presents a series of wildcards we can use in our queries:</p><ul id="d88b2663-66ed-4159-8a05-b838e72ed81a" class="bulleted-list"><li style="list-style-type:disc"><code>%</code> (matches any number of characters)</li></ul><ul id="1b4c5299-4d7f-4342-bcdf-ada8afbaa965" class="bulleted-list"><li style="list-style-type:disc"><code>_</code> (matches one character)</li></ul><p id="75d25205-fa6f-43a6-98c2-533052ef7023" class="">We should use the keyword <code>LIKE</code> instead of an equal sign when utilising the wildcards in our queries.</p><p id="76c0b8ac-65c7-4811-888c-83214daed3cd" class="">Example:</p><pre id="f4517ca8-c79f-4ed6-b921-c56eef32423a" class="code"><code>SELECT * 
+FROM client
+WHERE client_name LIKE &#x27;%LLC&#x27;;</code></pre><p id="c8be4708-49c2-45f2-a72e-742816ed10a9" class="">If we want to get data that matches certain pattern, we can the <code>LIKE</code> keyword and the <code>%</code> character as a wildcard (a placeholder for any kind of text):</p><pre id="3d098257-effb-464e-8cda-e04682000f5c" class="code"><code>SELECT * FROM albums WHERE title LIKE &#x27;%Wall&#x27;;</code></pre><p id="2e507bd5-48b2-45c9-a3e7-036680ffdce9" class="">This will start at the top of the table and search everything for a title matching <code>&#x27;Wall&#x27;</code>. In order to speed up this process we can use indexes.</p><p id="eb1efb8b-ead0-4c17-a625-88d39b2a86df" class="">If we know that certain column will be used for searching, we should index it.</p><h2 id="5b14670a-029f-470c-bb6a-d4d1f64aeb9a" class="block-color-blue_background">Unions</h2><p id="fbc59e60-4d03-4ae3-a3eb-ff86bf76bddc" class="">We can combine multiple <code>SELECT</code> statements into a single query by using the <code>UNION</code> keyword:</p><pre id="970ab2ab-6db8-461f-8850-4d8753c7a510" class="code"><code>-- Find a list of employee, branch, and client names
+
+SELECT first_name AS &#x27;Name&#x27;
+FROM employee
+UNION
+SELECT branch_name
+FROM branch
+UNION
+SELECT client_name
+FROM client;</code></pre><p id="f4fa5cd0-2a08-49e8-9426-af71ad695b81" class="">Rules to make <code>UNION</code> work:</p><ul id="3e3ffca0-da9a-4a77-8b82-e2bea1ede0d7" class="bulleted-list"><li style="list-style-type:disc">All the involved <code>SELECT</code> statements should have the <strong>same amount of columns</strong>.</li></ul><ul id="364b23dd-9970-432d-9bdc-344049038371" class="bulleted-list"><li style="list-style-type:disc">All the involved <code>SELECT</code> statements should have a <strong>similar data type</strong>.</li></ul><h2 id="1ff13a38-fe84-433b-910b-51b214e61086" class="block-color-blue_background">Joins</h2><p id="b093d805-0c7e-4aa9-ad26-c305e38ad88c" class=""><em>Source: </em><em><a href="https://dataschool.com/learn-sql/joins/">https://dataschool.com/learn-sql/joins/</a></em></p><p id="0ee23574-d400-44e7-97a2-33abb4aa4122" class="">Suppose we have two tables with a shared field:</p><figure id="b282cba8-2073-495b-8cf3-6e0547d1adf5" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled.png"><img style="width:1258px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled.png"/></a></figure><p id="c84ee1e9-a13c-4880-a278-f6e1db7fd8d8" class="">If we want to get the data from the first table and the one from the second table, we need to <code>join</code> them:</p><pre id="a2e061be-5fbb-4171-b37e-6b1f6acd699f" class="code"><code>SELECT * FROM albums JOIN artist ON artist_id = artists.id;
+-- or
+SELECT * FROM albums, artists WHERE albums.artist_id = artists.id;</code></pre><p id="39403b5a-b539-422c-ad7e-f841eb96d5a3" class="">If we need to combine multiple rows on different tables we can use <code>JOIN</code> to do so by using common column as joining point (<code>ON</code>):</p><pre id="179b68e6-7934-49e5-ae6b-1433990eb263" class="code"><code>SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch
+ON employee.emp_id = branch.mgr_id;</code></pre><p id="073fd9ad-8df6-45b5-ac39-f6274b7844af" class="">We can use 4 different types of <code>JOIN</code>:</p><figure id="5d410916-bb63-4d70-b2cc-12b9bd0e2b0b" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%204.png"><img style="width:2010px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%204.png"/></a></figure><ul id="6e0df981-2a15-42ec-8371-f9ee9cdf4689" class="bulleted-list"><li style="list-style-type:disc"><code>INNER JOIN</code> (or just <code>JOIN</code>): combines rows from two tables whenever they share a common column.</li></ul><pre id="906e8f4b-cedc-4900-a5b1-faebb6036b76" class="code"><code>SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch
+ON employee.emp_id = branch.mgr_id;</code></pre><figure id="a3f8a0cf-4451-4fe8-8e1a-e7f46818b99b" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%205.png"><img style="width:358px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%205.png"/></a></figure><ul id="f71164aa-b197-4555-a6e7-cd0bcd0bfbfb" class="bulleted-list"><li style="list-style-type:disc"><code>LEFT JOIN</code>: combines rows from two tables maintaining all rows from the first one (the left table).</li></ul><pre id="cceb3090-e992-4fe9-bef7-1c018edd4e72" class="code"><code>SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id = branch.mgr_id;</code></pre><figure id="f4675678-480d-4642-a03f-1be95c07fa8b" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%206.png"><img style="width:358px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%206.png"/></a></figure><ul id="65c65026-d3be-4903-9851-f607513ebc1b" class="bulleted-list"><li style="list-style-type:disc"><code>RIGHT JOIN</code>: combines rows from two tables maintaining all rows from both tables.</li></ul><pre id="e56e9a35-5de6-4f9e-b3ac-2810cf2cf593" class="code"><code>SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+ON employee.emp_id = branch.mgr_id;</code></pre><figure id="5b3390ad-f74e-49ae-8d94-fccff82e075d" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%207.png"><img style="width:358px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%207.png"/></a></figure><ul id="8f57bfec-81a6-4a04-8d9a-f8bffd722a36" class="bulleted-list"><li style="list-style-type:disc"><code>FULL OUTER JOIN</code>: combines rows from two tables maintaining all rows from the second one (the right table).<p id="c6335d57-acd8-41f8-bb3b-cf828a6c89db" class="">MySQL does not support this kind of join, but we can implement a workaround:</p></li></ul><pre id="b092701a-3d08-46ba-99ad-b4cf214df4f6" class="code"><code>SELECT * FROM t1
+LEFT JOIN t2 ON t1.id = t2.id
+UNION
+SELECT * FROM t1
+RIGHT JOIN t2 ON t1.id = t2.id</code></pre><p id="89246a7f-0473-4895-831d-551b5f65b9cd" class="">Which in our case will be:</p><pre id="ef5c90a7-87d6-477a-b7d2-74ff81a0a9a6" class="code"><code>SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id = branch.mgr_id
+UNION
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+ON employee.emp_id = branch.mgr_id;</code></pre><figure id="6fbed716-1476-4438-9932-3e168b7c331e" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%208.png"><img style="width:358px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%208.png"/></a></figure><h2 id="09f81f8e-0000-4d9a-b65a-748e0d208d2e" class="block-color-blue_background">Nested queries</h2><p id="de7f47ae-d4e8-4f8d-b997-969ab766b17c" class="">Nested queries are useful for accessing information in a more complex manner.</p><p id="2d087667-a259-452f-914f-35d467e96618" class="">By using the <code>IN</code> keyword we can use an array to search for values that are equal to any of the values in that array:</p><pre id="1f06a71b-4d94-49a8-8a0a-3c545fb2b776" class="code"><code>SELECT * FROM students WHERE name IN (&#x27;Kate&#x27;, &#x27;Ron&#x27;);</code></pre><p id="7634dddf-141e-4d70-8859-6ef9eb180058" class="">And the array can be returned from another query:</p><pre id="873afcca-e66e-4e4c-8f8f-4dcbe46a37ed" class="code"><code>SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN (
+    SELECT works_with.emp_id
+    FROM works_with
+    WHERE works_with.total_sales &gt; 30000
+);</code></pre><h2 id="a92febd6-4adf-4744-8655-e82e62a9fc23" class="block-color-blue_background">Triggers</h2><p id="61373032-df22-405e-9be3-827df9bc8110" class="">A trigger is a block of SQL code that will define certain action that should happen when certain operation is performed on the database.</p><p id="2f692d2f-4db1-4a7e-a9cc-ae4ea88c34fd" class="">First, we need to change the default SQL delimiter from a semicolon (<code>;</code>) to something else, like <code>$$</code>, so we can write our trigger and use semicolons is a way that prevents SQL from interpreting those semicolons as the end of the statement.</p><pre id="74cdeedf-0fd1-42ca-9199-b749ba90eb69" class="code"><code>DELIMITER $$
+    ...
+DELIMITER;</code></pre><p id="9c5aa68e-b638-47ec-abb7-89007f2f2d82" class="">The next step is to write the actual trigger. In this case, the trigger will be triggered before a new <code>INSERT</code> is performed into the <code>employee</code> table:</p><pre id="8f7c2d11-e073-4369-9af6-fcbd34fa3050" class="code"><code>DELIMITER $$
+	CREATE
+		TRIGGER my_trigger BEFORE INSERT
+		ON employee
+		FOR EACH ROW BEGIN
+			INSERT INTO trigger_test VALUES(&#x27;added new employee&#x27;);
+		END$$
+DELIMITER ;</code></pre><p id="70a946d4-ba24-4a5f-95e1-532072461612" class="">For each of those insertions, the trigger will insert an &#x27;added new employee&#x27; message into the <code>trigger_test</code> table.</p><p id="69c130e7-b8b9-44d2-87b8-62ff6ce0b62f" class="">We should do this in the terminal, because PopSQL does not allow to change the delimiter:</p><pre id="27af636f-08bd-449a-9a42-6c5b29b34b6c" class="code"><code>mysql&gt; use my_cool_db
+No connection. Trying to reconnect...
+Connection id:    18
+Current database: *** NONE ***
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+mysql&gt; DELIMITER $$
+mysql&gt; CREATE
+    -&gt;         TRIGGER my_trigger BEFORE INSERT
+    -&gt;         ON employee
+    -&gt;         FOR EACH ROW BEGIN
+    -&gt;             INSERT INTO trigger_test VALUES(&#x27;added new employee&#x27;);
+    -&gt;         END$$
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; DELIMITER ;</code></pre><p id="149efcf7-6624-462c-943a-b687005a4139" class="">Now, when we add a new employee to our table, the trigger should add a new message to the <code>trigger_test</code> table:</p><pre id="ecde2326-e449-483e-acba-7025f2b58a40" class="code"><code>SELECT *
+FROM trigger_test;</code></pre><figure id="c8f74d70-336a-42ab-8800-41b8504a840d" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%209.png"><img style="width:454px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%209.png"/></a></figure><pre id="6206eab7-398d-44e4-b788-5fa6fc106413" class="code"><code>INSERT INTO employee
+VALUE(10, &#x27;John&#x27;, &#x27;Doe&#x27;, &#x27;1981-01-24&#x27;, &#x27;M&#x27;, 20000, NULL, NULL);
+
+select * 
+FROM employee;</code></pre><figure id="917f10e6-9756-408d-92ab-aeb6837701c4" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2010.png"><img style="width:800px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2010.png"/></a></figure><pre id="77fb0d2a-a6e5-41ac-a711-d03fe7e9285e" class="code"><code>SELECT *
+FROM trigger_test;</code></pre><figure id="39c6dddc-341f-4b15-9eb8-7fc51e34fb5c" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2011.png"><img style="width:318px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2011.png"/></a></figure><p id="e8427173-7612-4aff-926b-44061ac28f01" class="">We can create a trigger that inserts a column from the table the trigger is listening to into the table the trigger will write to:</p><pre id="7c872dba-d5f8-48a8-a63c-c2ec609d8e61" class="code"><code>DELIMITER $$
+CREATE
+    TRIGGER my_trigger2 BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES(NEW.first_name); -- NEW: the newly inserted row
+    END$$
+DELIMITER ;
+
+
+INSERT INTO employee
+VALUE(11, &#x27;Jane&#x27;, &#x27;Doe&#x27;, &#x27;1985-10-24&#x27;, &#x27;F&#x27;, 25000, NULL, NULL);
+
+
+SELECT *
+FROM trigger_test;</code></pre><figure id="ca18694d-57f2-4142-a7b3-abe818c98df7" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2012.png"><img style="width:318px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2012.png"/></a></figure><p id="e3cdf93a-0db4-4f98-bef8-52262d1570fe" class="">We can also use conditionals in our triggers:</p><pre id="08c67cd4-5bf7-4f62-a1c5-fe44d5f1eb70" class="code"><code>DELIMITER $$
+CREATE
+    TRIGGER my_trigger3 BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        IF NEW.sex = &#x27;M&#x27; THEN
+            INSERT INTO trigger_test VALUES(&#x27;added male employee&#x27;);
+        ELSEIF NEW.sex = &#x27;F&#x27; THEN
+            INSERT INTO trigger_test VALUES(&#x27;added female employee&#x27;);
+        ELSE
+            INSERT INTO trigger_test VALUES(&#x27;added another employee&#x27;);
+        END IF;
+    END$$
+DELIMITER ;</code></pre><p id="d4081f2a-19fb-4bde-b3b6-6eb046121849" class="">
+</p><p id="091e0bdb-2a71-451c-92e3-9550e0dd7ad6" class="">We can create triggers for any of these operations:</p><ul id="3b636f25-5e01-409f-bbe0-95ba8ab446fa" class="bulleted-list"><li style="list-style-type:disc"><code>INSERT</code></li></ul><ul id="307fa86a-f11f-47ee-89e6-260bac7bb8b1" class="bulleted-list"><li style="list-style-type:disc"><code>UPDATE</code></li></ul><ul id="59fca595-3966-49f5-b31f-d3e021bb3aa6" class="bulleted-list"><li style="list-style-type:disc"><code>DELETE</code></li></ul><p id="1a01a960-8a28-4649-85fa-a4bb66a06fc3" class="">We can also trigger <code>BEFORE</code> or <code>AFTER</code> an operation.</p><p id="2be3beb2-e155-4751-8c20-57662b6c2419" class="">
+</p><p id="f3201410-38c2-462e-b15a-0e67aef42933" class="">We can also <code>DROP</code> a trigger:</p><pre id="ae17315b-d477-4f90-9b52-9d887e31dcbc" class="code"><code>DROP TRIGGER my_trigger;</code></pre><p id="fe09e676-528c-4ab9-9417-29024d38b64d" class="">
+</p><h1 id="01c7eb6d-10d1-43b3-898d-739e2047eff0" class="block-color-gray_background">Entity Relationship (ER) diagrams</h1><p id="7901af59-915c-453b-820e-b1aa6a1e94c8" class=""><strong>Database schema:</strong> a collection of tables, attributes, and data relationships.</p><p id="103f13a4-37dd-40c9-976c-be8c77f82235" class="">
+</p><p id="3a480ad7-147c-4bb4-b448-4787b54d9935" class=""><strong>Entity:</strong> an object we want to model and store information about.</p><figure id="9bcb818d-ba6d-496d-82d4-84425a8f4e23" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2013.png"><img style="width:192px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2013.png"/></a></figure><p id="144bd387-32a4-44fa-878f-dcf9f48732eb" class=""><strong>Attributes:</strong> specific pieces of information about an entity.</p><figure id="09da70b4-24d6-4de7-967d-5d8be039edf8" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2014.png"><img style="width:288px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2014.png"/></a></figure><p id="41a90c35-df74-4172-b233-aba7ff370297" class=""><strong>Primary key:</strong> an attribute(s) that uniquely identify an entry in the database table.</p><figure id="c3ac156e-d9b1-481e-89cb-02226dee760b" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2015.png"><img style="width:288px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2015.png"/></a></figure><p id="75f09aa0-6759-4091-9b64-83ad91c5902e" class=""><strong>Composite Attribute:</strong> an attribute that can be broken down into sub-attributes.</p><figure id="01078ef2-b404-4bc2-9574-b1251fb782b2" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2016.png"><img style="width:288px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2016.png"/></a></figure><p id="398e5a54-186c-4e85-abd5-0f1606c17613" class=""><strong>Multi-valued Attribute:</strong> an attribute that can have more than one value.</p><figure id="84aaa7aa-8f6a-4f82-9503-68c6032b781a" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2017.png"><img style="width:336px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2017.png"/></a></figure><p id="cb9dea1d-96a1-4935-b9de-5076c1d08f08" class=""><strong>Derived Attribute:</strong> an attribute that can be derived from the other attributes.</p><figure id="9494870a-9fc0-4332-86a8-47f64cb9f5b2" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2018.png"><img style="width:384px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2018.png"/></a></figure><p id="67868a90-fcd1-442c-87a1-03cb3e6f0fcb" class="">
+</p><p id="1c62321c-841d-44c9-b647-c5c2d61e2a83" class=""><strong>Multiple Entities: </strong>you can define more than one entity in the diagram. </p><figure id="afa60874-8755-4233-a4dc-e9919143f177" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2019.png"><img style="width:2486px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2019.png"/></a></figure><p id="4f73f247-8b32-428b-ab47-1dd9114f9551" class="">
+</p><p id="3f2ab915-c4c3-4910-a916-f37a3d7aefd0" class=""><strong>Relationships:</strong> defines a relationship between two entities.</p><p id="5f3b2885-2a43-444b-a7a3-566d46f5dec6" class=""><strong>Total participation:</strong> all members must participate in the relationship.</p><figure id="e0f09c9f-12da-4cb8-916b-ffeaacec43c7" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2020.png"><img style="width:2486px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2020.png"/></a></figure><p id="6f18923a-c683-451d-a8f4-3076adb8de19" class="">In this case, some (single line) students take a class, but all classes (double line) are taken by students.</p><p id="f9f69c86-444b-4b54-9f44-e2bebe5dd2e3" class="">
+</p><p id="7e0cebd4-345d-4c38-acd5-c5e57925da49" class=""><strong>Relationship Attribute:</strong> an attribute about the relationship.</p><figure id="884b7a4c-e9be-4ea7-8e0c-b4c2a0e3cf09" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2021.png"><img style="width:2486px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2021.png"/></a></figure><p id="9c5fe3ef-56d6-4ba7-b0be-a301fce4c35c" class="">
+</p><p id="5be238a3-6130-4439-addd-f1a1b6db5eef" class=""><strong>Relationship Cardinality:</strong> the number of instances of an entity from a relation that can be associated with the relation.</p><figure id="973637e2-2a4f-4251-b74f-858964765cc4" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2022.png"><img style="width:2486px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2022.png"/></a></figure><p id="8444cf53-0e67-4f43-ac30-dadee25f57e9" class="">A student can take <code>M</code> number of classes, and a class can be taken by <code>N</code> number of students.</p><p id="32c9b007-6777-4e89-8db2-b09fd4eef092" class="">
+</p><p id="10809e99-af33-410f-b81a-cf8f548ee67b" class=""><strong>Weak Entity:</strong> an entity that cannot be uniquely identified by its attributes alone.</p><p id="21dd279f-613d-493b-ad90-7b67dd56b6b5" class=""><strong>Identifying relationship:</strong> a relationship that serves to uniquely identify the weak entity.</p><figure id="1bd6c24d-dee8-45cd-9f9b-94304ee32efa" class="image"><a href="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2023.png"><img style="width:2486px" src="SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9/Untitled%2023.png"/></a></figure><p id="8cca3826-d3ba-402e-bfb7-d7f10076e9d5" class="">A class can have an exam, but an exam cannot exist without a class.</p><p id="4ae1e07a-b524-4110-9eec-2d92bfb6d020" class="">
+</p><h2 id="bf8a970b-cbd9-4543-9402-5d298cb9a8e8" class="">Converting ER diagrams into database schemas</h2><p id="d62d1ede-221f-482b-bcf3-cab33b8b7b88" class=""><a href="https://youtu.be/HXV3zeQKqGY?t=14158">https://youtu.be/HXV3zeQKqGY?t=14158</a></p><h1 id="40aa8ab4-6897-4a1f-a697-661670b9f76e" class="block-color-gray_background">Advanced topics</h1><h2 id="8447e6d3-6d6b-4d9f-b856-c1d5ac269234" class="">Race conditions</h2><p id="7e029bee-6dd4-4813-912d-2c284d56818a" class="">A race condition is given when two people (two threads) are trying to do the same thing at roughly the same time. For example, I chose a username on a website, and another person chose the same username at the same time, both are going to check if the username is available (check the <strong>state variable</strong>) and discover it is available. By the time the users clicked on &#x27;submit&#x27;, confident on having selected their usernames, the state variable could have changed. </p><p id="c54651c6-2993-465a-ad8f-927aded6d6be" class="">If race conditions are not well handled by the database, wrong data could be entered, and security issues could be risen (for example, extracting money from a bank account using multiple computers at the same time, if the state variable does not handles the race condition properly it could allow the extract much more money than what actually is present in the account).</p><p id="ca8c12a9-cfe3-400b-bcd8-c888ba320768" class="">Databases resolve this by &#x27;locking&#x27; the state variable as a result of a query to that variable so it can guarantee atomicity (doing multiple things back to back without being interrupted until commit). More here: <a href="https://stackoverflow.com/questions/6477574/do-database-transactions-prevent-race-conditions">https://stackoverflow.com/questions/6477574/do-database-transactions-prevent-race-conditions</a></p><h2 id="8ad1919e-3bf5-44c2-b9fd-4f8bafdac398" class="">SQL injection attacks</h2><p id="dece0ff6-2f71-4d43-949d-a624498d322b" class="">Source: <a href="https://www.youtube.com/watch?v=TplT4qjz1RQ&amp;t=6264s">https://www.youtube.com/watch?v=TplT4qjz1RQ&amp;t=6264s</a></p><p id="6ff0a973-7f1c-400f-af97-0566c52609b4" class="">
+</p><p id="0771d30f-8c3c-4852-a03e-37c19ecc7582" class="">SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It generally allows an attacker to view data that they are not normally able to retrieve. This might include data belonging to other users, or any other data that the application itself is able to access. In many cases, an attacker can modify or delete this data, causing persistent changes to the application&#x27;s content or behaviour.</p><p id="d488c22b-c0fb-48c3-8e34-82f0e09bf050" class="">Source: <a href="https://portswigger.net/web-security/sql-injection">https://portswigger.net/web-security/sql-injection</a></p><h2 id="a34043c0-4962-4e1c-a544-c142fe3f937b" class="">Natural keys and Surrogate keys</h2><p id="1dd85ff7-0e9d-4b65-a53f-f46852c870da" class="">A <strong>natural key</strong> is a single column or set of columns that uniquely identifies a single record in a table, where the key columns are made up of real data.  When I say “real data” I mean data that has meaning and occurs naturally in the world of data.  A natural key is a column value that has a relationship with the rest of the column values in a given data record.   Here are some examples of natural keys values: Social Security Number, ISBN, and TaxId.</p><p id="18992089-60e3-469f-a86d-ed3603fa2533" class="">A <strong>surrogate key</strong> like a natural key is a column that uniquely identifies a single record in a table.  But this is where the similarity stops.  Surrogate keys are similar to surrogate mothers.   They are keys that don’t have a natural relationship with the rest of the columns in a table.  The surrogate key is just a value that is generated and then stored with the rest of the columns in a record.</p><h2 id="83af156e-9d31-4d91-beaf-a4a4e1966d63" class="">Foreign key</h2><p id="c42ae3b0-f6b4-4df5-a5db-4fe7d94a775e" class="">A <strong>foreign key </strong>is a column or group of columns in a relational database table that provides a link between data in two tables. It acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.</p><p id="de1c5c34-a566-47af-b5c2-be4374d753ed" class="">We can create a foreign key as follows:</p><pre id="216a0c41-f617-459a-976e-d152eb9cbdd3" class="code"><code>CREATE TABLE branch (
+  branch_id INT PRIMARY KEY,
+  branch_name VARCHAR(40),
+  mgr_id INT,
+  mgr_start_date DATE,
+  FOREIGN KEY(mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL
+);</code></pre><h2 id="42407a65-7845-4cc2-809b-982f845a3bf5" class="">Composite key</h2><p id="17f72c56-6486-46ea-9c75-8d9dc3a7ce95" class="">Is a primary key comprised of two or more columns that, together, create a primary key.</p><p id="9de0e45d-cadb-43da-bfc0-f82053b1dd73" class="">A composite key, in the context of relational databases, is a combination of two or more columns in a table that can be used to uniquely identify each row in the table. Uniqueness is only guaranteed when the columns are combined; when taken individually the columns do not guarantee uniqueness.</p><h2 id="3b6529af-b138-4825-9fe3-34234bbbb1a5" class="">Comparison operators</h2><ul id="37e1fee2-bf5b-40b0-b62c-dba063b2a4bf" class="bulleted-list"><li style="list-style-type:disc"><code>=</code> (equal)</li></ul><ul id="95d314d5-e2ba-4992-8b2c-ee175f26f80e" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;&gt;</code> (not equal)</li></ul><ul id="913cc008-a75b-403d-8f23-a3d5f1e60f82" class="bulleted-list"><li style="list-style-type:disc"><code>&gt;</code> (greater than)</li></ul><ul id="25e1d9be-1a6b-4dfd-b774-75ea94f9489e" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;</code> (less than)</li></ul><ul id="fb744eb2-b3e1-4227-9036-f36430ecc558" class="bulleted-list"><li style="list-style-type:disc"><code>&gt;=</code> (greater or equal than)</li></ul><ul id="bf500ef5-85d7-493e-9390-7751f47bb89d" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;=</code> (less or equal than)</li></ul><ul id="d2308e62-13f4-4714-b441-1416189970a6" class="bulleted-list"><li style="list-style-type:disc"><code>AND</code></li></ul><ul id="5d296100-b8ee-4f95-8ee2-5ef561642d6d" class="bulleted-list"><li style="list-style-type:disc"><code>OR</code></li></ul><h2 id="de3b951e-3fc8-45a7-a336-5f4392cdeb37" class="">SQL Keywords</h2><ul id="a18a4711-8f9b-4c2c-8458-707b624915e0" class="bulleted-list"><li style="list-style-type:disc"><code>AS</code></li></ul><ul id="15798b66-5c95-4939-aa9a-ffcf45010807" class="bulleted-list"><li style="list-style-type:disc"><code>DISTINCT</code></li></ul><h1 id="bc83a70d-517f-4d9b-be4c-cfbea951e36d" class="block-color-gray_background">Related topics</h1><h2 id="cf437ae2-41d3-4a65-ae30-b62bc73bd432" class="">CRUD</h2><p id="1364ea0b-7dd9-4014-aad8-5a848d73bea7" class="">Stands for Create, Read (Retrieve), Update and Delete. This acronym represents the four main operations that we can do in a database.</p><h2 id="c3fa6731-883e-49d1-a868-e147e302055d" class="">Types of databases</h2><h3 id="c2b6c2bd-3e2b-49a3-8581-3b618e967415" class="">Relational Databases (SQL)</h3><p id="c4764627-7571-4c8f-8aa6-b2c589fc35ae" class="">It organises data into one or more tables, each table has columns and rows, and it has unique key identifiers in each row.</p><h3 id="f5d6ed95-8f72-4b76-8ae0-0e471fff73ab" class="">Non-relational Databases (noSQL /  not just SQL)</h3><p id="129d590b-386a-4fb1-86de-79eb25d84d1d" class="">Organised data is not in a traditional table:</p><ul id="3a4fdbf2-d985-491a-a9e1-a4fe80efe641" class="bulleted-list"><li style="list-style-type:disc">Key-value stores</li></ul><ul id="bec91c04-ea49-4ea3-9872-18dcd3862b66" class="bulleted-list"><li style="list-style-type:disc">Documents (JSON, XML, etc.)</li></ul><ul id="f9088695-af55-43cc-9fa5-b57a6506811c" class="bulleted-list"><li style="list-style-type:disc">Graphs</li></ul><ul id="54322334-5d8a-4bb0-8eae-ebbe72101880" class="bulleted-list"><li style="list-style-type:disc">Flexible tables</li></ul><p id="30407aaa-652e-4305-8d70-cb7b1f181b19" class="">Examples are:</p><ul id="dbfb92ad-81df-4fdf-8098-cccb2543da8b" class="bulleted-list"><li style="list-style-type:disc">MongoDB</li></ul><ul id="5ced41ce-2cb4-472b-bd24-12b5f719a0c5" class="bulleted-list"><li style="list-style-type:disc">Firebase</li></ul><ul id="5ac54c16-04fe-4845-b321-070c13a299fc" class="bulleted-list"><li style="list-style-type:disc">DynamoDB</li></ul><ul id="d7e5cbdb-0f94-4797-b65a-e2f41d478d4e" class="bulleted-list"><li style="list-style-type:disc">Apache Cassandra</li></ul><h2 id="dd6f919f-e417-4782-8ee2-6346bc46ea66" class="">Relational Database Management Systems (RDMS)</h2><p id="88c9f3fd-5df2-4260-b72b-549703740110" class="">Help users create an maintain a relational database:</p><ul id="8193f61f-981f-4509-bc7f-13c425b9bbcb" class="bulleted-list"><li style="list-style-type:disc">mySQL</li></ul><ul id="ec5f8f38-4caa-481e-bc27-ece61ead5d7f" class="bulleted-list"><li style="list-style-type:disc">Oracle</li></ul><ul id="3415e459-7ea7-40b9-a5d1-a4811ba51c26" class="bulleted-list"><li style="list-style-type:disc">postgreSQL</li></ul><ul id="ec9e9a98-8f0e-432f-8bb2-441b7b6481b6" class="bulleted-list"><li style="list-style-type:disc">mariaDB</li></ul><p id="514a4341-8353-4303-9f77-9129d03be4dc" class="">The Structured Query Language (SQL) is a standardised language for interacting with RDMS that users employ to perform CRUD operations and administrative tasks. SQL code used in one specific RDMS is not always portable to another one without some modification.</p><h1 id="c9c9766a-789a-4b52-a29b-a282e981dd71" class="block-color-gray_background">Using MySQL as a database server on macOS</h1><ol type="1" id="84f31968-c1d9-47bf-a8a4-10b4c437523c" class="numbered-list" start="1"><li>Install MySQL from the web.</li></ol><ol type="1" id="abdbae00-96a0-45c3-9613-f0f29db26ffc" class="numbered-list" start="2"><li>Add MySQL path to the <code>bash_profile</code></li></ol><pre id="87b626db-f4d8-421e-8b6a-f46f7526c2ce" class="code"><code>echo &#x27;export PATH=/usr/local/mysql/bin:$PATH&#x27; &gt;&gt; ~/.bash_profile</code></pre><ol type="1" id="81c53776-ba9a-4576-940e-b0a65e9bd43b" class="numbered-list" start="3"><li>Reload the <code>bash_profile</code></li></ol><pre id="410aa7ff-d936-401f-9693-7c6f8de56c4f" class="code"><code>. ~/.bash_profile</code></pre><ol type="1" id="0a55d8a9-3b8e-4239-b677-51986a504fa7" class="numbered-list" start="4"><li>Execute <code>mysql</code> and log in into the SQL server</li></ol><pre id="fb69cb8a-ba11-42fc-88b6-c72f30b98bfe" class="code"><code>mysql -u root -p</code></pre><p id="689f299b-6dc9-4eb2-87ea-fe541a500d75" class="">Use the password defined during the installation process.</p><ol type="1" id="779e7556-c14d-41d4-9a20-1a47b0455d36" class="numbered-list" start="5"><li>Change the <code>root</code> password if necessary</li></ol><pre id="2b9aa4af-8e17-4590-863b-4886f525ec83" class="code"><code>ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27;;</code></pre><h1 id="abe0f60d-7cd5-4476-85f9-b65f3caa1aae" class="block-color-gray_background">Using PopSQL editor</h1><p id="ebcf25b9-7be0-450a-b540-c410d22f994e" class="">PopSQL is a program to write SQL queries in a better manner than what can be achieved by doing so in the terminal. It is an SQL editor.</p><p id="0c1b1ceb-7070-42de-bdfb-89f42854028f" class="">
+</p></div></article></body></html>

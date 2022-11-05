@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Content Creation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="169ddb5d-d1d7-4e57-9ce0-03d4f7636e94" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/213-2136437_content-creation-icon-png-transparent-png.png"/></div><h1 class="page-title">Content Creation</h1></header><div class="page-body"><figure id="650cb935-7a1e-4101-ba3b-431e1a572eda" class="link-to-page"><a href="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/Instagram%20650cb9357a1e4101ba3b431e1a572eda.html"><img class="icon" src="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/Instagram%20650cb9357a1e4101ba3b431e1a572eda/insta.jpg"/>Instagram</a></figure><figure id="018e8622-bc4f-421e-9b22-fa619cf8d47d"><div class="source"><a href="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/10_Ways_to_quickly_improve_your_content.01.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ccd3c537-ae94-4cbd-bd64-e4094682f301/10_Ways_to_quickly_improve_your_content.01.pdf</a></div></figure><p id="d1e66c77-c9fc-4219-ba4a-2ad8cbd6d683" class="">
+</p><figure id="eaca1c75-48e0-471c-bd76-2c909747543f"><a href="https://learntocodewith.me/posts/online-presence/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 Tips on How to Create a Professional Online Presence (as a Techie)</div><div class="bookmark-description">The truth is your online presence can make or break your career. In this post, I explain what a web presence is, why your online presence matters, and how to create a professional online presence in a way that suits you.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/online-presence/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2016/06/Why-you-need-an-online-presence.png" class="bookmark-image"/></a></figure><p id="0aace1e9-13c5-4666-a0a0-bdf0ffe7fe1e" class="">
+</p><figure id="4005ee5c-c61f-4b53-a804-78c1f6707d74"><a href="https://influencermarketinghub.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Influencer Marketing Hub | Leading Digital Marketing Resource with over 5M Monthly Readers</div><div class="bookmark-description">Influencer Marketing Hub is the leading resource for Micro-Influencers, Agencies and Platforms. Social Media How to Guides &amp; Influencer Campaign Examples.</div></div><div class="bookmark-href"><img src="https://influencermarketinghub.com/favicon-16x16.png" class="icon bookmark-icon"/>https://influencermarketinghub.com/</div></div><img src="https://influencermarketinghub.com/wp-content/uploads/2020/02/Influencer-Marketing-Hub.jpg" class="bookmark-image"/></a></figure><p id="57c843f6-5059-493f-af68-a8bba948ec67" class="">
+</p><figure id="3b9b7a4c-1733-458d-8b36-5a0dbc2b4a59"><a href="https://influencermarketinghub.com/creator-tools/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Creator Tools - Leading Tools to Help Creators Monetize their Audience</div><div class="bookmark-description">Find the leading tools to help creators grow and monetize their audience. All Creator Tools Ranked and Reviewed by Influencer Marketing Hub.</div></div><div class="bookmark-href"><img src="https://influencermarketinghub.com/favicon-16x16.png" class="icon bookmark-icon"/>https://influencermarketinghub.com/creator-tools/</div></div><img src="https://influencermarketinghub.com/wp-content/uploads/2016/11/logo-imh-grey.png" class="bookmark-image"/></a></figure><p id="3c14bee9-2416-451d-9b65-1d5f0350aa3d" class="">
+</p><figure id="2f2864c4-6d07-4d09-a4b5-9315e1c06826"><a href="https://elitecontentmarketer.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ECM: Build A Sustainable Business Through Your Craft</div><div class="bookmark-description">Join my email newsletter where I share my articles on content marketing, freelance writing, growing your YouTube channel, and more. Grow your influence through online video and make a living on YouTube. Learn how to start and grow a successful podcast Software you need in a creator&#x27;s toolbox Fancy a Content Marketing Consultant?</div></div><div class="bookmark-href"><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/04/cropped-Copy-of-E-C-M-2-192x192.png" class="icon bookmark-icon"/>https://elitecontentmarketer.com/</div></div><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/03/chintan-zalani-701x1024.jpg" class="bookmark-image"/></a></figure><p id="2b9f0b8c-b869-4d3a-bfa0-934cc62b9f5a" class="">
+</p><figure id="47d47add-8677-4d6a-848b-773291dee951"><a href="https://www.socialmediaexaminer.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.socialmediaexaminer.com/</div></div></a></figure><p id="ea77e80e-7b58-41d2-8f84-4f6e279276f2" class="">
+</p><figure id="fca0bcc5-fbd3-43e6-8894-118e4da87e3e"><a href="https://www.boardinfinity.com/blog/how-to-become-a-social-media-manager-in-2022/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How To Become a Social Media Manager in 2022 | Board Infinity</div><div class="bookmark-description">A Social media manager/marketer is a viable career path in this day and age. Most social media marketers help businesses grow their online communities. This usually includes writing and scheduling posts, running ads, replying to fans, creating graphics, etc. Your duties as a community manager or social media manager will most likely depend on your job description, time, budget, and expertise.</div></div><div class="bookmark-href"><img src="https://www.boardinfinity.com/blog/content/images/size/w256h256/2021/12/board-infinity-favicon--1-.png" class="icon bookmark-icon"/>https://www.boardinfinity.com/blog/how-to-become-a-social-media-manager-in-2022/</div></div><img src="https://res.cloudinary.com/boardinfinity/image/upload/t_blog_img/bi-websites/blog/11/Blogs---sheet-1--48-.png" class="bookmark-image"/></a></figure><p id="610928df-2ce7-422a-ab0b-3510b48f94b7" class="">
+</p><figure id="a330945d-8896-4dba-89aa-45f15070d72c"><a href="https://hootsuite.com/resources" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://hootsuite.com/resources</div></div></a></figure><p id="4a016af5-fae5-4026-a41d-6d9d47b05b0a" class="">
+</p><p id="d069473b-5727-4ad8-81e9-6a66a004e6f0" class="">
+</p><h3 id="81ec5d8d-05cb-4433-8f28-289a93a7c5b5" class="">I Social You - <a href="https://isocialyou.com/">https://isocialyou.com/</a></h3><p id="85f4af88-45cf-4dac-84a0-43c5eaeb4357" class="">Data Driven Social Media Marketing</p><p id="f22a1e84-aa5b-4512-8a99-fea0c0072310" class="">
+</p><figure id="13c2fbac-8ad1-4080-9d5a-8839fe9868f4"><a href="https://www.digitalcameraworld.com/features/5-steps-to-become-a-pro-content-creator" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 steps to becoming a pro content creator on Instagram</div><div class="bookmark-description">In today&#x27;s commercial photography sphere, shoots are fast, and change seems rapid. Years ago, a creative brief might have taken months to come together, with a collaborative back-and-forth process between a pro shooter and the client or agency.</div></div><div class="bookmark-href"><img src="https://vanilla.futurecdn.net/digitalcameraworld/511191/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.digitalcameraworld.com/features/5-steps-to-become-a-pro-content-creator</div></div><img src="https://cdn.mos.cms.futurecdn.net/qg4BndDf3zwDHUL9GQNXhE-1200-80.jpg" class="bookmark-image"/></a></figure><p id="d43615cc-2637-4b32-9a07-08d599052940" class="">
+</p><figure id="d0a2bc30-9ace-4db2-91c2-38f51ac58ef3"><a href="https://www.usetopic.com/people-also-ask" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">People Also Ask - A Free Content Idea and Research Tool</div><div class="bookmark-description">Find out what questions your audience is asking. Help answer their questions and write better content.</div></div><div class="bookmark-href"><img src="https://people-also-ask.netlify.app/images/favicon.png" class="icon bookmark-icon"/>https://www.usetopic.com/people-also-ask</div></div><img src="https://uploads-ssl.webflow.com/5d7bfb33d27da2d97219c009/5de7f7f1154e7e3fb868ed1d_og_image.png" class="bookmark-image"/></a></figure><p id="7a225d96-46a5-4b81-a3b0-6aba826b0120" class="">
+</p><figure id="6f9669c8-267a-4b14-91bd-eaf9729beebb"><a href="https://elitecontentmarketer.com/business-of-writing/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Business Of Writing Archives - ECM</div><div class="bookmark-description">Why did you start with this content creation and freelance writing thingy? I&#x27;m sure one of the top reasons is making big bucks. You got charmed with the flexibility of schedule, independence in ...</div></div><div class="bookmark-href"><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/04/cropped-Copy-of-E-C-M-2-192x192.png" class="icon bookmark-icon"/>https://elitecontentmarketer.com/business-of-writing/</div></div><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/03/cropped-Untitled-design-38.png" class="bookmark-image"/></a></figure><p id="67a744ee-00c9-4f1a-a2f8-559862951130" class="">
+</p><figure id="f9d937fd-bb75-445b-9c19-bfee9dbf2119"><a href="https://zyro.com/in/ai/content-generator" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI Content Generator - Generate Quality Content for Your Site</div><div class="bookmark-description">We&#x27;ll create content for you The future belongs to AI. Why not use it to fill your website with great-sounding content, all in a matter of minutes? Our article writer is a powerful content-generating tool that will cut weeks from your website or online store building process.</div></div><div class="bookmark-href"><img src="https://zyro.com/_nuxt/icons/icon_64x64.d49f6a.png" class="icon bookmark-icon"/>https://zyro.com/in/ai/content-generator</div></div><img src="https://zyro.com/og-image.png" class="bookmark-image"/></a></figure><p id="bc32fdcf-7ce0-4dca-a42b-6649cb988b32" class="">
+</p><figure id="f60a7ed3-ed62-4561-a064-5f9f931cdd5e"><a href="https://mywplife.com/software/ai-content-generator-software/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10+ Best AI Content Generator Software &amp; AI Writers 2022 | Free &amp; Paid</div><div class="bookmark-description">Are you looking for some of the best AI content generator software &amp; AI writers in 2022? You&#x27;ve come to the right place. The Google search result is flooded with the results when you search for the best AI article writers on.</div></div><div class="bookmark-href"><img src="https://mywplife.com/wp-content/uploads/2020/08/cropped-site-icon-192x192.png" class="icon bookmark-icon"/>https://mywplife.com/software/ai-content-generator-software/</div></div><img src="https://mywplife.com/wp-content/uploads/2021/02/AI-Content-Generator.png" class="bookmark-image"/></a></figure><p id="2c337b5b-8f1c-4899-9f46-e60fe5a74284" class="">
+</p><figure id="222b5b51-db9e-426a-bb3d-f626ede18081"><a href="https://sassbook.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI Writer, Text Summarizer, Story Writer, Headline Generator</div><div class="bookmark-description">Creating, managing, and consuming text content is essential for both businesses and individuals. However, it is both time consuming and resource intensive to efficiently do this. Sassbook AI makes software that automates significant parts of these workflows to dramatically improve content authoring and consumption using state-of-the-art artificial intelligence technologies.</div></div><div class="bookmark-href"><img src="https://sassbook.com/favicon.ico" class="icon bookmark-icon"/>https://sassbook.com/</div></div></a></figure><p id="6826dd05-3969-4576-9dcc-03ada630817a" class="">
+</p><figure id="10b22324-8db1-4abd-800a-98784ba882e5"><a href="https://www.shortlyai.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ShortlyAI | Your AI Writing Partner. Get rid of writer&#x27;s block.</div><div class="bookmark-description">We use cutting edge technology to make writing easier and faster. Stuck? Just click the button and our AI will continue your writing for you.</div></div><div class="bookmark-href"><img src="https://www.shortlyai.com/favicon.ico" class="icon bookmark-icon"/>https://www.shortlyai.com/</div></div></a></figure><p id="13e08c97-6fc4-4e24-888c-a6a9ed071082" class="">
+</p><figure id="a52645e2-ffe3-468b-858e-e86944cca3a4"><a href="https://www.g2.com/categories/ai-writing-assistant/free" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best 41 Free AI Writing Assistants Picks in 2022 | G2</div><div class="bookmark-description">We use cookies to enhance the functionality of our site and conduct anonymous analytics. With your permission, we may also use cookies to share information about your use of our Site with our social media, advertising, analytics, software, and other third party partners. To learn more, see our Cookie Policy.</div></div><div class="bookmark-href"><img src="https://www.g2.com/assets/favicon-fdacc4208a68e8ae57a80bf869d155829f2400fa7dd128b9c9e60f07795c4915.ico" class="icon bookmark-icon"/>https://www.g2.com/categories/ai-writing-assistant/free</div></div><img src="https://www.g2.com/assets/og-logo-g2-9c72f95bde996a726bbacfb34de8621c6986c177ac6901c5bc0f0ce3815b8b9e.png" class="bookmark-image"/></a></figure><p id="3f79d777-bc53-4436-8230-5db1432e2169" class="">
+</p><figure id="0094f50a-d2bd-4c74-b7b6-ca7c9f44826e"><a href="https://ai-writer.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI Writer™ - The best AI Text Generator, promised.</div><div class="bookmark-description">&quot;Artificial Intelligence tools are the latest trend in content writing, blogging, and general copywriting and marketers are increasingly using AI text generators to overcome writers block, produce content more quickly, and optimize their existing content. With a text generator, you can get a clear edge over competitors thanks to refined algorithms which help to generate highly targeted copy for your audience.</div></div><div class="bookmark-href"><img src="https://storage.googleapis.com/aiw-com-static-files/dist/favicon_X5b_icon.ico" class="icon bookmark-icon"/>https://ai-writer.com/</div></div><img src="https://storage.googleapis.com/aiw-com-static-files/public/assets/bg-shapes/background-circle-shape.png" class="bookmark-image"/></a></figure><p id="d446a675-b59c-46ba-8677-2b07b3938876" class="">
+</p><figure id="b04cda2d-65bd-4c42-8e9d-1e417489d831"><a href="https://elitecontentmarketer.com/youtube-everything/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Everything YouTube Archives - ECM</div><div class="bookmark-description">Video marketing on YouTube gives you little to no control over unwanted ads, oversaturation of the platform, and copyright issues. Growing an audience through your video content is best appreciated at ...</div></div><div class="bookmark-href"><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/04/cropped-Copy-of-E-C-M-2-192x192.png" class="icon bookmark-icon"/>https://elitecontentmarketer.com/youtube-everything/</div></div><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/03/cropped-Untitled-design-38.png" class="bookmark-image"/></a></figure><p id="c3eaaac6-47aa-48a6-a813-b8630407cf54" class="">
+</p><figure id="2d1c3d58-aad8-4d85-9372-50710c3edd0a"><a href="https://www.youtube.com/intl/en_in/creators/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">YouTube Creators - Education and inspiration for video creators</div><div class="bookmark-description">There are a few ways to get started on YouTube. We offer up different formats and functionalities, giving you the flexibility to create everything from Shorts, which are vertical videos that run 60 seconds or less, to longer form videos. No matter what you&#x27;re creating, you&#x27;ll need to start by creating a YouTube Channel.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/yts/img/favicon-vfl8qSV2F.ico" class="icon bookmark-icon"/>https://www.youtube.com/intl/en_in/creators/</div></div><img src="https://lh3.googleusercontent.com/q067m09_qRgFPyCxAwUT1ZRNi2PoWXyzeSSdxkKpIikCnAmO9lTJX7cVsfdGk6fN-CDUCvm29DUNMrSEjKBT8ozQlITpYmTM9wql2LBdtDOBPFevYjev=w600" class="bookmark-image"/></a></figure><p id="aceb6a00-9b7f-49c6-a9f9-9d5b43b098cc" class="">
+</p><figure id="36f75099-44f6-441a-ae70-cca43657b344"><a href="https://www.digitalfodder.com/youtube-tools/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">23 Best YouTube Tools for Creators in 2022 (Top Channel Apps)</div><div class="bookmark-description">June 13, 2022 Disclosure: This page contains affiliate links. If you click through and purchase an item, we may earn a commission. See our terms of service for details. Achieving success on YouTube demands that creators produce engaging, high-quality content to keep viewers entertained.</div></div><div class="bookmark-href"><img src="https://www.digitalfodder.com/wp-content/uploads/2020/05/Favicon.png" class="icon bookmark-icon"/>https://www.digitalfodder.com/youtube-tools/</div></div><img src="https://www.digitalfodder.com/wp-content/uploads/2019/11/VidIQ-Scorecard.jpg" class="bookmark-image"/></a></figure><p id="a16e9457-8325-413f-affa-f09b430e0166" class="">
+</p><figure id="e69cb93a-af2e-4f12-9c2c-64e986155a85"><a href="https://www.quicksprout.com/youtube-tools/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 12 Best Tools to Grow Your YouTube Channel - 2022 Review</div><div class="bookmark-description">Want to jump straight to the answer? The best tool to grow your YouTube channel for most people is TubeBuddy or vidIQ. YouTube has quickly become one of the most important social channels on the planet. With video consumption trends rising at astronomical rates, the possibilities are endless for creators and businesses alike.</div></div><div class="bookmark-href"><img src="https://quicksprout-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/favicon.ico" class="icon bookmark-icon"/>https://www.quicksprout.com/youtube-tools/</div></div><img src="https://quicksprout-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/bitly.png" class="bookmark-image"/></a></figure><p id="a4a89a89-b1d7-427b-8c9a-20ecdf32150f" class="">
+</p><figure id="6ad44b2f-82b3-4caf-95f4-5887e6701507" class="image"><a href="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/Screenshot_2020-07-11-09-23-26-691.jpeg"><img style="width:1920px" src="Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/Screenshot_2020-07-11-09-23-26-691.jpeg"/></a></figure></div></article></body></html>

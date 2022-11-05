@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Typing Essentials**</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="919f616a-a2d4-45ea-9763-fcd813c939e9" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1626958390898-162d3577f293?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⌨️</span></div><h1 class="page-title">Typing Essentials**</h1></header><div class="page-body"><p id="eaa6e8f7-d596-4e95-8ac6-0fe903ad9bf9" class="">
+</p><p id="e86b8eda-b26d-416c-b775-dbd8938a7eac" class="">
+</p><figure id="b98158fb-0103-41e6-8024-f65221de0033"><a href="https://www.mechanical-keyboard.org/switch-types/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Switch Types - Mechanical Keyboard</div><div class="bookmark-description">After finally deciding to go for a mechanical keyboard, another question usually comes up very soon: Which switch type do you want to use? The switches are probably one of the most important parts of the keyboard. Two keyboards from the same model, but with different switch types, can feel quite differently.</div></div><div class="bookmark-href"><img src="https://www.mechanical-keyboard.org/wp-content/uploads/2015/11/favicon.ico" class="icon bookmark-icon"/>https://www.mechanical-keyboard.org/switch-types/</div></div><img src="https://www.mechanical-keyboard.org/wp-content/uploads/2015/11/Switches-Overview.jpg" class="bookmark-image"/></a></figure><p id="092f2578-29a9-4971-928e-d3bc2833869d" class="">
+</p><figure id="52b44e82-0da2-4d2d-99bb-3742e335db79"><a href="https://www.educba.com/types-of-computer-keyboard/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Types of Computer Keyboard | Learn 17 Different Types of Keyboard</div><div class="bookmark-description">A keyboard is a portable wired or wireless electronic device that contains all the alphabets, numerics, symbols and special characters, which is used for entering input data into a laptop/ desktop computer system. The various types of computer keyboards typically used by computer users for different purposes are a qwerty keyboard, a gaming keyboard, a virtual keyboard and a multimedia keyboard.</div></div><div class="bookmark-href"><img src="https://cdn.educba.com/academy/wp-content/uploads/2020/05/cropped-apple-touch-icon-192x192.png" class="icon bookmark-icon"/>https://www.educba.com/types-of-computer-keyboard/</div></div><img src="https://cdn.educba.com/academy/wp-content/uploads/2019/12/types-of-computer-keyboard.jpg" class="bookmark-image"/></a></figure><p id="bdde29b7-50aa-4015-932c-72b257ee2f56" class="">
+</p><figure id="5a0b7e8d-bae1-46f8-aef8-372ff8337d0b"><a href="https://www.typingtest.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TypingTest.com - Test Your Typing Speed in 60 seconds</div><div class="bookmark-description">Welcome to the #1 Typing Speed Test! Check your true typing speed, accuracy and skill level in just 60 seconds.</div></div><div class="bookmark-href"><img src="https://www.typingtest.com/favicon.ico" class="icon bookmark-icon"/>https://www.typingtest.com/</div></div><img src="https://www.typingtest.com/new-layout/img/wpm-laptop-share.jpg" class="bookmark-image"/></a></figure><p id="4fd66d88-434f-4c8b-97b5-9efbfbb66602" class="">
+</p><h3 id="37b52442-49d9-444c-9416-95e5b2dc4509" class="">PDF Guide 👇</h3><figure id="fcb5d74e-b21a-4829-bf16-bd9ba1594e46"><div class="block-color-brown source"><a href="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/Keyboarding_Essentials.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7ccc6bf-b523-4b4a-9cea-7039c939252f/Keyboarding_Essentials.pdf</a></div></figure><p id="facdb077-2656-414c-ad4a-d91650e25354" class="">
+</p><figure id="2715d32c-cda1-4779-8ea5-41546096aa50" class="image"><a href="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/photo1616251239.jpeg"><img style="width:419px" src="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/photo1616251239.jpeg"/></a></figure><p id="89e05e9f-5873-4381-a0b3-a8812bfa5ebd" class="">
+</p><p id="a70f443b-db3a-46f9-9ba9-2e85b7a6d7fa" class="">
+</p><figure id="53f8d0bc-a619-4b99-a9f6-6601b4fffab2" class="image"><a href="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/computer_ergonomics.jpg"><img style="width:602px" src="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/computer_ergonomics.jpg"/></a></figure><p id="3c84e6fa-e677-486f-b70c-2ca20bdf6bbd" class="">
+</p><figure id="2c349d4f-b7d0-4061-9df0-eb5d93a8b702" class="image"><a href="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/ce1.png"><img style="width:2806px" src="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/ce1.png"/></a></figure><p id="d9d6ffd4-d9f1-4d3e-97e7-3128a60060fe" class="">
+</p><p id="32dcdaab-1b52-4f28-9c47-338365260e2f" class="">
+</p><figure id="9adda2fd-b473-417e-9cd4-81201e244349"><a href="https://www.keybr.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">keybr.com - Typing lessons</div><div class="bookmark-description">Take a typing speed test, learn to type faster and with fewer errors with this free online typing tutor. The application is loading, please wait a second... This application will not work because JavaScript is disabled in your browser!</div></div><div class="bookmark-href"><img src="https://www.keybr.com/assets/934c99d37fc250c3.png" class="icon bookmark-icon"/>https://www.keybr.com/</div></div><img src="https://www.keybr.com/cover.png" class="bookmark-image"/></a></figure><p id="afca0348-82ff-44bc-a90b-59b560f23133" class="">
+</p><figure id="bd2a2d57-5d4a-4672-be8c-f7275c61c1a5"><a href="http://www.typingstar.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Typing Tutor | Typing Lessons | Touch Typing</div><div class="bookmark-description">GS Typing Tutor is a powerful and feature-rich typing tutor for touch typing. With comprehensive typing lessons, it is an ideal a teaching tool for learning to type and developing typing speed. It is geared towards kids to adult. As a beginner, no more hunt and peck and two finger typing.</div></div><div class="bookmark-href">http://www.typingstar.com/</div></div><img src="http://www.typingstar.com/images/typing-header_02.gif" class="bookmark-image"/></a></figure><p id="374ca965-ce55-49f7-9da1-d76af34f2c3b" class="">
+</p><p id="013cfed3-c6fa-4649-a499-715b7a924538" class="">
+</p><figure id="77edd996-2abd-4140-9edc-a708b44b82ba"><a href="https://www.typingmaster.com/typing-tutor/free-download.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Download Typing Master 11 - the best typing tutor for Windows</div><div class="bookmark-description">While training TypingMaster detects your problematic fingers or keys that need extra practice and creates additional tailor made exercises for them. The multilingual lessons are available for Qwerty, Qwertz and Azerty keyboards in English, Spanish, French, German, Dutch, Swedish, Finnish, Italian + Portuguese.</div></div><div class="bookmark-href"><img src="https://www.typingmaster.com/favicon.ico" class="icon bookmark-icon"/>https://www.typingmaster.com/typing-tutor/free-download.html</div></div><img src="https://www.typingmaster.com/image/title__img.png" class="bookmark-image"/></a></figure><p id="21908584-8e98-4e10-8b92-8c5de434ba38" class="">
+</p><figure id="05a24afc-3802-4330-b262-66a938328db1"><a href="https://www.typingmaster.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Typing Master - Learn To Type &amp; Test Your Skills</div><div class="bookmark-description">Analyze &amp; Train Your Skills Free Download Buy life-time license Play Free Typing Games Typing Test for Employers TypingTest.Pro is an easy-to-use, quick and customizable web-based typing test maker that you can use for all your business recruitment and training purposes.</div></div><div class="bookmark-href"><img src="https://www.typingmaster.com/favicon-16x16.png" class="icon bookmark-icon"/>https://www.typingmaster.com/</div></div><img src="https://www.typingmaster.com/image/lockup_1.png" class="bookmark-image"/></a></figure><p id="3854cc5f-2b68-4e2b-908f-b988e39bb5ee" class="">
+</p><figure id="345e5802-ab1d-4bb7-b14d-8f00a3a3d6d9"><a href="https://youtu.be/MKT6Uhk5-Iw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How To Type Faster</div><div class="bookmark-description">The average person types about 40 words per minute, but it&#x27;s actually possible to double that. By improving your posture and muscle memory, you will notice a...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/MKT6Uhk5-Iw</div></div><img src="https://i.ytimg.com/vi/MKT6Uhk5-Iw/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="38762f24-14c1-40f3-b91c-93427bc4895c" class="">
+</p><figure id="f0f30595-1a66-48f9-b1b8-dd28be36af35"><a href="https://youtu.be/JcLlQEkQk0A" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How I Achieved a REALLY Fast 165 WPM Typing Speed (And How To Get There)</div><div class="bookmark-description">Are you looking to type faster- whether that mean rise above the average of 40wpm or get yourself into gear and hitting in the hundreds- then welcome to the ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/JcLlQEkQk0A</div></div><img src="https://i.ytimg.com/vi/JcLlQEkQk0A/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="cf892206-77cd-4b9d-98de-909c6271eab5" class="">
+</p><figure id="7c3fc2d2-1ac9-4bee-be3e-0f39c661ae94"><a href="https://youtu.be/PUPok5AZ0ek" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Become Keyboard Master With These 20 Useful Computer Keyboard Shortcut Keys</div><div class="bookmark-description">20 Most Amazing and useful Shortcut Keys and tips &amp; tricks for computer and laptop Keyboard Keys these shortcut keysare useful for Computer user , officer wo...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/PUPok5AZ0ek</div></div><img src="https://i.ytimg.com/vi/PUPok5AZ0ek/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="6f3a1ffc-89ac-4cda-a297-be38093bb620" class="">
+</p><figure id="4f9672d9-86aa-459c-a390-a855c237a2a9"><a href="https://youtu.be/QIlI7YquuRY" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How I Learned to Type Really Fast (150 Words/Minute)</div><div class="bookmark-description">How to learn touch typing: In this video I will discuss about how I learnt to type as fast as 150 wpm. This video will give you an exact roadmap needed to ty...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/QIlI7YquuRY</div></div><img src="https://i.ytimg.com/vi/QIlI7YquuRY/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="1a7ef940-5ce4-4591-9891-f8423f908165" class="">
+</p><p id="46cc8475-36be-4560-9238-9d2fc5ea5683" class=""><a href="https://t.me/Technitze_Codernett/236">https://t.me/Technitze_Codernett/236</a></p><p id="f1d7a7da-e5ed-4072-b633-634cda183403" class="">
+</p><figure id="9bb5e645-468b-4b3c-9bdc-fec6be31846f" class="image"><a href="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/chartwordshortcuts.jpg"><img style="width:480px" src="Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9/chartwordshortcuts.jpg"/></a></figure></div></article></body></html>

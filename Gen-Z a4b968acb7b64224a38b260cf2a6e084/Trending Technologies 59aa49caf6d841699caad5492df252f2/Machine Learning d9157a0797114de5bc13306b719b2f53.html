@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Machine Learning</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d9157a07-9711-4de5-bc13-306b719b2f53" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1655721532356-e9a529d403c6?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Machine%20Learning%20d9157a0797114de5bc13306b719b2f53/png-clipart-chatbot-artificial-intelligence-technology-machine-learning-technology-electronics-logo.png"/></div><h1 class="page-title">Machine Learning</h1></header><div class="page-body"><p id="7026a22f-fd09-494c-9734-d48a2f6c4e69" class="">
+</p><figure id="149558ab-e52a-4420-90ef-680a699f2702" class="link-to-page"><a href="Machine%20Learning%20d9157a0797114de5bc13306b719b2f53/TWEETS%20149558abe52a442090ef680a699f2702.html"><img class="icon" src="Machine%20Learning%20d9157a0797114de5bc13306b719b2f53/TWEETS%20149558abe52a442090ef680a699f2702/Twitter.png"/>TWEETS</a></figure><p id="2f7029de-f7b5-4882-a7d0-051a9ffdff42" class="">
+</p><figure id="e5f8835e-6100-4c9f-bc00-761504bd0209"><div class="source">https://github.com/josephmisiti/awesome-machine-learning</div></figure><p id="55ae2558-7ea0-42e5-931b-40978db9854e" class="">
+</p><figure id="a1c24adb-28ce-4b9c-81c6-638dc0f6ec05"><div class="source"><a href="https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva">https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva</a></div></figure><p id="36a3a596-7756-4cc2-aa60-391ff35c0079" class="">
+</p><figure id="2f6832d2-7da0-4d9e-ac9b-d8541e16729a"><a href="https://whimsical.com/CA7f3ykvXpnJ9Az32vYXva" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Machine Learning Roadmap 2020</div><div class="bookmark-description">2020 machine learning roadmap built in Whimsical. View for detailed mind map on: machine learning resources and the machine learning process for projects.</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-mind-map-v2-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/CA7f3ykvXpnJ9Az32vYXva</div></div><img src="https://imgr.whimsical.com/thumbnails/CA7f3ykvXpnJ9Az32vYXva/2cfmjc27f1uBfJPjvJSxmB" class="bookmark-image"/></a></figure><p id="88daa5af-5866-416e-b175-954d7b259b54" class="">
+</p><figure id="6275f8a8-30cf-40c9-923a-8e838e132ee1"><a href="https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - hemansnation/Data-Science-ML-Full-Stack-2022: Everything you need to know for data science.</div><div class="bookmark-description">Build an in-depth understanding of all the data concepts. Create your strong social media profile on LinkedIn and GitHub. Build 15+ projects including 5+ Major Projects. Showcase your skills with a portfolio of real projects.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022</div></div><img src="https://opengraph.githubassets.com/e7266fca31c958c034055745c08a395902e4266d21f0c857d18b1f377b426760/hemansnation/Data-Science-ML-Full-Stack-2022" class="bookmark-image"/></a></figure><p id="d8945f56-60e9-41c0-b100-9ecf275b8c31" class="">
+</p><figure id="e60fecc3-2d9a-4f8a-bd85-eba495cb246e"><a href="https://hackr.io/tutorials/learn-machine-learning-ml" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Machine Learning - Best Machine Learning Tutorials | Hackr.io</div><div class="bookmark-description">Learning Machine Learning? Check out these best online Machine Learning courses and tutorials recommended by the data science community. Pick the tutorial as per your learning style: video tutorials or a book. Free course or paid. Tutorials for beginners or advanced learners. Check Machine Learning community&#x27;s reviews &amp;amp; comments.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/tutorials/learn-machine-learning-ml</div></div><img src="https://hackr.io/tutorials/learn-machine-learning-ml/logo/logo-machine-learning-ml?ver=1559644608" class="bookmark-image"/></a></figure><p id="50ce5c7d-9b59-47ee-b864-9a1bd98bca00" class="">
+</p><p id="d63abb31-3a34-40cf-8bb7-e40f2b417934" class=""><strong>Dive into Machine Learning</strong></p><figure id="e16c5e36-1e60-46e4-a4e6-60e4e64bbc21"><a href="https://awesomelists.top/#/hangtwenty/dive-into-machine-learning" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/hangtwenty/dive-into-machine-learning</div></div></a></figure><p id="0389f43b-d638-4e60-914f-6f1a4c7f91de" class="">
+</p><figure id="212a1c6e-a517-447e-9829-a3ead15acf6e"><a href="https://youtu.be/s9HzfsNO9_4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Complete Machine Learning Roadmap | GeeksforGeeks</div><div class="bookmark-description">Pursuing career as a Machine Learning Engineer or Data Scientists can be quite promising in the 21st century. But getting started with Machine Learning can b...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/s9HzfsNO9_4</div></div><img src="https://i.ytimg.com/vi/s9HzfsNO9_4/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="c518f8fe-e4cf-4249-9fcf-b09ae8a82f4f" class="">
+</p><p id="c805c326-2cb4-4fda-8db6-c0b4d4c3fb3c" class=""><mark class="highlight-brown"><strong>Machine Learning Tutorials</strong></mark></p><figure id="9d165ace-d144-4404-962c-64df2fa6f57f"><a href="https://awesomelists.top/#/ujjwalkarn/Machine-Learning-Tutorials" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/ujjwalkarn/Machine-Learning-Tutorials</div></div></a></figure><p id="722fb63f-8676-4e93-85bd-ea0dfab91659" class="">
+</p><figure id="2643fead-5368-43a7-98dc-4ec6ea57b7b9"><a href="https://developers.google.com/machine-learning/crash-course" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Machine Learning | Google Developers</div><div class="bookmark-description">Learn and apply fundamental machine learning concepts with the Crash Course, get real-world experience with the companion Kaggle competition, or visit Learn with Google AI to explore the full library of training resources.</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/devrel-devsite/prod/v0e5fe81d770a1c83a74ae94cff5f78c2b690ac595b30fc2439f12b56fdf9fe78/developers/images/favicon.png" class="icon bookmark-icon"/>https://developers.google.com/machine-learning/crash-course</div></div><img src="https://developers.google.com/machine-learning/crash-course/images/mlcc-hero.png" class="bookmark-image"/></a></figure><p id="4f8b6bfb-cdf4-48cb-bbde-c0b4bae520e6" class="">
+</p><figure id="218d83e0-a80f-4f97-a9dc-44a43b4593b8"><a href="https://www.kaggle.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Kaggle: Your Machine Learning and Data Science Community</div><div class="bookmark-description">Kaggle is the world&#x27;s largest data science community with powerful tools and resources to help you achieve your data science goals.</div></div><div class="bookmark-href"><img src="https://www.kaggle.com/static/images/favicon.ico" class="icon bookmark-icon"/>https://www.kaggle.com/</div></div></a></figure><figure id="01eaff31-5b44-4dd0-97fd-701f7c7f6ecb"><a href="https://madewithml.com/#foundations" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Made With ML</div><div class="bookmark-description">Applied ML · MLOps · Production Join 35K+ developers in learning how to responsibly deliver value with ML. It&#x27;s not just about ML, it&#x27;s also about software engineering best practices. Learn the foundations of machine learning through intuitive explanations, clean code and visualizations.</div></div><div class="bookmark-href"><img src="https://madewithml.com/favicon.ico" class="icon bookmark-icon"/>https://madewithml.com/#foundations</div></div><img src="https://madewithml.com/static/images/mlops.png" class="bookmark-image"/></a></figure><p id="67b03e1f-0d6c-4913-887e-be584992c713" class="">
+</p><p id="bc0023c8-29a4-44ec-aef6-bc1f486d404c" class=""><mark class="highlight-brown"><strong>Machine Learning Projects</strong></mark></p><figure id="74846a61-a7ec-4c95-b124-cda9a6345182"><a href="https://t.me/Technitze_Codernett/106" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">https://medium.com/the-innovation/130-machine-learning-projects-solved-and-explained-605d188fb392 Top deep learning Github repositories https://github.com/mbadry1/Top-Deep-Learning</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/106</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="3ae51126-3729-42b2-8cee-821863b41071" class="">
+</p><figure id="0d49e313-f992-4698-ae49-930422f48ecc"><a href="https://photos.app.goo.gl/G7d94C9sPsftFaXY9" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Machine Learning</div><div class="bookmark-description">47 new items · Album by Sharique Ahmed A</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_64dp.png" class="icon bookmark-icon"/>https://photos.app.goo.gl/G7d94C9sPsftFaXY9</div></div><img src="https://lh3.googleusercontent.com/yRvTJeQRsBwbef67sbgghQ5iJ3-KY_NU4YHS5jW0hB1WalWOG4qvpNK9ESlDkmdwtx9UYtSGsCxYeyMUHGMUsBvyFKn1kOEjIIcYZYiiUCb4IkIxy7383_kSrrG_xpIvFnYPYSFX6g=w600-h315-p-k" class="bookmark-image"/></a></figure><p id="49555d2b-db26-40c2-8fcb-4234b14c7448" class="">
+</p><figure id="9ba5e40e-a8b3-41b2-9245-83d7132009ca"><a href="https://drive.google.com/folderview?id=1eHvY5sUnpzDgHyMeQEF6pTGmlYN1uMVT" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">MACHINE LEARNING - Google Drive</div><div class="bookmark-description">13829-wp-devops-for-digital-transformation.pdf</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" class="icon bookmark-icon"/>https://drive.google.com/folderview?id=1eHvY5sUnpzDgHyMeQEF6pTGmlYN1uMVT</div></div><img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png" class="bookmark-image"/></a></figure><p id="8468e1fc-aee4-4897-befc-65ff8bf1a6bd" class="">
+</p><p id="66ac3e70-f7ac-4555-a4e8-f3e8ebe25829" class=""><a href="https://sayak.dev/interviews/">https://sayak.dev/interviews/</a></p><p id="53c79d12-8a99-4e98-8179-8a8f2438267d" class=""><a href="https://docs.google.com/presentation/d/1DGqiLwc3MdAJoA33lllbxRiQqpZGBV1dvRAyGTRBpyU/edit#slide=id.g7bed1cee0e_0_95">https://docs.google.com/presentation/d/1DGqiLwc3MdAJoA33lllbxRiQqpZGBV1dvRAyGTRBpyU/edit#slide=id.g7bed1cee0e_0_95</a></p><p id="3b67e0d2-5041-4965-8e51-1a90ca26c780" class=""><a href="https://www.kaggle.com/usharengaraju">https://www.kaggle.com/usharengaraju</a></p><p id="cce82f60-48a2-4bf9-987c-2f1fcef96011" class=""><a href="https://course.elementsofai.com/">https://course.elementsofai.com/</a></p><p id="303a089b-27e2-4cfa-abb0-62a174ff90cd" class=""><a href="https://learn.algorithmia.com/">https://learn.algorithmia.com/</a></p><p id="e8290392-4cfa-4de9-97bd-5a867f851ebd" class=""><a href="https://machinehack.com/">https://machinehack.com/</a></p><p id="a8c8233f-3360-493f-b9f0-62bf50cd655b" class=""><a href="https://info.boltiot.com/iotmlscholarshipfb?utm_source=facebook_Instagram_Feed&amp;utm_medium=paid_social&amp;utm_campaign=shop.boltiot.com+%28scholarship_conversion%29&amp;utm_content=Video_Colours_Training+-%3E+Scholarship_15s_1X1">https://info.boltiot.com/iotmlscholarshipfb</a></p><p id="806750d4-27c2-432d-9622-1ca75b667e52" class=""><a href="https://github.com/google/mediapipe">https://github.com/google/mediapipe</a></p><p id="af911e94-aceb-4f52-a8cd-c05b81bb3d6e" class=""><a href="https://machinehack.com/bootcamps">https://machinehack.com/bootcamps</a></p><p id="0d5fffb1-75ad-41d9-8889-951febe9b630" class="">
+</p><h3 id="8662908a-6131-483c-b834-0c10f974f0c3" class="">Blogs</h3><p id="64ad290f-9429-47cb-b64c-6318dfe00dc9" class="">
+</p><p id="f11792ac-8d37-4386-aeb9-6e2cade2eea9" class=""><a href="https://t.me/Technitze_Codernett/19">https://t.me/Technitze_Codernett/19</a></p><p id="cb2dcf43-bd73-4174-9fbe-c4434bc4a19e" class=""><a href="https://t.me/Technitze_Codernett/22">https://t.me/Technitze_Codernett/22</a></p><p id="bcb6e34e-75e2-4eb2-8656-f3bd556276b1" class="">
+</p><ol type="1" id="3d0f30c1-c36a-4e36-a5d4-0043fa0f8831" class="numbered-list" start="1"><li><a href="https://blog.floydhub.com/introduction-to-adversarial-machine-learning/">https://blog.floydhub.com/introduction-to-adversarial-machine-learning/</a></li></ol><ol type="1" id="136c9f45-9d5a-4e89-b585-50ff438e1842" class="numbered-list" start="2"><li><a href="https://openai.com/blog/adversarial-example-research/">https://openai.com/blog/adversarial-example-research/</a></li></ol><ol type="1" id="b1bb57cd-e351-443e-baf4-d7a85f4be28e" class="numbered-list" start="3"><li><a href="https://arxiv.org/abs/1602.02697">https://arxiv.org/abs/1602.02697</a></li></ol><ol type="1" id="11bdc484-962b-4a08-b1bd-2f7cae4789fd" class="numbered-list" start="4"><li><a href="https://aaai18adversarial.github.io/">https://aaai18adversarial.github.io/</a></li></ol><ol type="1" id="1530ac41-4656-4d2b-88bf-aeea8e7c4f46" class="numbered-list" start="5"><li><a href="https://www.toptal.com/machine-learning/adversarial-machine-learning-tutorial">https://www.toptal.com/machine-learning/adversarial-machine-learning-tutorial</a></li></ol><ol type="1" id="1dc91800-8358-452c-8306-55867c62df2f" class="numbered-list" start="6"><li><a href="https://towardsdatascience.com/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1">https://towardsdatascience.com/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1</a></li></ol><ol type="1" id="62f268cf-5a89-43d9-a774-3d71d01df14f" class="numbered-list" start="7"><li><a href="https://www.youtube.com/watch?v=xHpwLiTieu4">https://www.youtube.com/watch?v=xHpwLiTieu4</a></li></ol><ol type="1" id="2b21c145-79d6-4eb8-acb8-11d833c61709" class="numbered-list" start="8"><li><a href="https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196">https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196</a></li></ol><p id="3d3d5fb7-6106-4726-99fb-e7c74059a155" class="">
+</p><p id="75519414-5208-4403-872a-56c072090f5b" class=""><strong>Machine Learning for Beginners</strong></p><figure id="73649486-e1b5-4ccc-a1ed-517f22c64166"><a href="https://youtube.com/playlist?list=PLydZ2Hrp_gPSbP1osrwuCrfKVA7EQ461b" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Machine Learning for Beginners</div><div class="bookmark-description">Get started on the fundamentals of Machine Learning.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLydZ2Hrp_gPSbP1osrwuCrfKVA7EQ461b</div></div><img src="https://i.ytimg.com/vi/hQyUwF2vaac/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLAqrBP1R4bIQD-J33LE8QfiMOJPQA&amp;days_since_epoch=19205" class="bookmark-image"/></a></figure><p id="1741f0bc-2c26-4d80-94a4-1500f3ab76d1" class="">
+</p><figure id="bed7dc55-e700-4f98-9533-beac69a9e879" class="image"><a href="Machine%20Learning%20d9157a0797114de5bc13306b719b2f53/FBHirMpVEAQrZqW.jpeg"><img style="width:1294px" src="Machine%20Learning%20d9157a0797114de5bc13306b719b2f53/FBHirMpVEAQrZqW.jpeg"/></a></figure></div></article></body></html>

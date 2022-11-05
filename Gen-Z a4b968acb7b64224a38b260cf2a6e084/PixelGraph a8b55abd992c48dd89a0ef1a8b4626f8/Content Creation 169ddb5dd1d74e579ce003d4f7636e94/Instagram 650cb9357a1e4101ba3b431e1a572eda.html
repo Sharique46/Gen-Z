@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Instagram</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="650cb935-7a1e-4101-ba3b-431e1a572eda" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Instagram%20650cb9357a1e4101ba3b431e1a572eda/insta.jpg"/></div><h1 class="page-title">Instagram</h1></header><div class="page-body"><p id="4e312cf4-ee50-4749-9d69-78e5ce11184b" class="">
+</p><figure id="0a890ec3-d061-4df8-b163-9f14e9a9d5ba"><a href="https://www.flowcode.com/page" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Flowpage: Free Mobile Optimized Landing Page | Flowcode</div><div class="bookmark-description">Create a free mobile optimized landing page for your QR code. Keep all your social profiles, videos, and favorite links in one place and track audience engagement.</div></div><div class="bookmark-href">https://www.flowcode.com/page</div></div><img src="https://images.prismic.io/flowcode-ui/12bdae44-7955-42cd-a7dd-587fae160ec5_vote-2020.png?auto=compress,format" class="bookmark-image"/></a></figure><p id="871abfc4-ff2c-4685-89bc-1852bb22da41" class="">
+</p><h3 id="c301cc3c-90e9-44c9-b73a-7cfcaf4387a2" class=""><code>INSTAGRAM</code>
+<strong> Bio website maker</strong></h3><p id="e7932021-e492-4a68-9584-d3e4964d8eb7" class=""><a href="https://t.me/Technitze_PixelGraph/71">https://t.me/Technitze_PixelGraph/71</a></p><p id="2b734cb0-dcb5-405f-bf32-94c9ca4e2210" class=""><a href="https://bop.me/">https://bop.me/</a></p><p id="ef124c81-def7-42fd-8e75-5d47fb0051b1" class="">
+</p><figure id="8229d6a1-f0fc-4cca-8ab0-23940e23b670"><a href="https://pfpmaker.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Profile Picture Maker - Create an awesome profile pic from any photo</div><div class="bookmark-description">Can the background be removed more precisely? We are working on making our background remover better. However, better processing results may be achieved by uploading more quality, contrast photo of yourself with a good lighting and make sure your headshot is not cut by image boundaries e.g.</div></div><div class="bookmark-href"><img src="https://pfpmaker.com/favicon-16x16.png" class="icon bookmark-icon"/>https://pfpmaker.com/</div></div><img src="https://pfpmaker.com/pfp_og_img.jpg" class="bookmark-image"/></a></figure><p id="a2c3a56a-a900-48c9-92da-1e563f1d9c9d" class="">
+</p><figure id="c9261c77-878e-460e-b651-ad6fcc8d960f"><a href="https://foundr.com/masterclass" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Brand New Free Instagram Training: The Exact Strategies Used To Build A Following Of 500k + People on Instagram in 12 Months | Foundr.com</div><div class="bookmark-description">CEO &amp; Publisher of Foundr Nathan Chan is the CEO of foundr, a global media and education company for entrepreneurs. Nathan launched Foundr in March 2013 from his bedroom and in a small period of time it has become a top 10 ranked &#x27;Business &amp; Investing Magazine&#x27; on the app store and now has millions of entrepreneurs consuming the brands content every month.</div></div><div class="bookmark-href"><img src="https://foundr.com/favicon.ico" class="icon bookmark-icon"/>https://foundr.com/masterclass</div></div><img src="https://foundr.com/masterclass-src/images/hero-img-thumb.jpeg" class="bookmark-image"/></a></figure><p id="cf2041f1-e314-41c4-9def-be7bad949672" class="">
+</p><h3 id="bb34c4b8-1823-44d3-ab9b-67edb9bad50f" class="">Searchmy.bio - Instagram Bio Search - Find Influencers</h3><p id="d3f9b897-35de-4512-8124-19a3fcd298d2" class=""><a href="https://www.searchmy.bio/">https://www.searchmy.bio/</a></p><p id="78abc4d3-b518-47e2-8c19-c9f32c44db62" class="">
+</p><figure id="af231d57-197d-43d3-ac4c-5ff709707f74"><a href="https://beacons.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://beacons.ai/</div></div></a></figure><p id="00a33882-c847-4e55-ac07-aeecf3780eda" class="">
+</p><h3 id="1e21e125-ee92-4a78-8485-759666e7f692" class=""><strong>Instagram Story and Bio hacks</strong></h3><p id="32e857de-f232-48c1-bb7c-20f8d9e0d52c" class=""><a href="https://t.me/Technitze_PixelGraph/79">https://t.me/Technitze_PixelGraph/79</a></p><p id="2399c3db-75d1-4ccb-9433-0b3df7518571" class="">
+</p><h3 id="1442172c-d552-4545-b465-d23f6515bb85" class=""><strong>IG TOOLS</strong></h3><p id="7527d8b1-32de-4988-a65d-10ed85910a43" class=""><a href="https://t.me/Technitze_PixelGraph/80">https://t.me/Technitze_PixelGraph/80</a></p><figure id="569d1949-d61b-4575-8d1a-27a9729ed2bc"><a href="https://www.instagram.com/p/CIlnAP1AHjL/?igshid=18jzpsdm5bo73" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Instagram</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico" class="icon bookmark-icon"/>https://www.instagram.com/p/CIlnAP1AHjL/?igshid=18jzpsdm5bo73</div></div></a></figure><p id="711ba51f-17b8-49ed-a6b2-ee868b9ff012" class="">
+</p><figure id="4cc50c81-be4e-4f4f-b0af-c5d3622e182a"><a href="https://inflact.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Inflact by Ingramer - Marketing toolkit for Instagram</div><div class="bookmark-description">The number of followers and likes doesn&#x27;t matter if you run an Instagram account for business. Millions of Instagram users are looking for your goods - they can become your loyal consumers if they find you. We aim to help you detect and attract future clients through AI targeting and develop long-lasting relationships.</div></div><div class="bookmark-href"><img src="https://inflact.com/favicon-16x16.png" class="icon bookmark-icon"/>https://inflact.com/</div></div><img src="http://inflact.com/landing/images/og_main.png" class="bookmark-image"/></a></figure><p id="4fcb7ef8-1e37-49a1-a16f-908c892b1e8a" class="">
+</p><p id="28ec4b51-ea3e-4181-a006-792c78029f2c" class=""><a href="https://www.instagram.com/reel/CLE-3aJnPS2/">https://www.instagram.com/reel/CLE-3aJnPS2/</a></p><p id="583712fe-8550-4611-b563-44d146604fe1" class="">
+</p><p id="6f53d7ce-679b-4a81-b58e-a3da230f6241" class="">
+</p><h3 id="0acb8f9a-5cab-44b5-a232-7a8d132e602f" class=""><strong>This bot helps you to download images/videos from Instagram. </strong></h3><p id="fd030800-3765-4024-80cf-459529fbb58a" class=""><a href="https://t.me/Instasave_bot">https://t.me/Instasave_bot</a></p><p id="45da038f-dc6b-41ab-aa26-849760da663f" class="">
+</p><h3 id="1c68671b-8fc0-4a78-9426-a481ec439373" class=""><a href="https://gravtag.com/"><strong>GravTag</strong></a><strong> helps you reach the right people on Instagram by intelligently guiding you to the best hashtags for your posts</strong></h3><p id="827dc0f2-fda8-4065-af2b-b0f3b8da138a" class="">
+</p><h3 id="7694495d-d08a-4389-93e0-8acb78dc507b" class=""><strong>Create designer text via Apps and websites.</strong></h3><p id="c7532bd8-8f74-4e7f-a981-f245376e66e1" class=""><a href="https://t.me/Technitze_Encoretech/4">https://t.me/Technitze_Encoretech/4</a></p><p id="cb334534-3074-4dc1-bf85-81b879a20268" class="">
+</p><h3 id="a4da324f-78ee-4b35-81cb-a9d9033638d3" class="">10 great free calligraphic style free fonts:</h3><ol type="1" id="f5fef146-0f07-40a3-a143-70c924fa58d4" class="numbered-list" start="1"><li><a href="http://dafont.com/noelan.font">dafont.com/noelan.font</a></li></ol><ol type="1" id="01fc31a2-89b9-488f-9770-d3ea929e1973" class="numbered-list" start="2"><li><a href="http://dafont.com/mattilda.font">dafont.com/mattilda.font</a></li></ol><ol type="1" id="9b1ee47e-94a8-42f4-af60-6ab005444e70" class="numbered-list" start="3"><li><a href="http://dafont.com/calingham.font">dafont.com/calingham.font</a></li></ol><ol type="1" id="82d3154a-f7b5-418d-bfc3-51f8de8c88f1" class="numbered-list" start="4"><li><a href="http://dafont.com/elaya-script.font">dafont.com/elaya-script.font</a></li></ol><ol type="1" id="32bb960f-cd60-4774-a019-9b03b7dd0bbb" class="numbered-list" start="5"><li><a href="http://dafont.com/laurance.font">dafont.com/laurance.font</a></li></ol><ol type="1" id="788ca7e1-1430-4a27-ad9f-7a4a8ed1e3e7" class="numbered-list" start="6"><li><a href="http://dafontfree.io/download/balqis-font/">dafontfree.io/download/balqis-font/</a></li></ol><ol type="1" id="d5b9062f-bcc7-4dc1-80ec-372baec0949c" class="numbered-list" start="7"><li><a href="http://dafont.com/onthel.font">dafont.com/onthel.font</a></li></ol><ol type="1" id="893b074d-1093-40b3-9758-d0b1e6263044" class="numbered-list" start="8"><li><a href="http://dafontfree.io/download/salmela/">dafontfree.io/download/salmela/</a></li></ol><ol type="1" id="f705db99-1ce2-4010-8bfb-f2d9ca789a78" class="numbered-list" start="9"><li><a href="http://befonts.com/aprillia-script.html">befonts.com/aprillia-script.html</a></li></ol><ol type="1" id="4f2b55da-af68-4a8e-9558-b920a6785865" class="numbered-list" start="10"><li><a href="http://dafont.com/lauren.font">dafont.com/lauren.font</a></li></ol><p id="fa8dcdaa-73fd-4a56-85f3-853fdf47e901" class="">
+</p><h3 id="09c48231-f75d-44dc-8d22-a2e3d70da59c" class=""><strong>Instagram Tools &amp;  Marketing Blogs</strong></h3><p id="7d4bcfa3-47a5-4441-bdfb-db1f34fa4b2b" class=""><a href="https://t.me/Technitze_PixelGraph/81">https://t.me/Technitze_PixelGraph/81</a></p><p id="7bd84d23-b2a8-495a-812d-edd901bb404e" class="">
+</p><h3 id="4dd29442-68ed-4799-a666-482655ec957e" class=""><strong>World’s Favorite Instagram Marketing Platform | Later</strong></h3><figure id="d9a3f00e-466e-4623-9b38-ede7bba330bb"><a href="https://later.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Later: All-In-One Social Media Management &amp; Link In Bio Tool</div><div class="bookmark-description">&quot;Later has enabled our team to focus on producing quality, engaging content by freeing up time that would have been spent on collecting user-generated assets, planning, and scheduling&quot; Social Media Team MeUndies</div></div><div class="bookmark-href"><img src="https://later.com/images/favicons/favicon.ico" class="icon bookmark-icon"/>https://later.com/</div></div><img src="https://images.ctfassets.net/nfpsrlop6sws/6N6B6TUul9vYX5XdMBAu2r/59c04817ba9b0151c153f2f1401f1d97/hoempage_meta.png" class="bookmark-image"/></a></figure><p id="508a2914-2f4a-4325-98ed-0546f33e1ff5" class="">
+</p><figure id="85c473b8-ff03-4084-ae82-455584a623cf"><a href="https://www.instagram.com/p/CJsFKdbgYBJ/?igshid=gggxzkrcvhyg" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Designspective on Instagram: &quot;From @squaredacademy Top tools for Instagram, recommend by content creators! Accounts featured: @iamhcreative @theharryneedham @marketingharry @whussain.official @michael.filipiuk - Not sponsored or affiliated with any of these tools. Which one is new to you, let us know in the comments. - Follow @squaredacademy for more Instagram growth content. - #Instagramgrowth #instagramgrowthtips #instagramgrowthexpert #instagramcoach #instagramstrategy #instagrammarketing #instagrambusiness #igstrategy #igtips #marketingstrategy #marketingtips #smma #socialmediaagency #digitalmarketingstrategy #socialmediatips #instagrammarketingtips #socialmediaadvertising #instagramtips #instatip #instatips #contentstrategy #socialmediagrowth #contentmanagement #squaredacademy #marketingtools&quot;</div><div class="bookmark-description">Designspective shared a post on Instagram: &quot;From @squaredacademy Top tools for Instagram, recommend by content creators! Accounts featured: @iamhcreative @theharryneedham @marketingharry @whussain.official @michael.filipiuk - Not sponsored or affiliated with any of these tools. Which one is new to you, let us know in the comments. - Follow @squaredacademy for more Instagram growth content.</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico" class="icon bookmark-icon"/>https://www.instagram.com/p/CJsFKdbgYBJ/?igshid=gggxzkrcvhyg</div></div><img src="https://scontent-iad3-2.cdninstagram.com/v/t51.29350-15/136699139_453465619016288_3703003235025627641_n.jpg?stp=dst-jpg_s640x640&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=mtF9SJmcKiYAX--FzDt&amp;_nc_ht=scontent-iad3-2.cdninstagram.com&amp;oh=00_AT_m6P3ddpQBvi2B7nW0TBhHIYJU-7ObysyWrfRnhB7oIQ&amp;oe=62E7C7F5" class="bookmark-image"/></a></figure><p id="87bb6441-a063-4f54-a498-f68da86585f1" class="">
+</p><figure id="102cdd60-3f1b-4200-863d-860f6e56ca64"><a href="https://vocal.media/lifehack/how-to-make-money-on-instagram-without-10-k-followers" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Make Money on Instagram (Without 10K Followers)</div><div class="bookmark-description">But did you know that Instagram has more than 1 billion monthly users? That&#x27;s a lot of people, just waiting to find out about you, and what you have to offer! In this article, we&#x27;ll show you all the different ways you can make money on Instagram, even if you don&#x27;t have 10,000 followers yet.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1510257716/lw9lo5noqqz0jnh39ngm.png" class="icon bookmark-icon"/>https://vocal.media/lifehack/how-to-make-money-on-instagram-without-10-k-followers</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fe76bf01023a1001c061924.png" class="bookmark-image"/></a></figure></div></article></body></html>

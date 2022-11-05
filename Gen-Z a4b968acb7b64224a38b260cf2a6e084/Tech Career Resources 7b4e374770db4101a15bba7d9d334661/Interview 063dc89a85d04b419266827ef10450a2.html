@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Interview***</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="063dc89a-85d0-4b41-9266-827ef10450a2" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1565728744382-61accd4aa148?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 51.99%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🗾</span></div><h1 class="page-title">Interview***</h1></header><div class="page-body"><p id="575f685a-0af4-40e6-aade-8abe00cfa437" class="">
+</p><figure id="01807c7d-8504-46cd-8dc4-99bfd7a90492" class="link-to-page"><a href="Interview%20063dc89a85d04b419266827ef10450a2/Aptitude%20and%20Reasoning%2001807c7d850446cd8dc499bfd7a90492.html"><span class="icon">🔰</span>Aptitude and Reasoning</a></figure><p id="79746c83-9e48-495d-8ed9-38c2b00f32f3" class="">
+</p><figure id="45e876b4-cc17-49c1-ad82-9293966694f3"><div class="source">https://github.com/kdn251/interviews</div></figure><figure id="dc785275-b4f1-40d7-bec7-b898d7abf9a6"><div class="source">https://github.com/yangshun/tech-interview-handbook</div></figure><figure id="dda2c104-eb4b-4f57-bee0-f5c9d28776e1"><div class="block-color-brown source"><a href="Interview%20063dc89a85d04b419266827ef10450a2/Tech_Placements.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10cd267c-4726-4fad-9a14-ec5612bbddbb/Tech_Placements.pdf</a></div></figure><figure id="30a3f768-70ac-4d27-98df-72642e264e48"><div class="block-color-brown source"><a href="Interview%20063dc89a85d04b419266827ef10450a2/BX_Placement_prep_Final_compressed.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38658b95-118c-4f8b-9605-56b49fd9178f/BX_Placement_prep_Final_compressed.pdf</a></div></figure><p id="65390aec-430d-4915-9d88-d7add430e6d5" class="">
+</p><figure id="27339231-3a6f-400a-8403-b0d10c547ab8"><a href="https://awesomelists.top/#/DopplerHQ/awesome-interview-questions" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/DopplerHQ/awesome-interview-questions</div></div></a></figure><p id="a3626748-0e85-4ec8-b842-926e39233941" class="">
+</p><figure id="7f51acc7-0894-4686-b5c7-1c2f63458558"><a href="https://learntocodewith.me/posts/technical-interview/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Technical Interviewing 101: Ultimate Guide to Acing Your Tech Interview in 2022</div><div class="bookmark-description">Get ready for your technical interview with this ultimate guide covering how to prepare, what to expect, common questions, and more. The technical interview is unlike any other job interview: it&#x27;s a specialized, rigorous process that tests your coding skills, problem-solving abilities, and personality.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/technical-interview/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2021/06/Beginners-guide-technical-interview.png" class="bookmark-image"/></a></figure><p id="fb66d373-f1da-4acb-8b13-312d69afaa49" class="">
+</p><figure id="b3021980-f4ae-4251-89a6-c48edaf628f7"><a href="https://github.com/jwasham/coding-interview-university" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - jwasham/coding-interview-university: A complete computer science study plan to become a software engineer.</div><div class="bookmark-description">I originally created this as a short to-do list of study topics for becoming a software engineer, but it grew to the large list you see today. After going through this study plan, I got hired as a Software Development Engineer at Amazon! You probably won&#x27;t have to study as much as I did.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/jwasham/coding-interview-university</div></div><img src="https://repository-images.githubusercontent.com/60493101/4ed59900-87ab-11ea-9e39-99741f040a83" class="bookmark-image"/></a></figure><figure id="9ef70642-fadc-47d5-9de0-b6bb15281cfb"><a href="https://www.codinginterview.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Coding Interview Preparation | Codinginterview</div><div class="bookmark-description">CodingInterview.com gives you all the information you need to maximize your chances of success at today&#x27;s top companies. TRY A GUIDE Would you like to be notified when we add more content? Interviewing soon? We&#x27;ve partnered with Hired so that companies apply to you, instead of the other way around.</div></div><div class="bookmark-href"><img src="https://static.wixstatic.com/media/87c994_5da6f3d0011a4417a4de1159f532ed30%7Emv2.png/v1/fill/w_16%2Ch_16%2Clg_1%2Cusm_0.66_1.00_0.01/87c994_5da6f3d0011a4417a4de1159f532ed30%7Emv2.png" class="icon bookmark-icon"/>https://www.codinginterview.com/</div></div><img src="https://static.wixstatic.com/media/87c994_0f0120d4f20c473e802da7236aa1a4c2~mv2.jpg/v1/fill/w_139,h_84,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/lyftlogo1.jpg" class="bookmark-image"/></a></figure><figure id="2192376f-047d-4455-8aa0-dae70fd2da0a"><a href="https://workat.tech/general/article/sde-1-interview-prep-ultimate-guide-dhijqvdubzor" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">SDE 1 Interview Preparation Roadmap for Product-Based Companies</div><div class="bookmark-description">SDE I Interview Preparation: The Ultimate Guide is aimed at helping students/freshers and professionals prepare for entry-level software engineering jobs at top tech product-based companies and startups like Amazon, Flipkart, Google, Microsoft, PhonePe, Uber, Udaan, etc</div></div><div class="bookmark-href">https://workat.tech/general/article/sde-1-interview-prep-ultimate-guide-dhijqvdubzor</div></div></a></figure><p id="5c2f11b6-d8c7-40b2-8512-3732d853a0dc" class="">
+</p><figure id="9c6fa30d-3542-478c-b1c5-24021d5eac96"><a href="https://www.indeed.com/career-advice" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Indeed Career Guide | Indeed.com</div><div class="bookmark-description">In partnership with Born This Way Foundation, Indeed conducted a survey¹ of 1,200 currently or soon-to-be employed 18- to 29-year-olds, which found that when they feel their employers value their mental health too, their performance and loyalty at work increase.</div></div><div class="bookmark-href"><img src="https://images.ctfassets.net/pdf29us7flmy/289vCHeR8VihSh6eqiStxK/0d4ad61e921b5509de060d93c736c466/favicon.png?w=192" class="icon bookmark-icon"/>https://www.indeed.com/career-advice</div></div></a></figure><p id="b53229ca-fa22-4858-9d13-c5c344e91b7c" class="">
+</p><h3 id="969edace-c96c-4383-9687-147863df55d9" class="block-color-blue">Mock Interviews</h3><figure id="b3468ec8-a9c3-4aa7-b622-5ff1306be9b6"><a href="https://www.pramp.com/#/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Practice Live Job Interviews - For Free</div><div class="bookmark-description">Pramp definitely played a role in my performance. Nothing beats mock coding interviews. I still remember my first coding interview [...] a few years back with another company. I was so nervous, and shaking... , and sweating... needless to say, I failed it. It&#x27;s come a long way since then.</div></div><div class="bookmark-href"><img src="https://www.pramp.com/img/favicon.ico" class="icon bookmark-icon"/>https://www.pramp.com/#/</div></div><img src="https://www.pramp.com/img/pramp_thumbnail.png" class="bookmark-image"/></a></figure><p id="3e8c7d82-6fd4-4132-9e70-900461913cdc" class="">
+</p><figure id="67c484f0-ee23-4bc8-8562-c2a5a68f1200"><a href="https://www.interviewbit.com/mock-interview/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mock Interview</div></div><div class="bookmark-href"><img src="https://assets.interviewbit.com/assets/ibpp/favicon-fcc4f9cdd2e768e1a9c0b884239242138fd250486c634d791103a152eee669a1.ico.gz" class="icon bookmark-icon"/>https://www.interviewbit.com/mock-interview/</div></div><img src="http://ibassets.s3.amazonaws.com/static-assets/ib-logo-square.png" class="bookmark-image"/></a></figure><p id="b3709715-0e2a-44fc-853a-3a763feddbfc" class="">
+</p><h3 id="df1222cc-7035-458e-b029-09ee474fdc2d" class=""><strong>A Complete Preparation Guide For Coding Interviews.</strong></h3><figure id="8c5f4736-d83f-4470-bbec-220e7b801fd2"><a href="https://www.codingninjas.com/codestudio/guided-paths" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Code Studio</div></div><div class="bookmark-href"><img src="https://www.codingninjas.com/favicon.ico" class="icon bookmark-icon"/>https://www.codingninjas.com/codestudio/guided-paths</div></div></a></figure><p id="5f38ceb6-619f-455e-a121-c4fcd56f2c20" class="">
+</p><h3 id="fc2010e3-6fa8-42eb-a9af-80c1490b231d" class="">Github Repos for Coding Interview</h3><figure id="fc5d0a3d-f802-4c7e-ac0e-0ace3ce4e7b6"><a href="https://www.instagram.com/p/CJjFb5mgFvU/?igshid=8j3q9ued7hww" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.instagram.com/p/CJjFb5mgFvU/?igshid=8j3q9ued7hww</div></div></a></figure><p id="c39caa87-589b-4c40-8ff5-b855cb022b12" class="">
+</p><figure id="28d5db30-7553-4782-8146-1f7713efc8f0"><a href="https://www.faceprep.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FACE Prep | Land your dream Tech job with FACE Prep</div><div class="bookmark-description">FACE Prep is India&#x27;s best platform to prepare for your dream tech job. We offer ProGrad Certification program, free interview preparation, free aptitude preparation, free programming preparation for tech job aspirants.</div></div><div class="bookmark-href">https://www.faceprep.in/</div></div></a></figure><p id="d4faa8bf-d184-4714-a956-496633cf9efb" class="">
+</p><p id="6a82b650-29c3-461f-9cbc-85f476a64e05" class=""><strong>TCS - </strong><strong><a href="https://drive.google.com/drive/u/0/folders/1Tq-s0E7ZCi8lgUX0hLi1_ujIfYPesjp9">https://drive.google.com/drive/u/0/folders/1Tq-s0E7ZCi8lgUX0hLi1_ujIfYPesjp9</a></strong></p><figure id="4495d538-68ce-4c4b-8a75-abc5fa3225b8"><a href="https://t.me/Technitze_Codernett/247" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">Paid Placement Materials Drive Package For Free :- * CTS : https://drive.google.com/open?id=1a-HWjvdfAb4t3xo0O_R8_kwlqGs6Ipt- * TEK SYSTEMS : https://drive.google.com/open?id=1wsJFR1RNpzcDWcecYkx7Ke5EtvUa3b7i * TECH MAHINDRA : https://drive.google.com/open?id=1ltJ4CSu-6rSCOgjLKtFC6LIwfVej5NXl * WIPRO : https://drive.google.com/open?id=15WDPKzntkQ0ux1-qXZhQ6MQ-IjSgYZWE * INFOSYS : https://drive.google.com/open?id=1A0so4BGzkynu4k9T0hl-c6yokMBlMQiF * MINDTREE : https://drive.google.com/open?id=1dkBNs61BGmaQ8bvMDMlNO2ENDtCcNSdp * VALUE LABS : https://drive.google.com/open?id=1MC6LwK5zoTIDkmjZHgm2TxnHPGxGnrHJ * MPHASIS : https://drive.google.com/open?id=1s4ExADXgIicpTaNjLj5Et6yv4UaPqXaT * ZENQ : https://drive.google.com/open?id=1FjZxLhhMSNhnkru1pZEGjD1-w8XJPTZQ * EPAM : https://drive.google.com/open?id=14kYwuvk3DiCp_c67Qhdm5j8MQ9ctPmRm * GATE : https://drive.google.com/open?id=1996QqgIeETZQ2o7Lpomh8-fSl49tlckz * AMCAT : https://drive.google.com/open?id=1vPCyQnc844BK9jsTKQ7WIzcGpx3r3J-d * ELITMUS : h...</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/247</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="63a7d0a2-5fe6-4a6e-914d-a2a800887146" class="">
+</p><figure id="01dfab53-e559-4565-b7de-32e24c3ee6a6"><a href="https://www.wonsulting.com/resources" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wonsulting - Resources | Job Search Resources</div><div class="bookmark-description">Wonsulting offers free career resources like resume &amp; networking templates to help you land your dream jobs.</div></div><div class="bookmark-href"><img src="https://assets-global.website-files.com/6107d4b379e3293a0c62f588/611e4b3084932781ec6d3520_favicon%20wonsulting.png" class="icon bookmark-icon"/>https://www.wonsulting.com/resources</div></div><img src="https://assets-global.website-files.com/6107d4b379e3293a0c62f588/612cf536a17ff068fd97d3e2_wonsulting%20logo-min.jpg" class="bookmark-image"/></a></figure><figure id="1ea4dc40-07cf-4e9c-a0fe-e93646af41ea"><a href="https://www.interviewbit.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">InterviewBit: Coding Interview Questions</div><div class="bookmark-description">A super interacting platform which intelligently allows us to customize our preparation schedule based on our time bandwidth. A simple and beautiful interface which gives me feeling as if I am being coached by a real instructor.</div></div><div class="bookmark-href"><img src="https://assets.interviewbit.com/assets/ibpp/favicon-fcc4f9cdd2e768e1a9c0b884239242138fd250486c634d791103a152eee669a1.ico.gz" class="icon bookmark-icon"/>https://www.interviewbit.com/</div></div><img src="http://ibassets.s3.amazonaws.com/static-assets/ib-logo-square.png" class="bookmark-image"/></a></figure><p id="43d56d6d-fd94-47cb-8a12-d894dff44b5c" class="">
+</p><figure id="a7a13831-1122-41a8-aaf4-f7f6d4f20ea7"><a href="https://technicalsapien.com/placement-prep/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Placement Prep - Technical Sapien</div><div class="bookmark-description">Prepare for your placement using the best tips, experience, and resources. We have provided preparation resources for different companies.</div></div><div class="bookmark-href"><img src="https://i0.wp.com/technicalsapien.com/wp-content/uploads/2022/05/cropped-Meta-Prime-1.png?fit=187%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://technicalsapien.com/placement-prep/</div></div><img src="https://i2.wp.com/technicalsapien.com/wp-content/uploads/2021/09/brooke-cagle-g1Kr4Ozfoac-unsplash-scaled.jpg?fit=2560%2C1707&amp;ssl=1" class="bookmark-image"/></a></figure><figure id="074ce37d-1d6d-4d99-8971-015d9b44c849"><a href="https://skillopro.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Skillo by The Urban Fight: Interview Preparation</div><div class="bookmark-description">Online Courses to Learn What Matters | Interview Preparation | Personal Finance for Beginners | Learn English Through Practise and more...</div></div><div class="bookmark-href"><img src="https://skillopro.com/favicon.ico" class="icon bookmark-icon"/>https://skillopro.com/</div></div></a></figure><p id="c468922d-748b-424e-b0dd-e729fafd5e54" class="">
+</p><figure id="7e5fbde2-0451-45b6-84b8-5c3f53349f12"><a href="https://www.fullstack.cafe/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FullStack.Cafe - Kill Your Next Tech &amp; Coding Interview</div><div class="bookmark-description">Curated Collection Full-Stack, Coding, Data Structures &amp; System Design Interview Questions To Kill Your Next Tech Interview and Get Your Next Six-Figure Job Offer</div></div><div class="bookmark-href"><img src="https://www.fullstack.cafe/favicon-16x16.png" class="icon bookmark-icon"/>https://www.fullstack.cafe/</div></div><img src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" class="bookmark-image"/></a></figure><p id="72fae3da-27ce-4403-b7bc-ca5f7622184a" class="">
+</p><figure id="7742811b-85a6-447e-9655-09d5a4f343b0"><a href="https://www.sawaal.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Practice Questions for Competitive Exams, Interviews, Certifications | Sawaal</div><div class="bookmark-description">Sawaal.com is leading website for questions and answers covering Quantitative Aptitude, General knowledge, Verbal reasoning, Non Verbal reasoning, Puzzles, Certifications, Competitive Exams , Technology and Interviews.</div></div><div class="bookmark-href"><img src="https://www.sawaal.com/assets/ico/favicon-16x16.png" class="icon bookmark-icon"/>https://www.sawaal.com/</div></div><img src="https://s3-ap-southeast-1.amazonaws.com/sawaal.com/images/sawaal-fblogo.png" class="bookmark-image"/></a></figure><p id="8d9afd4a-c7cb-4bf8-a18d-3d2396113830" class="">
+</p><figure id="59216de2-58ba-43f2-be86-3b369ef7e35d"><a href="https://www.prepbytes.com/preparation-bytes" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to start preparation for placements | PrepBytes</div><div class="bookmark-description">Practice subject-wise and company-wise tests with PrepBytes. Take real-time mock tests with other students and test your preparation.</div></div><div class="bookmark-href"><img src="https://www.prepbytes.com/public/favicon.ico" class="icon bookmark-icon"/>https://www.prepbytes.com/preparation-bytes</div></div><img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/seo-images/og/PB_preparation-bytes.png" class="bookmark-image"/></a></figure><p id="8d519807-cb38-441d-8e88-2db4b00786ae" class="">
+</p><figure id="4805094e-1e09-4aeb-828b-5de1fd6889ff"><a href="https://www.prepbytes.com/mock-tests" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mock Tests | Technical and Aptitude Test | PrepBytes</div><div class="bookmark-description">Crack your next placement with series of PrepBytes practice and mock tests. Practice subject-wise and company-wise tests. Take real-time mock tests with other students and test your preparation.</div></div><div class="bookmark-href"><img src="https://www.prepbytes.com/public/favicon.ico" class="icon bookmark-icon"/>https://www.prepbytes.com/mock-tests</div></div><img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/seo-images/og/PB_Mock+Tests.png" class="bookmark-image"/></a></figure><p id="7d6b50ff-9b57-448b-8233-f82b3049b1ea" class="">
+</p><figure id="ba262aea-3c57-4d9a-b138-adf9469dde7f"><a href="https://prepinsta.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PrepInsta : Prepare for Placements Instantly</div><div class="bookmark-description">Learn Coding, Aptitude, Puzzles, Interview hacks &amp; find previous year papers, placement papers &amp; recruitment processes of 200+ companies.</div></div><div class="bookmark-href"><img src="https://prepinsta.com/wp-content/uploads/2021/02/cropped-PrepInsta-new-logo-1-192x192.png" class="icon bookmark-icon"/>https://prepinsta.com/</div></div><img src="https://prepinsta.com/wp-content/themes/prepinsta-2020/images/prepinsta-logo-new.png" class="bookmark-image"/></a></figure><p id="cc640eca-838f-4bac-9050-871cbc922239" class="">
+</p><figure id="4ba754b6-0c1b-42bc-878a-49c1c6e5aa85"><a href="https://grow.google/certificates/interview-warmup/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Interview Warmup</div><div class="bookmark-description">A quick way to prepare for your next interview. Practice key questions, get insights about your answers, and get more comfortable interviewing.</div></div><div class="bookmark-href"><img src="https://grow.google/certificates/interview-warmup/assets/favicon.png" class="icon bookmark-icon"/>https://grow.google/certificates/interview-warmup/</div></div><img src="https://grow.google/certificates/interview-warmup/assets/interview-warmup-og.jpg" class="bookmark-image"/></a></figure><p id="a1f86d11-a231-4590-bcd3-5f17ac3187b7" class="">
+</p><figure id="73390345-dc40-42b6-aec8-c2bd03825463"><a href="https://mock.interviewready.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">System Design Simplified | Gaurav Sen</div><div class="bookmark-description">Practice Coding Interviews with Real People and find out where you stand.</div></div><div class="bookmark-href"><img src="https://mock.interviewready.io/favicon.ico" class="icon bookmark-icon"/>https://mock.interviewready.io/</div></div><img src="https://d34xlmh0rv7u44.cloudfront.net/ir_header.png" class="bookmark-image"/></a></figure><p id="f24cc240-ff0c-479a-81d0-baf376fccb58" class="">
+</p><figure id="2fa95651-cbb7-4106-ad96-9b454218479a"><a href="https://www.interviewbit.com/peer-mock-interview/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free and Anonymous Mock Interviews</div><div class="bookmark-description">Practice. Get Confident. Get hired</div></div><div class="bookmark-href"><img src="https://assets.interviewbit.com/assets/ibpp/favicon-fcc4f9cdd2e768e1a9c0b884239242138fd250486c634d791103a152eee669a1.ico.gz" class="icon bookmark-icon"/>https://www.interviewbit.com/peer-mock-interview/</div></div><img src="http://ibassets.s3.amazonaws.com/static-assets/mock_interview_og_image.png" class="bookmark-image"/></a></figure><p id="f5fb3153-6b3c-4ca8-81f9-837e174cdf52" class="">
+</p><figure id="f64a787e-2ed8-4cfe-b228-383ca86c6191"><a href="https://docs.google.com/document/u/0/d/1KvsCzl_hVsLOvwdDHQDUretT0ZrkY8wKG_LGzfqc5IQ/mobilebasic" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Get Placement Ready with Kushal</div><div class="bookmark-description">Motivation to follow this : You&#x27;ll be ready for the upcoming Placement or Internship Season. You&#x27;ll solve 100s of problems across topics. Weekly Progress Check &amp; Monthly 1-1 Session to motivate again. Mock Interview, Profile Review &amp; Gifts for dedicated students. What I want from you? Follow this plan with discipline, honesty &amp; dedication.</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" class="icon bookmark-icon"/>https://docs.google.com/document/u/0/d/1KvsCzl_hVsLOvwdDHQDUretT0ZrkY8wKG_LGzfqc5IQ/mobilebasic</div></div><img src="https://lh3.googleusercontent.com/QPa0kSFVNayES6F4bBe-IOncYqjP_FlxadMNAzkWPks4B0LleQfJFv3l88myEO1ImvVRpN2TW1VzGY_10LQzjHy-ayeFHGRZkvKMUkcJtTDJrmr7yw8X9pvQi6J8thpUr4xoE1xWHng4UAs=s600" class="bookmark-image"/></a></figure><p id="a8fb97b3-1d74-46e4-9ebd-63020edbb079" class="">
+</p><figure id="1167afa1-12d8-465d-9fb8-b8a34a62845a"><a href="https://www.interviewbit.com/technical-interview-questions/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Ultimate Guide to Acing Your Technical Interview(2022) - InterviewBit</div></div><div class="bookmark-href"><img src="https://assets.interviewbit.com/assets/ibpp/favicon-fcc4f9cdd2e768e1a9c0b884239242138fd250486c634d791103a152eee669a1.ico.gz" class="icon bookmark-icon"/>https://www.interviewbit.com/technical-interview-questions/</div></div><img src="http://ibassets.s3.amazonaws.com/static-assets/ib-logo-square.png" class="bookmark-image"/></a></figure><p id="7dccb4ac-7b18-40c3-98ac-7b0a38a7475e" class="">
+</p><figure id="1c6777e4-e03c-4562-8643-f5886a597f73"><a href="https://business.linkedin.com/talent-solutions/resources/interviewing-talent/it" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top Interview Questions to Ask IT Professionals</div><div class="bookmark-description">What makes a good IT professional-and how do you spot them? These interview questions will help you identify ability and prowess in your next IT hire. Here, you&#x27;ll find questions to help assess a candidate&#x27;s hard skills, behavioral intelligence, and soft skills.</div></div><div class="bookmark-href"><img src="https://static.licdn.com/sc/h/413gphjmquu9edbn2negq413a" class="icon bookmark-icon"/>https://business.linkedin.com/talent-solutions/resources/interviewing-talent/it</div></div><img src="https://business.linkedin.com/etc.clientlibs/settings/wcm/designs/gandalf/clientlibs/resources/images/og-social-share-image.jpg" class="bookmark-image"/></a></figure><p id="dd5fb9c5-3f39-4345-87c2-42c35dec8593" class="">
+</p><h3 id="b9a8f440-8faf-4705-a77d-7106d64a75c7" class="block-color-blue">Interview Tips and Tricks </h3><p id="450c7728-8bba-45d9-a698-0a33793a6b66" class="">
+</p><figure id="d28b29c3-d167-404c-a0e7-8eaf9c9a86ab"><a href="https://www.infomance.com/microsoft-career-experts-give-05-tips-to-get-a-job-in-microsoft/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Microsoft Career Experts Give 05 Tips to get a job in Microsoft</div><div class="bookmark-description">Microsoft is well known for giving wonderful careers and new technologies. Over the years, Microsoft has transformed and now they are a big player in the market. The good thing is: Microsoft is helping you to get a job. Yes, you heard it right. There are plenty of things to learn from Microsoft&#x27;s recruiters.</div></div><div class="bookmark-href"><img src="https://www.infomance.com/wp-content/uploads/2022/04/cropped-Im-192x192.png" class="icon bookmark-icon"/>https://www.infomance.com/microsoft-career-experts-give-05-tips-to-get-a-job-in-microsoft/</div></div><img src="https://www.infomance.com/wp-content/uploads/2019/09/job-in-microsoft.jpg" class="bookmark-image"/></a></figure><p id="3fe8e798-70f9-473c-9dba-03933513b044" class="">
+</p><figure id="b6f80526-6ec5-4f31-9488-d0eb89616dd8"><a href="https://in.indeed.com/career-advice/interviewing/interview-tips" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">23 Interview Tips: How to Get the Job</div><div class="bookmark-description">By Indeed Editorial Team Updated 11 February 2021 Published 26 August 2020 Making a great impression and demonstrating your best qualities during an interview increases your chances of getting a job offer. By preparing for the interview and following certain steps afterward, you can impress the hiring team and make them remember you.</div></div><div class="bookmark-href"><img src="https://images.ctfassets.net/pdf29us7flmy/289vCHeR8VihSh6eqiStxK/0d4ad61e921b5509de060d93c736c466/favicon.png?w=192" class="icon bookmark-icon"/>https://in.indeed.com/career-advice/interviewing/interview-tips</div></div><img src="https://d3fw5vlhllyvee.cloudfront.net/dist/header/ukraine_support.7ad2b5d444bc427dbc5d.png" class="bookmark-image"/></a></figure><figure id="c538f1c1-9b48-41e5-922d-325ed6d85b0f"><a href="https://vocal.media/journal/10-amazing-tricks-to-appear-smart-in-job-placement-interview" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Amazing tricks to appear smart in Job/Placement Interview</div><div class="bookmark-description">it is. But there&#x27;s hope: here are 10 proven tricks to appear smart in a job interview and nail that job offer. 1. Talk about your commute Discussing your morning experience with the local transit is a great way to appear smart. Share the short cuts or inside information you&#x27;ve gathered in your many years taking the subway.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164420/fjo7ga9cmzmcxfnwucmm.png" class="icon bookmark-icon"/>https://vocal.media/journal/10-amazing-tricks-to-appear-smart-in-job-placement-interview</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fef46137c6942001cf65042.jpg" class="bookmark-image"/></a></figure><figure id="c73a454b-7dbe-4387-a376-c23176eef0fa"><a href="https://www.experis.com/en/insights/articles/2021/05/25/20-tips-for-great-job-interviews" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">20 Tips for Great Job Interviews</div><div class="bookmark-description">Employers are pulling out all the stops to find qualified talent. Top candidates are harder than ever to find, and employers are addressing this challenge by investing in a range of technology tools designed to help them prospect, screen and engage candidates. How and where do you look for jobs?</div></div><div class="bookmark-href"><img src="https://www.experis.com/-/jssmedia/project/manpowergroup/global/logo/experis-favicon.png" class="icon bookmark-icon"/>https://www.experis.com/en/insights/articles/2021/05/25/20-tips-for-great-job-interviews</div></div><img src="https://www.experis.com/-/media/project/manpowergroup/experis/experis-us/articles/all_financial_planning_bluewash_rgb_150.jpg?h=2456&amp;iar=0&amp;w=3680&amp;hash=41120466E49F796B65A751364B12ECB4" class="bookmark-image"/></a></figure><p id="2b0e687a-9c4e-44f4-81da-34ef0750a241" class="">
+</p><p id="f2084638-12a2-43b6-b56f-b8a7a89abe38" class="">
+</p><p id="5650d661-1627-4ee9-bbb5-b7da60eeb173" class="">
+</p><ul id="8ccc3d4f-e028-4dbc-bdcf-b50652b149e2" class="bulleted-list"><li style="list-style-type:disc">Watch and read the interview experience and process of the company in which you are applying for the job role.</li></ul><ul id="c367720c-ba16-4631-8b32-de1842f29f4e" class="bulleted-list"><li style="list-style-type:disc">Do mock Interviews and Mock tests</li></ul><ul id="4d911142-57e3-43ab-b46c-d9ffd05c2673" class="bulleted-list"><li style="list-style-type:disc">Do a Resume Review</li></ul><ul id="b7ddc8c1-d73a-45c0-8879-314339d529ce" class="bulleted-list"><li style="list-style-type:disc">The outfit should be formal</li></ul><ul id="fc4147b8-a75f-4010-88f8-1d7d23558615" class="bulleted-list"><li style="list-style-type:disc">Communicate well, Speak the right Body Language</li></ul><ul id="6543cc22-0017-4ab2-9cb7-3e51f330b575" class="bulleted-list"><li style="list-style-type:disc">Ask a question if the interviewer tells you if you have any questions</li></ul><ul id="e856afde-95e7-4f3b-aab5-23a810f4d222" class="bulleted-list"><li style="list-style-type:disc">Do research about the Interviewer before the interview and about the company</li></ul><ul id="73a9f50c-849d-4b91-8cde-775b960d6e3e" class="bulleted-list"><li style="list-style-type:disc">The tone of the voice should be proper, the voice should be audible to the interviewer,</li></ul><ul id="8060f3e6-cb95-41cc-92eb-947d9d31105e" class="bulleted-list"><li style="list-style-type:disc">Be bold, Be Confident.</li></ul><ul id="061027ad-1a96-443d-bafe-3f907755c98a" class="bulleted-list"><li style="list-style-type:disc">Manage time properly, and go to the interview place before the time.<strong> </strong></li></ul><p id="dae59dae-5f25-47c9-a900-f6a0866054d5" class="">
+</p><h3 id="e3d44df0-98d7-4f17-a8e7-7249bb110001" class="block-color-pink"></h3><p id="07fa3756-f4d2-4fd4-a099-e6b37dc03c55" class="">
+</p><figure id="6cd33d3b-7683-46e4-b622-ef8ba6909954"><a href="https://www.expertrons.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">India&#x27;s Largest Online Career Acceleration Platform | Training and Development Program</div><div class="bookmark-description">Expertrons is an AI videobot platform offering online training and development programs and guaranteed placements to career seeking aspirants.</div></div><div class="bookmark-href"><img src="https://www.expertrons.com/wp-content/uploads/2020/04/cropped-Favicon-192x192.png" class="icon bookmark-icon"/>https://www.expertrons.com/</div></div><img src="https://www.expertrons.com/wp-content/uploads/2021/10/googleplaystore.png" class="bookmark-image"/></a></figure><p id="a2a4432c-352d-421c-93d0-c7288e7198dd" class="">
+</p><p id="d993c081-d90c-4da4-a57c-10b80a10aa19" class="">
+</p><p id="86070527-13bd-4c89-9943-30395782f90a" class="">
+</p></div></article></body></html>

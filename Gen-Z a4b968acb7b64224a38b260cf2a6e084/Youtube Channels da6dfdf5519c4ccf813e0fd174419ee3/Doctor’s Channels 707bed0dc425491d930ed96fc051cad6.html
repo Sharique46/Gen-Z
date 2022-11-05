@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Doctor’s Channels</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="707bed0d-c425-491d-930e-d96fc051cad6" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1444312645910-ffa973656eba?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 20.689999999999998%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Doctor%E2%80%99s%20Channels%20707bed0dc425491d930ed96fc051cad6/health-care-doctor-280x280-O21vjLys4.jpeg"/></div><h1 class="page-title">Doctor’s Channels</h1></header><div class="page-body"><p id="112c5fa0-635c-476c-adb5-ab41a7bea4b9" class="">
+</p><ul id="f5a77fc3-e7ce-4649-a330-c42af55d46b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Doctors Circle</strong></li></ul><figure id="bf245a3f-8b65-41c7-b44f-2c30bf729201"><a href="https://youtube.com/c/DoctorscircleInpage" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Doctors&#x27; Circle - World&#x27;s Largest Health Platform</div><div class="bookmark-description">We at Doctors&#x27; Circle never forget our purpose: helping millions of people make critical health and wellness choices that can improve the quality of their lives. We believe that credible health information means better awareness, better behaviour, better treatment and ultimately greater health and well being.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a264670a/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/DoctorscircleInpage</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLR2-l7a9NJKDrkVk_tr3aRAvBzsFjoSykFhjjQ32A=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><ul id="de7204d9-caf8-4752-8cd5-8ef732131f2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Neuro Doctor Tamil </strong></li></ul><figure id="0965ac5c-be4d-444a-8ace-1b88eb45fa52"><a href="https://www.youtube.com/channel/UCE2UyS0YLZ0BG4kPFvXe7wQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Neuro Doctor Tamil</div><div class="bookmark-description">ராக்போர்ட் நரம்பியல் மையத்திற்கு வரவேற்கிறோம் மருத்துவர் அ. வேணி அவர்கள் நரம்பியல் பிரிவில் 25 ஆண்டுகால அனுபவம் உள்ளவர். நரம்பியல் துறையில் முதுநிலைப் பட்டம் பெற்றதோடு நவீன தீவிர நரம்பு சிகிச்சைப் பிரிவில் சிறப்புப் பயிற்சி பெற்றவர். தமது முதுநிலை பட்டப் படிப்பில் சென்னை மருத்துவக் கல்லூரி அளவில் தங்கப் பதக்கம் பெற்றவர், &quot;தலை வலியே உன் முகவரி தான் என்ன&quot;, &quot;மூளை என்னும் மூலவர்&quot; நூல்களை எழுதியுள்ளார்.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCE2UyS0YLZ0BG4kPFvXe7wQ</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRJaKeuRHOnV1MZnwDFzWJlPEGfROTci9cJT-mxJA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="71f629d3-762f-45c2-bd77-0bb334f88836" class="">
+</p><ul id="e031221e-aa97-4f75-9590-d490ea9c634f" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr . Karthikeyan </strong></li></ul><figure id="4dfed3be-6602-4407-a8ca-e46525826b00"><a href="https://www.youtube.com/c/DoctorKarthikeyan" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Doctor Karthikeyan</div><div class="bookmark-description">The Main Category of niche Videos in this channel Doctor Karthikeyan are 1. Medical Videos and Medical Tips to General Population in Tamil (மருத்துவம்) 2. Educational Videos in Tamil (படிப்பு) 3. Awareness Videos regarding recent trends in Medicine in Tamil (விழிப்புணர்வு) 4.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DoctorKarthikeyan</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRuBSlAGM5KOjkgi12Fo8OUEh5k2U0SbGRrPWr40A=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="79f213ff-4048-4fc2-ae23-5fce86ce9130" class="">
+</p><ul id="538c5d9d-b58d-496f-abf5-13473f5ae7d0" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr . Ashwin Vijay </strong></li></ul><figure id="3af0cf24-c2b8-4ade-ba53-1bfc251c1ddd"><a href="https://www.youtube.com/c/DRASHWINVIJAY" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr.Ashwin Vijay</div><div class="bookmark-description">The Official Channel of Dr. Ashwin Vijay, Director-Strength India movement, Orthopaedician, Social activist, Fitness enthusiast, Humanitarian. Dr. Ashwin Vijay is a young, dynamic orthopaedician and health care entrepreneur who his own brand of the orthopaedic center has called Ojas Ortho which inspires health and well being for every patient with empathy and sensitivity.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DRASHWINVIJAY</div></div><img src="https://yt3.ggpht.com/gcwz1y4mpVzwFGmrVUQ_zKhjn2Wrj3BWp57CIZez8qFf7Faua8E1k19_HnBRTN9SjnWvkjoU_Q=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="52a665aa-ff5c-4fd4-9d6e-a62304fa3f3f" class="">
+</p><figure id="f3ffe297-4408-4df6-9f42-54c9a96f6231"><a href="https://www.youtube.com/channel/UCGIKZSgQhPBu52HpzxcQm_Q" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">InStrength By Strength India Movement - Tamil</div><div class="bookmark-description">Strength India Movement - தமிழ் தளத்திற்கு உங்களை அன்புடன் வரவேற்கின்றோம். இது ஆரோக்கியமான வாழ்க்கை வாழ்வதற்கான வழிமுறைகள் மற்றும் நோய்யற்ற வலிமையான சமுதாயம் படைக்க எங்களது முயற்சி. வாருங்கள் வலிமையான இந்தியாவை உருவாக்குவோம்</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCGIKZSgQhPBu52HpzxcQm_Q</div></div><img src="https://yt3.ggpht.com/NlKwpk9Rvd9kWMBbk7Um6DIq2jSFjA1rbkk7eyzwHURDBIZC_IdJT9ZdpF9vGrPO4ooij3aTQQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="b772e797-1e7c-464c-9a6e-08745295d248" class="">
+</p><ul id="7a632f59-2a2a-4b7a-8487-01d9c47f6701" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr.  Jibran </strong></li></ul><figure id="613117b3-ccd8-46ea-8d06-d7efb7ad3ddd"><a href="https://www.youtube.com/channel/UC5SRtzH3bR2gjlSN1gR50vQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr Jibran</div><div class="bookmark-description">Clinical Director - 32 Dental Care Smile Architect | Implants | Crowns | Transformational dentistry Dr. Ahmed Hasan Jibran is a young and dynamic Prosthodontist/ Implantologist, who is a pioneer in satisfying patients needs according to the patients requirements. It is the inherent quality of him, to keep patients requirements.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UC5SRtzH3bR2gjlSN1gR50vQ</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSxD2T-6vr9PT1_al7g8Mx88_SUvIDZm2z9apt2=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="ba668878-9270-4123-91e7-ed030f365436" class="">
+</p><ul id="e74a88a0-0549-4d87-b443-fe1288bc3407" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr . Sagul R Mugunthan</strong></li></ul><figure id="ae27bef9-df81-42f2-a09f-56356fbff96a"><a href="https://www.youtube.com/c/DrSagulRMugunthan" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr Sagul R Mugunthan</div><div class="bookmark-description">மருத்துவம், வாழ்வியல் முறை, உணவுகள் பற்றிய தகவல்களை அறிவியல் கோட்பாடுகளின் உதவியோடு சாமானிய மக்களும் எளிதாக புரிந்து கொள்ளும் வகையில் விளக்கிக் கூறுவதே இந்த சேனலின் நோக்கமாகும். நான் Dr. ஸகுல் ராமானுஜ முகுந்தன் MBBS, MD (Paeds), IDPCCM (IAP-ICC). ஆரோக்கியமான குடிமக்களே ஒரு ஆரோக்கியமான தேசத்தை உருவாக்க முடியும் என்பதை நினைவில் கொள்வோம். வாருங்கள்!! ஆரோக்கியமான தேசத்தை உருவாக்கலாம்!!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DrSagulRMugunthan</div></div><img src="https://yt3.ggpht.com/udZrcqo0wqL5TDJBS4KKW66XY8lAakvuJF3Uc5Xzgo2R_Ok-PFPkeJfziPTQmMLOJK7VsURV0J8=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="80eb2675-6ac8-4ca4-bbca-070d31a55bef" class="">
+</p><figure id="35f884dd-c547-4a6d-8ee2-1c21001678b8"><a href="https://youtube.com/c/DrSagulsPaediatriccorner" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr Sagul&#x27;s Paediatric corner</div><div class="bookmark-description">குழந்தைகள் நலம் சார்ந்த பல்வேறு தகவல்களை மருத்துவ கோட்பாடுகளின் உதவியோடு எளிய தமிழில் அனைவரும் புரிந்து கொள்ளும் வகையில் விளக்கிக் கூறுவதே இந்த சேனலின் நோக்கமாகும். நான் மரு.ஸகுல் ராமானுஜ முகுந்தன் MBBS, MD (Paediatrics), IDPCCM (IAP-ICC), குழந்தைகள் நல மருத்துவர். Hello everyone, I am Dr. Sagul Ramanuja Mugunthan MBBS, MD (Paediatrics), IDPCCM (IAP-ICC), consultant paediatrician and intensivist.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/DrSagulsPaediatriccorner</div></div><img src="https://yt3.ggpht.com/GGNTSEMYYKuJGLDcekgJeMO_Mo-L6YScztigPv-BxkrGGrt-lmVgBHgr6PeokPnMmg9wzaSFng=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="117b82d8-7420-4052-a953-b4df4ab11c85" class="">
+</p><ul id="48bf612d-a65e-46de-9003-312c93cce13d" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr. Deepthi Jammi</strong></li></ul><figure id="5538cde2-51f4-412b-8771-0fcbdb68fbfe"><a href="https://youtube.com/c/DrDeepthiJammi" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr.Deepthi Jammi</div><div class="bookmark-description">Award-Winning Gynaecologist, Fetal Medicine Expert. On a Mission to Deliver Joy &amp; Comfort to a Million Women. Director of Chennai Women&#x27;s Clinic &amp; Scan Centre. Chennai Women&#x27;s Clinic &amp; Scan Centre (CWC) optimizes pregnancy outcomes using advanced fetal medicine.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a264670a/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/DrDeepthiJammi</div></div><img src="https://yt3.ggpht.com/aMb2BBy2JdNx-nuspUwKI2rc4aWScl5UpstJ9_OAhWPY6xShLEDlXU2YA0PJzxlG90UGE3b1DZ8=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="9021d697-e56d-4554-b0fc-b0e7847bb8ee" class="">
+</p><ul id="029d62e6-5755-4618-9624-fbdf6c5b5312" class="bulleted-list"><li style="list-style-type:disc"><strong>Dr EDUCATION</strong></li></ul><figure id="6dba85b9-80f5-42b9-bfa9-c0cf4ad07468"><a href="https://www.youtube.com/c/DrEDUCATION" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dr.Education :Simplified Medical Explanations</div><div class="bookmark-description">KNOWLEDGE IS PREVENTION - Understand in Simplified Language the basics about the most common health problems from a Professional Doctor.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DrEDUCATION</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRHVFv-mmTOlzoOzqJMOgSlqQHoXudtoi3u_N5Q-A=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="fa101795-1638-4bd7-8433-22aff5dca853" class="">
+</p><ul id="df308c9a-8a39-46c9-92a9-369fb7f39e45" class="bulleted-list"><li style="list-style-type:disc"><strong>Oliva Skin and Hair Clinic</strong></li></ul><figure id="7b2cc509-ec5f-4777-adbb-307ea5c0dcf4"><a href="https://youtube.com/c/olivaclinics" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Oliva Skin and Hair Clinic</div><div class="bookmark-description">Oliva is a top chain of dermatology clinics that offers clinically-proven solutions for all skin, hair and weight loss concerns using revolutionary technology. We specialise in laser hair removal, acne and scar treatment, PRP therapy, skin lightening and body contouring services. Oliva has the largest team of dermatologists and certified therapists.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/olivaclinics</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTfUZbS4q1rM3HMJ1uvK-LnnrPmio6yCClUJVZv7w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="a0e977ba-0460-41bb-8e74-73dbc687b8bc" class="">
+</p><ul id="12f7b390-079e-4556-a193-d22b20f885d6" class="bulleted-list"><li style="list-style-type:disc"><strong>DoctorEyeHealth</strong></li></ul><figure id="01980530-7e68-46ff-92f9-ff21a58d2252"><a href="https://youtube.com/c/DoctorEyeHealth" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a264670a/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/DoctorEyeHealth</div></div></a></figure><h3 id="8ad70e07-bb9a-4e59-b513-51d48228068c" class="">Playlist</h3><figure id="89a88ac0-0692-4c8b-aec5-1c04c47b99fe"><a href="https://youtu.be/VpYvcq7OoSM" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best Face Washes for different skin types | Face Washes Reviewed for Men and Women</div><div class="bookmark-description">In this video, the best dermatologist in Delhi, India Dr. Nivedita Dadu will answer all your questions that will help you choose the right face wash as per y...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/VpYvcq7OoSM</div></div><img src="https://i.ytimg.com/vi/VpYvcq7OoSM/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="814d488d-513c-46ae-83a1-40afde53c380" class="">
+</p><figure id="22c3c45b-39af-4fc7-b364-0cb26df6169c"><a href="https://youtu.be/ubHDmDtCoZM" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;3 Fruits For Glowing Skin&quot; | RED DIET | Budget Friendly Diet Tips | Shiny Surendran | Say Swag</div><div class="bookmark-description">diet #glowingskindiet #glowingskintips #budgetdiet #sayswagWhat you eat will always show on your skin! Make it as healthy as possible. Due to many external ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/ubHDmDtCoZM</div></div><img src="https://i.ytimg.com/vi/ubHDmDtCoZM/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="4d30f869-08ee-43a2-88e3-e4ea7398a156"><a href="https://youtu.be/jLwtNKlImsI" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">SKIN CARE : सुबह उठते ही करें ये 3 काम, स्किन होगी ब्राइट और टाइट। Dr. Manoj Das</div><div class="bookmark-description">https://www.drmanojdas.com/अगर आप अरोमा थेरपी ओर नेचुरोपैथी से ट्रीटमेंट लेना चाहते है तो अपना केस हमारी वेबसाइट पर ऑनलाइन कंसल्टेंसी के लिए रजिस्टर कीजिए HA...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/jLwtNKlImsI</div></div><img src="https://i.ytimg.com/vi/jLwtNKlImsI/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="a3d839ad-5836-4650-b308-e683413809e5"><a href="https://youtu.be/cP6XN621dzc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pimples को कैसे रोके (How to Prevent Pimples) | ClearSkin, Pune | (In HINDI)</div><div class="bookmark-description">Many of us keep facing problems of Pimples now and then. We keep trying many things to get rid of these pimples. In this video, Dr. Dhananjay Chavan gives so...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/cP6XN621dzc</div></div><img src="https://i.ytimg.com/vi/cP6XN621dzc/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="0f61e42c-e736-41ae-b33a-2fa78b2112e2"><a href="https://youtu.be/0JECifHNkl0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to prevent hair fall and hair loss in tamil | Tips by Doctor karthikeyan</div><div class="bookmark-description">How to prevent hair fall and hair loss in tamil | Tips by Doctor karthikeyan#hairfall || #hairloss || #hairfalldoctoradvice In this video Doctor karthikeyan ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/0JECifHNkl0</div></div><img src="https://i.ytimg.com/vi/0JECifHNkl0/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="5fe654f3-3753-405b-8720-c7127ec36b71" class="">
+</p><figure id="24ec9bd4-acd3-4edb-9d8a-a9cf37c917f2"><a href="https://youtu.be/Zf_X81JrXRE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dandruff treatment (Tamil) Dermatologist suggestions || என்ன பண்ணலாம்? | Dr Thamizhinian</div><div class="bookmark-description">Dandruff is one of the major problem faced by half of the population today. This video is about some of the important prevention and treatment strategies and...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/Zf_X81JrXRE</div></div><img src="https://i.ytimg.com/vi/Zf_X81JrXRE/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="c5776973-5ba7-48f8-9e34-4ad7cf58b786" class="">
+</p><figure id="599c9deb-caad-40cb-ba71-949bccf3f946"><a href="https://youtu.be/jskWNxw4CZE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best Anti-Dandruff Shampoos | How to Get Rid Of Dandruff | Remove 100% Dandruff | Dr. Nivedita Dadu</div><div class="bookmark-description">How to Remove 100% Dandruff from Best Anti-Dandruff Shampoos?Are you facing a dandruff problem? Do you want to know How to get rid of dandruff? Dr. Nivedita ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/jskWNxw4CZE</div></div><img src="https://i.ytimg.com/vi/jskWNxw4CZE/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="7e31a8a6-a9e2-403c-9957-249958748d63" class="">
+</p><figure id="73f19d4f-8e16-4621-8639-2de0e3546986"><a href="https://youtu.be/neNjdrmBhhA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dandruff Removal: Anti Dandruff Treatment, Shampoo, Lotions and Tablets | Dandruff Treatment at Home</div><div class="bookmark-description">Dandruff treatment is necessary for dandruff removal in chronic conditions and there are various options available in treatment for dandruff. Severe dandruff...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/neNjdrmBhhA</div></div><img src="https://i.ytimg.com/vi/neNjdrmBhhA/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="3b051d21-21fd-4e84-b3a2-e769bc1644d4" class="">
+</p><p id="cbde4974-dbd8-4703-a22f-adde5cc20766" class="">
+</p><figure id="7b0d74a7-fb70-4490-98a6-5b4383567ca9"><a href="https://youtu.be/xBIEIKFMo6g" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BEST SHAMPOOS FOR DANDRUFF - TOP ANTI-DANDRUFF SHAMPOOS</div><div class="bookmark-description">Dandruff is a scaly and itchy scalp condition where clumps of skin cells come together to create flakes you can see in your hair. HOW TO TREAT DANDRUFF : ht...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/xBIEIKFMo6g</div></div><img src="https://i.ytimg.com/vi/xBIEIKFMo6g/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="e230d926-ac4b-4446-ab89-70c72955b29e" class="">
+</p><figure id="4da0522d-b0d2-4d93-9d0d-b5f291ee739c"><a href="https://youtu.be/7Qr32gXhvHI" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dandruff, white flakes, itching scalp, seborrhea scalp, shampoo for dandruff treatment.</div><div class="bookmark-description">Dandruff or seborrhea is a condition where small flakes of dry dead skin is seen along the hair strands and there is a lot of itching in the scalp. watch thi...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/7Qr32gXhvHI</div></div><img src="https://i.ytimg.com/vi/7Qr32gXhvHI/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="d3d8587b-9503-4529-bd46-98d8d7eba0c2" class="">
+</p><figure id="522da661-d153-4913-b7ed-aa386266c7d6"><a href="https://youtu.be/aGmPKoNLwT8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Itchy Scalp &amp; Dandruff: How To Treat Dandruff(डैंड्रफ का इलाज कैसे करें)| #AskDrDc Ep12 | (In HINDI)</div><div class="bookmark-description">Do you have itchy scalp and dandruff? Do you know What are the main causes of dandruff? Dr. Dhananjay Chavan explains how to treat dandruff and itchy scalp, ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/aGmPKoNLwT8</div></div><img src="https://i.ytimg.com/vi/aGmPKoNLwT8/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="0f669247-0c6f-44c7-8134-cacb4e77b121" class="">
+</p><figure id="4e5378e5-f523-4d80-b64d-f1da3c0d8423"><a href="https://youtu.be/5eDXWfzkS_M" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dandruff treatment at home | DIY | Dr. Hansaji Yogendra</div><div class="bookmark-description">In today&#x27;s episode Dr. Hansaji gives us some DIY tips that you may try and practise at home with great ease. Official Websitehttps://theyogainstitute.org/Re...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/5eDXWfzkS_M</div></div><img src="https://i.ytimg.com/vi/5eDXWfzkS_M/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="6dd9f25d-9092-4174-b20b-d3158770d3b0" class="">
+</p><p id="f3bdb4b9-0b8d-4141-a22e-72db807bc021" class="">
+</p><p id="e6945e9c-e961-4761-9d61-677ae43d489e" class="">
+</p><p id="12725b0d-6188-4649-baa1-f03263b2334d" class="">
+</p><figure id="a69f8751-8e4e-4b68-9ab9-37175c5eeaf7"><a href="https://youtu.be/uOGluHI8dXw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Teenage skin care | oily, normal and dry skin | moisturiser, face wash, sunscreen | Dermatologist</div><div class="bookmark-description">skincare #skincaretips #dermatologist #teenageskincare Please keep your skin area very simple with minimal products. your skin is youthful and you do not ne...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/uOGluHI8dXw</div></div><img src="https://i.ytimg.com/vi/uOGluHI8dXw/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="55653ee8-cf95-4bfe-a48f-6dd93f5e1fec" class="">
+</p><figure id="1ec1a449-bdbb-45bf-9eb3-4827eaaaefc7"><a href="https://youtu.be/lJ3KO-Cy-mc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">my skincare routine for glowy skin ♡ Dasha Taran</div><div class="bookmark-description">Thanks for watching! i hope you guys enjoyed my video!♡follow me ☺○Instagram: https://instagram.com/taaarannn?igshid=f9k5lt9f6myyhttps://instagram.com/tarank...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/lJ3KO-Cy-mc</div></div><img src="https://i.ytimg.com/vi/lJ3KO-Cy-mc/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="a6bc808c-477a-43db-a088-fd1e52489eeb" class="">
+</p><p id="c7c83ab5-def5-43d7-ad95-e4a0671c7e43" class="">
+</p><figure id="29892277-818d-45f9-b757-78ea0cc2bb36"><a href="https://youtu.be/bR20Iij3Bus" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FACE PIMPLES HATAYE | ACNE TREATMENT | Pimples kese hataye | pimples kyu nikalte hai?</div><div class="bookmark-description">Pimples hatane ka tarika | pimples kyu hote hai | ek raat me pimple hataye</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/bR20Iij3Bus</div></div><img src="https://i.ytimg.com/vi/bR20Iij3Bus/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="8e7b6718-7f81-4ecc-91b2-05bcb5f79c83" class="">
+</p><figure id="621b6d70-b47d-472d-b4ee-001c2a49e27c"><a href="https://youtu.be/SsBqBv0KC4s" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">MEN&#x27;S SKIN CARE ROUTINE| DIET| Men&#x27;s pimple, acne, darkspots &amp; Glow | Indian skin | TheFormalEdit|</div></div><div class="bookmark-href">https://youtu.be/SsBqBv0KC4s</div></div><img src="https://i.ytimg.com/vi/SsBqBv0KC4s/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="b57871ac-4475-4d11-949f-cae3472d50c4" class="">
+</p><figure id="04712c74-b660-4812-a59a-f8abed220534"><a href="https://youtu.be/EyKPK1_asSY" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ULTIMATE Skin Care Routine for Natural Skin Glow &amp; Nourishment (Men &amp; Women)</div><div class="bookmark-description">The Ultimate Skin Care Routine for all skin types to get rid of Pimples, Dark Spots, Acne Scars and achieve a naturally glowing skin.Support my work on Patre...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/EyKPK1_asSY</div></div><img src="https://i.ytimg.com/vi/EyKPK1_asSY/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="89ac6667-6df5-445c-9356-a8aacb358fcc" class="">
+</p><figure id="7fe9ebfd-9c61-4cb6-af36-76d07bad2437"><a href="https://youtu.be/HZT7OzBXh-A" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">EASY &amp; BEST Skin Care Routine | Easy Solutions For Pimples, Dark Spots and Acne Removal | BeerBiceps</div><div class="bookmark-description">MEN&#x27;S GROOMING PLAYLIST : https://www.youtube.com/watch?v=5yCdwTEMzoA&amp;index=12&amp;list=PLfNW_1ECVaTj-vnRN-L6hOaRpHZ_djf90DETAILED HAIR CARE Routine : https://ww...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/HZT7OzBXh-A</div></div><img src="https://i.ytimg.com/vi/HZT7OzBXh-A/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="5c40001f-6a23-4622-a239-e1455f0ce937" class="">
+</p><figure id="3e1db67b-7819-410e-b69a-b72e9eb7f3cd"><a href="https://youtu.be/ebETlw16BHY" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HOW I CLEARED MY SKIN | PCOS *CYSTIC*ACNE |</div><div class="bookmark-description">1. Khadi naturals mint and aloe verahttps://nyk0.page.link/3Z7Teqd3swwF6G86A2. Biotique toner cucumber pore tighteninghttps://nyk0.page.link/rmWkyS9frsjydyS9...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/ebETlw16BHY</div></div><img src="https://i.ytimg.com/vi/ebETlw16BHY/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="1d45185f-6a3b-4dab-a3b3-9be97c1bb82c" class="">
+</p><figure id="ec57726a-f1fd-4fcd-a4b8-a3b4bff9ad8b"><a href="https://youtu.be/d-hxzsUsrt4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best Remedies for Acne in 5 Minutes ! #Zindagi_With_Richa</div><div class="bookmark-description">Our newest series about Skincare Tips: 5 Minutes With Dr. J. Episode 1: ACNE. Causes, Myths, What NOT to do, and Home Remedies for Pimples, Blackheads, &amp; Sca...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/d-hxzsUsrt4</div></div><img src="https://i.ytimg.com/vi/d-hxzsUsrt4/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="10b870db-d47b-4ac7-8e48-83167c5e96d4" class="">
+</p><figure id="3f0a38b5-6351-46ad-a8c9-367485f8340c"><a href="https://youtu.be/iHESDskdwdQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">My first Dermafrac experience</div><div class="bookmark-description">Deep cleansing my skin , this treatment pulls out all the problem causing black heads and white heads from the skin that to other clean ups could do .Watch i...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/iHESDskdwdQ</div></div><img src="https://i.ytimg.com/vi/iHESDskdwdQ/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="0cda403d-c455-4c6c-9dcb-73436fca43ea" class="">
+</p><figure id="f1396c1b-e75d-43da-9dad-f8004b458858"><a href="https://youtu.be/JVW_8GcHOco" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Never expected this 😭 | Hair fall Suddenly | ELORA CLINIC</div><div class="bookmark-description">What Happend To My Hair? Eloraa #hair_fall #hair_treatment #hair_careSubscribe : https://www.youtube.com/channel/UC2FY1SXJat4qLM2Cs9iJijwHi Hello makkale Wel...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/JVW_8GcHOco</div></div><img src="https://i.ytimg.com/vi/JVW_8GcHOco/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="8167c586-82b2-4018-b8e0-eafc2d6c0815" class="">
+</p><figure id="eb3b42a7-7218-445f-a031-cc95af50470a"><a href="https://youtu.be/kFupzMTd0gA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">My acne 😱journey with Eloraa Cliniq | Dermafrac 😍😍| Glowing Skin</div><div class="bookmark-description">This video is about my acne journey since i have never faced any skin issues before this was really making me feel stressful ... But eloraa cliniq saved me f...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/kFupzMTd0gA</div></div><img src="https://i.ytimg.com/vi/kFupzMTd0gA/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="39ae61ba-a342-4146-989f-6ab9c065e8b9" class="">
+</p><figure id="c44b121a-724a-446b-8c7b-6cffd9af9c4e"><a href="https://youtu.be/IMPXySMHRL0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Bollywood Celebrities Skincare Routine | Get Clear &amp; Glowing Skin</div><div class="bookmark-description">MY VLOGGING CHANNEL : https://youtu.be/S50pmxLmjPc BUY FACE WASH : https://amzn.to/3415O3MSCRUB : https://amzn.to/34evvy5TONER : https://amzn.to/345gcawSERUM...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/IMPXySMHRL0</div></div><img src="https://i.ytimg.com/vi/IMPXySMHRL0/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="ee0ecbe4-79cc-46b0-b795-a495d3c0b609"><a href="https://youtu.be/ZyFJc_amLi8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">https://youtu.be/ZyFJc_amLi8</div></div><div class="bookmark-href">https://youtu.be/ZyFJc_amLi8</div></div></a></figure></div></article></body></html>

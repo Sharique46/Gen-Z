@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Python</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b84b3287-ceb9-458e-9d22-4b54145e148f" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 40.349999999999994%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Python%20b84b3287ceb9458e9d224b54145e148f/download-icon-supertinyiconspython-1324450764865983278_512.png"/></div><h1 class="page-title">Python</h1></header><div class="page-body"><p id="8d5b07b2-bd4f-4693-893a-e39c466f6567" class="">
+</p><figure id="da464bf0-e8c9-4e19-b83a-e001189b5fd5"><div class="source"><a href="Python%20b84b3287ceb9458e9d224b54145e148f/python.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12bafdd4-4603-4662-9827-7aa66d773d9f/python.pdf</a></div></figure><h3 id="8b6e0106-049a-4ae0-97f5-ce90310827c5" class=""><mark class="highlight-blue"><strong>ROADMAP</strong></mark><mark class="highlight-blue"> - </mark><mark class="highlight-blue"><a href="https://roadmap.sh/python">https://roadmap.sh/python</a></mark></h3><p id="8afb5d68-0abb-44dd-b3f6-fafc2c4e70f9" class="">
+</p><figure id="0c5c37e8-596a-4a82-863a-0438f314e3f6"><div class="source">https://github.com/TheAlgorithms/Python</div></figure><p id="98fa0319-c094-4ab4-afcf-345ce5cedb6e" class="">
+</p><figure id="457536b0-3960-4af2-800c-c0751e8ec474"><div class="source">https://github.com/vinta/awesome-python</div></figure><p id="d68f0664-99f2-4145-8463-8c23da1c35e3" class="">
+</p><h3 id="61ed5cc7-5eb5-42b6-96aa-496817d890c4" class="">Python Beginners Guide***</h3><figure id="0127a829-71e1-4001-9f83-a1f801a58516"><a href="https://wiki.python.org/moin/BeginnersGuide" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BeginnersGuide - Python Wiki</div><div class="bookmark-description">New to programming? Python is free and easy to learn if you know where to start! This guide will help you to get started quickly. There are also Python interpreter and IDE bundles available, such as Thonny. Other options can be found at IntegratedDevelopmentEnvironments.</div></div><div class="bookmark-href"><img src="https://wiki.python.org/favicon.ico" class="icon bookmark-icon"/>https://wiki.python.org/moin/BeginnersGuide</div></div></a></figure><p id="c3b806f2-e164-427c-a221-7e24a20eac2f" class="">
+</p><figure id="033d990e-573d-492b-889c-48cad9d346e9"><a href="https://www.freecodecamp.org/news/the-best-way-to-learn-python-python-programming-tutorial-for-beginners/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Best Way to Learn Python - Python Programming Tutorial for Beginners</div><div class="bookmark-description">Python is a great programming language to learn and you can use it in a variety of areas in software development. You can use Python for web development, data analysis, machine learning, artificial intelligence, and more. With the vast amount of resources to choose from, sometimes it is hard</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/the-best-way-to-learn-python-python-programming-tutorial-for-beginners/</div></div><img src="https://www.freecodecamp.org/news/content/images/2021/08/chris-ried-ieic5Tq8YMk-unsplash.jpg" class="bookmark-image"/></a></figure><figure id="9bbf4faf-4fee-443b-a575-71adf18ba737"><a href="https://content.techgig.com/5-top-free-online-courses-to-learn-python-in-2021/articleshow/82087152.cms" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 Top free online courses to learn Python in 2021</div><div class="bookmark-description">Python is one of the most loved programming languages of today. It is used by developers, data scientists and software engineers worldwide for a wide range of projects including machine learning apps. It offers developers the flexibility to perform complex tasks with ease.</div></div><div class="bookmark-href"><img src="https://content.techgig.com/photo/65688704.cms" class="icon bookmark-icon"/>https://content.techgig.com/5-top-free-online-courses-to-learn-python-in-2021/articleshow/82087152.cms</div></div><img src="https://content.techgig.com/photo/82087152/5-top-free-online-courses-to-learn-python-in-2021.jpg?98369" class="bookmark-image"/></a></figure><figure id="b0f0048e-c25a-4356-b06c-7237500bff99"><a href="https://hackr.io/tutorials/learn-python" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Python - Best Python Tutorials | Hackr.io</div><div class="bookmark-description">Learning Python? Check out these best online Python courses and tutorials recommended by the programming community. Pick the tutorial as per your learning style: video tutorials or a book. Free course or paid. Tutorials for beginners or advanced learners. Check Python community&#x27;s reviews &amp;amp; comments.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/tutorials/learn-python</div></div><img src="https://hackr.io/tutorials/learn-python/logo/logo-python?ver=1562823957" class="bookmark-image"/></a></figure><figure id="57e65fb9-e22e-45ec-8fa0-a4271c9e717a"><a href="https://technologynous.com/top-python-projects-for-beginners/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://technologynous.com/top-python-projects-for-beginners/</div></div></a></figure><p id="60afc2ee-a99b-423d-9c69-7918ccb7159e" class="">
+</p><p id="597bb177-12d7-4383-a685-7f62a7623840" class="">
+</p><figure id="8d2e72d8-b17d-424a-81c3-a453626dddfb"><a href="https://medium.com/coders-camp/82-python-projects-with-source-code-6a1672b791ee" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">82 Python Projects with Source Code</div><div class="bookmark-description">Python is one of the best programming languages. Due to its readability and beginner-friendly nature, it has been accepted by industries around the world. So to master Python for any field you have to work on projects. In this article, I will introduce you to 82 Python projects with source code.</div></div><div class="bookmark-href">https://medium.com/coders-camp/82-python-projects-with-source-code-6a1672b791ee</div></div><img src="https://miro.medium.com/max/1200/1*gYvAUskcRg6XN4Xq5Whs7A.png" class="bookmark-image"/></a></figure><p id="f645a6f4-4b8e-4687-b706-0ccee6b30dca" class="">
+</p><p id="fd6e1b92-a9bf-43d8-9524-eb29bf44dd05" class=""><strong>Python Resources</strong></p><figure id="d00259c1-6eef-4b92-8f8b-7cffad879cf0"><a href="https://t.me/Technitze_Codernett/108" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">👨‍💻 Websites to Practice Python Python Basics 👇: 1. http://codingbat.com/python 2. https://www.hackerrank.com/ 3. https://www.hackerearth.com/practice/ Practice Problems set : 4. https://projecteuler.net/archives 5. http://www.codeabbey.com/index/task_list 6. http://www.pythonchallenge.com/ Ultimate Python Resources https://codergeek1.blogspot.com/2020/10/a-curated-list-of-ultimate-python.html Telegram channel @pythonres https://cp-algorithms.com/ One of the best website to find Data structures and algorithms explanation along with code .</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/108</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="10ce7d67-91d8-4c6b-9a44-e68c322f18c8" class="">
+</p><p id="0c091a2f-b965-4f20-9b9b-1de060d838b3" class="">
+</p><p id="549e418f-338f-4846-aeb7-0aca26a3284d" class=""><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">https://wiki.python.org/moin/BeginnersGuide/NonProgrammers</a></p><p id="25845c0d-77e7-4029-8e3c-d219322ba3bd" class=""><a href="https://www.educative.io/courses/learn-python-from-scratch">https://www.educative.io/courses/learn-python-from-scratch</a></p><p id="bb032124-b63a-4764-b331-354f0f14d969" class=""><a href="https://pirple.thinkific.com/courses/python-is-easy?campaignid=8714408397&amp;adgroupid=90461820160&amp;adid=409600806613&amp;gclid=Cj0KCQiAmZDxBRDIARIsABnkbYT8j-To_0fnIUpA5487PZqS7UBaAxwDVYxAixz4i4PWiBlMa3SEXxYaAmKSEALw_wcB">https://pirple.thinkific.com/courses/python-is-easy?</a></p><p id="494bdd5b-c34a-4b9b-bc65-373de616acdc" class=""><a href="https://www.learnpython.org/">https://www.learnpython.org/</a></p><p id="0baafa19-a641-4936-b6a2-5d1dd076b8ae" class=""><a href="https://technologynous.com/top-python-projects-for-beginners/">https://technologynous.com/top-python-projects-for-beginners/</a></p><p id="6d632b9e-166f-465c-8f0d-3bfa8811cb7e" class="">
+</p><p id="5f10431b-671c-43e9-bba6-bd9c04100480" class="">
+</p><figure id="ae863a0f-7f3b-4b68-8bfa-817eb20b9467"><a href="https://www.kaggle.com/learn/overview" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Python, Data Viz, Pandas &amp; More | Tutorials | Kaggle</div><div class="bookmark-description">Practical data skills you can apply immediately: that&#x27;s what you&#x27;ll learn in these no-cost courses. They&#x27;re the fastest (and most fun) way to become a data scientist or improve your current skills.</div></div><div class="bookmark-href"><img src="https://www.kaggle.com/static/images/favicon.ico" class="icon bookmark-icon"/>https://www.kaggle.com/learn/overview</div></div></a></figure><p id="3c193cbf-ee87-486f-b2c4-04f2acc29d73" class="">
+</p><p id="5a7cab0f-0de5-4aca-b079-d2a023ce5112" class=""><strong>Introduction to Python:-</strong></p><figure id="6b93950f-5b8f-4215-ac49-a0e9d6b96070"><a href="https://www.youtube.com/playlist?list=PLydZ2Hrp_gPS5L8SlivBxIco8HgnuvqDH" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Introduction to Python</div><div class="bookmark-description">Learn to code in Python, one of the world&#x27;s most popular programming languages.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLydZ2Hrp_gPS5L8SlivBxIco8HgnuvqDH</div></div><img src="https://i.ytimg.com/vi/hEgO047GxaQ/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCERB8AJFxuyJBsmvdkXO2v2Drq8Q&amp;days_since_epoch=19205" class="bookmark-image"/></a></figure><p id="1f1ef410-0158-46b7-9720-a633089cb072" class="">
+</p><figure id="4227b5d1-76c8-4fc7-9c41-921833c77f00" class="image"><a href="Python%20b84b3287ceb9458e9d224b54145e148f/The_Cyber_Security_Hub_s_Instagram_profile_post_(JPG).jpg"><img style="width:750px" src="Python%20b84b3287ceb9458e9d224b54145e148f/The_Cyber_Security_Hub_s_Instagram_profile_post_(JPG).jpg"/></a></figure><figure id="4fef483d-00de-4944-bfa9-947084ce0a2b" class="image"><a href="Python%20b84b3287ceb9458e9d224b54145e148f/--_----_--_on_Instagram___Python_free_learni(JPG).jpg"><img style="width:1080px" src="Python%20b84b3287ceb9458e9d224b54145e148f/--_----_--_on_Instagram___Python_free_learni(JPG).jpg"/></a></figure></div></article></body></html>

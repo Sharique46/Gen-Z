@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>PixelGraph</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a8b55abd-992c-48dd-89a0-ef1a8b4626f8" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1562575214-da9fcf59b907?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 1.3900000000000023%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/avatar-1262077542-0.jpg"/></div><h1 class="page-title">PixelGraph</h1></header><div class="page-body"><figure id="1ac18c1e-8946-45ab-9c63-d7f05a40b3e3"><div class="block-color-blue source"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Free-Design-Tools-Collection.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c5f8835d-470e-4ce1-9e60-fbcf30a712ea/Free-Design-Tools-Collection.pdf</a></div></figure><figure id="9a08e08d-7b7e-44a9-a486-a00341770e18" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/IG%20Accounts%20to%20follow%209a08e08d7b7e44a9a486a00341770e18.html"><img class="icon" src="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/IG%20Accounts%20to%20follow%209a08e08d7b7e44a9a486a00341770e18/insta.jpg"/>IG Accounts to follow</a></figure><figure id="14966d02-fadb-4b79-b54d-8548a68772a1" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Graphic%20Designing%20Roadmap%20and%20Resources%2014966d02fadb4b79b54d8548a68772a1.html"><span class="icon">📍</span>Graphic Designing Roadmap and Resources</a></figure><figure id="38e48bea-0d3e-4d89-8403-36443d6fb775" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Animation%2038e48bea0d3e4d89840336443d6fb775.html"><span class="icon">💫</span>Animation</a></figure><figure id="05177c30-b77a-4f68-b17b-4a31f90830a8" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Photography%20and%20Editing%2005177c30b77a4f68b17b4a31f90830a8.html"><span class="icon">📸</span>Photography and Editing</a></figure><figure id="a68543b8-eb4f-4757-9793-190ff4308ef4" class="link-to-page"><a href="Youtube%20Channels%20da6dfdf5519c4ccf813e0fd174419ee3/Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3/Photoshop%20and%20Graphic%20Designing%20a68543b8eb4f47579793190ff4308ef4.html"><span class="icon">🗳️</span>Photoshop and Graphic Designing</a></figure><figure id="927e8e06-5356-4a69-bd8c-d6f56d627e98" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Videography%20and%20Editing%20927e8e0653564a69bd8cd6f56d627e98.html"><span class="icon">📹</span>Videography and Editing</a></figure><figure id="169ddb5d-d1d7-4e57-9ce0-03d4f7636e94" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94.html"><img class="icon" src="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Content%20Creation%20169ddb5dd1d74e579ce003d4f7636e94/213-2136437_content-creation-icon-png-transparent-png.png"/>Content Creation</a></figure><figure id="140b5786-95c7-4d4e-a566-6756dcb9aabd" class="link-to-page"><a href="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Augmented%20Reality,%20Virtual%20Reality,%20Mixed%20Reality%20140b578695c74d4ea5666756dcb9aabd.html"><img class="icon" src="PixelGraph%20a8b55abd992c48dd89a0ef1a8b4626f8/Augmented%20Reality,%20Virtual%20Reality,%20Mixed%20Reality%20140b578695c74d4ea5666756dcb9aabd/images_mr.png"/>Augmented Reality, Virtual Reality, Mixed Reality</a></figure><p id="09bc7113-a24e-45cb-b48f-7392c61593f2" class="">
+</p><figure id="30b5d991-fb99-4255-acc9-09e2b398b257"><a href="https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">design-resources-for-developers/readme.md at master · bradtraversy/design-resources-for-developers</div><div class="bookmark-description">Websites and resources with modern UI components in different formats such as PSD, Sketch, Figma, etc.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md</div></div><img src="https://opengraph.githubassets.com/03bc7ffa94ef199649f4332ec920377ccc14f35ba0530d3ccfeea7aaa51ced31/bradtraversy/design-resources-for-developers" class="bookmark-image"/></a></figure><h3 id="348a0dc5-599e-471b-9357-e50fd327f7ff" class=""><mark class="highlight-blue"><strong>Creativity tools from google</strong></mark></h3><p id="9bf46776-c6e8-4443-a75b-638e182e510a" class=""><a href="https://t.me/Technitze_PixelGraph/84">https://t.me/Technitze_PixelGraph/84</a></p><p id="644f130d-705e-4d6a-8168-e82f6830391e" class="">
+</p><h3 id="52c8647e-9ae8-4bff-8d6f-3deda2e948b3" class=""><mark class="highlight-red">Awesome Adobe Products</mark></h3><p id="e7123532-6cd3-4f7c-ba2c-56ad34f07a4c" class=""><a href="https://t.me/Technitze_Encoretech/87">https://t.me/Technitze_Encoretech/87</a></p><h3 id="d002dcf0-911e-4a67-8e51-b5eec5266711" class=""><mark class="highlight-gray"><strong>Adobe Alternatives : </strong></mark></h3><figure id="d4ac1332-dafb-482f-b5f9-86c7f1afff51"><a href="https://www.instagram.com/p/CKd9C1RnIx4/?igshid=1tl09ku4y678n" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.instagram.com/p/CKd9C1RnIx4/?igshid=1tl09ku4y678n</div></div></a></figure><p id="a6d8abb9-ce59-4ce0-92ee-333c85d6ae61" class="">
+</p><h3 id="08651260-cd60-4cf8-925f-05193fb7c306" class=""><mark class="highlight-brown"><strong>Ideasgrab - list of ideas for you to grab.</strong></mark></h3><figure id="55dcd3e5-733f-47df-80b8-c5e2f045e188"><a href="https://www.ideasgrab.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ideasgrab - list of ideas for you to grab.</div><div class="bookmark-description">First idea shared in 2017 Below you will find a list of ideas, over 3,564 Feel free to grab any idea that interests you The list will be updated daily, so make sure to check back to inspire your own idea generation.</div></div><div class="bookmark-href"><img src="https://i0.wp.com/www.ideasgrab.com/wp-content/uploads/2020/11/cropped-912633-1.png?fit=192%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://www.ideasgrab.com/</div></div><img src="https://i0.wp.com/www.ideasgrab.com/wp-content/uploads/2020/12/meta.png?fit=4896%2C2448&amp;ssl=1" class="bookmark-image"/></a></figure><p id="758f6ad7-00cb-4406-9ebf-5a0df658ff17" class="">
+</p><figure id="4e44db32-7ef2-449c-bce9-10c29995f465"><a href="https://www.instagram.com/p/CKd9C1RnIx4/?utm_source=ig_web_copy_link" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.instagram.com/p/CKd9C1RnIx4/?utm_source=ig_web_copy_link</div></div></a></figure><h3 id="32ee7c05-f702-45e1-b842-78cef3369240" class=""><mark class="highlight-blue"><strong>Online Design tools </strong></mark></h3><p id="1635ef24-3c42-47e0-8bb0-5c42e671fd5e" class="">
+</p><figure id="48ccfcf1-b451-4f95-81f1-c7030d041957"><a href="https://t.me/Technitze_PixelGraph/30" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PixelGraph</div><div class="bookmark-description">⚡Online Design tools ⚡ #graphicdesign #designer #resources #free #Online https://www.figma.com/graphic-design-tool/ Online graphic design tool (Free &amp; paid options) https://vectr.com/ Free vector graphics software ui8.net - UI kit, layouts, icons, ... graphicburger.com - mockup, UI kit, ... mousecrafted.com - UI kit, mockup, ... uplabs.com - UI kit, web templates, ...</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_PixelGraph/30</div></div><img src="https://cdn5.telegram-cdn.org/file/V4-9ifM05BqhY_K_VYimLkncvTVNsgKdo8CNQQEz_SyNnp5YGoHi9qJxJOdXMGLV1bM0fdphiQoX7j8O_1AajpOATJkyTHbgh3uKCiPDrr6ANBgIJ-HpWFuo40gHfa4NkZxLWH1XvUaiFL5Exn-nwyvQBoVYO56Rks1ud-jsRTyu2r3B-peBFYYZXsKKsJR_FeYqafXynXI90ETh-RnN91jb331zhdkltjL9BwtCkquioTIZzVGTh1DWy1HkkdE4DvUxerB4ZekAg2OBwQ2f7CpOI60iEe2wkoU-ikW4kOBZOuBRwJo7YfjBl0O6D61sk-iFoqidBd9QQlgjA9_xmw.jpg" class="bookmark-image"/></a></figure><p id="2f11a1ce-bfcc-4617-8070-06b919064786" class=""><a href="https://snappa.com/">https://snappa.com/</a></p><p id="7e9e4eea-456b-4a86-b40b-6d30206286b3" class=""><a href="https://t.me/Technitze_Encoretech/88">https://t.me/Technitze_Encoretech/88</a></p><figure id="8b11714e-0510-45f1-9e8f-44dd5d049c91"><a href="https://www.tutorialspoint.com/free_web_graphics.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Web Graphics</div><div class="bookmark-description">Free Web Graphics - You can download royality free graphics and Clip art for your projects, web applications and presentations. Largest free collection of cliparts and web graphics.</div></div><div class="bookmark-href"><img src="https://www.tutorialspoint.com/favicon.ico" class="icon bookmark-icon"/>https://www.tutorialspoint.com/free_web_graphics.htm</div></div><img src="https://www.tutorialspoint.com/free_web_graphics/images/free-web-graphics.jpg" class="bookmark-image"/></a></figure><p id="961bcc91-6bc9-4dd3-8d53-313ee4ae231f" class="">
+</p><p id="728a981e-3627-4338-8515-bb3613f00dd7" class=""><a href="https://myoctocat.com/">https://myoctocat.com/</a></p><p id="010674d7-ddab-4150-b799-73f663681ce7" class="">
+</p><h3 id="da79d844-5e45-41f7-b5df-5b3fcc310fe7" class=""><mark class="highlight-blue"><strong>Graphic Design Websites</strong></mark></h3><figure id="58795eb5-9f94-4d9f-a398-744d4d236fe0"><a href="https://inkbotdesign.com/graphic-design-websites/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://inkbotdesign.com/graphic-design-websites/</div></div></a></figure><p id="0e3b3a17-2718-49d9-9a1a-c593796d8199" class="">
+</p><p id="bf3aa207-58d2-4705-8266-0bb10097ac90" class=""><a href="https://www.designmantic.com/">https://www.designmantic.com/</a></p><p id="95e022fc-5bff-4d11-bd97-bbb35be8fda4" class=""><a href="https://www.designhill.com/">https://www.designhill.com/</a></p><p id="cab054ff-4377-41f7-a163-78fdbed3f336" class=""><a href="https://graphicburger.com/">https://graphicburger.com/</a></p><p id="2c5684d5-3e2c-435b-8c0c-89e35d101da9" class="">
+</p><h3 id="ee92fc8a-dbbf-4be5-aaa9-ca44b0d2bf67" class=""><mark class="highlight-red"><strong>Photoshop and Graphics</strong></mark></h3><p id="610913d9-6920-4114-9bce-8a21ec8ab45f" class="">1.<a href="http://www.adobe.com/">www.adobe.com</a></p><p id="1f0ecb46-f3c8-4f28-9155-653157070628" class="">2.<a href="http://www.adobeknowhow.com/">www.adobeknowhow.com</a></p><p id="01b109fe-6107-4f5f-afdb-72265eb92d00" class="">3.<a href="http://www.pixel2life.com/">www.pixel2life.com</a></p><p id="569f785c-ecac-41dd-8534-95478757967b" class="">4.<a href="http://www.photoshopessentials.co/">www.photoshopessentials.co</a></p><p id="7de66f34-f241-4f14-9834-246073b8596d" class="">5.<a href="http://www.photoshop-tutorials.deviantart.com/">www.photoshop-tutorials.deviantart.com</a></p><p id="a87ac327-f185-4023-9132-69147385f3d8" class="">6.<a href="http://www.phlearn.com/">www.phlearn.com</a></p><p id="2bddc3d4-a8ae-492a-a743-4a4d0c2ac154" class="">7.<a href="http://www.design.tutsplus.com/">www.design.tutsplus.com</a></p><p id="7d109970-c168-4aa0-ac52-f2236c6929f6" class="">8.<a href="http://www.practicalphotoshopmag.com/">www.practicalphotoshopmag.com</a></p><p id="3dd002de-db82-48db-9486-7c4a31dbca9b" class="">9.<a href="http://www.tutorial9.net/">www.tutorial9.net</a></p><p id="f77f54b3-27cb-423d-96c3-ecde630cd4be" class="">10.<a href="http://www.pshero.com/">www.pshero.com</a></p><p id="16ae095c-7239-4c96-b60d-ec16ec41682a" class="">11.<a href="http://www.psdlearning.com/">www.psdlearning.com</a></p><p id="a96e5992-012b-46bc-993f-4e09cdc4a7cf" class="">12.<a href="http://www.alison.com/">www.alison.com</a></p><p id="30f67235-fd1c-4a56-b5c7-f0c8dd5c2246" class="">
+</p><h3 id="aea8f2c1-8335-4255-b597-f1e9e5a69aeb" class=""><mark class="highlight-blue"><strong>Websites for Vector graphics, clipart and illustrations</strong></mark></h3><p id="1949f44f-4f2c-4c20-9d8b-31bcff686b48" class=""><a href="https://t.me/Technitze_PixelGraph/46">https://t.me/Technitze_PixelGraph/46</a></p><p id="f3de976a-abfa-4921-91c5-a3ae16a412d1" class="">
+</p><h3 id="ec65357c-9ffa-4045-a1c8-01367f5ab961" class=""><mark class="highlight-blue"><strong>Free Vector Graphics and Illustrator Software</strong></mark></h3><p id="5d49333e-42b6-4b21-b0a3-67b45a53231f" class=""><a href="https://t.me/Technitze_PixelGraph/47">https://t.me/Technitze_PixelGraph/47</a></p><p id="488468da-d8c5-43b7-985b-bc6abfc08ead" class="">
+</p><h3 id="ab156076-b834-465d-b63a-674c68d1d49a" class=""><mark class="highlight-blue"><strong>Free Logo Maker Online</strong></mark></h3><p id="10c84762-17aa-41b5-a34f-ad2621ac8b1e" class=""><a href="https://t.me/Technitze_PixelGraph/36">https://t.me/Technitze_PixelGraph/36</a></p><p id="e0aae1eb-0a67-4fc9-90fe-b0deec3fe243" class=""><a href="https://www.designhill.com/tools/logo-maker">https://www.designhill.com/tools/logo-maker</a></p><p id="cc4c0d18-d56d-480b-9e69-2aed53513fe7" class="">
+</p><h3 id="65ebac0c-af53-4bd0-9123-e94bcf4b7f46" class=""><mark class="highlight-blue"><strong>Chris Shier, Vancouver BC - An art design website</strong></mark></h3><figure id="a837706b-1e13-41ba-8d9f-2b41daa803eb"><a href="https://www.csh.bz/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.csh.bz/favicon.ico" class="icon bookmark-icon"/>https://www.csh.bz/</div></div></a></figure><p id="b106f11c-6679-4bff-9e0a-327050c8562d" class="">
+</p><h3 id="e9ba8082-6b0e-4ca0-91d5-9eddb1f4c121" class=""><mark class="highlight-blue"><strong>ASCII art</strong></mark></h3><p id="30182d43-9d7a-424e-a05e-cb5481618cba" class=""><a href="https://t.me/Technitze_PixelGraph/45">https://t.me/Technitze_PixelGraph/45</a></p><h3 id="ac3d2584-2cb4-467e-80ed-fe92b35f779f" class=""><mark class="highlight-blue"><strong>Online Gif, Cartoon Maker</strong></mark></h3><p id="c397045d-8922-48e8-a65a-6cda16327256" class=""><a href="https://t.me/Technitze_PixelGraph/14">https://t.me/Technitze_PixelGraph/14</a></p><h3 id="9960874a-a58d-4340-bb6a-bba797846dba" class=""><mark class="highlight-blue"><strong>Online meme make</strong></mark></h3><p id="da2cfbf7-4791-41d0-bdc9-0ab084c360c5" class=""><a href="https://t.me/Technitze_PixelGraph/16">https://t.me/Technitze_PixelGraph/16</a></p><h3 id="4f18c987-2a05-411c-b91e-f25bfa85a1ac" class=""><mark class="highlight-blue"><strong>Create engaging presentations, professional infographics, and other stunning visuals online</strong></mark></h3><p id="b0926e7f-04e4-49ef-8a14-4d47d81c216c" class=""><a href="https://t.me/Technitze_PixelGraph/17">https://t.me/Technitze_PixelGraph/17</a></p><h3 id="e470e855-668f-4e24-b070-336d57575f94" class=""><mark class="highlight-blue"><strong>The Original Online Banner Maker</strong></mark></h3><p id="35ea920c-26f8-46fa-9939-ecbcffb6928c" class=""><a href="https://t.me/Technitze_PixelGraph/18">https://t.me/Technitze_PixelGraph/18</a></p><p id="f1a66c31-7975-4eb0-bae3-29c0e2fe8c45" class="">
+</p><p id="53dc3d8c-8ee2-4bb0-850f-c0a1385a8010" class="">
+</p><h3 id="ba1db650-0530-41b6-986b-2b3cdc4e8666" class=""><strong>🔰Download Paid Premium Photos From Shutterstock Free🔰</strong></h3><p id="d0b8f14f-c9e4-4c48-b3b8-aeafe95bc20a" class="">✅sᴛᴇᴘs ʙᴇʟᴏᴡ :-
+sτєρ 1 :- Select Your Photo And Copy Url Of That Photo.
+sτєρ 2 :- Go <a href="https://downloader.la/shutterstock-downloader.html">https://downloader.la/shutterstock-downloader.html</a> And Paste That Url.
+sτєρ 3 :- Select Download Now.
+sτєρ 4 :- That Complete Url Task And Hit Download.</p><p id="5362500a-dc0a-4633-963f-7a1d82a2b8ca" class="">
+</p></div></article></body></html>

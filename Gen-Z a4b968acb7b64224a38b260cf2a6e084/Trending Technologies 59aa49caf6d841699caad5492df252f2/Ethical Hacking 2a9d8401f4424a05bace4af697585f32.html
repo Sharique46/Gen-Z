@@ -1,0 +1,725 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ethical Hacking</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2a9d8401-f442-4a05-bace-4af697585f32" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50.79%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/8389af63a29599373cd8ef7e8ce4437f.jpg"/></div><h1 class="page-title">Ethical Hacking</h1></header><div class="page-body"><p id="3572cf15-b021-4238-9047-0254451713cd" class="">
+</p><figure id="8ac341a5-1d56-489d-9e18-3ac7e5cf8f8c"><div class="source">https://github.com/sundowndev/hacker-roadmap</div></figure><figure id="f999be66-f09c-4842-8974-1ed8946ab49b" class="link-to-page"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Awesome%20Github%20Repos%20f999be66f09c484289741ed8946ab49b.html"><img class="icon" src="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Awesome%20Github%20Repos%20f999be66f09c484289741ed8946ab49b/GitHub-Mark.png"/>Awesome Github Repos</a></figure><figure id="30a2803c-231c-4585-bc58-bdfdcc73ad5c" class="link-to-page"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Bug%20Bounty%2030a2803c231c4585bc58bdfdcc73ad5c.html"><span class="icon">🪲</span>Bug Bounty</a></figure><figure id="8739adcc-1164-4ae9-a75c-2a61744b695c" class="link-to-page"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Tweets%208739adcc11644ae9a75c2a61744b695c.html"><img class="icon" src="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Tweets%208739adcc11644ae9a75c2a61744b695c/Twitter.png"/>Tweets</a></figure><p id="728c79c0-b47c-443c-a8ae-8eca8f05b9e9" class="">
+</p><figure id="ce0be587-276b-4462-9441-5cf152ca2390"><div class="source"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Technical.Sapien.Hacking.The.Unlocking.of.Transparency.B08BJ9T8PK_compressed.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be6d577f-17a6-4d73-a00e-ceead363150e/Technical.Sapien.Hacking.The.Unlocking.of.Transparency.B08BJ9T8PK_compressed.pdf</a></div></figure><p id="53c73f88-304a-400e-996c-d6a8ab76ee95" class="">
+</p><p id="b470fdcc-2036-4f62-8bb1-d4e3da985a14" class="">Must Visit : </p><figure id="be69fba6-9183-4900-8f7c-1f7195dd6d27"><a href="https://t.me/Technitze_Cybernauts" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cybernauts</div><div class="bookmark-description">✨ Cybersecurity ✨ Ethical Hacking ✨ Tools , Resources</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Cybernauts</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="644f9d50-45e5-4d4b-8077-a58fc24ae04b" class="">
+</p><p id="63419b81-b883-4416-a5c1-424d00891e36" class="">
+</p><figure id="369789e2-58bf-410b-8c7d-63c77ac2551a"><div class="source"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/Photos-001.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c3db3d3-56c2-4072-920a-be87624a8cb6/Photos-001.zip</a></div></figure><p id="cb72761f-6934-4422-a5a3-28ee8f4fa554" class="">
+</p><p id="52ae20bf-0ab5-4491-b1c0-44dd370c1c66" class="">
+</p><figure id="2ca11a2e-55ea-4372-8816-2a9ab400c202" class="image"><a href="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/20211121_201245.jpg"><img style="width:720px" src="Ethical%20Hacking%202a9d8401f4424a05bace4af697585f32/20211121_201245.jpg"/></a></figure><p id="a931a576-de0e-4fea-9d27-2747869d8259" class="">
+</p><p id="485ff5a7-30f9-4852-b71c-d9bd2fbee88a" class="">
+</p><figure id="5c624894-311c-49d9-8ef4-ac7218b8847d"><a href="https://awesomelists.top/#/brootware/awesome-cyber-security-university" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/brootware/awesome-cyber-security-university</div></div></a></figure><p id="7a4fe6d5-b394-4c87-b53e-aed6e9aa2602" class="">
+</p><figure id="9459d7e7-9484-40af-9b58-1897ca148b4c"><a href="https://awesomelists.top/#/carpedm20/awesome-hacking" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/carpedm20/awesome-hacking</div></div></a></figure><p id="10db482f-0874-4e0d-8074-13de7d3f16cf" class="">
+</p><figure id="fc72a0a9-1aab-4d14-9a00-972d6552354e"><a href="https://www.simplilearn.com/tutorials/cyber-security-tutorial/how-to-become-an-ethical-hacker" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Become an Ethical Hacker in 2022?</div><div class="bookmark-description">The word &#x27;hacker&#x27; originally defined a skilled programmer proficient in machine code and computer operating systems. Today, a &#x27;hacker&#x27; is a person who consistently engages in hacking activities, and has accepted hacking as a lifestyle and philosophy of their choice.</div></div><div class="bookmark-href"><img src="https://www.simplilearn.com/static/frontend/images/favicon.png" class="icon bookmark-icon"/>https://www.simplilearn.com/tutorials/cyber-security-tutorial/how-to-become-an-ethical-hacker</div></div><img src="https://www.simplilearn.com/logo.png" class="bookmark-image"/></a></figure><figure id="d54c75b3-2d87-4b16-a210-2c8cbfdd6e60"><a href="https://www.eccouncil.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">EC-Council</div><div class="bookmark-description">Certified Ethical Hacker | InfoSec Cyber Security Certification | EC-Council We Care Ensuring that you get the best experience is our only purpose for using cookies. If you wish to continue, please accept. You are welcome to provide a controlled consent by visiting the cookie settings.</div></div><div class="bookmark-href"><img src="https://www.eccouncil.org/wp-content/uploads/2021/12/EC-Council-favicon5757.png" class="icon bookmark-icon"/>https://www.eccouncil.org/</div></div><img src="https://www.eccouncil.org/wp-content/uploads/2021/12/EC-Council-logo1.png" class="bookmark-image"/></a></figure><p id="1995f8f6-4363-42b1-961c-b8cb469ea2c7" class="">
+</p><figure id="ca310a81-a617-4c64-8e70-ac96030b32bb"><a href="https://www.freecodecamp.org/news/free-computer-networking-course/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn How Computer Networks Work with a Free 9-Hour Course</div><div class="bookmark-description">Almost every business has some sort of computer network. Lots of tech jobs now require some basic knowledge of how networks work. We have released a free 9-hour course that will prepare you to configure, manage, and troubleshoot both wired and wireless computer networks. Industry veteran and college instructor Brian</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/free-computer-networking-course/</div></div><img src="https://www.freecodecamp.org/news/content/images/2020/09/networking.png" class="bookmark-image"/></a></figure><p id="7b414e8a-6fce-478d-8fa2-5e9d8df3bbc8" class="">
+</p><figure id="8f3dee43-4cb3-4091-a0f4-0da5bd7fac7e"><a href="https://vocal.media/01/10-simple-steps-to-become-a-certified-ethical-hacker" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Simple Steps To Become A Certified Ethical Hacker</div><div class="bookmark-description">If you are an ethical hacker, then your income will be $50,000 to $100,000 per year. It&#x27;s not that easy to become an ethical hacker. Governments and Businesses are ready to pay whatever you demand if you are an expert in ethical hacking and penetration testing.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164419/y36fyrhqy77zsvd15dz6.png" class="icon bookmark-icon"/>https://vocal.media/01/10-simple-steps-to-become-a-certified-ethical-hacker</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5f2e75c80f5922001e3674d8.png" class="bookmark-image"/></a></figure><p id="53a464e0-2cc3-4287-bb5b-8f4ce4d72721" class="">
+</p><p id="33720cb1-7f7f-4c8c-ba3c-354a3cff1b2d" class="">
+</p><figure id="5d3ac73e-51e3-4921-bafb-2da9459fdee7"><a href="https://elliotpro.wordpress.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">elliotpro</div><div class="bookmark-description">Inspection | Validation | Mitigation The internet brings the whole world to you with the click of a few buttons, if you know how to use it. this helps you in find jobs better. ㅤㅤㅤ Wuhu! Welcome to on Board! a huge amount of attention has been paid to government snooping, and the bulk...</div></div><div class="bookmark-href"><img src="https://s0.wp.com/i/favicon.ico" class="icon bookmark-icon"/>https://elliotpro.wordpress.com/</div></div><img src="https://elliotpro.files.wordpress.com/2021/10/downlozsmad-1.jpg?w=1200&amp;fit=440%2C330" class="bookmark-image"/></a></figure><figure id="1ab07b3f-0730-4ffa-a7a3-1a0bd0c0ba5e"><a href="https://codered.eccouncil.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CodeRed</div></div><div class="bookmark-href"><img src="https://codered.eccouncil.org/favicon.ico" class="icon bookmark-icon"/>https://codered.eccouncil.org/</div></div></a></figure><p id="c32a6eb8-dc03-4927-b389-9c42e030f16a" class="">
+</p><h3 id="2f7f8f13-1794-4004-8841-7acc64e00a0f" class=""><mark class="highlight-blue">How to start hacking...the step by step guide with some tips.</mark></h3><p id="502de804-a4be-44d0-9322-e631b811fd23" class=""><a href="https://t.me/Technitze_Cybernauts/312">https://t.me/Technitze_Cybernauts/312</a></p><p id="0be5959f-6d36-4912-a873-9a412153388a" class="">
+</p><h2 id="4565f64b-395b-4569-beca-f5283a7c9d45" class=""><mark class="highlight-blue"><strong>Roadmap</strong></mark></h2><p id="473a5ab6-b2ae-464b-b659-04b8f1d3bf40" class=""><a href="https://sundowndev.github.io/hacker-roadmap/">https://sundowndev.github.io/hacker-roadmap/</a></p><p id="03940006-8b6c-47c0-b456-2ecc784a1408" class="">
+</p><figure id="66d7ed60-7dbe-4041-997a-3525c56607b4"><a href="https://resources.harshbothra.tech/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">About</div><div class="bookmark-description">This page contains all the resources related to application security and penetration testing shared by Harsh Bothra. There are some additional resources and references added that one can follow to expand their knoweldge &amp; learning curve. Note: All the information listed here is for educational purpose and any sort of misuse is not endorsed by the author.</div></div><div class="bookmark-href">https://resources.harshbothra.tech/</div></div></a></figure><p id="5de6e5b4-1234-4220-9717-d8fc50681bef" class="">
+</p><p id="f4743864-4532-49e2-995d-26b218f0f505" class="">
+</p><h3 id="26dbc7bc-ad16-4f7b-aaa7-b8282a58dff5" class=""><mark class="highlight-blue"><strong>The Five Phases of Hacking</strong></mark></h3><p id="c39c1873-c207-46df-91ab-31ae4e9f36de" class=""><a href="https://t.me/Technitze_Cybernauts/16">https://t.me/Technitze_Cybernauts/16</a></p><h3 id="bed6c165-4db4-4a5a-9364-c11a548a466b" class=""><mark class="highlight-brown">
+</mark><mark class="highlight-brown"><strong>Popular Operating System for Hacking</strong></mark></h3><p id="57351eda-8246-47b2-8692-40ebb376402a" class=""><a href="https://t.me/Technitze_Cybernauts/195">https://t.me/Technitze_Cybernauts/195</a></p><p id="00291eff-772b-4aab-8d92-edb035c9fb04" class="">
+</p><figure id="91605708-9c07-4544-9f5d-620d4029ebbb"><div class="source">https://github.com/inputsh/awesome-linux</div></figure><p id="f9940c0f-053d-4fd9-93a6-c5719575fc08" class="">
+</p><h3 id="bc110f03-27f2-4a32-83c8-b3fa31b0cbc6" class=""><mark class="highlight-red"><strong>Path to become an Information Security Specialist</strong></mark></h3><p id="871cfd6a-b688-467e-b464-e969387859f3" class=""><a href="https://t.me/Technitze_Cybernauts/2">https://t.me/Technitze_Cybernauts/2</a></p><p id="14895bfb-7d90-4159-a600-a73617849495" class="">
+</p><h3 id="4ac30b72-8822-462e-8ada-af8c9bfc17ee" class=""><mark class="highlight-teal"><strong>Top Malware Scanners List</strong></mark></h3><p id="43d1e423-0b5d-4bec-8bbd-410cc472403f" class=""><a href="https://t.me/Technitze_Cybernauts/200">https://t.me/Technitze_Cybernauts/200</a></p><p id="e0f01882-3a80-40e5-8a5b-4b60893507ac" class="">
+</p><h3 id="483017d3-ac7b-4e48-88c9-ca8383120e38" class=""><mark class="highlight-red"><strong>DANGEROUS HACKERS TOOLS EXPOSE</strong></mark></h3><p id="a6d8d6c6-d552-44ec-8e02-213eb2f60780" class=""><a href="https://t.me/Technitze_Cybernauts/314">https://t.me/Technitze_Cybernauts/314</a></p><h3 id="cf27c1c9-6ea9-4fe9-8b59-8c0c250ea015" class=""><mark class="highlight-blue">
+</mark><mark class="highlight-blue"><strong>Capture the flag-solving tools for android all tools with links </strong></mark></h3><p id="4e49a712-1878-4b31-9b99-aeb11942f647" class=""><a href="https://t.me/Technitze_Cybernauts/268">https://t.me/Technitze_Cybernauts/268</a></p><p id="0c0d659b-7901-40b5-b52f-aecaf43ed0f7" class="">
+</p><h3 id="b67be2de-c46e-4344-b6e6-966e6ac98612" class=""><mark class="highlight-teal"><strong>Dark Web | Beginners To Advanced | Access | Tools | Complete Bible</strong></mark></h3><p id="37ef9889-842d-4426-816d-b6beba359793" class=""><a href="https://t.me/Technitze_Cybernauts/35">https://t.me/Technitze_Cybernauts/35</a></p><p id="35c1c2f3-0394-4352-8749-10df0af10989" class=""><a href="https://t.me/Technitze_Cybernauts/73">https://t.me/Technitze_Cybernauts/73</a></p><p id="9fd2daee-5014-4873-96ef-59969310e661" class="">
+</p><h3 id="1592d1ad-c8ee-4a4a-a183-a8a027d2ebef" class=""><mark class="highlight-brown"><strong>FAKE ID, TEMPORARY EMAIL, DISPOSABLE NUMBERS FOR VERIFICATION</strong></mark></h3><p id="b08d244a-3672-45a5-82b0-446a049ab464" class=""><a href="https://t.me/Technitze_Cybernauts/25">https://t.me/Technitze_Cybernauts/25</a></p><p id="100d8277-79a6-486b-924b-aeb8bfe582b1" class="">
+</p><h3 id="9555b10b-7e95-4b45-8b2e-bbe65550d55f" class=""><mark class="highlight-red"><strong>BEST WEBSITES TO TEST YOUR HACKING SKILLS</strong></mark></h3><p id="564fd355-92e8-4270-9f84-93519adc60c2" class=""><a href="https://t.me/Technitze_Cybernauts/3">https://t.me/Technitze_Cybernauts/3</a></p><p id="6ffadbdc-6284-43b9-baaf-dacce987814e" class="">
+</p><h3 id="afdd0d6f-3bdd-409c-90a6-b2ad892ce2f9" class=""><mark class="highlight-brown"><strong>HOW TO SEND ANONYMOUS SMS</strong></mark></h3><p id="03037d99-3fd2-4f51-af72-72538a23c5fa" class=""><a href="https://t.me/Technitze_Cybernauts/4">https://t.me/Technitze_Cybernauts/4</a></p><p id="68d18c20-6dd0-49da-b64a-5e5c2cdf229a" class="">
+</p><h3 id="c93e35f8-7ade-4ad2-a30c-516f121e963e" class=""><mark class="highlight-red"><strong> Sites for Beginners  to Learn Cyber Hacking and Security with links</strong></mark></h3><p id="06298050-45b6-48de-9d22-525f1a604678" class=""><a href="https://t.me/Technitze_Cybernauts/8">https://t.me/Technitze_Cybernauts/8</a></p><p id="dd7ffaed-9cd5-4f97-aadf-a5af71cd4e09" class="">
+</p><figure id="0bb75759-1c4f-4e4b-a8e8-d031dab254a9"><a href="https://awesomelists.top/#/sobolevn/awesome-cryptography" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/sobolevn/awesome-cryptography</div></div></a></figure><p id="d170f985-de5d-4496-81cd-b75ad1ee2ef6" class="">
+</p><figure id="4c9365ef-27c2-4238-82dd-5b829a076e02"><a href="https://tryhackme.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TryHackMe | Cyber Security Training</div><div class="bookmark-description">TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!</div></div><div class="bookmark-href"><img src="https://assets.tryhackme.com/img/favicon.png" class="icon bookmark-icon"/>https://tryhackme.com/</div></div><img src="https://tryhackme.com/img/meta/default.png" class="bookmark-image"/></a></figure><p id="a66570c6-29ea-4b44-b5f5-90b313652f7d" class="">
+</p><figure id="27ce911c-849f-418f-82d3-e1ee1d06ed7d"><a href="https://www.hackthebox.eu/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hacking Training For The Best</div><div class="bookmark-description">Join a dynamically growing hacking community and take your cybersecurity skills to the next level through the most captivating, gamified, hands-on training experience! The home of guided and exploitative learning, offering everything that is required to take your training seriously and kickstart a career in cybersecurity. Ready to learn how to hack?</div></div><div class="bookmark-href"><img src="https://www.hackthebox.com/images/landingv3/favicon.png" class="icon bookmark-icon"/>https://www.hackthebox.eu/</div></div><img src="https://www.hackthebox.eu/images/landingv3/OG_B2C_Homepage.jpg" class="bookmark-image"/></a></figure><figure id="4624c4e6-bd0d-4176-b598-dae38a85e22c"><a href="https://www.hackerone.com/blog/100-hacking-tools-and-resources](https://www.hackerone.com/blog/100-hacking-tools-and-resources)" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.hackerone.com/blog/100-hacking-tools-and-resources](https://www.hackerone.com/blog/100-hacking-tools-and-resources)</div></div></a></figure><p id="02aae37c-65c8-45c4-b192-9c3b9e89ff2b" class="">
+</p><figure id="422b18be-94d5-4e82-b484-f31b748f188f"><a href="https://cobweb-security.com/security_lessons/8-common-website-hacking-techniques-know/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://cobweb-security.com/security_lessons/8-common-website-hacking-techniques-know/</div></div></a></figure><p id="ad9b0e06-8574-4c3c-abbf-0c7e000e6ff7" class="">
+</p><figure id="dc1fce32-4517-4c95-a0d0-728b5f5632b0"><a href="https://www.deepwebtech.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Deep Web Technologies</div><div class="bookmark-description">Search the Deep Web with Explorit Everywhere! Federated Search Technology</div></div><div class="bookmark-href">https://www.deepwebtech.com/</div></div><img src="https://www.deepwebtech.com/wp-content/themes/awake/lib/scripts/timthumb/thumb.php?src=http://www.deepwebtech.com/wp-content/uploads/ms-study-slider.jpg&amp;w=567&amp;h=334&amp;zc=1&amp;q=100" class="bookmark-image"/></a></figure><p id="77d4acab-2abb-45b9-9024-82ed1b7c313f" class="">
+</p><figure id="56914959-1ff0-4ed4-bbf0-3fb6644cd7e3"><a href="https://hackernoon.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://hackernoon.com/</div></div></a></figure><p id="57ae5b49-2ae5-4364-906a-d0495faf2350" class="">
+</p><figure id="4418c3b2-61f0-431b-a4bd-fe100bcdd347"><a href="https://resources.infosecinstitute.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Infosec Resources - IT Security Training &amp; Resources by Infosec</div><div class="bookmark-description">Infosec Resources equips cybersecurity professionals with the knowledge needed to keep their skills sharp and advance their careers.</div></div><div class="bookmark-href"><img src="https://resources.infosecinstitute.com/favicons/favicon-16x16.png" class="icon bookmark-icon"/>https://resources.infosecinstitute.com/</div></div><img src="https://resources.infosecinstitute.com/wp-content/uploads/2020/08/Banner1.jpg" class="bookmark-image"/></a></figure><p id="110c1a3c-54fb-4164-a6b9-24ac22c094de" class="">
+</p><figure id="7b091744-29c0-4989-8cc2-6b2cc990a690"><a href="https://www.hackthissite.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.hackthissite.org/</div></div></a></figure><p id="75cdf4a4-697d-4a6d-92a9-72177d9b8016" class="">
+</p><figure id="a5edb051-7ef9-439b-a6dd-8278f235a5d4"><a href="https://www.hackerone.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HackerOne | #1 Trusted Security Platform and Hacker Program</div><div class="bookmark-description">Reduce the risk of a security incident by working with the world&#x27;s largest community of trusted ethical hackers. HackerOne offers bug bounty, VDP, security assessments, attack surface management, and pentest solutions.</div></div><div class="bookmark-href"><img src="https://www.hackerone.com/themes/hacker_one/favicon.ico" class="icon bookmark-icon"/>https://www.hackerone.com/</div></div><img src="https://www.hackerone.com/sites/default/files/styles/hero_main/public/HERO_%20%281%29%202.png.webp?itok=eWJYJ0v_" class="bookmark-image"/></a></figure><p id="fe352c89-77f7-4f05-bd09-9dc09784572c" class="">
+</p><figure id="53be99e1-4104-4d8d-b278-39a19daa41c5"><a href="https://www.hacker101.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home</div><div class="bookmark-description">Hacker101 is a free class for web security. Whether you&#x27;re a programmer with an interest in bug bounties or a seasoned security professional, Hacker101 has something to teach you. Start Hacking!</div></div><div class="bookmark-href"><img src="https://www.hacker101.com/assets/images/favicon.png" class="icon bookmark-icon"/>https://www.hacker101.com/</div></div><img src="https://www.hacker101.com/assets/learn-to-hack.jpg" class="bookmark-image"/></a></figure><p id="ba9b8497-e832-4b55-8b1e-b0fa446ff106" class="">
+</p><p id="4cd414c6-81d9-4799-b69f-4f14e7cf9191" class="">
+</p><figure id="8ae78f19-4c4d-4162-8bf8-5f7e059e829d"><a href="https://www.spyzie.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.spyzie.com/</div></div></a></figure><p id="563971df-4f18-4018-8e2b-1fe4ccb9e1e9" class="">
+</p><h3 id="990f76ae-f069-4336-ba9f-4d12f8e67009" class=""><strong>BEST 2020 FREE &amp; TRIALS SPYING &amp; TRACKING APPS</strong></h3><p id="c1b0ae7f-8d81-4569-a5ee-ecc2663567d6" class=""><a href="https://t.me/Technitze_Cybernauts/189">https://t.me/Technitze_Cybernauts/189</a></p><p id="89fcdac2-b1c4-4d9d-b43a-b44486b84084" class="">
+</p><figure id="ba5c733c-034b-4ede-a87a-6ab14eaf9da7"><a href="https://www.popsci.com/scitech/article/2009-04/top-10-computer-viruses/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Top 10 Computer Viruses</div><div class="bookmark-description">Whether you clicked on a misleading banner ad, opened a file sent by a Nigerian prince or simply downloaded the wrong porn, everyone&#x27;s dealt with a computer virus at some point. While bad programming or virus checking software contains most outbreaks, some malware has managed to reach pandemic levels.</div></div><div class="bookmark-href"><img src="https://www.popsci.com/uploads/2021/02/02/popscifavicon.png" class="icon bookmark-icon"/>https://www.popsci.com/scitech/article/2009-04/top-10-computer-viruses/</div></div><img src="https://www.popsci.com/uploads/2019/03/18/HZHU32TZRSTPG425PYM56DSXBA.gif?auto=webp" class="bookmark-image"/></a></figure><p id="5b408c6e-0faf-429e-a25c-6bfde8f3602b" class="">
+</p><figure id="04a8d6ac-a3ab-48bf-ad9f-d3976c2f0a06"><a href="https://linuxjourney.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home | Linux Journey</div><div class="bookmark-description">What is Linux? Get started with choosing a distribution and installation.</div></div><div class="bookmark-href"><img src="https://linuxjourney.com/assets/favicon-e8bea7a0071e296638a3a1a08be81f0a30b9c945625e5a200fefecd8d9b2ed6c.ico" class="icon bookmark-icon"/>https://linuxjourney.com/</div></div></a></figure><p id="9ca0aec0-96b4-4a14-916e-817f0440b9c7" class="">
+</p><p id="aa604d70-7671-46c6-93ca-0d96a199e40d" class="">
+</p><figure id="3af8167c-0973-4d42-b4dc-e58f265bab68"><a href="http://jh32yv5zgayyyts3.onion/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">http://jh32yv5zgayyyts3.onion/</div></div></a></figure><p id="613f60b1-4625-4ce8-ad0b-8eb548fe24dc" class="">
+</p><h3 id="cbcf0e8c-6b28-46ae-9263-aa3a0192fe4b" class=""><mark class="highlight-brown">WebSites</mark></h3><p id="3ea61630-2708-421d-9bd3-b7f1a3d614f8" class="">
+</p><p id="5032f9a4-2aa4-4fc8-bd00-f4037cf63d5d" class=""><a href="https://academy.razzsecurity.com/index.php">https://academy.razzsecurity.com/index.php</a></p><p id="a7e4e445-1a10-4ebb-a58b-2d3b1ff4da12" class=""><a href="https://www.osforensics.com/">https://www.osforensics.com/</a></p><p id="6e689b43-c09d-4a9d-8c9e-93632e9c4dea" class=""><a href="https://chefsecure.com/courses/xss">https://chefsecure.com/courses/xss</a></p><p id="90853fb1-6af6-40ca-9cf7-7b574af414b7" class=""><a href="https://developex.in/">https://developex.in/</a></p><p id="549bb9fc-e619-476f-a184-29a2459d00e5" class=""><a href="https://proxysite.io/">https://proxysite.io/</a></p><p id="b58647a6-7c78-4c21-81bb-13edd5287568" class=""><a href="https://ispirt.in/">https://ispirt.in/</a></p><p id="89bcf98c-ce64-424e-a4a7-eccd127b2ebe" class=""><a href="https://www.zimperium.com/zanti-mobile-penetration-testing">https://www.zimperium.com/zanti-mobile-penetration-testing</a></p><p id="a9d62702-b5f0-4c59-b529-0e005e69b4b9" class=""><a href="https://www.ibm.com/services/learning">https://www.ibm.com/services/learning</a></p><p id="112ab712-d343-462b-bb6a-c30f513be1c5" class=""><a href="https://www.hacksplaining.com/">https://www.hacksplaining.com/</a></p><p id="aa2cc35f-7dff-4b40-8dcf-47a6d24257d8" class=""><a href="https://www.hackerearth.com/">https://www.hackerearth.com/</a></p><p id="c8018ec9-53f0-40c4-89ef-100fe6b3d758" class=""><a href="https://www.virustotal.com/gui/">https://www.virustotal.com/gui/</a></p><p id="6fd5067a-8861-445c-b3d5-67a28c7a3988" class=""><a href="https://www.hackersking.in/?m=1">https://www.hackersking.in/?m=1</a></p><p id="96163174-bf0a-406b-8c1c-045bca81e00e" class=""><a href="https://www.deepwebsiteslinks.com/">https://www.deepwebsiteslinks.com/</a></p><p id="5e6ee908-0269-482a-8b36-dd98d19da8a6" class=""><a href="https://leandomainsearch.com/">https://leandomainsearch.com/</a></p><p id="9382f5d1-dffb-44d4-bd8d-78dd6d1bbfe5" class=""><a href="https://howsecureismypassword.net/">https://howsecureismypassword.net/</a></p><p id="9b579e96-54da-4e3e-8788-35cedaec38f8" class=""><a href="https://www.hidemyass.com/en-in/index">https://www.hidemyass.com/en-in/index</a></p><p id="b73b0e53-4edc-46c6-bef8-6649c235f6e7" class=""><a href="https://www.redhat.com/en">https://www.redhat.com/en</a></p><p id="c88c2f0e-dc9f-43a7-884d-917ad6a9d545" class=""><a href="https://www.investindia.gov.in/sector/it-bpm">https://www.investindia.gov.in/sector/it-bpm</a></p><p id="07de2ecd-eef4-4d9d-a72c-5324edb1ecda" class=""><a href="https://www.cybersafe.news/">https://www.cybersafe.news/</a></p><p id="95eedb5a-d4d2-4970-b94a-a148db92609c" class=""><a href="https://nmap.org/">https://nmap.org/</a></p><p id="027d22b2-89a3-4bc3-831c-8f8da856e103" class=""><a href="https://hidester.com/proxy/">https://hidester.com/proxy/</a></p><p id="10abc73f-e4aa-4e57-981a-8b2826da6745" class=""><a href="https://www.ip2location.com/">https://www.ip2location.com/</a> </p><p id="c44de620-25cc-479c-aca4-b2a98795ddfa" class=""><a href="https://getfedora.org/">https://getfedora.org/</a></p><p id="c1ed15ff-4139-43d7-bd33-5b354838d866" class=""><a href="https://www.zdnet.com/topic/cyberwar-and-the-future-of-cybersecurity/#ftag=CAD-00-10aag7e">https://www.zdnet.com/topic/cyberwar-and-the-future-of-cybersecurity/#ftag=CAD-00-10aag7e</a></p><p id="e0556250-3cf6-4b02-b0e8-66b837058561" class=""><a href="https://hack0weiser.blogspot.com/?m=1">https://hack0weiser.blogspot.com/</a></p><p id="4ebdc0e6-b118-4dc8-9b8e-896772a200e4" class=""><a href="https://hackingblogs.com/">https://hackingblogs.com/</a></p><p id="47e145ae-daf3-4a1c-9e87-677e942ad469" class=""><a href="https://www.netacad.com/">https://www.netacad.com/</a></p><p id="b554fb3a-f560-4d16-9428-cd9fe7845361" class=""><a href="https://cybersafe.com/">https://cybersafe.com/</a></p><p id="5f7a2f47-0b6e-44aa-acc6-e5b91c3538c6" class=""><a href="https://sites.google.com/site/bughunteruniversity/">https://sites.google.com/site/bughunteruniversity/</a></p><p id="9cfda85c-91f9-475f-8b6a-9f45d16cd0af" class=""><a href="https://www.ethicalhackx.com/">https://www.ethicalhackx.com/</a></p><p id="27c707cb-849a-4ecb-a34d-d5c585b0de2c" class=""><a href="https://virtualcyberlabs.com/">https://virtualcyberlabs.com/</a></p><p id="ee5da6e1-7112-4098-8c22-c269f69def59" class=""><a href="https://mod2hack.blogspot.com/?m=1">https://mod2hack.blogspot.com/?m=1</a></p><p id="159d4160-d743-4b3e-876e-af00aa32c73b" class=""><a href="https://hackersonlineclub.com/">https://hackersonlineclub.com/</a></p><p id="9157b7e7-26ac-4bb1-a8b6-a09786b34940" class=""><a href="https://wiki.gnome.org/">https://wiki.gnome.org/</a></p><p id="712c7e2e-b9af-466a-8d27-ac64ae5e742a" class=""><a href="https://www.crackingfactory.cf/">https://www.crackingfactory.cf/</a></p><p id="ac9da83f-5e3e-47ba-ad14-3d63a37e70e8" class=""><a href="https://www.theprohack.com/?m=1">https://www.theprohack.com/</a></p><p id="f3e5c44a-50f1-4909-bf87-7e5724142cf6" class="">
+</p><p id="a35a633a-3e0b-47f9-b5b7-a7581f189582" class="">
+</p><p id="efc0d336-784b-45f3-b05f-2cd5b1198620" class="">
+</p><p id="ab16ee6a-85c2-4766-8e3d-bec10ca462e8" class="">
+</p><p id="00599993-3e88-4cfc-ae72-105c05a1f817" class="">
+</p><p id="66f0939d-b524-40b2-a9b0-5e036e51962f" class="">
+</p></div></article></body></html>

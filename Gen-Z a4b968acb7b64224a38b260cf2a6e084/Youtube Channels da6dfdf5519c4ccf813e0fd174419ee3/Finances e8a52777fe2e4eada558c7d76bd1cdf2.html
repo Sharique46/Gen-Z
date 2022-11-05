@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Finances</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e8a52777-fe2e-4ead-a558-c7d76bd1cdf2" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Finances%20e8a52777fe2e4eada558c7d76bd1cdf2/money-coin-280x280-cK4ixUpfA.jpeg"/></div><h1 class="page-title">Finances</h1></header><div class="page-body"><figure id="03882ef9-0332-41f9-9362-045f1a89ce65" class="link-to-page"><a href="Finances%20e8a52777fe2e4eada558c7d76bd1cdf2/Instagram%20Accounts%20to%20follow%2003882ef9033241f99362045f1a89ce65.html"><img class="icon" src="Finances%20e8a52777fe2e4eada558c7d76bd1cdf2/Instagram%20Accounts%20to%20follow%2003882ef9033241f99362045f1a89ce65/instagram-png-logo-11545512103cxbs7v6fpe.png"/>Instagram Accounts to follow</a></figure><figure id="3ab7bdf2-bcc8-4868-8389-2ad0de065530" class="link-to-page"><a href="Finances%20e8a52777fe2e4eada558c7d76bd1cdf2/crypto%20accounts%20to%20follow%20on%20Instagram%203ab7bdf2bcc8486883892ad0de065530.html"><img class="icon" src="Finances%20e8a52777fe2e4eada558c7d76bd1cdf2/crypto%20accounts%20to%20follow%20on%20Instagram%203ab7bdf2bcc8486883892ad0de065530/instagram-png-logo-11545512103cxbs7v6fpe.png"/>crypto accounts to follow on Instagram</a></figure><p id="1fe4f861-e904-4350-a007-b8525d7104d8" class="">
+</p><figure id="b38fd31a-89e4-4718-a03f-92dcd907d728"><a href="https://www.visualcapitalist.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Visual Capitalist</div><div class="bookmark-description">Rich visual content for the modern investor. Visual Capitalist is a new way to discover business opportunities and learn about investment trends.</div></div><div class="bookmark-href"><img src="https://www.visualcapitalist.com/wp-content/uploads/2021/04/cropped-logo-192x192.png" class="icon bookmark-icon"/>https://www.visualcapitalist.com/</div></div><img src="https://www.visualcapitalist.com/wp-content/uploads/2019/03/dark-header-mobile.png" class="bookmark-image"/></a></figure><p id="18ff50d2-f1a2-44d0-93dc-e8d5e8274a33" class="">
+</p><figure id="5bf26d90-812a-4129-9b1a-7a1524197920"><a href="https://thenextweb.com/future-of-finance" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Latest finance tech news | Future of finance | TNW</div><div class="bookmark-description">Help build the bank of the future</div></div><div class="bookmark-href"><img src="https://next.tnwcdn.com/assets/img/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://thenextweb.com/future-of-finance</div></div><img src="https://s3.amazonaws.com/events.tnw/hardfork-2018/uploads/social/tnw_191007_110526.png" class="bookmark-image"/></a></figure><figure id="89c8c31d-d292-4168-8083-57607a7c5068"><a href="https://www.educba.com/finance/finance-blog/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.educba.com/finance/finance-blog/</div></div></a></figure><figure id="443a5fca-28d2-40b9-9832-25f726a36c29"><a href="https://www.educba.com/finance/free-courses/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Courses - EDUCBA</div><div class="bookmark-description">This website or its third-party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the cookie policy. By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to our Privacy Policy</div></div><div class="bookmark-href"><img src="https://cdn.educba.com/academy/wp-content/uploads/2020/05/cropped-apple-touch-icon-192x192.png" class="icon bookmark-icon"/>https://www.educba.com/finance/free-courses/</div></div><img src="https://cdn.educba.com/images/Corporate-Finance-Basics.png" class="bookmark-image"/></a></figure><p id="d5361f60-bf27-4ca8-aac9-0b637bf8a9c7" class="">
+</p><ul id="e00d04c2-a18b-42ed-bf9f-27821b4adf49" class="bulleted-list"><li style="list-style-type:disc"><strong>Ankur Warikoo</strong></li></ul><figure id="286bed02-785e-4ced-9fd6-94897cd49b9c"><a href="https://www.youtube.com/c/warikoo" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">warikoo</div><div class="bookmark-description">Ankur Warikoo is an entrepreneur, an angel investor, a mentor and an active public speaker. For the past 4 years, Warikoo has been actively sharing content on YouTube, LinkedIn, Instagram, Facebook and Twitter amassing a following of 3Mn+ people.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/warikoo</div></div><img src="https://yt3.ggpht.com/X9eoDIB9cgb1s-kvATRs1lQDcU4Fjc15NDV9s9FF8ck7IsA8u7OdijaernoDV9LLdePgjlt_=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="4def42b6-2cb6-4a6b-a196-237392c92c2a" class="">
+</p><ul id="26123a12-35d5-4f5a-89cb-a60868b05274" class="bulleted-list"><li style="list-style-type:disc"><strong>Rachana Phadke</strong></li></ul><figure id="3ba3fc1e-01e0-4485-a124-1a13e52635d2"><a href="https://www.youtube.com/c/rachanaphadke" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CA Rachana Phadke Ranade</div><div class="bookmark-description">We have the objective of building financial discipline in the masses by simplifying Stock Market Education and Financial concepts. Our leader CA Rachana Ranade is the spearhead in this mission. With her 10 years of experience in teaching more than 10,000 students in person and more than 5,00,000 students online, we are driven to make a change.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/rachanaphadke</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSA3Tow9_-RTNU6WslhjukZuknVu3JzcGiCMumw5g=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="bd9ba47f-dc9f-44dc-9afb-ba05642d6cec" class="">
+</p><ul id="afe3d905-e26a-4a96-b332-9f49bd79b30c" class="bulleted-list"><li style="list-style-type:disc"><strong>Invest For AajKal</strong></li></ul><figure id="5a535d50-c734-4000-8ef9-af7dc6731a0e"><a href="https://www.youtube.com/c/InvestAajForKal" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/InvestAajForKal</div></div></a></figure><p id="56bbd185-5fa0-471f-a8b4-c654830d80f4" class="">
+</p><ul id="6d75f543-4065-4399-bd26-20d9117f69e2" class="bulleted-list"><li style="list-style-type:disc"><strong>FinnovationZ </strong></li></ul><figure id="bc000895-5b36-4816-a6bc-92cfb04edc24"><a href="https://www.youtube.com/c/ConveybyFinnovationZ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Convey by FinnovationZ</div><div class="bookmark-description">Over 500+ free series of Videos on Stock Market for beginners &amp; for intermediate investments, trading, Scams, value investing, taxation, budget, case studies, IPO Analysis, technical analysis, fundamental analysis, mutual funds, book summaries, stock analysis, and many more! Here on Youtube, SUBSCRIBE now for videos on stock market and investments.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ConveybyFinnovationZ</div></div><img src="https://yt3.ggpht.com/wbkRkcxutuojRrfh3k6bE2TTL77somtUh5al7cJ2npHlFkAGcMOe8TfzXNhZIUZMUQW4geJg0g=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="335e5bbe-2a79-4cea-bc8b-3dba1a53850f" class="">
+</p><ul id="3dc9315a-0d6d-4311-8691-a208e4d040a2" class="bulleted-list"><li style="list-style-type:disc"><strong>Rich Dad</strong></li></ul><figure id="9e989c23-d52b-4d90-9baa-4ba86734c64a"><a href="https://www.youtube.com/c/TheRichDadChannel" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TheRichDadChannel</div></div></a></figure><p id="7d707c57-39dc-4b6d-bb21-4d64ecec292d" class="">
+</p><ul id="8bdb5dbd-baf5-44eb-8db6-1fde2406009b" class="bulleted-list"><li style="list-style-type:disc"><strong>Youth Finance</strong></li></ul><figure id="8ac57c0d-dda8-4899-b29f-63864811ace9"><a href="https://www.youtube.com/c/AyushmanPandita" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ayushman Pandita</div><div class="bookmark-description">Are you a Youth who&#x27;s clueless about how to manage his/her Personal Finance? Do topics like Credit Score, Mutual Funds, Stock Markets, Personal Loans, Insurance, Investment Planning, Trading and Cryptocurrencies scare you? Worry no more! Youth Finance is going to present to you all important finance-based topics in a fun and engaging way.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/AyushmanPandita</div></div><img src="https://yt3.ggpht.com/X_Es7ocb_tKzpPTu7ajvy1CSwlK04jw_qPe4prsSmrSEU9St-Co8hTka5WKP2Eopfh-TKCxc9g=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="305eee5e-362e-41aa-8d8a-757b056e2b1d" class="">
+</p><ul id="52455b43-b4fe-4f6f-ba92-1689db3b74b2" class="bulleted-list"><li style="list-style-type:disc"><strong>Ishan Sharma</strong></li></ul><figure id="17eb01f3-a7bf-45f2-b615-e7dcc5a639dd"><a href="https://www.youtube.com/c/ishansharma739" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ishansharma739</div></div></a></figure><p id="20c85fed-b13a-460b-b6a3-af58139023ae" class="">
+</p><ul id="19a358fd-f31f-4e0d-98b8-c461a141cb04" class="bulleted-list"><li style="list-style-type:disc"><strong>Everything Money</strong></li></ul><figure id="a74cc024-7ad0-46f7-b0a2-fe3e8adb3b3a"><a href="https://www.youtube.com/c/EverythingMoney" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/EverythingMoney</div></div></a></figure><p id="34581d1f-cd1e-425d-aa54-59fff7214701" class="">
+</p><ul id="a1f8d4d8-c611-45aa-bcc3-744d5915b56c" class="bulleted-list"><li style="list-style-type:disc"><strong>Investment Insights</strong></li></ul><figure id="5e24b764-03bb-4a7b-9ae2-d2d114838a28"><a href="https://youtube.com/c/InvestmentInsights" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/InvestmentInsights</div></div></a></figure><p id="4f9ec072-1e11-43bb-a2c5-91fd4c3b2e11" class="">
+</p><ul id="abdac13d-65de-4b38-872f-ef4737fb648e" class="bulleted-list"><li style="list-style-type:disc"><strong>Think School</strong></li></ul><figure id="5482f7a9-cd98-492f-b3ec-0b6bc69d3ce2"><a href="https://www.youtube.com/c/ThinkSchool" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Think School</div><div class="bookmark-description">The Indian education system is messed up and everyone knows about it. But very few are doing something to fix it. Think school is an education start-up and we want to put a dent in the Indian education system by providing world-class education at lesser than the price of a Denim Jeans.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ThinkSchool</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLStIF5pwL7QhIZG2iqtjhDVqlrGcFbduLRu9JRQ5w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="70f77a97-cc6a-40ff-ad77-96e001ae8518" class="">
+</p><ul id="084edbf5-5869-46a7-bda4-3b37d2f68424" class="bulleted-list"><li style="list-style-type:disc"><strong>RajShamani </strong></li></ul><figure id="0dadce7e-5283-4c8b-b9ba-d70d0f06735b"><a href="https://www.youtube.com/user/Rajshamani" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Raj Shamani</div><div class="bookmark-description">Raj comes out amidst the people who have no great shakes in their lives and are totally unclear about where this life is taking them to. He had dreams but highly vague direction. His thirst for knowledge, travel, learning and success kept him going no matter how many hardships came his way.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/user/Rajshamani</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSY_pK-Mb-Ok1bnklLQKtHxU5vD7yFCdPK36t_AGQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="95f63dde-c892-44c5-8a6c-efbc19c4fe10" class="">
+</p><ul id="8ed60ff3-0c41-4e64-8cc5-910da607c83d" class="bulleted-list"><li style="list-style-type:disc"><strong>Digital Pratik </strong></li></ul><figure id="60b6c275-d927-4eb8-92ce-e3b946972379"><a href="https://www.youtube.com/c/DigitalPratikShow" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Digital Pratik</div><div class="bookmark-description">Creator of JorrParivar | Digital Branding Strategist | Personal Branding Practitioner | Podcaster | Vlogger | NFT Collector</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DigitalPratikShow</div></div><img src="https://yt3.ggpht.com/zGimvrDw3ja3JwLQ2cZNKQBMTKPEPEDnouJllKVvpn6j6sQcxriAj8DmXAVPu0iYGwvsfOj_=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="1d05cf0a-3c9e-43ea-87e9-5b9ed2ad5f13" class="">
+</p><p id="8ad68b50-1f30-4ae6-8ed6-880385e8c817" class=""><strong>Your One Stop Guide to introducing kids to money </strong></p><figure id="225c9aec-222a-4b57-8284-712335911b93"><a href="https://timesofindia.indiatimes.com/short-takes" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Short Takes</div><div class="bookmark-description">Times of India brings the Latest &amp; Top Breaking News on Politics and Current Affairs in India &amp; around the World, Cricket, Sports, Business, Bollywood News and Entertainment, Science, Technology, Health &amp; Fitness news &amp; opinions from leading columnists.</div></div><div class="bookmark-href"><img src="https://timesofindia.indiatimes.com/icons/toifavicon.ico" class="icon bookmark-icon"/>https://timesofindia.indiatimes.com/short-takes</div></div><img src="https://static.toiimg.com/photo/91759189.cms" class="bookmark-image"/></a></figure><p id="00253ed9-3cad-49d3-a7a0-82d2cac5d667" class="">
+</p><h2 id="f385def3-52ad-4225-8828-a579c75e76ac" class="">Playlist </h2><p id="bdb0f11c-8160-4073-a006-f259193055b3" class="">
+</p><p id="241d8672-d52d-471a-8811-a3d3af041cc8" class="">
+</p><figure id="616bdd1d-0278-41c6-97bb-9a7452f647ea"><a href="https://youtube.com/playlist?list=PLLbfvOX935JHqy97J6wCETwqDExwabjLQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Personal Finance and Investing</div><div class="bookmark-description">My YouTube Videos on Personal Finance, where I cover money matters for those in their 20s, from an Indian perspective.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLLbfvOX935JHqy97J6wCETwqDExwabjLQ</div></div><img src="https://i.ytimg.com/vi/yNaN5kYTNLY/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLBi2vrd7YiTs87uRGydecv0zkBx8w&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="8cba60d2-6fb1-4b58-a6ac-52bfe95181aa" class="">
+</p><figure id="506415ea-277b-4ba3-9df6-46e7ab5499d0"><a href="https://www.youtube.com/playlist?list=PLE0Jo6NF_JYOg77n1NiqsJHaIi1YLM1Fm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">#AajWithRaj - Personal Finance and Investing</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLE0Jo6NF_JYOg77n1NiqsJHaIi1YLM1Fm</div></div><img src="https://i.ytimg.com/vi/XQ3KUwoTDoM/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLDtPIwT6Tpntiuw62o68qUno45b9g&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="99e63a50-c805-4a7e-88c0-331ccb5010d4" class="">
+</p><figure id="e88b3086-8d22-4b17-8cf8-218ed4047032"><a href="https://youtube.com/playlist?list=PLOafE8LUCSubIKJprxFAPdo2JuaZG0csL" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Personal Finance Basics</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLOafE8LUCSubIKJprxFAPdo2JuaZG0csL</div></div><img src="https://i.ytimg.com/vi/Nf0spVgn2nw/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLBwH-wSp_0wQ2Wc78CQefOtCfXZZQ&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="60a23a9f-3819-417c-820c-f359c5f15394" class="">
+</p><figure id="644b2cea-0d77-4b5a-853d-666ae2c88fac"><a href="https://youtube.com/playlist?list=PLVNocu2A1SAB2V5dOPtykKNKevtfNG7Y0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Finance Topics</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLVNocu2A1SAB2V5dOPtykKNKevtfNG7Y0</div></div><img src="https://i.ytimg.com/vi/NdXvYV19rgM/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLAyFlGTteUi5CQ2mx06gXuYoNJFiQ&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="31b9657a-98e2-4928-892e-b2f8f6c5e010" class="">
+</p><figure id="cbe2ff31-e470-44e9-b522-7ada8c07225e"><a href="https://www.linkedin.com/feed/news/5078924" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Out of savings? Follow these steps | LinkedIn</div><div class="bookmark-description">Sound financial planning can help you come out of this pandemic unharmed. Here are a few tips that can assist you in managing finances better.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/feed/news/5078924</div></div><img src="https://media-exp1.licdn.com/dms/image/C561AAQEVX1VkMeff3Q/storylineheaderimage-shrink_400_400/0/1623319784941?e=1659794400&amp;v=beta&amp;t=hxbyv_W-5vKK-Osy8nFghgHjqfvTV4dxRYE067kcceE" class="bookmark-image"/></a></figure></div></article></body></html>

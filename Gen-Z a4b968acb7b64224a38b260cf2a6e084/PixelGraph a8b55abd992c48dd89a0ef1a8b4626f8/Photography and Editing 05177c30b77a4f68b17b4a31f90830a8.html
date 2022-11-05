@@ -1,0 +1,710 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Photography and Editing</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="05177c30-b77a-4f68-b17b-4a31f90830a8" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📸</span></div><h1 class="page-title">Photography and Editing</h1></header><div class="page-body"><figure id="24c22aa6-4d1a-49cc-9f45-b0489749971e" class="link-to-page"><a href="Photography%20and%20Editing%2005177c30b77a4f68b17b4a31f90830a8/IG%20Accounts%20to%20Follow%2024c22aa64d1a49cc9f45b0489749971e.html"><img class="icon" src="Photography%20and%20Editing%2005177c30b77a4f68b17b4a31f90830a8/IG%20Accounts%20to%20Follow%2024c22aa64d1a49cc9f45b0489749971e/insta.jpg"/>IG Accounts to Follow: </a></figure><figure id="a68355be-cbae-4c3b-b65c-46a24abe78e3" class="link-to-page"><a href="../Youtube%20Channels%20da6dfdf5519c4ccf813e0fd174419ee3/Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3.html"><span class="icon">📸</span>Photography Channels</a></figure><p id="a541c9c8-a1ff-4f35-bfec-2e2e8b97ac03" class="">
+</p><figure id="c225fb91-8507-4451-8815-0a3df503d977"><div class="source">https://github.com/ibaaj/awesome-OpenSourcePhotography</div></figure><p id="ca2aab16-1656-4873-ad5d-f2f73951a81a" class="">
+</p><figure id="13b6ab92-a8d8-4cc7-a0c9-37e41b32dfdd"><div class="source">https://github.com/neutraltone/awesome-stock-resources</div></figure><p id="226971e0-40b3-49e0-8dbf-8456c0a1fd9b" class="">
+</p><figure id="a15f1955-4508-4da7-b996-07c60ab3fc3c"><div class="source">https://github.com/photoprism/photoprism</div></figure><p id="f814461a-9ebb-434d-a16d-1a922fd96102" class="">
+</p><p id="38ea15ae-6cfd-4d6b-abaa-f4201a199c4b" class="">
+</p><p id="a42e3a81-f70e-40da-81cd-36cfe8829b86" class=""><strong>Telegram : </strong></p><p id="69492d61-e4b3-4d33-b0ef-6b6109a9cccc" class="">
+</p><h3 id="f62c2398-cb29-4b56-92ca-5ba664f88753" class=""><mark class="highlight-brown"><strong>Outdoor Photography For Beginners - </strong></mark></h3><p id="fae1eaad-05e9-420a-882a-d4cd226882c5" class=""><a href="https://t.me/Technitze_PixelGraph/232">https://t.me/Technitze_PixelGraph/232</a></p><p id="607ec9b0-e38e-42bb-9591-f0c049253504" class=""> </p><h3 id="76848889-9970-45c0-8c66-a3b919907c35" class=""><mark class="highlight-brown"><strong>Remove Unwanted Objects &amp; Fix Imperfections with Inpaint Online!</strong></mark></h3><p id="51e3aecd-42df-4b18-be5b-d6a4a64a53f4" class=""><a href="https://theinpaint.com/">https://theinpaint.com/</a></p><p id="71134562-5467-41c4-a255-da8550072a13" class="">
+</p><h3 id="6f645981-570b-4286-b16c-8f9dc1e03001" class=""><mark class="highlight-brown"><strong><strong>Animate your family photos</strong></strong></mark></h3><p id="d68923c6-b375-4c6d-a6c6-4d458aeb7bde" class=""><a href="https://www.myheritage.com/deep-nostalgia">https://www.myheritage.com/deep-nostalgia</a></p><p id="963da59d-87d8-467a-ac91-33186978f013" class="">
+</p><h3 id="961f8288-0a02-42bc-8a06-357542618d9e" class=""> <mark class="highlight-brown"><strong>40+ FREE STOCK PHOTOS SITES</strong></mark></h3><p id="106d8fda-12ac-490c-9840-e5da8f5f9ff7" class=""><a href="https://t.me/Technitze_PixelGraph/3">https://t.me/Technitze_PixelGraph/3</a></p><p id="2fd6d988-1941-446d-9cb2-e502a5a393d9" class="">
+</p><p id="98653758-f0d7-4c87-86bd-4418b11a19bc" class=""><mark class="highlight-blue"><strong>Download Paid Premium Photos From Shutterstock Free -  </strong></mark></p><p id="019e6ae6-eb33-413c-9124-2c04dee1e3cf" class=""><a href="https://t.me/Technitze_PixelGraph/4">https://t.me/Technitze_PixelGraph/4</a></p><p id="2873759e-97da-4e88-b8e5-10041b2061fc" class="">
+</p><h3 id="d3f23bba-0928-4364-9c89-abe01fdf8af6" class=""><mark class="highlight-blue"><strong>Photo Editing Android and iOS Apps </strong></mark></h3><p id="7d4321f7-c5e4-4a77-881e-8158d7b1a499" class=""><a href="https://t.me/Technitze_PixelGraph/7">https://t.me/Technitze_PixelGraph/7</a></p><p id="706184fb-1fc3-4574-9944-b6fa5ed1f6e8" class="">
+</p><p id="b6fe89a6-e3cd-4732-b20a-34c99adb567a" class=""><a href="https://youtu.be/GGyFSYL1-NU">https://youtu.be/GGyFSYL1-NU</a></p><p id="e9731e78-e1de-4b3f-8900-fa4c6de3e4e4" class=""><a href="https://youtu.be/Hrd7v1vm8GA">https://youtu.be/Hrd7v1vm8GA</a></p><p id="43c68099-8f8e-40c5-b0b3-4076a70d2e0e" class="">
+</p><h3 id="ece051bc-6516-49cb-9eb9-f07c551e6fff" class=""><mark class="highlight-blue"><strong>Free and Open Source Photo Editing Softwares :</strong></mark></h3><p id="2e5ed2d0-d59f-44be-8c4f-ba22f8c0a831" class=""><a href="https://t.me/Technitze_PixelGraph/8">https://t.me/Technitze_PixelGraph/8</a></p><p id="e7bbf4cc-a8b1-412e-a721-623f69716670" class="">
+</p><h3 id="1e43e582-9205-4f96-aa44-f3bb3faa86aa" class=""><mark class="highlight-blue"><strong>Online Image Colourizer</strong></mark>
+<a href="https://t.me/Technitze_PixelGraph/11">https://t.me/Technitze_PixelGraph/11</a></h3><p id="7282e598-8f20-48b3-9463-6ffae224ac4e" class="">
+</p><h3 id="eed10904-06f9-4be6-abd0-d21cd68f1d4c" class=""><mark class="highlight-blue"><strong>Online Image Resizer and Compressor, Crop</strong></mark></h3><p id="cd6e9d95-910c-4a14-9051-03798cafd731" class=""><a href="https://t.me/Technitze_PixelGraph/12">https://t.me/Technitze_PixelGraph/12</a></p><p id="bc04a3b6-d6b1-4134-a104-86fae2a521bc" class="">
+</p><figure id="7767dc0d-e5e7-489e-ad88-a0dd765939a5"><a href="https://toonme.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ready to live all your cartoon dreams at a time?</div><div class="bookmark-description">Let our AI cartoonize your photos 🎨</div></div><div class="bookmark-href"><img src="https://toonme-com-cdn.ws.pho.to/favicon-16x16.png" class="icon bookmark-icon"/>https://toonme.com/</div></div><img src="https://toonme-com-cdn.ws.pho.to/assets/opengraph.png?2" class="bookmark-image"/></a></figure><p id="e38b16ea-05ad-4f54-bef1-6a166dfd8ebc" class="">
+</p><p id="60bdc721-d12b-40da-8b6c-069abcdd8f26" class=""><mark class="highlight-brown"><strong>Image Filters Online</strong></mark></p><p id="abc2c933-7050-411e-a929-629376cfebd5" class=""><a href="https://t.me/Technitze_PixelGraph/13">https://t.me/Technitze_PixelGraph/13</a></p><p id="e430a4f4-8323-49d7-8f40-32e8c77b1427" class="">
+</p><figure id="c035ad21-0bdf-4561-99a5-76cd218f2d41"><a href="https://www.instagram.com/reel/CJT0XXxJl0_/?igshid=170frwts3uueu" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Benjamin Suter on Instagram: &quot;Some of my top photography apps that I am using at the moment! 1. @unscriptedposingapp 2. @lensdistortions 3. @getspots 4. @unumdesign #iphonetricks #bts #photography #editing #photographylovers #apps #mobileediting #creative #photographersofinstagram #mobilephotography #instagramtips #howto #reels&quot;</div><div class="bookmark-description">Benjamin Suter shared a post on Instagram: &quot;Some of my top photography apps that I am using at the moment! 1. @unscriptedposingapp 2. @lensdistortions 3. @getspots 4. @unumdesign #iphonetricks #bts #photography #editing #photographylovers #apps #mobileediting #creative #photographersofinstagram #mobilephotography #instagramtips #howto #reels&quot;. Follow their account to see 508 posts.</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico" class="icon bookmark-icon"/>https://www.instagram.com/reel/CJT0XXxJl0_/?igshid=170frwts3uueu</div></div><img src="https://scontent-iad3-1.cdninstagram.com/v/t51.29350-15/132920811_476775553319510_1171584460862813996_n.jpg?stp=dst-jpg_s640x640&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=LsZKWPJON2EAX-juWsM&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;oh=00_AT-tILa8hwG-2VFrEic9etvPsfREThOsR18znotVdDIwaQ&amp;oe=62E6BFF9" class="bookmark-image"/></a></figure><p id="045f35aa-1f25-4060-821a-2e739154b035" class="">
+</p><figure id="1f02cdc8-de03-4a54-b2ff-40588e17353e"><a href="https://t.me/Technitze_PixelGraph/232" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PixelGraph</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_PixelGraph/232</div></div><img src="https://cdn5.telegram-cdn.org/file/V4-9ifM05BqhY_K_VYimLkncvTVNsgKdo8CNQQEz_SyNnp5YGoHi9qJxJOdXMGLV1bM0fdphiQoX7j8O_1AajpOATJkyTHbgh3uKCiPDrr6ANBgIJ-HpWFuo40gHfa4NkZxLWH1XvUaiFL5Exn-nwyvQBoVYO56Rks1ud-jsRTyu2r3B-peBFYYZXsKKsJR_FeYqafXynXI90ETh-RnN91jb331zhdkltjL9BwtCkquioTIZzVGTh1DWy1HkkdE4DvUxerB4ZekAg2OBwQ2f7CpOI60iEe2wkoU-ikW4kOBZOuBRwJo7YfjBl0O6D61sk-iFoqidBd9QQlgjA9_xmw.jpg" class="bookmark-image"/></a></figure><p id="7549b9f3-8e98-4813-b24a-ea6a00c61903" class="">
+</p><figure id="a0864493-1151-4b1c-be13-99b78955d332"><a href="https://www.nikonschool.in/photographyTutorial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photography Tutorials</div><div class="bookmark-description">D-SLR Camera Basics The look of a photograph is affected by a variety of factors, including shutter speed, aperture, and ISO sensitivity. This guide gives beginners a grasp of the basics with easy-to-understand digital photography tutorials with explanations of the features and design of digital single-lens reflex cameras.</div></div><div class="bookmark-href"><img src="https://www.nikonschool.in/favicon.ico" class="icon bookmark-icon"/>https://www.nikonschool.in/photographyTutorial</div></div><img src="https://www.nikonschool.in/UploadImage/Camera-basis0220.jpg" class="bookmark-image"/></a></figure><p id="cdfdfab7-1dae-4cb5-9ced-9947e7d2e778" class="">
+</p><figure id="50439b5e-19ac-4c3e-9cb9-bade2b00af75"><a href="https://coursesity.com/free-tutorials-learn/photoshop" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Free Photoshop Courses &amp; Tutorials [2022] - Learn Photoshop</div><div class="bookmark-description">Details about free Photoshop tutorials and courses Want to learn photoshop ? This is the list of free photoshop courses available online. From this list, you can take any of the photoshop course to learn photoshop in details and become master of photoshop. Learn photoshop from the free photoshop courses and free photoshop tutorials online.</div></div><div class="bookmark-href"><img src="https://coursesity.com/assets/images/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://coursesity.com/free-tutorials-learn/photoshop</div></div><img src="https://res.cloudinary.com/db194k5td/image/upload/v1577931201/meta/default.png" class="bookmark-image"/></a></figure><p id="6a3380d2-d8fe-4c23-b381-bddd46992c85" class="">
+</p><h3 id="685f65d9-79ab-47aa-be7f-fa56f86c0181" class=""><mark class="highlight-red"><strong>DSLR camera for beginners - </strong></mark></h3><figure id="d264cbb6-4d35-444c-b3ed-5e4bd0341067"><a href="https://t.me/Technitze_PixelGraph/228" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PixelGraph</div><div class="bookmark-description">https://www.adobe.com/in/creativecloud/photography/discover/dslr-camera.html?trackingid=695P7LMN&amp;mv=email#</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_PixelGraph/228</div></div><img src="https://cdn5.telegram-cdn.org/file/V4-9ifM05BqhY_K_VYimLkncvTVNsgKdo8CNQQEz_SyNnp5YGoHi9qJxJOdXMGLV1bM0fdphiQoX7j8O_1AajpOATJkyTHbgh3uKCiPDrr6ANBgIJ-HpWFuo40gHfa4NkZxLWH1XvUaiFL5Exn-nwyvQBoVYO56Rks1ud-jsRTyu2r3B-peBFYYZXsKKsJR_FeYqafXynXI90ETh-RnN91jb331zhdkltjL9BwtCkquioTIZzVGTh1DWy1HkkdE4DvUxerB4ZekAg2OBwQ2f7CpOI60iEe2wkoU-ikW4kOBZOuBRwJo7YfjBl0O6D61sk-iFoqidBd9QQlgjA9_xmw.jpg" class="bookmark-image"/></a></figure><p id="efef0b03-2c3f-4aeb-b136-63c44a5002d0" class="">
+</p><h3 id="41771ad8-9e49-4de1-a46d-e90af2b48837" class=""><mark class="highlight-blue"><strong>Camera news, reviews and features | Digital Camera World</strong></mark></h3><figure id="923aa38e-46f6-4d0a-bf43-90aaef775863"><a href="https://www.digitalcameraworld.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Digital Camera World</div><div class="bookmark-description">Quotes on photography and art that might change the way you think QUOTES The best photography quotes are the inspiring ones that resonate and put things into perspective but they&#x27;re not all by photographers</div></div><div class="bookmark-href"><img src="https://vanilla.futurecdn.net/digitalcameraworld/511494/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.digitalcameraworld.com/</div></div><img src="https://cdn.mos.cms.futurecdn.net/F3s3nrUpJZKx5SUzPp5Q2Z-320-80.jpg" class="bookmark-image"/></a></figure><p id="120ce255-480a-41b9-bfbf-29593ee8d5d9" class="">
+</p><h3 id="5fd12f81-52c2-4735-8dce-9170a971141b" class=""><strong>9 MUST HAVE FREE Apps for a Photographer in 2022 - </strong></h3><figure id="2b0c0a4b-4562-4a4b-ba2d-a0382cce6b88"><a href="https://youtu.be/y7hJ471_9yU" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9 MUST HAVE FREE Apps I Use DAILY as a Photographer in 2022</div><div class="bookmark-description">Hey Friend! In this video I show 9 apps that I use every day as a Photographer. They&#x27;re all FREE with paid subscription options. Using apps like these really...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d92f5e6b/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/y7hJ471_9yU</div></div><img src="https://i.ytimg.com/vi/y7hJ471_9yU/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="dc9288ea-f821-43be-b09c-169bff3c041b" class="">
+</p><figure id="a3e8dfaa-748a-48aa-afdf-fac4e1d1430c"><a href="https://www.androidheadlines.com/best-camera-android-apps-2021" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 10 Best Camera Android Apps - 2021</div><div class="bookmark-description">Every smartphone these days comes with its own camera application. Samsung includes its own camera on Galaxy smartphones, Google does the same for its smartphones, and so on. If you, however, don&#x27;t like the camera app that comes with your smartphone, you can change it.</div></div><div class="bookmark-href"><img src="https://www.androidheadlines.com/favicon-16x16.png" class="icon bookmark-icon"/>https://www.androidheadlines.com/best-camera-android-apps-2021</div></div><img src="https://www.androidheadlines.com/wp-content/uploads/2019/10/Google-Pixel-4-Hands-On-AM-AH-8-1.jpg" class="bookmark-image"/></a></figure><p id="723ad57e-084a-44a4-86d9-6fd6781e5ec3" class="">
+</p><h3 id="20750321-f1ec-4486-872a-7b1065519bd3" class=""><strong>Smartphone Camera Terms Explained - </strong><a href="https://t.me/Technitze_PixelGraph/72">https://t.me/Technitze_PixelGraph/72</a></h3><p id="7083f3fe-13fe-4760-9f56-ef6d1685e182" class="">
+</p><h3 id="b4f47d2d-62bf-45fc-bbe4-f74376959f61" class=""><mark class="highlight-brown"><strong>10 Mobile Photography Tips &amp; Tricks  Shoot DSLR Quality Photos With Smartphone </strong></mark></h3><p id="59538f62-c35e-4221-b389-04c5eec824e4" class=""><a href="https://t.me/Technitze_PixelGraph/73">https://t.me/Technitze_PixelGraph/73</a></p><p id="200924fb-56f1-4380-bb02-09b3bda3bb06" class="">
+</p><p id="61baf075-6107-48c3-8b9d-a8af021869c6" class=""><mark class="highlight-brown"><strong>7 Tips for Pro Mobile Photography!</strong></mark><strong> - </strong><a href="https://t.me/Technitze_PixelGraph/77">https://t.me/Technitze_PixelGraph/77</a></p><h3 id="66488f65-2415-4ee2-b388-7ab23f45543b" class=""><mark class="highlight-brown">Photography guides : </mark></h3><p id="3debb19e-fad9-4470-b039-d26b71fd0259" class="">Google Drive Link - <a href="https://drive.google.com/folderview?id=1a91wdEw8bt3v6WdellOvJcSmXfZXopz5">https://drive.google.com/folderview?id=1a91wdEw8bt3v6WdellOvJcSmXfZXopz5</a></p><p id="e211bf38-b2df-43ce-afa6-d528af523782" class="">
+</p><figure id="f92ca5be-3093-4e34-9c61-e60d4a9a2bed" class="image"><a href="Photography%20and%20Editing%2005177c30b77a4f68b17b4a31f90830a8/Untitled.png"><img style="width:800px" src="Photography%20and%20Editing%2005177c30b77a4f68b17b4a31f90830a8/Untitled.png"/></a></figure><p id="c2b820a6-ba30-4bba-a34e-b2e772e176a2" class="">
+</p><p id="abe0fb1a-4e0b-4406-9a2a-ac292d7a10e2" class="">
+</p><figure id="66fbc28a-4de4-496c-8935-a5f650992b54"><a href="https://keepsnap.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Turn Your Hobby into Earnings</div><div class="bookmark-description">KeepSnap - service for photographers. We connect you with thousands of people all around the world who really want to have their photo taken right here and right now.</div></div><div class="bookmark-href"><img src="https://keepsnap.com/favicon.ico" class="icon bookmark-icon"/>https://keepsnap.com/</div></div><img src="https://keepsnap.com/img/share-keepsnap.png" class="bookmark-image"/></a></figure><p id="0a3d1700-73ad-4b2d-8f78-9e9e7996d6f4" class="">
+</p><figure id="151d6673-3a8c-46f2-8570-a417d600c667"><a href="https://www.clickasnap.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ClickASnap | Online Photo Sharing Platform, Share and Earn</div><div class="bookmark-description">ClickASnap is the world&#x27;s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today.</div></div><div class="bookmark-href"><img src="https://www.clickasnap.com/clickasnap.ico" class="icon bookmark-icon"/>https://www.clickasnap.com/</div></div><img src="https://www.clickasnap.com/assets/themes/clickasnap/images/logo-share.jpg" class="bookmark-image"/></a></figure><p id="84f4dbe9-fe7c-405e-b66f-cb01fbcc8220" class="">
+</p><h3 id="870481fc-ece9-4493-97df-650704f13ca3" class=""><mark class="highlight-brown"><strong>Photography Terms: A Beginner&#x27;s Guide - </strong></mark></h3><p id="af0f40d3-dad6-48e1-9c23-3eedb2c715a5" class="">
+</p><figure id="190bd2b2-90b5-4f4d-9aed-6a81ec813d8a"><a href="https://www.skillshare.com/blog/photography-terms-a-beginners-guide" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photography Terms: A Beginner&#x27;s Guide | Skillshare Blog</div><div class="bookmark-description">Interested in photography but feel like you need to learn a whole new language just to get started? Becoming an expert in something is as much about acing the terminology as it is practicing your skills.</div></div><div class="bookmark-href"><img src="https://www.skillshare.com/favicon.ico" class="icon bookmark-icon"/>https://www.skillshare.com/blog/photography-terms-a-beginners-guide</div></div><img src="https://www.skillshare.com/blog/wp-content/uploads/2021/09/unnamed-2.png" class="bookmark-image"/></a></figure><p id="47b22c8c-0d7e-46fd-8e69-414cfc797abe" class="">
+</p><figure id="ecad40e9-980b-4f2c-97e8-6306ea66368a"><a href="https://iso.500px.com/a-beginners-guide-to-photography/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Ultimate Guide to Photography</div><div class="bookmark-description">Let&#x27;s start with a big question-what exactly is photography? While artists, scholars, and academics might debate the philosophy of the captured image, the scientific terms are a little more straightforward. Photography is the art or practice of creating images by capturing light. Yes, we can expand that definition greatly, but in its essence, that is photography.</div></div><div class="bookmark-href"><img src="https://iso.500px.com/wp-content/themes/photoform/favicon.ico" class="icon bookmark-icon"/>https://iso.500px.com/a-beginners-guide-to-photography/</div></div><img src="https://iso.500px.com/wp-content/uploads/2020/06/stock-photo-spring-morning-152784971-1500x1000.jpg" class="bookmark-image"/></a></figure><p id="a9b63626-fc3e-42bb-877b-c928d6fd8dfd" class="">
+</p><figure id="7043f180-807d-4687-9290-c482ce947109"><a href="https://www.canva.com/learn/heres-promote-photography-instagram-like-pro/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.canva.com/learn/heres-promote-photography-instagram-like-pro/</div></div></a></figure><p id="a7515323-6855-436a-a691-838c85202ba7" class="">
+</p><figure id="e297b08e-0240-4245-b870-35bee7215606"><a href="https://psdrepo.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PSD Repo - Free Quality PSDs Available For Download</div><div class="bookmark-description">Free PSD &amp; Adobe Xd templates designed by talented creatives who choose to share their work with the rest of the community.</div></div><div class="bookmark-href"><img src="https://cdn.psdrepo.com/resources/favicon.ico" class="icon bookmark-icon"/>https://psdrepo.com/</div></div><img src="https://cdn.psdrepo.com/resources/psdrepo_share_new.png" class="bookmark-image"/></a></figure><p id="b7278f0a-6048-4d66-9b18-a80b08958ba6" class="">
+</p><p id="59c3eaa1-401c-4779-a6d0-ece037aa4864" class=""><mark class="highlight-blue"><strong>How to check if Image has been photoshopped</strong></mark></p><figure id="2c1b2c6f-5f99-488b-92ce-b5a5f77c22b6"><a href="https://vocal.media/photography/how-to-check-if-image-has-been-photoshopped" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to check if Image has been photoshopped</div><div class="bookmark-description">Have you ever seen an image that just doesn&#x27;t look right? Trusting your gut might not be the most scientific approach, but you&#x27;re probably better at spotting a fake than you realize. If you see an image that sounds alarm bells, you might want to look a bit closer.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1513017517/jbnha9s3rfih4t5iy1hv.png" class="icon bookmark-icon"/>https://vocal.media/photography/how-to-check-if-image-has-been-photoshopped</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5ff72b7283f7a1001c77a029.jpg" class="bookmark-image"/></a></figure><p id="72a1d3d4-6062-441d-be5e-f66be47a4c8b" class="">
+</p><p id="9e792ada-ec5f-4e1c-96c0-1c0289b32861" class="">
+</p><p id="3724794a-e4c0-4c71-bcec-beb1dfac687c" class=""><strong>3D</strong></p><p id="c678428b-2df0-487c-84e4-a00c9ca2814b" class="">
+</p><figure id="2307857e-4903-4b74-b7ba-7969362beb4a"><a href="https://www.instagram.com/p/CKd9C1RnIx4/?igshid=1tl09ku4y678n" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Gent Huruglica | Graphic Designer on Instagram: &quot;When was the last time that you saw a great 3D image but that the website which provided it was expensive?🤔 Probably not so long ago. It happens to me all the time. We see these great 3D pics in UX/UI designers but they cost a bundle. Buuuut your boy has your back😏 In the name of all the people who love 3D images and Freebies at the same time I brought 5 websites where you can get free 3D images. *𝗡𝗼𝘁𝗲: In some of the websites you will need to create an account in order to access them! They work for all types of designers. I also want to credit @saedaher.ui for the list. 𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗿𝗼𝗺 𝗺𝘆 𝘀𝗶𝗱𝗲! Did you know about these before? Let me know below👇 And that&#x27;s basically it for today&#x27;s post people. Leave a like and comment and don&#x27;t forget to follow me in this journey if you haven&#x27;t already @thegenthuruglica 𝗗𝗠 𝗠𝗘 anytime if you want me to help you with something. Some curation accounts that I think will find this post useful for their audience: @ui__ux @uxui_daily @ux.base @ojasguides.design @topuxdesigners @designspective @ui.markin @uibysherms @pix.ux @ui_gradient @ui_lab @uxconnect @design.gems @ux_meta @thewilsonwings @logodesigner01 @satisfied_user @uibucket @uxbucket @uxbrainy @ui.squirrel Check out our future clothing line: @urban_clothing.line Follow my 2nd account: @softwaredesigns Thank you for supporting me! That&#x27;s it from me today! See you next time! Gent💜&quot;</div><div class="bookmark-description">Gent Huruglica | Graphic Designer shared a post on Instagram: &quot;When was the last time that you saw a great 3D image but that the website which provided it was expensive?🤔 Probably not so long ago. It happens to me all the time. We see these great 3D pics in UX/UI designers but they cost a bundle.</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico" class="icon bookmark-icon"/>https://www.instagram.com/p/CKd9C1RnIx4/?igshid=1tl09ku4y678n</div></div><img src="https://scontent-iad3-2.cdninstagram.com/v/t51.29350-15/142647597_458093132035606_2054484031989167879_n.jpg?stp=dst-jpg_s640x640&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=5qq3xt3mwr0AX9ijVX3&amp;_nc_ht=scontent-iad3-2.cdninstagram.com&amp;oh=00_AT-EG7eZABAi-EA6W6LGvHXCMOzCKwB9Fd8Tq5kJZ00_yg&amp;oe=62E715BD" class="bookmark-image"/></a></figure></div></article></body></html>

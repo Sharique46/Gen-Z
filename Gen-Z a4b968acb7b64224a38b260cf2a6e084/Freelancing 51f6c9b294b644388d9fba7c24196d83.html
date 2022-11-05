@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Freelancing</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="51f6c9b2-94b6-4438-8d9f-ba7c24196d83" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">❇️</span></div><h1 class="page-title">Freelancing</h1></header><div class="page-body"><p id="13727fab-d585-42b5-8dfe-1dd3dda06546" class=""><a href="https://sidehustlestack.co/">https://sidehustlestack.co/</a></p><p id="305619e0-1c83-4218-b845-e87ef3e1cf5e" class="">
+</p><figure id="8f0e53c3-5294-42fa-96e2-9c79f1671ae7"><a href="https://learntocodewith.me/work-in-tech/freelancing/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">https://learntocodewith.me/work-in-tech/freelancing/</div></div><div class="bookmark-href">https://learntocodewith.me/work-in-tech/freelancing/</div></div></a></figure><p id="a6dbe299-f685-42e5-9db8-28cb53e1dc39" class="">
+</p><figure id="105d3493-0d20-461d-a6c2-1979ead65d85"><a href="http://www.transcribeme.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Transcription, Translation, Data Annotation - Fast &amp; Accurate | TranscribeMe!</div><div class="bookmark-description">We built our transcription process end-to-end to take advantage of the best of both worlds; a hybrid-model that combines speech recognition technology and human transcriptionists to produce transcripts at outstanding quality and accuracy. No matter what industry you&#x27;re in, we can accommodate , translation , or data annotation - and we are focused on providing the highest quality services at the lowest prices.</div></div><div class="bookmark-href"><img src="https://cdn-fbocb.nitrocdn.com/aDaPWqBIJzsHPFdXTzYUJFRDQzwYJuQC/assets/static/optimized/rev-e64a5fe/wp-content/uploads/2020/06/cropped-favicon-192x192-1-192x192.png" class="icon bookmark-icon"/>http://www.transcribeme.com/</div></div><img src="https://www.transcribeme.com/wp-content/uploads/2021/09/featured-image-thumb.jpg" class="bookmark-image"/></a></figure><p id="6f474c7c-e7e5-4ec1-b70d-ad5b3708579c" class="">
+</p><h3 id="6250d50a-57aa-47e5-8083-1949fb0f6f57" class=""><strong>Ideasgrab - list of ideas for you to grab.</strong></h3><figure id="6b787d46-5ac7-43f8-901f-af8f7d66b9d4"><a href="https://www.ideasgrab.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ideasgrab - list of ideas for you to grab.</div><div class="bookmark-description">First idea shared in 2017 Below you will find a list of ideas, over 3,564 Feel free to grab any idea that interests you The list will be updated daily, so make sure to check back to inspire your own idea generation.</div></div><div class="bookmark-href"><img src="https://i0.wp.com/www.ideasgrab.com/wp-content/uploads/2020/11/cropped-912633-1.png?fit=192%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://www.ideasgrab.com/</div></div><img src="https://i0.wp.com/www.ideasgrab.com/wp-content/uploads/2020/12/meta.png?fit=4896%2C2448&amp;ssl=1" class="bookmark-image"/></a></figure><p id="8c8e345b-ae69-466d-acc8-6a339f8952e6" class="">
+</p><p id="43d69978-3814-4acb-9b02-e7019fce819b" class="">
+</p><figure id="24074186-567b-45ce-88af-64a33896731f"><a href="https://github.com/engineerapart/TheRemoteFreelancer" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - engineerapart/TheRemoteFreelancer: Listing of community-curated resources to find topical remote freelance &amp; contract work for software developers, web designers, and more!</div><div class="bookmark-description">Listing of community-curated resources to find topical remote freelance &amp; contract work for software developers, web designers, and more! - GitHub - engineerapart/TheRemoteFreelancer: Listing of community-curated resources to find topical remote freelance &amp; contract work for software developers, web designers, and more!</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/engineerapart/TheRemoteFreelancer</div></div><img src="https://opengraph.githubassets.com/b50c14b51f683aa51a65d26e792891c6c70699ac46276fc586a1526fab3aef8c/engineerapart/TheRemoteFreelancer" class="bookmark-image"/></a></figure><p id="2c2a1d1d-699b-4484-abc1-76bc65eeea1c" class="">
+</p><figure id="0441a1e1-dc2b-460f-aff0-4ebc20be33dc"><a href="https://www.quicksprout.com/how-to-start-a-blog/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Start a Blog That Makes Money in 11 Simple Steps</div><div class="bookmark-description">This blog generates hundreds of thousands of dollars every month by helping readers answer their questions. It took me years and a team to get to this point-but you can start a profitable blog right now. The money is there if you keep at it and follow some tried and true methods like the ones below.</div></div><div class="bookmark-href"><img src="https://quicksprout-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/favicon.ico" class="icon bookmark-icon"/>https://www.quicksprout.com/how-to-start-a-blog/</div></div><img src="https://quicksprout-wpengine.netdna-ssl.com/wp-content/uploads/2022/01/How-To-Start-A-Blog-That-Makes-Money-1024x683.png" class="bookmark-image"/></a></figure><p id="1b890805-cb0d-4f4e-855c-1ca83fd08de2" class="">
+</p><p id="8bc91d7f-9954-4768-8b43-90e2670cbb8f" class="">
+</p><figure id="d8f627c7-9c04-432d-947a-96858c61d855"><a href="https://elitecontentmarketer.com/business-of-writing/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Business Of Writing Archives - ECM</div><div class="bookmark-description">Why did you start with this content creation and freelance writing thingy? I&#x27;m sure one of the top reasons is making big bucks. You got charmed with the flexibility of schedule, independence in ...</div></div><div class="bookmark-href"><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/04/cropped-Copy-of-E-C-M-2-192x192.png" class="icon bookmark-icon"/>https://elitecontentmarketer.com/business-of-writing/</div></div><img src="https://elitecontentmarketer.com/wp-content/uploads/2020/03/cropped-Untitled-design-38.png" class="bookmark-image"/></a></figure><p id="736b2d33-1b85-471d-87b8-1a59b439d3bb" class="">
+</p><figure id="d621a782-dfaa-4f24-9e1b-970b83e9a2fe"><a href="https://foundr.com/ecommerce-masterclass" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How To Find Product Ideas That Sell Without Reinventing The Wheel | Foundr.com</div><div class="bookmark-description">5X MULTI-MILLION DOLLAR E-COMMERCE STARTUP FOUNDER &amp; TOP SOCIAL MEDIA INFLUENCER Within just 6 months of starting her first ecommerce business, it was generating $600,000 USD per month (without funding or investment). She was then instrumental in launching another ecommerce business generating $100,000 USD on the first day.</div></div><div class="bookmark-href"><img src="https://foundr.com/favicon.ico" class="icon bookmark-icon"/>https://foundr.com/ecommerce-masterclass</div></div><img src="https://foundr.com/ecommerce-vart-masterclass-src/images/instructor-gretta.png" class="bookmark-image"/></a></figure><p id="2577e10b-8388-4d6e-bc21-81797ea84bd2" class="">
+</p><figure id="b3239696-e558-4e17-ad0f-504890cf2750"><a href="https://vocal.media/journal/7-great-student-jobs-you-probably-haven-t-considered" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">7 great student jobs you probably haven&#x27;t considered</div><div class="bookmark-description">Working a part-time job while you&#x27;re at uni is a great way to boost your CV, meet new people and (most importantly) rake in some extra cash. And it looks like you agree with us - according to our National Student Money Survey, just under three-quarters of students work part-time.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164420/fjo7ga9cmzmcxfnwucmm.png" class="icon bookmark-icon"/>https://vocal.media/journal/7-great-student-jobs-you-probably-haven-t-considered</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fede910dbeb03001c597817.jpg" class="bookmark-image"/></a></figure><p id="7c0dc02d-d662-4cb9-a1f7-610720b1c9d6" class="">
+</p><figure id="0345258d-363e-493c-87fe-0cefbaf3e571"><a href="https://howtostartanllc.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Start an LLC - Starting an LLC is Easy | TRUiC</div><div class="bookmark-description">Step 1. Select a State Step 2. Name your LLC Step 3. Choose a Registered Agent Step 4. File the Articles of Organization Step 5. Create an Operating Agreement Step 6. Get an EIN Form Your LLC Use our free LLC formation guide to create your own limited liability company in 5 simple steps.</div></div><div class="bookmark-href"><img src="https://cdn2.howtostartanllc.com/favicon.ico" class="icon bookmark-icon"/>https://howtostartanllc.com/</div></div><img src="https://cdn2.howtostartanllc.com/images/home/orange-map-llc2.jpg" class="bookmark-image"/></a></figure><p id="9a6fe602-5941-4a22-a2fc-658af84dba8c" class="">
+</p><figure id="c70594bc-3225-4fa3-a1c4-45e2a171fff5"><a href="https://webflow.com/blog/freelance-websites" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">22 best freelance websites to find work in 2022 | Webflow Blog</div><div class="bookmark-description">Streamline your search for freelance work by setting up profiles on the top freelance websites. Working smarter means using freelance design job boards to your advantage. There are so many job boards designed for freelancers that finding new opportunities is just a few clicks away.</div></div><div class="bookmark-href"><img src="https://assets-global.website-files.com/6009e6adcf8c45466fee3e56/602c52f665edd785545a12b7_default_favicon.png" class="icon bookmark-icon"/>https://webflow.com/blog/freelance-websites</div></div><img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/60107fa5208b453f66790347_6002086f72b727fb1501e17c_freelance-websites.jpeg" class="bookmark-image"/></a></figure><p id="b99bc844-dd9d-41ea-a0d6-cfbaa4f79b29" class="">
+</p><figure id="df1c02f6-b44c-4f81-8151-6bc0b3df6507"><a href="https://github.com/lohitakshnandan/Amazing-Bug-Bounty-Path" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - lohitakshnandan/Amazing-Bug-Bounty-Path: Amazing Collection of Bug Bounty Hunting resources</div><div class="bookmark-description">If you are beginning bug bounty hunting, you will need to know that it will take time to learn the bug hunting skills. You need to have the patience and determination to continue hunting even though you might not see successful results quickly.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lohitakshnandan/Amazing-Bug-Bounty-Path</div></div><img src="https://opengraph.githubassets.com/b591d19919493ec55de05ec0277879f31c8ad7c6f05faa8bd94e00cda0bffc9c/lohitakshnandan/Amazing-Bug-Bounty-Path" class="bookmark-image"/></a></figure><p id="39f13fba-e96e-431c-9c53-560f5884351a" class="">
+</p><figure id="233ce669-85a9-4487-975d-a353288ec48b"><a href="https://www.acx.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ACX</div></div><div class="bookmark-href"><img src="https://www.acx.com/favicon.ico" class="icon bookmark-icon"/>https://www.acx.com/</div></div><img src="https://images-na.ssl-images-amazon.com/images/G/01/Audible/en_US/acx/images/Homepage-Andi-Arndt._CB1538577843_.jpg" class="bookmark-image"/></a></figure><p id="d4cc69ff-273b-4ca4-b52f-e30dc7c55070" class="">
+</p><figure id="7871f66c-44fa-4d9b-b833-3feb106bb100"><a href="https://skillcrush.com/blog/16-freelance-projects-for-beginners-and-every-personality/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">These Are the Best HTML and CSS Projects for Beginners - Skillcrush</div><div class="bookmark-description">If you&#x27;re a beginner to code and just started learning HTML and CSS, you may be wondering what practice projects you can do to build your portfolio and hone your abilities. You might even ask whether or not you can actually do anything with just these two languages!</div></div><div class="bookmark-href"><img src="https://skillcrush.com/wp-content/themes/skillcrush-corgi/img/favicons/favicon.ico" class="icon bookmark-icon"/>https://skillcrush.com/blog/16-freelance-projects-for-beginners-and-every-personality/</div></div><img src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2021/05/Blog_HTML-CSS.jpg" class="bookmark-image"/></a></figure><p id="e8a53669-12d4-498b-a9dc-ead7f1d66f7a" class="">
+</p><figure id="f4fc017b-7824-41d8-872e-a9c1081279bd"><a href="https://sidehustlestack.co/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Side Hustle Stack</div><div class="bookmark-description">Side Hustle Stack is a resource for finding platform-based work, ranging from gig work and side hustles to platforms that help you start a small business that can grow.</div></div><div class="bookmark-href"><img src="https://s3.amazonaws.com/super-notion/images/a58d14b2-b476-4722-8f50-24ac22deebab.jpg" class="icon bookmark-icon"/>https://sidehustlestack.co/</div></div><img src="https://s3.amazonaws.com/super-notion/images/c6964b05-835b-4fc4-9e35-7431eab7a096.jpg" class="bookmark-image"/></a></figure><p id="b411c5d2-eaf9-40e1-ac28-d37134203ba9" class="">
+</p><figure id="ce21e3c7-0c51-463b-a653-17dfd6dcd16b"><a href="https://stacksocial.com/sales/talking-with-clients-creating-a-wordpress-website" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free: WordPress Freelancing 101</div><div class="bookmark-description">Watch live communication between a web designer and client to understand the essential questions that should always be asked before initiating a project. From elevator pitch to closing statements, you&#x27;ll gain valuable insights into how to develop your freelancing business. You&#x27;ll be consistently turning out successful projects for happy clients in no time.</div></div><div class="bookmark-href"><img src="https://cdnp3.stackassets.com/0b1a56b80800bb561f857466c11b6e7c95e6e019/store/90eb99486a437e815f1129b381eb7110299522fe62d5f7e5b859fdfb55d4/1_favicon.png" class="icon bookmark-icon"/>https://stacksocial.com/sales/talking-with-clients-creating-a-wordpress-website</div></div><img src="https://cdnp2.stackassets.com/0923ceb8d7f9ea3b77163a5a18d5f0a268cbc94a/store/c318d80d11bd78bb1d8680b8f0eaa924bf77b7382e08c639fac808600b65/ffbd4b2c823af8a995f1434df45aedde6886d94c_main_hero_image.jpg" class="bookmark-image"/></a></figure><p id="79e9d32a-3452-4767-b539-83fcf85f6218" class="">
+</p><figure id="a3255fcc-0e6c-4f06-8200-6e23446f6a35"><a href="https://www.uopeople.edu/blog/top-10-online-jobs-students-can-turn-career-business-home/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Online Jobs for Students: Start Your Career at Home</div><div class="bookmark-description">We live in a wonderful time, where you can get an accredited university degree from home, and make a living from home.</div></div><div class="bookmark-href"><img src="https://www.uopeople.edu/wp-content/themes/uopeople/assets/favicons/favicon-16x16.png" class="icon bookmark-icon"/>https://www.uopeople.edu/blog/top-10-online-jobs-students-can-turn-career-business-home/</div></div><img src="https://www.uopeople.edu/wp-content/uploads/2017/01/OnlineJobs.jpg" class="bookmark-image"/></a></figure><p id="b1a1ffa1-88af-43d0-a540-a8ac0226cb0d" class="">
+</p><figure id="2b3c137b-9a51-4145-8258-fbaf46e5cdd5"><a href="https://www.startupindia.gov.in/content/sih/en/reources/l-d-listing.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Online Courses for Entrepreneurs</div><div class="bookmark-description">Access an array of courses made available for startups of all stages</div></div><div class="bookmark-href"><img src="https://www.startupindia.gov.in/etc/designs/invest-india/investindialibs/images/favicon.ico" class="icon bookmark-icon"/>https://www.startupindia.gov.in/content/sih/en/reources/l-d-listing.html</div></div><img src="https://www.startupindia.gov.in/content/dam/invest-india/Startup/ImagesforMegaMenu/Image%204.jpg" class="bookmark-image"/></a></figure><figure id="e9e89f9a-bc4a-49d3-97b1-0a8de269cad8"><a href="https://gumroad.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Gumroad - Sell what you know and see what sticks</div><div class="bookmark-description">Build a loyal following with simple posts, email newsletters, and automated workflows. Plus let your customers pay what they want or choose between one-time, recurring, or fixed-length payments in your currency of choice. (We&#x27;ll handle the fine print, like VAT).</div></div><div class="bookmark-href"><img src="https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/619bf6d5140958874014528c_favicon.png" class="icon bookmark-icon"/>https://gumroad.com/</div></div><img src="https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/619fb5686c9b9b5f5a35020e_gumroad-og.png" class="bookmark-image"/></a></figure><figure id="583db6d2-75b3-4617-92cb-d235f8d8a682"><a href="https://thevirtualassist.net/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">News &amp; Jobs website - Games, Technology, Business, Marketing</div><div class="bookmark-description">The Virtual Assist - News &amp; Jobs website for Entertainment, Games, Technology, Business, Digital Marketing, Finance, Animation, VFX, Social Media and more.</div></div><div class="bookmark-href"><img src="https://www.thevirtualassist.net/wp-content/uploads/2014/06/The-Virtual-Assist-Favicon.png" class="icon bookmark-icon"/>https://thevirtualassist.net/</div></div><img src="https://thevirtualassist.net/wp-content/uploads/2021/07/the-virtual-assist-logo-for-website.jpg" class="bookmark-image"/></a></figure></div></article></body></html>

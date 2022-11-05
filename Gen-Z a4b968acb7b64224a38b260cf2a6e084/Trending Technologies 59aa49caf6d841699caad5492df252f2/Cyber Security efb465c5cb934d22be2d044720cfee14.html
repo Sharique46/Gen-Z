@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cyber Security</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="efb465c5-cb93-4d22-be2d-044720cfee14" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Cyber%20Security%20efb465c5cb934d22be2d044720cfee14/354-3544445_global-cyber-security-and-data-privacy-concerns-with.png"/></div><h1 class="page-title">Cyber Security</h1></header><div class="page-body"><p id="87d11f5f-88a8-4658-b24e-b4ebb0e0258f" class="">
+</p><figure id="1245983c-2bab-4b36-a4b1-b8f12237403d"><div class="block-color-brown source"><a href="Cyber%20Security%20efb465c5cb934d22be2d044720cfee14/CyberSecurity_Career_Guide_compressed.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f12ba940-aee5-4846-ae55-7d237e5af37b/CyberSecurity_Career_Guide_compressed.pdf</a></div></figure><figure id="57a1f068-7e33-493c-8bd5-255a1a6a9f32"><div class="source">https://github.com/lohitakshnandan/Amazing-Cybersec-Resources</div></figure><p id="bf218021-f7fa-41e6-a9e1-3f73df97336b" class="">
+</p><figure id="a9fc5007-903a-47ce-b473-f6e7dcc12770"><div class="source"><a href="https://twitter.com/NandanLohitaksh/status/1489257730070122498?ref_src=twsrc%5Etfw&quot;&gt;February">https://twitter.com/NandanLohitaksh/status/1489257730070122498?ref_src=twsrc%5Etfw&quot;&gt;February</a></div></figure><figure id="cf391a95-dbec-4226-85c8-b0d06ed8d99d"><a href="https://www.simplilearn.com/resources/cyber-security" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cyber Security Free Resources and Blogs | Simplilearn</div><div class="bookmark-description">An Introduction to Cyber Security: A Beginner&#x27;s Guide Know about cybersecurity threats, worst affected sectors,SA use cases, cybersecurity terminologies, and the skills. Last updated on Mar 17, 2022</div></div><div class="bookmark-href"><img src="https://www.simplilearn.com/static/frontend/images/favicon.png" class="icon bookmark-icon"/>https://www.simplilearn.com/resources/cyber-security</div></div><img src="https://www.simplilearn.com/logo.png" class="bookmark-image"/></a></figure><p id="7830867c-e0d7-4e89-9739-0dae3036284e" class="">
+</p><figure id="d36a1829-db67-4c03-aca9-247deec08e1d"><a href="https://learntocodewith.me/posts/cybersecurity/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Cybersecurity in 2021: What it Is, Job Outlook &amp; Where to Learn it</div><div class="bookmark-description">Cyberattacks are happening all the time, meaning that keeping software, hardware, and data safe and secure is more important than ever. And there is a shortage of people with these skills, so learning how to get started in cybersecurity can have huge payoffs for your career.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/cybersecurity/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2021/03/Learning-Cybersecurity.png" class="bookmark-image"/></a></figure><p id="39d88318-4da9-4c83-b49e-837a718e6b92" class="">
+</p><figure id="c19d8b0c-d869-429a-bc30-7cfbedde0584"><a href="https://photos.app.goo.gl/1gAb1FYqJ5NLJydS8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Infosec Awareness</div><div class="bookmark-description">61 new items · Album by Sharique Ahmed A</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_64dp.png" class="icon bookmark-icon"/>https://photos.app.goo.gl/1gAb1FYqJ5NLJydS8</div></div><img src="https://lh3.googleusercontent.com/LaRBDLHi1iFsGhQG-YMZLZX_hdXk945t5n_jBjtvoegH5sCJ4BywwKFRyvBzyji-TrXTxktrPUOppMFqqMCEnLnxK4PKASUdU1rAhpFIaenM_uqSrFGtvVVM89wE22fNtgoD96YDLw=w600-h315-p-k" class="bookmark-image"/></a></figure><p id="17ef015c-7a77-4067-9d57-76ef343cab28" class="">
+</p><figure id="c0c70cf6-00c7-4c21-968e-e93a6d7b7a43"><a href="https://us.norton.com/internetsecurity-how-to-7-most-important-cyber-security-topics-you-should-learn-about.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">7 Of The Most Important Cyber Security Topics You Should Learn About</div><div class="bookmark-description">October is National Cyber Security Awareness Month, and we love participating, as it is a way to help further educate everyone about staying safe on the Internet. To kick off the first week, we&#x27;re going to give you a crash course in basic cyber security 101.</div></div><div class="bookmark-href"><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/icons/nlok.ico" class="icon bookmark-icon"/>https://us.norton.com/internetsecurity-how-to-7-most-important-cyber-security-topics-you-should-learn-about.html</div></div><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/misc/tlc/woman-working-in-office_800x300.jpg" class="bookmark-image"/></a></figure><p id="1abe4f57-8fe7-42fc-85be-1b03c5bb2f1e" class="">
+</p><figure id="2f063951-916b-49de-a950-ef18f67ebc04"><a href="https://us.norton.com/internetsecurity-how-to-stay-safer-online.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to stay safer online: Your 2021 online privacy and device security checklist</div><div class="bookmark-description">Protecting your personal and financial information when you&#x27;re posting on Facebook, paying your credit card bill online, or shopping for birthday presents at your favorite online retailer remains a challenging task.</div></div><div class="bookmark-href"><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/icons/nlok.ico" class="icon bookmark-icon"/>https://us.norton.com/internetsecurity-how-to-stay-safer-online.html</div></div><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/misc/tlc/how_to_stay_safer_online_800x300.jpg" class="bookmark-image"/></a></figure><p id="7c9ca972-4799-4c34-922f-884cf20c175f" class="">
+</p><figure id="2ca8f656-e733-4f65-ad86-9a9a677809d9"><a href="https://us.norton.com/internetsecurity-mobile-three-easy-steps-to-protect-your-android.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to secure your Android phone or tablet</div><div class="bookmark-description">You could call mobile devices the new frontier for malicious software. Malware can infect mobile devices in a variety of ways such as through an app, phishing email, or SMS text message. Common types of mobile malware include ransomware, worms, trojans, and spyware.</div></div><div class="bookmark-href"><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/icons/nlok.ico" class="icon bookmark-icon"/>https://us.norton.com/internetsecurity-mobile-three-easy-steps-to-protect-your-android.html</div></div><img src="https://now.symassets.com/content/dam/norton/global/images/non-product/misc/tlc/man-dog-mobile-selfie_800x300.jpg" class="bookmark-image"/></a></figure><p id="44fe6f21-3126-47f7-ade1-2553d843eec9" class="">
+</p><figure id="32b17ef0-6f29-47c3-82d3-64298aabb5ab" class="image"><a href="Cyber%20Security%20efb465c5cb934d22be2d044720cfee14/20211121_201245.jpg"><img style="width:720px" src="Cyber%20Security%20efb465c5cb934d22be2d044720cfee14/20211121_201245.jpg"/></a></figure><p id="ca598200-acd7-4bb5-8e31-6e43504dbfae" class="">
+</p><p id="0a2eb51c-1dec-40c0-951d-4f8b3342d8b3" class="">
+</p><p id="e7382dde-6a3b-409a-8678-e8f83b88e2f3" class="">
+</p><p id="77ba068e-968a-4372-b572-834890c8a053" class="">Must Visit : </p><figure id="d8985a04-57ad-4017-ae24-6ee6c9c8bc90"><a href="https://t.me/Technitze_Cybernauts" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cybernauts</div><div class="bookmark-description">✨ Cybersecurity ✨ Ethical Hacking ✨ Tools , Resources</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Cybernauts</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="ea7a8eae-35eb-43d6-9985-a7657fc4aa04" class="">
+</p><h3 id="03c85582-d493-4f85-b3b2-b413bc8d2bf5" class=""><mark class="highlight-brown"><strong> Sites for Beginners to learn Cyber Hacking and Security</strong></mark></h3><p id="7b6afbdc-762f-48f3-87a5-edbc0ff7f138" class=""><a href="https://t.me/Technitze_Cybernauts/315">https://t.me/Technitze_Cybernauts/315</a></p><p id="6183bdab-5349-465b-af30-69d78165e337" class="">
+</p><figure id="a7e8d495-1890-4875-987d-80726fed8196"><a href="https://esplanetst.wpengine.com/trends/how-to-get-started-in-a-cybersecurity-career/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Get Started in a Cybersecurity Career - eSecurityPlanet</div><div class="bookmark-description">There just aren&#x27;t enough cybersecurity pros to go around, meaning that people with the right skills and enough dedication have plenty of opportunities to land rewarding and lucrative jobs. And with that well publicized security skills shortage - and equally well publicized attacks - there are plenty of people looking to get into security as a career.</div></div><div class="bookmark-href"><img src="https://esplanetst.wpengine.com/wp-content/uploads/2020/10/eSecurity_logo_Favicon.png" class="icon bookmark-icon"/>https://esplanetst.wpengine.com/trends/how-to-get-started-in-a-cybersecurity-career/</div></div><img src="https://esplanetst.wpengine.com/wp-content/uploads/2021/09/wocintech-stock-32-1280x855-1.jpg" class="bookmark-image"/></a></figure><figure id="244720eb-fb8c-4ad3-af9b-f29162f4f677"><a href="https://www.isc2.org/#" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cybersecurity and IT Security Certifications and Training | (ISC)²</div><div class="bookmark-description">Exam results, endorsements, CPE inquiries, AMFs, profile changes +44-203-960-7800 membersupportemea@isc2.org Information about certifications, sitting for an exam, or training seminars Reschedule or cancel an existing exam registration date Contact Pearson VUE +44-161-855-7455</div></div><div class="bookmark-href"><img src="https://www.isc2.org/favicon.ico" class="icon bookmark-icon"/>https://www.isc2.org/#</div></div><img src="https://www.isc2.org/-/media/ISC2/Banners/apac-lg.ashx?h=782&amp;w=472&amp;la=en&amp;hash=5F3A31F8A390A28E73B9090607E61B7288DEFACF" class="bookmark-image"/></a></figure><figure id="53d0b8c6-a617-447e-9c57-749a655c2dd6"><a href="https://www.businessnewsdaily.com/10708-information-security-certifications.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best InfoSec and Cybersecurity Certifications 2022</div><div class="bookmark-description">The U.S. job market has almost 600,000 openings requesting cybersecurity-related skills. Employers are struggling to fill these openings due to a general cyber-skill shortage, with many openings remaining vacant each year. When evaluating prospective information-security candidates, employers should look for certifications as an important measure of excellence and commitment to quality.</div></div><div class="bookmark-href"><img src="https://www.businessnewsdaily.com/favicon.ico" class="icon bookmark-icon"/>https://www.businessnewsdaily.com/10708-information-security-certifications.html</div></div><img src="https://images.businessnewsdaily.com/app/uploads/2022/04/04080637/1554238512.jpeg" class="bookmark-image"/></a></figure><figure id="8073bf55-72be-4202-8592-41be14fd5d61"><a href="https://icssindia.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cyber Security Programs</div><div class="bookmark-description">(Retired as Dy. Chief of Army Staff in 1998) In recent times, both physical and Cyber Security has become very important. We can&#x27;t neglect physical security from the domain of Cyber Security. We come across various cyber-attacks due to digitalization. so for that reason, it is pertinent to look after the security landscape as a whole.</div></div><div class="bookmark-href"><img src="https://icssindia.in/images/fav.jpg" class="icon bookmark-icon"/>https://icssindia.in/</div></div><img src="https://icssindia.in/images/Chairman-icss.jpg" class="bookmark-image"/></a></figure><p id="5b8dd058-b6bd-46f8-9c09-e5254349f8e0" class="">
+</p><figure id="f80e4409-95fd-4d40-a60f-c560f984966d"><a href="https://t.me/Technitze_Codernett/130" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">🔹https://asecuritysite.com/ - This site contains a number of material related to security, digital forensics, networking, and many other things. 🔹https://www.online-toolz.com/ provides Free Online Tools for Software Engineers 🔹https://www.devglan.com/ - Best Programming Courses and Tutorials 🔹https://cryptii.com/ - Web app offering modular conversion, encoding and encryption online.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/130</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="3ea36007-7133-4e1f-a2fb-e5bc4e93859c" class="">
+</p><figure id="5e05df57-adef-482b-a2cf-b500ffa04b03"><a href="https://learn.g2.com/hub/cyber-security" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">G2 Learning Hub | Cyber Security</div><div class="bookmark-description">60+ resources to learn about: the basics of cyber security, digital security, data security, network security, and more.</div></div><div class="bookmark-href">https://learn.g2.com/hub/cyber-security</div></div><img src="https://learn.g2.com/hs-fs/hubfs/cyber-security-digital-security.jpg?width=800&amp;name=cyber-security-digital-security.jpg" class="bookmark-image"/></a></figure><p id="e90c2207-1fef-44d6-875a-a96045337720" class="">
+</p><figure id="1b0a591f-272a-47ea-9666-afdf6a3bfd90"><a href="https://www.infosecawareness.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Information Security Education and Awareness</div><div class="bookmark-description">ISEA is a multilingual web portal, a separate user friendly section for children, students, government official, police, system administration and women with multimedia content made available.</div></div><div class="bookmark-href"><img src="https://www.infosecawareness.in/img/favicon.ico" class="icon bookmark-icon"/>https://www.infosecawareness.in/</div></div><img src="https://www.infosecawareness.in/img/Logo/isea.png" class="bookmark-image"/></a></figure><p id="3650511e-5cc1-41c2-9ca1-640b2faec611" class="">
+</p><figure id="c003a506-830e-4032-91a5-3f25a399a643"><a href="https://www.stopbullying.gov/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Stop Bullying Home Page</div><div class="bookmark-description">Stop Bullying on the Spot When adults respond quickly and consistently to bullying behavior they send the message that it is not acceptable. Research shows this can stop bullying behavior over time. Parents, school staff, and other adults in the community can help kids prevent bullying by talking about it, building a safe school environment, and creating a community-wide bullying prevention strategy.</div></div><div class="bookmark-href"><img src="https://www.stopbullying.gov/themes/custom/stopbullying/assets/img/favicons/sb/favicon-128x128.png" class="icon bookmark-icon"/>https://www.stopbullying.gov/</div></div></a></figure><p id="b427f32d-142e-4a15-8844-2d2ea62a484c" class="">
+</p><figure id="fe104712-dd09-4059-a1d4-b2d5bfe980c0"><a href="https://www.niss.ind.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">National Information Security Council</div><div class="bookmark-description">National Information Security Summit (NISS) is the premier International Information Security Awareness, Cyber Forensics, Malware Analysis, Cyber Cop, Cyber Law &amp; Ethical Hacking Summit with skilled &amp; proficient Speakers from government &amp; private sector. Each brings unique insights from their expertise in the disciplines of ethical hacking, cyber forensics, cyber crime, web application, networking, IoT &amp; IT related laws.</div></div><div class="bookmark-href"><img src="https://www.niss.ind.in/favicon.ico" class="icon bookmark-icon"/>https://www.niss.ind.in/</div></div><img src="https://www.niss.ind.in/wp-content/uploads/2013/12/ltgen.jpg" class="bookmark-image"/></a></figure><p id="16b8d100-c751-414e-a2d0-fce941ad9bf5" class="">
+</p><figure id="e893effe-8eac-49bc-b416-d4cd6c4040a0"><a href="https://ceir.gov.in/Home/index.jsp" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CEIR</div><div class="bookmark-description">Through KYM, you can check the validity of your mobile device even before buying it. IMEI is written on the mobile packaging box. It could be found on the mobile bill/invoice. From your mobile you can check the IMEI number by dialling *#06#, IMEI number will be shown on mobile screen.</div></div><div class="bookmark-href">https://ceir.gov.in/Home/index.jsp</div></div><img src="https://ceir.gov.in/images/slide2.jpg" class="bookmark-image"/></a></figure><p id="30272796-d200-4c95-81a8-181d0f4cf195" class="">
+</p><figure id="648a297d-0c10-40ad-8c43-41e04ae506da"><a href="https://safecomputing.umich.edu/be-aware/phishing-and-suspicious-email/shortened-url-security" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Shortened URL Security</div><div class="bookmark-description">Shortened URLs, such as those from bit.ly and goo.gl, make it easy to type in a web address quickly but hard to tell where your web browser will actually take you. Before clicking a shortened URL, check for the full URL. Most URL shorteners-including those used at U-M-include a preview feature.</div></div><div class="bookmark-href"><img src="https://safecomputing.umich.edu/favicon.ico" class="icon bookmark-icon"/>https://safecomputing.umich.edu/be-aware/phishing-and-suspicious-email/shortened-url-security</div></div><img src="https://safecomputing.umich.edu/sites/all/themes/bootstrap_iia/images/um-logo-m216.png" class="bookmark-image"/></a></figure><p id="d2acb560-e76c-4c76-9392-3f22840c1fe5" class="">
+</p><figure id="0d7c3c07-011e-4306-9d12-1df21da2791e"><a href="https://www.cyberswachhtakendra.gov.in/security-best-practices.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Security Best Practices</div><div class="bookmark-description">The &#x27;Cyber Swachhta Kendra&#x27; (CSK) is operated by the Indian Computer Emergency Response Team (CERT-In) as part of the Government of India&#x27;s Digital India initiative under the Ministry of Electronics and Information Technology (MeitY).</div></div><div class="bookmark-href"><img src="https://www.csk.gov.in/favicon.ico" class="icon bookmark-icon"/>https://www.cyberswachhtakendra.gov.in/security-best-practices.html</div></div><img src="https://www.csk.gov.in/image/logo/meity.gif" class="bookmark-image"/></a></figure><figure id="7437a5ab-1044-484a-b05c-094410c17c55"><a href="https://www.dsci.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Data Security Council of India (DSCI)</div><div class="bookmark-description">DSCI is a not-for-profit, industry body on data protection in India, setup by NASSCOM. It makes cyberspace safe, secure and trusted by establishing best practices, standards and initiatives in cyber security and privacy.</div></div><div class="bookmark-href"><img src="https://www.dsci.in/sites/default/files/favicon.ico" class="icon bookmark-icon"/>https://www.dsci.in/</div></div><img src="https://www.dsci.in/sites/default/files/images/homepage_carousel/DSCI%20Certifications-DCPP-DCPLA-min.jpg" class="bookmark-image"/></a></figure><p id="369a18db-7379-4346-8cf9-2d1208b278eb" class="">
+</p><figure id="9e796aeb-f09a-4645-b2b1-be83020d088e"><a href="http://www.tndipr.gov.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">http://www.tndipr.gov.in/</div></div></a></figure><p id="1b99ef0b-91fe-4e63-a3ee-f7ccf0eb7594" class="">
+</p><figure id="02db4f0d-b0b9-4216-8b86-1bb25ccdc3bb"><a href="https://blueteamlabs.online/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Blue Team Labs Online</div><div class="bookmark-description">A gamified platform for defenders to practice their skills in security investigations and challenges covering; Incident Response, Digital Forensics, Security Operations, Reverse Engineering, and Threat Hunting. Free and paid tiers available.</div></div><div class="bookmark-href"><img src="https://blueteamlabs.online/landpage/images/favicon.ico" class="icon bookmark-icon"/>https://blueteamlabs.online/</div></div><img src="https://blueteamlabs.online/landpage/images/500_x_500_Logo_White_Border.png" class="bookmark-image"/></a></figure><p id="dc643bcd-84c7-4b8a-9aee-3fe7fe0adbc8" class="">
+</p><figure id="e7aceb07-b0cb-4388-ab21-5b04d8db65c7"><a href="https://privacytools.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Privacy Tools: Fight Mass Surveillance with Encryption</div><div class="bookmark-description">For easy copy &amp; paste on social media platforms, messengers and emails. Web Browser Guide for better Privacy It&#x27;s recommended to install additional browser addons to strengthen Firefox even more. Firefox is able to sync accross all your devices on different platforms. Firefox is not the perfect out of the box solution but It&#x27;s definetly worth it to take the extra time and setup Firefox properly.</div></div><div class="bookmark-href"><img src="https://www.privacytools.io/img/favicons/favicon.ico" class="icon bookmark-icon"/>https://privacytools.io/</div></div></a></figure><p id="1b06898c-d375-4d14-b1ea-4d83346a0cb7" class="">
+</p><figure id="ab64b31b-dd85-43d2-abf9-9fc8184237cf"><a href="https://proxysite.cloud/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Proxy Site - Free Web Proxy Site to unblock blocked sites</div><div class="bookmark-description">Proxy Site cloud is a free web proxy site for all to use, bypass web filters and unblock sites, Unblock sites like Youtube and Facebook at school or college for free.</div></div><div class="bookmark-href"><img src="https://proxysite.cloud/favicon.ico" class="icon bookmark-icon"/>https://proxysite.cloud/</div></div><img src="https://proxysite.cloud/img/logo.png" class="bookmark-image"/></a></figure><p id="3191b600-32d8-4b57-9163-788e333e45c2" class="">
+</p><figure id="6e3142ac-647d-4a57-897a-14b1e1a73f84"><a href="https://www.exploit-db.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Offensive Security&#x27;s Exploit Database Archive</div><div class="bookmark-description">The Exploit Database - Exploits, Shellcode, 0days, Remote Exploits, Local Exploits, Web Apps, Vulnerability Reports, Security Articles, Tutorials and more.</div></div><div class="bookmark-href"><img src="https://www.exploit-db.com/favicon.ico" class="icon bookmark-icon"/>https://www.exploit-db.com/</div></div></a></figure><p id="86ca2ea6-62de-4ae7-bf8a-7463b89bfa5b" class="">
+</p><figure id="56a0f4d3-f4bc-4ec7-8a1e-b4108f1e127c"><a href="https://dnslytics.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Online investigation tool - Reverse IP, NS, MX, WHOIS and Search Tools</div><div class="bookmark-description">DNSlytics provides the ultimate online investigation tool. See detailed information about every IP address, domain name and provider. Perform network tests like DNS lookup, email testing and WHOIS lookups.</div></div><div class="bookmark-href"><img src="https://static.dnslytics.com/legacy/images/favicons/favicon-16x16.png" class="icon bookmark-icon"/>https://dnslytics.com/</div></div></a></figure><p id="bd3f657d-6db6-440b-be95-52229cc3f881" class="">
+</p><figure id="9b62f0a7-1d42-4852-8e73-796333e8bcc7"><a href="https://intelx.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Intelligence X</div><div class="bookmark-description">Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more.</div></div><div class="bookmark-href"><img src="https://intelx.io/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://intelx.io/</div></div></a></figure><p id="2b02a2e4-8724-4ac2-864d-34379259a0bb" class="">
+</p><figure id="47ba9b95-7723-41ac-9178-fa22e74f48b8"><a href="https://sitecheck.sucuri.net/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sucuri Security</div><div class="bookmark-description">Disclaimer: Sucuri SiteCheck is a free website security scanner.Remote scanners have limited access and results are not guaranteed. For a full scan, contact our team. Disclaimer: Sucuri SiteCheck is a free WordPress security scanner.Remote scanners have limited access and results are not guaranteed. For a full scan, contact our team.</div></div><div class="bookmark-href"><img src="https://sitecheck.sucuri.net/favicon.ico" class="icon bookmark-icon"/>https://sitecheck.sucuri.net/</div></div><img src="https://sitecheck.sucuri.net/19-sucuri-sitecheck-og.png" class="bookmark-image"/></a></figure><p id="c2b30043-0705-4753-b7ca-679028d32687" class="">
+</p><figure id="bd9e9aaa-04bc-4026-9e24-6ce3476fffdf"><a href="https://whois.domaintools.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://whois.domaintools.com/</div></div></a></figure><p id="d8e75eb7-03f7-45dd-96bd-5419f4deb0d7" class="">
+</p><figure id="ae8b4e2c-e2fc-47db-a1e1-6ec4faa8c817"><a href="https://www.ip-tracker.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.ip-tracker.org/</div></div></a></figure><p id="39e2d748-50fa-40b1-ab63-0d18c19b841f" class="">
+</p><figure id="0882a1f2-f283-47a9-9a34-0539b8205f69"><a href="https://wheregoes.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">URL Redirect Checker | WhereGoes</div><div class="bookmark-description">Have you ever wondered: Where does this link go? The URL redirect checker follows the path of the URL. It will show you the full redirection path of URLs, shortened links, or tiny URLs. Also referred to as a link checker, url checker, redirect checker, link tracker, url tracker, redirect tracer, link follower, 301 redirect checker, redirect tracker, URL tester, and so on.</div></div><div class="bookmark-href"><img src="https://wheregoes.com/favicon.ico" class="icon bookmark-icon"/>https://wheregoes.com/</div></div></a></figure><p id="334266ff-41af-4eac-a0dc-080525c8bd2e" class="">
+</p><figure id="6b875932-35d8-48fc-8e15-e070b9874042"><a href="https://www.security.org/how-secure-is-my-password/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How Secure Is My Password? | Password Strength Checker</div><div class="bookmark-description">Entries are 100% secure and not stored in any way or shared with anyone. Period. Interested in getting your personalized physical and digital security score? Visit our new tool here. Data breaches and identity theft are on the rise, and the cause is often compromised passwords.</div></div><div class="bookmark-href"><img src="https://www.security.org/wp-content/uploads/2019/08/cropped-favicon-192x192.png" class="icon bookmark-icon"/>https://www.security.org/how-secure-is-my-password/</div></div><img src="https://www.security.org/wp-content/uploads/2020/10/How-Secure-is-My-Password_.jpg" class="bookmark-image"/></a></figure><p id="37a715c1-a18a-49ea-ad01-6b96f1841bf0" class="">
+</p><figure id="c78ca8ea-720c-4d8d-85c5-ec44c0260f01"><a href="https://haveibeenpwned.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://haveibeenpwned.com/</div></div></a></figure><p id="d98a6fb7-5cd6-4c45-a2a9-34dd55497844" class="">
+</p><figure id="854e5e3f-7654-448c-996a-0ccdeff647b6"><a href="https://exodus-privacy.eu.org/en/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Exodus Privacy</div><div class="bookmark-description">2022 - Exodus Privacy - French non-profit - Source Code</div></div><div class="bookmark-href"><img src="https://exodus-privacy.eu.org/img/favicons/favicon-16x16.png" class="icon bookmark-icon"/>https://exodus-privacy.eu.org/en/</div></div><img src="https://exodus-privacy.eu.org/media/logo/exodus.png" class="bookmark-image"/></a></figure><p id="5c858218-5025-46bb-b8e0-8a186720c58e" class="">
+</p><figure id="96cf9e6d-9555-4e3c-96ad-9c614bcc1a8d"><a href="http://info.cern.ch/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">http://info.cern.ch</div></div><div class="bookmark-href"><img src="http://info.cern.ch/favicon.ico" class="icon bookmark-icon"/>http://info.cern.ch/</div></div></a></figure><p id="99366e4a-b68f-4c99-bc03-321572f77776" class="">
+</p><figure id="dbdf8cec-63f6-427a-9e35-cc3e44f22153"><a href="https://www.cyberaces.org/courses.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cyber Aces | SANS Institute</div><div class="bookmark-description">Your gateway to cybersecurity skills and careers. We live in a networked world - keeping in touch with friends, paying bills, operating a city&#x27;s energy grid, strengthening national security - it happens online. The need to secure our networks has never been greater.</div></div><div class="bookmark-href"><img src="https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blt3b9dbc8492637093/60a7f2761df7ea69b75ba460/cropped-SANS-Blue-Square-192x192.png" class="icon bookmark-icon"/>https://www.cyberaces.org/courses.html</div></div><img src="https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blta3c1001e62c51ba7/61e990a88cd123267e7d1fea/CENTRAL_Cyber_Aces_Landing_Page_Assets_2340x500_-_1.jpg" class="bookmark-image"/></a></figure><p id="64925826-7757-4e4d-9111-602971ad4183" class="">
+</p><figure id="84306991-fcac-4705-9f62-d5f98855efb8"><a href="https://www.cybrary.it/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Cybersecurity Training and Career Development</div><div class="bookmark-description">DEVELOP YOUR CAREER WITH CYBRARY Cybrary&#x27;s accessible, affordable platform provides guided pathways, threat-informed training, and certification preparation to fully equip cybersecurity professionals at every stage in their careers to skill up and confidently mitigate threats.</div></div><div class="bookmark-href"><img src="https://www.cybrary.it/assets/favicon64.png" class="icon bookmark-icon"/>https://www.cybrary.it/</div></div><img src="https://images.ctfassets.net/kvf8rpi09wgk/6OJAQ4SjCUuP0kL1bDY4Io/ae6ee45b44f79ea69ab79d9a2afd8992/cybrary-og-image.png" class="bookmark-image"/></a></figure><p id="65743ee5-f8e3-4a45-bbd1-e6df99db9237" class="">
+</p><figure id="04dc30a0-dd85-4926-816c-5cfd34b8eab7"><a href="http://www.securitytube.net/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Welcome to SecurityTube.net</div></div><div class="bookmark-href"><img src="http://www.securitytube.net/favicon.ico" class="icon bookmark-icon"/>http://www.securitytube.net/</div></div><img src="http://videothumbs.securitytube.net.s3.amazonaws.com/17831.jpg" class="bookmark-image"/></a></figure><p id="a0dc86ee-abaa-4ef8-b98b-0ca316a6a641" class="">
+</p><figure id="1259d16d-3df3-4bb0-8d01-ea49a2e42a20"><a href="https://www.netcraft.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.netcraft.com/</div></div></a></figure><p id="e7369ba2-94b3-4f07-8d77-b5c9ff1871cb" class="">
+</p><h3 id="da538094-f063-4849-9a31-a7723ec21935" class=""><mark class="highlight-brown">Websites</mark></h3><p id="d2a909c1-6373-4c2d-a66e-0ae27ff6549c" class=""><a href="https://privacy.com/">https://privacy.com/</a></p><p id="ef344505-9bec-486b-b5a5-aad9e9b93e15" class=""><a href="https://spyfone.com/">https://spyfone.com/</a></p><p id="f9752a20-7716-4a92-abfd-54f323c2c74a" class=""><a href="https://gbhackers.com/">https://gbhackers.com/</a></p><p id="e754d0e9-adc0-4fc5-9d88-cb5fc6f230c6" class=""><a href="http://bugmenot.com/">http://bugmenot.com/</a></p><p id="6cf4d301-c21a-419a-a326-685f2a11fd09" class=""><a href="https://gtmetrix.com/">https://gtmetrix.com/</a></p><p id="9f333154-bfb6-497b-a0fd-78fd9847baa6" class=""><a href="https://www.bugzilla.org/">https://www.bugzilla.org/</a></p><p id="3164209a-2c87-4c44-b94e-db989ea2faa8" class=""><a href="https://linuxzoo.net/">https://linuxzoo.net/</a></p><p id="e1f08df4-7aaf-4671-a5f3-eed9b2f14fb1" class=""><a href="https://www.dnsleaktest.com/">https://www.dnsleaktest.com/</a></p><p id="daef4224-f059-496d-b60a-bcb90e882516" class=""><a href="https://www.ip-tracker.org/locator/ip-lookup.php?ip=whatstheirip.com">https://www.ip-tracker.org/locator/ip-lookup.php?ip=whatstheirip.com</a></p><p id="188efb4f-0571-42b1-a848-39e673d3b140" class=""><a href="http://net-load.com/">http://net-load.com/</a></p><p id="72da93d8-48f9-4232-ad30-c4b45bec2e3f" class=""><a href="https://www.hotcleaner.com/">https://www.hotcleaner.com/</a></p><p id="d587aa06-6436-410f-9826-32a4c2bb2751" class=""><a href="https://bytecode.in/">https://bytecode.in/</a></p><p id="30800a2a-fac8-47ef-a368-e1084d7bcfc1" class=""><a href="https://www.security.org/">https://www.security.org/</a></p><p id="9dc597bb-aab2-4860-ba99-fae9ad234628" class="">
+</p><p id="b0c208f6-1164-4c78-b30e-219809019955" class="">
+</p><p id="27e86a53-23f9-4757-b78f-9a85222fc0d5" class="">
+</p></div></article></body></html>

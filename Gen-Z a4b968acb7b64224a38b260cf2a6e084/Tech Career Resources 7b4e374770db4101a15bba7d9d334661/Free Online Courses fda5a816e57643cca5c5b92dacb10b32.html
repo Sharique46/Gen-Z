@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Free Online Courses</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fda5a816-e576-43cc-a5c5-b92dacb10b32" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1588912914078-2fe5224fd8b8?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 16.200000000000003%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📘</span></div><h1 class="page-title">Free Online Courses</h1></header><div class="page-body"><p id="a8d1fd29-c6a4-4f8b-860d-7ece4d85bf53" class="">
+</p><figure id="12d07a5b-b6b9-43dd-bbb9-c27a8b4445bf" class="link-to-page"><a href="Free%20Online%20Courses%20fda5a816e57643cca5c5b92dacb10b32/Learning%20Platforms%2012d07a5bb6b943ddbbb9c27a8b4445bf.html"><span class="icon">📘</span>Learning Platforms</a></figure><figure id="4f53c277-9137-469b-9f19-abae3e14aaf8"><div class="source"><a href="Free%20Online%20Courses%20fda5a816e57643cca5c5b92dacb10b32/20_online_courses_for_your_20s.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ccf87f63-5d79-4c49-90ea-80b1e4701d59/20_online_courses_for_your_20s.pdf</a></div></figure><p id="75091a43-e349-4b7f-9afe-1ce03c5a93d5" class="">
+</p><h3 id="d412b8a0-1f9b-4034-95d0-e22f1b2bef23" class=""><strong>The list of some online course sites! Share around you.</strong></h3><p id="33098e25-3d07-487e-ad85-eb67849ebeb7" class=""><a href="https://t.me/Technitze_Codernett/7">https://t.me/Technitze_Codernett/7</a></p><p id="3baa9af9-a6e8-4812-bc30-eeec1592a9a5" class="">
+</p><h3 id="2d943f5b-6879-40e2-aded-640782ead1c3" class=""><strong>SOME USEFUL WEBSITES ONLINE EDUCATIONAL SUPPORT :-</strong></h3><p id="bfbb6110-306a-4626-b9c5-ff4ed771c253" class=""><a href="https://t.me/Technitze_Codernett/6">https://t.me/Technitze_Codernett/6</a></p><p id="8320198b-570e-4305-a5c6-44000fef4e86" class="">
+</p><figure id="106f9532-f02d-4315-98f1-4fc59da62116"><a href="https://hackr.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Find the best online Programming courses and Tutorials - Hackr.io</div><div class="bookmark-description">Google search shows you hundreds of Programming courses/tutorials, but Hackr.io tells you which is the best one. Find the best online courses &amp;amp; tutorials recommended by the Programming community. Pick the most upvoted tutorials as per your learning style: video-based, book, free, paid, for beginners, advanced, etc.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/</div></div><img src="https://hackr.io/sites/programming/og_image" class="bookmark-image"/></a></figure><p id="ca7da5ca-8be2-466c-bab4-72912504bc27" class="">
+</p><figure id="9e59526f-e92e-43db-bace-4261e35ff088"><a href="https://learntocodewith.me/posts/code-for-free/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">113 of the Best Places to Learn to Code For Free</div><div class="bookmark-description">Want to learn to code for free? Look no further. Here are 113 places online where you can start learning for absolutely free. By taking advantage of these resources as you learn code for free, you can discover what you like and don&#x27;t like before investing money into a certain coding language or set of courses.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/code-for-free/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2018/07/Learn-to-Code-for-Free.png" class="bookmark-image"/></a></figure><figure id="afcfb906-3fdf-483b-af2d-cc186a0933a9"><a href="https://digitaldefynd.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DigitalDefynd - Find the Best + Free Courses Online</div><div class="bookmark-description">2 Million+ Learners | 92,000+ Courses | 45,000+ Free Courses | 1200+ Free Certificates</div></div><div class="bookmark-href"><img src="https://digitaldefynd.com/wp-content/uploads/2020/07/cropped-dd-9-192x192.png" class="icon bookmark-icon"/>https://digitaldefynd.com/</div></div><img src="https://digitaldefynd.com/wp-content/uploads/2022/04/DigitalDefynd-Find-The-Best-Courses-Online-1.png" class="bookmark-image"/></a></figure><p id="2ac62566-3588-4241-955e-fc2cbcf2868e" class="">
+</p><p id="7aae857c-d2f3-4e6b-83cd-d92afc2153bc" class="">
+</p><figure id="258c02e7-3270-4dde-9956-13d693bbf42f"><a href="https://www.coursera.org/promo/googlecloud-training-promotion" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Coursera | Online Courses &amp; Credentials From Top Educators. Join for Free</div><div class="bookmark-description">Learn online and earn valuable credentials from top universities like Yale, Michigan, Stanford, and leading companies like Google and IBM. Join Coursera for free and transform your career with degrees, certificates, Specializations, &amp; MOOCs in data science, computer science, business, and dozens of other topics.</div></div><div class="bookmark-href"><img src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-32x32.png" class="icon bookmark-icon"/>https://www.coursera.org/promo/googlecloud-training-promotion</div></div><img src="https://s3.amazonaws.com/coursera/media/Grid_Coursera_Partners_updated.png" class="bookmark-image"/></a></figure><p id="6edca3df-b57d-4f0b-b248-34c195d62e60" class="">
+</p><figure id="0e63be21-2f9c-432a-9fcd-0210ad1c15fe"><a href="https://www.freecodecamp.org/news/learn-programming-free-software-development-courses-for-beginners/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Programming - Free Software Development Courses for Beginners</div><div class="bookmark-description">In this article, I&#x27;m going to show you 140 beginner friendly courses where you can learn computer science and programming for free. The freeCodeCamp courses are completely free and some of them include a free certification that you can add to your LinkedIn or résumé. Note that some of the</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/learn-programming-free-software-development-courses-for-beginners/</div></div><img src="https://www.freecodecamp.org/news/content/images/2022/01/safar-safarov-koOdUvfGr4c-unsplash--1-.jpg" class="bookmark-image"/></a></figure><p id="319becb9-1662-46e8-a3c1-beb5f6bf8293" class="">
+</p><figure id="3d936702-65fe-43a3-ab6f-07091913d16e"><a href="https://www.freecodecamp.org/news/free-online-programming-cs-courses/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">720+ Free Online Programming &amp; Computer Science Courses You Can Start This New Years</div><div class="bookmark-description">Ten years ago, universities like MIT and Stanford first opened up free online courses [https://www.classcentral.com/] to the public. Today, close to 1,000 schools [https://www.classcentral.com/universities] around the world have created thousands of free online courses. I&#x27;ve compiled this list of 720+ such free online courses that you can start this month.</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/free-online-programming-cs-courses/</div></div><img src="https://www.freecodecamp.org/news/content/images/2020/01/1_MLyNd9et367llWpgMzsTIg.png" class="bookmark-image"/></a></figure><p id="33aaed21-3996-4900-a2f8-9d609dbdce0c" class="">
+</p><figure id="94b4beed-704b-4749-8c4b-d7dba5cd5d91"><a href="https://vocal.media/education/top-91-free-education-websites-for-all-study-courses" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 91 free Education Websites for all Study Courses</div><div class="bookmark-description">We&#x27;re continually updating our list to provide you with the best resources. Not only can you find the top free sites for teaching math, science, English, and social studies, but we&#x27;ve also added some of our favorite computer science and coding sites, language sites, and homeschooling sites.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1507641047/excnjjhq7mppohgumcgj.png" class="icon bookmark-icon"/>https://vocal.media/education/top-91-free-education-websites-for-all-study-courses</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fbbe69f514ad0001c11de4f.png" class="bookmark-image"/></a></figure><p id="5ce0ab2a-74c0-4fc0-940b-ac0173bdf5c2" class="">
+</p><figure id="a850961b-e0a8-48f0-892e-48b5068c27ca"><a href="https://www.freecodecamp.org/news/12-free-coding-games-to-learn-programming-for-beginners/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">12 Free Coding Games to Learn Programming for Beginners</div><div class="bookmark-description">A lot of beginners can become intimidated when they&#x27;re learning how to code. But learning through coding games can be fun and educational. According to True Education Partnerships [https://www.trueeducationpartnerships.com/schools/gamification-in-education/], &gt; Gamification in learning involves using game-based elements such as point scoring, peer competition, team work, and score tables</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/12-free-coding-games-to-learn-programming-for-beginners/</div></div><img src="https://www.freecodecamp.org/news/content/images/2021/08/naser-tamimi-yG9pCqSOrAg-unsplash.jpg" class="bookmark-image"/></a></figure><p id="a3f1e825-4fd9-488d-9cc8-c33fac9c8251" class="">
+</p><figure id="82336f86-88ac-4595-b39e-f7997da3bf47"><a href="https://www.microsoft.com/en-us/education/higher-education/edu-skills/students" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tech Courses &amp; Online Learning | Microsoft Education</div><div class="bookmark-description">Whether it&#x27;s learning to code or gaining a certification, Microsoft tools, programs, and technology can help you develop the skills you need for your next steps. Bring your tech idea to life at the Imagine Cup-work with friends (and make new ones!), network with professionals, gain new skills, and get a chance to win travel, mentorship, and cash.</div></div><div class="bookmark-href"><img src="https://www.microsoft.com/favicon.ico?v2" class="icon bookmark-icon"/>https://www.microsoft.com/en-us/education/higher-education/edu-skills/students</div></div><img src="https://cortexonemsedu.azureedge.net/assets/education-feature-seo-og/1/education-feature-seo-og.jpg" class="bookmark-image"/></a></figure><p id="450a3850-da64-4456-9bfa-78d83b423f42" class="">
+</p><figure id="12f9679e-d9f8-4057-9739-c5bc6e88a906"><a href="https://www.microsoft.com/en-us/makecode/about" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn about Microsoft MakeCode Computer Science Education</div><div class="bookmark-description">Microsoft MakeCode is a free, open source learning program that brings computer science to life for all students.</div></div><div class="bookmark-href"><img src="https://c.s-microsoft.com/favicon.ico?v2" class="icon bookmark-icon"/>https://www.microsoft.com/en-us/makecode/about</div></div><img src="http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE25rxP?ver=05ab" class="bookmark-image"/></a></figure><p id="952ed4bf-5a89-4dbc-8a0a-394fac93b998" class="">
+</p><figure id="7d2bb569-a8c6-4f4f-a8d0-930199b3c657"><a href="https://youtube.com/c/TrickyMan" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tricky Man</div><div class="bookmark-description">Hello Friends, I am Piyush Sharma - Software Engineer by Profession &amp; Youtuber by Passion. Welcome to My Channel Tricky Man, I have created this channel for helping students to inform them about the Free online Courses With Free Certificate Opportunities, Full-Time jobs, Part Time Jobs, Freelancer jobs, How to Make Money Online, Internships opportunities, Free Swags For Students, Free Trainings &amp; Many More.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/TrickyMan</div></div><img src="https://yt3.ggpht.com/ytc/AMLnZu8Bjiis3ljIsxg3cU3DVZiWqD2LqtOloyjGMH312w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><figure id="7293fd4e-dad3-463a-9c9a-651e05463bf7"><a href="https://www.guru99.com/free-online-course-with-certificate.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">60 Best FREE Online Courses with Certificates in Jul 2022</div><div class="bookmark-description">Free online certifications not only expand your skill and knowledge but also makes your resume more attractive to recruiters for private or government jobs. Free online courses give you a chance to learn from industry experts without spending a dime.</div></div><div class="bookmark-href"><img src="https://www.guru99.com/images/Favicon_new_300x300.png" class="icon bookmark-icon"/>https://www.guru99.com/free-online-course-with-certificate.html</div></div><img src="https://www.guru99.com/images/3/online-course-with-certificate-1.png" class="bookmark-image"/></a></figure><figure id="6052a20c-95f8-4b4e-a409-312eac297b90"><a href="https://www.codespaces.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Find Best Courses &amp; Certifications Online 2022 - CodeSpaces</div><div class="bookmark-description">Jun 2022 Update] Find the best courses, certifications, trainings &amp; tutorials online. Choose from free and paid resources handpicked by our team of experts.</div></div><div class="bookmark-href"><img src="https://www.codespaces.com/wp-content/uploads/2019/09/CodeSpacesIcon3.ico" class="icon bookmark-icon"/>https://www.codespaces.com/</div></div></a></figure><figure id="4ad90136-1b0a-4105-981f-fe329bc5c8e6"><a href="https://coursevania.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://coursevania.com/</div></div></a></figure><p id="1805cd00-dea5-4d5f-8b29-be815e3c235b" class="">
+</p><h3 id="735f20d0-7b5a-4c2e-9226-6e973072162c" class="block-color-blue_background"><strong>Websites to download Udemy Course</strong></h3><p id="beb2cf09-01ce-4612-b2f5-676c3ebbbc4e" class=""><a href="https://t.me/Technitze_Codernett/9">https://t.me/Technitze_Codernett/9</a></p><p id="f28415f0-27ec-486d-81f5-14e2b9a9c85a" class="">
+</p><h3 id="48888c74-44c7-48b8-a5c8-3eee183a9ae0" class=""><mark class="highlight-blue"><strong>Udemy free courses</strong></mark></h3><p id="149c1c59-1c45-4347-9517-2aaf9583909a" class=""><a href="https://t.me/Technitze_Codernett/13">https://t.me/Technitze_Codernett/13</a></p><p id="40f18892-cd71-4678-806a-2dff940a5156" class="">
+</p><h3 id="0e9416f1-075a-4d96-a3af-814d5b8427b0" class=""><mark class="highlight-blue">L</mark><mark class="highlight-blue"><strong>ist of free course providing websites and universities</strong></mark></h3><p id="be60ccc6-9ba0-4c7b-a113-6723ad62edcc" class=""><a href="https://t.me/Technitze_Codernett/10">https://t.me/Technitze_Codernett/10</a></p><p id="7936c334-049e-4fe1-92ab-deb97dcc481d" class="">
+</p><h3 id="3a2a62be-1839-4e25-aa7d-f218189ad5b7" class=""><mark class="highlight-blue">Checkout these FREE courses from the peak level Institutions</mark></h3><p id="faf95618-1ae6-4cdd-b4ba-02fea017b1ba" class=""><a href="https://t.me/Technitze_Codernett/12">https://t.me/Technitze_Codernett/12</a></p><p id="eec4b6af-e25d-463c-9779-b44083d1abb1" class=""><a href="https://t.me/Technitze_Codernett/15">https://t.me/Technitze_Codernett/15</a></p><p id="610699fd-0a40-4c79-a0c9-d220992a091f" class="">
+</p><p id="5f3574f8-9784-460e-886a-219070b0354a" class=""><a href="https://www.crampete.com/blogs/best-software-courses-for-freshers/#full-stack-development">https://www.crampete.com/blogs/best-software-courses-for-freshers/#full-stack-development</a></p><p id="1920874b-3f9a-4fcc-8510-5264fb68c7b1" class=""><a href="https://www.linkedin.com/business/learning/blog/top-skills-and-courses/trending-skills-at-the-top-companies-2021">https://www.linkedin.com/business/learning/blog/top-skills-and-courses/trending-skills-at-the-top-companies-2021</a></p><p id="359125be-7b6d-431d-9f2d-9b79b83c6247" class=""><a href="https://learntocodewith.me/posts/tech-skills-in-demand/">https://learntocodewith.me/posts/tech-skills-in-demand/</a></p><p id="a54918fb-b111-497a-98a6-f29b57141d7e" class=""><a href="https://blog.linkedin.com/2020/june/30/helping-25-million-job-seekers-get-back-to-work">https://blog.linkedin.com/2020/june/30/helping-25-million-job-seekers-get-back-to-work</a></p><p id="f0fb7b90-90e8-43ed-8396-f7c1b5e2864e" class=""><a href="https://learndigital.withgoogle.com/digitalunlocked/courses">https://learndigital.withgoogle.com/digitalunlocked/courses</a></p><p id="8b1d9b06-215c-4888-8939-a75ce2640f0c" class=""><a href="https://skillshop.exceedlms.com/student/catalog/browse">https://skillshop.exceedlms.com/student/catalog/browse</a></p></div></article></body></html>

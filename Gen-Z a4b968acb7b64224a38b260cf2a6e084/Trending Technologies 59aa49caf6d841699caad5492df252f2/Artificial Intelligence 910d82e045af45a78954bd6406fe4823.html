@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Artificial Intelligence</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="910d82e0-45af-45a7-8954-bd6406fe4823" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧠</span></div><h1 class="page-title">Artificial Intelligence</h1></header><div class="page-body"><p id="8a9c6262-47c1-4573-93ed-1a115ae22b3d" class="">
+</p><figure id="cef5f89b-6103-4067-a122-fda9a0f99cc6"><a href="https://awesomelists.top/#/owainlewis/awesome-artificial-intelligence" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/owainlewis/awesome-artificial-intelligence</div></div></a></figure><p id="eeae5ae6-05ed-4fbf-b230-cb6203090acb" class="">
+</p><figure id="7a1ce1a4-d447-4f85-b4f5-4c97c40f3dff"><div class="source">https://github.com/AMAI-GmbH/AI-Expert-Roadmap</div></figure><p id="00da9290-4efb-4f25-8fe5-ea2be25562f4" class="">
+</p><figure id="e54c4a5c-e855-4eeb-93f3-1f7b8e737377"><div class="source">https://github.com/keon/awesome-nlp</div></figure><p id="a6339368-b990-4a4b-ae03-3251c8589e95" class="">
+</p><p id="063dae6f-8245-425c-87ae-b7e6dbaff9d1" class="">
+</p><h3 id="fd76c388-87dd-4967-8177-e4a253bfc21c" class=""><strong>AI, DATA SCIENCE …</strong></h3><figure id="5db46d03-8551-441d-8375-9a077cd4e316"><div class="source">https://github.com/lohitakshnandan/Amazing-AI-Resources</div></figure><p id="13f890f6-4af0-4a90-bd0f-b03114516a36" class="">
+</p><figure id="75951e71-d5ca-4b14-9782-dde99f474c49"><a href="https://hackr.io/tutorials/learn-artificial-intelligence-ai" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Artificial Intelligence - Best Artificial Intelligence Tutorials | Hackr.io</div><div class="bookmark-description">Learning Artificial Intelligence? Check out these best online Artificial Intelligence courses and tutorials recommended by the data science community. Pick the tutorial as per your learning style: video tutorials or a book. Free course or paid. Tutorials for beginners or advanced learners. Check Artificial Intelligence community&#x27;s reviews &amp;amp; comments.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/tutorials/learn-artificial-intelligence-ai</div></div><img src="https://hackr.io/tutorials/learn-artificial-intelligence-ai/logo/logo-artificial-intelligence-ai?ver=1624036987" class="bookmark-image"/></a></figure><p id="b0ff6786-aa66-45b0-af00-7184acbe66bd" class="">
+</p><figure id="2a607979-d6a9-4a68-b984-141fdd5bdd23" class="image"><a href="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_0(JPG).jpg"><img style="width:1080px" src="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_0(JPG).jpg"/></a></figure><p id="ffa3726c-ef4a-4e81-8155-fd0250200093" class="">
+</p><figure id="f31c9a75-6f5c-4bb1-8240-434fac61f7f7" class="image"><a href="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_2(JPG)_1.jpg"><img style="width:1080px" src="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_2(JPG)_1.jpg"/></a></figure><p id="3049594b-7224-4525-8b21-54cbbb90fd2e" class="">
+</p><figure id="8ed6acd3-030c-4f55-a55c-43b8e8fbe1ee" class="image"><a href="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_1(JPG)_1.jpg"><img style="width:1080px" src="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Programming___Coding___Study_on_Instagram___Link_i_1(JPG)_1.jpg"/></a></figure><p id="3587f9a5-83d3-4b2d-9ccf-e17fac78a865" class="">
+</p><figure id="d72ddf18-d9f8-4c84-b995-abeb8a2625f0"><a href="https://ai-for-all.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI For All | Self learning online program</div><div class="bookmark-description">Self learning online program designed to raise public awareness about Artificial Intelligence.</div></div><div class="bookmark-href"><img src="https://ai-for-all.in/favicon.ico" class="icon bookmark-icon"/>https://ai-for-all.in/</div></div><img src="https://firebasestorage.googleapis.com/v0/b/aiforcitizens-4feed.appspot.com/o/meta%2FAI4ALL_share.jpg?alt=media" class="bookmark-image"/></a></figure><p id="a30b34e4-8992-4c9e-9310-4bb9d7032ee1" class="">
+</p><figure id="2e90b24e-978c-4289-b07d-f4c4c6c0e811"><a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - AMAI-GmbH/AI-Expert-Roadmap: Roadmap to becoming an Artificial Intelligence Expert in 2022</div><div class="bookmark-description">Roadmap to becoming an Artificial Intelligence Expert in 2022 Below you find a set of charts demonstrating the paths that you can take and the technologies that you would want to adopt in order to become a data scientist, machine learning or an AI expert.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/AMAI-GmbH/AI-Expert-Roadmap</div></div><img src="https://repository-images.githubusercontent.com/306977633/e467bd80-1654-11eb-84f3-8cd7816c82fd" class="bookmark-image"/></a></figure><p id="cb2c3784-ed1b-4cdd-a820-ff3329cf6f21" class="">
+</p><figure id="9fe9ccba-7dad-496c-895a-496fa466f611"><a href="https://ai.google/education" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Education - Google AI</div><div class="bookmark-description">Learn with Google AI. Whether you&#x27;re just learning to code or you&#x27;re a seasoned machine learning practitioner, you&#x27;ll find information and exercises in this resource center to help you develop your skills and advance your projects.</div></div><div class="bookmark-href"><img src="https://ai.google/static/images/favicon.ico" class="icon bookmark-icon"/>https://ai.google/education</div></div><img src="https://ai.google/static/images/share.png" class="bookmark-image"/></a></figure><p id="24756c85-1667-4aaf-a92d-f0f902c21794" class="">
+</p><p id="336fc0b7-c543-4113-9f58-cb33ea91b720" class=""><a href="https://www.kimo.ai/">https://www.kimo.ai/</a></p><p id="61a77e11-44b0-4c60-9fe3-28d6a185ddd0" class=""><a href="https://learn.g2.com/hub/artificial-intelligence">https://learn.g2.com/hub/artificial-intelligence</a></p><p id="8c269011-adf8-44b6-9322-0f91697d7f4b" class=""><a href="https://analyticsindiamag.com/top-8-alternatives-to-github-copilot/">https://analyticsindiamag.com/top-8-alternatives-to-github-copilot/</a></p><p id="73ff552c-f64b-47e3-86dd-2c6abf9a92dc" class=""><a href="https://copilot.github.com/">https://copilot.github.com/</a></p><p id="0a57e3d7-7bb6-4e5a-ad21-5f88d461961b" class="">
+</p><p id="2e34be84-b3b0-4235-934d-40d6a67aa571" class=""><a href="https://indiaai.gov.in/">https://indiaai.gov.in/</a></p><p id="3c91d6b0-c1ec-4164-80e0-f573195e1b08" class=""><a href="https://www.upgrad.com/blog/artificial-intelligence-salary-india-beginners-experienced/">https://www.upgrad.com/blog/artificial-intelligence-salary-india-beginners-experienced/</a></p><p id="6cc69b1e-8e53-4ff6-a420-dfd6fdd0ad8c" class=""><a href="https://spotle.ai/learn/AI-bootcamp">https://spotle.ai/learn/AI-bootcamp</a></p><p id="4a51622c-955d-4986-b5cd-4fbdf7ddbff3" class=""><a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">https://colab.research.google.com/notebooks/intro.ipynb#recent=true</a></p><p id="dc57ee0a-6dfc-4142-970e-0aebd3d399b0" class=""><a href="https://www.fast.ai/">https://www.fast.ai/</a></p><p id="e484d657-737d-409a-b791-f4fac2326f71" class=""><a href="https://becominghuman.ai/introduction-to-artificial-intelligence-5fba0148ec99">https://becominghuman.ai/introduction-to-artificial-intelligence-5fba0148ec99</a></p><p id="90d2c155-c392-436c-aab7-f2418f5aa0fd" class=""><a href="https://interestingengineering.com/the-three-types-of-artificial-intelligence-understanding-ai">https://interestingengineering.com/the-three-types-of-artificial-intelligence-understanding-ai</a></p><p id="27577e41-024c-46c0-80c5-b234a713edb5" class=""><a href="https://www.springboard.com/blog/narrow-vs-general-ai/">https://www.springboard.com/blog/narrow-vs-general-ai/</a></p><p id="eb0c0152-0f6a-4293-a0ff-53e483740092" class="">
+</p><figure id="adc91941-e3af-45ec-ae14-8e2cdd72f0a3"><a href="https://www.udacity.com/scholarships/aws-ai-ml-scholarship-program" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AWS AI &amp; ML Scholarship Program I Udacity Scholarships</div><div class="bookmark-description">Udacity and Amazon are partnering to offer 2,500 scholarships to high school and college age students. Interested in a career in AI or ML? Apply today.</div></div><div class="bookmark-href"><img src="https://www.udacity.com/favicon.ico?v=2" class="icon bookmark-icon"/>https://www.udacity.com/scholarships/aws-ai-ml-scholarship-program</div></div><img src="http://www.udacity.com/www-proxy/contentful/assets/2y9b3o528xhq/2dmDLmWvCncVHcQ6lz9u5v/9ebc8c914fcf0e8b546bce78133b2a4a/OpenGraph_Udacity_Logo_Update__1_.png" class="bookmark-image"/></a></figure><p id="8b611832-a9d1-4cc8-9a2c-890dee19c95d" class="">
+</p><figure id="30574331-b6e8-4ea5-94f8-495e30e4c23c"><a href="https://ayushirawat.com/automate-whatsapp-using-python" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Automate WhatsApp using Python</div><div class="bookmark-description">Hello world! In this Blog article, we will learn how to Automate WhatsApp. We will make use of web.whatsapp.com webpage to automate messages and we will see the implementation in Python. Check out the Repository for Ultimate Resource in python. Drop ...</div></div><div class="bookmark-href"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1600237557261/y8d98hUkh.jpeg?auto=compress,format&amp;format=webp&amp;fm=png" class="icon bookmark-icon"/>https://ayushirawat.com/automate-whatsapp-using-python</div></div><img src="https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1608094158591%2F-Bz1YLliY.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng" class="bookmark-image"/></a></figure><p id="851bc46a-4b0b-4f70-82b6-564908ffba13" class="">
+</p><h3 id="9b7c2464-aa68-4d8a-8011-b6b6622bf967" class=""><strong>Algorithm AI</strong></h3><figure id="8ab83a5f-4eeb-45f2-98d7-4ebfa3f92d50"><a href="https://t.me/Technitze_Codernett/133" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">https://algorithmia.com/use-cases https://deepai.org/ https://docs.microsoft.com/en-us/learn/browse/?roles=ai-edge-engineer%2Cai-engineer ...</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/133</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="2020b94e-7ec8-4713-9e66-f9b09d6ce74f" class="">
+</p><h3 id="45c453ea-cc81-432b-9351-cff68a5c27d8" class="">Blogs</h3><p id="23bf9967-95e3-414d-8b1c-886cf84ab2b1" class="">
+</p><p id="c956f2e0-5ddd-444b-b799-b4285098b88b" class=""><a href="https://t.me/Technitze_Codernett/23">https://t.me/Technitze_Codernett/23</a></p><p id="f6d19e88-fda0-4603-b55e-bf4ea6a9f231" class="">
+</p><ol type="1" id="94f57ced-2eec-449a-bb58-392cee653a74" class="numbered-list" start="1"><li><a href="https://www.nytimes.com/2016/06/26/opinion/sunday/artificial-intelligences-white-guy-problem.html">https://www.nytimes.com/2016/06/26/opinion/sunday/artificial-intelligences-white-guy-problem.html</a></li></ol><ol type="1" id="63a392e5-6bfc-48a5-8619-1d4eb9219b7d" class="numbered-list" start="2"><li><a href="https://www.businessbecause.com/news/insights/6709/is-artificial-intelligence-biased">https://www.businessbecause.com/news/insights/6709/is-artificial-intelligence-biased</a></li></ol><ol type="1" id="2dff791a-8170-467a-8223-7ec0ac73e88e" class="numbered-list" start="3"><li><a href="https://www.mckinsey.com/featured-insights/artificial-intelligence/tackling-bias-in-artificial-intelligence-and-in-humans#">https://www.mckinsey.com/featured-insights/artificial-intelligence/tackling-bias-in-artificial-intelligence-and-in-humans#</a></li></ol><ol type="1" id="0b6b6eab-e495-45ca-9bd2-af80a61cbcf3" class="numbered-list" start="4"><li><a href="https://onezero.medium.com/how-tech-algorithms-become-infected-with-the-biases-of-their-creators-d19756352dc9">https://onezero.medium.com/how-tech-algorithms-become-infected-with-the-biases-of-their-creators-d19756352dc9</a></li></ol><ol type="1" id="6a320886-408d-46a8-a9ea-e1c4b4f7fe24" class="numbered-list" start="5"><li><a href="https://medium.com/bakken-b%C3%A6ck/how-biased-ai-can-teach-us-to-be-better-humans-3be60ebbe558">https://medium.com/bakken-bæck/how-biased-ai-can-teach-us-to-be-better-humans-3be60ebbe558</a></li></ol><ol type="1" id="7a06d203-5b97-4801-a980-fd5c85eac420" class="numbered-list" start="6"><li><a href="https://medium.com/mit-media-lab/the-algorithms-arent-biased-we-are-a691f5f6f6f2">https://medium.com/mit-media-lab/the-algorithms-arent-biased-we-are-a691f5f6f6f2</a></li></ol><p id="4363506d-c2d3-4671-81a1-429c7f6e022e" class="">
+</p><figure id="8675ef91-3a1d-408b-bcb1-b90bbc67d61f" class="image"><a href="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Tech_Myths_on_Instagram____webdevelopment_webdevel(JPG).jpg"><img style="width:1043px" src="Artificial%20Intelligence%20910d82e045af45a78954bd6406fe4823/Tech_Myths_on_Instagram____webdevelopment_webdevel(JPG).jpg"/></a></figure></div></article></body></html>

@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Aptitude and Reasoning</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="01807c7d-8504-46cd-8dc4-99bfd7a90492" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_orion_nebula.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔰</span></div><h1 class="page-title">Aptitude and Reasoning</h1></header><div class="page-body"><p id="89d60aab-b9d1-420e-b6fc-7c90c05ee41b" class="">
+</p><h3 id="948c8aa9-b584-422d-9412-edc2e5a285ff" class="block-color-blue">Aptitude, Reasoning and Current Affairs</h3><p id="8799b9f7-3dc7-484e-a653-e7714de60d8a" class="">
+</p><figure id="90187bde-8ae1-4f5c-a47d-6c6042355ab6"><a href="https://www.indiabix.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Aptitude Questions and Answers - IndiaBIX</div><div class="bookmark-description">Learn and practice Aptitude questions and answers with explanation for interview, competitive examination and entrance test.</div></div><div class="bookmark-href"><img src="https://www.indiabix.com/favicon.ico" class="icon bookmark-icon"/>https://www.indiabix.com/</div></div><img src="https://www.indiabix.com/_files/images/website/logo.gif" class="bookmark-image"/></a></figure><p id="026cf037-7c54-4386-a1ae-798489e2ad32" class="">
+</p><figure id="ec539cda-e516-4d0a-8135-93cfee7d2412"><a href="https://currentaffairs.adda247.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Current Affairs 2022:Today Current Affairs Update</div><div class="bookmark-description">Welcome to the Adda247 Current Affairs website which provides you with the best compilation of the Daily Current Affairs 2022 taking place across the globe: National, International, Sports, Science and Technology, Banking, Economy, Agreement, Appointments, Ranks and Report and General Studies.</div></div><div class="bookmark-href"><img src="https://www.adda247.com/jobs/wp-content/uploads/2020/03/favicon.png" class="icon bookmark-icon"/>https://currentaffairs.adda247.com/</div></div><img src="https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2022/04/06124932/Ca-new-white-logo.png" class="bookmark-image"/></a></figure><p id="5d718997-73d4-44ef-a310-5b37d73971c1" class="">
+</p><figure id="e7832c91-de5d-4b99-9cb2-35471a9e29fa"><a href="https://www.geeksforgeeks.org/aptitude-gq/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Aptitude - GeeksforGeeks</div><div class="bookmark-description">A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.</div></div><div class="bookmark-href"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_favicon.png" class="icon bookmark-icon"/>https://www.geeksforgeeks.org/aptitude-gq/</div></div><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png" class="bookmark-image"/></a></figure><p id="89b32388-3621-4d8d-b462-82f6da587cab" class="">
+</p><figure id="f4735d9a-ca1c-4481-be08-e7d4422911cd"><a href="https://www.codingninjas.com/codestudio/guided-paths/aptitude-preparation" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Code Studio</div></div><div class="bookmark-href"><img src="https://www.codingninjas.com/favicon.ico" class="icon bookmark-icon"/>https://www.codingninjas.com/codestudio/guided-paths/aptitude-preparation</div></div></a></figure><p id="4d8c7e52-5ee3-47c7-97ae-9a892111eb7d" class="">
+</p><p id="ccd9a020-ab75-46bb-93a3-544c8f4ef9e4" class=""><strong>RS Agarwal Book</strong></p><p id="b50b639d-b975-472e-904e-b493e2dc2d79" class=""><a href="https://t.me/Technitze_Codernett/247">https://t.me/Technitze_Codernett/247</a></p><p id="d941e395-6599-44a8-bc30-b6c5b601e45b" class="">
+</p><p id="5ca4253c-3720-4ad6-9c45-daeb3c185523" class="">
+</p><h3 id="9bbcc0f0-75d2-45d8-8b27-ec46fbb93630" class="block-color-brown">Websites</h3><p id="6975059b-73a8-4f2f-80fe-f37499806006" class="">
+</p><p id="d94a7435-e2e2-4115-8a9e-2da27210232b" class="">Geeksforgeeks</p><p id="05cd6f87-cc2a-4593-8c55-7849e5789b64" class="">Leetcode &amp; InterviewBit</p><p id="67f6fea5-1c40-4bc4-b45e-1482eba2c0f9" class="">Careercup</p><p id="34cc44cd-eb00-4e4d-b0ea-76a49eb31fd9" class="">Codercareer</p><p id="c2bea7be-d05b-4373-9f6e-c6aeae5667bc" class="">InterviewUp</p><p id="ac2e5106-7faa-469c-8bae-acb82c41ae9e" class="">InterviewBest</p><p id="85d8b0c2-9d71-43a5-8b1b-286cecd126cb" class="">Ambitionbox </p><p id="36892d2a-e272-47c1-91b6-e40f26c2d82f" class="">
+</p><figure id="388e1a30-bf60-4974-83c5-bc86cfe19c64"><a href="https://www.faceprep.in/tests/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn &amp; Practice All Aptitude &amp; Programming Concepts | Free Aptitude &amp; Technical Tests</div><div class="bookmark-description">Learn &amp; practice aptitude &amp; programming with us. Free aptitude practice tests, technical practice tests on C, C++, Java, Python, etc with solutions are available here.</div></div><div class="bookmark-href">https://www.faceprep.in/tests/</div></div></a></figure><p id="b7237f6c-ecd6-486e-8f32-ccb57317c2d4" class="">
+</p><figure id="2f5278b7-a9bc-42e8-b2eb-517d5c82d1f9"><a href="https://www.careerride.com/online-aptitude-test.aspx" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Aptitude tutorial and practice test</div><div class="bookmark-description">Aptitude tutorials and practice test for placement and job interview. These Aptitude online practice tests are designed to help you assess your current status. You can also find model placement papers on aptitude.</div></div><div class="bookmark-href"><img src="https://www.careerride.com/favicon.ico" class="icon bookmark-icon"/>https://www.careerride.com/online-aptitude-test.aspx</div></div></a></figure><p id="5de12aad-6c23-4801-bc29-cf4789915136" class="">
+</p><figure id="60d50db1-26cf-41cd-babd-e83b860e3d48"><a href="https://www.careercup.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CareerCup</div><div class="bookmark-description">Most engineers make critical mistakes on their resumes -- we can fix your resume with our custom resume review service. And, we use fellow engineers as our resume reviewers, so you can be sure that we &quot;get&quot; what you&#x27;re saying.</div></div><div class="bookmark-href"><img src="https://www.careercup.com/favicon.ico" class="icon bookmark-icon"/>https://www.careercup.com/</div></div><img src="https://www.careercup.com/images/slide3.jpg" class="bookmark-image"/></a></figure><p id="39066d2d-048b-4c8d-bf27-a766b28981f6" class="">
+</p><figure id="49ba1be4-2e86-41ec-9611-a4978ad9517f"><a href="https://www.geeksforgeeks.org/placements-gq/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Placements - GeeksforGeeks</div><div class="bookmark-description">Table of Contents: The placement session for any company generally has 3 - 4 rounds.</div></div><div class="bookmark-href"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_favicon.png" class="icon bookmark-icon"/>https://www.geeksforgeeks.org/placements-gq/</div></div><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png" class="bookmark-image"/></a></figure><p id="85145f5f-1696-4e40-bffd-5e465e007d2c" class="">
+</p><figure id="b3b6cb3d-08ce-43d8-a9eb-3b452a1e4f0b"><a href="https://www.presentslide.in/2019/07/best-interview-preparation-websites.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Best Interview Preparation Websites to Know - Present Slide</div><div class="bookmark-description">Interviews are the main part of any hiring process. For getting the dream job anyone would have to clear multiple rounds of interviews and tests. To prepare for interviews people usually search &quot; What are the best interview preparation websites? &quot; All they get are different websites and they have to try them all to find the best one.</div></div><div class="bookmark-href"><img src="https://www.presentslide.in/wp-content/uploads/2020/05/cropped-Present-Slide-Logo-Final@2x-192x192.png" class="icon bookmark-icon"/>https://www.presentslide.in/2019/07/best-interview-preparation-websites.html</div></div><img src="https://www.presentslide.in/wp-content/uploads/2019/07/Interview-Preparation-Websites.png" class="bookmark-image"/></a></figure><p id="1fa9b821-5bc7-453f-b531-614c37e6d695" class="">
+</p><figure id="f5ed5477-6b44-4011-913f-b9f1bb3be08e"><a href="https://biginterview.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Best Job Interview Preparation System on the Market | Big Interview</div><div class="bookmark-description">Everyone&#x27;s situation is unique. We&#x27;ve designed Big Interview to cover as many different scenarios as possible so that you can be prepared for interviews in your industry, at your experience level, on your time.</div></div><div class="bookmark-href"><img src="https://biginterview.com/favicon.ico" class="icon bookmark-icon"/>https://biginterview.com/</div></div><img src="https://biginterview.com/images/home/stop-the-failure.jpg" class="bookmark-image"/></a></figure><p id="2416cec4-25d7-4b78-a4d4-3e9791be8d5d" class="">
+</p><figure id="eeb13329-0c31-44ef-a892-10f738cf1aac"><a href="https://www.best-job-interview.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Job Interviews. Interview questions and answers. Job search tools.</div><div class="bookmark-description">Excel in job interviews. Your professional guide to preparing for and succeeding in your job search and interview. Easy-to-use and practical resources for all job seekers. The job market is always competitive. It is essential that you have the right job search and interviewing skills to stand out from the crowd.</div></div><div class="bookmark-href"><img src="https://www.best-job-interview.com/xfavicon-48x48.png.pagespeed.ic.vP84NbDWFk.png" class="icon bookmark-icon"/>https://www.best-job-interview.com/</div></div><img src="https://www.best-job-interview.com/images/indexpage3.jpeg" class="bookmark-image"/></a></figure><p id="fcc0f028-f990-4f42-b822-f33c49a054fd" class="">
+</p><figure id="b8a49063-402a-4803-aaa5-e0cf64b1754c"><a href="https://www.ambitionbox.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Company Reviews, Salaries by Company, Interview Questions, Salary Calculator</div><div class="bookmark-description">With more than 30 Lakh reviews, 1 Crore salaries, and 5 Lakh companies discover and evaluate best places to work.</div></div><div class="bookmark-href"><img src="https://static.ambitionbox.com/alpha/img/supporting-images/browser_icon_192x192.png" class="icon bookmark-icon"/>https://www.ambitionbox.com/</div></div><img src="https://static.ambitionbox.com/img/ab-brand.png" class="bookmark-image"/></a></figure><p id="e47ae0d3-4a10-498d-92b5-ac56b659b38c" class="">
+</p><figure id="e173105c-7cf0-4fbd-879b-cab6a7d78be4"><a href="https://www.gktoday.in/current-affairs/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Current Affairs Today - Latest Current Affairs 2022 by GKToday | Current Affairs PDF - GKToday</div><div class="bookmark-description">GKToday&#x27;s Current Affairs Today Section provides latest and Best Daily Current Affairs 2021-2022 for UPSC, IAS/PCS, Banking, IBPS, SSC, Railway, UPPSC, RPSC, BPSC, MPPSC, TNPSC, MPSC, KPSC and other competition exams. हिन्दी के लिए यहाँ क्लिक करें! On June 4, 2022, Defence Research and Development Organisation (DRDO) and Indian Army successfully test-fired the Indigenously developed Laser-Guided Anti-Tank Guided Missiles (ATGM).</div></div><div class="bookmark-href"><img src="https://i0.wp.com/www.gktoday.in/wp-content/uploads/2019/05/logopeg.jpg?fit=192%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://www.gktoday.in/current-affairs/</div></div><img src="https://www.gktoday.in/wp-content/uploads/2022/08/indigenously-developed-laser-guided-atgms.png" class="bookmark-image"/></a></figure><figure id="bf4be53e-11f9-429a-9f82-da85aaed7b38"><a href="https://youtube.com/playlist?list=PLpyc33gOcbVADMKqylI__O_O_RMeHTyNK" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Logical Reasoning Tutorial</div><div class="bookmark-description">Sure shot way to crack Logical Reasoning section in Placement tests, Job Interviews or Competitive exams. Learn each chapter in the easiest and most interest...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a2197efa/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLpyc33gOcbVADMKqylI__O_O_RMeHTyNK</div></div><img src="https://i.ytimg.com/vi/x0WkptLF6oE/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCv5GhokZ7kZcpgjuULAjccY216SA&amp;days_since_epoch=19211" class="bookmark-image"/></a></figure><figure id="2b862dcc-6e0e-4aab-92bd-bfe7cf5a6e57"><a href="https://youtube.com/playlist?list=PLpyc33gOcbVA4qXMoQ5vmhefTruk5t9lt" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Quantitative Aptitude Tutorials</div><div class="bookmark-description">Sure shot way to crack Quantitative Aptitude section in Placement tests, Job Interviews or Competitive exams. Learn each chapter in the easiest and most inte...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a2197efa/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLpyc33gOcbVA4qXMoQ5vmhefTruk5t9lt</div></div><img src="https://i.ytimg.com/vi/tnc9ojITRg4/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLD8kF5XzCp6CFuIA6z_n5Q2Kqh89w&amp;days_since_epoch=19211" class="bookmark-image"/></a></figure><figure id="7d51e192-2e1c-4384-bd8d-4fb065f1e170"><a href="https://youtube.com/c/FeelFreetoLearnBanking" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a2197efa/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/FeelFreetoLearnBanking</div></div></a></figure></div></article></body></html>

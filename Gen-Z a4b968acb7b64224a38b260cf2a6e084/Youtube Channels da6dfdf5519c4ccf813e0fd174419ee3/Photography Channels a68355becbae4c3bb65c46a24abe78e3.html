@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Photography Channels</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a68355be-cbae-4c3b-b65c-46a24abe78e3" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1506241537529-eefea1fbe44d?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📸</span></div><h1 class="page-title">Photography Channels</h1></header><div class="page-body"><p id="793e4928-1914-4218-86e9-175763ecee11" class="">
+</p><figure id="26de4b0b-7028-4c25-bd06-0210c0fb122a" class="link-to-page"><a href="Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3/Accounts%20to%20follow%20on%20Instagram%2026de4b0b70284c25bd060210c0fb122a.html"><img class="icon" src="Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3/Accounts%20to%20follow%20on%20Instagram%2026de4b0b70284c25bd060210c0fb122a/insta.jpg"/>Accounts to follow on Instagram</a></figure><figure id="d474ec45-c7e8-4eb9-90cc-a6563e99326d" class="link-to-page"><a href="Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3/Graphic%20Designing%20and%20Photoshop%20accounts%20to%20follow%20d474ec45c7e84eb990cca6563e99326d.html"><span class="icon">🖼️</span>Graphic Designing and Photoshop accounts to follow on IG</a></figure><figure id="a68543b8-eb4f-4757-9793-190ff4308ef4" class="link-to-page"><a href="Photography%20Channels%20a68355becbae4c3bb65c46a24abe78e3/Photoshop%20and%20Graphic%20Designing%20a68543b8eb4f47579793190ff4308ef4.html"><span class="icon">🗳️</span>Photoshop and Graphic Designing</a></figure><figure id="35fbf871-0aa1-4f35-80e7-4753024e7ad6"><a href="https://www.skillshare.com/blog/photography-terms-a-beginners-guide" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photography Terms: A Beginner&#x27;s Guide | Skillshare Blog</div><div class="bookmark-description">Interested in photography but feel like you need to learn a whole new language just to get started? Becoming an expert in something is as much about acing the terminology as it is practicing your skills.</div></div><div class="bookmark-href"><img src="https://www.skillshare.com/favicon.ico" class="icon bookmark-icon"/>https://www.skillshare.com/blog/photography-terms-a-beginners-guide</div></div><img src="https://www.skillshare.com/blog/wp-content/uploads/2021/09/unnamed-2.png" class="bookmark-image"/></a></figure><p id="511b1d9f-ec49-4507-b977-08e1c0be2d7e" class="">
+</p><ul id="9a397744-0ec5-415e-a2e8-a16bff02217f" class="bulleted-list"><li style="list-style-type:disc">Jordikoalitic</li></ul><figure id="f2913902-b402-4dd5-b379-abaec526d88b"><a href="https://www.youtube.com/c/jordikoalitic" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/jordikoalitic</div></div></a></figure><ul id="e5ca7c40-2207-4b62-a50e-c680ec82fb42" class="bulleted-list"><li style="list-style-type:disc">7th Era</li></ul><figure id="584be0c9-696f-4abf-b8d5-a5543921d309"><a href="https://www.youtube.com/c/7thEra" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">7th Era</div><div class="bookmark-description">My name is Liam and I make videos about photography.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/7thEra</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLS4Oj6wS1jk6I8k0Wc9UmIjdtjRyHA5Bj4wKsGwBQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="8da2421b-c4d4-4d70-8e31-775a8ca9736d" class="">
+</p><ul id="495fe64e-828c-47d9-a220-7bc918415cdf" class="bulleted-list"><li style="list-style-type:disc">Pixel Village</li></ul><figure id="5e2c28eb-b484-4523-8808-21f104df32b0"><a href="https://www.youtube.com/c/PIXELVIILAGE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/PIXELVIILAGE</div></div></a></figure><p id="1406f98a-a6ae-4b67-bee7-ee18237a8c2e" class="">
+</p><ul id="2c38bdf1-f875-4a05-a3c5-c199d632ec9b" class="bulleted-list"><li style="list-style-type:disc">North Borders</li></ul><figure id="2e43b952-133f-4a77-a8d9-8306654da6fe"><a href="https://www.youtube.com/c/NorthBorders" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">North Borders</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/NorthBorders</div></div><img src="https://yt3.ggpht.com/ywWzj-nJvJkd4QsgJ-1_obGhbdlCNQGtwYEyRmWho1cGEQxaTxdYLuH6d9xyXewViExgDHdWGQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="325b2b30-5f24-4916-99eb-dded9e991921" class="">
+</p><ul id="e1c3c922-130b-46ed-aa13-b3cfb8f0372f" class="bulleted-list"><li style="list-style-type:disc">Pierre T. Lambert</li></ul><figure id="d299767c-9fd5-4a7c-a351-6db5ee07f7a6"><a href="https://www.youtube.com/c/PierreTLambert101" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pierre T. Lambert</div><div class="bookmark-description">I got an engineering degree for fun. Now I&#x27;m into sharing my Real passion/job/life: Photography. Creator of the 30-Day To Great Photos: https://pierretlambert.com/30daytogreatphotos My gear: https://pierretlambert.com/gear Podcast: https://pierretlambert.com/podcast French Photography channel: https://youtube.com/pierretlambertfr</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/PierreTLambert101</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQsZo1ofhNREbqw3IlxkfV-Jr45o3GR6i-FMVlLUvs=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="4e24d592-2b18-4aba-8ee2-064fdb83e6ba" class="">
+</p><ul id="9e82959e-bae8-4cff-af81-944f9017d2ab" class="bulleted-list"><li style="list-style-type:disc">Simone Ferretti</li></ul><figure id="a0a8f8dc-eb7b-4e67-978e-07309057a072"><a href="https://youtube.com/c/SimoneFerretti" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Simone Ferretti</div><div class="bookmark-description">My passion for making video started when I was ten years old. Born and raised in a small village in the north of Italy, I moved to Hong Kong in 2017. There, is where @sferro21 was born due to my never-ending eagerness for creating contents and an increasing need for eye-catching, short and impactful videos.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/SimoneFerretti</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSGsGlEL6v10MTAM0PwNAS-hH55bmCFbMZFzUV3U3k=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="6f5f0c38-b29a-4adc-b8e2-4a8b9582ef69" class="">
+</p><ul id="c8f3d80e-7e0b-41db-92aa-67af25db720f" class="bulleted-list"><li style="list-style-type:disc">Kunal Malhotra</li></ul><figure id="2777aee2-9759-47ea-adb8-cd862437b262"><a href="https://www.youtube.com/c/ThePhotographyBloggerIndia" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Kunal Malhotra</div><div class="bookmark-description">Kunal Malhotra is a Hindi Photography Channel where you get to watch photography tutorials and lessons in Hindi. By the use of this Hindi Photography YouTube...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ThePhotographyBloggerIndia</div></div><img src="https://yt3.ggpht.com/rDWOrMCMX2fEFzH5Z83f9fsxOtnd5jI_Zd2A3Mug4_5VEbhruRM3yCzdL0txymjQaWm-DxqHIUQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="9ea5a590-25ce-4db0-8c6e-4b7c258f1c21" class="">
+</p><ul id="12616ad4-f209-48e1-938d-ec7b210a195a" class="bulleted-list"><li style="list-style-type:disc">MathieuStern</li></ul><figure id="7c608195-f2c7-412c-86f7-de7a8b652885"><a href="https://www.youtube.com/c/MathieuStern" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mathieu Stern</div><div class="bookmark-description">This Channel is about Photography and Filmmaking experiments, it will help you discover new ideas, new ways to film and take photos. My name is Mathieu Stern, I am a French photographer and filmmaker living in Paris. My content is all about weird Lenses, Photo experiments, tutorials about video and portrait making, and artistic films Welcome to my channel!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/MathieuStern</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQuoHcYBlZrybNsNpPK4Ic2CcXtZA81mLCFhQDpdQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="fe90f749-8a8e-454c-9421-b18ad7060d97" class="">
+</p><ul id="a9caf5cd-7c05-4383-b176-592f3a539dde" class="bulleted-list"><li style="list-style-type:disc">Sean Tucker</li></ul><figure id="96786c3a-ac53-4f13-9da8-a14f6dad1d24"><a href="https://www.youtube.com/c/SeanTuckerphoto" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sean Tucker</div><div class="bookmark-description">I&#x27;m more interested in the &#x27;why&#x27; of photography than in the &#x27;how&#x27;. There are loads of channels out there enthusiastically giving you gear reviews and top ten lists, but that&#x27;s not this channel. There will be practical tips along the way, but the meat of what I want to share with you won&#x27;t be tech heavy.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SeanTuckerphoto</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTFS9U2o5M3GidkSiStVangu2UNdbZDA_IRN1DXT1U=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="2065a678-9fb4-4198-adc7-782dfd466226" class="">
+</p><ul id="9d8d36d8-2cad-4c1b-91a8-36f06474a253" class="bulleted-list"><li style="list-style-type:disc">Learn Online Video </li></ul><figure id="d0e1cb85-2f09-47da-baf6-1f8c8d1720bd"><a href="https://www.youtube.com/c/LearnOnlineVideo" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Online Video</div><div class="bookmark-description">This channel is dedicated to helping you Master The Art of Online Video Production. Watch easy to understand tutorials, learn epic camera tricks &amp; improve your editing skills with your host Steve Wright. Sit back, buckle up and prepare to learn some shizzle :-)</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/LearnOnlineVideo</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLReKhanlzSY5kJcoFI1NsukoNH9Tjiy4ufYyoEbRw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="8bbc2efc-edf3-44fe-95d7-8fc85f44b30b" class="">
+</p><h3 id="378b8621-2bfb-49b8-b47a-19f518372a93" class="">Playlist</h3><p id="78fa0ed0-f65e-45cd-acfd-34f661cd2b90" class="">
+</p><p id="b164a0e3-b007-492d-9b61-1226f5125277" class="">
+</p><figure id="0abc0f67-6f72-4ff3-b7c3-a386e30afd7d"><a href="https://www.youtube.com/playlist?list=PLydZ2Hrp_gPSvfRAGuzjXsbJ0Rw33fPsW" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Explore Mobile Photography</div><div class="bookmark-description">Start your mobile photography journey with these tips for beginners.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLydZ2Hrp_gPSvfRAGuzjXsbJ0Rw33fPsW</div></div><img src="https://i.ytimg.com/vi/xHvFHRPLvII/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLDSYbE9AXhu6D4HfFmhJtaXoTxu2Q&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="4a20643a-0d2b-4bb3-b3a6-ac096f5cfdad" class="">
+</p><figure id="966eec5c-bad1-4194-afdc-8c30a1fbf75f"><a href="https://www.youtube.com/playlist?list=PLNPG8V2-8n2bMLrcJp1DBq90wLUOtBpr4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mobile Photography</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLNPG8V2-8n2bMLrcJp1DBq90wLUOtBpr4</div></div><img src="https://i.ytimg.com/vi/xHvFHRPLvII/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLDSYbE9AXhu6D4HfFmhJtaXoTxu2Q&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="e3171bdf-2f7a-4567-9cbf-7a6a16a3b13b" class="">
+</p><figure id="61fb42e5-4bf3-415c-92e6-cc878403946c"><a href="https://www.youtube.com/playlist?list=PLjEKtPLQuhKj43cnr1CCbixXvJt_DXXWo" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mobile Photography</div><div class="bookmark-description">This playlist will cover tips and tricks for improving your Mobile photography skills</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLjEKtPLQuhKj43cnr1CCbixXvJt_DXXWo</div></div><img src="https://i.ytimg.com/vi/8dj_UZKnO9M/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLBL4xrZc5NASlcp9vYwpcR9Zciu5g&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="4b26ff1c-5445-4169-b22a-3da89bf65932" class="">
+</p><figure id="23d0115c-243d-45c9-814c-929392ed5216"><a href="https://www.youtube.com/playlist?list=PLtqQYNGG0ZFe-ygw4Z00MxXIMcC9EJ7XW" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mobile Photography</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLtqQYNGG0ZFe-ygw4Z00MxXIMcC9EJ7XW</div></div><img src="https://i.ytimg.com/vi/GPgnTD7OngU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLBQ-d5dZYEZy1sykm1mpJc_r-5GPA&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="264164d3-2bf3-46dd-a2da-e31f674914c3" class="">
+</p><figure id="4bea80b2-f443-435a-b068-74fcabb94210"><a href="https://www.youtube.com/playlist?list=PLtqQYNGG0ZFdpedtaKQnkxeJUIHOY9JUc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photography Tips</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLtqQYNGG0ZFdpedtaKQnkxeJUIHOY9JUc</div></div><img src="https://i.ytimg.com/vi/vKaNQ4af-6w/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLAj6K6d7L0fXfa6-kEfy0Uhw8d9Cg&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="17712ea9-2cb9-4447-851c-ad2a36497a3b" class="">
+</p><figure id="64542a2e-6b90-44f4-82a7-e1ad95d562e4"><a href="https://www.youtube.com/playlist?list=PLFbM_I-mNBX885_oW4L24o1np24uUduEm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Photography</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLFbM_I-mNBX885_oW4L24o1np24uUduEm</div></div><img src="https://i.ytimg.com/vi/HlV7F6KIQBI/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCyA006oytBpXzLHGSTixEsA-NBQQ&amp;days_since_epoch=19064" class="bookmark-image"/></a></figure><p id="a736cb38-ff57-44f1-bfc1-88d0710cf997" class="">
+</p><figure id="77a8151b-324a-4187-8e4f-5ac1ee698f83"><a href="https://www.youtube.com/watch?v=tteXbQiYCQA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Become a Professional Photographer With Full Information? - [Hindi] - Quick Support</div><div class="bookmark-description">ProfessionalPhotographer #QuickSupportHow to Become a Professional Photographer With Full Information? - [Hindi] - Quick Support. इस विडियो में हम आपको बताए...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=tteXbQiYCQA</div></div><img src="https://i.ytimg.com/vi/tteXbQiYCQA/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="a8ddd170-28f5-464f-b09d-31099e2d8507" class="">
+</p><figure id="077251c4-ccf1-4151-bcc1-5587f2ccde63"><a href="https://www.youtube.com/watch?v=IhAoqsxO3H0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Mobile Photography Tips &amp; Tricks ⚡ Shoot DSLR Quality Photos With Smartphone</div><div class="bookmark-description">Doston, Aaj ka video apko banaa dega Mobile Photography ka expert. Aajkal ke jo Smartphones hai, unme camera bahut hi acche ho gaye, lekin fir bhi bahut baar...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=IhAoqsxO3H0</div></div><img src="https://i.ytimg.com/vi/IhAoqsxO3H0/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="b4577a83-81a0-4842-9d98-f9ce8fbb55c3" class="">
+</p><figure id="edbd1646-e418-4ced-b007-5d7fff5ae188"><a href="https://www.youtube.com/c/gmaxstudios" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GMAX STUDIOS</div><div class="bookmark-description">Learn photography, cinematography, how to make videos, shoot videos, video production and film making. We do this as we go about our own journey of creating photo and video content in our professional lives. GMAX STUDIOS is India&#x27;s first and largest photography and film making channel - in Hindi and English.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/gmaxstudios</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSqWL-OWFpoIibn4qSkNUVGl6-SV6NCYTkAW70vHw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="4c21c97d-1bab-46c3-937c-40e37893b682" class="">
+</p><figure id="9cbc68c7-b5a1-445a-8267-31dbee8e4f13"><a href="https://www.youtube.com/watch?v=ZNtjV_hTB4k" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Smartphone Camera Terms Explained ⚡⚡⚡ Aperture, ISO, F-Stop, Bokeh #BackToBasics</div><div class="bookmark-description">Hello Friends, Aaj Ke Video Humne Aapko Bataye Most Commonly Used Smartphone Camera Terms Ko Bahot Hi Aasaan Language Me. To Ye Video Ant Tak Dekhiye Aur Ban...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=ZNtjV_hTB4k</div></div><img src="https://i.ytimg.com/vi/ZNtjV_hTB4k/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="f0e195fb-f66a-46fa-ab1d-954109f35b99" class="">
+</p><p id="a6794cf0-bda3-4048-9554-9d735dd5728a" class="">Jamie Windsor:</p><p id="76aaad7e-245f-4cd8-9cd8-462f88ba3799" class=""><a href="https://www.youtube.com/user/jamiewindsor">https://www.youtube.com/user/jamiewin...</a></p><p id="d3549a3f-4d73-4d81-b456-2d4069efb223" class="">The Art of Photography:</p><p id="d1969f62-f85f-4e05-a60b-cde4f4636af2" class=""><a href="https://www.youtube.com/user/theartofphotography">https://www.youtube.com/user/theartof...</a></p><p id="a5d9d3d7-495b-44be-b9c5-34dff48e1fb0" class="">Framelines:</p><p id="60193d58-6c3e-4ae5-a06f-13770dcf6470" class=""><a href="https://www.youtube.com/channel/UCg97Ni73ozwdoSytGSqTRyA">https://www.youtube.com/channel/UCg97...</a></p><p id="dc68e253-2d43-45a9-8d58-b9c511876a08" class="">Samuel Streetlife:</p><p id="b6d7ad7c-a47c-49ca-99cc-f022c37d05f7" class=""><a href="https://www.youtube.com/channel/UCcyHGNAjMTWAJ_ztX8JbGgQ">https://www.youtube.com/channel/UCcyH...</a></p><p id="395cace2-8108-4bdb-a28d-10c2d57b475b" class="">Faizal Westcott:</p><p id="d984f97e-974b-473c-b8af-bf1f0a8b35ea" class=""><a href="https://www.youtube.com/channel/UCTsvuq1quT9ZC_-uac6dc4Q">https://www.youtube.com/channel/UCTsv...</a></p><p id="e031dfcf-5d13-4072-98f7-c51ed123d90f" class="">Peter McKinnon:</p><p id="d3c7160f-50da-4989-8986-510fe166b8f6" class=""><a href="https://www.youtube.com/user/petermckinnon24">https://www.youtube.com/user/petermck...</a></p><p id="5c86ef72-89af-407a-86eb-ae9cb8564b38" class="">Tony &amp; Chelsea Northrup -</p><p id="7a71a443-bd65-4138-9681-d61e3a925af4" class=""><a href="https://www.youtube.com/user/VistaClues">https://www.youtube.com/user/VistaClues</a></p><p id="af295628-c80f-41fe-a191-9ba1769f1f08" class="">Fro Knows Photo -</p><p id="a6aacd3e-859a-4008-8ab3-40cf5dfe7d73" class=""><a href="https://www.youtube.com/user/JaredPolin">https://www.youtube.com/user/JaredPolin</a></p><p id="bc008e32-2db0-414e-8500-c7caf19402b3" class="">Digital Rev -</p><p id="b5bbdc4d-6c83-477b-bbf5-aab98ce5ee4f" class=""><a href="https://www.youtube.com/user/DigitalRevCom">https://www.youtube.com/user/DigitalR...</a></p><p id="9912c273-c065-436f-8465-a163673e620c" class="">Weekly Imogen -</p><p id="5406e870-9b08-4129-a191-f8476f6f6bb3" class=""><a href="https://www.youtube.com/user/WeeklyImogen">https://www.youtube.com/user/WeeklyIm...</a></p><p id="bb7b2612-86b3-462d-b5f7-9b15be81ab62" class="">Sean Cannell/Think Media TV -</p><p id="7338e557-8be5-44d2-bcb1-47a03a0332fc" class=""><a href="https://www.youtube.com/user/THiNKmediaTV">https://www.youtube.com/user/THiNKmed...</a></p><p id="16008f75-8829-49a1-8978-49b125b1edbe" class="">Max Yuyev -</p><p id="4caa6385-33f3-41ae-8bda-43f277d11f82" class=""><a href="https://www.youtube.com/user/Maksimyuryev">https://www.youtube.com/user/Maksimyu...</a></p><p id="54ec887b-01b6-4810-be1d-d8ff7cbc7341" class="">Chris Frost -</p><p id="ab0f4a48-3e08-4ce2-898e-984055659b25" class=""><a href="https://www.youtube.com/user/christopherfrost">https://www.youtube.com/user/christop...</a></p><p id="4dcf2942-cc7e-49a2-9e42-3da7ceb930cf" class="">Photorec TV -</p><p id="1f9b06e8-c01e-465d-af38-76c3b7cecbed" class=""><a href="https://www.youtube.com/user/camerarecToby">https://www.youtube.com/user/camerare...</a></p><p id="4f52bb89-c9f1-4c20-9037-0015a5c7a3fe" class="">Camera Store TV -</p><p id="4c7dff42-79c7-4964-a923-cd27e0885b23" class=""><a href="https://www.youtube.com/user/TheCameraStoreTV">https://www.youtube.com/user/TheCamer...</a></p><p id="e29743b8-7fc5-4284-be15-eab58764bf66" class="">Peter Gregg -</p><p id="5cb8815c-ed31-40bf-84e6-edafced4565f" class=""><a href="https://www.youtube.com/user/PeterGregg">https://www.youtube.com/user/PeterGregg</a></p><p id="704857c8-7f6b-4c54-96fa-6e12b2a1b0a0" class="">Art of the image -</p><p id="ca9668e0-49f5-4e80-81cc-ecc08ea277fa" class=""><a href="https://www.youtube.com/user/ArtoftheImage">https://www.youtube.com/user/Artofthe...</a></p><p id="2e024d5f-8c37-45e1-ac1a-5a8d7a0f69f1" class="">The Slanted Lens -</p><p id="4bc6942b-3944-416a-8627-2fc80b4b9736" class=""><a href="https://www.youtube.com/user/TheSlantedLens">https://www.youtube.com/user/TheSlant...</a></p><p id="ba4797e1-ca42-4a0c-88ea-ea0c17f61837" class="">Eric Rossi -</p><p id="583b23db-ffc5-4d8b-85be-36d1a99d7118" class=""><a href="https://www.youtube.com/user/EricRossi25">https://www.youtube.com/user/EricRossi25</a></p><p id="f45ace7a-0154-48bb-bc02-9f3462206b96" class="">Mike Browne -</p><p id="8928c5a2-5400-4921-a066-67225c762019" class=""><a href="https://www.youtube.com/user/photoexposed">https://www.youtube.com/user/photoexp...</a></p><p id="0db602f6-07ff-4dee-b794-9c1677f20e20" class="">Lok Cheung -</p><p id="24533153-bc21-4860-9713-64703c766aa0" class=""><a href="https://www.youtube.com/channel/UC4_m1_0MTTmnWo4tpB0O_7g">https://www.youtube.com/channel/UC4_m...</a></p><p id="a3fc5865-bc35-46b9-af41-22429c5191db" class="">Kai Wong -</p><p id="2696fb82-f2a0-440e-9b7e-ba2c8829d351" class=""><a href="https://www.youtube.com/channel/UCknMR7NOY6ZKcVbyzOxQPhw">https://www.youtube.com/channel/UCknM...</a></p><p id="a0931d6f-562d-4725-aa58-22e99b043935" class="">The Snap Chick -</p><p id="f97341c4-9f64-44b0-8f84-92d49cee7330" class=""><a href="https://www.youtube.com/user/TheSnapChick">https://www.youtube.com/user/TheSnapC...</a></p><p id="2fae1bd3-8cba-40db-af68-f54ffb653c68" class="">Thomas Heaton -</p><p id="0867b466-f90f-46fb-92d3-655643032c7f" class=""><a href="https://www.youtube.com/channel/UCfhW84xfA6gEc4hDK90rR1Q">https://www.youtube.com/channel/UCfhW...</a></p><p id="0147a173-071a-4c13-bc0f-fdbeaffdaa3a" class="">Gordon Laing -</p><p id="a1daf53e-6898-4964-a520-c2e0bb68d9e7" class=""><a href="https://www.youtube.com/user/cameralabs">https://www.youtube.com/user/cameralabs</a></p><p id="145d5506-a419-4e1c-8beb-7a3f99bbcdf7" class="">Matt Granger -</p><p id="17782b59-472c-49e2-a9e5-4947042be4c5" class=""><a href="https://www.youtube.com/user/thatnikonguy">https://www.youtube.com/user/thatniko...</a></p><p id="774f8ac5-926d-43d4-93ae-9bcdb9b7fd12" class="">Dustin Abbott -</p><p id="7287d5fc-22cd-4484-95c0-dc3ce3842a12" class=""><a href="https://www.youtube.com/channel/UCrmU_ja6Ea7G1RYGfy3zeVA">https://www.youtube.com/channel/UCrmU...</a></p><p id="ab9e97b7-052a-44b1-9bb2-aeae70de9e5c" class="">Dan Watson -</p><p id="87035173-8060-404e-afd1-d4c31a632d94" class=""><a href="https://www.youtube.com/user/learningcameras">https://www.youtube.com/user/learning...</a></p><p id="cd720989-9bb4-4115-b966-c8f9d70dbf4a" class="">The Art Of Photography -</p><p id="06d30cc4-b86f-4696-b4e9-d7e403abd837" class=""><a href="https://www.youtube.com/user/theartofphotography">https://www.youtube.com/user/theartof...</a></p><p id="0eba86aa-70a9-4bf2-a0d9-eefdb100613a" class="">The Photo/Video Show -</p><p id="0186e90b-96d5-47fd-ac46-0073c2722034" class=""><a href="https://www.youtube.com/user/thephotovideoshow">https://www.youtube.com/user/thephoto...</a></p><p id="22a08134-9fca-4b74-9c79-5f33df908cc3" class="">
+</p></div></article></body></html>

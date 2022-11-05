@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cloud Computing/DevOps</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cbd99255-95f3-4480-8180-da7c1dd48e0a" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1561883088-039e53143d73?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Cloud%20Computing%20DevOps%20cbd9925595f344808180da7c1dd48e0a/81-814534_cloud-computing-icon-png-white-cloud-computing-png.png"/></div><h1 class="page-title">Cloud Computing/DevOps</h1></header><div class="page-body"><p id="e41341df-d2f3-4d61-9f09-296e7381287b" class="">
+</p><p id="88b821e8-9fa5-41a1-a465-593e12d34294" class="">
+</p><figure id="03b318d4-33e5-4e96-9bac-ddfd4202f950"><a href="https://www.notion.so/genzio/Bootstrapped-Bootcamp-93109433ecba4db9a7bfe7764ef58a68" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.notion.so/genzio/Bootstrapped-Bootcamp-93109433ecba4db9a7bfe7764ef58a68</div></div></a></figure><p id="a4ebf7b7-98d7-431a-90f2-8d2042b55b94" class="">
+</p><figure id="ce1e2676-9413-42da-866f-f401bbc562e9"><a href="https://github.com/learntocloud/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">LearnToCloud</div><div class="bookmark-description">Learn the fundamentals of cloud computing HTML 2.9k 465 Repositories 0 MIT 0 Updated 0 0 Feb 6, 2022 People This organization has no public members. You must be a member to see who&#x27;s a part of this organization. Most used topics Loading... You can&#x27;t perform that action at this time.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/learntocloud/</div></div><img src="https://avatars.githubusercontent.com/u/90214606?s=280&amp;v=4" class="bookmark-image"/></a></figure><p id="e596dc7c-9461-4a98-9fe2-d400ea959b61" class="">
+</p><figure id="75838317-7b96-4022-a060-0cf866dd4d24"><a href="https://learntocloud.guide/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn to Cloud</div><div class="bookmark-description">Description</div></div><div class="bookmark-href"><img src="https://learntocloud.guide/img/favicon.png" class="icon bookmark-icon"/>https://learntocloud.guide/</div></div></a></figure><p id="dd8e69b8-10f2-4cb7-9e92-ca4c675bca13" class="">
+</p><figure id="67e87589-7b8e-4450-b706-7cec0af2d742"><div class="source">https://github.com/ripienaar/free-for-dev</div></figure><p id="bddf9b40-9a88-4d9f-b2e8-d8af6363f2b4" class="">
+</p><p id="1d4e9fa0-1ef8-47cd-acc6-8f246c49b678" class=""><strong>AWS - </strong><strong><a href="https://drive.google.com/drive/u/0/folders/1xu0wB2f7Xc6d1NuQ6yP9vxBFVXo1WoIj">https://drive.google.com/drive/u/0/folders/1xu0wB2f7Xc6d1NuQ6yP9vxBFVXo1WoIj</a></strong></p><figure id="9ff49aac-c3ee-47e6-a0b4-da268c7076ce"><div class="source">https://github.com/donnemartin/awesome-aws</div></figure><figure id="13f9be6f-a0a7-454c-957b-110999dc3ba7"><a href="https://aws.amazon.com/training/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn AWS with Training and Certification | Cloud Skills Courses and Programs | AWS</div><div class="bookmark-description">Learn from AWS experts. Advance your skills and knowledge. Build your future in the AWS Cloud. Organizations need individuals with cloud skills to help transform their business. AWS Training and Certification delivers over 200% ROI, as quantified by Forrester, by upskilling your existing workforce.* Our content is created by experts at AWS and updated regularly so you can keep your cloud skills fresh.</div></div><div class="bookmark-href"><img src="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" class="icon bookmark-icon"/>https://aws.amazon.com/training/</div></div><img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" class="bookmark-image"/></a></figure><p id="b33e126f-6409-4583-8f6b-c945c0a130f3" class="">
+</p><figure id="60ff69da-bf00-4442-8e07-7e2b0c5c5026"><a href="https://skillbuilder.aws/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Self-paced digital training on AWS - AWS Skill Builder</div><div class="bookmark-description">Skill Builder provides 500+ free digital courses, 25+ learning plans, and 19 Ramp-Up Guides to help you expand your knowledge. Courses cover more than 30 AWS solutions for various skill levels. Skill Builder offers self-paced, digital training on demand in 17 languages when and where it&#x27;s convenient for you.</div></div><div class="bookmark-href">https://skillbuilder.aws/</div></div></a></figure><p id="16046754-a875-4ee5-846b-61793b3dcfc7" class="">
+</p><figure id="0b9a6a72-87b4-44fa-8a7f-dc691ee9feb5"><a href="https://www.cloudskillsboost.google/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Cloud Skills Boost</div><div class="bookmark-description">Learning paths are a collection of courses, quests, and labs that have been curated to boost your cloud skills in a particular area. Find some of the featured learning paths below, or browse them all on the Paths page.</div></div><div class="bookmark-href"><img src="https://cdn.qwiklabs.com/X46FrQX4iLxHW5MxL8jICvgZM0evMEKscCeQO%2BazGdo%3D" class="icon bookmark-icon"/>https://www.cloudskillsboost.google/</div></div><img src="https://www.cloudskillsboost.google/favicon-144.png" class="bookmark-image"/></a></figure><p id="3043e250-bfe6-4ac9-9f57-9c9170e0514e" class="">
+</p><figure id="1ecdba74-7410-4494-8732-a648b342d00b"><a href="https://learn.microsoft.com/en-us/certifications/azure-fundamentals/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Microsoft Certified: Azure Fundamentals - Certifications</div><div class="bookmark-description">This exam measures your ability to describe the following: cloud concepts; Azure architecture and services; and Azure management and governance. Price based on the country or region in which the exam is proctored. for Microsoft Azure Fundamentals</div></div><div class="bookmark-href"><img src="https://learn.microsoft.com/favicon.ico" class="icon bookmark-icon"/>https://learn.microsoft.com/en-us/certifications/azure-fundamentals/</div></div><img src="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" class="bookmark-image"/></a></figure><p id="497a3443-013f-49a6-a0a2-7a50d8af7651" class="">
+</p><figure id="dc8935d2-1d82-4845-a6c0-16029391e814"><a href="https://www.java67.com/2018/05/top-5-amazon-web-services-or-aws-courses-to-learn-online.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 5 Free Amazon Web Services or AWS Courses to Learn in 2022- Best of Lot [UPDATED]</div><div class="bookmark-description">Hello guys, if you are thinking about learning cloud technologies or cloud computing, and looking at the various cloud providers like AWS, GCP, or Azure, then you are going in the right direction. The future lies with Cloud, and it&#x27;s essential for every developer to learn about cloud computing solutions.</div></div><div class="bookmark-href"><img src="https://www.java67.com/favicon.ico" class="icon bookmark-icon"/>https://www.java67.com/2018/05/top-5-amazon-web-services-or-aws-courses-to-learn-online.html</div></div><img src="https://4.bp.blogspot.com/-tCe7CY63yUc/WvgFjRkz_5I/AAAAAAAALW4/zmVkbZxust4jIpltUyBjlcyM9qBJzT03gCEwYBhgL/w1200-h630-p-k-no-nu/4.%2BLearn%2BAmazon%2BWeb%2BServices%2B%2528AWS%2529%2BThe%2BComplete%2BIntroduction%2BUdemy%2Bcourse.gif" class="bookmark-image"/></a></figure><p id="32f2c66b-a8e1-4d6c-b069-02ff8069a068" class="">
+</p><figure id="86387cae-5f0d-4bbe-b25c-cbdcbca3ec64"><a href="https://hackr.io/devops" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Find the best online DevOps courses and Tutorials - Hackr.io</div><div class="bookmark-description">Google search shows you hundreds of DevOps courses/tutorials, but Hackr.io tells you which is the best one. Find the best online courses &amp;amp; tutorials recommended by the DevOps community. Pick the most upvoted tutorials as per your learning style: video-based, book, free, paid, for beginners, advanced, etc.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/devops</div></div><img src="https://hackr.io/sites/devops/og_image" class="bookmark-image"/></a></figure><p id="5346be23-a7b2-4ff2-8fe4-3443bccbeb13" class="">
+</p><figure id="e67542cc-3a43-45fc-b21b-1d5e8d5f1b26"><a href="https://www.simplilearn.com/resources/cloud-computing" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cloud Computing Free Resources and Blogs | Simplilearn</div><div class="bookmark-description">Learn more about Cloud Computing through our free video tutorials, articles, practice tests, eBooks, webinars developed by industry experts to accelerate your career.</div></div><div class="bookmark-href"><img src="https://www.simplilearn.com/static/frontend/images/favicon.png" class="icon bookmark-icon"/>https://www.simplilearn.com/resources/cloud-computing</div></div><img src="https://www.simplilearn.com/logo.png" class="bookmark-image"/></a></figure><p id="d4ed37f8-c6a9-4873-87e1-9f8304f2a7f7" class="">
+</p><figure id="09c9c937-4eae-49c9-a42b-e344833c8196"><a href="https://www.educative.io/blog/roadmap-to-cloud-engineer-jobs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Roadmap to cloud jobs: How and why to become a cloud engineer</div><div class="bookmark-description">Curious about working in the cloud? Learn why and how to pursue this career, all tailored for current developers.</div></div><div class="bookmark-href"><img src="https://www.educative.io/static/favicons/faviconV2.png" class="icon bookmark-icon"/>https://www.educative.io/blog/roadmap-to-cloud-engineer-jobs</div></div><img src="https://www.educative.io/v2api/editorpage/5069956409458688/image/5177935511158784" class="bookmark-image"/></a></figure><p id="1e574c20-6eca-4379-a62f-1fe49ab9fb9f" class="">
+</p><figure id="9b699bc4-5b20-4ff1-8c6e-f6fb054a975e"><div class="source"><a href="https://training.linuxfoundation.org/wp-content/uploads/2021/07/LF_Training_CloudCareerPath_FINAL.pdf">https://training.linuxfoundation.org/wp-content/uploads/2021/07/LF_Training_CloudCareerPath_FINAL.pdf</a></div></figure><p id="21062e71-5807-4726-9ed2-470362f36906" class="">
+</p><p id="645c91e0-0185-45d9-aaa0-9b29246b21b6" class=""><a href="https://aws.amazon.com/free/webapps/">https://aws.amazon.com/free/webapps/</a></p><p id="29208f34-b82d-4fc4-aa73-8fd765539c9a" class=""><a href="https://cloudacademy.com/">https://cloudacademy.com/</a></p><p id="9fa8c23a-5197-457a-a779-9678758939e5" class=""><a href="https://cloudthat.in/courses/">https://cloudthat.in/courses/</a></p><p id="793c2c44-1db9-4f6d-87ba-0b6cb7245201" class=""><a href="https://cloudthat.in/">https://cloudthat.in/</a></p><p id="fd919664-141a-44d8-b3b2-813491d60e21" class=""><a href="https://events.withgoogle.com/30daysofgooglecloud/#content">https://events.withgoogle.com/30daysofgooglecloud/#content</a></p><p id="cb685abd-c065-4f61-918c-56e594442eb0" class="">
+</p><figure id="1054a1c8-344e-42ab-ae63-7d382f685c1d"><a href="https://go.qwiklabs.com/qwiklabs-free" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">qwiklabs-free</div><div class="bookmark-description">We give you temporary credentials to Google Cloud Platform, so you can learn the cloud using the real thing - no simulations. From 30-minute individual labs to multi-day courses, from introductory level to expert, instructor-led or self-paced, with topics like machine learning, security, infrastructure, app dev, and more, we&#x27;ve got you covered.</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/atari/images/public/favicon.ico" class="icon bookmark-icon"/>https://go.qwiklabs.com/qwiklabs-free</div></div><img src="https://lh6.googleusercontent.com/gP78WaZZXUFq0MlVOGNxQNyo7kPgmImVgvhEyfrYJOfSa0rHj_Gml20c-qfiNaS-kpO_gSlqsdJFeFUWdQpSJBc=w1280" class="bookmark-image"/></a></figure><h3 id="89345526-a932-4b71-be9a-936148c2a2f3" class=""><strong>FREE CLOUD STORAGE</strong></h3><p id="bd12b1dc-28f7-4daa-aeb1-1db71c25b7e6" class=""><a href="https://t.me/Technitze_Cybernauts/193">https://t.me/Technitze_Cybernauts/193</a></p><p id="ac6d658c-7c2e-4b86-b800-ce2504cf748c" class="">
+</p><p id="6d70c341-8752-4f20-887a-1bbcf9e41f34" class=""><strong>AZURE - </strong><strong><a href="https://drive.google.com/drive/u/0/folders/1hBkIuBjePJmzHgt4Fg7Vglv6_YYPNNPA">https://drive.google.com/drive/u/0/folders/1hBkIuBjePJmzHgt4Fg7Vglv6_YYPNNPA</a></strong></p><p id="dd68fe41-22ee-40f6-b9aa-a534a105a0a8" class="">
+</p><figure id="cce82048-ccc0-4ceb-9837-32603b118128"><a href="https://www.youtube.com/c/TrainWithShubham" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/TrainWithShubham</div></div></a></figure><figure id="a20066cf-e691-46a6-acce-a5ba43ede5ee"><a href="https://youtu.be/yJOcdVGsCi4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to become a DevOps Engineer without experience | Step by Step guide for freshers 2022</div><div class="bookmark-description">How I became remote devops engineer in 6 months without any experience as a Fresher? Yes in this video I am going to share how i started my devops career. What tools and technologies I learned to get my remote devops as a fresher after my graduation.</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/yJOcdVGsCi4</div></div><img src="https://i.ytimg.com/vi/yJOcdVGsCi4/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="1ac0edbf-0104-42d7-9145-f9cda56c8c38"><a href="https://www.youtube.com/shorts/JShyUFJK0-g" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cloud Engineer Roadmap 2022 | How to become Cloud Engineer ☁️ #cloudcomputing #devops</div><div class="bookmark-description">This Cloud engineer Roadmap video on How to become a Cloud Engineer? covers all the important information like who is a Cloud Engineer, what are the skills r...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/shorts/JShyUFJK0-g</div></div><img src="https://i.ytimg.com/vi/JShyUFJK0-g/hq2.jpg" class="bookmark-image"/></a></figure><figure id="ee7db616-365f-4492-8703-2c421e10cec1"><a href="https://www.youtube.com/watch?v=ooJGolaNfp0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to become a cloud computing engineer - Without programming knowledge | FRESHER no coding job</div><div class="bookmark-description">how to get it jobs without coding tamil 2020 | For BE and Non BE (ARTS) students can get job in it Best Cloud Books: https://amzn.to/3CG8tiG Book 2 : https://amzn.to/2Y2blYu Basic Networking Book : https://amzn.to/3EXY4Ra Tamil - How to become a cloud computing engineer - Without programming knowledge | No coding It Job Courses : Linux, Networking, Websphere Tomcat web server app server python shell scripting Database.</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=ooJGolaNfp0</div></div><img src="https://i.ytimg.com/vi/ooJGolaNfp0/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="0028fbc0-01e9-4130-92c0-adacb94597f9"><a href="https://youtu.be/B7cJmKTLmY8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to become a DevOps engineer in Tamil | cloud computing jobs Tamil</div><div class="bookmark-description">How to become a DevOps engineer in Tamil | cloud computing jobs Tamil Relevel Apply Link : https://relvl.co/czh4 How to become a DevOps engineer ,cloud computing jobs Tamil,cloud computing explained,what is cloud computing,cloud computing,devops,what is DevOps in Tamil,aws,azure,gcp,cloud in Tamil,devops in tamil</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/B7cJmKTLmY8</div></div><img src="https://i.ytimg.com/vi/B7cJmKTLmY8/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="31211b99-3dfa-4f94-a9f8-e12a19bbd53e"><a href="https://youtu.be/y6EDdU7ZF1o" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div><div class="bookmark-description">@LAKSHAY ARORA is a DevOps Engineer at Deutsche Telekom. In this video, LAKSHAY has shared his complete Journey From Tier 3 to Service based to Product based company and also shared How he Shifted from Support Engineer to DevOps Engineer ( Complete DevOps Engineer Roadmap 2022 ).</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/y6EDdU7ZF1o</div></div><img src="http://i.ytimg.com/vi/y6EDdU7ZF1o/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="7d03d0bd-dd0f-439b-8ff1-9bf67759a0d2"><a href="https://youtu.be/4DkVDEZDqSE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tier-3 to 3.5LPA to 40LPA+! 🔥 | 9+ Offers! | All about Devops!</div><div class="bookmark-description">In this video, we have Ashish who has cracked a number of companies as a DevOps engineer. He has shared his experience in this video! Become a Software Developer with KnowledgeHut&#x27;s Full Stack Development Bootcamp. Apply Now: https://bit.ly/3B7TTCz With a 100% Job Guarantee, you can now kick start your career in technology without worrying about your background!</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/4DkVDEZDqSE</div></div><img src="https://i.ytimg.com/vi/4DkVDEZDqSE/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="9ae76259-4c57-4e4c-87b6-46704cad131b"><a href="https://youtube.com/playlist?list=PLHc5Pr5atvSMGRfHGbw0PUFS3bVwO6yyP" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Start A Cloud Career</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLHc5Pr5atvSMGRfHGbw0PUFS3bVwO6yyP</div></div><img src="https://i.ytimg.com/vi/CaQiYaqP87E/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCmJxnhXjwxvVbOgq7ScWEnW0XHqg&amp;days_since_epoch=19288" class="bookmark-image"/></a></figure><p id="7b74ae9b-5148-4528-9208-95e6a0c031c6" class="">
+</p><figure id="3f466083-ba9c-4379-8eb5-2a426a10008c" class="image"><a href="Cloud%20Computing%20DevOps%20cbd9925595f344808180da7c1dd48e0a/serverless_platform_showdown.jpg"><img style="width:1028px" src="Cloud%20Computing%20DevOps%20cbd9925595f344808180da7c1dd48e0a/serverless_platform_showdown.jpg"/></a></figure><p id="5b100c8a-5375-48d0-b57b-aa6fe949dc2a" class="">
+</p><figure id="0533aeaa-0be5-427f-a6ab-506315fcefa7"><a href="https://www.youtube.com/c/CloudAdvocate" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/CloudAdvocate</div></div></a></figure><figure id="0e1e5b02-5392-48ce-8cec-b36bd80fb0d4"><a href="https://www.youtube.com/user/rithustutorials" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">in28minutes - Cloud Made Easy</div><div class="bookmark-description">Helping 1 Million Learners learn Cloud and DevOps. AWS, Azure, Google Cloud, Docker, Kubernetes, Spring, Spring Boot, Microservices and a lot more. Subscribe to keep learning every day! https://github.com/in28minutes/roadmaps PS: We are hiring DevOps and Cloud experts! Contact us if you are interested.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/user/rithustutorials</div></div><img src="https://yt3.ggpht.com/YBksfKMVAjwiaHkAVe-bJOnfWBRJVeRHMuWjr8XOuT8o5VXxhyWcCqwwpyUYxdMBUyLWNWUlAj0=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><figure id="af50bdad-09f4-441b-9d7f-2aa3d84e824d"><a href="https://www.youtube.com/channel/UC88rvEFmJhYZ5JZZeROfskg" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Cloud Bootcamp - English</div><div class="bookmark-description">If you want to learn Cloud Computing and DevOps you are in the right place. Our mission is to teach you how to master MultiCloud &amp; DevOps and be among the best and highest paid in the market. Welcome!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UC88rvEFmJhYZ5JZZeROfskg</div></div><img src="https://yt3.ggpht.com/ytc/AMLnZu-ywF3gXYsQ-Aq45dZInstXz8p9dMe7Vbk1HI1v=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><figure id="93f52c63-fcad-4be0-94f6-a99bef955628"><a href="https://www.youtube.com/c/priyankavergadia" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41dc17d1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/priyankavergadia</div></div></a></figure></div></article></body></html>

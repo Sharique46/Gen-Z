@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Fitness Channels</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="76b7a97c-eed7-4d27-85b5-672c625b4d22" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🦸🏻‍♂️</span></div><h1 class="page-title">Fitness Channels</h1></header><div class="page-body"><figure id="fef7f3b9-fed8-47f0-a57e-428d4114b510" class="link-to-page"><a href="Fitness%20Channels%2076b7a97ceed74d2785b5672c625b4d22/Instagram%20Accounts%20fef7f3b9fed847f0a57e428d4114b510.html"><img class="icon" src="Fitness%20Channels%2076b7a97ceed74d2785b5672c625b4d22/Instagram%20Accounts%20fef7f3b9fed847f0a57e428d4114b510/instagram-png-logo-11545512103cxbs7v6fpe.png"/>Instagram Accounts </a></figure><p id="77ada6aa-c479-4852-b45f-81d36b1379d4" class="">
+</p><div><ul id="35ff1cdf-c6f1-4f85-81ce-f685c9048d6e" class="bulleted-list"><li style="list-style-type:disc"><strong>Body Hub </strong></li></ul><figure id="411fa6a5-3459-4aa7-a53f-923f81800392"><a href="https://www.youtube.com/c/BodyHub" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Body Hub</div><div class="bookmark-description">Health. Fitness. How to Live Your Best Life. We do our absolute best to bring you informative videos that will hopefully help benefit your life.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BodyHub</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRth4kh9YxMEZT3cn8TEcFMRtZrEyMu1mE2LFPAPQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure></div><p id="f3e64578-1cf1-47e4-892b-f63083ff7893" class="">
+</p><ul id="4c8f4dd2-6819-49bd-9625-eb9e59dcaeca" class="bulleted-list"><li style="list-style-type:disc"><strong>Tharun Kumar</strong></li></ul><figure id="a7dd3e45-ba4a-4a74-aa60-a655b3b9184b"><a href="https://www.youtube.com/channel/UCjvd2JmIWGsEWPmLifUS4PA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tharun Kumar</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCjvd2JmIWGsEWPmLifUS4PA</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTYl9zFMJZkNdrhbzmHwq9L7lvs-CHNytZ7TncC=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="88a97e38-b530-4da3-8b44-5b8bbfb1f786" class="">
+</p><ul id="96ab3256-37c2-448b-ab63-bcd84a24b77d" class="bulleted-list"><li style="list-style-type:disc"><strong>1moRep</strong></li></ul><figure id="0a7297eb-3867-486f-ad2b-416787d6ba70"><a href="https://www.youtube.com/c/1moRep" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">1moRep</div><div class="bookmark-description">Hello friends, my name is Ashiq Sulaiman. I am a fitness enthusiast and a men&#x27;s physique athlete. I have been working out for a very long time and learned so much during this journey. I fee that it is my time now to give something back to the fitness community.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/1moRep</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQjch7FSgMj8W_2Ad3Z75MiTGLFsbiZMeNnB4qP=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="24b735d9-78ef-4c13-aad9-5685f631d07e" class="">
+</p><ul id="2141cfd3-a8d2-4dc0-a53f-f1d7dd85d6b5" class="bulleted-list"><li style="list-style-type:disc"><strong>Jeremy Ethier </strong></li></ul><figure id="e1a7d7a5-4a42-4411-b1fd-46c7fc840a71"><a href="https://www.youtube.com/channel/UCERm5yFZ1SptUEU4wZ2vJvw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Jeremy Ethier</div><div class="bookmark-description">This channel is focused on providing science-backed training and nutritional videos in order to help you become the best version of yourself. I&#x27;m certified by NASM and FMS (functional movement screening), and a Kinesiology graduate based in Vancouver, Canada. I focus on providing unbiased information to help you optimize your training and nutrition.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCERm5yFZ1SptUEU4wZ2vJvw</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSSg2XQpHY4KPL9eN3vF44xC3VzWajjfsWQYSdqXA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="53ba58ef-2c7b-4c4e-aa66-c4e86c0b0cd8" class="">
+</p><ul id="d102d5cd-e382-4ce6-a08a-16597751f8c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Jeff Nippard </strong></li></ul><figure id="befcbe5d-2d0a-4136-95cf-a4d5fda89384"><a href="https://www.youtube.com/user/icecream4PRs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Jeff Nippard</div><div class="bookmark-description">Hello everyone! I&#x27;m a Canadian natural pro bodybuilder and internationally-qualified powerlifter with a BSc in biochemistry/chemistry and a passion for science. This channel is dedicated to providing science-based training and nutrition information and journaling my own fitness journey. I&#x27;ve been training for 15 years. I hope you enjoy my videos!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/user/icecream4PRs</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRNmmXfyHwTvj1EvQentdrn-IaggDcGBC5qU7V3xQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="134ceafc-2b1d-48b3-b0fb-5d54c79d5ec8" class="">
+</p><ul id="9e3b3532-69ab-4685-80d7-aae8ee3e3bf5" class="bulleted-list"><li style="list-style-type:disc"><strong>Picture Fit</strong></li></ul><figure id="5f3179c3-8136-42c5-8533-b2e042b23d70"><a href="https://youtube.com/c/PictureFit" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PictureFit</div><div class="bookmark-description">Health and Fitness made simple. Learn all you need to learn to become fit and healthy.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/PictureFit</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQWRYVwiIQBrvPEt1fivp9MMMi_Rlc3VGUv9g3M3w=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="9544e349-897f-4195-99bc-ac0ff75a5f64" class="">
+</p><ul id="35be20be-4ed0-4581-8392-7679d93bf09f" class="bulleted-list"><li style="list-style-type:disc"><strong>Jeet Selal Aesthetics </strong></li></ul><figure id="68aed670-022d-4bda-bfc0-a206d0ee5f6b"><a href="https://www.youtube.com/c/JeetSelalAesthetics" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/JeetSelalAesthetics</div></div></a></figure><p id="8a1a3454-c2de-47ba-a51d-fdf8bd3137d8" class="">
+</p><ul id="3dbd75d5-c38e-40db-81e7-60e74e5ed319" class="bulleted-list"><li style="list-style-type:disc"><strong>SaketGokhale </strong></li></ul><figure id="6ce29803-2193-4c57-b687-a0d6b4ed0157"><a href="https://www.youtube.com/c/SaketGokhalevlogs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Saket Gokhale</div><div class="bookmark-description">Just a kid capturing the best moments of his life on video :)</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SaketGokhalevlogs</div></div><img src="https://yt3.ggpht.com/YUPawY_vYHm0vWcCDQP0K9d77DnJBr2CKamDtAXyhnXVLXzL4yqUy4xGhoYdEo1p3upYdFqViw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="90c27f84-8a71-46ae-912d-8699bcd3bfde" class="">
+</p><ul id="574cc284-fd72-4e8a-a1e9-c231a79fed51" class="bulleted-list"><li style="list-style-type:disc"><strong>Rohit Khatri Fitness </strong></li></ul><figure id="bcb354fd-ba1d-4eb1-adaa-6c20096953aa"><a href="https://www.youtube.com/c/RohitKhatriFitness" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Rohit Khatri Fitness</div><div class="bookmark-description">SPORTS SCIENCE NUTRITIONIST * For Online Coaching Contact Me On : - Instagram - rohitkhatrifitness - Email - rkhatri409@gmail.com Brands : rohitkhatribiz@gmail.com Thankyou.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/RohitKhatriFitness</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLS2DDhWvHlnZPMPpwMV6Mi5z2pr0eW-m-k5jAGp=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="6fcbc04e-b42e-4fdc-912e-27c7dd18b804" class="">
+</p><ul id="5233d9c2-2148-45a3-90a2-fe51f7fea44f" class="bulleted-list"><li style="list-style-type:disc"><strong>Leap Fitness</strong></li></ul><figure id="9e4c114d-1ae5-4cfb-bb7e-72797c28be96"><a href="https://m.youtube.com/c/LeapFitnessOfficial/videos" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Leap Fitness</div><div class="bookmark-description">Welcome! This is where you can learn how to maximize your workouts and gains! Leap Fitness brings you high-quality videos made by experts to help you look good and feel great. Subscribe to this channel to not miss out on any great workout videos.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://m.youtube.com/c/LeapFitnessOfficial/videos</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRUb2U9V3FvauAc5xMnavuBbhBLHOJ5tQ6AWKJy=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><h2 id="63d858c9-bf53-4fc9-97bb-597c85ab99f9" class="">Workout Playlist </h2><p id="3a61f858-527d-42e9-bee0-2d568194c4d5" class="">
+</p><ul id="89bd69fa-562a-4dd2-b1c1-fdd1a1d573d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Yuuka Sagawa</strong></li></ul><figure id="9e3686bc-57d6-4904-83ca-e52d2b6e0b2e"><a href="https://youtube.com/channel/UCISg6B0UZg0zcUN6jkoDLNw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ゆうか（Yuuka Sagawa）</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/fd72b195/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/channel/UCISg6B0UZg0zcUN6jkoDLNw</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSAzsulL-LkE6NK9sfEs0vZ2z6S_CYfKtNp3U9b5A=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="e165a400-0f38-42b0-83e3-2045bfe779c5" class="">
+</p><p id="8312cf39-4f57-44c1-aefa-7a9afe872c0f" class="">
+</p><ul id="b3cfa48d-307a-4f36-b708-29e0c1876778" class="bulleted-list"><li style="list-style-type:disc"><strong>bright side </strong></li></ul><figure id="8efcd9be-470d-45bf-b78c-0c17ee78f9c6"><a href="https://youtube.com/playlist?list=PLVNocu2A1SAAgwy9JSXM7k3IoKiuqsTQx" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Facts About Your Body</div><div class="bookmark-description">How to test your body to know it&#x27;s healthy? 🤔 What happens inside your body? 😳 How to boost your brain and get smarter? 🤓 What superpowers do we have as huma...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLVNocu2A1SAAgwy9JSXM7k3IoKiuqsTQx</div></div><img src="https://i.ytimg.com/vi/c7FJ4kgTvxc/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCpOD5UTJ2y-z7TT4LGK7ALUFe6XA&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><figure id="61d2564b-4313-4b50-9cb9-1e27474dc548"><a href="https://youtube.com/playlist?list=PLVNocu2A1SAAc99p3CfdkJu3bXITQSLSw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home Effective Workouts</div><div class="bookmark-description">How to lose belly fat, get slender arms and slim legs? 💪 How to remove side fat quickly? 🏋 What common workout mistakes should you avoid to reach your goals?...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLVNocu2A1SAAc99p3CfdkJu3bXITQSLSw</div></div><img src="https://i.ytimg.com/vi/LEL8vvz2tJc/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLAl28hEqZQjeFiOXQ9QYjyVYu9Jtw&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="d2da7c90-e75f-43cd-bc01-c47de586fee2" class="">
+</p><p id="1951e15b-023f-401d-9f35-94631ba35a60" class="">
+</p></div></article></body></html>

@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Code practice</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="988bc6d4-26b6-49ab-bd42-9991d7131aec" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🥋</span></div><h1 class="page-title">Code practice</h1></header><div class="page-body"><p id="68dc9e41-865d-41eb-9054-9faacfd53f24" class=""><a href="https://twitter.com/sumusiriwardana/status/1438027601612656640?s=21">https://twitter.com/sumusiriwardana/status/1438027601612656640?s=21</a></p><p id="4148d8fb-f3e2-4dce-9dd8-fb5b0e2d42c4" class="">
+</p><p id="981d27a4-b52e-4424-a6cc-3536bf8a47e2" class="">A List Apart: <a href="https://alistapart.com/blog/topic/css/">https://alistapart.com/blog/topic/css/</a></p><hr id="d29d8510-ecc1-4e34-88b7-09b057cbf024"/><hr id="db02ca92-4278-4477-9d18-621cc71d7a90"/><h1 id="0652f576-e653-463d-b775-554b1351426c" class="block-color-gray_background"><strong>Frameworks</strong></h1><p id="940a9ff7-45f2-4ec1-9271-8c08e8a0edfb" class=""><a href="https://tailwindcss.com/">https://tailwindcss.com/</a></p><hr id="8d4fa863-f49c-49a0-9335-9553c2f662df"/><h1 id="97f96bdc-6506-43b8-bc5c-43ccb343e08c" class="block-color-gray_background">Guides and tools</h1><p id="92d03245-456f-4987-8ede-d6ec68d55f71" class=""><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p><p id="2197604f-ee08-4686-b555-b43204c19584" class=""><a href="https://semicolon.dev/tutorial/css/complete-css-flex-tutorial">https://semicolon.dev/tutorial/css/complete-css-flex-tutorial</a></p><hr id="68185cde-5d27-4acc-8c07-03be7198de49"/><h1 id="ae296ec0-ced4-42b0-9578-6bd7f1b5e859" class="block-color-gray_background">Animations</h1><p id="1a2e5afe-d518-4d2c-8650-783ea1eaf35d" class=""><a href="https://dev.to/afif/100-more-underline-overlay-animations-the-upgraded-css-collection-4c25">Button animations</a></p><p id="7c0a1a08-b28c-4049-be75-83f7ece156fb" class=""><a href="https://cubic-bezier.com/">Cubic Bezier</a></p><p id="86253e7e-cc16-4852-a6fa-af61af11184d" class=""><a href="http://3d-transforms.webflow.com/#intro">3D transforms with Webflow</a></p><hr id="56414443-fa02-4b0f-bd49-6c2222f8ffdf"/><h1 id="77b95149-d995-4ff7-b6ce-63e12f86f6e9" class="block-color-gray_background">Examples</h1><p id="4a642f37-f638-42cd-be64-8ccc8c252b2a" class="">CSS Zen Garden: <a href="http://www.csszengarden.com/">http://www.csszengarden.com/</a></p><hr id="fc6f26d3-a086-44b5-9662-0d269d7b2ce9"/><h1 id="347d7b0d-3212-4f4e-b3ab-ce73a63b1dc2" class="block-color-gray_background">Fonts</h1><h2 id="8e16d4b5-2647-467d-a9a2-068af9d377cc" class="">Fonts to use</h2><p id="5b56adb4-a880-4cf8-9afb-6510d4ece7f2" class="">Font Squirrel: <a href="https://www.fontsquirrel.com/">https://www.fontsquirrel.com/</a></p><p id="60c642f7-30c7-4c42-9873-f9f4a5289346" class="">Google Web Fonts: <a href="https://fonts.google.com/">https://fonts.google.com/</a></p><p id="5f8e00d7-152a-45ef-bb82-c2fc7e23dcab" class="">Typekit: <a href="https://fonts.adobe.com/fonts">https://fonts.adobe.com/fonts</a></p><p id="44791eb7-efce-423d-baf5-13dc6455d63d" class="">Fonts.com: <a href="https://www.fonts.com/">https://www.fonts.com/</a></p><h2 id="8df8c5a2-0aa2-4896-a44c-e8644fdacade" class="">Web safe fonts</h2><p id="fa5dd573-7cf9-45d5-80d4-8d05a7010923" class="">CSS Font Stack: <a href="https://www.cssfontstack.com/">https://www.cssfontstack.com/</a></p><hr id="2a8852ba-1d63-4739-9e38-98794e3914cb"/><h1 id="40480117-ddd6-4893-927b-3e60c3e27a37" class="block-color-gray_background">Colors</h1><p id="e44afc92-d89d-4662-92df-f02b20cb6db9" class="">Color names: <a href="https://www.w3schools.com/colors/colors_hex.asp">https://www.w3schools.com/colors/colors_hex.asp</a></p><p id="265e1282-6103-4bcc-bf0f-9a99170659ff" class="">Hexadecimal to filter(): <a href="https://codepen.io/sosuke/pen/Pjoqqp">https://codepen.io/sosuke/pen/Pjoqqp</a></p><p id="8e8a2950-a051-4495-aebc-4d4e00c03450" class="">⭐  <a href="https://color.cloudflare.design/">Cloudflare</a></p><hr id="0c242f53-c979-4eb9-8e6e-fca1b9132d3b"/><h1 id="297d1dd4-0d2c-4ee6-aac0-979cd65fd9c1" class="block-color-gray_background">Gradients</h1><p id="add5158c-cf82-4551-896b-5e0e00c5ef7f" class="">A Complete Guide to CSS Gradients: <a href="https://css-tricks.com/a-complete-guide-to-css-gradients/">https://css-tricks.com/a-complete-guide-to-css-gradients/</a></p><h2 id="94fed869-1501-474d-9fca-3ae23bd94ff5" class="">Patterns</h2><p id="5306bebf-0254-4ff0-9dec-eca18fcddf45" class="">Verou: <a href="https://projects.verou.me/css3patterns/">https://projects.verou.me/css3patterns/</a></p><h2 id="9da77dee-370f-4628-98e1-e7d48dd338f3" class="">Buttons</h2><p id="bf02eaa4-c11b-45ea-88b0-da116204728e" class="">Gradient buttons: <a href="https://gradientbuttons.colorion.co/">https://gradientbuttons.colorion.co/</a></p><h2 id="67c50deb-201a-40a3-ac5b-2ceb4643bd66" class="">📦 Cool gradients</h2><p id="3545f380-14fb-40ac-8e9c-caf46e1ecbc4" class="">uiGradients: <a href="https://uigradients.com/#JuicyOrange">https://uigradients.com/#JuicyOrange</a></p><hr id="c51238ae-f026-4dfd-a083-811d51aca38e"/><h1 id="0883c918-edeb-4cc5-b16c-2e48aaf8b8a9" class="block-color-gray_background">Shadows</h1><p id="07bee918-4bcb-42c0-aaac-ae10fc42c9cc" class="">86 shadow examples: <a href="https://getcssscan.com/css-box-shadow-examples">https://getcssscan.com/css-box-shadow-examples</a></p><hr id="6803cf5c-a5bd-4fa2-a9c1-664cbf5cd684"/><h1 id="126f33ed-c171-454e-9451-3d0c18f5f4ac" class="block-color-gray_background">Layout</h1><p id="10e74267-1663-4d5b-9373-9114d1971212" class="">Page layout with floats and positioning (provide support for old browsers): <a href="https://learningwebdesign.com/articles/LWD5_FloatLayout.pdf">https://learningwebdesign.com/articles/LWD5_FloatLayout.pdf</a></p><hr id="007ed3d1-6436-4ab3-b492-b14aaffa4a1d"/><h1 id="6050e3ea-e1af-40ab-a093-7d6238aaec4e" class="block-color-gray_background">Flexbox</h1><p id="9dfee290-dcf2-4c33-91c2-da4b50623b66" class="">A Complete Guide to Flexbox: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p><p id="4844f8b1-5955-4d14-a71a-fbd726964f74" class="">Video course about Flexbox: <a href="https://flexbox.io/">https://flexbox.io/</a></p><p id="08e32441-c32c-4b44-97e5-1ee37690f555" class="">See flexbox in action 1: <a href="https://codepen.io/enxaneta/full/adLPwv">https://codepen.io/enxaneta/full/adLPwv</a></p><p id="809bbf41-fcbe-494b-9a10-326dc4eb6ae9" class="">See flexbox in action 2: <a href="https://the-echoplex.net/flexyboxes/">https://the-echoplex.net/flexyboxes/</a></p><p id="f0c66290-e7b4-4063-b1a8-7c2370aca8da" class="">Detailed Flexbox Tutorial for Beginners (everything you need to know!): <a href="https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/10-flexbox-crash-course/">https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/10-flexbox-crash-course/</a></p><p id="1e7067d6-dac5-4603-9f8a-29d27760b23e" class="">Tutorial: <a href="https://www.samanthaming.com/flexbox30/">https://www.samanthaming.com/flexbox30/</a></p><hr id="e1e2dd16-9ad2-45eb-9be7-427c83921d9c"/><h1 id="76d24ee9-53be-40de-b2a8-244cf30ca0d5" class="block-color-gray_background">Grid</h1><p id="c96ccd78-4a2e-4cfd-92bb-1a9939d5623e" class="">THE EXPERIMENTAL LAYOUT LAB: <a href="https://labs.jensimmons.com/">https://labs.jensimmons.com</a></p><p id="e7e887ce-3dd3-4f8d-a1da-127be6c9eb39" class="">Grid by Example: <a href="https://gridbyexample.com/">https://gridbyexample.com</a></p><p id="084923c1-8dde-414d-9fed-ca718b432cfe" class="">Definition and explanation: <a href="https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/">https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/</a></p><p id="eca6cf50-abfb-4a95-8eaa-44ca2106b533" class="">The Complete CSS Grid Tutorial: <a href="https://jst.hashnode.dev/css-grid-tutorial">https://jst.hashnode.dev/css-grid-tutorial</a></p><p id="0e3cc037-0346-4a4d-9333-ab033fb22bfe" class="">
+</p><hr id="cd0a51ff-ce69-406e-a82c-aed070c3e158"/><h1 id="73876906-ac7c-4ad5-b4be-795497adde34" class="block-color-gray_background">Responsive Web Design (RWD)</h1><p id="2251fcb8-b0ee-4172-99ee-a2fe972e0d93" class="">W3Schools: Responsive Web Design: <a href="https://www.w3schools.com/css/css_rwd_intro.asp">https://www.w3schools.com/css/css_rwd_intro.asp</a></p><p id="ffaf7c09-76c2-4145-b7d8-e7fbc1c5d320" class="">Screen sizes: <a href="https://screensiz.es/">https://screensiz.es</a></p><p id="b8239a38-6bf4-4704-9e34-48f5562490c6" class="">Multi-Device Layout Patterns: <a href="https://www.lukew.com/ff/entry.asp?1514">https://www.lukew.com/ff/entry.asp?1514</a></p><p id="333ea0c2-ae9d-49b8-aa65-36a7ecc8dff3" class="">Responsive Patterns: <a href="https://bradfrost.github.io/this-is-responsive/patterns.html">https://bradfrost.github.io/this-is-responsive/patterns.html</a></p><p id="b71b81d5-a116-4378-b89d-35b25344adaa" class="">Get started with variable fonts: <a href="https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7#:~:text=As%20with%20regular%20OpenType%20fonts,%2Dvariations%20or%20truetype%2Dvariations%20">https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7#:~:text=As with regular OpenType fonts,-variations or truetype-variations </a>.</p><p id="de080dc6-fe63-4162-a7e1-162261af530c" class="">Responsive navigation patterns: <a href="https://bradfrost.com/blog/post/responsive-nav-patterns/">https://bradfrost.com/blog/post/responsive-nav-patterns/</a></p><p id="0e050d67-5c42-4e1b-8022-a571fab316e0" class="">Adventures in Responsive Navigation: <a href="https://responsivenavigation.net/">https://responsivenavigation.net/</a></p><p id="7de4f287-491e-4159-b5cc-27f26ff27a05" class="">⭐  <a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Resources</a></p><h1 id="5ce925d7-5b2f-42e9-9cc2-06e6e4a2b4a6" class="block-color-gray_background">Images</h1><p id="35a8b0b9-9f33-454d-9039-8985cae78a66" class=""><code>background-image</code> opacity: <a href="https://coder-coder.com/background-image-opacity/">https://coder-coder.com/background-image-opacity/</a></p><p id="00ab782e-8e3f-4f04-8a01-df2a8202b4aa" class="">Change colour of PNG images using filter: <a href="https://codepen.io/sosuke/pen/Pjoqqp">https://codepen.io/sosuke/pen/Pjoqqp</a></p><h1 id="b1cf5e50-9c64-4844-8647-735f709dc085" class="block-color-gray_background">Borders</h1><p id="ff8ebe68-5fc5-4e0c-954c-270fb668961b" class="">Cool border radius: <a href="https://rattibha.com/thread/1392799793135693825">https://rattibha.com/thread/1392799793135693825</a></p><h1 id="fae84432-d3e6-4fcb-a7ae-2de09dd9e879" class="block-color-gray_background">Media Queries</h1><p id="227a45c5-0900-4265-8b58-d64fcb9ee795" class=""><a href="https://mediaqueri.es/">https://mediaqueri.es/</a></p><h1 id="6956e565-b768-4e87-a6a6-50bf675b740e" class="block-color-gray_background">Reset styles</h1><p id="d2339161-2ece-4e9d-ae62-6d724a085ebe" class=""><a href="https://meyerweb.com/eric/tools/css/reset/">CSS reset</a></p><p id="59bc544e-5705-496c-93b3-49bf39fb3509" class=""><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></p><p id="ca384c1e-7277-40c0-8928-4a70a7c5c3d4" class=""><a href="https://css-tricks.com/reboot-resets-reasoning/">Reboot, Resets, and Reasoning</a></p><pre id="e99c136f-a63c-4d53-8535-76164d0d8bce" class="code code-wrap"><code>/* Initial reset */
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    /*outline: 1px dashed blue; /* Debugging purposes */
+}</code></pre><h1 id="ec67b862-17cc-4847-bb15-27ce5b12c3b0" class="block-color-gray_background">Reducing HTTP reuqests</h1><p id="e7740de1-ed7e-47bc-a379-528df2342a10" class="">Images: <a href="https://css-tricks.com/css-sprites/">CSS sprites</a></p><h1 id="0629446a-f879-48fa-a018-b53e00fe95fb" class="block-color-gray_background">Browser support (CSS, HTML, JavaScript)</h1><p id="f9bcd598-de71-4adb-ab75-fbe2eb70ff40" class=""><a href="https://modernizr.com/">Modernizr</a></p><h1 id="b4f8f4d1-315f-43c7-b4b5-0787550844ca" class="block-color-gray_background">Pre- and Post-processors (and CSS authoring frameworks)</h1><p id="aff87137-de8f-408d-bb01-f1f5d1b76cdf" class=""><a href="https://medium.com/@ddprrt/deconfusing-pre-and-post-processing-d68e3bd078a3">Deconfusing Pre- and Post-processing</a></p><h2 id="9c6b1474-40ef-46b9-b9a9-10f7bd10f2e9" class="">Pre-processors</h2><p id="4eda9352-c9a5-45eb-9bf0-2a7d9ae7dab5" class=""><a href="https://sass-lang.com/">Sass</a></p><p id="3be67a65-02da-4b8a-88d8-1203166a01dd" class="">Less</p><p id="b94edd41-8e72-41ac-a6a7-2b32eec4d8e6" class=""><a href="https://stylus-lang.com/">Stylus</a></p><h2 id="fdfc960a-60c9-46ae-9ca3-2e5f34373f2c" class="">CSS authoring frameworks</h2><p id="81df5e08-b738-49b6-aad1-2143b9127507" class=""><a href="http://compass-style.org/">Compass (works well with SASS)</a></p><h2 id="85d18f24-7b14-4da6-9f23-913f2e798b0a" class="">Post-processors</h2><p id="3c1748bb-1c34-4db4-a75c-0f9f43ca0afa" class=""><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></p><p id="8d706b35-ed20-40a7-ad0b-27336975ce80" class=""><a href="https://postcss.org/">PostCSS</a> &gt; <a href="https://www.postcss.parts/">PostCSS.parts</a></p><p id="dc48f79b-42b6-4eb7-a87e-b4634cd6ee9a" class="">
+</p></div></article></body></html>

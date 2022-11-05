@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Encore Tech</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8245cf69-f294-4d3d-b77f-e9ef42638240" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1503437313881-503a91226402?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 35.480000000000004%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/pngtree-technology-icon-vector-download-image_2286321.jpg"/></div><h1 class="page-title">Encore Tech</h1></header><div class="page-body"><figure id="0224bba8-ae33-44b4-a787-c6e539e815ff" class="link-to-page"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/Data%20Storage%20and%20Devices%200224bba8ae3344b4a787c6e539e815ff.html"><span class="icon">💽</span>Data Storage and Devices</a></figure><figure id="769e235c-57f8-40eb-a69e-94980f6b41bf" class="link-to-page"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/Useful%20Websites%20769e235c57f840eba69e94980f6b41bf.html"><span class="icon">🌐</span>Useful Websites </a></figure><figure id="9c0335c1-5451-48c0-a365-54d25d7fa969" class="link-to-page"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/PC%209c0335c1545148c0a36554d25d7fa969.html"><span class="icon">🖥️</span>PC</a></figure><figure id="1d35a2f6-bd33-447b-a9ff-175647d8522c" class="link-to-page"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/Mobile%20Phone%201d35a2f6bd33447ba9ff175647d8522c.html"><span class="icon">📱</span>Mobile Phone</a></figure><figure id="38d92317-d99e-4a6f-ad4b-926aaa6407d2" class="link-to-page"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/WFH%20Tools%2038d92317d99e4a6fad4b926aaa6407d2.html">WFH Tools</a></figure><figure id="cf8458da-de83-42ab-8dd2-3711aa7c1efe"><a href="https://awesomelists.top/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/</div></div></a></figure><p id="85237aee-4266-4bb7-a07f-53904ff2067f" class="">
+</p><figure id="20093228-867a-40b1-a17d-5775e0adcb01"><a href="https://hackernoon.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HackerNoon - read, write and learn about any technology</div><div class="bookmark-description">How hackers start their afternoon. HackerNoon is a free platform with 25k+ contributing writers. 100M+ humans have visited HackerNoon to learn about technology.</div></div><div class="bookmark-href"><img src="https://hackernoon.com/favicon.ico" class="icon bookmark-icon"/>https://hackernoon.com/</div></div><img src="https://hackernoon.com/fallback-feat.png" class="bookmark-image"/></a></figure><figure id="2feb09b0-6576-4d75-b336-1a7f3a1aa112"><a href="https://www.wired.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WIRED - The Latest in Technology, Science, Culture and Business</div><div class="bookmark-description">We bring you the future as it happens. From the latest in science and technology to the big stories in business and culture, we&#x27;ve got you covered.</div></div><div class="bookmark-href"><img src="https://www.wired.com/verso/static/wired-homepage/assets/favicon.ico" class="icon bookmark-icon"/>https://www.wired.com/</div></div><img src="https://media.wired.com/photos/615e2b8ce78a8cd913bbaa76/16:9/w_1280,c_limit/wired_bug.jpg" class="bookmark-image"/></a></figure><p id="bc1bd5cc-bed6-453d-97df-f04602874b27" class="">
+</p><figure id="dfe4242b-cf6d-4b05-ba4c-0a932894097e"><a href="https://techcrunch.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TechCrunch - Startup and Technology News</div><div class="bookmark-description">Hello and welcome back to Equity, a podcast about the business of startups, where we unpack the numbers and nuance behind the headlines. Alex, Natasha and Mary Ann got together with Maggie this week f</div></div><div class="bookmark-href"><img src="https://techcrunch.com/wp-content/uploads/2015/02/cropped-cropped-favicon-gradient.png?w=192" class="icon bookmark-icon"/>https://techcrunch.com/</div></div><img src="https://techcrunch.com/wp-content/themes/techcrunch-2017/images/opengraph-default.png" class="bookmark-image"/></a></figure><figure id="b48c481a-bd6a-47f5-8958-2226cc74c607"><a href="https://www.makeuseof.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">MUO - Technology, Simplified.</div><div class="bookmark-description">MUO is your guide in modern tech. Learn how to make use of tech and gadgets around you and discover cool stuff on the Internet.</div></div><div class="bookmark-href"><img src="https://www.makeuseof.com/public/build/images/favicon-192x192.89cc1648.png" class="icon bookmark-icon"/>https://www.makeuseof.com/</div></div><img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/social/muo-og-img.png" class="bookmark-image"/></a></figure><p id="97ac451f-917d-461d-9513-1838e0810899" class="">
+</p><figure id="5d17e0de-2fec-48b8-8d8c-3a4142fd8c54"><a href="https://learntocodewith.me/posts/tech-gifts/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">117+ Best Tech Gifts for Programmers, Coders, and Techies (2021)</div><div class="bookmark-description">In this tech gifts guide, you&#x27;ll find tech gifts for programmers, gifts for computer science majors, gadget gifts for techies, Secret Santa ideas &amp; more. Most of these technology gifts are available with next-day delivery via Amazon Prime or come with digital delivery. Phew!</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/tech-gifts/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2019/11/Tech-Gifts-for-Programmers-2020.png" class="bookmark-image"/></a></figure><figure id="76e09d90-c9b4-4dc7-891e-d5b02bb8bcf4"><a href="https://www.xda-developers.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">XDA Portal &amp; Forums</div><div class="bookmark-description">Set up a new account on the XDA Developers Forums</div></div><div class="bookmark-href"><img src="https://www.xda-developers.com/favicon.ico" class="icon bookmark-icon"/>https://www.xda-developers.com/</div></div><img src="https://www.xda-developers.com/files/2021/12/header-forum.jpeg" class="bookmark-image"/></a></figure><p id="31a4572f-95fc-434e-b073-de6400454428" class="">
+</p><figure id="1cd48aab-7ccd-4a48-b8c2-22b540ba16ad"><a href="https://www.producthunt.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Product Hunt - The best new products in tech.</div><div class="bookmark-description">Product Hunt is a curation of the best new products, every day. Discover the latest mobile apps, websites, and technology products that everyone&#x27;s talking about.</div></div><div class="bookmark-href"><img src="https://ph-static.imgix.net/ph-favicon.ico?auto=format&amp;auto=compress" class="icon bookmark-icon"/>https://www.producthunt.com/</div></div><img src="https://ph-static.imgix.net/ph-logo-1.png" class="bookmark-image"/></a></figure><p id="3ea6a1b5-93b4-4143-b900-9b688fa7a1cb" class="">
+</p><figure id="1440502a-be99-44e8-b238-532f88f873dc"><a href="https://www.pcmag.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Latest Technology Product Reviews, News, Tips, and Deals</div><div class="bookmark-description">PCMag is your complete guide to computers, peripherals and upgrades. We test and review tech products and services, report technology news and trends, and provide shopping advice with price comparisons.</div></div><div class="bookmark-href"><img src="https://www.pcmag.com/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.pcmag.com/</div></div><img src="https://www.pcmag.com/images/pcmag-social-share.jpg" class="bookmark-image"/></a></figure><h3 id="3a95269f-bda1-4893-9a31-aaeb576941fc" class=""><strong>GOogle</strong></h3><p id="c531a883-b245-4312-ad95-b2199ab91daf" class=""><a href="https://t.me/Technitze_Encoretech/3">https://t.me/Technitze_Encoretech/3</a></p><p id="1f0c81e4-f977-4ba8-9d30-46c67c72a945" class="">
+</p><h3 id="cee5b116-85d9-49b9-94e4-ab0e1445681b" class=""><strong>ASPOSE</strong></h3><p id="a1df878a-b337-406b-8f75-9313eefe0ccb" class=""><a href="https://t.me/Technitze_Encoretech/42">https://t.me/Technitze_Encoretech/42</a></p><p id="7d2c4afc-93eb-4a72-8e3e-a77ac1a5d41b" class="">
+</p><h3 id="2a9ed8ba-5d2b-4310-b900-6944405766ca" class=""><strong>Most useful websites</strong> </h3><p id="372b513a-ea1d-406a-bc9e-d3563cf04a33" class=""><a href="https://t.me/Technitze_Encoretech/29">https://t.me/Technitze_Encoretech/29</a></p><p id="0b96af81-84b8-4f5b-bd5b-2527f0c0096c" class="">
+</p><p id="4bd67816-20e8-4893-aafb-b66a1be1d459" class="">
+</p><figure id="ac9fecad-ee15-4c24-b91d-88f1ed4687cd"><a href="https://www.mobilefish.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mobilefish.com - The web development, programming, internet of things, blockchain and other technologies resource.</div><div class="bookmark-description">It takes sometimes quite a lot of time to figure out how to quickly install, configure and use developer tools. This section describes the different steps taken, the errors encountered and how they were solved.</div></div><div class="bookmark-href"><img src="https://www.mobilefish.com/favicon.ico" class="icon bookmark-icon"/>https://www.mobilefish.com/</div></div></a></figure><p id="2c40e405-7891-46c5-832a-5fa1514d418c" class="">
+</p><p id="78541d7e-9894-4452-9e18-dce5cf98c9bd" class=""><strong>WANNA CREATE DESIGNER TEXT</strong></p><p id="fa304736-d55a-4643-9143-0e798fcdb4c6" class=""><a href="https://t.me/Technitze_Encoretech/4">https://t.me/Technitze_Encoretech/4</a></p><p id="19cf8a3b-e48a-4dba-8324-9c5e4049459a" class="">
+</p><p id="9fe5f4ae-13c4-479e-912b-6ee3ff804775" class="">
+</p><h3 id="f78d734b-9371-44c1-ad48-8896ddf59d98" class=""><strong>Ebook Finding Secret Trick</strong></h3><p id="35128851-b6d6-4598-b596-d1297b5bfefe" class=""><a href="https://t.me/Technitze_Encoretech/6">https://t.me/Technitze_Encoretech/6</a></p><p id="17829933-210f-4bc6-a39a-dacb9c5fded5" class="">
+</p><p id="91d95a98-d84e-42c8-bf11-13d53cd142a1" class=""><a href="https://t.me/Technitze_Encoretech/5">https://t.me/Technitze_Encoretech/5</a></p><h3 id="91c2c3d8-9483-4556-a3be-4a56d1e2ad76" class=""><strong>Complete google Search Operators</strong></h3><p id="6c1a3507-78a9-431d-a482-53912f3bf0fa" class=""><a href="https://ahrefs.com/blog/google-advanced-search-operators/">https://ahrefs.com/blog/google-advanced-search-operators/</a></p><p id="d8181c14-a823-4965-b741-9e9eaf300508" class="">
+</p><h3 id="60b33244-fc0f-42da-adf4-fb9b0925648d" class=""><strong>Inteligence X Search Engine</strong> </h3><p id="ca36daf0-1415-4a87-a560-0030a538238b" class=""><a href="https://t.me/Technitze_Encoretech/37">https://t.me/Technitze_Encoretech/37</a></p><p id="038882e7-66fe-4e4b-ba70-a3c1e4080d47" class="">
+</p><h3 id="7b053641-c3c6-4267-b70a-b3d2fb3a01d8" class="">Awesome OSINT</h3><figure id="f4a37f04-5d5d-4b23-9a8e-3b1c255e2bbd"><a href="https://github.com/jivoi/awesome-osint" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - jivoi/awesome-osint: A curated list of amazingly awesome OSINT</div><div class="bookmark-description">A curated list of amazingly awesome open source intelligence tools and resources. Open-source intelligence (OSINT) is intelligence collected from publicly available sources. In the intelligence community (IC), the term &quot;open&quot; refers to overt, publicly available sources (as opposed to covert or clandestine sources) Please read CONTRIBUTING if you wish to add tools or resources.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/jivoi/awesome-osint</div></div><img src="https://opengraph.githubassets.com/0269d2ecbb66ad5f6bced3f5e57fc3dc49dbe65f5658950c86407de5d1e04fcc/jivoi/awesome-osint" class="bookmark-image"/></a></figure><p id="04fc1cbd-0a70-4583-871b-e19945ce887f" class="">
+</p><figure id="36bd8feb-6348-433b-9f48-5bc4d7c0874c"><a href="https://www.aspose.app" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free File Format Apps - Process MS Word | PDF | Excel | PPT online</div><div class="bookmark-description">Free Apps to Read, Manipulate, Convert MS Word, PDF, Excel, PowerPoint, Visio, MS Project, OneNote, Email, MSG, Barcode, CAD, 3D, GIS, HTML file formats online</div></div><div class="bookmark-href"><img src="https://www.aspose.app/images/aspose/favicon/favicon.ico" class="icon bookmark-icon"/>https://www.aspose.app</div></div></a></figure><figure id="7ada352b-b7ac-4b8a-a157-0d8d8396ddbb"><a href="https://strawpoll.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">StrawPoll: Create your poll in seconds</div><div class="bookmark-description">Simple polls with powerfull configuration While we make our surveys as simple and beautiful as possible, we also offer powerful customization options to enable on-demand adjustments for many different purposes.</div></div><div class="bookmark-href"><img src="https://strawpoll.com/favicon-16x16.png" class="icon bookmark-icon"/>https://strawpoll.com/</div></div><img src="https://cdn.strawpoll.com/images/logos/strawpoll-logo-title-splash.png" class="bookmark-image"/></a></figure><p id="c7fc7614-58f4-499d-9588-3680cd859fd6" class="">
+</p><figure id="7417e135-4108-4b16-825e-d474ca8ddb1d"><a href="https://www.beulr.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Beulr- Free AI Meeting Transcriber and Note Taker</div><div class="bookmark-description">Beulr uses artificial intelligence to record zoom calls and generate rich meeting notes that are shareable, searchable, accessible and secure. Best real time transcription for zoom meetings. Your hub for video meet recording, search, analysis, transcription, summarization, and collaboration.</div></div><div class="bookmark-href"><img src="https://uploads-ssl.webflow.com/62cadcc094c09931ae9786e2/62cadcc094c0997458978734_Favicon%2032.png" class="icon bookmark-icon"/>https://www.beulr.com/</div></div><img src="https://uploads-ssl.webflow.com/62cadcc094c09931ae9786e2/62cadcc094c099f4ed978747_Tab%20Image%202.webp" class="bookmark-image"/></a></figure><p id="42da9e21-93af-45a4-ba20-98488de7065a" class="">
+</p><p id="0ed1e9cd-a684-4c98-b6d9-dc920785d887" class=""><a href="https://www.deviceinfo.me/">https://www.deviceinfo.me/</a></p><p id="c1b8d2bb-ccf5-4769-8f1a-201ba817c27a" class="">
+</p><p id="fe69a52c-070c-4260-8833-3638b049c9c5" class=""><a href="https://t.me/Technitze_Encoretech/26">https://t.me/Technitze_Encoretech/26</a></p><p id="e86bff0c-8a8d-496e-8b0c-023eac389b8a" class="">
+</p><figure id="4858c00d-4073-402d-b906-fb3e615064dd"><a href="https://www.computerworld.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">IT news, careers, business technology, reviews</div><div class="bookmark-description">Computerworld covers a range of technology topics, with a focus on these core areas of IT: Windows, Mobile, Apple/enterprise, Office and productivity suites, collaboration, web browsers and blockchain, as well as relevant information about companies such as Microsoft, Apple and Google.</div></div><div class="bookmark-href"><img src="https://idge.staticworld.net/ctw/favicon.ico" class="icon bookmark-icon"/>https://www.computerworld.com/</div></div><img src="https://idge.staticworld.net/ctw/computerworld-logo300x300.png" class="bookmark-image"/></a></figure><p id="24b4de49-6422-4d22-b1a9-82c168b87f97" class="">
+</p><figure id="6e87ff7f-eb5e-4271-b946-b83816928659"><a href="https://builtin.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">National Tech &amp; Startups | Built In</div><div class="bookmark-description">Built In is the online community for National startups and tech companies. Find startup jobs, tech news and events in the National tech scene.</div></div><div class="bookmark-href"><img src="https://frontend.builtin.com/d3da505cf178a577a9effac3cc8c29f27bee580b/favicon.png" class="icon bookmark-icon"/>https://builtin.com/</div></div></a></figure><p id="ff623073-4499-4d51-a164-fbe5bb1cbd2c" class="">
+</p><figure id="7542a7d8-7e37-4bf9-9794-b1c614a8bd74"><a href="https://techterms.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Tech Terms Computer Dictionary</div><div class="bookmark-description">Today * July 30 Stands for &quot;Central Processing Unit.&quot; The CPU is the primary component of a computer that processes instructions. It runs the operating system and applications, constantly receiving input from ... Read More Get featured terms and quizzes in your inbox.</div></div><div class="bookmark-href"><img src="https://techterms.com/favicon.ico" class="icon bookmark-icon"/>https://techterms.com/</div></div><img src="https://techterms.com/img/main/google_play.png" class="bookmark-image"/></a></figure><p id="59e4afe4-6bff-457e-9c09-5659d9d86df4" class="">
+</p><figure id="6818317a-f64f-49a7-8fce-fcd34eaebc4f"><a href="https://skillcrush.com/blog/99-tech-terms" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">99 Tech Terms You Need to Know When You&#x27;re New to Tech - Skillcrush</div><div class="bookmark-description">When you&#x27;re new to tech, it can feel like you&#x27;ve stumbled into a conversation where everyone knows what they&#x27;re talking about-except, of course, you. Even after you&#x27;ve broken in, the moment you meet with a different team or tackle a new type of project, the jargon and acronyms start shifting all over again.</div></div><div class="bookmark-href"><img src="https://skillcrush.com/wp-content/themes/skillcrush-corgi/img/favicons/favicon.ico" class="icon bookmark-icon"/>https://skillcrush.com/blog/99-tech-terms</div></div><img src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2015/03/Blog_99-tech-terms.jpg" class="bookmark-image"/></a></figure><p id="4112c91a-4431-49ea-a9ee-79194b510037" class="">
+</p><figure id="09569bf4-aa4e-4fe6-b09a-c4d967855813"><a href="https://www.ourcommunity.com.au/tech/tech_article.jsp?articleId=74" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The A-Z of Technology Terms - ourcommunity.com.au</div><div class="bookmark-description">The Our Community Group provides advice, connections, training and easy-to-use tech tools for people and organisations working to build stronger communities. Our partners in that work are not-for-profit organisations and social enterprises; government, philanthropic and corporate grantmakers; donors and volunteers; enlightened businesses; and other community builders.</div></div><div class="bookmark-href">https://www.ourcommunity.com.au/tech/tech_article.jsp?articleId=74</div></div><img src="https://www.ourcommunity.com.au/images/ourcommunity-social.png" class="bookmark-image"/></a></figure><p id="22841818-e991-481c-81ab-f747e9ee7597" class="">
+</p><p id="f32fe936-d36c-48d2-ac90-777f458ffff6" class=""><a href="https://byjus.com/full-form/technology-full-forms/">https://byjus.com/full-form/technology-full-forms/</a></p><p id="085743c8-79ec-4e14-bcec-32ebe7cf9972" class=""><a href="https://fullforms.com/">https://fullforms.com/</a></p><p id="6646ab28-aa2b-40ef-b947-771df6dc54c0" class=""><a href="https://www.javatpoint.com/full-form">https://www.javatpoint.com/full-form</a></p><p id="03cb4d62-ab8c-4c7a-b8e8-d2548370cd48" class="">
+</p><figure id="64ae1c31-d58a-476f-af02-5b4e83649f98" class="image"><a href="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/IMG_20220730_232111_526.jpg"><img style="width:1124px" src="Encore%20Tech%208245cf69f2944d3db77fe9ef42638240/IMG_20220730_232111_526.jpg"/></a></figure><p id="160f4022-3f99-41db-a0ac-121db7fc8e39" class="">
+</p><figure id="5107d576-b36a-41e7-a8dc-ebc5811c014a"><a href="https://www.digitaltrends.com/computing/what-is-usb-3-1-when-will-it-be-released-and-what-will-it-do-for-pcs/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is USB 3.1? | Digital Trends</div><div class="bookmark-description">Chances are that you&#x27;ve already used USB 3.1 in your daily life. USBs (which stands for &quot;Universal Serial Bus&quot;) are a commonly used type of cord to connect two devices, like a PC with a gaming device or camera. So, what sets USB 3.1 apart from other options, like USB 3.2 or USB-C?</div></div><div class="bookmark-href"><img src="https://www.digitaltrends.com/wp-content/uploads/2020/08/dt-site-icon.png?fit=144%2C144&amp;p=1" class="icon bookmark-icon"/>https://www.digitaltrends.com/computing/what-is-usb-3-1-when-will-it-be-released-and-what-will-it-do-for-pcs/</div></div><img src="https://www.digitaltrends.com/wp-content/uploads/2017/09/Razer-Blade-Pro-17-review-ports-2.jpg?p=1" class="bookmark-image"/></a></figure><p id="0b56aabf-4f60-4a71-b34b-ce1bdcf48157" class="">
+</p><p id="a5af4b11-8d5d-4a94-9fd7-9ce2d6cb2b26" class="">
+</p><figure id="3be173a3-fafe-4650-8a1a-74578d3ac551"><a href="https://www.themuse.com/advice/99-sites-that-every-professional-should-know-about-and-use" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">99 Sites Every Professional Should Know About</div><div class="bookmark-description">With an endless number of sites, tools, and resources out there, how do you know what&#x27;s worth your time? Well, we know just how busy you are, so we did the legwork for you and found 99 websites that&#x27;ll add value to your life and your career, guaranteed.</div></div><div class="bookmark-href"><img src="https://www.themuse.com/favicon.ico" class="icon bookmark-icon"/>https://www.themuse.com/advice/99-sites-that-every-professional-should-know-about-and-use</div></div><img src="https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/26050.jpg?mtime=1568749564" class="bookmark-image"/></a></figure><p id="fc25d6d6-0cca-4a72-a817-686de78a93ba" class="">
+</p><figure id="5e319d75-969e-4d4d-af4c-28d3b55ba230"><a href="https://www.lifehack.org/articles/featured/80-how-to-sites-worth-bookmarking.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">80 How-To Sites Worth Bookmarking</div><div class="bookmark-description">Sitting on my dining room table, I currently have half a dozen projects in various states of doneness. Some involve vivisected computer parts, others will eventually be wearable and a few are just cool things I&#x27;ve ran across on the internet.</div></div><div class="bookmark-href"><img src="https://cdn.lifehack.org/wp-content/uploads/2018/05/31002541/lifehack-site-logo.png" class="icon bookmark-icon"/>https://www.lifehack.org/articles/featured/80-how-to-sites-worth-bookmarking.html</div></div><img src="https://cdn.lifehack.org/wp-content/uploads/2008/07/top-how-to-websites-scaled.jpeg" class="bookmark-image"/></a></figure><p id="521b7369-8535-47fa-a33b-6fb1e83a581c" class="">
+</p><figure id="0e977314-1b0f-4cde-96cf-ff485502c64c"><a href="https://www.labnol.org/internet/101-useful-websites/18078/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The 101 Most Useful Websites on the Internet - Digital Inspiration</div><div class="bookmark-description">The most useful websites on the Internet that will make you smarter, increase productivity and help you learn new skills Here are the most useful websites on the Internet that will make you smarter, increase productivity and help you learn new skills. These incredibly useful websites solve at least one problem really well.</div></div><div class="bookmark-href"><img src="https://www.labnol.org/favicon-32x32.png?v=d851e5d23975d09321141dfab459c846" class="icon bookmark-icon"/>https://www.labnol.org/internet/101-useful-websites/18078/</div></div><img src="https://www.labnol.org/api/images/VGhlIDEwMSBNb3N0IFVzZWZ1bCBXZWJzaXRlcyBvbiB0aGUgSW50ZXJuZXQ.jGBkLk9yOIoy5O4aBLVSKCQ-s0ks_o7UHGOIrwnZLpI.png" class="bookmark-image"/></a></figure><p id="200e2ac9-6c4b-4289-832a-a7e3d32c665c" class="">
+</p><figure id="928aeb0c-bdc6-4e50-b707-2713a604a625"><a href="https://t.me/Technitze_Encoretech/92" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Encore Tech</div><div class="bookmark-description">https://www.printfriendly.com/ - Make any web page Print Friendly &amp; PDF https://www.zamzar.com/ - Free online video converter, audio converter, image converter, eBook converter. No download or account required</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Encoretech/92</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="84318674-5e36-4a6f-b469-67f0fa15902c" class="">
+</p><figure id="30b93b0d-9750-4a24-9256-ae7b12636bcb"><a href="http://marker.to/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">http://marker.to/</div></div></a></figure><p id="5b8a3b31-6e3f-4768-94c2-be653ed8da15" class="">
+</p><figure id="9471733f-02d3-4464-b8d5-a805d08acd30"><a href="https://www.instagram.com/p/CK_Rn6hHRYC/?utm_source=ig_web_copy_link" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.instagram.com/p/CK_Rn6hHRYC/?utm_source=ig_web_copy_link</div></div></a></figure><p id="3d582c71-0447-4a1e-8136-9da37297fb54" class="">.</p><p id="1f4f99eb-0b60-4cf3-ae87-61ef0d76c058" class="">
+</p><figure id="0d20dce1-16b6-4ef1-af8d-886245fd205c"><a href="https://www.mefancy.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mefancy Text and html tools</div><div class="bookmark-description">Easily change text and html, remove line Breaks, capitalize sentences, convert text to basic html and other common tasks.</div></div><div class="bookmark-href">https://www.mefancy.com/</div></div></a></figure><p id="b33e7f4a-5bc5-4a32-aa00-3b7a39a38d3c" class="">https://onlineasciitools.com/</p><figure id="b4307c9c-9114-479d-9453-48d20a8288d6"><a href="https://textrepeater.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Text Repeater for Messaging and WhatsApp - Free to Use, No Account Needed</div><div class="bookmark-description">Text Repeater is your go-to app for all things repetition. Our process is simple, just add text, repeat, copy, and share! Whether you want to entertain your friends with endless emojis or drop a full-fledged text bomb, our easy-to-use app is here for all your needs.</div></div><div class="bookmark-href"><img src="https://textrepeater.com/favicon.ico" class="icon bookmark-icon"/>https://textrepeater.com/</div></div><img src="https://textrepeater.com/social.png" class="bookmark-image"/></a></figure><p id="82f04238-e5fb-42ef-aab8-c3c3017f4809" class="">
+</p><figure id="50bb4884-7ca1-46e9-aa67-7c63240f9158"><a href="https://www.browserling.com/tools/text-repeat" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Repeat Text - Repeat String - Online - Browserling Web Developer Tools</div><div class="bookmark-description">World&#x27;s simplest online string and text repeater for web developers and programmers. Just paste your text in the form below, press the Repeat Text button, and you&#x27;ll get repeated data. Press a button - get repeated text. No ads, nonsense, or garbage. A text repeater can also be very useful if you&#x27;re doing cross-browser testing.</div></div><div class="bookmark-href"><img src="https://www.browserling.com/favicon.ico" class="icon bookmark-icon"/>https://www.browserling.com/tools/text-repeat</div></div><img src="https://www.browserling.com/images/browserling-cross-browser-testing-fb-og-image.png" class="bookmark-image"/></a></figure><p id="a34367f9-2516-4969-91e7-8bb2034e48a4" class="">
+</p><p id="0459e0bc-6232-4bd6-aea8-ef9520c31322" class="">
+</p><p id="3535a2b4-8d35-4b4e-92cd-165465983cb6" class="">Free Video Recording and Screen Casting Softwares</p><p id="2a175b1c-0f3d-424e-9d3f-54e43ecaa8c8" class=""><a href="https://t.me/Technitze_Encoretech/40">https://t.me/Technitze_Encoretech/40</a></p><p id="908f2f8e-46a0-47f4-b036-80e1fdf5b86b" class="">
+</p><p id="78475d0d-deb9-4ff9-b477-1a870cf8db7e" class=""><strong>Youtube to MP3 Converter</strong> </p><figure id="4808e2e6-7f18-4b8a-ae89-d5e7f08df821"><a href="https://t.me/Technitze_Encoretech/8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Encore Tech</div><div class="bookmark-description">♦️Any Video Converter Free The best YouTube to MP3 converter - just copy, paste and go Operating system: Windows Any Video Converter Freeware Free Video Converter with millions of happy users! Free Video Converter + YouTube Downloader + Video Editor + DVD Burner 100+ inputs, 160+ outputs; 100% lossless quality; NVIDIA NVENC &amp; AMD ANF &amp; Inter QSV accelerated encoding; 4K Video flawless downloading.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Encoretech/8</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="913d31da-d535-4657-9207-29e6b81d57c3" class=""><strong>Videos downloader</strong></p><p id="f83b4433-6f60-4392-8cfa-e2cd0716d678" class="">
+</p><figure id="5cd4e29b-9c75-4333-ba1f-db1da5befca4"><a href="https://t.me/Technitze_Encoretech/7" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Encore Tech</div><div class="bookmark-description">YouTube videos downloader 4K Video Downloader To download YouTube videos to a Windows PC, start by downloading and installing 4K Video Downloader. This versatile software is completely free, and can download whole playlists, as well as 360-degree and 3D videos. When it&#x27;s done, check the box marked &#x27;Launch&#x27; and click &#x27;Finish&#x27;.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Encoretech/7</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="f1e71664-5495-4a13-ad1b-ad30bd76831f" class="">
+</p><p id="131eb32f-c4a6-46cc-8eac-c195b310a104" class="">Top 10 youtube alternative </p><figure id="1bf4dc2d-129f-4afa-aeff-f2df368d062e"><a href="https://filmora.wondershare.com/youtube-video-editing/youtube-app-alternatives.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">2022 | Top 10 YouTube App Alternatives for iPhone And Android</div><div class="bookmark-description">Now, YouTube becomes the second largest search engine in the world, over 1 billion hours of YouTube videos are watched per day. People will be using Google apps to access videos on YouTube. Unfortunately, there are existing issues in using the official application such as the stopping of the playback when you minimize the app and the number of annoying ads displayed on the YouTube application .</div></div><div class="bookmark-href"><img src="https://filmora.wondershare.com/favicon.ico" class="icon bookmark-icon"/>https://filmora.wondershare.com/youtube-video-editing/youtube-app-alternatives.html</div></div><img src="https://images.wondershare.com/filmora/images/og-image/filmora11.png" class="bookmark-image"/></a></figure><p id="4f70896d-7134-4a6c-b24c-ee30ef3b9be0" class="">
+</p><p id="43a81c2f-b0ba-484c-858d-01b2208c823f" class="">
+</p><figure id="662a17d5-91a1-4a18-b22f-7043066f975a"><a href="https://thumbtube.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ThumbTube - Create Big YouTube Thumbnails for Facebook</div><div class="bookmark-description">Create large YouTube thumbnail links &amp; share it like native Facebook videos With This YouTube Linker. Our Other Recommended Tools For You: Go to YouTube and copy the link of the desired video you want to share on Facebook. After copying the video link, open thumbtube.com and paste the link in the textbox and click Create Link.</div></div><div class="bookmark-href"><img src="https://thumbtube.com/favicon.ico" class="icon bookmark-icon"/>https://thumbtube.com/</div></div><img src="https://thumbtube.com/assets/images/youtube_Logo_fullsize.png" class="bookmark-image"/></a></figure><p id="4ae39711-94bb-4de0-91c4-3c9a73a9b765" class="">
+</p><p id="302c5205-d469-4fa1-807b-a50af00dd2f9" class="">Youtube Downloaders playlist</p><figure id="b24fc769-8b02-4871-81f0-01d7b4f7a4d7"><a href="https://youtubedownload.minitool.com/youtube/download-all-videos-from-youtube-channel.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://youtubedownload.minitool.com/youtube/download-all-videos-from-youtube-channel.html</div></div></a></figure><p id="f20e4beb-e0b7-4ff0-8140-dcaded30612f" class="">
+</p><figure id="698a3161-28ff-43d1-abde-9003583350bc"><a href="https://lumen5.com/learn/youtube-downloader/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">15 Top Free YouTube Downloaders in 2021</div><div class="bookmark-description">At times, while browsing, you&#x27;ll come across the perfect YouTube video to use for your own content. &quot;If only there was a way to download it without asking the owner&quot; - you mutter. The good news is, there are certain websites and applications, commonly referred to as YouTube Downloader, that let you do just that....</div></div><div class="bookmark-href"><img src="https://lumen5.com/learn/wp-content/uploads/2022/03/L5-logo-fullColor-rgb-Purple-Square-300x300.png" class="icon bookmark-icon"/>https://lumen5.com/learn/youtube-downloader/</div></div><img src="https://lumen5.com/learn/wp-content/uploads/2019/05/Video-Marketing-How-to-Get-Started.jpg" class="bookmark-image"/></a></figure><p id="1ff93ca8-04ba-4556-becc-e5be02f0e1f0" class="">
+</p><figure id="fbb111c6-28a3-41bc-bd7d-ccc5332e06d4"><a href="https://www.guru99.com/best-free-youtube-downloader.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">21 Best FREE YouTube Video Downloader Apps [Jul 2022 List]</div><div class="bookmark-description">YouTube is a popular video-sharing platform that helps users watch, like, comment, and upload videos. You can access the video from desktop PCs, tablets, mobile phones, and laptops. You can use YouTube video downloaders to download videos in numerous formats, including MP3 and MP4.</div></div><div class="bookmark-href"><img src="https://www.guru99.com/images/Favicon_new_300x300.png" class="icon bookmark-icon"/>https://www.guru99.com/best-free-youtube-downloader.html</div></div><img src="https://www.guru99.com/images/2/download-button-small.png" class="bookmark-image"/></a></figure><p id="2362b89b-8262-47a2-b91f-b8aa3cf9b50c" class="">
+</p><p id="d074eaab-951e-4bfa-a41d-7d0048550d74" class="">https://github.com/ytdl-org/youtube-dl/releases/tag/2021.04.07 https://youtube-dl.org/</p><p id="2bc1827f-0776-4847-951d-0ba2ed2813af" class="">https://www.4kdownload.com/howto/howto-download-youtube-channel/</p><p id="42a21b1f-268d-4b57-875a-f3ea2dba18c8" class="">https://github.com/Tyrrrz/YoutubeDownloader</p><p id="775b82bb-643a-4037-9f6c-d62d3eb73af2" class="">
+</p><p id="6a6c6b6a-8c39-47f8-ab29-44b4e4e2d48b" class="">
+</p><p id="822b7b60-33fa-487a-88bd-face547943e6" class="">
+</p><p id="e4d4ff76-fa1e-4051-8a7f-a1fb5f28d963" class="">
+</p><p id="d94b6b01-4947-48d8-8b56-e4b9881f67c9" class="">
+</p><p id="7be68a83-7a06-4916-9bcd-002da5279602" class="">Screen Mirroring</p><p id="7c0c598b-355c-4701-9d5d-7031d8858df3" class="">https://play.google.com/store/apps/details?id=com.apowersoft.mirror</p><p id="1c37d89b-10b4-439a-a47f-727e71959a82" class="">
+</p><p id="65b0fa81-cd9a-4b3f-9cfc-07b88203dc26" class="">Tools</p><p id="9f19ab5d-3594-4683-8af5-3dd39d32af5e" class="">https://t.me/Technitze_Encoretech/85</p><p id="35afe1e2-a065-494a-9968-94fcbfbe76b0" class="">
+</p><p id="18546b64-b464-4887-8acd-e4f144d7b68f" class="">DIY CCTV Camera</p><figure id="b4d50404-896c-4cb2-b5c8-e955bb1a418f"><a href="https://play.google.com/store/apps/details?id=com.ivuu" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.gstatic.com/android/market_images/web/favicon_v3.ico" class="icon bookmark-icon"/>https://play.google.com/store/apps/details?id=com.ivuu</div></div></a></figure><figure id="9ae3d38a-84f5-4eeb-bf7a-d837afbe1d0c"><a href="https://www.wondershare.com/products-solutions/all-products.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wondershare products：desktop, web, mobile applications</div><div class="bookmark-description">Wondershare products：desktop, web, mobile applications | Wondershare</div></div><div class="bookmark-href"><img src="https://www.wondershare.com/favicon.ico" class="icon bookmark-icon"/>https://www.wondershare.com/products-solutions/all-products.html</div></div><img src="https://images.wondershare.com/images2020/og-img/home.jpg" class="bookmark-image"/></a></figure></div></article></body></html>

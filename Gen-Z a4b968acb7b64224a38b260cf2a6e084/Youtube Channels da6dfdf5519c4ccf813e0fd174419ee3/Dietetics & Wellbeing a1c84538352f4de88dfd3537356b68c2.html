@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dietetics &amp; Wellbeing </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a1c84538-352f-4de8-8dfd-3537356b68c2" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🫀</span></div><h1 class="page-title">Dietetics &amp; Wellbeing </h1></header><div class="page-body"><p id="f82d53cd-ccd7-4ea2-93fb-b9cf9726b4de" class="">
+</p><figure id="0a9ed634-1cc5-4ac4-98e8-4ac5e6e2726d" class="link-to-page"><a href="Dietetics%20&amp;%20Wellbeing%20a1c84538352f4de88dfd3537356b68c2/IG%20Accounts%200a9ed6341cc54ac498e84ac5e6e2726d.html"><img class="icon" src="Dietetics%20&amp;%20Wellbeing%20a1c84538352f4de88dfd3537356b68c2/IG%20Accounts%200a9ed6341cc54ac498e84ac5e6e2726d/insta.jpg"/>IG Accounts</a></figure><p id="407354d4-05b8-46a6-82f0-bcc48f35b1e2" class="">
+</p><figure id="ffd9f483-7f97-405a-a7c8-180f6d1bde26"><div class="source"><a href="Dietetics%20&amp;%20Wellbeing%20a1c84538352f4de88dfd3537356b68c2/Photos-001_(1).zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2c253ef3-6c74-4c8f-b20b-f9d768813543/Photos-001_(1).zip</a></div></figure><p id="ced6db89-5473-46a9-bd5c-cbf7f4fa5fc9" class="">
+</p><ul id="7f3213c0-d3e2-4a80-a4f8-f5429080de7e" class="bulleted-list"><li style="list-style-type:disc"><strong>Fit Tuber </strong></li></ul><figure id="58450b32-d9a6-403a-9dd6-37f4036636a6"><a href="https://www.youtube.com/channel/UCYC6Vcczj8v-Y5OgpEJTFBw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fit Tuber</div><div class="bookmark-description">Welcome to Fit Tuber! I am a fitness enthusiast from India. Fitness doesn&#x27;t necessarily mean making bulky muscles. To me, it is to stay healthy and feel good about our bodies. I am not the fittest person, but I try to stay on track and constantly learn new things on the way.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCYC6Vcczj8v-Y5OgpEJTFBw</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLSEV5H0Dc_SHuQwWmvhnSJG4guCrWjvhTe8wlzLKA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><div><ul id="35ff1cdf-c6f1-4f85-81ce-f685c9048d6e" class="bulleted-list"><li style="list-style-type:disc"><strong>Body Hub </strong></li></ul><figure id="411fa6a5-3459-4aa7-a53f-923f81800392"><a href="https://www.youtube.com/c/BodyHub" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Body Hub</div><div class="bookmark-description">Health. Fitness. How to Live Your Best Life. We do our absolute best to bring you informative videos that will hopefully help benefit your life.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BodyHub</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRth4kh9YxMEZT3cn8TEcFMRtZrEyMu1mE2LFPAPQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure></div><p id="3677cdaa-7398-4aa8-9a5f-d22dfb8a6132" class="">
+</p><ul id="2f0b7bb8-69db-47ba-9138-901a04ec9903" class="bulleted-list"><li style="list-style-type:disc"><strong>MED simplified</strong></li></ul><figure id="2050feba-8c55-42c9-9e90-039042545760"><a href="https://www.youtube.com/c/MEDSimplified" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">MEDSimplified</div><div class="bookmark-description">Stay tuned for more Free Medical and biology Video lectures.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/MEDSimplified</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTtZl0jD-keaToO26hajPQL4s75QNAP4LPtiUAM3g=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="5da27e2d-601a-4941-b02c-22ca60a49906" class="">
+</p><ul id="7c97ce93-bd29-4e41-ba08-4e6fbd805ebe" class="bulleted-list"><li style="list-style-type:disc"><strong>The Yoga Institute</strong></li></ul><figure id="c362cc1e-6094-4eb5-9f6d-cbf801f0c47e"><a href="https://www.youtube.com/c/theyogainstituteofficial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/theyogainstituteofficial</div></div></a></figure><p id="b7e3db3e-75c5-48c5-a966-b546460b6f90" class="">
+</p><ul id="14c6b72e-591c-4f52-8b88-1b75862450da" class="bulleted-list"><li style="list-style-type:disc"><strong>Free Med Education</strong></li></ul><figure id="882be001-ee63-4c67-8203-56057b5c8196"><a href="https://www.youtube.com/c/FreeMedEducation" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/FreeMedEducation</div></div></a></figure><p id="34f2de83-450f-4482-9842-5a81c34a655b" class="">
+</p><ul id="d704fd7d-3d5d-41fc-93c4-54c8a8803292" class="bulleted-list"><li style="list-style-type:disc"><strong>Meal Pot</strong></li></ul><figure id="7b24f960-e9fc-4970-a4f0-de2690624aeb"><a href="https://www.youtube.com/c/MealPot" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Meal Pot</div><div class="bookmark-description">Welcome to Meal Pot. MEAL POT is a cooking channel and is all about making normal ingredients into extra ordinary recipes in a innovative way and makes them taste delicious and can be cooked at home so easily by any one who watches meal pot channel.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/MealPot</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTitiVQpCghzqbXN3BnzHyghBQMVOPxyXKVY66UpIw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="5d1c23a4-cac3-4d58-86f5-2163e9fe191e" class="">
+</p><ul id="c7e2d7b4-ea25-4c96-b863-17bc2558c4e7" class="bulleted-list"><li style="list-style-type:disc"><strong>Dietician Aqsa </strong></li></ul><figure id="bb3351ae-f76a-4ba1-a712-b510db2a4ee3"><a href="https://www.youtube.com/c/DietitianAqsa" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dietitian Aqsa</div><div class="bookmark-description">Hello My lovelies hope you are doing well. On this channel you will get all kind of video related to beauty. life style and health. if you want to see my proper work you can visit my website. :) www. dietitianaqsa.com</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/DietitianAqsa</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTNBSPNGLJnlSxSklRXt7qHjg3dLFs0oOAwE-GvNg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="d2f856ee-fa1b-4dbb-b397-a42ffbfe8e94" class="">
+</p><ul id="3b681be2-df44-4c62-9b34-bfe04357f18c" class="bulleted-list"><li style="list-style-type:disc"><strong>HealthLine</strong></li></ul><figure id="5840f7d7-a374-4035-8a02-0734e22aa6f0"><a href="https://www.youtube.com/c/HealthlineMedia" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/HealthlineMedia</div></div></a></figure><p id="bbd1a6f4-153f-46a1-9242-5c8d4dcf7f47" class="">
+</p><ul id="10b45d9b-89bc-42e2-a51a-1b0b2f011504" class="bulleted-list"><li style="list-style-type:disc"><strong>Stay Fit with Ramya</strong></li></ul><figure id="3fe835fe-84ec-466d-b4bc-ed7e4c1c8d8b"><a href="https://www.youtube.com/c/StayfitwithRamya" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/StayfitwithRamya</div></div></a></figure><p id="424df245-fee9-4066-b2e0-2354adf58bef" class="">
+</p><ul id="2f353259-61b0-4283-b574-fbe37502b6be" class="bulleted-list"><li style="list-style-type:disc"><strong>SaySwag </strong></li></ul><figure id="79f2048b-6831-4cc9-9804-d194475c228b"><a href="https://www.youtube.com/c/SaySwag" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SaySwag</div></div></a></figure><p id="fe195d3d-5733-4df8-b8aa-099739ef042c" class="">
+</p><ul id="982ec19a-ea2a-417c-9cb8-48b5a66b05c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Jamal Khan Tv </strong></li></ul><figure id="966865bb-afcc-4b01-a35e-0ade63bd4cfb"><a href="https://www.youtube.com/channel/UC5Wp1Z98V7cAcsMBJ7KCIKg" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">JAMAL KHAN TV</div><div class="bookmark-description">Welcome to JAMAL KHAN TV For, . Sponsor . Promotion . Query . Product Review . Video editing . Thumbnail . Community post . Sort out and much more. Email or contact us on WhatsApp. +923439529855 (JAMAL TANOLI)</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UC5Wp1Z98V7cAcsMBJ7KCIKg</div></div><img src="https://yt3.ggpht.com/FhGIr5Ot2Acd4a3BzR1Bn6Kan4vHZSkEg6Dxgt-ioY3kH0cVmdlOY9t5dc6YKWxgGK1uWTqRcA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="ac9e28e6-8565-4518-843f-2241f75b6ab6" class="">
+</p><ul id="ed04c350-8ab6-4f7b-bd03-f6693c9239f7" class="bulleted-list"><li style="list-style-type:disc"><strong>Ramsha Sultan </strong></li></ul><figure id="a1290513-97d8-44f3-af35-e3945c7c3383"><a href="https://youtube.com/channel/UCwLrdtGgEakVnVi6rSS48Ow" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">https://youtube.com/channel/UCwLrdtGgEakVnVi6rSS48Ow</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/channel/UCwLrdtGgEakVnVi6rSS48Ow</div></div></a></figure><p id="574e729f-05e4-42d4-b136-3a14815bb46e" class="">
+</p><ul id="751bbb66-6e84-479d-b7f0-456b337fcf47" class="bulleted-list"><li style="list-style-type:disc"><strong>Mind Fresh Training</strong></li></ul><figure id="25ebf5ec-7d67-4607-bcdc-ed25bd0da404"><a href="https://youtube.com/c/MindFreshTraining" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mind Fresh Training</div><div class="bookmark-description">Share your videos with friends, family, and the world</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/MindFreshTraining</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLREvgJVoPz_-L1PvCDJtr3z3dQ3tCDGq6qHIFeRsg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="05818928-3a06-45a4-a644-052a67397429" class="">
+</p><h2 id="a10e1e71-fe67-4f18-ba24-d179ae4a7a01" class="">Playlist </h2><p id="1b77e53a-33f4-43cd-8816-6e72aa64ca92" class="">
+</p><ul id="6e729c58-0a8d-4b70-8c22-1325e31e06f9" class="bulleted-list"><li style="list-style-type:disc">Bright side </li></ul><figure id="8fc4cb62-b07e-44ff-89e7-ece09f37fca6"><a href="https://youtube.com/playlist?list=PLVNocu2A1SACBd14JWmbbroegJZMrYo1x" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Beauty Tips</div><div class="bookmark-description">How to always look younger and more attractive? How to make your skin smooth and healthy? How to get rid of acne and scars they leave behind? What beauty sec...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PLVNocu2A1SACBd14JWmbbroegJZMrYo1x</div></div><img src="https://i.ytimg.com/vi/6xv61L-KhPU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLBxYke18lHPFD1PGBGqiZbGuIoqwA&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="2be03573-c247-4300-81b6-ced660a4bd28" class="">
+</p><ul id="1976be4c-bad5-4028-89b4-aab8b1ff7936" class="bulleted-list"><li style="list-style-type:disc">Bestie </li></ul><figure id="e838b5ab-75fa-4621-991b-1bffea5f2555"><a href="https://youtube.com/playlist?list=PL_fl96m7OLQUyPsaETEHQphmlyiC1yrOZ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BEAUTY TIPS | BESTIE</div><div class="bookmark-description">Beauty tips that everyone should know in order to look and feel beautiful.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/playlist?list=PL_fl96m7OLQUyPsaETEHQphmlyiC1yrOZ</div></div><img src="https://i.ytimg.com/vi/UewBCHPSCP0/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLD4NxYqy_TMsEviJPSmWNEm6DyhkQ&amp;days_since_epoch=19059" class="bookmark-image"/></a></figure><p id="20bb427d-c4f8-4567-a5a6-b04df883da1e" class="">
+</p><p id="1b0ae947-2dbb-4d7b-8a75-26aca7ac72c7" class="">
+</p><figure id="46539699-7f03-4540-bd13-b6ae9f845eeb"><a href="https://youtube.com/health" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a264670a/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/health</div></div></a></figure><p id="42263533-78bf-4ac4-a111-2c3dce73ae43" class="">
+</p><p id="aef292fe-cb39-44b9-b4a0-26d18fae2dca" class="">
+</p><figure id="d28acb85-52a3-487e-8043-0aed880f8fae"><a href="https://youtube.com/c/1mgofficial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/a264670a/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/1mgofficial</div></div></a></figure><p id="df2e5595-ae1b-4ccc-b960-37a8ccc04b00" class="">
+</p><p id="d0a5c3d8-d1cc-49c2-a1b4-80f0c5b5ad27" class="">
+</p></div></article></body></html>

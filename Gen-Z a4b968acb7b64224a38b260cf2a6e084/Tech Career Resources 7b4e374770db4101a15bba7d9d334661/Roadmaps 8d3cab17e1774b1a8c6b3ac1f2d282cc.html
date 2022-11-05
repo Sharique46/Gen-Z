@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Roadmaps***</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8d3cab17-e177-4b1a-8c6b-3ac1f2d282cc" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🗾</span></div><h1 class="page-title">Roadmaps***</h1></header><div class="page-body"><figure id="63ecf522-a2ac-4a34-b5cc-8110e7f73503"><div class="source">https://github.com/orsanawwad/awesome-roadmaps</div></figure><figure id="8819900f-c5fd-4fdc-92e3-d3a3a0d1d079"><div class="source">https://github.com/kamranahmedse/developer-roadmap</div></figure><figure id="3c412b86-d390-4d84-809a-6577f66914ca"><div class="block-color-red source"><a href="Roadmaps%208d3cab17e1774b1a8c6b3ac1f2d282cc/Placement_Guide.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a541fdc-03f7-420c-8690-362b56a0c70d/Placement_Guide.pdf</a></div></figure><p id="3eedccf1-04e7-4188-89f5-8207f7ebb26f" class="">
+</p><figure id="cc912b67-ce02-4414-b071-e6aa4e35c359"><a href="https://awesomelists.top/#/liuchong/awesome-roadmaps" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/liuchong/awesome-roadmaps</div></div></a></figure><p id="aa6923d3-910e-4058-95a3-4d020c93c620" class="">
+</p><figure id="4abc81aa-91d5-4df1-807c-301768bbe2a3"><a href="https://roadmap.sh/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Developer Roadmaps</div><div class="bookmark-description">We now have a YouTube Channel. Subscribe for the video content. roadmap.sh is a community effort to create roadmaps, guides and other educational content to help guide the developers in picking up the path and guide their learnings. We also have a YouTube channel which we hope you are going to love.</div></div><div class="bookmark-href"><img src="https://roadmap.sh/manifest/favicon.ico" class="icon bookmark-icon"/>https://roadmap.sh/</div></div><img src="https://roadmap.sh/brand-square.png" class="bookmark-image"/></a></figure><p id="3519f5b3-d3a6-4ff5-8218-c77b74a5bb62" class="">
+</p><figure id="28b98552-3b63-4c21-9d95-8ad0078d921f"><a href="https://learntocodewith.me/posts/become-a-software-engineer/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">17 Steps to Becoming a Software Engineer (Without a CS Degree)</div><div class="bookmark-description">Are you interested in learning how to become a software engineer, but don&#x27;t have years to dedicate to studying CS at university? Well, good news: you can absolutely become a software developer without a college degree!</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/become-a-software-engineer/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2020/03/How-to-become-a-software-engineer.png" class="bookmark-image"/></a></figure><p id="71ad007d-0a7e-43f0-975b-ce29d1725a2a" class="">
+</p><figure id="d3813e96-9954-4e0c-b277-b2123dd79807"><a href="https://360digitmg.com/mindmap" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Professional Online Data Science, Artificial Intelligence, PMP, IOT, Courses - 360DigiTMG</div><div class="bookmark-description">Skyrocket Your Career With 360DigiTMG Online/Classroom Courses like Data Science, AI, Machine Learning, Digital Marketing, Domain Analytics Programs, PMP and Many More. Top Notch Rich Industry Faculty from IIT, IIM and ISB.</div></div><div class="bookmark-href"><img src="https://360digitmg.com/assets/img/favicon.png" class="icon bookmark-icon"/>https://360digitmg.com/mindmap</div></div><img src="https://360digit.b-cdn.net/assets/img/logo/logo.png" class="bookmark-image"/></a></figure><p id="83a5244a-816d-4a50-822a-b1a3a40690ab" class="">
+</p><figure id="b0ebafa1-9ef3-4751-9052-4abd992eca50"><a href="https://courses.codestackr.com/view/courses/2022-web-dev-roadmap" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">codeSTACKr</div><div class="bookmark-description">Let me guide you on your web development learning journey. I have listed a ton of resources here for you. Go through these in order until you get to the Optional Technologies section. This should give you a great start!</div></div><div class="bookmark-href"><img src="https://d31ezp3r8jwmks.cloudfront.net/ZZ4vcCqnqF33rtzRJro3GPMM" class="icon bookmark-icon"/>https://courses.codestackr.com/view/courses/2022-web-dev-roadmap</div></div></a></figure><p id="b2bcf0d7-6843-4939-9b02-13ddb4e65fa4" class="">
+</p><figure id="964061b6-0e05-414b-83e1-df8e8d6f5bca"><div class="source"><a href="https://whimsical.com/web-development-roadmap-Hqgk6FpFEpcvB7s3ZqGnxV">https://whimsical.com/web-development-roadmap-Hqgk6FpFEpcvB7s3ZqGnxV</a></div><figcaption>Web development roadmap </figcaption></figure><p id="904c6c42-7cd4-4928-9968-10b08e1df04e" class="">
+</p><figure id="c1e22168-cebd-4fa7-a2c7-4574efed6e1f"><a href="https://whimsical.com/roadmap-from-1st-to-8th-semester-XkmVWQaGp8DdzyVCo5fc7s" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Roadmap From 1st to 8th semester</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-mind-map-v2-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/roadmap-from-1st-to-8th-semester-XkmVWQaGp8DdzyVCo5fc7s</div></div><img src="https://imgr.whimsical.com/thumbnails/XkmVWQaGp8DdzyVCo5fc7s/Qj9uv4XztR6gmvByQnLcq" class="bookmark-image"/></a></figure><p id="af576d56-a7de-484d-ac5c-be690a965abc" class="">
+</p><figure id="8487ef40-091e-488b-a519-b7adcf6fef82"><a href="https://whimsical.com/roadmap-for-everyone-EBVkC7PcS82xGrZcBwUU1k" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Roadmap for Everyone!</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-mind-map-v2-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/roadmap-for-everyone-EBVkC7PcS82xGrZcBwUU1k</div></div><img src="https://imgr.whimsical.com/thumbnails/EBVkC7PcS82xGrZcBwUU1k/Uk8GhZezP7gefG1YdA9Lnv" class="bookmark-image"/></a></figure><p id="45413a08-782f-4df8-b4cf-7201f53cc007" class="">
+</p><figure id="02cbe027-2067-4000-8017-4140e90d40e6"><a href="https://whimsical.com/placement-roadmap-for-tier-3-colleges-5kofnHrA71pvye2WmbMDMm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Placement RoadMap For Tier-3 Colleges</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-board-v2-dark-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/placement-roadmap-for-tier-3-colleges-5kofnHrA71pvye2WmbMDMm</div></div></a></figure><p id="e1e25eca-014c-4286-a9d1-93dcb8347de3" class="">
+</p><figure id="ff9d4671-eb74-4adb-847b-dcf6c8042e73"><a href="https://whimsical.com/4th-year-roadmap-to-dream-placement-WB2HTZixtsohXoDcvr6Me7" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">[4th year] Roadmap to Dream Placement</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-mind-map-v2-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/4th-year-roadmap-to-dream-placement-WB2HTZixtsohXoDcvr6Me7</div></div><img src="https://imgr.whimsical.com/thumbnails/WB2HTZixtsohXoDcvr6Me7/WGnWLCaN7i9ysaDGurPWob" class="bookmark-image"/></a></figure><p id="599dae68-c562-48df-a6f0-2bd76a83cc7e" class="">
+</p><figure id="73721c19-febb-4672-9a87-deaa6e138ae1"><a href="https://takeuforward.org/interviews/most-trusted-90-days-roadmap-to-placement-guaranteed/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Most trusted 90 days roadmap to placement - Guaranteed</div><div class="bookmark-description">Detailed solution for Most trusted 90 days roadmap to placement - Guaranteed - Most trusted 90 days roadmap to placement - Guaranteed This roadmap is aimed at helping entry-level software engineering jobs aspirants at top tech product-based companies and startups. Note: Please watch this video in order to understand in depth what to do precisely.</div></div><div class="bookmark-href"><img src="https://takeuforward.org/wp-content/uploads/2021/09/cropped-logo_circle_red-192x192.gif" class="icon bookmark-icon"/>https://takeuforward.org/interviews/most-trusted-90-days-roadmap-to-placement-guaranteed/</div></div><img src="https://takeuforward.org/wp-content/uploads/2021/09/wallpaperYoutube-2.png" class="bookmark-image"/></a></figure><p id="6b93483a-7cc1-4f28-a2cd-b0af46e17292" class="">
+</p><figure id="854fbf50-e477-446d-b814-fe7423fa4da5"><a href="https://whimsical.com/dsa-in-90-days-EmPkf5utoFGRMnRqJjM6YV" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DSA in 90 Days</div></div><div class="bookmark-href"><img src="https://whimsical.com/favicons/wx-whimsical-mind-map-v2-purple@2x.png" class="icon bookmark-icon"/>https://whimsical.com/dsa-in-90-days-EmPkf5utoFGRMnRqJjM6YV</div></div><img src="https://imgr.whimsical.com/thumbnails/EmPkf5utoFGRMnRqJjM6YV/L4TjsujzPMEzyhDaNtgmAd" class="bookmark-image"/></a></figure><p id="8ea48dab-8c50-4e62-901b-d3bdf2cab31c" class="">
+</p><figure id="b45b0085-90c8-4f39-8f06-7378ed92725b"><a href="https://dynalist.io/d/nXXVAcgAsj62GW-XaIiJS3o9" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Roadmap For Practicing Data Structures And Algorithms - Dynalist</div><div class="bookmark-description">Dynalist lets you organize your ideas and tasks in simple lists. It&#x27;s powerful, yet easy to use. Try the live demo now, no need to sign up.</div></div><div class="bookmark-href"><img src="https://dynalist.io/assets/icon/favicon.ico" class="icon bookmark-icon"/>https://dynalist.io/d/nXXVAcgAsj62GW-XaIiJS3o9</div></div></a></figure><p id="993ae912-081f-4af7-927b-af1d2439f64e" class="">
+</p><figure id="7d32aebd-7f89-43fb-a116-022bc1788faa"><a href="https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12#how" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Full Stack Developer&#x27;s Roadmap 🗺</div><div class="bookmark-description">It&#x27;s easy to focus on the front end of web development, but what about the back end? Learning about the back end improves your front end skills. Here are some resources for full stack development that you can save for later.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lrmEcD2H--/c_limit,f_png,fl_progressive,q_80,w_128/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" class="icon bookmark-icon"/>https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12#how</div></div><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mneMMN4t--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/s7cj5qsge61za29lvn4s.jpg" class="bookmark-image"/></a></figure><p id="6cfe248a-06dd-462f-8be3-02b980468502" class="">
+</p><figure id="1fad22bb-3b4a-4f6d-b397-ede95d205e92"><a href="https://www.freecodecamp.org/news/how-to-learn-web-dev-in-2021-roadmap/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Learn Web Development in 2021 - a Web Developer Roadmap</div><div class="bookmark-description">There are some great roadmaps for web developers out there. But some make you solve a &quot;puzzle&quot; before even getting started, as there are multiple choices that you have to make. When I started to learn Web Development, I wished that I could find an experienced developer who would</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/how-to-learn-web-dev-in-2021-roadmap/</div></div><img src="https://www.freecodecamp.org/news/content/images/2020/12/maxresdefault--3-.jpg" class="bookmark-image"/></a></figure><p id="95f39061-0f16-423f-8078-0323bbdf8fe3" class="">
+</p><figure id="24775cec-2b6d-44a8-8377-290ce11b0b88"><a href="https://technicalsapien.com/learn-and-earn-roadmaps/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn &amp; Earn Roadmaps - Technical Sapien</div><div class="bookmark-description">Get access to the best to learn &amp; earn roadmaps where you can learn a core skill for completely free. Later on, you will be taught to monetize it.</div></div><div class="bookmark-href"><img src="https://i0.wp.com/technicalsapien.com/wp-content/uploads/2022/05/cropped-Meta-Prime-1.png?fit=187%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://technicalsapien.com/learn-and-earn-roadmaps/</div></div><img src="https://i1.wp.com/technicalsapien.com/wp-content/uploads/2021/08/money-bank-deposit-549161.jpg?fit=1280%2C853&amp;ssl=1" class="bookmark-image"/></a></figure><p id="7f51b09e-d047-423d-b8b5-35f178d551ef" class="">
+</p><p id="94f1796b-dbad-4445-be87-8f65c5a07260" class="">
+</p><p id="985d4803-7c32-487a-93c3-4e520f50929e" class="">
+</p><p id="6dee9c69-1b76-4903-8424-8b2236fe84ae" class="">
+</p></div></article></body></html>

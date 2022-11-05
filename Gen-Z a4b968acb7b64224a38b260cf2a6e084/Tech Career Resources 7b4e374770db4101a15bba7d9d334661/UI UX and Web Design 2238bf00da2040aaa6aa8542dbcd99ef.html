@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>UI/UX and Web Design</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2238bf00-da20-40aa-a6aa-8542dbcd99ef" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="UI%20UX%20and%20Web%20Design%202238bf00da2040aaa6aa8542dbcd99ef/images_ui_and_ux.png"/></div><h1 class="page-title">UI/UX and Web Design</h1></header><div class="page-body"><p id="b9282927-37bc-4aae-b218-e2f30675ba5b" class="">
+</p><figure id="6f05f3c5-6630-44e7-a2ba-c34148d07640"><div class="source">https://github.com/togiberlin/ui-ux-designer-roadmap</div></figure><p id="c4993542-1c36-44bd-ac5b-f2e5082a88f0" class="">
+</p><figure id="4b508379-d451-4362-b786-c1b32f5d3e43"><div class="source">https://github.com/gmkhussain/uiux</div></figure><p id="d109c654-4741-489d-bd54-b9d0a612c756" class="">
+</p><p id="c63e610f-2168-4447-b160-9c4ae42106d7" class="">
+</p><figure id="e7c17e90-7a59-4363-870b-511ef29887df"><a href="https://hackr.io/design" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Find the best online Design courses and Tutorials - Hackr.io</div><div class="bookmark-description">Google search shows you hundreds of Design courses/tutorials, but Hackr.io tells you which is the best one. Find the best online courses &amp;amp; tutorials recommended by the Design community. Pick the most upvoted tutorials as per your learning style: video-based, book, free, paid, for beginners, advanced, etc.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/design</div></div><img src="https://hackr.io/sites/design/og_image" class="bookmark-image"/></a></figure><figure id="4996965a-428e-494b-8768-95bd2e2540dc"><a href="https://design.google/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Design</div><div class="bookmark-description">For this post, we handed the keyboard over to UX Director and Google Design team lead Margaret Lee. Earlier this month, I shared my story on navigating the mismatch between personal upbringing and professional roles. What I didn&#x27;t share was the extent of the bias, sexism, and racism I&#x27;ve encountered throughout my life.</div></div><div class="bookmark-href"><img src="https://design.google/static/images/GD17_Favicon_72.png" class="icon bookmark-icon"/>https://design.google/</div></div><img src="https://design.google/images/generic-share.jpg" class="bookmark-image"/></a></figure><p id="a4dec939-5638-4f0f-b7e3-2906414e0c50" class="">
+</p><figure id="10d4a832-bd78-4f81-b48f-1cde487b4288"><a href="https://www.coursera.org/professional-certificates/google-ux-design" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google UX Design</div><div class="bookmark-description">This is your path to a career in UX design. In this program, you&#x27;ll learn in-demand skills that will have you job-ready in less than 6 months. No degree or experience required. Prepare for a career in the high-growth field of UX design, no experience or degree required.</div></div><div class="bookmark-href"><img src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-32x32.png" class="icon bookmark-icon"/>https://www.coursera.org/professional-certificates/google-ux-design</div></div><img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/XDP/XDP~SPECIALIZATION!~google-ux-design/XDP~SPECIALIZATION!~google-ux-design.jpeg" class="bookmark-image"/></a></figure><p id="46e59e98-c30a-4602-9f8d-021d7a828bdf" class="">
+</p><figure id="a7e3c02b-6ce1-405d-9681-fcc1f25cc8ae"><a href="https://learntocodewith.me/reviews/web-design-courses/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">31 Web Design Courses for Aspiring Web Designers</div><div class="bookmark-description">Looking for a tech job that doesn&#x27;t require you to code every day (or even at all)? Want to learn enough skills to land your first web design clients and start your career as a freelancer? Trying to transition from a different design career into something more tech-oriented?</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/reviews/web-design-courses/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2020/12/Where-to-learn-web-design-online.png" class="bookmark-image"/></a></figure><p id="f7ee839e-e841-48f8-b792-1bc04e084f31" class="">
+</p><figure id="782e3c53-6fa1-4e6a-91a8-0a7cb1a69ce3"><a href="https://medium.com/omarelgabrys-blog/ux-a-quick-glance-about-the-5-elements-of-user-experience-part-2-a0da8798cd52" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">UX - A quick glance at The 5 Elements of User Experience (Part 2)</div><div class="bookmark-description">When you experience a website, maybe to buy something, or do anything, you make some decisions while surfing this website. So, If we study the elements of that experience (considering all actions users can make), we can begin to understand how those decisions are made.</div></div><div class="bookmark-href">https://medium.com/omarelgabrys-blog/ux-a-quick-glance-about-the-5-elements-of-user-experience-part-2-a0da8798cd52</div></div><img src="https://miro.medium.com/max/754/1*PKQql-pQe9eVnqJlyrwWdQ.png" class="bookmark-image"/></a></figure><p id="3f5874af-d5f4-498e-9c93-c6b319107c81" class="">
+</p><figure id="32cac8bd-6ebd-4d75-8e0f-a2925ceddf28"><a href="https://dribbble.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Dribbble - Discover the World&#x27;s Top Designers &amp; Creative Professionals</div><div class="bookmark-description">Find Top Designers &amp; Creative Professionals on Dribbble. We are where designers gain inspiration, feedback, community, and jobs. Your best resource to discover and connect with designers worldwide.</div></div><div class="bookmark-href"><img src="https://cdn.dribbble.com/assets/dribbble-ball-192-23ecbdf987832231e87c642bb25de821af1ba6734a626c8c259a20a0ca51a247.png" class="icon bookmark-icon"/>https://dribbble.com/</div></div><img src="https://cdn.dribbble.com/userupload/3237188/file/original-1625e903c69bf106c5459db32d62b34c.jpg?resize=400x0" class="bookmark-image"/></a></figure><p id="1477a3b2-bdde-4f9d-85db-9585dfc78988" class="">
+</p><figure id="c010ecb1-b12a-474f-8124-d9c4742eb11a"><a href="https://speckyboy.com/free-web-mobile-figma-ui-templates/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">50 Free Web &amp; Mobile UI Templates for Figma</div><div class="bookmark-description">Designing an effective user interface is not an easy task. However, it becomes much easier when you have the right tools at your disposal. The first step is to find a tool that you&#x27;ll enjoy working with and that has all the features you need in UI design software.</div></div><div class="bookmark-href"><img src="https://speckyboy.com/wp-content/themes/speckyboy-3.9.9/favicon.ico" class="icon bookmark-icon"/>https://speckyboy.com/free-web-mobile-figma-ui-templates/</div></div><img src="https://speckyboy.com/wp-content/uploads/2022/01/figma-template-thumb.jpg" class="bookmark-image"/></a></figure><p id="bdbde8eb-9a21-46e5-b1d9-4bd14a98a305" class="">
+</p><figure id="792bae1e-34af-49dc-9720-cb5bf3fbc251"><a href="https://webdesign.tutsplus.com/articles/the-best-free-figma-resources-templates-icons-ui-kits-and-more--cms-32053" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Best Free Figma Resources: Templates, Icons, UI Kits, and More</div><div class="bookmark-description">Figma came out as a strong new player in 2016, allowing design and software development teams to collaborate on any platform. This browser-based application eliminated problems such as updating software, syncing screens, and waiting for a team member to upload the latest design. Real-time collaboration is where Figma shines most.</div></div><div class="bookmark-href"><img src="https://static.tutsplus.com/packs/media/images/favicon-9279542df62646e82ddb087eab02c613.png" class="icon bookmark-icon"/>https://webdesign.tutsplus.com/articles/the-best-free-figma-resources-templates-icons-ui-kits-and-more--cms-32053</div></div><img src="https://cms-assets.tutsplus.com/uploads/users/30/posts/32053/preview_image/figma_pre.png" class="bookmark-image"/></a></figure><p id="d42cd51a-3207-4f50-b544-f7aff8735268" class="">
+</p><figure id="90193c54-8f62-4de0-abcc-6a6ca47537de"><a href="https://webdesign.tutsplus.com/articles/figma-ui-kits-for-designers--cms-35706" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">28 Figma UI Kits for Designers</div><div class="bookmark-description">It&#x27;s easy to see why both web and app designers have fallen in love with Figma. The web-based interface design tool lets you build, share and collaborate on interactive prototypes for your projects. It also features plenty of ways to help you jumpstart the process.</div></div><div class="bookmark-href"><img src="https://static.tutsplus.com/packs/media/images/favicon-9279542df62646e82ddb087eab02c613.png" class="icon bookmark-icon"/>https://webdesign.tutsplus.com/articles/figma-ui-kits-for-designers--cms-35706</div></div><img src="https://cms-assets.tutsplus.com/uploads/users/30/posts/35706/preview_image/figma-roundup.jpg" class="bookmark-image"/></a></figure><p id="975b5898-b326-4173-88f8-7b6a0d215926" class="">
+</p><figure id="7ad64e5a-fe65-4640-9bd5-a04f45277d3c"><a href="https://dribbble.com/courses/ui-design" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn UI Design from Dribbble&#x27;s Experts | Dribbble</div><div class="bookmark-description">Dribbble certified courses provide students with the following opportunities: Interactive student learning Every week, you will interact with your classmates, receive exercises for feedback, and build on each other&#x27;s knowledge in introductory design concepts. Exclusive Student Work You can search for and connect with other students using the student Slack network!</div></div><div class="bookmark-href"><img src="https://cdn.dribbble.com/assets/dribbble-ball-192-23ecbdf987832231e87c642bb25de821af1ba6734a626c8c259a20a0ca51a247.png" class="icon bookmark-icon"/>https://dribbble.com/courses/ui-design</div></div></a></figure><p id="b1504e44-a45b-4684-902f-17f5e21c18ed" class="">
+</p><figure id="edcfbcac-1095-4c7a-b161-f36220d2c465"><a href="http://www.uxforthemasses.com/resources/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Resources - UXM</div><div class="bookmark-description">Example UX documents and deliverables Need to produce a UX document? Get inspired by these example UX documents and deliverables. Examples cover everything from personas and empathy maps to wireframes and experience maps. Free UX tools There might be no such thing as a free lunch but thanks to the wonders of Open Source software, [...]</div></div><div class="bookmark-href"><img src="https://www.uxforthemasses.com/wp-content/uploads/2017/07/UXM-favicon-32x32.png" class="icon bookmark-icon"/>http://www.uxforthemasses.com/resources/</div></div></a></figure><figure id="e863f9b1-0419-4a32-bfca-47e028596dbd"><a href="https://www.instagram.com/uxuimaster/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">UXUI Master (@uxuimaster) * Instagram photos and videos</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico" class="icon bookmark-icon"/>https://www.instagram.com/uxuimaster/</div></div></a></figure><p id="98f6bc87-94bf-434a-8b80-1f2c033d648d" class="">
+</p><figure id="d38e753a-ab85-46c4-a147-7155ec3a6c29"><a href="https://www.workshopper.com/post/free-ux-ui-courses" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Best Courses to Learn UX/UI for Free (Updated for 2022)</div><div class="bookmark-description">Starting out as a UX/UI designer and looking for ways to learn on a budget? Here&#x27;re our top FREE UX/UI design online course that will help you level up! Are you starting out as a UX/UI designer and looking for ways to expand your knowledge without breaking the bank?</div></div><div class="bookmark-href"><img src="https://uploads-ssl.webflow.com/5eb2e1abb9c843ee7bdbfe96/5ef20133ed9bf463d1206e51_favicon-32-w.png" class="icon bookmark-icon"/>https://www.workshopper.com/post/free-ux-ui-courses</div></div><img src="https://uploads-ssl.webflow.com/5eb3efbd6a6e84b12ef07786/60b9cffa48c5af04ac60ccf5_FreeUiUx-Workshopper-Thumb.png" class="bookmark-image"/></a></figure><p id="0c2ae10e-0f7f-448a-b18e-9bf3690e39e0" class="">
+</p><figure id="2533ce70-5027-40ef-8643-12653c086047"><a href="https://butteracademy.com/free-ux-design-courses" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free UX Design Courses (2021 Guide)</div><div class="bookmark-description">Looking to learn UX Design on a budget? Here&#x27;s a list of the top free UX Design courses that you can take online. Learn more at ButterAcademy.com</div></div><div class="bookmark-href"><img src="https://butteracademy.com/wp-content/uploads/2020/01/butter-academy-favicon.png" class="icon bookmark-icon"/>https://butteracademy.com/free-ux-design-courses</div></div><img src="https://butteracademy.com/wp-content/uploads/2020/02/free-ux-design-courses.jpg" class="bookmark-image"/></a></figure><p id="c5b6f782-f2e9-4316-9dbb-f0b2840ac25f" class="">
+</p><figure id="4bee8bb5-ff26-4076-a44e-f41fad62bc21"><a href="https://uxplanet.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">UX Planet</div><div class="bookmark-description">UX Planet is a one-stop resource for everything related to user experience.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" class="icon bookmark-icon"/>https://uxplanet.org/</div></div><img src="https://cdn-images-1.medium.com/max/1200/1*A0FnBy5FBoVQC02SZXLXPg.png" class="bookmark-image"/></a></figure><p id="5e3cc83b-fd6a-46ce-9376-a8142891ae39" class="">
+</p><figure id="efe98427-b1d2-4aef-808b-8301812f227b"><a href="https://www.toptal.com/designers/blog" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Digital Design Blog &amp; Design Tutorials</div><div class="bookmark-description">The Toptal Design Blog is a hub for advanced design studies by professional designers in the Toptal network on all facets of digital design, ranging from detailed design tutorials to in-depth coverage of new design trends, techniques, and technologies.</div></div><div class="bookmark-href"><img src="https://bs-assets.toptal.io/blackfish-assets/public/base/images/favicons/toptal-blog-favicon32x32_c2c2ba.png" class="icon bookmark-icon"/>https://www.toptal.com/designers/blog</div></div><img src="https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/832141/og-image-blog-des-a9dadd4138fdf2d807009de978a778f2-9882e3585454bca06bd731e0af338cad.png" class="bookmark-image"/></a></figure><p id="0b4c9405-d70c-4628-b730-a716aa3d0b91" class="">
+</p><figure id="a9ca7424-2cf8-410f-8bf9-63f3f8a092cd"><a href="https://nextgenerationtechnologies.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Website Development And Design Company - Next Generation Technologies</div><div class="bookmark-description">Next Generation Technologies is a full-service website design, web development, and e-commerce specialized company. We work on leading web development platforms. We help to set up, develop, design, customize, Open Source Customization and Digital Marketing .migrate and support website &amp; online store.</div></div><div class="bookmark-href"><img src="https://nextgenerationtechnologies.in/themes/front/images/favicon.ico?a=125" class="icon bookmark-icon"/>https://nextgenerationtechnologies.in/</div></div><img src="https://nextgenerationtechnologies.in/themes/front/images/logo.png" class="bookmark-image"/></a></figure><p id="9552d470-6eb9-4520-a81e-15c1e2344b8c" class="">
+</p><figure id="c02a004e-1681-4f7d-ad1a-865d6148f5c1"><a href="https://www.codeclouds.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The #1 CRM, Web Design and PHP Development Company | CodeClouds</div><div class="bookmark-description">At CodeClouds, we deliver high-quality and efficient web solutions for all kinds of businesses. Whether you need an expert for web development, mobile app development, ecommerce or creative design; we have a team of professionals who handle your project with outstanding dedication and professionalism.</div></div><div class="bookmark-href"><img src="https://www.codeclouds.com/wp-content/themes/CodeClouds/images/favicon.ico" class="icon bookmark-icon"/>https://www.codeclouds.com/</div></div><img src="https://www.codeclouds.com/wp-content/uploads/2019/03/Home.jpg" class="bookmark-image"/></a></figure><p id="ed67e316-4c89-46b9-8bda-efe55e140302" class="">
+</p><figure id="c1ac2034-75f8-4262-aa36-f0992beeb7dd"><a href="https://www.elegantthemes.com/blog/design/web-design-blogs-worth-following" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">35 Web Design Blogs Worth Following</div><div class="bookmark-description">Inspiration comes in many forms, and professional development never ends. With that in mind, we&#x27;ve put together a massive list of web design blogs that can keep your brain fed for the entire year. And don&#x27;t worry - you won&#x27;t find any duds on this list. We respect your time and feel like...</div></div><div class="bookmark-href"><img src="https://www.elegantthemes.com/images/favicon/favicon-et-192.png" class="icon bookmark-icon"/>https://www.elegantthemes.com/blog/design/web-design-blogs-worth-following</div></div><img src="https://www.elegantthemes.com/blog/wp-content/uploads/2021/04/web-design-blogs-to-follow-featured-image.jpg" class="bookmark-image"/></a></figure><p id="c36dab74-1d24-4f7c-8278-2371880b3de8" class="">
+</p><figure id="ca96bbfd-aafa-49ed-b5a5-0f325e3774ef"><a href="https://dev.to/rezaulkarim/a-huge-list-of-web-design-tools-40ab" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">A huge list of web design tools</div><div class="bookmark-description">This is a very big list of Web Design tools for designers. If you want improve your skills and be a productive designer, hope these resources help a lot. Maybe, some resources you known already and some you find here that you don&#x27;t know before.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lrmEcD2H--/c_limit,f_png,fl_progressive,q_80,w_128/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" class="icon bookmark-icon"/>https://dev.to/rezaulkarim/a-huge-list-of-web-design-tools-40ab</div></div><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---_RW-0CA--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/boa4eoxq606mpu9cqqnc.jpg" class="bookmark-image"/></a></figure><p id="588f3b8a-1a68-4a1d-be77-deba7da0ea6c" class="">
+</p><figure id="9f093543-61e9-4bf2-a37b-9372a2d83f31"><a href="https://www.webdesignerdepot.com/2021/02/improve-web-design-skills-in-2021/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">12 Tips to Improve Your Web Design Skills in 2021 | Webdesigner Depot</div><div class="bookmark-description">There are many reasons you might be wanting to improve your design skills this year. Perhaps you have extra time on your hands and want to put it to good use. Or maybe you&#x27;re new to web design and finding that there&#x27;s a lot you still don&#x27;t know how to do.</div></div><div class="bookmark-href"><img src="https://www.webdesignerdepot.com/cdn-origin/uploads/2017/12/cropped-favicon-192x192.png" class="icon bookmark-icon"/>https://www.webdesignerdepot.com/2021/02/improve-web-design-skills-in-2021/</div></div><img src="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/01/featured_tips-scaled.jpg" class="bookmark-image"/></a></figure><p id="42dda0de-63a4-4b67-aaeb-8fee71b24b9b" class="">
+</p><figure id="89da1b3e-686c-4eb8-a675-eafccf061201"><a href="https://webflow.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Webflow: Create a custom website | No-code website builder</div><div class="bookmark-description">Create professional, custom websites in a completely visual canvas with no code. Learn how to create a website by trying Webflow for free!</div></div><div class="bookmark-href"><img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d55951e4de4fb4722554d96_default_favicon.png" class="icon bookmark-icon"/>https://webflow.com/</div></div><img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/619553e0e507dd1017564b68_Opengraph.jpg" class="bookmark-image"/></a></figure><p id="ad0cf264-7711-497c-9b00-d61cc13adc65" class="">
+</p><figure id="7e4ef029-d1fd-4feb-8d90-c81876e06ffd"><a href="https://university.webflow.com/courses/webflow-101-crash-course" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://university.webflow.com/courses/webflow-101-crash-course</div></div></a></figure><p id="7ef05c00-339c-4529-8f32-b2f0890210a5" class="">
+</p><p id="52dcb282-c6fb-4d52-8ac8-5367f6d217bb" class="">
+</p><figure id="3315e110-525d-4186-b674-383b26246188"><a href="https://bestfirms.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ranking the Best Marketing &amp; Web Design Companies in the World</div><div class="bookmark-description">Best Firms is dedicated to finding and reviewing the best Marketing and Web Design Companies in the World.</div></div><div class="bookmark-href"><img src="https://bestfirms.com/wp-content/uploads/2018/02/bf-favicon-300x300.png" class="icon bookmark-icon"/>https://bestfirms.com/</div></div></a></figure><p id="a2f05944-eb6e-4b65-b3c5-0845007e8a33" class="">
+</p><figure id="a44133b1-a9f2-4b56-9954-414fc15fd972"><a href="https://www.siteinspire.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Siteinspire - Web Design Inspiration</div><div class="bookmark-description">A showcase of the best web design inspiration, featuring over 7,000 websites and profiles of the digital agencies, designers and developers who made them.</div></div><div class="bookmark-href"><img src="https://www.siteinspire.com/favicon.png" class="icon bookmark-icon"/>https://www.siteinspire.com/</div></div><img src="https://d27yqot8savz5t.cloudfront.net/screengrabs/images/000/015/520/medium.jpg" class="bookmark-image"/></a></figure><p id="dce61d5d-1690-48fb-84c8-f184553f59cc" class="">
+</p><figure id="dfb65f58-ba7c-48bc-94bd-0e2f5859258d"><a href="https://youtu.be/keKQxadqnoA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BEST UI/UX Design Guide 2022🔥 | How To Learn UI/UX Design Online?</div><div class="bookmark-description">Vaishnavi Dwivedi is a full-stack developer with professional experience in building mobile applications using Flutter/Dart, React, MongoDB, and Node.js. Her...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/79e611f1/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/keKQxadqnoA</div></div><img src="https://i.ytimg.com/vi/keKQxadqnoA/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="d5655991-2346-44d1-95d8-37c969b4dfdb" class="">
+</p><figure id="1c115a5c-735d-4902-89f7-d05fe16fcd3e"><a href="https://www.youtube.com/watch?v=kbZejnPXyLM" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Figma UX Design UI Essentials Course</div><div class="bookmark-description">Access All 29 of My Courses for $12 per Month: https://www.BYOL.com/FIGFCFree Exercise Files: https://www.BYOL.com/FIGEXGet the Free Cheatsheet: https://bit....</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/79e611f1/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=kbZejnPXyLM</div></div><img src="https://i.ytimg.com/vi/kbZejnPXyLM/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="a252e1fb-ac11-40f2-aa7c-426168fd7c49" class="">
+</p><figure id="9bccdac1-fa34-4b3c-879b-d11825a5022f"><a href="https://youtu.be/8dFsA9USiPQ" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How She Became Ui/Ux Designer (Flipkart) in just 3months🚀</div><div class="bookmark-description">FREE Relevel Registration Link - https://relvl.co/gbnuJob Details Page Link-Business Development:upGrad(BD) https://relvl.co/8rrUrban Company(BD) https://rel...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/79e611f1/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/8dFsA9USiPQ</div></div><img src="https://i.ytimg.com/vi/8dFsA9USiPQ/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="6f3832ca-7216-4c91-bf6a-61da4a73eb64" class="">
+</p><figure id="e2e66acb-e4ad-48d4-ae86-80da554cc35b"><a href="https://youtu.be/T3cTZ6e-1Ko" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Salary growth of Indian Product UX/UI Designer | How much do I earn</div><div class="bookmark-description">Here is my salary growth and progression over the last 6 years, working as a Product Designer in the Indian Startup ecosystem. Here is how much I earn. Pleas...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/79e611f1/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/T3cTZ6e-1Ko</div></div><img src="https://i.ytimg.com/vi/T3cTZ6e-1Ko/hqdefault.jpg" class="bookmark-image"/></a></figure></div></article></body></html>

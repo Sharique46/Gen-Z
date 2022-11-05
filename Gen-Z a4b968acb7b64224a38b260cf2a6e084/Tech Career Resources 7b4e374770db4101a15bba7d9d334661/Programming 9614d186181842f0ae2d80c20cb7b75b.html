@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Programming****</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9614d186-1818-42f0-ae2d-80c20cb7b75b" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💻</span></div><h1 class="page-title">Programming****</h1></header><div class="page-body"><p id="fd716f73-0ef8-48cf-9c68-62d205c0ee1d" class="">
+</p><figure id="bdc9af2f-d986-4a3f-b196-e1722c5219a1" class="link-to-page"><a href="Programming%209614d186181842f0ae2d80c20cb7b75b/IG%20Accounts%20to%20Follow%20bdc9af2fd9864a3fb196e1722c5219a1.html"><img class="icon" src="Programming%209614d186181842f0ae2d80c20cb7b75b/IG%20Accounts%20to%20Follow%20bdc9af2fd9864a3fb196e1722c5219a1/insta.jpg"/>IG Accounts to Follow</a></figure><figure id="ed071880-1267-45a5-a9c6-de38309822ba" class="link-to-page"><a href="Programming%209614d186181842f0ae2d80c20cb7b75b/Coding%20ed071880126745a5a9c6de38309822ba.html"><span class="icon">🧿</span>Coding</a></figure><figure id="b84b3287-ceb9-458e-9d22-4b54145e148f" class="link-to-page"><a href="Programming%209614d186181842f0ae2d80c20cb7b75b/Python%20b84b3287ceb9458e9d224b54145e148f.html"><img class="icon" src="Programming%209614d186181842f0ae2d80c20cb7b75b/Python%20b84b3287ceb9458e9d224b54145e148f/download-icon-supertinyiconspython-1324450764865983278_512.png"/>Python</a></figure><h3 id="ec4e8aad-891c-41cb-a79b-28d0e1883e3d" class=""><mark class="highlight-gray">Github Repos</mark></h3><figure id="44b66cef-67cd-4048-b9b8-1b9805b70da1"><div class="source"><a href="https://twitter.com/sunilc_/status/1479040860217962496?s=20&amp;t=i6LZLjoDaWsvxYnzLW6zmQ">https://twitter.com/sunilc_/status/1479040860217962496?s=20&amp;t=i6LZLjoDaWsvxYnzLW6zmQ</a></div></figure><h2 id="006aaf9a-2806-4a1c-aa67-cc5025e3f497" class=""><strong><mark class="highlight-blue">VS CODE</mark></strong></h2><figure id="bca48b5b-ff81-416c-af1d-b531ad9c3b20"><div class="source">https://github.com/viatsko/awesome-vscode</div></figure><p id="a094ea52-37b6-464b-9ae3-3cb7f70b2df2" class="">
+</p><h2 id="1c73040d-bca5-4ae0-bf04-ca431dd2605c" class=""><mark class="highlight-brown"><strong>JAVA</strong></mark></h2><figure id="6dd4e6b1-9848-4909-a448-cc6e5f4cd2db"><div class="source">https://github.com/akullpp/awesome-java</div></figure><p id="9b9115b1-40d8-4755-8397-da87ad327e1b" class=""><a href="https://roadmap.sh/java">https://roadmap.sh/java</a></p><p id="21d93e6c-5c52-43c8-a2db-a6f4ec7161a4" class="">
+</p><h2 id="3b741006-6893-46dd-a033-fb8097249796" class=""><mark class="highlight-red">SWIFT</mark></h2><figure id="99a2a4b8-c920-48bb-9e55-9b479a0bc465"><div class="source">https://github.com/matteocrippa/awesome-swift</div></figure><p id="65794208-5060-4ee3-8239-242a309699af" class="">
+</p><h3 id="daeffab6-d784-46b1-8b77-10838f8849b2" class=""><mark class="highlight-blue">PYTHON</mark></h3><figure id="a0995059-7b9f-48b0-b945-ffb2f0900c78"><div class="source">https://github.com/vinta/awesome-python</div></figure><p id="4efdc305-2def-468d-ba73-10839a52a7e6" class="">
+</p><figure id="29f34459-d157-4c34-8f38-24bd725d2673"><div class="source">https://github.com/karlhorky/learn-to-program</div></figure><figure id="361c740a-73aa-470c-8b4a-74f6e7f06a50"><div class="source">https://github.com/terkelg/awesome-creative-coding</div></figure><figure id="ee1548b3-e6e6-4d0a-b16d-5569b0fb7b64"><div class="source">https://github.com/terkelg/awesome-creative-coding</div></figure><figure id="14c67e7f-8d52-4f97-8d07-18c4233a0bc5"><div class="source">https://github.com/HollyAdele/awesome-programming-for-kids</div></figure><figure id="fb83d21c-bfaa-4afb-bc6b-a43500e1333f"><div class="source">https://github.com/JoseDeFreitas/awesome-youtubers</div></figure><p id="372e5696-a8ed-4037-95ef-4c564e576911" class="">
+</p><figure id="17459ebb-6e42-4681-b972-529e64982c57"><a href="https://denic.hashnode.dev/github-repositories" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub repositories to improve your programming skills</div><div class="bookmark-description">Freely available programming books 167k ⭐ Repo: github.com/EbookFoundation/free-programming.. Awesome lists about all kinds of interesting topics 148k ⭐ Repo: github.com/sindresorhus/awesome A complete computer science study plan to become a software engineer. 144k ⭐ Repo: github.com/jwasham/coding-interview-univers.. Roadmap to becoming a web developer in 2020 138k ⭐ Repo: github.com/kamranahmedse/developer-roadmap A collective list of free APIs for use in software and web development.</div></div><div class="bookmark-href"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1613132947328/FYZ93MRLG.jpeg?auto=compress,format&amp;format=webp&amp;fm=png" class="icon bookmark-icon"/>https://denic.hashnode.dev/github-repositories</div></div><img src="https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1607322344653%2Feq3dXwh7T.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng" class="bookmark-image"/></a></figure><figure id="04fec991-3008-41c0-a5c9-56d4188a67ed"><a href="https://blog.codegiant.io/programming-skills-d77d4abdf255" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">22 YouTube Channels To Level Up Your Programming Skills</div><div class="bookmark-description">Thank you for taking the time to check out this article. It doesn&#x27;t matter where you&#x27;re coming from (Codegiant, Hacker News, Reddit, or some other place), I always appreciate every reader who lands on my articles. Now that I&#x27;ve coaxed you into reading this article, let&#x27;s get down to brass tacks.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*C253zR4AodzCO5_UFxao5A.png" class="icon bookmark-icon"/>https://blog.codegiant.io/programming-skills-d77d4abdf255</div></div><img src="https://miro.medium.com/max/1200/1*Xx2YxTWIGNI3ExVLq1meoA.png" class="bookmark-image"/></a></figure><p id="51fb3071-38d5-4135-ae35-5c8d586b505f" class="">
+</p><figure id="f7a6a5f0-3d11-40b9-bcfd-17ed36cccdbc"><a href="https://www.kdnuggets.com/2021/05/top-programming-languages.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top Programming Languages and Their Uses - KDnuggets</div><div class="bookmark-description">The landscape of programming languages is rich and expanding, which can make it tricky to focus on just one or another for your career. We highlight some of the most popular languages that are modern, widely used, and come with loads of packages or libraries that will help you be...</div></div><div class="bookmark-href"><img src="https://www.kdnuggets.com/wp-content/themes/kdn17/images/favicon.ico" class="icon bookmark-icon"/>https://www.kdnuggets.com/2021/05/top-programming-languages.html</div></div><img src="https://www.kdnuggets.com/wp-content/uploads/Costa_top-programming-languages.jpg" class="bookmark-image"/></a></figure><figure id="0cc6ce79-34f5-4d55-abb8-73426be06053"><a href="https://mikkegoes.com/14-programming-languages-explained/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">14 Popular Programming Languages and Their Uses Explained</div><div class="bookmark-description">When you start learning coding and web development, the number of different programming languages can easily feel daunting and overwhelming. In this post you will learn about different programming languages and their uses to help you find the right programming language to learn. We&#x27;ll go through 14 popular programming languages and see what they&#x27;re used for.</div></div><div class="bookmark-href"><img src="https://j4r8d7d7.rocketcdn.me/wp-content/uploads/2020/11/cropped-favicon-192x192.png" class="icon bookmark-icon"/>https://mikkegoes.com/14-programming-languages-explained/</div></div><img src="https://j4r8d7d7.rocketcdn.me/wp-content/uploads/2017/07/Popular-programming-languages-explained-for-beginners-What-are-they-and-what-are-they-used-for.jpg" class="bookmark-image"/></a></figure><figure id="c22db491-b81d-4fbe-a838-9589156486f3"><a href="https://levelup.gitconnected.com/top-programming-languages-and-their-uses-1c852a5a1a7a" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top Programming Languages and Their Uses</div><div class="bookmark-description">There are many programming languages that make it challenging to choose the right one to start with. If you are looking for a programming language to start your career with, this article is for you...</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*MMpkJtmeCME-6BmGNH5l8A.png" class="icon bookmark-icon"/>https://levelup.gitconnected.com/top-programming-languages-and-their-uses-1c852a5a1a7a</div></div><img src="https://miro.medium.com/max/1200/1*vdAi5t6_OHe2DnMzGN6Pzw.jpeg" class="bookmark-image"/></a></figure><figure id="449d002c-d588-4aeb-a19e-74a65df9b7e9"><a href="https://hackr.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Find the best online Programming courses and Tutorials - Hackr.io</div><div class="bookmark-description">Google search shows you hundreds of Programming courses/tutorials, but Hackr.io tells you which is the best one. Find the best online courses &amp;amp; tutorials recommended by the Programming community. Pick the most upvoted tutorials as per your learning style: video-based, book, free, paid, for beginners, advanced, etc.</div></div><div class="bookmark-href"><img src="https://hackr.io/assets/images/programming-images/programming-favicon-16x16.png" class="icon bookmark-icon"/>https://hackr.io/</div></div><img src="https://hackr.io/sites/programming/og_image" class="bookmark-image"/></a></figure><figure id="437c28e2-da57-4093-ab19-ca13a19b7a3d"><a href="https://techdevguide.withgoogle.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Google Tech Dev Guide</div><div class="bookmark-description">Whether you&#x27;re new to computer science or an experienced coder, there&#x27;s something for you here in Google&#x27;s Tech Dev Guide. We&#x27;ve carefully curated materials from various sources, including some made by Google, that you can use to grow your technical skills, supplement your coursework, and prepare for interviews.</div></div><div class="bookmark-href"><img src="https://techdevguide.withgoogle.com/static/images/icons/favicon.ico" class="icon bookmark-icon"/>https://techdevguide.withgoogle.com/</div></div><img src="https://techdevguide.withgoogle.com/static/images/icons/icon.png" class="bookmark-image"/></a></figure><figure id="48c5231e-0f65-49af-9153-a0ea5c2206d8"><a href="https://codelabs.developers.google.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Codelabs</div><div class="bookmark-description">Google Developers Codelabs provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, ARCore, and Google APIs on iOS.</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/devrel-devsite/prod/vdb149cdc08c87ab249cdebfec6395e8f073056d752ca9c2d285d3b8426fcfa32/codelabs/images/favicon.png" class="icon bookmark-icon"/>https://codelabs.developers.google.com/</div></div></a></figure><p id="47345403-a6f6-44c5-9a78-7ef19febb32e" class="">
+</p><p id="c26132a8-d284-4bbb-a9d3-b04303595ad1" class=""><strong>CS Fundamentals</strong></p><figure id="0137c051-210d-4b29-b9f2-083d94d305d2"><a href="https://docs.google.com/document/u/0/d/1gDxyUfyTSAAC_fibkEDrCIJ6iVNMcotU_cbxh4fZK60/mobilebasic" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CS Fundamentals: List of Important Topics</div><div class="bookmark-description">CS Fundamentals: List of Important Topics Target : Placement/Internship Interviews Object-Oriented Programming: Database Management System: Introduction (Architecture, User Cases) Entity-Relationship Model (ERD Diagrams) Relational Model (Schema Design, Keys, Anomalies) Relational Algebra (Joins, Operators) Normalisation (Meaning &amp; its forms 1NF, 2NF) Transactions and Concurrency Control (ACID Properties ) Indexing, B and</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" class="icon bookmark-icon"/>https://docs.google.com/document/u/0/d/1gDxyUfyTSAAC_fibkEDrCIJ6iVNMcotU_cbxh4fZK60/mobilebasic</div></div></a></figure><p id="63968678-c0cf-497b-91e4-8dc36632ef04" class="">
+</p><h3 id="486a19e3-754b-42a2-8105-99783970aa69" class=""><mark class="highlight-blue">Cheetseets</mark></h3><p id="beff33a4-34cb-4f1e-9655-a523fe8ee1c5" class="">
+</p><figure id="6ea9c7a3-8778-457f-add2-917e11771676"><a href="https://twitter.com/csaba_kissi/status/1555459571329777665" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Csaba Kissi on Twitter: &quot;10 Sites to find FREE cheat sheets for web developers→ devhints .​io→ gitsheet .​wtf→ overapi .​com→ grid.​malven .​co→ cheat-sheets .org→ htmlreference .​io→ cheatography .​com→ htmlcheatsheet .​com→ codehouse.vercel .app→ developer-cheatsheets .​com / Twitter&quot;</div><div class="bookmark-description">10 Sites to find FREE cheat sheets for web developers→ devhints .​io→ gitsheet .​wtf→ overapi .​com→ grid.​malven .​co→ cheat-sheets .org→ htmlreference .​io→ cheatography .​com→ htmlcheatsheet .​com→ codehouse.vercel .app→ developer-cheatsheets .​com</div></div><div class="bookmark-href"><img src="https://abs.twimg.com/favicons/twitter.2.ico" class="icon bookmark-icon"/>https://twitter.com/csaba_kissi/status/1555459571329777665</div></div><img src="https://abs.twimg.com/errors/logo46x38.png" class="bookmark-image"/></a></figure><figure id="d183869a-6a52-4816-9815-a0d4c19f5f84"><a href="https://www.codecademy.com/resources/cheatsheets/all" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cheatsheets | Codecademy</div><div class="bookmark-description">Codecademy has hundreds of free and easy to use cheatsheets that cover dozens of coding languages and are created by our world-class curriculum developers.</div></div><div class="bookmark-href"><img src="https://www.codecademy.com/favicon.ico" class="icon bookmark-icon"/>https://www.codecademy.com/resources/cheatsheets/all</div></div><img src="https://images.codecademy.com/social/logo-codecademy-social.png" class="bookmark-image"/></a></figure><figure id="dc13cf0d-ac27-4c55-903c-2828855edc77"><a href="https://cheatography.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Download Free Cheat Sheets or Create Your Own! - Cheatography.com: Cheat Sheets For Every Occasion</div><div class="bookmark-description">Find thousands of incredible, original programming cheat sheets, all free to download.</div></div><div class="bookmark-href"><img src="https://cheatography.com/favicon.png" class="icon bookmark-icon"/>https://cheatography.com/</div></div></a></figure><figure id="2baa8af5-7198-4ca6-aebe-4b9c36a874d8"><a href="https://codehouse.vercel.app/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Code House - Store House of 300+ Developer Cheatsheets</div><div class="bookmark-description">Code House is the all in one storehouse for developer cheatsheets. Code House is made up of 300+ curated cheatsheets from 230+ sources. Filter by categories, or source, sort by time or popularity, dark mode, bookmark cheatsheets, add new cheatsheets, request feature, and much more features, make the app amazing!</div></div><div class="bookmark-href"><img src="https://codehouse.vercel.app/favicon.ico" class="icon bookmark-icon"/>https://codehouse.vercel.app/</div></div><img src="https://codehouse.vercel.app/assets/codehouse-banner.png" class="bookmark-image"/></a></figure><p id="39ad2be2-385a-42e8-84e2-34bdabc91b84" class="">
+</p><figure id="18ffd883-0cee-471e-9a50-be1c63d81191"><a href="https://learntocodewith.me/posts/13-places-women-learn-code/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">25 Organizations Teaching Women Coders &amp; Girls Around The Globe</div><div class="bookmark-description">Want to learn how to code? Here&#x27;s a massive list of 25 coding websites for women that you can start learning from right now. These days, there are more coding-for-women resources than ever to help women break into the technology industry.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/posts/13-places-women-learn-code/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2020/08/Places-for-Women-to-Learn-Programming.png" class="bookmark-image"/></a></figure><figure id="1c3ae786-ef9f-4e60-94c5-2f7aba04cdf4"><a href="https://learntocodewith.me/resources/coding-for-kids/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Coding for Kids 101: Best Programming Languages, Courses, Apps, Etc.</div><div class="bookmark-description">You&#x27;ve probably heard that learning a new language is easier for children-and it&#x27;s true! Kids are still developing their brains and forming neural pathways, making it easier to absorb information. When most people talk about kids learning languages, they&#x27;re thinking about French, Spanish, German, etc.-not programming languages like HTML and CSS.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/resources/coding-for-kids/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2020/09/Why-Kids-Should-Learn-to-Code.png" class="bookmark-image"/></a></figure><p id="7c5a4d81-c144-4392-bf61-777eaf7d4c10" class="">
+</p><figure id="9a9882a4-db9a-4225-bd41-565e726f6ec4"><a href="https://glitch.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Glitch: The friendly community where everyone builds the web</div><div class="bookmark-description">Simple, powerful, free tools to create and use millions of apps.</div></div><div class="bookmark-href"><img src="https://glitch.com/favicon.ico" class="icon bookmark-icon"/>https://glitch.com/</div></div><img src="https://cdn.glitch.global/605e2a51-d45f-4d87-a285-9410ad350515/home-ogimage.png?v=1651176454988" class="bookmark-image"/></a></figure><p id="af5da4a6-af94-45e9-9ac2-d29047f5ec37" class="">
+</p><figure id="04e3c45e-627e-48c3-ad5e-c5d86bf470e1"><a href="https://www.codementor.io/projects" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DevProjects: Learn programming by building projects</div><div class="bookmark-description">Work on real-world projects to improve your skills and add to your portfolio. Discuss projects, review code, and learn from peers and mentors.</div></div><div class="bookmark-href"><img src="https://dp-cdn.codementor.io/images/icons/favicon-32x32.png" class="icon bookmark-icon"/>https://www.codementor.io/projects</div></div><img src="https://dp-cdn.codementor.io/images/og-image.png" class="bookmark-image"/></a></figure><figure id="4f24cc8e-af82-4afa-a7c4-5ec7f1639260"><a href="https://www.geeksforgeeks.org/how-to-think-like-a-programmer/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Think Like a Programmer? - GeeksforGeeks</div><div class="bookmark-description">Programming....is it really hard? is it really scary? is it really not everyone&#x27;s cup of tea? You might be asking several questions to yourself before stepping into the programming world. You might be also getting scared when you listen to a lot of jargon words which programmers exchange with each other to communicate about software.</div></div><div class="bookmark-href"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_favicon.png" class="icon bookmark-icon"/>https://www.geeksforgeeks.org/how-to-think-like-a-programmer/</div></div><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png" class="bookmark-image"/></a></figure><p id="8a87473c-9a7f-4618-bad6-1634b7491fa1" class="">
+</p><figure id="9bef9c5f-db15-4284-9edb-d83fa88ec724"><a href="https://link.medium.com/2oUAWlFDOcb" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9 Early Signs You Will Be a Successful Programmer</div><div class="bookmark-description">It&#x27;s been a short time since you started teaching yourself to code. You stare disbelievingly at the red text taunting you from the console - another error! It takes you an hour of Googling and tinkering to fix it.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*MMpkJtmeCME-6BmGNH5l8A.png" class="icon bookmark-icon"/>https://link.medium.com/2oUAWlFDOcb</div></div><img src="https://miro.medium.com/max/1200/1*d___uE36Pim_1zCPosX_Og.jpeg" class="bookmark-image"/></a></figure><p id="b35325ba-5172-4908-9a5e-a15c429fc9ca" class="">
+</p><figure id="79506665-c72e-42bc-9962-94984e738528"><a href="https://github.blog/2021-12-16-5-automations-every-developer-should-be-running/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 automations every developer should be running | The GitHub Blog</div><div class="bookmark-description">GitHub Issues is a core component of how developers get things done and, as we built more project planning capabilities into GitHub, we&#x27;ve found some fun and unique ways to use the new projects experience for personal productivity. July&#x27;s Open Source Monthly features Zag.js, which leverages state machines to make framework agnostic components.</div></div><div class="bookmark-href"><img src="https://github.blog/wp-content/uploads/2019/01/cropped-github-favicon-512.png?fit=192%2C192" class="icon bookmark-icon"/>https://github.blog/2021-12-16-5-automations-every-developer-should-be-running/</div></div><img src="https://github.blog/wp-content/uploads/2021/12/github-community_orange-banner.png?fit=1200%2C630" class="bookmark-image"/></a></figure><p id="a31e676e-9497-4c35-952f-f37c985eda9e" class="">
+</p><figure id="797fd332-bf84-400b-8d74-6823c78cbe10"><a href="https://www.codingninjas.com/blog/2020/12/31/how-to-build-a-solid-career-in-software-development/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to build a career in Software Development? - Coding Ninjas Blog</div><div class="bookmark-description">READ NEXT With this intent to work hard and build your career in software development, it is extremely important that you work hard in the right direction. The biggest problem faced by the majority of students is the lack of mentorship and lack of direction that leads to very small results of all their hard work.</div></div><div class="bookmark-href"><img src="https://www.codingninjas.com/blog/wp-content/uploads/2016/11/cropped-CN_Icon-01-192x192.png" class="icon bookmark-icon"/>https://www.codingninjas.com/blog/2020/12/31/how-to-build-a-solid-career-in-software-development/</div></div><img src="https://www.codingninjas.com/blog/wp-content/uploads/2020/12/blog..png" class="bookmark-image"/></a></figure><p id="49ee6892-f818-4914-8600-c390d66d3724" class="">
+</p><figure id="c59af570-747a-4679-8a28-ba53a8bba412"><a href="https://thenextweb.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TNW | The heart of tech</div><div class="bookmark-description">We inform, inspire, and connect people who love tech</div></div><div class="bookmark-href"><img src="https://next.tnwcdn.com/assets/img/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://thenextweb.com/</div></div><img src="https://s3.amazonaws.com/events.tnw/hardfork-2018/uploads/social/tnw_191007_110526.png" class="bookmark-image"/></a></figure><p id="fc00b6c1-b1b7-404d-8af4-403531adbe67" class="">
+</p><figure id="ef1212b6-1041-4a2b-9515-8aa30cfacea9"><a href="https://www.mobilefish.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mobilefish.com - The web development, programming, internet of things, blockchain and other technologies resource.</div><div class="bookmark-description">It takes sometimes quite a lot of time to figure out how to quickly install, configure and use developer tools. This section describes the different steps taken, the errors encountered and how they were solved.</div></div><div class="bookmark-href"><img src="https://www.mobilefish.com/favicon.ico" class="icon bookmark-icon"/>https://www.mobilefish.com/</div></div></a></figure><p id="3b9dbf79-1eae-40e8-9f6e-34becb104826" class="">
+</p><figure id="8b2ea6d5-94b5-4d9f-946a-04b85a2d2a76"><a href="https://manytools.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Your online toolshed: many tools for web developers, system admins &amp; webworkers (a.o. Network configuration, Image conversion, String manipulation, etc)</div><div class="bookmark-description">Manytools is a collection of tools to automate the repetitive jobs involved in webdevelopment (or any other job). I&#x27;d like to extend this toolbox to make a useful collection for all kinds of visitors. So if there&#x27;s any tool you&#x27;d like to see included, please let me know.</div></div><div class="bookmark-href"><img src="https://manytools.org/_resources/themes/manytools/images/favicon.ico" class="icon bookmark-icon"/>https://manytools.org/</div></div><img src="https://manytools.org//assets/siteimgs/fb-icon.png" class="bookmark-image"/></a></figure><p id="3642e856-4cc3-4fc7-b32b-9434a5a7c2c2" class="">
+</p><figure id="9ef9ff1a-2490-45d0-b3ec-a3bd7a07ae74"><a href="https://www.wolframalpha.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wolfram|Alpha: Making the world&#x27;s knowledge computable</div><div class="bookmark-description">Uh oh! Wolfram|Alpha doesn&#x27;t run without JavaScript. Please enable JavaScript. If you don&#x27;t know how, you can find instructions . Once you&#x27;ve done that, refresh this page to start using Wolfram|Alpha.</div></div><div class="bookmark-href"><img src="https://www.wolframalpha.com/_next/static/images/favicon_1zbE9hjk.ico" class="icon bookmark-icon"/>https://www.wolframalpha.com/</div></div><img src="https://www.wolframalpha.com/_next/static/images/share_3eSzXbxb.png" class="bookmark-image"/></a></figure><p id="3b44593a-935c-4fb5-9841-9de81ac0e0fb" class="">
+</p><figure id="75e780c1-c52b-4859-b2f7-b7b1a1e0ba2e"><a href="https://www.wonderhowto.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">New Posts</div><div class="bookmark-description">Wonder How To is your guide to free how to videos on the Web. Search, Browse and Discover the best how to videos across the web using the largest how to video index on the web. Watch the best online video instructions, tutorials, &amp;amp; How-Tos for free. Have your own how to videos?</div></div><div class="bookmark-href"><img src="https://img.wonderhowto.com/images/favicons/wonderhowto/favicon-16x16.png" class="icon bookmark-icon"/>https://www.wonderhowto.com/</div></div><img src="https://img.wonderhowto.com/img/91/71/63653510958136/0/change-default-snooze-time-your-iphones-alarm-clock.1280x600.jpg" class="bookmark-image"/></a></figure><p id="0228ca33-6496-458a-bd4e-fbde6b67ea4c" class="">
+</p><figure id="e46f280c-8988-437e-80fd-8942373e2975"><a href="https://www.techopedia.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Techopedia: Educating IT Professionals To Make Smarter Decisions</div><div class="bookmark-description">Your go-to source for professional IT insight, from defining complex tech jargon to exploring the latest tech trends.</div></div><div class="bookmark-href"><img src="https://www.techopedia.com/resource/images/favicon/favicon.ico" class="icon bookmark-icon"/>https://www.techopedia.com/</div></div><img src="https://images.techopedia.com/images/uploads/only-woman-in-the-room.jpg?w=375&amp;h=300&amp;mode=max&amp;quality=80&amp;speed=1&amp;scale=both" class="bookmark-image"/></a></figure><p id="622acc1c-afc8-47b5-952e-ac36044ae75d" class="">
+</p><p id="d32cda1d-d4ad-4b03-bc86-f521ba94f595" class="">
+</p><figure id="cbdd6eaf-63b4-4303-a41d-d275abf2d8a4"><a href="https://wakatime.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WakaTime - Dashboards for developers</div><div class="bookmark-description">Open source IDE plugins for programmers.</div></div><div class="bookmark-href"><img src="https://wakatime.com/favicon.ico" class="icon bookmark-icon"/>https://wakatime.com/</div></div><img src="https://wakatime.com/static/img/ScreenShots/editor-and-dashboard.png" class="bookmark-image"/></a></figure><p id="7067d7ed-fac2-49dd-b5eb-5ad83611b287" class="">
+</p><figure id="b9fa74f7-f928-44ad-916f-2fabee3667dd"><a href="https://analyticsindiamag.com/top-8-alternatives-to-github-copilot/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 8 Alternatives To GitHub Copilot</div><div class="bookmark-description">Last month, Microsoft, in collaboration with OpenAI, launched Copilot, an AI programmer. Copilot is based on OpenAI Codex, an AI system trained on open source code.</div></div><div class="bookmark-href"><img src="https://149695847.v2.pressablecdn.com/wp-content/uploads/2019/11/cropped-aim-new-logo-1-22-3-192x192.jpg" class="icon bookmark-icon"/>https://analyticsindiamag.com/top-8-alternatives-to-github-copilot/</div></div><img src="https://149695847.v2.pressablecdn.com/wp-content/uploads/2021/08/Alternatives-to-Github-copilot-.jpg" class="bookmark-image"/></a></figure><p id="9170260d-82a6-4e71-ac52-6e0ac5093608" class="">
+</p><figure id="6b1600c1-0359-445f-8c38-161dff333d01"><a href="https://www.techbeamers.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Programming and Testing Tutorials for Beginners - TechBeamers</div><div class="bookmark-description">Search for the Best Programming and Testing Tutorials on various topics - Python, Selenium, Java, AngularJS Tutorials, Manual &amp; Automation Testing, C/C++, J2EE/Spring MVC, Ant, Maven, JUnit, TestNG, terminal commands (Linux/OS X). Besides tutorials, update yourself with the latest interview questions and quizzes on skills like Selenium, Python, Java, Linux, QA, and Csharp.</div></div><div class="bookmark-href"><img src="https://www.techbeamers.com/wp-content/uploads/2020/03/favicon_tb.ico" class="icon bookmark-icon"/>https://www.techbeamers.com/</div></div><img src="https://www.techbeamers.com/wp-content/uploads/2018/08/Best-Programming-Testing-Tutorials.png" class="bookmark-image"/></a></figure><p id="3d773a26-8ad3-44e8-a6f3-eac3baa522f7" class="">
+</p><figure id="b0e08f34-e0d0-4c2a-a268-dbcfae98c5fb" class="image"><a href="Programming%209614d186181842f0ae2d80c20cb7b75b/Python_Learning_on_Instagram___Which_one_is_your_f(JPG).jpg"><img style="width:1080px" src="Programming%209614d186181842f0ae2d80c20cb7b75b/Python_Learning_on_Instagram___Which_one_is_your_f(JPG).jpg"/></a></figure><p id="952ec469-ff29-4871-ab02-c0000e28f264" class="">
+</p><figure id="f137d45b-21f1-4aea-8b59-3a990ea5f67c" class="image"><a href="Programming%209614d186181842f0ae2d80c20cb7b75b/--_----_--_on_Instagram___Programming_langua(JPG)_1.jpg"><img style="width:1080px" src="Programming%209614d186181842f0ae2d80c20cb7b75b/--_----_--_on_Instagram___Programming_langua(JPG)_1.jpg"/></a></figure></div></article></body></html>

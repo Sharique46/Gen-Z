@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tech Career Resources</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7b4e3747-70db-4101-a15b-ba7d9d334661" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/038d4d09e4ce8ef6c761f95752534b3c.jpg"/></div><h1 class="page-title">Tech Career Resources</h1></header><div class="page-body"><p id="74759910-170e-4216-95a1-8ddec34f462e" class="">
+</p><p id="d06873c1-79b3-4dfc-aabd-6a8fc4e0ef20" class="">
+</p><h3 id="7c10f3e6-0207-4d2f-bb80-cc4416cb8027" class=""><strong><mark class="highlight-blue">Github Repos</mark></strong></h3><p id="af323112-9785-415e-bcee-389b4b829a13" class="">
+</p><figure id="05a33923-bdd7-4d41-a45b-d97998872042"><div class="source">https://github.com/dipakkr/A-to-Z-Resources-for-Students</div></figure><figure id="15fdfaf7-cd51-4b01-85ca-c1e0fe1b9234"><div class="source">https://github.com/jwasham/coding-interview-university</div></figure><figure id="b18066ac-df02-4c2e-9587-a67948d436ed"><div class="source">https://github.com/trimstray/the-book-of-secret-knowledge</div></figure><figure id="7072ab32-cf50-446f-8bf8-ff9e9546521c"><div class="source">https://github.com/Solido/awesome-flutter</div></figure><figure id="2fbaa4b1-9244-43af-b1d8-f98dbc9f1503"><div class="source">https://github.com/donnemartin/dev-setup</div></figure><figure id="5138f086-7180-4e8e-87d7-8f7c2d0cdcc0"><div class="source">https://github.com/JoseDeFreitas/awesome-youtubers</div></figure><figure id="140efa28-1db3-4a84-af5a-23bb654c853c"><div class="source">https://github.com/MunGell/awesome-for-beginners</div></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="09cea990-1c3e-4826-ae15-5715d593fdeb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Step 1 : Learn the Basics</div></figure><figure id="8d3cab17-e177-4b1a-8c6b-3ac1f2d282cc" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Roadmaps%208d3cab17e1774b1a8c6b3ac1f2d282cc.html"><span class="icon">🗾</span>Roadmaps***</a></figure><figure id="075e5299-8dcd-4176-9fd6-64b058779e5d" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/The%20Game%20Plan%20075e52998dcd41769fd664b058779e5d.html"><span class="icon">🎯</span>The Game Plan*****</a></figure><figure id="919f616a-a2d4-45ea-9763-fcd813c939e9" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Typing%20Essentials%20919f616aa2d445ea9763fcd813c939e9.html"><span class="icon">⌨️</span>Typing Essentials**</a></figure><figure id="6ed0b564-6557-4399-b614-5fde251638e0" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Command%20line%206ed0b56465574399b6145fde251638e0.html"><span class="icon">🎌</span>Command line***</a></figure><figure id="2e48171e-ceee-4a10-964f-38b6e0aa0938" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Career%20Blog%20Posts%202e48171eceee4a10964f38b6e0aa0938.html"><span class="icon">💼</span>Career Blog Posts***</a></figure><figure id="fda5a816-e576-43cc-a5c5-b92dacb10b32" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Free%20Online%20Courses%20fda5a816e57643cca5c5b92dacb10b32.html"><span class="icon">📘</span>Free Online Courses</a></figure><figure id="98ed0016-bc41-4643-a28b-c1ed275ec3be" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Google%2098ed0016bc414643a28bc1ed275ec3be.html"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Google%2098ed0016bc414643a28bc1ed275ec3be/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"/>Google</a></figure><figure id="03d0fc60-02de-4ee6-bf64-3ed767947c60" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Top%2010%20Sites%E2%80%A6%2003d0fc6002de4ee6bf643ed767947c60.html"><span class="icon">🔝</span>Top 10 Sites….</a></figure><figure id="df3bd7e3-50ec-49dc-97ba-0fb3e5003d91" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Ebook%20df3bd7e350ec49dc97ba0fb3e5003d91.html"><span class="icon">📚</span>Ebook</a></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="6c12f178-cf42-4ee9-847f-dd91de10e56f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Step 2 : Learn Programming and Explore different Domains in IT.</div></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="5c75cb58-1aa3-426e-9ccd-894bc9b14c2b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Step 3 : Choose a particular Domain and master it.</div></figure><figure id="9614d186-1818-42f0-ae2d-80c20cb7b75b" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Programming%209614d186181842f0ae2d80c20cb7b75b.html"><span class="icon">💻</span>Programming****</a></figure><figure id="27c116c4-84b0-4e03-a00c-eca6d9cfb557" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Web%20Development%2027c116c484b04e03a00ceca6d9cfb557.html"><span class="icon">🌐</span>Web Development****</a></figure><p id="cd35e874-3015-4d15-9fba-490d53b23303" class=""><a href="Trending%20Technologies%2059aa49caf6d841699caad5492df252f2.html"><span class="icon">🛡️</span>Trending Technologies</a> </p><figure id="2238bf00-da20-40aa-a6aa-8542dbcd99ef" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/UI%20UX%20and%20Web%20Design%202238bf00da2040aaa6aa8542dbcd99ef.html"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/UI%20UX%20and%20Web%20Design%202238bf00da2040aaa6aa8542dbcd99ef/images_ui_and_ux.png"/>UI/UX and Web Design</a></figure><figure id="6fdabfe4-c6e5-4de7-918b-6332c49588c1" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Mobile%20App%20Development%206fdabfe4c6e54de7918b6332c49588c1.html"><span class="icon">📱</span>Mobile App Development</a></figure><figure id="92f292fb-21a2-442f-962e-5df0bec41918" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Digital%20Marketing%20and%20Branding%2092f292fb21a2442f962e5df0bec41918.html"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Digital%20Marketing%20and%20Branding%2092f292fb21a2442f962e5df0bec41918/815-8158398_digital-marketing-png-icon.png"/>Digital Marketing and Branding</a></figure><figure id="847f5224-d403-41b6-bae0-33304cb5cebc" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/SEO%20847f5224d40341b6bae033304cb5cebc.html"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/SEO%20847f5224d40341b6bae033304cb5cebc/424-4242118_seo-logo-hd-png-download.png"/>SEO</a></figure><figure id="69df77eb-bce2-4a85-873a-964c15691558" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Coding%20Challenge%20Platforms%2069df77ebbce24a85873a964c15691558.html"><span class="icon">🔣</span>Coding Challenge Platforms</a></figure><figure id="c436ad9f-0d5e-4076-904d-98d60c09b770" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/DS%20&amp;%20Algo%20c436ad9f0d5e4076904d98d60c09b770.html"><span class="icon">💢</span>DS &amp; Algo</a></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2ba37ed3-69d3-4c9d-8022-9d2d664088c6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Step 4 : Apply for Jobs and Crack the Interview</div></figure><figure id="6fb32db6-8682-4ce3-8185-65ca050b47ea" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Employability%20Test%206fb32db686824ce3818565ca050b47ea.html"><img class="icon" src="https://www.notion.so/icons/graduate_lightgray.svg"/>Employability Test***</a></figure><figure id="063dc89a-85d0-4b41-9266-827ef10450a2" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Interview%20063dc89a85d04b419266827ef10450a2.html"><span class="icon">🗾</span>Interview***</a></figure><figure id="89b63d83-8936-4614-b930-f2052dc4350c" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Jobs%20and%20Internship%20Portals%2089b63d8389364614b930f2052dc4350c.html"><span class="icon">💼</span>Jobs and Internship Portals***</a></figure><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="38e831e4-7ab8-4f0b-9da4-a1018d3d0663"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Step 5 : Get Professional Certifications</div></figure><figure id="5b97810d-174a-42ed-95e8-6aedb0b054e1" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Certifications,%20Exam,%20Learning%20Resources%205b97810d174a42ed95e86aedb0b054e1.html"><span class="icon">⌛</span>Certifications, Exam, Learning Resources***</a></figure><figure id="e870b4aa-9892-4416-b717-d978e8650eae" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/IT%20Certifications%20e870b4aa98924416b717d978e8650eae.html"><span class="icon">📜</span>IT Certifications***</a></figure><figure id="d56ccc69-2cf5-4a45-82e9-fa29059b868b" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/After%20B%20Tech%20d56ccc692cf54a4582e9fa29059b868b.html"><img class="icon" src="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/After%20B%20Tech%20d56ccc692cf54a4582e9fa29059b868b/335-3350713_career-icon-png-download-career-growth-icon-blue.png"/>After B.Tech***</a></figure><figure id="4b4f419f-e5f2-4c64-87e5-c2e934d75977" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Less%20or%20No%20Coding%20Jobs%204b4f419fe5f24c6487e5c2e934d75977.html"><span class="icon">🔖</span>Less or No Coding Jobs </a></figure><figure id="6fd6690f-3a39-45a3-8004-083de1c4d22f" class="link-to-page"><a href="Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Hackathon%206fd6690f3a3945a38004083de1c4d22f.html"><span class="icon">🎫</span>Hackathon</a></figure><p id="5ce5640e-e554-4eee-a369-160924782cce" class="">
+</p><h3 id="e71f57b4-489c-4dc5-93d9-3e1dae9a3110" class=""><mark class="highlight-blue"><strong>Sites For IT Training Programming, Web Development, Networking and More</strong></mark></h3><p id="5cb2b8d1-b0b0-49f8-83c6-479fda140c40" class="block-color-blue"><a href="https://t.me/Technitze_Codernett/8">https://t.me/Technitze_Codernett/8</a></p><p id="6285b025-02ea-44dc-a681-e62ef1756fd0" class=""><a href="https://www.sanfoundry.com/">https://www.sanfoundry.com/</a></p><figure id="2bcf84ee-2163-4cfa-b9ab-6d000efddaa7"><a href="https://free-for.dev/#/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free for developers</div></div><div class="bookmark-href"><img src="https://free-for.dev/logo.webp" class="icon bookmark-icon"/>https://free-for.dev/#/</div></div></a></figure><p id="91c96ada-f818-4271-b998-40878b971192" class="">
+</p><figure id="f83271ce-b93c-446a-80c0-1fc7c6f564a2"><a href="https://t.me/Technitze_Codernett/357" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Codernett</div><div class="bookmark-description">🚨 IMPORTANT UPDATE 🚨 All those who are new to the group. Some resources that may help - Complete FREE DSA Resource Guide:https://youtu.be/L8TG64TfK5s - Best Resume Building Resource: https://youtu.be/LoZ6Y58zvzc - 100 Product Companies except for FAANG: https://youtu.be/fNyL3xosDbU - Companies that hire through Hackathons: https://youtu.be/ju9H4_rYxxs - Amazon &amp; Microsoft 45 Days DSA Sheet: https://youtu.be/5B6LkFKydls https://youtu.be/8AKxbLFRatM - Which Company Hires when?: https://youtu.be/zg_crKTqwsY - Service-based to Product Based:https://youtu.be/GiBVjvcr9N4 - Build Amazing LinkedIn Profile ft.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Codernett/357</div></div><img src="https://cdn5.telegram-cdn.org/file/eMU1yAZI58CUw7iOY43BcsK_YxG8UuhQCc8hrBp7L8Tuq4XawGEVWoK26y36jIOEnefECcsIR6VTX6d5LzDekrdo67NWegUZEqqTastjc4ePEIaNobjIBq5M3djjJnL5ZvRpgsVxQr3ibzCe2y-uaxw3RXtRRnJZDoC4mExX8HgUcT_ZrkAyEEhe7C_nYauUrhm7xivUO0U5eq0Pd3ByX3hjaM0qXLfx2Pf9jWnDuJIskLLdabiwLB-m-qr-pz-yzKsgFZ6jxFCtI-udMGwPWKYeMYaJK8eCT7dXs4NIYfe1JULvsaVwSQDVhsiVVyWmJ5j0cprPE7gyCIaT81GCoA.jpg" class="bookmark-image"/></a></figure><p id="3c37c82e-5ddd-49e4-abff-41558995bfb0" class="">
+</p><figure id="d51a5e82-5bcf-46c3-b7cd-d4fbef8ea3f3"><a href="https://www.simplilearn.com/resources/software-development" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Software Development Free Resources and Blogs | Simplilearn</div><div class="bookmark-description">Learn more about Software Development through our free tutorials, articles, practice tests, eBooks, webinars developed by industry experts to accelerate your career.</div></div><div class="bookmark-href"><img src="https://www.simplilearn.com/static/frontend/images/favicon.png" class="icon bookmark-icon"/>https://www.simplilearn.com/resources/software-development</div></div><img src="https://www.simplilearn.com/logo.png" class="bookmark-image"/></a></figure><figure id="b9891f30-1e18-47ae-b43d-4e942c5b8ac8"><a href="https://www.codecademy.com/resources/cheatsheets/all" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cheatsheets | Codecademy</div><div class="bookmark-description">Codecademy has hundreds of free and easy to use cheatsheets that cover dozens of coding languages and are created by our world-class curriculum developers.</div></div><div class="bookmark-href"><img src="https://www.codecademy.com/favicon.ico" class="icon bookmark-icon"/>https://www.codecademy.com/resources/cheatsheets/all</div></div><img src="https://images.codecademy.com/social/logo-codecademy-social.png" class="bookmark-image"/></a></figure><p id="9ac64360-4dc3-4447-83ea-c300cd1dbf74" class="">
+</p><figure id="f5c71e8e-97ed-46e0-bccf-62a7d43d8272"><a href="https://codehouse.vercel.app/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Code House - Store House of 300+ Developer Cheatsheets</div><div class="bookmark-description">Code House is the all in one storehouse for developer cheatsheets. Code House is made up of 300+ curated cheatsheets from 230+ sources. Filter by categories, or source, sort by time or popularity, dark mode, bookmark cheatsheets, add new cheatsheets, request feature, and much more features, make the app amazing!</div></div><div class="bookmark-href"><img src="https://codehouse.vercel.app/favicon.ico" class="icon bookmark-icon"/>https://codehouse.vercel.app/</div></div><img src="https://codehouse.vercel.app/assets/codehouse-banner.png" class="bookmark-image"/></a></figure><figure id="69d6fb9b-937f-49e8-bc9b-e78cd277561a"><a href="https://blog.codegiant.io/programming-skills-d77d4abdf255" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">22 YouTube Channels To Level Up Your Programming Skills</div><div class="bookmark-description">Thank you for taking the time to check out this article. It doesn&#x27;t matter where you&#x27;re coming from (Codegiant, Hacker News, Reddit, or some other place), I always appreciate every reader who lands on my articles. Now that I&#x27;ve coaxed you into reading this article, let&#x27;s get down to brass tacks.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*C253zR4AodzCO5_UFxao5A.png" class="icon bookmark-icon"/>https://blog.codegiant.io/programming-skills-d77d4abdf255</div></div><img src="https://miro.medium.com/max/1200/1*Xx2YxTWIGNI3ExVLq1meoA.png" class="bookmark-image"/></a></figure><figure id="a9e120e2-3691-449f-ae0d-772ff4c00117"><a href="https://twitter.com/csaba_kissi/status/1555459571329777665" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Csaba Kissi on Twitter: &quot;10 Sites to find FREE cheat sheets for web developers→ devhints .​io→ gitsheet .​wtf→ overapi .​com→ grid.​malven .​co→ cheat-sheets .org→ htmlreference .​io→ cheatography .​com→ htmlcheatsheet .​com→ codehouse.vercel .app→ developer-cheatsheets .​com / Twitter&quot;</div><div class="bookmark-description">10 Sites to find FREE cheat sheets for web developers→ devhints .​io→ gitsheet .​wtf→ overapi .​com→ grid.​malven .​co→ cheat-sheets .org→ htmlreference .​io→ cheatography .​com→ htmlcheatsheet .​com→ codehouse.vercel .app→ developer-cheatsheets .​com</div></div><div class="bookmark-href"><img src="https://abs.twimg.com/favicons/twitter.2.ico" class="icon bookmark-icon"/>https://twitter.com/csaba_kissi/status/1555459571329777665</div></div><img src="https://abs.twimg.com/errors/logo46x38.png" class="bookmark-image"/></a></figure><figure id="f3001e8f-3dd0-4cbb-8ce7-400df85c30f0"><a href="https://dev.to/nehasoni__/top-10-useful-github-repos-for-self-development-25c0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 10 Useful GitHub Repos for Self-Development</div><div class="bookmark-description">The world of self-learning can be a little daunting. The nature of learning in a curious manner results in serendipitous discoveries (information and people) and takes you down paths you may never have been exposed to. There are 190+ million repositories you&#x27;ll find on GitHub that make it the perfect place for any developer to become a better version of themselves.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lrmEcD2H--/c_limit,f_png,fl_progressive,q_80,w_128/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" class="icon bookmark-icon"/>https://dev.to/nehasoni__/top-10-useful-github-repos-for-self-development-25c0</div></div><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DefnTj74--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y0kst9bu8h7v0478e358.png" class="bookmark-image"/></a></figure><figure id="ca596071-9c42-4256-8183-7d093ca8adf8"><a href="https://brainstation.io/career-guides" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Career Guides | BrainStation®</div><div class="bookmark-description">Our award-winning bootcamps will help you launch a new career in tech in-person or online. You can attend our bootcamps full-time or part-time.</div></div><div class="bookmark-href"><img src="https://brainstation.io/favicon.ico" class="icon bookmark-icon"/>https://brainstation.io/career-guides</div></div><img src="https://bs-web-content.s3.amazonaws.com/images/brainstation_share.png" class="bookmark-image"/></a></figure><figure id="566d21c9-fb6a-48d6-9ef2-8168dc5f9d98"><a href="https://vocal.media/journal/tech-career-which-do-not-require-degrees" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tech Career which do not require degrees</div><div class="bookmark-description">Do you really need a college degree to get a great paying job in technology? Google says no and, increasingly, so do many other employers in the tech industry. Still, the share of industry jobs requiring high digital skills is on the rise, so there is clearly a need to educate rising generations in some way to meet continuing demand.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164420/fjo7ga9cmzmcxfnwucmm.png" class="icon bookmark-icon"/>https://vocal.media/journal/tech-career-which-do-not-require-degrees</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5ff6b4db63fa3c0021f34dbf.jpg" class="bookmark-image"/></a></figure><figure id="399e0603-4295-470e-9e3f-f98148102313"><a href="https://kraffeye.com/blog/8-easy-eye-exercises-to-improve-vision-techniques-and-tips" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">8 Easy Eye Exercises To Improve Vision: Techniques and Tips | Kraff Eye Institute</div><div class="bookmark-description">We know that exercising our muscles is good for our health. What about eye exercises to improve eyesight? While there are no effective eye exercises for astigmatism, myopia, or hyperopia, otherwise known as refractive errors, eye exercises can help with optimizing visual skills.</div></div><div class="bookmark-href"><img src="https://uploads-ssl.webflow.com/5ff59908348cca2036d31209/602386374b4234cf5764189a_icon.png" class="icon bookmark-icon"/>https://kraffeye.com/blog/8-easy-eye-exercises-to-improve-vision-techniques-and-tips</div></div><img src="https://uploads-ssl.webflow.com/5ff8126e9f80b718dc63f907/60ed6a257c9c70028d998d19_Easy%20Eye%20Exercises%20To%20Improve%20Vision.jpg" class="bookmark-image"/></a></figure><p id="9e6a568b-6d41-4de2-bf93-2b5eb1db0d01" class="">
+</p><p id="1954d06d-d0b2-4af6-b667-551f4e88a330" class="">
+</p><figure id="eb3cfd3c-389d-4031-ba9d-b16cc3827123"><a href="https://www.medicalnewstoday.com/articles/computer-eye-strain" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Computer eye strain: Symptoms, treatment, and exercises</div><div class="bookmark-description">Excessive screen time can lead to a condition called computer eye strain. This is sometimes known as computer vision syndrome, or digital eye strain. It occurs because our eyes have to work hard when viewing screens. Many people spend long periods of time looking at their phones, tablets, computer monitors, and televisions.</div></div><div class="bookmark-href"><img src="https://post.healthline.com/wp-content/uploads/2022/08/Favicon_MNT-1.png" class="icon bookmark-icon"/>https://www.medicalnewstoday.com/articles/computer-eye-strain</div></div><img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/10/computer-blue-light-eye-strain-thumb.jpg" class="bookmark-image"/></a></figure><p id="54b2cbad-d879-4f51-86f0-878e2d1f5851" class="">
+</p><p id="19cc686f-6e16-43ae-8f2f-ce07b084cadc" class="">
+</p><p id="beed8dbf-df8f-42c5-aa17-797593089ec1" class="">
+</p></div></article></body></html>

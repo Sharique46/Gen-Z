@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Web dev resources</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="536aa3f1-ac7f-4669-85a3-b97abdeea7de" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">⛰️</span></div><h1 class="page-title">Web dev resources</h1></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>propertyName1</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>propertyName1_link</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Status</th></tr></thead><tbody><tr id="01367047-ada8-470a-9737-5f46a8f59625"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Frontend%2001367047ada8470a97375f46a8f59625.html">Frontend</a></td><td class="cell-Mrqe"><a href="https://roadmap.sh/frontend" class="url-value">https://roadmap.sh/frontend</a></td><td class="cell-ZcAR"></td></tr><tr id="85fd7893-f066-4cdc-8bbc-d018572a40d4"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Backend%2085fd7893f0664cdc8bbcd018572a40d4.html">Backend</a></td><td class="cell-Mrqe"><a href="https://roadmap.sh/backend" class="url-value">https://roadmap.sh/backend</a></td><td class="cell-ZcAR"></td></tr><tr id="3590d439-6cb9-443d-921d-5c1c0f789a8a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/React%203590d4396cb9443d921d5c1c0f789a8a.html">React</a></td><td class="cell-Mrqe"><a href="https://roadmap.sh/react" class="url-value">https://roadmap.sh/react</a></td><td class="cell-ZcAR"></td></tr><tr id="ffd6b623-c7f5-4ffc-bf32-4f40d1852ceb"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Andriod%20ffd6b623c7f54ffcbf324f40d1852ceb.html">Andriod</a></td><td class="cell-Mrqe"><a href="https://roadmap.sh/android" class="url-value">https://roadmap.sh/android</a></td><td class="cell-ZcAR"></td></tr><tr id="e9438b18-4ee7-4f35-a49c-7329ff5ec6e0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DevOps%20e9438b184ee74f35a49c7329ff5ec6e0.html">DevOps</a></td><td class="cell-Mrqe"><a href="https://roadmap.sh/devops" class="url-value">https://roadmap.sh/devops</a></td><td class="cell-ZcAR"></td></tr><tr id="eb2f910a-eaa1-4a90-b5f6-7c9f0364cc33"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20eb2f910aeaa14a90b5f67c9f0364cc33.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-documentations-and-cheatsheets" class="url-value">https://github.com/iamismile/web-dev-resources#-documentations-and-cheatsheets</a></td><td class="cell-ZcAR"></td></tr><tr id="8d2f78ec-905f-4c87-a748-d7d4e74a4352"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/MDN%20Web%20Docs%208d2f78ec905f4c87a748d7d4e74a4352.html">MDN Web Docs</a></td><td class="cell-Mrqe"><a href="https://developer.mozilla.org/en-US/" class="url-value">https://developer.mozilla.org/en-US/</a></td><td class="cell-ZcAR"></td></tr><tr id="fbc0f541-9e9d-4dfc-95e2-81d71eb4f398"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DevDocs%20fbc0f5419e9d4dfc95e281d71eb4f398.html">DevDocs</a></td><td class="cell-Mrqe"><a href="https://devdocs.io" class="url-value">https://devdocs.io</a></td><td class="cell-ZcAR"></td></tr><tr id="9f7933df-3cd4-4458-8ac8-38ed48a17f62"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DEVHINTS%209f7933df3cd444588ac838ed48a17f62.html">DEVHINTS</a></td><td class="cell-Mrqe"><a href="https://devhints.io" class="url-value">https://devhints.io</a></td><td class="cell-ZcAR"></td></tr><tr id="1e00cf31-6dee-4ca2-ab14-f4b39de068cc"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/FLEX%20-%20Malven%201e00cf316dee4ca2ab14f4b39de068cc.html">FLEX - Malven</a></td><td class="cell-Mrqe"><a href="https://flexbox.malven.co" class="url-value">https://flexbox.malven.co</a></td><td class="cell-ZcAR"></td></tr><tr id="5fcfe4f8-aa2d-4173-aeaf-d01b44730ab4"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/GRID%20-%20Malven%205fcfe4f8aa2d4173aeafd01b44730ab4.html">GRID - Malven</a></td><td class="cell-Mrqe"><a href="https://grid.malven.co" class="url-value">https://grid.malven.co</a></td><td class="cell-ZcAR"></td></tr><tr id="6c133d33-a5b0-472b-9399-8a502bc53098"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Grid%20Cheat%20Sheet%206c133d33a5b0472b93998a502bc53098.html">CSS Grid Cheat Sheet</a></td><td class="cell-Mrqe"><a href="https://alialaa.github.io/css-grid-cheat-sheet/" class="url-value">https://alialaa.github.io/css-grid-cheat-sheet/</a></td><td class="cell-ZcAR"></td></tr><tr id="ebcdcf5c-4ee3-4651-b010-e55faa7f54c2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/OverAPI%20ebcdcf5c4ee34651b010e55faa7f54c2.html">OverAPI</a></td><td class="cell-Mrqe"><a href="https://overapi.com" class="url-value">https://overapi.com</a></td><td class="cell-ZcAR"></td></tr><tr id="9cd579eb-a955-4103-b242-730b00006437"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Awesome%20Cheatsheets%209cd579eba9554103b242730b00006437.html">Awesome Cheatsheets</a></td><td class="cell-Mrqe"><a href="https://lecoupa.github.io/awesome-cheatsheets/" class="url-value">https://lecoupa.github.io/awesome-cheatsheets/</a></td><td class="cell-ZcAR"></td></tr><tr id="d86871f8-51b2-4b41-8612-70092c3ef37f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/GitSheet%20d86871f851b24b41861270092c3ef37f.html">GitSheet</a></td><td class="cell-Mrqe"><a href="https://gitsheet.wtf" class="url-value">https://gitsheet.wtf</a></td><td class="cell-ZcAR"></td></tr><tr id="737baf13-a024-49ad-91a5-eb19139046f3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTML5%20Doctor%20737baf13a02449ad91a5eb19139046f3.html">HTML5 Doctor</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://html5doctor.com/element-index/" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://html5doctor.com/element-index/</a></td><td class="cell-ZcAR"></td></tr><tr id="7c4cd730-7358-4658-bba0-41fa9810ca23"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTML5%20Canvas%20Cheat%20Sheet%207c4cd73073584658bba041fa9810ca23.html">HTML5 Canvas Cheat Sheet</a></td><td class="cell-Mrqe"><a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html" class="url-value">https://simon.html5.org/dump/html5-canvas-cheat-sheet.html</a></td><td class="cell-ZcAR"></td></tr><tr id="8aebf6ac-3930-499f-9809-e340e7e95786"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Cheatography%208aebf6ac3930499f9809e340e7e95786.html">Cheatography</a></td><td class="cell-Mrqe"><a href="https://cheatography.com/programming/" class="url-value">https://cheatography.com/programming/</a></td><td class="cell-ZcAR"></td></tr><tr id="96c51af1-777e-4835-a3f6-c98554a8e018"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%203,%20Media%20Queries%20Cheat%20Sheet%2096c51af1777e4835a3f6c98554a8e018.html">CSS 3, Media Queries Cheat Sheet</a></td><td class="cell-Mrqe"><a href="https://mac-blog.org.ua/css-3-media-queries-cheat-sheet/" class="url-value">https://mac-blog.org.ua/css-3-media-queries-cheat-sheet/</a></td><td class="cell-ZcAR"></td></tr><tr id="5ee4dc59-3ed5-40c0-a4b4-daf4d32e920b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/SEO%20Cheat%20Sheet%205ee4dc593ed540c0a4b4daf4d32e920b.html">SEO Cheat Sheet</a></td><td class="cell-Mrqe"><a href="https://moz.com/learn/seo/seo-cheat-sheet" class="url-value">https://moz.com/learn/seo/seo-cheat-sheet</a></td><td class="cell-ZcAR"></td></tr><tr id="356bb505-3bbd-414f-a611-b6a20aa3b7b7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Bootstrap%205%20Cheat%20Sheet%20356bb5053bbd414fa611b6a20aa3b7b7.html">Bootstrap 5 Cheat Sheet</a></td><td class="cell-Mrqe"><a href="https://bootstrap-cheatsheet.themeselection.com/" class="url-value">https://bootstrap-cheatsheet.themeselection.com/</a></td><td class="cell-ZcAR"></td></tr><tr id="63dc45f4-5875-4314-a8a0-564a9b16ee29"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%2063dc45f458754314a8a0564a9b16ee29.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-design-tools" class="url-value">https://github.com/iamismile/web-dev-resources#-design-tools</a></td><td class="cell-ZcAR"></td></tr><tr id="0d4cb852-a00f-49f0-b63d-be736162bc07"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Figma%200d4cb852a00f49f0b63dbe736162bc07.html">Figma</a></td><td class="cell-Mrqe"><a href="https://www.figma.com" class="url-value">https://www.figma.com</a></td><td class="cell-ZcAR"></td></tr><tr id="bd86b108-e5af-448e-946d-e175c2406156"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Adobe%20XD%20bd86b108e5af448e946de175c2406156.html">Adobe XD</a></td><td class="cell-Mrqe"><a href="https://www.adobe.com/products/xd.html" class="url-value">https://www.adobe.com/products/xd.html</a></td><td class="cell-ZcAR"></td></tr><tr id="31fc82d6-bf41-4dec-9abf-c388615e0dde"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Sketch%2031fc82d6bf414dec9abfc388615e0dde.html">Sketch</a></td><td class="cell-Mrqe"><a href="https://www.sketch.com" class="url-value">https://www.sketch.com</a></td><td class="cell-ZcAR"></td></tr><tr id="23d0bcac-d53a-43f7-bd92-bb458d970f3f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Whimsical%2023d0bcacd53a43f7bd92bb458d970f3f.html">Whimsical</a></td><td class="cell-Mrqe"><a href="https://whimsical.com" class="url-value">https://whimsical.com</a></td><td class="cell-ZcAR"></td></tr><tr id="431cf8d2-e3e6-4a25-b9d9-d904b6a5985d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Undesign%20431cf8d2e3e64a25b9d9d904b6a5985d.html">Undesign</a></td><td class="cell-Mrqe"><a href="https://undesign.learn.uno" class="url-value">https://undesign.learn.uno</a></td><td class="cell-ZcAR"></td></tr><tr id="1a3c743a-0e9f-4296-8e0e-bbd83c53e0da"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%201a3c743a0e9f42968e0ebbd83c53e0da.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-how-the-web-works" class="url-value">https://github.com/iamismile/web-dev-resources#-how-the-web-works</a></td><td class="cell-ZcAR"></td></tr><tr id="319424e1-5319-413a-88aa-3a210d87c2df"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/How%20the%20Internet%20Works%20Video%20319424e15319413a88aa3a210d87c2df.html">How the Internet Works Video</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/watch?v=x3c1ih2NJEg" class="url-value">https://www.youtube.com/watch?v=x3c1ih2NJEg</a></td><td class="cell-ZcAR"></td></tr><tr id="479e4024-b989-4e54-84cb-5f369ebafc01"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/How%20the%20Internet%20Works%20Brief%20Videos%20479e4024b9894e5484cb5f369ebafc01.html">How the Internet Works Brief Videos</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7" class="url-value">https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7</a></td><td class="cell-ZcAR"></td></tr><tr id="135a1418-28ed-4dcc-a935-d621a58dbe65"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DNS%20135a141828ed4dcca935d621a58dbe65.html">DNS</a></td><td class="cell-Mrqe"><a href="https://howdns.works" class="url-value">https://howdns.works</a></td><td class="cell-ZcAR"></td></tr><tr id="ff4d1474-c9ff-4970-bd46-fbfcd9ee3feb"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTTPS%20ff4d1474c9ff4970bd46fbfcd9ee3feb.html">HTTPS</a></td><td class="cell-Mrqe"><a href="https://howhttps.works" class="url-value">https://howhttps.works</a></td><td class="cell-ZcAR"></td></tr><tr id="5269f488-8042-4f59-91d8-c8563c341832"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%205269f48880424f5991d8c8563c341832.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-html-and-css" class="url-value">https://github.com/iamismile/web-dev-resources#-html-and-css</a></td><td class="cell-ZcAR"></td></tr><tr id="1ad2e8d9-56a8-4c88-9284-b7539109f209"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%201ad2e8d956a84c889284b7539109f209.html">freeCodeCamp</a></td><td class="cell-Mrqe"><a href="https://www.freecodecamp.org/learn" class="url-value">https://www.freecodecamp.org/learn</a></td><td class="cell-ZcAR"></td></tr><tr id="a1e68340-e78e-4a7b-a0c8-4311b547172a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Interneting%20Is%20Hard%20a1e68340e78e4a7ba0c84311b547172a.html">Interneting Is Hard</a></td><td class="cell-Mrqe"><a href="https://www.internetingishard.com" class="url-value">https://www.internetingishard.com</a></td><td class="cell-ZcAR"></td></tr><tr id="7007e285-254d-47e2-8c4b-454de1e872c1"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Learn%20to%20Code%20HTML%20&amp;%20CSS%207007e285254d47e28c4b454de1e872c1.html">Learn to Code HTML &amp; CSS</a></td><td class="cell-Mrqe"><a href="https://learn.shayhowe.com" class="url-value">https://learn.shayhowe.com</a></td><td class="cell-ZcAR"></td></tr><tr id="de8cd023-2470-40df-b510-64de1b5bcc2d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTML%20Elements%20de8cd023247040dfb51064de1b5bcc2d.html">HTML Elements</a></td><td class="cell-Mrqe"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" class="url-value">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></td><td class="cell-ZcAR"></td></tr><tr id="eb90e3cd-b563-4d9c-b52b-f54d6b3293f8"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTML%20Entity%20eb90e3cdb5634d9cb52bf54d6b3293f8.html">HTML Entity</a></td><td class="cell-Mrqe"><a href="https://css-tricks.com/snippets/html/glyphs/" class="url-value">https://css-tricks.com/snippets/html/glyphs/</a></td><td class="cell-ZcAR"></td></tr><tr id="ef90b4b0-bfc6-447b-9c84-30946e856bcc"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTML%20Shark%20ef90b4b0bfc6447b9c8430946e856bcc.html">HTML Shark</a></td><td class="cell-Mrqe"><a href="https://html-shark.com" class="url-value">https://html-shark.com</a></td><td class="cell-ZcAR"></td></tr><tr id="9de31b7d-05b5-44dd-8232-516de7ee99a6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS3%20Properties%209de31b7d05b544dd8232516de7ee99a6.html">CSS3 Properties</a></td><td class="cell-Mrqe"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" class="url-value">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a></td><td class="cell-ZcAR"></td></tr><tr id="bd589168-6958-483c-b960-c170ec05ae39"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Reference%20bd5891686958483cb960c170ec05ae39.html">CSS Reference</a></td><td class="cell-Mrqe"><a href="https://cssreference.io" class="url-value">https://cssreference.io</a></td><td class="cell-ZcAR"></td></tr><tr id="3bb8e9bb-a819-4ebd-9ac9-0d941e6d556b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Layout%203bb8e9bba8194ebd9ac90d941e6d556b.html">CSS Layout</a></td><td class="cell-Mrqe"><a href="https://csslayout.io" class="url-value">https://csslayout.io</a></td><td class="cell-ZcAR"></td></tr><tr id="d7150bdf-dec2-4d6c-b389-35cea73c3890"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Modern%20CSS%20Solutions%20d7150bdfdec24d6cb38935cea73c3890.html">Modern CSS Solutions</a></td><td class="cell-Mrqe"><a href="https://moderncss.dev" class="url-value">https://moderncss.dev</a></td><td class="cell-ZcAR"></td></tr><tr id="67abcaaf-2c60-4c1b-935c-33c35bb53885"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Diner%2067abcaaf2c604c1b935c33c35bb53885.html">CSS Diner</a></td><td class="cell-Mrqe"><a href="https://flukeout.github.io" class="url-value">https://flukeout.github.io</a></td><td class="cell-ZcAR"></td></tr><tr id="8b5d399e-5864-4c05-8774-fd1c99222f78"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Flexbox%20Froggy%208b5d399e58644c058774fd1c99222f78.html">Flexbox Froggy</a></td><td class="cell-Mrqe"><a href="https://flexboxfroggy.com" class="url-value">https://flexboxfroggy.com</a></td><td class="cell-ZcAR"></td></tr><tr id="a99de975-5f39-4128-9afb-a4df2db34459"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20TRICKS%20-%20Flexbox%20a99de9755f3941289afba4df2db34459.html">CSS TRICKS - Flexbox</a></td><td class="cell-Mrqe"><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="url-value">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></td><td class="cell-ZcAR"></td></tr><tr id="c97ea48b-91ea-4750-99a0-e7510e29cc18"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Grid%20by%20Example%20c97ea48b91ea475099a0e7510e29cc18.html">Grid by Example</a></td><td class="cell-Mrqe"><a href="https://gridbyexample.com" class="url-value">https://gridbyexample.com</a></td><td class="cell-ZcAR"></td></tr><tr id="4b59f4d1-527c-4d71-9bd7-12df48502813"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Grid%20Garden%204b59f4d1527c4d719bd712df48502813.html">Grid Garden</a></td><td class="cell-Mrqe"><a href="https://cssgridgarden.com" class="url-value">https://cssgridgarden.com</a></td><td class="cell-ZcAR"></td></tr><tr id="06f9fe0b-2e9e-44ec-9169-3613f1f8ef14"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20TRICKS%20-%20A%20Complete%20Guide%20to%20Grid%2006f9fe0b2e9e44ec91693613f1f8ef14.html">CSS TRICKS - A Complete Guide to Grid</a></td><td class="cell-Mrqe"><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" class="url-value">https://css-tricks.com/snippets/css/complete-guide-grid/</a></td><td class="cell-ZcAR"></td></tr><tr id="5343f1fe-a573-457a-9375-64166172d4ce"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Learn%20CSS%20Grid%205343f1fea573457a937564166172d4ce.html">Learn CSS Grid</a></td><td class="cell-Mrqe"><a href="https://learncssgrid.com" class="url-value">https://learncssgrid.com</a></td><td class="cell-ZcAR"></td></tr><tr id="1232816a-6f09-4802-b08e-cae1971331ad"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Can%20I%20Use%201232816a6f094802b08ecae1971331ad.html">Can I Use</a></td><td class="cell-Mrqe"><a href="https://caniuse.com" class="url-value">https://caniuse.com</a></td><td class="cell-ZcAR"></td></tr><tr id="4f270984-fee7-46f8-a0bc-ed73aed77149"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Effects%204f270984fee746f8a0bced73aed77149.html">CSS Effects</a></td><td class="cell-Mrqe"><a href="https://emilkowalski.github.io/css-effects-snippets/" class="url-value">https://emilkowalski.github.io/css-effects-snippets/</a></td><td class="cell-ZcAR"></td></tr><tr id="fc4d2afb-a6f0-4b8c-bc39-c496dd7cfb7f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Keyframes%20fc4d2afba6f04b8cbc39c496dd7cfb7f.html">Keyframes</a></td><td class="cell-Mrqe"><a href="https://keyframes.app" class="url-value">https://keyframes.app</a></td><td class="cell-ZcAR"></td></tr><tr id="ac1f12d8-d55f-4d3f-9db3-030191e7ee86"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Animista%20ac1f12d8d55f4d3f9db3030191e7ee86.html">Animista</a></td><td class="cell-Mrqe"><a href="https://animista.net" class="url-value">https://animista.net</a></td><td class="cell-ZcAR"></td></tr><tr id="af906fef-97af-4815-b9df-003d72a29d61"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/BEM%20af906fef97af4815b9df003d72a29d61.html">BEM</a></td><td class="cell-Mrqe"><a href="https://9elements.com/bem-cheat-sheet" class="url-value">https://9elements.com/bem-cheat-sheet</a></td><td class="cell-ZcAR"></td></tr><tr id="b3ce7c66-8c9a-4825-9657-f289b6862d89"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Autoprefixer%20b3ce7c668c9a48259657f289b6862d89.html">Autoprefixer</a></td><td class="cell-Mrqe"><a href="https://autoprefixer.github.io" class="url-value">https://autoprefixer.github.io</a></td><td class="cell-ZcAR"></td></tr><tr id="010e2d13-bfe5-48a8-b0e7-f2966dc73bd4"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Formatter%20010e2d13bfe548a8b0e7f2966dc73bd4.html">CSS Formatter</a></td><td class="cell-Mrqe"><a href="https://www.cleancss.com/css-beautify/" class="url-value">https://www.cleancss.com/css-beautify/</a></td><td class="cell-ZcAR"></td></tr><tr id="b76ee59e-7a51-4570-b313-27ead4771927"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Placeholder%20b76ee59e7a514570b31327ead4771927.html">Placeholder</a></td><td class="cell-Mrqe"><a href="https://placeholder.com" class="url-value">https://placeholder.com</a></td><td class="cell-ZcAR"></td></tr><tr id="dfd1ffd6-bb19-4d76-a7ae-773740146159"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DevProjects%20dfd1ffd6bb194d76a7ae773740146159.html">DevProjects</a></td><td class="cell-Mrqe"><a href="https://www.codementor.io/projects/html_css" class="url-value">https://www.codementor.io/projects/html_css</a></td><td class="cell-ZcAR"></td></tr><tr id="e49f89d8-285b-4c9d-8f06-1371bb8544be"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20e49f89d8285b4c9d8f061371bb8544be.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-front-end-challenges-or-skills" class="url-value">https://github.com/iamismile/web-dev-resources#-front-end-challenges-or-skills</a></td><td class="cell-ZcAR"></td></tr><tr id="ff29aa69-afb7-43ab-b45b-c1028630fcdd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CodePen%20ff29aa69afb743abb45bc1028630fcdd.html">CodePen</a></td><td class="cell-Mrqe"><a href="https://codepen.io" class="url-value">https://codepen.io</a></td><td class="cell-ZcAR"></td></tr><tr id="28db2757-9efe-4f09-b1c0-03bf33f6efea"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Frontend%20Mentor%2028db27579efe4f09b1c003bf33f6efea.html">Frontend Mentor</a></td><td class="cell-Mrqe"><a href="https://www.frontendmentor.io" class="url-value">https://www.frontendmentor.io</a></td><td class="cell-ZcAR"></td></tr><tr id="85b25e2b-5b16-4509-a6c6-f04c76317414"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Good%20Code%2085b25e2b5b164509a6c6f04c76317414.html">Good Code</a></td><td class="cell-Mrqe"><a href="https://moeminm.github.io/goodcode/" class="url-value">https://moeminm.github.io/goodcode/</a></td><td class="cell-ZcAR"></td></tr><tr id="061ff748-aa4d-4511-b2ea-7bef7f61aa24"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/codier%20061ff748aa4d4511b2ea7bef7f61aa24.html">codier</a></td><td class="cell-Mrqe"><a href="https://codier.io" class="url-value">https://codier.io</a></td><td class="cell-ZcAR"></td></tr><tr id="a093b98f-91f1-418c-b4f5-75d483cc66ee"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSSBattle%20a093b98f91f1418cb4f575d483cc66ee.html">CSSBattle</a></td><td class="cell-Mrqe"><a href="https://cssbattle.dev" class="url-value">https://cssbattle.dev</a></td><td class="cell-ZcAR"></td></tr><tr id="23261256-eb47-4ba3-8e1f-863df54173ff"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%2023261256eb474ba38e1f863df54173ff.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-fonts-and-typography" class="url-value">https://github.com/iamismile/web-dev-resources#-fonts-and-typography</a></td><td class="cell-ZcAR"></td></tr><tr id="22394ab3-d247-4388-8218-09b5766fb7d4"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Google%20Fonts%2022394ab3d2474388821809b5766fb7d4.html">Google Fonts</a></td><td class="cell-Mrqe"><a href="https://fonts.google.com" class="url-value">https://fonts.google.com</a></td><td class="cell-ZcAR"></td></tr><tr id="6a514f56-8523-44f4-ae70-84d11ef72716"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Fonts%20Arena%206a514f56852344f4ae7084d11ef72716.html">Fonts Arena</a></td><td class="cell-Mrqe"><a href="https://fontsarena.com" class="url-value">https://fontsarena.com</a></td><td class="cell-ZcAR"></td></tr><tr id="6ecda3e7-9315-464c-8e00-c5695b8af7df"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Fontjoy%206ecda3e79315464c8e00c5695b8af7df.html">Fontjoy</a></td><td class="cell-Mrqe"><a href="https://fontjoy.com" class="url-value">https://fontjoy.com</a></td><td class="cell-ZcAR"></td></tr><tr id="924801fe-fd4b-40b4-b9a8-532d29a6663f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/FontPair%20924801fefd4b40b4b9a8532d29a6663f.html">FontPair</a></td><td class="cell-Mrqe"><a href="https://fontpair.co" class="url-value">https://fontpair.co</a></td><td class="cell-ZcAR"></td></tr><tr id="57f97825-3957-4128-a48d-43eb38431b5d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Font%20Playground%2057f9782539574128a48d43eb38431b5d.html">Font Playground</a></td><td class="cell-Mrqe"><a href="https://play.typedetail.com" class="url-value">https://play.typedetail.com</a></td><td class="cell-ZcAR"></td></tr><tr id="7e4601b7-6e2f-4a61-9fba-000f58f3247b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Font%20Anything%207e4601b76e2f4a619fba000f58f3247b.html">Font Anything</a></td><td class="cell-Mrqe"><a href="https://app.typeanything.io" class="url-value">https://app.typeanything.io</a></td><td class="cell-ZcAR"></td></tr><tr id="2b37cf32-8826-461f-836f-27435f641874"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%202b37cf328826461f836f27435f641874.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-colors-and-tools" class="url-value">https://github.com/iamismile/web-dev-resources#-colors-and-tools</a></td><td class="cell-ZcAR"></td></tr><tr id="3e7247e7-492d-427f-8bb9-c7ceb68b2811"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Coolors%203e7247e7492d427f8bb9c7ceb68b2811.html">Coolors</a></td><td class="cell-Mrqe"><a href="https://coolors.co" class="url-value">https://coolors.co</a></td><td class="cell-ZcAR"></td></tr><tr id="503125e2-46a2-4326-9f5d-247fa4d82052"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/0to255%20503125e246a243269f5d247fa4d82052.html">0to255</a></td><td class="cell-Mrqe"><a href="https://www.0to255.com" class="url-value">https://www.0to255.com</a></td><td class="cell-ZcAR"></td></tr><tr id="fc5302d4-fd7b-4c71-84af-d0dbdf1d5af6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/ColorBox%20fc5302d4fd7b4c7184afd0dbdf1d5af6.html">ColorBox</a></td><td class="cell-Mrqe"><a href="https://colorbox.io" class="url-value">https://colorbox.io</a></td><td class="cell-ZcAR"></td></tr><tr id="9cc9ed06-b2d2-4b4a-ba3c-ed67d46e526d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/color%20x%20color%209cc9ed06b2d24b4aba3ced67d46e526d.html">color x color</a></td><td class="cell-Mrqe"><a href="https://colorcolor.in" class="url-value">https://colorcolor.in</a></td><td class="cell-ZcAR"></td></tr><tr id="1d3e8ab6-61be-4160-850e-b9ed18096680"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Colors%20and%20Fonts%201d3e8ab661be4160850eb9ed18096680.html">Colors and Fonts</a></td><td class="cell-Mrqe"><a href="https://www.colorsandfonts.com" class="url-value">https://www.colorsandfonts.com</a></td><td class="cell-ZcAR"></td></tr><tr id="c55b437f-493f-43a8-b469-bcf56d2131b5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/ColorSpace%20c55b437f493f43a8b469bcf56d2131b5.html">ColorSpace</a></td><td class="cell-Mrqe"><a href="https://mycolor.space" class="url-value">https://mycolor.space</a></td><td class="cell-ZcAR"></td></tr><tr id="7cf73565-990b-469a-9067-051a271d8640"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Gradient%207cf73565990b469a9067051a271d8640.html">CSS Gradient</a></td><td class="cell-Mrqe"><a href="https://cssgradient.io" class="url-value">https://cssgradient.io</a></td><td class="cell-ZcAR"></td></tr><tr id="8f24d080-e31f-4824-89bb-d7103c186b9d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/uiGradients%208f24d080e31f482489bbd7103c186b9d.html">uiGradients</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/uigradients.com" class="url-value">https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/uigradients.com</a></td><td class="cell-ZcAR"></td></tr><tr id="4366ea9a-f4aa-4573-b960-b6ad923967d5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Picular%204366ea9af4aa4573b960b6ad923967d5.html">Picular</a></td><td class="cell-Mrqe"><a href="https://picular.co" class="url-value">https://picular.co</a></td><td class="cell-ZcAR"></td></tr><tr id="adbf2d48-0de2-43bb-88a1-01433f65e840"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Colorable%20adbf2d480de243bb88a101433f65e840.html">Colorable</a></td><td class="cell-Mrqe"><a href="https://colorable.jxnblk.com" class="url-value">https://colorable.jxnblk.com</a></td><td class="cell-ZcAR"></td></tr><tr id="8ea8fb2e-ab17-4c96-bcd7-76ee9b095aca"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Happy%20Hues%208ea8fb2eab174c96bcd776ee9b095aca.html">Happy Hues</a></td><td class="cell-Mrqe"><a href="https://www.happyhues.co" class="url-value">https://www.happyhues.co</a></td><td class="cell-ZcAR"></td></tr><tr id="b00341f2-5041-42b5-8076-bafc3ca8d1ca"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20b00341f2504142b58076bafc3ca8d1ca.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-image-resources" class="url-value">https://github.com/iamismile/web-dev-resources#-image-resources</a></td><td class="cell-ZcAR"></td></tr><tr id="f7057f7d-302e-4a08-8a69-a38f022abe46"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Unsplash%20f7057f7d302e4a088a69a38f022abe46.html">Unsplash</a></td><td class="cell-Mrqe"><a href="https://unsplash.com" class="url-value">https://unsplash.com</a></td><td class="cell-ZcAR"></td></tr><tr id="651466ef-830d-46dd-ba87-3a02847694f9"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Pexels%20651466ef830d46ddba873a02847694f9.html">Pexels</a></td><td class="cell-Mrqe"><a href="https://www.pexels.com" class="url-value">https://www.pexels.com</a></td><td class="cell-ZcAR"></td></tr><tr id="2aa31408-f106-4d14-9fd4-5e1da2baabc5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Pixabay%202aa31408f1064d149fd45e1da2baabc5.html">Pixabay</a></td><td class="cell-Mrqe"><a href="https://pixabay.com" class="url-value">https://pixabay.com</a></td><td class="cell-ZcAR"></td></tr><tr id="ed17c600-bf51-4525-9865-c5ecdecc6c8a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/LOADING%20IO%20ed17c600bf5145259865c5ecdecc6c8a.html">LOADING.IO</a></td><td class="cell-Mrqe"><a href="https://loading.io" class="url-value">https://loading.io</a></td><td class="cell-ZcAR"></td></tr><tr id="cebb1bd1-9851-4813-82e6-24714eeac199"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/LottieFiles%20cebb1bd19851481382e624714eeac199.html">LottieFiles</a></td><td class="cell-Mrqe"><a href="https://lottiefiles.com" class="url-value">https://lottiefiles.com</a></td><td class="cell-ZcAR"></td></tr><tr id="91b41123-a81d-48d5-99dd-d13dff2d3f0d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/removebg%2091b41123a81d48d599ddd13dff2d3f0d.html">removebg</a></td><td class="cell-Mrqe"><a href="https://www.remove.bg" class="url-value">https://www.remove.bg</a></td><td class="cell-ZcAR"></td></tr><tr id="f9e5a0dd-3155-4a12-9705-c52be36957f0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Remove%20Photo%20Data%20f9e5a0dd31554a129705c52be36957f0.html">Remove Photo Data</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/removephotodata.com" class="url-value">https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/removephotodata.com</a></td><td class="cell-ZcAR"></td></tr><tr id="315767fe-a29c-4e9f-b4ba-1f8a422547d6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/befunky%20315767fea29c4e9fb4ba1f8a422547d6.html">befunky</a></td><td class="cell-Mrqe"><a href="https://www.befunky.com" class="url-value">https://www.befunky.com</a></td><td class="cell-ZcAR"></td></tr><tr id="fb59e83c-d260-4235-8aa9-64c3f16e50e6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20fb59e83cd26042358aa964c3f16e50e6.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-illustrations" class="url-value">https://github.com/iamismile/web-dev-resources#-illustrations</a></td><td class="cell-ZcAR"></td></tr><tr id="a54beb22-15a8-4afa-9a7b-39e1d182852e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/unDraw%20a54beb2215a84afa9a7b39e1d182852e.html">unDraw</a></td><td class="cell-Mrqe"><a href="https://undraw.co/illustrations" class="url-value">https://undraw.co/illustrations</a></td><td class="cell-ZcAR"></td></tr><tr id="a1b1541e-095e-446b-987e-92c6f8ed3754"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/manypixels%20a1b1541e095e446b987e92c6f8ed3754.html">manypixels</a></td><td class="cell-Mrqe"><a href="https://www.manypixels.co/gallery/" class="url-value">https://www.manypixels.co/gallery/</a></td><td class="cell-ZcAR"></td></tr><tr id="efb9bfda-3d81-4598-b9cf-3aef6fa1f84a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DrawKit%20efb9bfda3d814598b9cf3aef6fa1f84a.html">DrawKit</a></td><td class="cell-Mrqe"><a href="https://www.drawkit.io" class="url-value">https://www.drawkit.io</a></td><td class="cell-ZcAR"></td></tr><tr id="78041009-68c7-44ea-94e9-6e6a82e31cbd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freepik%207804100968c744ea94e96e6a82e31cbd.html">freepik</a></td><td class="cell-Mrqe"><a href="https://www.freepik.com" class="url-value">https://www.freepik.com</a></td><td class="cell-ZcAR"></td></tr><tr id="9237f7bb-0826-4084-bc5f-7bc4f086b7cf"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%209237f7bb08264084bc5f7bc4f086b7cf.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-icons" class="url-value">https://github.com/iamismile/web-dev-resources#-icons</a></td><td class="cell-ZcAR"></td></tr><tr id="6d2c04f2-caf7-40f2-a319-4b09048901e6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Ionicons%206d2c04f2caf740f2a3194b09048901e6.html">Ionicons</a></td><td class="cell-Mrqe"><a href="https://ionicons.com" class="url-value">https://ionicons.com</a></td><td class="cell-ZcAR"></td></tr><tr id="ca89d0ba-3bb4-420f-95ca-2dbdf877b2bd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Font%20Awesome%20ca89d0ba3bb4420f95ca2dbdf877b2bd.html">Font Awesome</a></td><td class="cell-Mrqe"><a href="https://fontawesome.com" class="url-value">https://fontawesome.com</a></td><td class="cell-ZcAR"></td></tr><tr id="907c9d25-c2ea-44cd-8870-321690adcf2d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Material%20Icons%20907c9d25c2ea44cd8870321690adcf2d.html">Material Icons</a></td><td class="cell-Mrqe"><a href="https://material.io/resources/icons/?style=baseline" class="url-value">https://material.io/resources/icons/?style=baseline</a></td><td class="cell-ZcAR"></td></tr><tr id="4ec896b6-9ea1-426a-bebd-10d544f51d4c"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Icones%204ec896b69ea1426abebd10d544f51d4c.html">Icones</a></td><td class="cell-Mrqe"><a href="https://icones.js.org" class="url-value">https://icones.js.org</a></td><td class="cell-ZcAR"></td></tr><tr id="5d8e2989-044f-4d3f-9b45-c34ca267b62a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/icons8%205d8e2989044f4d3f9b45c34ca267b62a.html">icons8</a></td><td class="cell-Mrqe"><a href="https://icons8.com/icons" class="url-value">https://icons8.com/icons</a></td><td class="cell-ZcAR"></td></tr><tr id="ebb96bf1-f64e-4b99-bfa6-948e9e5154d7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/flaticon%20ebb96bf1f64e4b99bfa6948e9e5154d7.html">flaticon</a></td><td class="cell-Mrqe"><a href="https://www.flaticon.com" class="url-value">https://www.flaticon.com</a></td><td class="cell-ZcAR"></td></tr><tr id="262d42ac-f76d-4939-9f65-d370c931006a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Tabler%20Icons%20262d42acf76d49399f65d370c931006a.html">Tabler Icons</a></td><td class="cell-Mrqe"><a href="https://tablericons.com" class="url-value">https://tablericons.com</a></td><td class="cell-ZcAR"></td></tr><tr id="f63203a7-ed95-4cef-8c49-592ff24d35f6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/icofont%20f63203a7ed954cef8c49592ff24d35f6.html">icofont</a></td><td class="cell-Mrqe"><a href="https://icofont.com/icons" class="url-value">https://icofont.com/icons</a></td><td class="cell-ZcAR"></td></tr><tr id="00fa4f1b-f1c7-4341-9f17-be083511bd84"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Simple%20Icons%2000fa4f1bf1c743419f17be083511bd84.html">Simple Icons</a></td><td class="cell-Mrqe"><a href="https://simpleicons.org" class="url-value">https://simpleicons.org</a></td><td class="cell-ZcAR"></td></tr><tr id="fabaf47d-b083-4c48-80f0-0288bd683927"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Get%20Emoji%20fabaf47db0834c4880f00288bd683927.html">Get Emoji</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://getemoji.com" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://getemoji.com</a></td><td class="cell-ZcAR"></td></tr><tr id="7bf570af-a215-44be-b79b-2b3ae511e8f5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Ikonate%207bf570afa21544beb79b2b3ae511e8f5.html">Ikonate</a></td><td class="cell-Mrqe"><a href="https://ikonate.com" class="url-value">https://ikonate.com</a></td><td class="cell-ZcAR"></td></tr><tr id="f3d10697-4a72-4712-8232-4c2f71b31c55"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/useAnimations%20f3d106974a72471282324c2f71b31c55.html">useAnimations</a></td><td class="cell-Mrqe"><a href="https://useanimations.com" class="url-value">https://useanimations.com</a></td><td class="cell-ZcAR"></td></tr><tr id="2cf80e2b-a56c-4ef7-81a2-fba46c56d10c"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%202cf80e2ba56c4ef781a2fba46c56d10c.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-generators" class="url-value">https://github.com/iamismile/web-dev-resources#-generators</a></td><td class="cell-ZcAR"></td></tr><tr id="d1b6160e-376c-46be-a98d-6343bc5ef8c3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Lorem%20Ipsum%20d1b6160e376c46bea98d6343bc5ef8c3.html">Lorem Ipsum</a></td><td class="cell-Mrqe"><a href="https://loremipsum.io" class="url-value">https://loremipsum.io</a></td><td class="cell-ZcAR"></td></tr><tr id="e5422114-d781-4dff-b1be-0a67f82156e7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/RealFaviconGenerator%20e5422114d7814dffb1be0a67f82156e7.html">RealFaviconGenerator</a></td><td class="cell-Mrqe"><a href="https://realfavicongenerator.net" class="url-value">https://realfavicongenerator.net</a></td><td class="cell-ZcAR"></td></tr><tr id="d0fb3bd1-d936-4d59-b9fb-138c4e22da73"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Favicon%20Maker%20d0fb3bd1d9364d59b9fb138c4e22da73.html">Favicon Maker</a></td><td class="cell-Mrqe"><a href="https://formito.com/tools/favicon" class="url-value">https://formito.com/tools/favicon</a></td><td class="cell-ZcAR"></td></tr><tr id="ba521665-d352-400c-8f01-43e1b43684e3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Meta%20Tags%20ba521665d352400c8f0143e1b43684e3.html">Meta Tags</a></td><td class="cell-Mrqe"><a href="https://metatags.io" class="url-value">https://metatags.io</a></td><td class="cell-ZcAR"></td></tr><tr id="db36f5ba-18a0-4083-834d-6141f5451ff7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Clippy%20db36f5ba18a04083834d6141f5451ff7.html">Clippy</a></td><td class="cell-Mrqe"><a href="https://bennettfeely.com/clippy/" class="url-value">https://bennettfeely.com/clippy/</a></td><td class="cell-ZcAR"></td></tr><tr id="60f048aa-804c-4634-a299-25f956705524"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/i%20Hate%20Regex%2060f048aa804c4634a29925f956705524.html">i Hate Regex</a></td><td class="cell-Mrqe"><a href="https://ihateregex.io" class="url-value">https://ihateregex.io</a></td><td class="cell-ZcAR"></td></tr><tr id="9c77e84b-a4c3-4521-a5c4-81d278ecc527"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Regex101%209c77e84ba4c34521a5c481d278ecc527.html">Regex101</a></td><td class="cell-Mrqe"><a href="https://regex101.com" class="url-value">https://regex101.com</a></td><td class="cell-ZcAR"></td></tr><tr id="3ed3e7e5-5488-4f80-bcc9-23561601cb2f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Web%20Code%20Tools%203ed3e7e554884f80bcc923561601cb2f.html">Web Code Tools</a></td><td class="cell-Mrqe"><a href="https://webcode.tools" class="url-value">https://webcode.tools</a></td><td class="cell-ZcAR"></td></tr><tr id="86cdb6c7-b554-4c02-ab17-0d4f0193c2a2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Carbon%2086cdb6c7b5544c02ab170d4f0193c2a2.html">Carbon</a></td><td class="cell-Mrqe"><a href="https://carbon.now.sh" class="url-value">https://carbon.now.sh</a></td><td class="cell-ZcAR"></td></tr><tr id="2c4971ba-f14d-4622-b986-f74068596f5f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Grid%20Generator%202c4971baf14d4622b986f74068596f5f.html">CSS Grid Generator</a></td><td class="cell-Mrqe"><a href="https://grid.layoutit.com" class="url-value">https://grid.layoutit.com</a></td><td class="cell-ZcAR"></td></tr><tr id="5b8ec19f-dde5-4467-b920-81fba6fba610"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Scroll%20Shadows%205b8ec19fdde54467b92081fba6fba610.html">CSS Scroll Shadows</a></td><td class="cell-Mrqe"><a href="https://css-scroll-shadows.now.sh" class="url-value">https://css-scroll-shadows.now.sh</a></td><td class="cell-ZcAR"></td></tr><tr id="bdcfc56d-7830-4ce0-9b3b-e1fb2fc5207b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CSS%20Shadow%20Generator%20bdcfc56d78304ce09b3be1fb2fc5207b.html">CSS Shadow Generator</a></td><td class="cell-Mrqe"><a href="https://brumm.af/shadows" class="url-value">https://brumm.af/shadows</a></td><td class="cell-ZcAR"></td></tr><tr id="1fc2c4ef-1046-4268-890e-7582400b1d5b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Haikei%201fc2c4ef10464268890e7582400b1d5b.html">Haikei</a></td><td class="cell-Mrqe"><a href="https://haikei.app" class="url-value">https://haikei.app</a></td><td class="cell-ZcAR"></td></tr><tr id="729d7554-56e9-45b0-ac86-5323756391cc"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/transform%20729d755456e945b0ac865323756391cc.html">transform</a></td><td class="cell-Mrqe"><a href="https://transform.tools" class="url-value">https://transform.tools</a></td><td class="cell-ZcAR"></td></tr><tr id="9edd02cf-dac5-4f4b-888f-5c85ec572bc7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Perflink%20JS%20Benchmarks%209edd02cfdac54f4b888f5c85ec572bc7.html">Perflink | JS Benchmarks</a></td><td class="cell-Mrqe"><a href="https://perf.link" class="url-value">https://perf.link</a></td><td class="cell-ZcAR"></td></tr><tr id="b9b40497-3885-4dd7-ac05-26b05b25d6cd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20b9b4049738854dd7ac0526b05b25d6cd.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-accessibility" class="url-value">https://github.com/iamismile/web-dev-resources#-accessibility</a></td><td class="cell-ZcAR"></td></tr><tr id="a0347ed3-8772-4b22-b35f-2aa0d1da1f46"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Accessibility%20Blog%20-%20Medium%20a0347ed387724b22b35f2aa0d1da1f46.html">Accessibility Blog - Medium</a></td><td class="cell-Mrqe"><a href="https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94" class="url-value">https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94</a></td><td class="cell-ZcAR"></td></tr><tr id="04b6c526-0954-45d1-92e9-441d2a156385"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Accessibility%20Blog%20-%20Dev%2004b6c526095445d192e9441d2a156385.html">Accessibility Blog - Dev</a></td><td class="cell-Mrqe"><a href="https://dev.to/erhannah/13-ways-to-level-up-your-site-s-accessibility-22c6" class="url-value">https://dev.to/erhannah/13-ways-to-level-up-your-site-s-accessibility-22c6</a></td><td class="cell-ZcAR"></td></tr><tr id="12b2c221-53a9-4328-af53-5036540700c6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Accessibility%20Cheatsheet%2012b2c22153a94328af535036540700c6.html">Accessibility Cheatsheet</a></td><td class="cell-Mrqe"><a href="https://moritzgiessmann.de/accessibility-cheatsheet" class="url-value">https://moritzgiessmann.de/accessibility-cheatsheet</a></td><td class="cell-ZcAR"></td></tr><tr id="a20d6d53-c6db-4994-9db6-08367568cc0b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20a20d6d53c6db49949db608367568cc0b.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-site-analyzers" class="url-value">https://github.com/iamismile/web-dev-resources#-site-analyzers</a></td><td class="cell-ZcAR"></td></tr><tr id="d75e6aea-4bec-4c20-9b07-9679e6b3a70b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/web%20dev%20d75e6aea4bec4c209b079679e6b3a70b.html">web.dev</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/web.dev/measure" class="url-value">https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/web.dev/measure</a></td><td class="cell-ZcAR"></td></tr><tr id="cb1db3f3-c4f4-4bd6-aca1-9d3a70294008"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Lighthouse%20Metrics%20cb1db3f3c4f44bd6aca19d3a70294008.html">Lighthouse Metrics</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/lighthouse-metrics.com" class="url-value">https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/lighthouse-metrics.com</a></td><td class="cell-ZcAR"></td></tr><tr id="895263bf-6620-4ffb-9ce3-9e86148acaa1"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20895263bf66204ffb9ce39e86148acaa1.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-terminals-for-windows" class="url-value">https://github.com/iamismile/web-dev-resources#-terminals-for-windows</a></td><td class="cell-ZcAR"></td></tr><tr id="e8c5517f-15b7-4018-9b2f-8cc4c7b788c7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Windows%20Terminal%20e8c5517f15b740189b2f8cc4c7b788c7.html">Windows Terminal</a></td><td class="cell-Mrqe"><a href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab" class="url-value">https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab</a></td><td class="cell-ZcAR"></td></tr><tr id="c85cc223-d208-4647-9c02-946472dfb573"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/FluentTerminal%20c85cc223d20846479c02946472dfb573.html">FluentTerminal</a></td><td class="cell-Mrqe"><a href="https://github.com/felixse/FluentTerminal" class="url-value">https://github.com/felixse/FluentTerminal</a></td><td class="cell-ZcAR"></td></tr><tr id="39602e76-797a-41e1-a739-18d95fe43b3e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Hyper%2039602e76797a41e1a73918d95fe43b3e.html">Hyper</a></td><td class="cell-Mrqe"><a href="https://hyper.is" class="url-value">https://hyper.is</a></td><td class="cell-ZcAR"></td></tr><tr id="411b7f87-9065-4610-8aeb-a2a178b1da26"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Cmder%20411b7f87906546108aeba2a178b1da26.html">Cmder</a></td><td class="cell-Mrqe"><a href="https://cmder.net//" class="url-value">https://cmder.net//</a></td><td class="cell-ZcAR"></td></tr><tr id="b4513f56-c235-470f-ae9b-29e88e262fc2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20b4513f56c235470fae9b29e88e262fc2.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-online-ide-editor" class="url-value">https://github.com/iamismile/web-dev-resources#-online-ide-editor</a></td><td class="cell-ZcAR"></td></tr><tr id="a2288014-d72d-40d0-8cbd-dec49b3a4677"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Repl%20it%20a2288014d72d40d08cbddec49b3a4677.html">Repl.it</a></td><td class="cell-Mrqe"><a href="https://repl.it/" class="url-value">https://repl.it/</a></td><td class="cell-ZcAR"></td></tr><tr id="bb369356-199d-43e7-abdb-bf7acb3cefa2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CodeSandbox%20bb369356199d43e7abdbbf7acb3cefa2.html">CodeSandbox</a></td><td class="cell-Mrqe"><a href="https://codesandbox.io" class="url-value">https://codesandbox.io</a></td><td class="cell-ZcAR"></td></tr><tr id="b06c0891-a13d-49f1-b5ad-c0b914bcb8cf"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/CodePen%20b06c0891a13d49f1b5adc0b914bcb8cf.html">CodePen</a></td><td class="cell-Mrqe"><a href="https://codepen.io" class="url-value">https://codepen.io</a></td><td class="cell-ZcAR"></td></tr><tr id="833da777-b7a0-4f38-a574-98ddeccc9d7c"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JS%20Bin%20833da777b7a04f38a57498ddeccc9d7c.html">JS Bin</a></td><td class="cell-Mrqe"><a href="https://jsbin.com/" class="url-value">https://jsbin.com/</a></td><td class="cell-ZcAR"></td></tr><tr id="f5084fc3-82ed-41a5-9e93-d0a48c0c84da"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JSFiddle%20f5084fc382ed41a59e93d0a48c0c84da.html">JSFiddle</a></td><td class="cell-Mrqe"><a href="https://ide.goorm.io" class="url-value">https://ide.goorm.io</a></td><td class="cell-ZcAR"></td></tr><tr id="def91d74-3bbe-4f13-9fda-9ff1e32a1c1e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/goormIDE%20def91d743bbe4f139fda9ff1e32a1c1e.html">goormIDE</a></td><td class="cell-Mrqe"><a href="https://ide.goorm.io" class="url-value">https://ide.goorm.io</a></td><td class="cell-ZcAR"></td></tr><tr id="1cf63da0-2e46-4a92-a41d-dbffaeb46ce6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%201cf63da02e464a92a41ddbffaeb46ce6.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-javascript" class="url-value">https://github.com/iamismile/web-dev-resources#-javascript</a></td><td class="cell-ZcAR"></td></tr><tr id="45acb272-5c46-44e4-8fc5-5e3165396e6a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%2045acb2725c4644e48fc55e3165396e6a.html">freeCodeCamp</a></td><td class="cell-Mrqe"><a href="https://www.freecodecamp.org/learn" class="url-value">https://www.freecodecamp.org/learn</a></td><td class="cell-ZcAR"></td></tr><tr id="882e9fd4-8e5c-4ffb-bb37-5553ebf247f0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Codecademy%20882e9fd48e5c4ffbbb375553ebf247f0.html">Codecademy</a></td><td class="cell-Mrqe"><a href="https://www.codecademy.com/learn/introduction-to-javascript" class="url-value">https://www.codecademy.com/learn/introduction-to-javascript</a></td><td class="cell-ZcAR"></td></tr><tr id="cd02b1e6-ead8-47ac-bb18-cacaf3de397f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript%20info%20cd02b1e6ead847acbb18cacaf3de397f.html">JavaScript.info</a></td><td class="cell-Mrqe"><a href="https://javascript.info" class="url-value">https://javascript.info</a></td><td class="cell-ZcAR"></td></tr><tr id="c927df54-b28e-41c0-84da-487461901c5a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScripture%20c927df54b28e41c084da487461901c5a.html">JavaScripture</a></td><td class="cell-Mrqe"><a href="https://www.javascripture.com" class="url-value">https://www.javascripture.com</a></td><td class="cell-ZcAR"></td></tr><tr id="d06e870b-ce1c-49fc-9908-9433ff5116e3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Eloquent%20JavaScript%20d06e870bce1c49fc99089433ff5116e3.html">Eloquent JavaScript</a></td><td class="cell-Mrqe"><a href="https://eloquentjavascript.net" class="url-value">https://eloquentjavascript.net</a></td><td class="cell-ZcAR"></td></tr><tr id="b2344bcc-3578-465a-af07-e4114b095967"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript30%20b2344bcc3578465aaf07e4114b095967.html">JavaScript30</a></td><td class="cell-Mrqe"><a href="https://javascript30.com" class="url-value">https://javascript30.com</a></td><td class="cell-ZcAR"></td></tr><tr id="bce6dac5-073c-4815-88c7-068207c05a61"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/How%20JavaScript%20works%20bce6dac5073c481588c7068207c05a61.html">How JavaScript works</a></td><td class="cell-Mrqe"><a href="https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5" class="url-value">https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5</a></td><td class="cell-ZcAR"></td></tr><tr id="c749e12e-b3f2-4f30-9e59-b55d3c358729"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript%20Reference%20By%20MDN%20c749e12eb3f24f309e59b55d3c358729.html">JavaScript Reference By MDN</a></td><td class="cell-Mrqe"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="url-value">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></td><td class="cell-ZcAR"></td></tr><tr id="14c4d325-bb23-45de-9c9f-f5e95e314f76"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript%20Event%20Reference%2014c4d325bb2345de9c9ff5e95e314f76.html">JavaScript Event Reference</a></td><td class="cell-Mrqe"><a href="https://developer.mozilla.org/en-US/docs/Web/Events" class="url-value">https://developer.mozilla.org/en-US/docs/Web/Events</a></td><td class="cell-ZcAR"></td></tr><tr id="6550b723-ac4a-403f-a122-b5b4d3479d6f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DOM%20Manipulation%20Reference%206550b723ac4a403fa122b5b4d3479d6f.html">DOM Manipulation Reference</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://youmightnotneedjquery.com" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://youmightnotneedjquery.com</a></td><td class="cell-ZcAR"></td></tr><tr id="8c926c2a-f764-405d-9b90-accd30c1aa75"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript%20Design%20Patterns%208c926c2af764405d9b90accd30c1aa75.html">JavaScript Design Patterns</a></td><td class="cell-Mrqe"><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" class="url-value">https://addyosmani.com/resources/essentialjsdesignpatterns/book/</a></td><td class="cell-ZcAR"></td></tr><tr id="d8720a78-3269-41a2-891a-202c4adcb550"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/RegexOne%20d8720a78326941a2891a202c4adcb550.html">RegexOne</a></td><td class="cell-Mrqe"><a href="https://regexone.com" class="url-value">https://regexone.com</a></td><td class="cell-ZcAR"></td></tr><tr id="266699f4-0026-4bed-805e-f246b36f4a9c"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20266699f400264bed805ef246b36f4a9c.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-nodejs" class="url-value">https://github.com/iamismile/web-dev-resources#-nodejs</a></td><td class="cell-ZcAR"></td></tr><tr id="9f84f3f3-5f08-41de-b953-76f43c1afc1a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Node%20js%20Tutorial%209f84f3f35f0841deb95376f43c1afc1a.html">Node.js Tutorial</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU" class="url-value">https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU</a></td><td class="cell-ZcAR"></td></tr><tr id="a7359a7d-b5ba-4d40-b4c1-9b5d3a2d7964"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Mixu&#x27;s%20Node%20book%20a7359a7db5ba4d40b4c19b5d3a2d7964.html">Mixu&#x27;s Node book</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://book.mixu.net/node/index.html" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://book.mixu.net/node/index.html</a></td><td class="cell-ZcAR"></td></tr><tr id="7c7af81c-b143-41f7-bbf0-ae952ed0a9df"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Node%20JS%207c7af81cb14341f7bbf0ae952ed0a9df.html">Node JS</a></td><td class="cell-Mrqe"><a href="https://nodejs.dev/learn" class="url-value">https://nodejs.dev/learn</a></td><td class="cell-ZcAR"></td></tr><tr id="3abb7164-0a35-4cbb-9e8b-8a43183c2f3e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/30%20Days%20of%20Node%203abb71640a354cbb9e8b8a43183c2f3e.html">30 Days of Node</a></td><td class="cell-Mrqe"><a href="https://www.nodejsera.com/30-days-of-node.html" class="url-value">https://www.nodejsera.com/30-days-of-node.html</a></td><td class="cell-ZcAR"></td></tr><tr id="1ffbee05-ed7d-4eb4-8777-300e9a2eb7f4"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/nodebestpractices%201ffbee05ed7d4eb48777300e9a2eb7f4.html">nodebestpractices</a></td><td class="cell-Mrqe"><a href="https://github.com/goldbergyoni/nodebestpractices" class="url-value">https://github.com/goldbergyoni/nodebestpractices</a></td><td class="cell-ZcAR"></td></tr><tr id="71d74177-ef5b-4f65-83b9-4c4ec473641e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/The%20Node%20Way%2071d74177ef5b4f6583b94c4ec473641e.html">The Node Way</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://thenodeway.io" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://thenodeway.io</a></td><td class="cell-ZcAR"></td></tr><tr id="a76b5df8-536a-40d3-82d4-c610582e2b59"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/You%20Don&#x27;t%20Know%20Node%20js%20a76b5df8536a40d382d4c610582e2b59.html">You Don&#x27;t Know Node.js</a></td><td class="cell-Mrqe"><a href="https://github.com/azat-co/you-dont-know-node" class="url-value">https://github.com/azat-co/you-dont-know-node</a></td><td class="cell-ZcAR"></td></tr><tr id="2d5e2ca4-d812-4c54-b03a-342a51e5a6bd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Awesome%20Nodejs%202d5e2ca4d8124c54b03a342a51e5a6bd.html">Awesome Nodejs</a></td><td class="cell-Mrqe"><a href="https://github.com/sindresorhus/awesome-nodejs" class="url-value">https://github.com/sindresorhus/awesome-nodejs</a></td><td class="cell-ZcAR"></td></tr><tr id="be1bcc3b-a6fd-4f08-81f5-e1a5d04adb21"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Express%20js%20Security%20Tips%20be1bcc3ba6fd4f0881f5e1a5d04adb21.html">Express.js Security Tips</a></td><td class="cell-Mrqe"><a href="https://www.freecodecamp.org/news/express-js-security-tips/" class="url-value">https://www.freecodecamp.org/news/express-js-security-tips/</a></td><td class="cell-ZcAR"></td></tr><tr id="5a4a84cd-585d-41b2-867a-46dc7c8aa09e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%205a4a84cd585d41b2867a46dc7c8aa09e.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-python" class="url-value">https://github.com/iamismile/web-dev-resources#-python</a></td><td class="cell-ZcAR"></td></tr><tr id="b4f8a70d-1bf5-46dd-8fdc-41dff4473ec6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Learn%20Python%20Programming%20b4f8a70d1bf546dd8fdc41dff4473ec6.html">Learn Python Programming</a></td><td class="cell-Mrqe"><a href="https://pythonbasics.org" class="url-value">https://pythonbasics.org</a></td><td class="cell-ZcAR"></td></tr><tr id="7386e5ae-addc-46b5-99be-48554b3c82d2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/PY4E%207386e5aeaddc46b599be48554b3c82d2.html">PY4E</a></td><td class="cell-Mrqe"><a href="https://www.py4e.com" class="url-value">https://www.py4e.com</a></td><td class="cell-ZcAR"></td></tr><tr id="6458aa72-5b71-48f0-8968-d4d01f8df0c2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Dive%20Into%20Python%203%206458aa725b7148f08968d4d01f8df0c2.html">Dive Into Python 3</a></td><td class="cell-Mrqe"><a href="https://diveintopython3.net/index.html" class="url-value">https://diveintopython3.net/index.html</a></td><td class="cell-ZcAR"></td></tr><tr id="b6d78bbf-86d3-48b5-b785-72ac0c1c480a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Codecademy%20b6d78bbf86d348b5b78572ac0c1c480a.html">Codecademy</a></td><td class="cell-Mrqe"><a href="https://www.codecademy.com/learn/learn-python" class="url-value">https://www.codecademy.com/learn/learn-python</a></td><td class="cell-ZcAR"></td></tr><tr id="cdf2c54f-701d-453a-b23e-25e95f7951f7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Programiz%20cdf2c54f701d453ab23e25e95f7951f7.html">Programiz</a></td><td class="cell-Mrqe"><a href="https://www.programiz.com/python-programming" class="url-value">https://www.programiz.com/python-programming</a></td><td class="cell-ZcAR"></td></tr><tr id="a3dc9bcc-e517-4cc6-81bb-df917c8d69b6"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Awesome%20Python%20a3dc9bcce5174cc681bbdf917c8d69b6.html">Awesome Python</a></td><td class="cell-Mrqe"><a href="https://github.com/vinta/awesome-python" class="url-value">https://github.com/vinta/awesome-python</a></td><td class="cell-ZcAR"></td></tr><tr id="11ad8e04-ab59-452c-bfdd-5d66a1f120f7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Flask%20Tutorial%2011ad8e04ab59452cbfdd5d66a1f120f7.html">Flask Tutorial</a></td><td class="cell-Mrqe"><a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" class="url-value">https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world</a></td><td class="cell-ZcAR"></td></tr><tr id="79268528-f79b-4582-8ceb-f275d670d585"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%2079268528f79b45828cebf275d670d585.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-react" class="url-value">https://github.com/iamismile/web-dev-resources#-react</a></td><td class="cell-ZcAR"></td></tr><tr id="7ac8dec8-eea0-4c17-aeb1-21a7f8cbf318"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/React%207ac8dec8eea04c17aeb121a7f8cbf318.html">React</a></td><td class="cell-Mrqe"><a href="https://reactjs.org" class="url-value">https://reactjs.org</a></td><td class="cell-ZcAR"></td></tr><tr id="521862ac-fc0a-4454-99b1-1eec4b1dffc5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Codecademy%20521862acfc0a445499b11eec4b1dffc5.html">Codecademy</a></td><td class="cell-Mrqe"><a href="https://www.codecademy.com/learn/react-101" class="url-value">https://www.codecademy.com/learn/react-101</a></td><td class="cell-ZcAR"></td></tr><tr id="21586761-fde0-4e5d-b99c-f46bfc4bcc7f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%2021586761fde04e5db99cf46bfc4bcc7f.html">freeCodeCamp</a></td><td class="cell-Mrqe"><a href="https://www.freecodecamp.org/learn" class="url-value">https://www.freecodecamp.org/learn</a></td><td class="cell-ZcAR"></td></tr><tr id="89a1f5af-12cb-48e9-865c-108d9b376719"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/React%20Tutorial%2089a1f5af12cb48e9865c108d9b376719.html">React Tutorial</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/watch?v=iZhV0bILFb0" class="url-value">https://www.youtube.com/watch?v=iZhV0bILFb0</a></td><td class="cell-ZcAR"></td></tr><tr id="c0cb5af9-6a9f-44ef-ac5e-ba64938248ca"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/React%20Beach%20Resort%20c0cb5af96a9f44efac5eba64938248ca.html">React Beach Resort</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/watch?v=l0JbuMVXaTs" class="url-value">https://www.youtube.com/watch?v=l0JbuMVXaTs</a></td><td class="cell-ZcAR"></td></tr><tr id="e4892271-c54b-4c9b-9a8a-c0738b68f867"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Awesome%20React%20e4892271c54b4c9b9a8ac0738b68f867.html">Awesome React</a></td><td class="cell-Mrqe"><a href="https://github.com/enaqx/awesome-react" class="url-value">https://github.com/enaqx/awesome-react</a></td><td class="cell-ZcAR"></td></tr><tr id="d50636af-48ea-4df3-9d36-1f6d07b0fc73"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/React%20Icons%20d50636af48ea4df39d361f6d07b0fc73.html">React Icons</a></td><td class="cell-Mrqe"><a href="https://react-icons.github.io/react-icons/" class="url-value">https://react-icons.github.io/react-icons/</a></td><td class="cell-ZcAR"></td></tr><tr id="7af7c6c7-a4bf-4ee7-9716-fe44240dc3c0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%207af7c6c7a4bf4ee79716fe44240dc3c0.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-apis" class="url-value">https://github.com/iamismile/web-dev-resources#-apis</a></td><td class="cell-ZcAR"></td></tr><tr id="cdda3e75-4d1b-4059-9949-98ccbb49c02b"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Public%20APIs%20cdda3e754d1b4059994998ccbb49c02b.html">Public APIs</a></td><td class="cell-Mrqe"><a href="https://public-apis.io" class="url-value">https://public-apis.io</a></td><td class="cell-ZcAR"></td></tr><tr id="f050eb3f-6e4d-4bcb-9d75-a9cc005b4d35"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JSONPlaceholder%20f050eb3f6e4d4bcb9d75a9cc005b4d35.html">JSONPlaceholder</a></td><td class="cell-Mrqe"><a href="https://jsonplaceholder.typicode.com" class="url-value">https://jsonplaceholder.typicode.com</a></td><td class="cell-ZcAR"></td></tr><tr id="44bd2b26-5519-4736-a5e4-5f0da7ed6243"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/OpenWeather%2044bd2b2655194736a5e45f0da7ed6243.html">OpenWeather</a></td><td class="cell-Mrqe"><a href="https://openweathermap.org/guide" class="url-value">https://openweathermap.org/guide</a></td><td class="cell-ZcAR"></td></tr><tr id="4da88cd3-2a5a-45c3-840d-82dfca1d1431"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/SWAPI%204da88cd32a5a45c3840d82dfca1d1431.html">SWAPI</a></td><td class="cell-Mrqe"><a href="https://swapi.dev" class="url-value">https://swapi.dev</a></td><td class="cell-ZcAR"></td></tr><tr id="44d4ce69-d9ac-4db9-b337-f40a6fcb743f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Quotes%20REST%20API%2044d4ce69d9ac4db9b337f40a6fcb743f.html">Quotes REST API</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resourceshttp://quotes.rest" class="url-value">https://github.com/iamismile/web-dev-resourceshttp://quotes.rest</a></td><td class="cell-ZcAR"></td></tr><tr id="279c8c32-2139-443f-95ec-6d1a1aef0829"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20279c8c322139443f95ec6d1a1aef0829.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-developer-tools" class="url-value">https://github.com/iamismile/web-dev-resources#-developer-tools</a></td><td class="cell-ZcAR"></td></tr><tr id="666df57d-2ec6-4941-9cd0-3f6777a5646e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Postman%20666df57d2ec649419cd03f6777a5646e.html">Postman</a></td><td class="cell-Mrqe"><a href="https://www.postman.com" class="url-value">https://www.postman.com</a></td><td class="cell-ZcAR"></td></tr><tr id="8b477c36-1118-494c-90e5-e937d67151d7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Insomnia%208b477c361118494c90e5e937d67151d7.html">Insomnia</a></td><td class="cell-Mrqe"><a href="https://insomnia.rest" class="url-value">https://insomnia.rest</a></td><td class="cell-ZcAR"></td></tr><tr id="b18d682e-8622-4d47-a321-8479db519fec"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JSON%20Server%20b18d682e86224d47a3218479db519fec.html">JSON Server</a></td><td class="cell-Mrqe"><a href="https://github.com/typicode/json-server" class="url-value">https://github.com/typicode/json-server</a></td><td class="cell-ZcAR"></td></tr><tr id="5732523c-a601-412e-aa36-f3f4e923db82"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/npm%20trends%205732523ca601412eaa36f3f4e923db82.html">npm trends</a></td><td class="cell-Mrqe"><a href="https://www.npmtrends.com" class="url-value">https://www.npmtrends.com</a></td><td class="cell-ZcAR"></td></tr><tr id="f941460c-faea-44da-bba6-adab99834589"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/BUNDLEPHOBIA%20f941460cfaea44dabba6adab99834589.html">BUNDLEPHOBIA</a></td><td class="cell-Mrqe"><a href="https://bundlephobia.com" class="url-value">https://bundlephobia.com</a></td><td class="cell-ZcAR"></td></tr><tr id="189e7e7e-632d-4298-be35-37df4a17f9d2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20189e7e7e632d4298be3537df4a17f9d2.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-online-learning-resources" class="url-value">https://github.com/iamismile/web-dev-resources#-online-learning-resources</a></td><td class="cell-ZcAR"></td></tr><tr id="584698ca-37de-45e6-ae77-840cf04f1104"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%20584698ca37de45e6ae77840cf04f1104.html">freeCodeCamp</a></td><td class="cell-Mrqe"><a href="https://www.w3schools.com" class="url-value">https://www.w3schools.com</a></td><td class="cell-ZcAR"></td></tr><tr id="960807e2-29f5-4a55-9b84-3c178d3f8211"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/w3schools%20960807e229f54a559b843c178d3f8211.html">w3schools</a></td><td class="cell-Mrqe"><a href="https://www.w3schools.com" class="url-value">https://www.w3schools.com</a></td><td class="cell-ZcAR"></td></tr><tr id="3595c63e-ed57-4d6b-af94-ca60003d6d23"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Codecademy%203595c63eed574d6baf94ca60003d6d23.html">Codecademy</a></td><td class="cell-Mrqe"><a href="https://www.codecademy.com/" class="url-value">https://www.codecademy.com/</a></td><td class="cell-ZcAR"></td></tr><tr id="1e7f5b6c-c846-4eed-9ce9-35e792807ab0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Real%20Python%201e7f5b6cc8464eed9ce935e792807ab0.html">Real Python</a></td><td class="cell-Mrqe"><a href="https://realpython.com" class="url-value">https://realpython.com</a></td><td class="cell-ZcAR"></td></tr><tr id="49bd7784-175e-45fb-98dc-2e6510de9727"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Study%20Tonight%2049bd7784175e45fb98dc2e6510de9727.html">Study Tonight</a></td><td class="cell-Mrqe"><a href="https://www.studytonight.com" class="url-value">https://www.studytonight.com</a></td><td class="cell-ZcAR"></td></tr><tr id="57c01dc2-36bb-4f7c-9a75-b09aaa45fbfe"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Programiz%2057c01dc236bb4f7c9a75b09aaa45fbfe.html">Programiz</a></td><td class="cell-Mrqe"><a href="https://www.programiz.com" class="url-value">https://www.programiz.com</a></td><td class="cell-ZcAR"></td></tr><tr id="e9bfe696-0e8c-40dd-9446-c0527aee9e52"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/JavaScript%20Info%20e9bfe6960e8c40dd9446c0527aee9e52.html">JavaScript Info</a></td><td class="cell-Mrqe"><a href="https://javascript.info" class="url-value">https://javascript.info</a></td><td class="cell-ZcAR"></td></tr><tr id="df22dabf-c6af-4cda-940b-540442101a6d"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Command%20Line%20Tutorial%20df22dabfc6af4cda940b540442101a6d.html">Command Line Tutorial</a></td><td class="cell-Mrqe"><a href="https://dev.to/iamismile/command-line-tutorial-58km" class="url-value">https://dev.to/iamismile/command-line-tutorial-58km</a></td><td class="cell-ZcAR"></td></tr><tr id="e0bb84b3-83ac-4428-9403-8ccf9266d0ae"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Try%20Git%20e0bb84b383ac442894038ccf9266d0ae.html">Try Git</a></td><td class="cell-Mrqe"><a href="https://try.github.io" class="url-value">https://try.github.io</a></td><td class="cell-ZcAR"></td></tr><tr id="6ee49912-1b3b-4bff-a0fb-4c76b0e08c06"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%206ee499121b3b4bffa0fb4c76b0e08c06.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-resume" class="url-value">https://github.com/iamismile/web-dev-resources#-resume</a></td><td class="cell-ZcAR"></td></tr><tr id="8e7bedb1-419a-4543-a282-1f0d62f49144"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/ResumeGenius%208e7bedb1419a4543a2821f0d62f49144.html">ResumeGenius</a></td><td class="cell-Mrqe"><a href="https://resumegenius.com" class="url-value">https://resumegenius.com</a></td><td class="cell-ZcAR"></td></tr><tr id="baf72771-62b9-4af0-a99a-4d7a5081149f"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/resume%20io%20baf7277162b94af0a99a4d7a5081149f.html">resume.io</a></td><td class="cell-Mrqe"><a href="https://resume.io" class="url-value">https://resume.io</a></td><td class="cell-ZcAR"></td></tr><tr id="b168699a-c008-45b2-a162-78211f3d112a"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Resume%20Now%20b168699ac00845b2a16278211f3d112a.html">Resume Now</a></td><td class="cell-Mrqe"><a href="https://www.resume-now.com/resume/builder" class="url-value">https://www.resume-now.com/resume/builder</a></td><td class="cell-ZcAR"></td></tr><tr id="51b185de-f042-4acc-b7c5-2f4d68154f09"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Canva%2051b185def0424accb7c52f4d68154f09.html">Canva</a></td><td class="cell-Mrqe"><a href="https://www.canva.com/create/resumes/" class="url-value">https://www.canva.com/create/resumes/</a></td><td class="cell-ZcAR"></td></tr><tr id="ae3d4fd6-c9c9-4a79-9395-273e1abc8193"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/novoresume%20ae3d4fd6c9c94a799395273e1abc8193.html">novoresume</a></td><td class="cell-Mrqe"><a href="https://novoresume.com" class="url-value">https://novoresume.com</a></td><td class="cell-ZcAR"></td></tr><tr id="e882da03-cb7a-49f9-b7c2-002b8a540a35"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/RX-Resume%20e882da03cb7a49f9b7c2002b8a540a35.html">RX-Resume</a></td><td class="cell-Mrqe"><a href="https://rx-resume.web.app" class="url-value">https://rx-resume.web.app</a></td><td class="cell-ZcAR"></td></tr><tr id="bc62729e-6946-48e0-b194-4c712676f645"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20bc62729e694648e0b1944c712676f645.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-others" class="url-value">https://github.com/iamismile/web-dev-resources#-others</a></td><td class="cell-ZcAR"></td></tr><tr id="61fee2ed-bfb4-40ff-8ace-3d486b8e63b3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/mailsac%2061fee2edbfb440ff8ace3d486b8e63b3.html">mailsac</a></td><td class="cell-Mrqe"><a href="https://mailsac.com" class="url-value">https://mailsac.com</a></td><td class="cell-ZcAR"></td></tr><tr id="04402677-1d3c-44ad-8d28-51ca9bbee4c0"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Ethereal%20Email%20044026771d3c44ad8d2851ca9bbee4c0.html">Ethereal Email</a></td><td class="cell-Mrqe"><a href="https://ethereal.email" class="url-value">https://ethereal.email</a></td><td class="cell-ZcAR"></td></tr><tr id="50f10955-9ec9-4d32-8356-052587395ef5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/HTTP%20Status%20Codes%2050f109559ec94d328356052587395ef5.html">HTTP Status Codes</a></td><td class="cell-Mrqe"><a href="https://httpstatuses.com" class="url-value">https://httpstatuses.com</a></td><td class="cell-ZcAR"></td></tr><tr id="b4982365-cb89-419f-a8c2-b70cf0ab5be5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Play%20With%20Docker%20b4982365cb89419fa8c2b70cf0ab5be5.html">Play With Docker</a></td><td class="cell-Mrqe"><a href="https://labs.play-with-docker.com" class="url-value">https://labs.play-with-docker.com</a></td><td class="cell-ZcAR"></td></tr><tr id="b732f218-3c9f-4ea1-b338-b036f676d737"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Tiny%20Helpers%20b732f2183c9f4ea1b338b036f676d737.html">Tiny Helpers</a></td><td class="cell-Mrqe"><a href="https://tiny-helpers.dev" class="url-value">https://tiny-helpers.dev</a></td><td class="cell-ZcAR"></td></tr><tr id="a6a880e4-b441-4e3b-b64c-18d2ded22c52"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Free%20for%20Developers%20a6a880e4b4414e3bb64c18d2ded22c52.html">Free for Developers</a></td><td class="cell-Mrqe"><a href="https://free-for.dev#/" class="url-value">https://free-for.dev#/</a></td><td class="cell-ZcAR"></td></tr><tr id="c9905d32-19b1-4d0c-9aec-b53da1f9eabb"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Dev%20Resources%20c9905d3219b14d0c9aecb53da1f9eabb.html">Dev Resources</a></td><td class="cell-Mrqe"><a href="https://devresourc.es" class="url-value">https://devresourc.es</a></td><td class="cell-ZcAR"></td></tr><tr id="0ea86ea4-56b8-44fb-af6b-0b4f99fd2e94"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Themeselection%200ea86ea456b844fbaf6b0b4f99fd2e94.html">Themeselection</a></td><td class="cell-Mrqe"><a href="https://themeselection.com" class="url-value">https://themeselection.com</a></td><td class="cell-ZcAR"></td></tr><tr id="b473a22d-df33-4e82-9f1f-9d59039efdd7"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20b473a22ddf334e829f1f9d59039efdd7.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-developer-blog-sites" class="url-value">https://github.com/iamismile/web-dev-resources#-developer-blog-sites</a></td><td class="cell-ZcAR"></td></tr><tr id="7e2cb527-e397-496d-b0a6-6e53d2adcffa"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/DEV%207e2cb527e397496db0a66e53d2adcffa.html">DEV</a></td><td class="cell-Mrqe"><a href="https://dev.to" class="url-value">https://dev.to</a></td><td class="cell-ZcAR"></td></tr><tr id="c8b1cea6-1f09-4f1e-8be6-3aa238f9aa20"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Medium%20c8b1cea61f094f1e8be63aa238f9aa20.html">Medium</a></td><td class="cell-Mrqe"><a href="https://medium.com" class="url-value">https://medium.com</a></td><td class="cell-ZcAR"></td></tr><tr id="6107257d-c86a-47e9-9efb-59aa699716aa"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Hacker%20News%206107257dc86a47e99efb59aa699716aa.html">Hacker News</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/news.ycombinator.com" class="url-value">https://github.com/iamismile/web-dev-resources/iamismile/web-dev-resources/blob/main/news.ycombinator.com</a></td><td class="cell-ZcAR"></td></tr><tr id="c114196b-c044-4cfd-be0f-308972829ebd"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Hacker%20Noon%20c114196bc0444cfdbe0f308972829ebd.html">Hacker Noon</a></td><td class="cell-Mrqe"><a href="https://hackernoon.com" class="url-value">https://hackernoon.com</a></td><td class="cell-ZcAR"></td></tr><tr id="a90bea56-d34f-4f03-b455-99b75b535a39"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%20News%20a90bea56d34f4f03b45599b75b535a39.html">freeCodeCamp News</a></td><td class="cell-Mrqe"><a href="https://www.freecodecamp.org/news/" class="url-value">https://www.freecodecamp.org/news/</a></td><td class="cell-ZcAR"></td></tr><tr id="c9598ab1-9f85-4a87-b49b-4f498c56e9d5"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Smashing%20Magazine%20c9598ab19f854a87b49b4f498c56e9d5.html">Smashing Magazine</a></td><td class="cell-Mrqe"><a href="https://www.smashingmagazine.com" class="url-value">https://www.smashingmagazine.com</a></td><td class="cell-ZcAR"></td></tr><tr id="5aacea4d-076f-4b22-afa6-d0e3c24f98f2"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Hashnode%205aacea4d076f4b22afa6d0e3c24f98f2.html">Hashnode</a></td><td class="cell-Mrqe"><a href="https://hashnode.com" class="url-value">https://hashnode.com</a></td><td class="cell-ZcAR"></td></tr><tr id="c7707a69-3420-42de-b565-0148d3252c03"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Untitled%20c7707a69342042deb5650148d3252c03.html">Untitled</a></td><td class="cell-Mrqe"><a href="https://github.com/iamismile/web-dev-resources#-youtube-channels" class="url-value">https://github.com/iamismile/web-dev-resources#-youtube-channels</a></td><td class="cell-ZcAR"></td></tr><tr id="9396c3c9-834d-49d0-9203-c8790cf26c06"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/The%20Net%20Ninja%209396c3c9834d49d09203c8790cf26c06.html">The Net Ninja</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg" class="url-value">https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg</a></td><td class="cell-ZcAR"></td></tr><tr id="6c3e5423-762c-430f-ad9c-26e50b087773"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Traversy%20Media%206c3e5423762c430fad9c26e50b087773.html">Traversy Media</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/user/TechGuyWeb" class="url-value">https://www.youtube.com/user/TechGuyWeb</a></td><td class="cell-ZcAR"></td></tr><tr id="3e952432-44a1-46b1-a5a4-38a70581c2e9"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/freeCodeCamp%20org%203e95243244a146b1a5a438a70581c2e9.html">freeCodeCamp.org</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" class="url-value">https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ</a></td><td class="cell-ZcAR"></td></tr><tr id="03d353fb-2e6b-4b90-8781-d98eafa15beb"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Coding%20Addict%2003d353fb2e6b4b908781d98eafa15beb.html">Coding Addict</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UCMZFwxv5l-XtKi693qMJptA" class="url-value">https://www.youtube.com/channel/UCMZFwxv5l-XtKi693qMJptA</a></td><td class="cell-ZcAR"></td></tr><tr id="193cc4ea-ab4b-42cc-b8e4-0481c56cf17c"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Fireship%20193cc4eaab4b42ccb8e40481c56cf17c.html">Fireship</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" class="url-value">https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA</a></td><td class="cell-ZcAR"></td></tr><tr id="2ce4fe84-11ed-43f8-b75f-5f3d51c1406e"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/LearnCode%20academy%202ce4fe8411ed43f8b75f5f3d51c1406e.html">LearnCode.academy</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UCVTlvUkGslCV_h-nSAId8Sw" class="url-value">https://www.youtube.com/channel/UCVTlvUkGslCV_h-nSAId8Sw</a></td><td class="cell-ZcAR"></td></tr><tr id="c26cf788-78e9-423e-8125-032420d0ace3"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Wes%20Bos%20c26cf78878e9423e8125032420d0ace3.html">Wes Bos</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UCoebwHSTvwalADTJhps0emA" class="url-value">https://www.youtube.com/channel/UCoebwHSTvwalADTJhps0emA</a></td><td class="cell-ZcAR"></td></tr><tr id="9aaa565e-6c09-4a17-b648-41cf415e36b9"><td class="cell-title"><a href="Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de/Codevolution%209aaa565e6c094a17b64841cf415e36b9.html">Codevolution</a></td><td class="cell-Mrqe"><a href="https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw" class="url-value">https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw</a></td><td class="cell-ZcAR"></td></tr></tbody></table></div></article></body></html>

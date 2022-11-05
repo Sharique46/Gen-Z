@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Mobile Phone</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d35a2f6-bd33-447b-a9ff-175647d8522c" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 40.09%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📱</span></div><h1 class="page-title">Mobile Phone</h1></header><div class="page-body"><p id="d49cb75e-ec03-411b-b8db-4ada3ae07866" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="034d9909-ffd9-4bfb-8e16-0f64796bd783"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Android &amp; iPhone code: *#06#</strong></div></figure><p id="64ce864a-45a9-4d4c-a980-0d68988580a2" class=""><span style="border-bottom:0.05em solid"><strong>Entering this into your keypad shows your display IMEI number, which is your phone&#x27;s identification number, and it&#x27;s unique to each smartphone., which is your phone&#x27;s identification number, and it&#x27;s unique to each smartphone.</strong></span></p><p id="1a008937-ee46-4457-9337-ff05d7e3fd3b" class="">
+</p><p id="8091b2b2-d138-41b9-b055-528548cbb64f" class=""><strong>Specific Absorption Rate (SAR) For Cell Phones :</strong></p><p id="5d685f9e-663c-44e1-903a-833fd0bbd17c" class=""><strong>On your phone open the dialer or phone app. -- Now dial *#07# in your phone. This will show the you the SAR measurement of your device as specified by the manufacturer.</strong></p><h3 id="37b80d26-f5a8-4225-85e4-012be59caecc" class=""><strong>Android Secret code</strong></h3><p id="1f28415d-be13-4def-8602-d57693742d25" class=""><a href="https://t.me/Technitze_Encoretech/20">https://t.me/Technitze_Encoretech/20</a></p><p id="b71d5186-dd9e-49e4-80c5-ce41af745a32" class=""><a href="https://t.me/Technitze_Encoretech/17">https://t.me/Technitze_Encoretech/17</a></p><p id="f5067e99-31ca-46f5-85d6-0d50d3960a86" class=""><a href="https://t.me/Technitze_Encoretech/21">https://t.me/Technitze_Encoretech/21</a></p><p id="c8267aac-1102-42e0-bde9-bd75c9857796" class="">
+</p><figure id="69e51915-903e-4a72-907a-30c449138123"><a href="https://www.imei.info/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">IMEI CHECK - Free Online IMEI Number Checker | IMEI.info</div><div class="bookmark-description">It&#x27;s easy as 1, 2, 3 Check IMEI of your phone The IMEI.info is created based on the largest TAC database in the whole world. The check IMEI feature is one of the most useful tools in the GSM industry. In order to meet your expectations, we are adding new device information and specification every day.</div></div><div class="bookmark-href"><img src="https://www.imei.info/static/ve4e59ba4/imei/img/favicons/favicon-96x96.png" class="icon bookmark-icon"/>https://www.imei.info/</div></div><img src="https://www.imei.info/media/ne/E/ym3uoHb.png" class="bookmark-image"/></a></figure><p id="32c32a9d-ac01-4c40-8949-b9cff8459913" class="">
+</p><figure id="30cad32d-3656-4813-91cf-9a5acdb49723"><a href="https://www.devicespecifications.com/en" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DeviceSpecifications - Mobile device specifications, comparisons, news, user reviews and ratings</div><div class="bookmark-description">Dimensions: 74.2 x 160.8 x 8.2 mm SoC: MediaTek Dimensity 920 (MT6879) CPU: 2x 2.5 GHz ARM Cortex-A78, 6x 2.0 GHz ARM Cortex-A55, Cores: 8 GPU: ARM Mali-G68 MC4 RAM: 6 GB, 8 GB Storage: 128 GB, 256 GB Display: 6.5 in, pOLED, 1080 x 2400 pixels, 30 bit Battery:</div></div><div class="bookmark-href"><img src="https://www.devicespecifications.com/favicon.ico" class="icon bookmark-icon"/>https://www.devicespecifications.com/en</div></div></a></figure><figure id="9907df2f-66c1-484e-95a6-d88f85e95d6a"><a href="https://www.androidcentral.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Android Central</div><div class="bookmark-description">Your buyer&#x27;s guide for the best Android phones, deals, news, and reviews! Android Central covers smartphones, watches, tablets, ChromeOS devices, Google Home, and all compatible peripherals in this smart world we&#x27;re living in. Read all this and more on Android Central.</div></div><div class="bookmark-href"><img src="https://cdn.mos.cms.futurecdn.net/flexiimages/m3uyybbdos1632303243.png" class="icon bookmark-icon"/>https://www.androidcentral.com/</div></div><img src="https://cdn.mos.cms.futurecdn.net/sAFJFXpnzJWEw6Gc7eLikQ-320-80.jpg" class="bookmark-image"/></a></figure><figure id="1f2b12c3-9616-4f29-872e-714a278f0ef0"><a href="https://www.androidauthority.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Android Authority: Tech Reviews, News, Buyer&#x27;s Guides, Deals, How-To</div><div class="bookmark-description">Your source for the best phones, streaming, apps, headphones, deals, games, Chromebooks, smart home tech, and more.</div></div><div class="bookmark-href"><img src="https://www.androidauthority.com/favicon.ico" class="icon bookmark-icon"/>https://www.androidauthority.com/</div></div><img src="https://www.androidauthority.com/wp-content/uploads/2022/07/oneplus-10t-back-on-red-pattern.jpg" class="bookmark-image"/></a></figure><figure id="6a4996dd-ff0e-45f8-b6ad-45fa7cd4da66"><a href="https://f-droid.org/en/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">F-Droid - Free and Open Source Android App Repository</div><div class="bookmark-description">F-Droid is an installable catalogue of FOSS (Free and Open Source Software) applications for the Android platform. The client makes it easy to browse, install, and keep track of updates on your device.</div></div><div class="bookmark-href"><img src="https://f-droid.org/assets/favicon_yJPr4UNteJc-cseeq16P0Hvl1kDbJjTVYcj-KA6-_Fs=.ico" class="icon bookmark-icon"/>https://f-droid.org/en/</div></div><img src="https://f-droid.org/assets/fdroid-logo_bfHl7nsLHOUQxzdU8-rGIhn4bAgl6z7k2mA3fWoCyT4=.png" class="bookmark-image"/></a></figure><figure id="02407d6c-1793-4dc8-9172-fdfd8ed2c707"><a href="https://www.androidpolice.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Android Police - Android news, reviews, apps, games, phones, tablets.</div><div class="bookmark-description">Whether you&#x27;re new to Android or have been here since the start, it can be tough uncovering which apps are worthy of your limited storage space. The Play Store can be helpful but isn&#x27;t always the best tool for discovery.</div></div><div class="bookmark-href"><img src="https://www.androidpolice.com/public/build/images/favicon-192x192.15d7f760.png" class="icon bookmark-icon"/>https://www.androidpolice.com/</div></div><img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/social/ap-og-img.png" class="bookmark-image"/></a></figure><p id="388e2884-d598-4d82-a4b0-f94ea009650c" class="">
+</p><p id="0a89a5f1-4f3a-48a2-9c63-d45f655a62bc" class="">
+</p><figure id="61cc6aee-d9c9-4038-9174-871908c62823"><a href="https://geekflare.com/mobile-repair-software/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">3 Best Android and iOS Repair Software for Your Phones or Tablets</div><div class="bookmark-description">Let&#x27;s face it: technology cannot always be perfect, and so does your smartphones, although it is easier to fall in love with it. After all, it is just a machine! Whether you use a smartphone or tablet powered by either Android or iOS, it works smoothly when you first brought it home.</div></div><div class="bookmark-href"><img src="https://geekflare.com/wp-content/uploads/2020/01/cropped-favicon-192x192.png" class="icon bookmark-icon"/>https://geekflare.com/mobile-repair-software/</div></div><img src="https://geekflare.com/wp-content/uploads/2020/04/android-data-recovery.jpg" class="bookmark-image"/></a></figure><p id="b4ae3f90-3d24-42b7-84f7-05a013095f74" class="">
+</p><p id="e82a6046-3560-4728-a403-7d3e83de3bc2" class="">
+</p><figure id="e67dc554-bb9a-4654-874c-5c5c732fb46e"><a href="https://tafcop.dgtelecom.gov.in/index.php" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://tafcop.dgtelecom.gov.in/index.php</div></div></a></figure><p id="22e9ef52-0298-4818-98dc-45544e42f0d2" class="">
+</p><p id="7de53475-847a-433a-80e2-8d5ba18fd19a" class="">
+</p><figure id="21e0784e-4ec7-4393-8e42-39dbaad2d7d1"><a href="https://9to5google.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9to5Google</div><div class="bookmark-description">Breaking news on all things Google and Android. We provide breaking Google Pixel news, everything Android, Google Home, Google apps, Chromebooks, and more!</div></div><div class="bookmark-href"><img src="https://9to5google.com/favicon.ico" class="icon bookmark-icon"/>https://9to5google.com/</div></div><img src="https://9to5google.com/wp-content/uploads/sites/4/2022/07/galaxy-s22-ultra-5.jpg?quality=82&amp;strip=all&amp;w=1600" class="bookmark-image"/></a></figure><p id="0572ac79-f24e-4c9f-8e8f-6dde80aa50c1" class="">
+</p><figure id="1bc3c233-8c70-41b8-9b00-d42c378ec466"><a href="https://versus.com/en" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Versus | Compare everything</div><div class="bookmark-description">Versus is a global data-driven comparison platform, covering over 90 categories. Compare smartphones, cameras, headphones, graphics cards, and much more. With detailed tech specs, data visualizations, and price comparisons, Versus is the best product finder for a wide range of consumer electronics, from smartphones to PC hardware.</div></div><div class="bookmark-href"><img src="https://versus.com/favicon.ico" class="icon bookmark-icon"/>https://versus.com/en</div></div><img src="https://versus-dot-com.imgix.net/versus_banner_black.png" class="bookmark-image"/></a></figure><p id="c055f08e-8db5-4b26-a643-84188d64c782" class="">
+</p><figure id="64766ce3-0f72-4d9f-a5ac-cdf65d6236a0"><a href="https://www.gsmarena.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GSMArena.com - mobile phone reviews, news, specifications and more...</div><div class="bookmark-description">GSMArena.com - The ultimate resource for GSM handset information</div></div><div class="bookmark-href"><img src="https://fdn.gsmarena.com/imgroot/static/favicon.ico" class="icon bookmark-icon"/>https://www.gsmarena.com/</div></div><img src="https://fdn.gsmarena.com/imgroot/reviews/22/oneplus-10t/-728x314/thumb.jpg" class="bookmark-image"/></a></figure><p id="64fc64d5-01b2-4c99-be3a-43be6e76592d" class="">
+</p><figure id="d1289e05-276d-4baf-83cc-ec60ab44ed9a"><a href="https://vocal.media/01/why-do-we-have-a-10-digit-mobile-number" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Why do We Have A 10-Digit Mobile Number?</div><div class="bookmark-description">Ever wondered why we have 10-Digit mobile numbers and not 9-digit or 8-digit! In the initial stages, telecom industries always used to provide us with numbers starting with 9. If you still have a 7 to 8-year-old Mobile number, there are high chances it must be starting from 9.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164419/y36fyrhqy77zsvd15dz6.png" class="icon bookmark-icon"/>https://vocal.media/01/why-do-we-have-a-10-digit-mobile-number</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5f29216f10e029001e9a168d.png" class="bookmark-image"/></a></figure><figure id="ef609b10-d3ca-4d78-9ba4-d811ea486789"><a href="https://vocal.media/01/05-best-services-to-find-your-phone-if-lost" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">05 Best services to find your phone if lost</div><div class="bookmark-description">Our mobile phone is one of the essential assets in this digital world. We have everything on our device. From sensitive documents to bank passwords, we find our mobile phone as the safest place to secure them. Well, so it is, but it brings a real headache in case you lose the device.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164419/y36fyrhqy77zsvd15dz6.png" class="icon bookmark-icon"/>https://vocal.media/01/05-best-services-to-find-your-phone-if-lost</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5f284d8481f54e001debac58.png" class="bookmark-image"/></a></figure><p id="d77f828b-4080-497a-a610-af6664b8d98f" class="">
+</p><figure id="03e5911f-a5d6-41f2-b554-3cd0eec69492"><a href="https://www.xda-developers.com/best-vpn-for-android" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best VPN apps for Android: ExpressVPN, Mullvad, WindScribe, and more!</div><div class="bookmark-description">VPNs can be beneficial whether you are trying to hide your internet browsing from prying eyes or just want to access a different country&#x27;s Netflix library. They encrypt your outgoing and incoming internet traffic and pass it through their servers, so your data is private, and your location gets obfuscated behind the VPN service&#x27;s IPs.</div></div><div class="bookmark-href"><img src="https://www.xda-developers.com/favicon.ico" class="icon bookmark-icon"/>https://www.xda-developers.com/best-vpn-for-android</div></div><img src="https://www.xda-developers.com/files/2021/09/Best-VPN-apps-for-Android-1.jpg" class="bookmark-image"/></a></figure><p id="251300d7-06b2-4161-b6bb-7f0ba39cc02d" class="">
+</p><p id="7c640d2f-da25-4f90-a0c8-04d4982825de" class="">
+</p><p id="3de28aea-f0cc-488d-9f0d-78e0a4099bc1" class="">
+</p><p id="fdcab4fb-b43e-447b-a248-4d3a91fc4912" class=""><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure"><strong>Measure</strong></a><strong>  - Turn your phone into a tape measure
+Measure helps you with quick everyday measurements around the house or office, similar to a tape measure</strong></p><p id="b80b2045-b39d-455e-991f-08e67415e5a4" class="">
+</p><p id="a1b132ac-4c34-4d08-b142-a66d22804074" class=""><a href="https://play.google.com/store/apps/details?id=ua.kulya.speechway">SpeechWay</a> is mobile teleprompter app for video bloggers, live-streamers, tv-presenters and other creatives who make speeches on camera</p><p id="5f96b2d1-c2a4-4bf2-95ad-1ccdea3b5c7c" class="">
+</p><p id="9ce07fa9-03d3-460e-b71b-9183d0bdc4ee" class=""><a href="https://play.google.com/store/apps/details?id=games.paveldogreat.fluidsimfree"><strong>Fluidsimfree</strong></a><strong> - Play with relaxing fluids with a touch of your fingers. Play and experiment with these swirling substances. Gorgeous visuals will take your breath away and help you to relieve stress</strong></p><p id="b38ce13e-8f57-4b43-81af-83eb3ba5a777" class="">
+</p><p id="95d6019a-f93c-4530-a83e-f4a832b5e7a9" class=""><strong>Wondershare</strong></p><p id="d93fd557-e653-459a-a349-21f921434879" class=""><a href="https://play.google.com/store/apps/dev?id=6817647156581849686">https://play.google.com/store/apps/dev?id=6817647156581849686</a></p><p id="1cb9d84d-0208-43d6-9c0c-f5528b9cc63f" class="">
+</p><p id="6c9751eb-76a7-4f87-bffb-3ae0da9563aa" class=""><strong>Image Recovery apps</strong></p><p id="28109d59-fb82-4cce-abc6-77fbd4c2681d" class=""><a href="https://play.google.com/store/apps/details?id=com.baloota.dumpster">https://play.google.com/store/apps/details?id=com.baloota.dumpster</a></p><p id="3d0a4c6b-d947-4b2f-9a6d-b09f93e37491" class="">
+</p><p id="8801661b-d848-47a2-b959-a553c2cf4a06" class=""><a href="https://play.google.com/store/apps/details?id=com.defianttech.diskdigger">https://play.google.com/store/apps/details?id=com.defianttech.diskdigger</a></p><p id="848c79f0-1250-4249-ba4d-291e94fda88a" class="">
+</p><figure id="b406ee6f-cd22-4daf-887b-eb5068a84448"><a href="https://youtu.be/4d_YqCmUbgk" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Which Country Which Phone Brand - Feat. Apple, Samsung, Oneplus, Huawei, Nokia &amp; Micromax etc.</div><div class="bookmark-description">Which Country Which Phone Brand - Feat. Apple, Samsung, Oneplus, Huawei, Nokia &amp; Micromax etc..FOLLOW US ON - Facebook - https://www.facebook.com/TechFC3/.In...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/4d_YqCmUbgk</div></div><img src="https://i.ytimg.com/vi/4d_YqCmUbgk/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="5966ca1d-477f-4971-ba73-96fa0f491302" class="">
+</p><figure id="b30ce88c-44d7-4e7e-b6ab-0efe812d8ab5"><a href="https://vocal.media/01/how-to-use-your-android-device-as-a-mouse-keyboard-joystick-and-more" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Use Your Android Device as a Mouse, Keyboard, Joystick and More</div><div class="bookmark-description">Your phone can be used a trackpad, or could be used to use a media player using custom controls. Monect lets you take things further by turning your Android device into all manner of peripherals. There are plenty of apps available in Google Player that let you use your phone or tablet as a wireless keyboard or mouse for a computer.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164419/y36fyrhqy77zsvd15dz6.png" class="icon bookmark-icon"/>https://vocal.media/01/how-to-use-your-android-device-as-a-mouse-keyboard-joystick-and-more</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/5fdeef36a2c9a3001cf2f4e1.png" class="bookmark-image"/></a></figure><p id="5dfdeb6c-6e1d-4ceb-9ca9-163fb93a1c5d" class="">
+</p><figure id="4951ee9d-069c-416c-affa-29518d2ca0de"><a href="https://vocal.media/01/how-to-find-out-who-s-tracking-you-through-your-smartphone" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Find Out Who&#x27;s Tracking You Through Your Smartphone</div><div class="bookmark-description">Safety should always be our top priority. With the help of just a few short codes, you can find out more about the settings of your phone and work out whether or not your messages and information are protected and whether you&#x27;re being tracked.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164419/y36fyrhqy77zsvd15dz6.png" class="icon bookmark-icon"/>https://vocal.media/01/how-to-find-out-who-s-tracking-you-through-your-smartphone</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/60012ba3fb8db7001cbd13b4.jpg" class="bookmark-image"/></a></figure><p id="6e44c045-a048-458a-a0de-8f91a2139740" class="">
+</p><figure id="514ff93c-1767-4455-a48d-3ab596ca44e1"><a href="https://www.avast.com/c-boost-phone-internet-speed" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Speed Up Slow Internet on Your Phone</div><div class="bookmark-description">Too many active apps or tabs: Too many demands on your data connection will result in speed reductions across the board. Even the fastest mobile data plans can&#x27;t keep up with dozens of tabs and background apps. If your 4G is slow, this might be the reason.</div></div><div class="bookmark-href"><img src="https://static3.avast.com/10001979/web/i/favicon.ico?v=2" class="icon bookmark-icon"/>https://www.avast.com/c-boost-phone-internet-speed</div></div><img src="https://academy.avast.com/hubfs/New_Avast_Academy/How%20to%20Speed%20Up%20Slow%20Internet%20on%20Your%20Phone/How_to_Boost_Your_Phones_Internet_Speed-Thumb.jpg#keepProtocol" class="bookmark-image"/></a></figure><p id="90ee9f63-6ebe-46eb-b5e6-6f99f9beae2b" class="">
+</p><figure id="204e6843-6f42-476f-b1fe-4fdd58c08c31"><a href="https://www.digitaltrends.com/computing/how-to-increase-your-internet-speed/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Increase Your Internet Speed | Digital Trends</div><div class="bookmark-description">There is nothing more frustrating than your internet moving along at a snail&#x27;s pace. Webpages take forever to load, and games and streaming services experience lag. With Zoom meetings becoming a more regular occurrence, any significant slowdown in your internet makes working at home much more difficult, too.</div></div><div class="bookmark-href"><img src="https://www.digitaltrends.com/wp-content/uploads/2020/08/dt-site-icon.png?fit=144%2C144&amp;p=1" class="icon bookmark-icon"/>https://www.digitaltrends.com/computing/how-to-increase-your-internet-speed/</div></div><img src="https://www.digitaltrends.com/wp-content/uploads/2020/03/work-from-home-image.jpg?p=1" class="bookmark-image"/></a></figure><p id="a76eef45-5249-4213-ac66-6de901247124" class="">
+</p><figure id="da1c6ccd-6717-4c9f-a2ce-bb2bd21ab21d"><a href="https://www.signalboosters.com/blog/the-best-methods-to-improve-your-4g-lte-data-speed/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">10 Tips and Tricks to Improve Your 4G LTE Data Speed</div><div class="bookmark-description">There is but one inalienable truth in cell phone 4G LTE data speed: unless your phone is literally running like a cheetah - it can&#x27;t be too fast. There are many contributors to slow data speeds - building materials, mountains, weather, distance, and more - but how do we make it as fast as technologically possible?</div></div><div class="bookmark-href"><img src="https://cdn11.bigcommerce.com/s-6q5bpsuh/product_images/signalboosters-fav.png?t=1443018144" class="icon bookmark-icon"/>https://www.signalboosters.com/blog/the-best-methods-to-improve-your-4g-lte-data-speed/</div></div><img src="https://cdn11.bigcommerce.com/s-6q5bpsuh/product_images/uploaded_images/sb-4g-lte-speed-blog-banner.jpg" class="bookmark-image"/></a></figure><p id="a8096b75-8672-4ec3-8ff7-71ca1cd08d67" class="">
+</p><p id="e390744c-c43c-41fc-9839-9814103999ad" class="">
+</p><figure id="39d04cdd-2df8-4d87-844d-9c07b3f9948c"><a href="https://www.androidauthority.com/batteries-what-is-mah-673637/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">All about batteries: What is mAh?</div><div class="bookmark-description">Your phone&#x27;s battery is arguably the most important piece of hardware on the device, seeing as nothing can happen without it. However, these lithium-ion technological marvels remain mysterious to many smartphone users. For the general population, handsets and tablets might as well run on magic crystals for how well the inner workings of batteries are understood.</div></div><div class="bookmark-href"><img src="https://www.androidauthority.com/favicon.ico" class="icon bookmark-icon"/>https://www.androidauthority.com/batteries-what-is-mah-673637/</div></div><img src="https://www.androidauthority.com/wp-content/uploads/2015/10/Lithium-Ion-Batteries-AA-e1568244465343.jpg" class="bookmark-image"/></a></figure><p id="a1a4a3bb-b0b8-45f9-aa62-8362875be6bd" class="">
+</p><figure id="bcd74616-3451-45e6-8699-285db38647a3"><a href="https://www.androidauthority.com/what-is-nfc-270730/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is NFC and how does it work? Everything you need to know</div><div class="bookmark-description">You&#x27;ve probably heard of it before and may even own a smartphone that features that technology, but what is NFC on a phone anyhow? Most smartphones these days are equipped with Near Field Communication technology, better known as NFC. In a nutshell, it is a proximity-based wireless communication standard.</div></div><div class="bookmark-href"><img src="https://www.androidauthority.com/favicon.ico" class="icon bookmark-icon"/>https://www.androidauthority.com/what-is-nfc-270730/</div></div><img src="https://www.androidauthority.com/wp-content/uploads/2021/11/Android-12-NFC-toggle.jpg" class="bookmark-image"/></a></figure><p id="b0b3b079-567e-4bb2-88d3-629a12760a1d" class="">
+</p><p id="1d012ad1-1716-4265-a781-1d4c9bbd1d6f" class="">
+</p><p id="41dfaaf0-bdd7-4185-918c-f648fbcdc1d7" class=""><strong>Access Computer hard drive with smartphone </strong></p><p id="a2f5090b-e20e-49c5-99cb-f06d108e0e4d" class=""><a href="https://t.me/Technitze_Encoretech/18">https://t.me/Technitze_Encoretech/18</a></p><p id="ed7d2367-ec98-4b44-a0e4-87655d8ca0ee" class="">
+</p><figure id="7706ac02-b038-4f56-9af5-d3e88ef0bd2e"><a href="https://tech4fresher.com/how-to-check-if-a-mobile-phone-is-original-or-fake/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Check if a Mobile Phone is Original or Fake (2020)</div><div class="bookmark-description">With the recent boom in smartphone selling, the number of fraud cases also get increased. Nowadays, smartphone manufacturers are ready to give flagship-grade features at cheap prices. Though the authentic sources only sell original items, if you are planning to buy a new smartphone from a less-known source or from an unknown person, you have to be more careful.</div></div><div class="bookmark-href">https://tech4fresher.com/how-to-check-if-a-mobile-phone-is-original-or-fake/</div></div><img src="https://cdn.tech4fresher.com/wp-content/uploads/2017/12/04154333/mobile-phone-check.jpg" class="bookmark-image"/></a></figure><p id="6ee88dc3-1d36-4148-987e-f27651d5a33d" class="">
+</p><p id="5a1f2d57-5f02-4f83-87ac-c206d7c4a409" class="">
+</p><h3 id="90848c0f-ba96-45ec-9059-c775226c125d" class=""><strong>Apple</strong></h3><p id="53b3aead-68d3-415e-93a0-e843dcf7b44b" class="">
+</p><figure id="97a2a280-bb69-45ba-8728-c4a3e1998624"><a href="https://appleinsider.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AppleInsider.com</div><div class="bookmark-description">For Apple News, Rumors, Reviews, Prices, and Deals, trust AppleInsider. Serving Apple product enthusiasts since 1997.</div></div><div class="bookmark-href"><img src="https://appleinsider.com/favicon.ico" class="icon bookmark-icon"/>https://appleinsider.com/</div></div><img src="https://photos5.appleinsider.com/v10/ai-logo.png" class="bookmark-image"/></a></figure><p id="b66d59fa-4cf3-4457-8115-355d1d35a4e4" class="">
+</p><figure id="1ebd9432-2dd9-40a7-8b0c-e46a0ce410bd"><a href="https://9to5mac.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9to5Mac</div><div class="bookmark-description">News and reviews for Apple products, apps, and rumors. We provide breaking coverage for the iPhone, iPad, and all things Mac!</div></div><div class="bookmark-href"><img src="https://9to5mac.com/favicon.ico" class="icon bookmark-icon"/>https://9to5mac.com/</div></div><img src="https://9to5mac.com/wp-content/uploads/sites/6/2022/04/Apple-Studio-Display-webcam.jpg?quality=82&amp;strip=all&amp;w=1600" class="bookmark-image"/></a></figure><p id="b409dace-dbf8-40bf-bd00-0822558a6850" class="">
+</p><figure id="d00dc3f9-7767-463e-861f-67f5dfb7751b"><a href="https://www.macworld.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Macworld</div><div class="bookmark-description">Macworld is your ultimate guide to Apple&#x27;s product universe, explaining what&#x27;s new, what&#x27;s best and how to make the most out of the products you love.</div></div><div class="bookmark-href"><img src="https://www.macworld.com/wp-content/uploads/2021/03/cropped-macworld-favicon.png?w=192" class="icon bookmark-icon"/>https://www.macworld.com/</div></div><img src="https://www.macworld.com/wp-content/uploads/2022/08/apple_iphone_12_purple_review_1.jpg?quality=50&amp;strip=all&amp;w=300&amp;h=200&amp;crop=1" class="bookmark-image"/></a></figure><h3 id="a2d4f814-321d-4234-925c-3ab14771c32b" class="">Awesome iOS</h3><figure id="90168486-1a7b-4204-be4b-c25b36aaa0f7"><div class="source">https://github.com/vsouza/awesome-ios</div></figure><p id="c53a2627-5dba-42ee-a049-f9a9b7a22cd5" class="">
+</p><figure id="aa5867db-9092-452b-9f39-bc164caa6338"><div class="source">https://github.com/dkhamsing/open-source-ios-apps</div></figure><p id="5ae72036-f9e9-4347-8424-e87ca53b47fd" class="">
+</p><p id="30afd62f-419a-4821-8f00-5d77c67ba3cc" class="">
+</p><h3 id="df2b61ba-50b3-4973-a7e1-c220a069fdd1" class="">IPhone for Beginners</h3><p id="5fd9ec4e-ab04-4802-b943-bd966267e5e3" class=""><a href="https://t.me/Technitze_Encoretech/119">https://t.me/Technitze_Encoretech/119</a></p><p id="d88bd1c0-2dd9-42b2-ad44-e5277f2e1b78" class="">
+</p><figure id="4f538c14-a9bc-4750-ab81-d28f4be18609"><a href="https://checkcoverage.apple.com/gb/en/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Check Your Service and Support Coverage - Apple Support</div><div class="bookmark-description">Check your Apple warranty status. Enter a serial number to review your eligibility for support and extended coverage.</div></div><div class="bookmark-href"><img src="https://apple.com/favicon.ico" class="icon bookmark-icon"/>https://checkcoverage.apple.com/gb/en/</div></div></a></figure><p id="746616da-9929-47c1-88e7-5a4c3e6b6362" class="">
+</p><figure id="d8ae3652-8e42-4c13-bc55-b6a4953e43ed"><a href="https://appadvice.com/appnn" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AppAdvice - Latest iOS News And Reviews</div><div class="bookmark-description">Latest iPhone/iPad App News and Reviews</div></div><div class="bookmark-href"><img src="https://appadvice.com/assets-appadvice/AppAdvice/favicon-16x16-fb0bc6d50413c8a49cf7e3d28bd39101a65de423842013c169fdb3e40fa9e417.png" class="icon bookmark-icon"/>https://appadvice.com/appnn</div></div><img src="https://appadvice.com/assets-appadvice/AppAdvice/AppAdvice-c12a35af0d392db311b82b409539dec09e30c57c7d28ab832156be1d68214bdc.jpg" class="bookmark-image"/></a></figure><p id="1400d64d-7dc4-4383-9554-f687012fe673" class="">
+</p><figure id="4451c23b-d40d-4039-b6d5-4a31172b3528"><a href="https://guidebooks.google.com/android" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.gstatic.com/alkali/1a487da61f9e80daa7147b76b983f973414dfeea.ico" class="icon bookmark-icon"/>https://guidebooks.google.com/android</div></div></a></figure></div></article></body></html>

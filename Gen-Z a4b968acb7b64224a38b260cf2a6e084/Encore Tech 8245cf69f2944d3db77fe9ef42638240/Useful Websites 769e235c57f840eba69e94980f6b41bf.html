@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Useful Websites </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="769e235c-57f8-40eb-a69e-94980f6b41bf" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1607720146778-68d2d56fa38c?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌐</span></div><h1 class="page-title">Useful Websites </h1></header><div class="page-body"><figure id="f034a60a-481b-46aa-a0b8-529402bc6710"><div class="source"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/Most_useful_websites.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca0f834c-58b7-4ad7-bd50-6fd7d1973da0/Most_useful_websites.pdf</a></div></figure><figure id="62962f77-660c-4bf0-b4fe-0b795ef14c57"><div class="source"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/Best_sites.txt">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/29621fae-d1e5-487c-8c5b-bbd84c5348c7/Best_sites.txt</a></div></figure><div><figure id="cce490ff-ad35-4d5c-8247-3c08bb489cd9"><div class="source"><a href="../Tech%20Career%20Resources%207b4e374770db4101a15bba7d9d334661/Ebook%20df3bd7e350ec49dc97ba0fb3e5003d91/E-book_websites.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e5a51494-139f-4c4a-bd52-d74dcf81fe5a/E-book_websites.pdf</a></div></figure></div><figure id="abffcbef-a14d-42e3-a2d1-85f42ec4c11e"><div class="source"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/SOME_USEFUL_WEB-WPS_Office.pdf.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/82201dce-ec10-484e-89e0-c123c0c7517d/SOME_USEFUL_WEB-WPS_Office.pdf.pdf</a></div></figure><p id="7936feab-f314-4058-9afb-61d9a5a17d9a" class="">
+</p><h3 id="9b72cfcb-3888-42e5-bed7-91c1e2d25155" class=""><strong>Best Sites for Software and PC Games</strong></h3><p id="41674ce2-158b-44e5-babe-9e70d7ae8665" class=""><a href="https://t.me/Technitze_Encoretech/13">https://t.me/Technitze_Encoretech/13</a></p><p id="bfcd30cb-1ade-4c44-a886-08623bf2b479" class=""><a href="https://t.me/Technitze_Encoretech/14">https://t.me/Technitze_Encoretech/14</a></p><p id="c5bc9466-243e-4623-b036-e2bf32cfc18c" class="">
+</p><h3 id="6b4d402e-2595-4199-a0dc-f15029a584a9" class="">Useful Sites and Softwares for Power User :-</h3><p id="7fdd06d0-6a12-4a97-879e-e3aa469a1d46" class=""><a href="https://t.me/Technitze_Encoretech/39">https://t.me/Technitze_Encoretech/39</a></p><p id="9f8bc5e9-b9ea-4b82-b11b-bd7e429b8cca" class="">
+</p><h3 id="801282b9-b1b9-4e7b-921e-ceaeb7b19a44" class="">List of some useful websites for day to day use</h3><p id="8413d6d3-2677-4626-81bf-6078fb5442c7" class=""><a href="https://t.me/Technitze_Encoretech/38">https://t.me/Technitze_Encoretech/38</a></p><p id="66308026-a719-4c9c-8749-97172476b762" class="">
+</p><h3 id="e714d9bb-99d3-4c2c-90dc-8fcddfa54638" class="">Online design tools</h3><p id="d4b8e662-c056-4069-88be-e2f9f4f3780f" class=""><a href="https://t.me/Technitze_Encoretech/22">https://t.me/Technitze_Encoretech/22</a></p><p id="1ef3c1a0-f63d-4cd7-8968-1acae30a5cc9" class="">
+</p><h3 id="87e6f900-3877-4281-bda6-cfed845fb25c" class="">Here is Some Amazing websites</h3><p id="2e0b4500-03d9-4898-a48f-58e3e11c7da6" class=""><a href="https://t.me/Technitze_Encoretech/25">https://t.me/Technitze_Encoretech/25</a></p><p id="e389bdb9-585b-4bae-b799-f8a30e541078" class=""><a href="https://t.me/Technitze_Encoretech/24">https://t.me/Technitze_Encoretech/24</a></p><p id="a43e2a84-2cd4-4da4-af0d-a5b059243e42" class=""><a href="https://t.me/Technitze_Encoretech/23">https://t.me/Technitze_Encoretech/23</a></p><p id="9dc38ae0-091f-4a5e-bb1d-7fc586be4495" class=""><a href="https://t.me/Technitze_Encoretech/22">https://t.me/Technitze_Encoretech/22</a></p><p id="4ff8b085-8cfd-4f12-b2ce-97008b76e64d" class=""><a href="https://t.me/Technitze_Encoretech/24">https://t.me/Technitze_Encoretech/24</a></p><p id="fca5d2aa-9384-4f03-9a15-e0ccbce786d8" class="">
+</p><p id="38e4df60-ef22-45af-ad77-d5152c5327a5" class="">
+</p><figure id="bcd06d09-5bca-45fa-955f-43d244694689"><a href="https://www.labnol.org/internet/101-useful-websites/18078/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The 101 Most Useful Websites on the Internet - Digital Inspiration</div><div class="bookmark-description">The most useful websites on the Internet that will make you smarter, increase productivity and help you learn new skills Here are the most useful websites on the Internet that will make you smarter, increase productivity and help you learn new skills. These incredibly useful websites solve at least one problem really well.</div></div><div class="bookmark-href"><img src="https://www.labnol.org/favicon-32x32.png?v=d851e5d23975d09321141dfab459c846" class="icon bookmark-icon"/>https://www.labnol.org/internet/101-useful-websites/18078/</div></div><img src="https://www.labnol.org/api/images/VGhlIDEwMSBNb3N0IFVzZWZ1bCBXZWJzaXRlcyBvbiB0aGUgSW50ZXJuZXQ.jGBkLk9yOIoy5O4aBLVSKCQ-s0ks_o7UHGOIrwnZLpI.png" class="bookmark-image"/></a></figure><figure id="3193cf3f-f57d-4f2c-88b1-f8d0a1ee9274"><a href="https://www.labnol.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Digital Inspiration - Tech Tips, Tutorials &amp; How-to Guides</div><div class="bookmark-description">Tech, a la carte</div></div><div class="bookmark-href"><img src="https://www.labnol.org/favicon-32x32.png?v=d851e5d23975d09321141dfab459c846" class="icon bookmark-icon"/>https://www.labnol.org/</div></div><img src="https://www.labnol.org/og/default.png" class="bookmark-image"/></a></figure><figure id="a9d47c93-62a5-48b3-996a-ac9e783994f9"><a href="https://www.pdf2go.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free online PDF editor</div><div class="bookmark-description">Edit your PDF file online and for free with this high quality converter or compress, merge, split, rotate, sort or protect your PDF documents.</div></div><div class="bookmark-href"><img src="https://www.pdf2go.com/favicon.ico" class="icon bookmark-icon"/>https://www.pdf2go.com/</div></div><img src="https://www.pdf2go.com/assets/img/social/pdf2go_social_v2_en.png" class="bookmark-image"/></a></figure><figure id="de1c5583-f70e-4be1-829f-c4bb75da226e"><a href="https://convertio.co/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">File Converter</div><div class="bookmark-description">We support more than 25600 different conversions between more than 300 different file formats. More than any other converter. Just drop your files on the page, choose an output format and click &quot;Convert&quot; button. Wait a little for the process to complete. We aim to do all our conversions in under 1-2 minutes.</div></div><div class="bookmark-href"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDY1NDg3RDc3N0JFODExODNENjlCOEE4NDIwQ0ZCMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDOTY4QjBGRUU2OEMxMUU5QUJBRkE5MTJCOTQzRkZDRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDOTY4QjBGREU2OEMxMUU5QUJBRkE5MTJCOTQzRkZDRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRDQjYyN0M2OENFNkU5MTE5RDNFOEE4MDBCRkY0NDZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NjU0ODdENzc3QkU4MTE4M0Q2OUI4QTg0MjBDRkIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+GozsaQAAAeZJREFUeNqkkztIXFEQhr/daFBQUAuxErJYxcAKPrCwiikUU1lppcWmyANhC8HKwkZByIJgICSF2GhlFxDUVBaiWyQQU0lILC1UUFTUuPln59zca5AQyMB/75xzZv4zr5MqtbfzhzwUckK/8CDsfRNWhffC16RxqlQqudbRcV/f18JzIc3dciO8E/IUi+cxgTt/EJ7wb/KxHGGxeFkRNgq3nOvqYGQEslmokMnuLiwtwf5+ZPE4RPsqpRq0Svks3Csf1dfD0ZGSUBa9vTA+Dg0NcHEBExOwuRmR/BSy6VAwd25pgZUVBaf63SjdtTWd5pywqgqmp6GpKSIwn5wR9JWXjY0wNwe1tTA5CZ2dbmZhFwquV1fD6GiyFn1GkKGmxp2NxKSyEmZnPSKTra3YpasrSZDxdp2ewtBQskgwOAh7e3FakTQ3w/Iy5UvhMh2GxGV7Ozbs7va/kVghr658fXAAY2N+KfxIhwlzWViAszPX83m/zWRnB6am4OTEnY3EZd3a+EjKp9+d6OmBmRmv+uGh12Jjw7ti7bS9uI1t0STOa/HiVp7Dw9CqEbm+Fr34Fxfh+DhZwDeaxJf/PcreBSn6Dgjz4cHwl8f0VngafEjd8ZxttJ+FActYq4TvVrDwnL8kjX8JMAAn8plXACq+3AAAAABJRU5ErkJggg==" class="icon bookmark-icon"/>https://convertio.co/</div></div></a></figure><p id="830abfff-61fa-4b55-b328-e26cc000bd62" class="">
+<strong>Zamzar</strong></p><figure id="371763b1-afe2-4095-86dd-8fc649de1072"><a href="https://t.me/Technitze_Encoretech/10" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Encore Tech</div><div class="bookmark-description">🔹🔹Zamzar File conversion made easy Convert documents, images, videos &amp; sound - 1100+ formats supported Free online file converter Convert media files online from one format into another. Audio converter https://audio.online-convert.com/ Video converter https://video.online-convert.com/ Image converter https://image.online-convert.com/ Document converter https://document.online-convert.com/ Ebook converter https://ebook.online-convert.com/ Archive converter https://archive.online-convert.com/ Webservice converter https://webservice.online-convert.com/ Device converter https://device.online-convert.com/ PDF to Word Convert a PDF file to DOC or the Microsoft DOCX format.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/Technitze_Encoretech/10</div></div><img src="https://telegram.org/img/t_logo.png" class="bookmark-image"/></a></figure><p id="405edc1c-8e7c-4310-a8b9-c896519e707e" class="">
+</p><figure id="7888d89e-6edb-4183-b20d-79b4fdc17ad5" class="image"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232242_520.jpg"><img style="width:552px" src="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232242_520.jpg"/></a></figure><p id="1b024cfa-88e4-4373-a4bd-358353a60e0a" class="">
+</p><figure id="9cf14f36-54df-4940-822e-809cf1a203b8" class="image"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232246_273.jpg"><img style="width:500px" src="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232246_273.jpg"/></a></figure><figure id="8ebe2726-2bb6-4006-a0fe-26936483c13e" class="image"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232252_066.jpg"><img style="width:621px" src="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232252_066.jpg"/></a></figure><figure id="c5cfa46b-b03f-43ce-8d7e-b12464841338" class="image"><a href="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232254_366.jpg"><img style="width:290px" src="Useful%20Websites%20769e235c57f840eba69e94980f6b41bf/IMG_20220730_232254_366.jpg"/></a></figure><p id="709f836f-9c4d-44a2-93eb-16d11d828b3f" class="">
+</p><p id="1b0501e8-52d8-4c6b-80ff-96d210ff4939" class="">
+</p></div></article></body></html>

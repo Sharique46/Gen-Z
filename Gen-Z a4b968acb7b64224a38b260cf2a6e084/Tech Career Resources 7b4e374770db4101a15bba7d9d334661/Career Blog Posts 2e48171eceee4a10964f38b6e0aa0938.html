@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Career Blog Posts***</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2e48171e-ceee-4a10-964f-38b6e0aa0938" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1494178270175-e96de2971df9?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 40.15%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💼</span></div><h1 class="page-title">Career Blog Posts***</h1></header><div class="page-body"><p id="47697068-26b8-4170-a57c-129987993826" class="">
+</p><p id="906dd575-7203-45c1-a50c-3a22c368cfe5" class="">Here are Some Blog posts on Tech career:-</p><figure id="8a3fb814-75b6-4944-aea0-a774dbcc5f66"><a href="https://awesomelists.top/#/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/#/</div></div></a></figure><p id="6b17a934-b918-4f4d-b15d-50a082e803fa" class="">
+</p><figure id="9ad4dd3f-27de-42f4-b468-8f9dce4a1059"><a href="https://hackernoon.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HackerNoon - read, write and learn about any technology</div><div class="bookmark-description">How hackers start their afternoon. HackerNoon is a free platform with 25k+ contributing writers. 100M+ humans have visited HackerNoon to learn about technology.</div></div><div class="bookmark-href"><img src="https://hackernoon.com/favicon.ico" class="icon bookmark-icon"/>https://hackernoon.com/</div></div><img src="https://hackernoon.com/fallback-feat.png" class="bookmark-image"/></a></figure><p id="c556aa9c-9a69-474b-9ad8-5973300ffb46" class="">
+</p><figure id="04a7ec20-3005-4bef-9efe-ffceed697e61"><a href="https://technicalsapien.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Technical Sapien</div><div class="bookmark-description">Welcome to TSFAM Community 🙂 Technical Sapien is India&#x27;s Most Productive Tech Community. It is the best platform for students, professionals and any hustler to learn and earn at the same time. Technical Sapien offers learning resources, career roadmaps, and self-help guides. Our goal is to make everyone financially independent by helping them in learning their favorite skills.</div></div><div class="bookmark-href"><img src="https://i0.wp.com/technicalsapien.com/wp-content/uploads/2022/05/cropped-Meta-Prime-1.png?fit=187%2C192&amp;ssl=1" class="icon bookmark-icon"/>https://technicalsapien.com/</div></div><img src="https://technicalsapien.com/wp-content/uploads/2021/08/TS-1.png" class="bookmark-image"/></a></figure><figure id="1a1f47a3-60d7-4e49-ac5b-6f5f3e7d654c"><a href="https://elliotpro.wordpress.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">elliotpro</div><div class="bookmark-description">Inspection | Validation | Mitigation The internet brings the whole world to you with the click of a few buttons, if you know how to use it. this helps you in find jobs better. ㅤㅤㅤ Wuhu! Welcome to on Board! a huge amount of attention has been paid to government snooping, and the bulk...</div></div><div class="bookmark-href"><img src="https://s0.wp.com/i/favicon.ico" class="icon bookmark-icon"/>https://elliotpro.wordpress.com/</div></div><img src="https://elliotpro.files.wordpress.com/2021/10/downlozsmad-1.jpg?w=1200&amp;fit=440%2C330" class="bookmark-image"/></a></figure><figure id="6a339e48-d55d-4984-a632-9faac9b97894"><a href="https://roadmap.sh/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Developer Roadmaps</div><div class="bookmark-description">We now have a YouTube Channel. Subscribe for the video content. roadmap.sh is a community effort to create roadmaps, guides and other educational content to help guide the developers in picking up the path and guide their learnings. We also have a YouTube channel which we hope you are going to love.</div></div><div class="bookmark-href"><img src="https://roadmap.sh/manifest/favicon.ico" class="icon bookmark-icon"/>https://roadmap.sh/</div></div><img src="https://roadmap.sh/brand-square.png" class="bookmark-image"/></a></figure><p id="dcf39474-c28f-4423-bc01-479c3385c6cb" class="">
+</p><figure id="8588beb5-f454-42e2-a637-e8f8c6bd3dc9"><a href="https://www.freecodecamp.org/news/technical-writing-for-beginners/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Technical Writing for Beginners - An A-Z Guide to Tech Blogging Basics</div><div class="bookmark-description">If you love writing and technology, technical writing could be a suitable career for you. It&#x27;s also something else you can do if you love tech but don&#x27;t really fancy coding all day long. Technical writing might also be for you if you love learning by teaching others, contributing to</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/technical-writing-for-beginners/</div></div><img src="https://www.freecodecamp.org/news/content/images/2020/11/etienne-boulanger-aafOjsh-9jU-unsplash.jpg" class="bookmark-image"/></a></figure><p id="0e7efd94-df0b-402f-95db-27674e2c503e" class="">
+</p><figure id="c8c18aba-74eb-48de-ae0b-ec98bbf92d26"><a href="https://www.linkedin.com/feed/news/5078908" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Expert tips for early career success | LinkedIn</div><div class="bookmark-description">Though vacancies are on the rise, those entering the world of work for the first time still face a challenging jobs market. Experts weigh in with their tips for the job search.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/feed/news/5078908</div></div><img src="https://media-exp1.licdn.com/dms/image/C561AAQHDkf4V18lVQQ/storylineheaderimage-shrink_400_400/0/1623272120117?e=1659924000&amp;v=beta&amp;t=q4M8IZ2U_9-TSfRomQvbGGr3HwVPyHATI9KOaf2Gc7o" class="bookmark-image"/></a></figure><p id="dee370a1-bc67-458c-8576-927b86770351" class="">
+</p><figure id="1ba29e3d-cdc1-46b3-91f5-69715b50c33c"><a href="https://www.linkedin.com/feed/news/4432721" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Career planning 101 | LinkedIn</div><div class="bookmark-description">People may question the benefits of planning out their careers, but LinkedIn members say it&#x27;s important. They also say there are some key rules to keep in mind.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" class="icon bookmark-icon"/>https://www.linkedin.com/feed/news/4432721</div></div><img src="https://media-exp1.licdn.com/dms/image/C4D1AAQGr5v3je_CVWA/storylineheaderimage-shrink_400_400/0/1623255284642?e=1659924000&amp;v=beta&amp;t=GojBIeioYKJy6j_CRjMWePBpaz2UHu0cmwON1odYRMk" class="bookmark-image"/></a></figure><figure id="577c3cf8-24cf-4b77-bd43-90b5d67a27d0"><a href="https://twitter.com/RandallKanna/status/1274133745222615041?s=20&amp;t=nX1ByUCo3YJ-UlN9boEJ4Q" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Randall on Twitter: &quot;I don&#x27;t have a CS degree so I&#x27;ve had to learn on my own. Thread on creating your own CS degree online. / Twitter&quot;</div><div class="bookmark-description">I don&#x27;t have a CS degree so I&#x27;ve had to learn on my own. Thread on creating your own CS degree online.</div></div><div class="bookmark-href"><img src="https://abs.twimg.com/favicons/twitter.2.ico" class="icon bookmark-icon"/>https://twitter.com/RandallKanna/status/1274133745222615041?s=20&amp;t=nX1ByUCo3YJ-UlN9boEJ4Q</div></div><img src="https://abs.twimg.com/errors/logo46x38.png" class="bookmark-image"/></a></figure><p id="b356ddb2-e394-4351-b1ef-d56866405f0c" class="">
+</p><figure id="4310b215-6eb9-451a-8746-924aea52f34b"><a href="https://learn.g2.com/hubs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Content Hubs | G2 Learning Hub</div><div class="bookmark-description">Your time is valuable. Cut through the noise and dive deep on a specific topic with one of our curated content hubs.</div></div><div class="bookmark-href">https://learn.g2.com/hubs</div></div><img src="https://learn.g2.com/hubfs/raw_assets/public/apex/blog/img/learn-content-hub-how-to-facebook.png" class="bookmark-image"/></a></figure><p id="31cb926c-9815-453f-821c-72de55add9cf" class="">
+</p><figure id="f10d6d76-e9ec-4800-b397-c6c61679d1b0"><a href="https://www.madza.dev/blog/65-things-i-wish-i-knew-when-i-started-to-code" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">65 Things I wish I knew when I started to Code - Madza.dev</div><div class="bookmark-description">No success story is the same, we all have had our ups and downs in the learning process and things we wish we knew when we started out. If you are a new, aspiring developer, these 65 things will prepare you for the long...</div></div><div class="bookmark-href"><img src="https://www.madza.dev/favicon.ico" class="icon bookmark-icon"/>https://www.madza.dev/blog/65-things-i-wish-i-knew-when-i-started-to-code</div></div><img src="https://images.ctfassets.net/zlsyc9paq6sa/35ZwI4ZYwBHErV0xVB6Fmh/5fd3cc7de42b06f68e39bf656b073865/Copy_of_Copy_of_Create_kopija_kopija.png" class="bookmark-image"/></a></figure><p id="a4f8b042-b166-40e1-acba-e82df9ed7989" class="">
+</p><figure id="1cd66902-cabc-436a-9291-3e2dee12eaf6"><a href="https://vocal.media/journal/top-12-highest-paying-jobs-in-technology-in-india-2021" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 12 Highest Paying Jobs in Technology in India [2021]</div><div class="bookmark-description">IT-enabled services include software development, IT consultancy, online services, e-commerce, business process outsourcing (BPO), and knowledge process outsourcing (KPO). Moreover, the applications of IT are not limited to the software sector alone. Hospitals, schools and universities, libraries, banks, prisons, airports, and train stations - almost every establishment can gain from leveraging technology capabilities.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1502164420/fjo7ga9cmzmcxfnwucmm.png" class="icon bookmark-icon"/>https://vocal.media/journal/top-12-highest-paying-jobs-in-technology-in-india-2021</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/600bbf7f2580b2001cf05567.jpg" class="bookmark-image"/></a></figure><figure id="e1ce19e4-a22f-4e37-9d9a-a6938e8ae76c"><a href="https://www.indeed.com/career-advice/finding-a-job/easiest-tech-jobs-to-get-into" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">18 Tech Jobs That Require Little Education To Get Started</div><div class="bookmark-description">By Indeed Editorial Team Updated June 28, 2022 Published January 22, 2021 The technology industry is filled with largely experience-based jobs. Many of these jobs require minimal formal education, such as an associate degree or a certificate program. If you can demonstrate your ability to carry out the duties, you can qualify for a tech job that pays well.</div></div><div class="bookmark-href"><img src="https://images.ctfassets.net/pdf29us7flmy/289vCHeR8VihSh6eqiStxK/0d4ad61e921b5509de060d93c736c466/favicon.png?w=192" class="icon bookmark-icon"/>https://www.indeed.com/career-advice/finding-a-job/easiest-tech-jobs-to-get-into</div></div><img src="https://d3fw5vlhllyvee.cloudfront.net/dist/header/ukraine_support.7ad2b5d444bc427dbc5d.png" class="bookmark-image"/></a></figure><figure id="45cf88f2-70eb-4ffa-b237-9fa986c516fb"><a href="https://learntocodewith.me/work-in-tech/high-paying-tech-jobs/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">8 Best-Paying Jobs in Technology &amp; What They Involve (2021 List)</div><div class="bookmark-description">Want to earn $100k or more? Here are eight of the best paying jobs in technology, including how much they pay and what skills you need. Plus, I share some online learning tracks/specializations to help you prepare for each high-paying computer job.</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/work-in-tech/high-paying-tech-jobs/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2021/06/Highest-paying-careers-in-it.png" class="bookmark-image"/></a></figure><p id="dc0a2cca-e092-4983-86ed-b9b0e58d01d0" class="">
+</p><p id="a6679f1c-302b-4a29-aa94-019eb014dc04" class="">
+</p><figure id="43797a66-2f2c-4add-b7a9-9847da04fcbc"><a href="https://www.crampete.com/blogs/how-to-become-a-full-stack-developer/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to become a full stack developer?</div><div class="bookmark-description">A full stack web developer is a programmer with competency in both front-end and back-end technologies. In this write-up we are going to reveal 17 steps that will act as a guide to your question &quot; How to become a full stack developer&quot;. Front-end is the part which is seen and used by the user.</div></div><div class="bookmark-href"><img src="https://www.crampete.com/favicon-32x32.png?v=9ef0b7e91844f02725d652be5eae004f" class="icon bookmark-icon"/>https://www.crampete.com/blogs/how-to-become-a-full-stack-developer/</div></div><img src="https://crampete-staticfiles.s3.ap-south-1.amazonaws.com/images/blog/how-to-become-a-full-stack-web-developer.jpg" class="bookmark-image"/></a></figure><p id="d68953c5-43a2-4041-95b3-7f509deb5808" class="">
+</p><figure id="ec241203-c55e-44fd-8447-bbc7c3f0a75a"><a href="https://c0ffee2c0de.blogspot.com/2020/10/50-ways-to-improve-as-programmer.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">50 Ways to Improve as a Programmer</div><div class="bookmark-description">I have been a professional programmer for over 20 years. I have learned tricks, made mistakes, and gained experience. In no particular order, here are 50 ways to improve as a programmer: Write lots of programs. Every program you write, no matter how small, adds to your experience.</div></div><div class="bookmark-href"><img src="https://c0ffee2c0de.blogspot.com/favicon.ico" class="icon bookmark-icon"/>https://c0ffee2c0de.blogspot.com/2020/10/50-ways-to-improve-as-programmer.html</div></div><img src="https://1.bp.blogspot.com/-35nb20MPGBc/X5a-PD-O6QI/AAAAAAAAtcI/ULHUM0n5o70749z0K08-T8W2Jym30i4dQCLcBGAsYHQ/w1200-h630-p-k-no-nu/wp3.png" class="bookmark-image"/></a></figure><p id="c5fc7189-0efb-4545-b7ee-599b0bd1e4a5" class="">
+</p><figure id="675ac5db-d583-4949-b873-64d9227c4597"><a href="https://www.crio.do/launch/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Crio Launch - Tech Externships for Devs</div><div class="bookmark-description">Prove your developer skills in India&#x27;s largest tech externship opportunity for free and get hired into top companies. Crack a coding assessment, build a project, &amp; get hired.</div></div><div class="bookmark-href"><img src="https://www.crio.do/favicon-32x32.png?v=9e7df616765f0413e5015879d4cc5dc9" class="icon bookmark-icon"/>https://www.crio.do/launch/</div></div><img src="https://www.crio.do/static/ff6444ec608216b5525c597cf0ba02f3/36200/Hero.png" class="bookmark-image"/></a></figure><p id="f1073bea-9754-4cac-9d26-66f99a88e3a4" class="">
+</p><figure id="bf04775b-a3ea-41e4-8104-b72c213ecbcb"><a href="https://www-freecodecamp-org.cdn.ampproject.org/c/s/www.freecodecamp.org/news/how-to-learn-programming/amp/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Learn Programming - The Guide I Wish I Had When I Started Learning to Code</div><div class="bookmark-description">Just the thought of learning to code can be very intimidating. The word code is mysterious by definition. It implies a technical form of communication that computers, and not humans, are meant to understand. One way many people start learning to code is by picking a popular programming language and</div></div><div class="bookmark-href"><img src="https://cdn-freecodecamp-org.cdn.ampproject.org/i/s/cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www-freecodecamp-org.cdn.ampproject.org/c/s/www.freecodecamp.org/news/how-to-learn-programming/amp/</div></div><img src="https://www.freecodecamp.org/news/content/images/2021/09/The-Programming-Guide-I-Wish-I-Had-When-I-Started-1.png" class="bookmark-image"/></a></figure><p id="8779516c-c41f-42e7-bddb-5607d8914f8a" class="">
+</p><figure id="ed5e7bb6-48eb-45e0-aabb-045d0d61b836"><a href="https://github.blog/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The GitHub Blog</div><div class="bookmark-description">We strive to understand how developers collaborate and work on GitHub, and we sometimes partner with academics to better understand how we can improve our products. Here&#x27;s how we did that to build and evolve GitHub Discussions.</div></div><div class="bookmark-href"><img src="https://github.blog/wp-content/uploads/2019/01/cropped-github-favicon-512.png?fit=192%2C192" class="icon bookmark-icon"/>https://github.blog/</div></div><img src="https://github.blog/wp-content/uploads/2022/01/Company-Cloud-Community-Product@2x.png?fit=2400%2C1260" class="bookmark-image"/></a></figure><p id="52b61155-565f-4a7a-9a4d-7121c5c1fe90" class="">
+</p><p id="1fffff4b-d711-404d-ad1c-9839077c2d79" class="">
+</p><figure id="1d5db80a-6a9e-4516-b9d3-37f81dd0ac61"><a href="https://abinofficial.com/common-blog-page/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Blog - AbinOfficial.com</div><div class="bookmark-description">Blogs</div></div><div class="bookmark-href"><img src="https://abinofficial.com/wp-content/uploads/2021/08/cropped-cropped-20200505_064411-300x300.jpg" class="icon bookmark-icon"/>https://abinofficial.com/common-blog-page/</div></div><img src="http://abinofficial.com/wp-content/uploads/2021/09/Screenshot-2021-09-16-at-5.48.15-PM.png" class="bookmark-image"/></a></figure><p id="9e55aef9-630d-41a9-bb13-1a06aa439b7d" class="">
+</p><p id="43be6308-ba6f-4b80-bc01-e0a93511768f" class="">
+</p><p id="3a9a6292-5e09-417d-ba30-6fc96ad3132b" class=""><a href="https://www.techgig.com/">https://www.techgig.com/</a></p><p id="52c52db9-e32b-48f3-b566-b1336c261f21" class=""><a href="https://thenextweb.com/">https://thenextweb.com/</a>
+<a href="https://elitedatascience.com/learn-machine-learning">https://elitedatascience.com/learn-machine-learning
+</a><a href="https://dzone.com/articles/learning-ai-ml-the-hard-way">https://dzone.com/articles/learning-ai-ml-the-hard-way
+</a><a href="https://resources.infosecinstitute.com/category/certifications-training/cryptography_cryptanalysis/blockchain-technology/introduction-to-blockchain/">https://resources.infosecinstitute.com/category/certifications-training/cryptography_cryptanalysis/blockchain-technology/introduction-to-blockchain/
+</a><a href="https://www.codespot.org/materials-to-learn-software-development/">https://learntocodewith.me/posts/code-for-free/
+https://www.codespot.org/materials-to-learn-software-development/
+</a><a href="https://learntocodewith.me/posts/tech-skills-in-demand/">https://learntocodewith.me/posts/tech-skills-in-demand/
+</a><a href="https://careerkarma.com/blog/best-tech-jobs/">https://careerkarma.com/blog/best-tech-jobs/
+</a><a href="https://learntocodewith.me/posts/technical-side-gig/">https://learntocodewith.me/posts/technical-side-gig/</a></p><p id="cd047bfc-281d-4eea-a82f-c285ae5295c0" class="">
+</p><p id="5c6cf936-e212-43cb-99cc-9861d1bedeba" class="">
+</p></div></article></body></html>

@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Web Development****</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="27c116c4-84b0-4e03-a00c-eca6d9cfb557" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 47.46%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌐</span></div><h1 class="page-title">Web Development****</h1></header><div class="page-body"><figure id="c00fc29f-70b4-4e1c-a9be-01c85527a136" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136.html"><span class="icon">👨‍💻</span>Web dev resources (public) (1)</a></figure><figure id="536aa3f1-ac7f-4669-85a3-b97abdeea7de" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Web%20dev%20resources%20536aa3f1ac7f466985a3b97abdeea7de.html"><span class="icon">⛰️</span>Web dev resources</a></figure><figure id="77876211-9cf4-4f0e-bfd9-c3bd2e69488e" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/TWEETS%20778762119cf44f0ebfd9c3bd2e69488e.html"><img class="icon" src="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/TWEETS%20778762119cf44f0ebfd9c3bd2e69488e/124021.png"/>TWEETS</a></figure><figure id="b27985ef-5713-4535-8e7a-5e2d3f93dfd0" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Insta%20Accounts%20to%20follow%20b27985ef571345358e7a5e2d3f93dfd0.html"><img class="icon" src="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Insta%20Accounts%20to%20follow%20b27985ef571345358e7a5e2d3f93dfd0/c8952d6e421a83d298a219edee783167.jpg"/>Insta Accounts to follow</a></figure><figure id="fd0d6fe1-b287-460a-93b0-94c7fde64216"><div class="block-color-blue source"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Web_Development_Resources_(_Completely_Free).pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79044c5d-daa3-4a41-aa17-84f28428dbeb/Web_Development_Resources_(_Completely_Free).pdf</a></div></figure><figure id="23a90a31-2582-4058-811a-ccc5e3a84d2c" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Github%20Repos%20for%20Web%20Dev%2023a90a3125824058811accc5e3a84d2c.html"><span class="icon">♠️</span>Github Repos for Web Dev</a></figure><figure id="df177efb-f10a-4a6f-9211-1e0eced27acb" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Top%20Websites%20for%20Developers%20df177efbf10a4a6f92111e0eced27acb.html"><span class="icon">🪐</span>Top Websites for Developers</a></figure><figure id="3d6eb708-d89d-49ce-89ec-71d7582d264b"><a href="https://awesomelists.top/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awesome Search</div><div class="bookmark-description">Awesome Search - makes you find what you want in awesome lists more quickly.</div></div><div class="bookmark-href"><img src="https://awesomelists.top/favicon.ico" class="icon bookmark-icon"/>https://awesomelists.top/</div></div></a></figure><figure id="24570481-5163-407f-a4e4-d756da929ede"><a href="https://markodenic.com/free-web-development-resources/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Free Web Development Resources</div><div class="bookmark-description">So, you need some web development resources. Search no more.</div></div><div class="bookmark-href"><img src="https://markodenic.com/wp-content/themes/blog/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://markodenic.com/free-web-development-resources/</div></div><img src="https://markodenic.com/wp-content/uploads/2020/06/web-development-resources-e1613893654373.png" class="bookmark-image"/></a></figure><figure id="8e93da7d-714c-4660-b4c8-19937dc6a47b"><a href="https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md#html--css-templates" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">design-resources-for-developers/readme.md at master · bradtraversy/design-resources-for-developers</div><div class="bookmark-description">Websites and resources with modern UI components in different formats such as PSD, Sketch, Figma, etc.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md#html--css-templates</div></div><img src="https://opengraph.githubassets.com/ab6f2cfab03afaf19d2b827447f8c96ccb7c4ea3b010f6e1b67227dd985ea267/bradtraversy/design-resources-for-developers" class="bookmark-image"/></a></figure><figure id="1b5b2773-0b08-4b57-ade1-a6cdf4cc2294"><a href="https://github.com/iamismile/web-dev-resources#-others" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - iamismile/web-dev-resources: The complete web development resources you ever need. More than 150+ resources for your web development.</div><div class="bookmark-description">The complete web development resources you ever need. More than 150+ resources for your web development. - GitHub - iamismile/web-dev-resources: The complete web development resources you ever need. More than 150+ resources for your web development.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/iamismile/web-dev-resources#-others</div></div><img src="https://repository-images.githubusercontent.com/310518463/c8dbba00-2039-11eb-88cd-cc7abe4d18d3" class="bookmark-image"/></a></figure><p id="1b715ab5-df1a-4eab-8ccd-2268eaa71fc7" class="">
+</p><figure id="c4963c5a-255e-4dcb-8545-238c021ad9aa"><a href="https://github.com/ripienaar/free-for-dev" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - ripienaar/free-for-dev: A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev</div><div class="bookmark-description">A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev - GitHub - ripienaar/free-for-dev: A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/ripienaar/free-for-dev</div></div><img src="https://opengraph.githubassets.com/4ca7b8402299598bba8c139fdd407c28af4369dcf63808e5adeec872557d29fd/ripienaar/free-for-dev" class="bookmark-image"/></a></figure><p id="5e670534-ef87-4394-862b-1768c4b61ad1" class="">
+</p><figure id="354d59e1-2393-4200-88ac-ab8b86077762"><a href="https://learntocodewith.me/reviews/best-web-development-courses/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">43 Best Web Development Courses Online in 2021 (Free &amp; Paid)</div><div class="bookmark-description">When you want to learn web development, half the battle is figuring out where to start learning to code. You might have questions like: Where can I learn to code? What are the best online web development courses? Which platforms offer coding for beginners? What are the most important programming fundamentals to master?</div></div><div class="bookmark-href"><img src="https://learntocodewith.me/favicon-16x16.png" class="icon bookmark-icon"/>https://learntocodewith.me/reviews/best-web-development-courses/</div></div><img src="https://learntocodewith.me/wp-content/uploads/2020/12/Where-to-learn-web-development.png" class="bookmark-image"/></a></figure><p id="fb5ad5a1-cff4-4d77-b61a-c302be38f116" class="">
+</p><figure id="d833ec29-55f4-4844-80f5-ed74a3f6023b"><a href="https://web.dev/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">web.dev</div><div class="bookmark-description">About web.dev Take advantage of the latest modern technologies to build amazing web experiences for everyone. Learn more PageSpeed Insights PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data. Explore our structured learning paths to discover everything you need to know about building for the modern web.</div></div><div class="bookmark-href"><img src="https://web.dev/images/favicon-16x16.png" class="icon bookmark-icon"/>https://web.dev/</div></div><img src="https://web-dev.imgix.net/image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png?auto=format&amp;fit=max&amp;w=1200&amp;fm=auto" class="bookmark-image"/></a></figure><figure id="8de4bc95-35b3-4057-a997-e33cddb16924"><a href="https://github.com/neogcamp" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">neogcamp</div><div class="bookmark-description">A 6 month full stack bootcamp to get you from zero to hero! 🦸‍♂️ 🦸‍♀️ Simple apps to practice. Once you have done the basics of web development through neog.camp levelZero you can start practising these apps. 532 193 People This organization has no public members.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/neogcamp</div></div><img src="https://avatars.githubusercontent.com/u/77970855?s=280&amp;v=4" class="bookmark-image"/></a></figure><figure id="a031ff48-8abc-4a4b-92bc-eb0a6151587f"><a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Meta Front-End Developer</div><div class="bookmark-description">Offered by Meta. Launch your career as a front-end developer. Build job-ready skills for an in-demand career and earn a credential from ... Enroll for free.</div></div><div class="bookmark-href"><img src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-32x32.png" class="icon bookmark-icon"/>https://www.coursera.org/professional-certificates/meta-front-end-developer</div></div><img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/XDP/XDP~SPECIALIZATION!~meta-front-end-developer/XDP~SPECIALIZATION!~meta-front-end-developer.jpeg" class="bookmark-image"/></a></figure><figure id="2a0b2292-3e2d-48a8-a2c7-57d1954a27f2"><a href="https://www.coursera.org/professional-certificates/meta-back-end-developer" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Meta Back-End Developer</div><div class="bookmark-description">Launch your career as a back-end developer. Build job-ready skills for an in-demand career and earn a credential from Meta. No degree or prior experience required to get started. Ready to gain new skills and learn the tools developers use to create websites and web applications?</div></div><div class="bookmark-href"><img src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-32x32.png" class="icon bookmark-icon"/>https://www.coursera.org/professional-certificates/meta-back-end-developer</div></div><img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/XDP/XDP~SPECIALIZATION!~meta-back-end-developer/XDP~SPECIALIZATION!~meta-back-end-developer.jpeg" class="bookmark-image"/></a></figure><h3 id="1e95d1e7-fa72-4703-bf49-6a86afb9db08" class="">Web 3.0 Guide</h3><figure id="8fc9eb55-9b22-436b-af46-a7a21993d9cb"><a href="https://www.notion.so/genzio/Blockchain-CryptoCurrency-80a28b191bb14088bca88f1a9c810d71" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Blockchain &amp; CryptoCurrency</div><div class="bookmark-description">Awesome Github Repos</div></div><div class="bookmark-href"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb1814ca7-af1d-4f06-bf88-660eac71ee9e%2F2592204.png?table=block&amp;id=80a28b19-1bb1-4088-bca8-8f1a9c810d71&amp;spaceId=1e8c321f-3551-4a7e-8dd0-90759f65148c&amp;width=2000&amp;userId=&amp;cache=v2" class="icon bookmark-icon"/>https://www.notion.so/genzio/Blockchain-CryptoCurrency-80a28b191bb14088bca88f1a9c810d71</div></div><img src="https://www.notion.so/image/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1617396900799-f4ec2b43c7ae%3Fixlib%3Drb-1.2.1%26q%3D80%26cs%3Dtinysrgb%26fm%3Djpg%26crop%3Dentropy?table=block&amp;id=80a28b19-1bb1-4088-bca8-8f1a9c810d71&amp;spaceId=1e8c321f-3551-4a7e-8dd0-90759f65148c&amp;width=2000&amp;userId=&amp;cache=v2" class="bookmark-image"/></a></figure><h3 id="242ed0ff-2509-41ba-9cf1-9c8a3def11ff" class="">Github Repos</h3><h3 id="c400bc52-6487-4224-855d-263a555bbafd" class=""><mark class="highlight-blue"><strong>Front-end and Back-end</strong></mark></h3><div id="34281d9a-3401-4fee-92eb-40a0a3b79553" class="column-list"><div id="65958d46-704a-46bf-bd44-272a989303b4" style="width:50%" class="column"><figure id="bcd9c90f-69ef-438c-b5ad-856c5a140a01"><a href="https://github.com/sindresorhus/awesome#front-end-development" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - sindresorhus/awesome: 😎 Awesome lists about all kinds of interesting topics</div><div class="bookmark-description">😎 Awesome lists about all kinds of interesting topics - GitHub - sindresorhus/awesome: 😎 Awesome lists about all kinds of interesting topics</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/sindresorhus/awesome#front-end-development</div></div><img src="https://repository-images.githubusercontent.com/21737465/46445f80-a5ae-11ea-921f-c39aefbcdcac" class="bookmark-image"/></a></figure></div><div id="4df91212-06f0-4873-8b61-065b9b6afde1" style="width:50%" class="column"><figure id="50ac0ce6-5dbe-4b7e-82a0-91c5e548f683"><a href="https://github.com/sindresorhus/awesome#back-end-developme" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - sindresorhus/awesome: 😎 Awesome lists about all kinds of interesting topics</div><div class="bookmark-description">😎 Awesome lists about all kinds of interesting topics - GitHub - sindresorhus/awesome: 😎 Awesome lists about all kinds of interesting topics</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/sindresorhus/awesome#back-end-developme</div></div><img src="https://repository-images.githubusercontent.com/21737465/46445f80-a5ae-11ea-921f-c39aefbcdcac" class="bookmark-image"/></a></figure></div></div><p id="30302ebc-34d5-4087-8b06-19dff5652138" class="">
+</p><figure id="792084b7-e5dc-40d5-a28c-e3483212d56b"><div class="source">https://github.com/goabstract/Awesome-Design-Tools</div></figure><figure id="483f775e-9d93-4784-a183-082323c523f9"><div class="source">https://github.com/terkelg/awesome-creative-coding</div></figure><figure id="e22fb619-1dc8-406f-a1ea-f916151f9d26"><div class="source">https://github.com/dypsilon/frontend-dev-bookmarks</div></figure><figure id="a312cd1f-727f-44af-bb15-dfa586497646"><div class="source">https://github.com/h5bp/Front-end-Developer-Interview-Questions</div></figure><p id="34731c39-36a8-4eb7-acc1-8b6952bc2722" class="">
+</p><figure id="cff7cd1f-ef55-4b94-a411-baef6c533969"><a href="https://www.frontendinterviewhandbook.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Front end interview preparation for busy engineers | Front End Interview Handbook</div><div class="bookmark-description">&quot;There aren&#x27;t a lot of high quality front end interview prep materials online. That&#x27;s why the Front End Interview Handbook is my go-to prep resource. With the help of the interview handbook, I was able to easily identify my weak points and work on them.</div></div><div class="bookmark-href"><img src="https://www.frontendinterviewhandbook.com/img/favicon.png" class="icon bookmark-icon"/>https://www.frontendinterviewhandbook.com/</div></div><img src="https://pbs.twimg.com/profile_images/1445527010269302786/vpK5S5RI_400x400.jpg" class="bookmark-image"/></a></figure><h3 id="a315483b-f3df-4a07-9ead-b33885af1ab2" class=""><mark class="highlight-red">ROADMAPS</mark></h3><p id="b565bc63-fbf5-4557-8f50-464e61e4e37d" class=""><strong>FRONTEND - </strong><strong><a href="https://roadmap.sh/frontend">https://roadmap.sh/frontend</a></strong></p><p id="f38699f7-c8be-4306-96d1-8f0afc57d636" class=""><strong>BACKEND - </strong><strong><a href="https://roadmap.sh/backend">https://roadmap.sh/backend</a></strong></p><p id="57035e6d-bd7d-4b34-9e0e-984c7b3c5b02" class="">
+</p><p id="5452b70e-682d-4abf-8cdc-765a27c70ed0" class=""><strong>Web dev Roadmap</strong></p><figure id="2bd236aa-e392-45b3-bb9a-3251516963f2"><a href="https://courses.codestackr.com/view/courses/2022-web-dev-roadmap" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">codeSTACKr</div><div class="bookmark-description">Let me guide you on your web development learning journey. I have listed a ton of resources here for you. Go through these in order until you get to the Optional Technologies section. This should give you a great start!</div></div><div class="bookmark-href"><img src="https://d31ezp3r8jwmks.cloudfront.net/ZZ4vcCqnqF33rtzRJro3GPMM" class="icon bookmark-icon"/>https://courses.codestackr.com/view/courses/2022-web-dev-roadmap</div></div></a></figure><figure id="c044b068-bd52-4ad7-9ad6-45e100c153f4"><a href="https://www.freecodecamp.org/news/how-to-learn-web-dev-in-2021-roadmap/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Learn Web Development in 2021 - a Web Developer Roadmap</div><div class="bookmark-description">There are some great roadmaps for web developers out there. But some make you solve a &quot;puzzle&quot; before even getting started, as there are multiple choices that you have to make. When I started to learn Web Development, I wished that I could find an experienced developer who would</div></div><div class="bookmark-href"><img src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" class="icon bookmark-icon"/>https://www.freecodecamp.org/news/how-to-learn-web-dev-in-2021-roadmap/</div></div><img src="https://www.freecodecamp.org/news/content/images/2020/12/maxresdefault--3-.jpg" class="bookmark-image"/></a></figure><figure id="b806a323-70a6-4a4a-b4c8-b64bbdce6242"><a href="https://www.thinkful.com/blog/web-developer-cheat-sheet/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Ultimate Cheat Sheet for Web Developers | Thinkful</div><div class="bookmark-description">There are about 700 different coding languages, including server side, client side, and the obscure ones nobody really uses. That number will only go up as new languages and technologies are developed. Plus, the old favorites like JavaScript and CSS are still evolving with new integrations and applications.</div></div><div class="bookmark-href"><img src="https://www.thinkful.com/blog/favicon.ico" class="icon bookmark-icon"/>https://www.thinkful.com/blog/web-developer-cheat-sheet/</div></div><img src="https://s3.amazonaws.com/tf-nightingale/2020/04/Web-Developer.png" class="bookmark-image"/></a></figure><figure id="f32c6b02-8bd7-4496-b404-f79ac63171b7"><div class="source">https://github.com/microsoft/Web-Dev-For-Beginners</div></figure><p id="560ad2d3-030c-49bb-a663-7b5fc5106247" class="">
+</p><figure id="3d3ca80c-b454-4f70-8501-7a8c60f7349a"><a href="https://medium.com/@codingforweb/top-10-blogs-for-web-developers-2019-995fa82c9482" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 10 Blogs for Web Developers 2019</div><div class="bookmark-description">Presented by Ziv Peer We all have different learning preferences: Some like videos and others like books. Some of us like a little of both, but if we want to become a true expert in web development we need to do it by learning from our predecessors, same as to do a lot of practice.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" class="icon bookmark-icon"/>https://medium.com/@codingforweb/top-10-blogs-for-web-developers-2019-995fa82c9482</div></div><img src="https://miro.medium.com/max/1200/1*PE74XM6ZYGPOkOSzIrzXgw.jpeg" class="bookmark-image"/></a></figure><p id="ea650dc6-b33b-4303-ac01-8522dfaada59" class="">
+</p><p id="605fa5a7-d811-43ca-9ded-c0d5928d6ec2" class=""><strong>G Drive - </strong></p><figure id="2c20b243-f1a4-432a-9350-31238fec71d5"><a href="https://drive.google.com/drive/folders/1ZqpVJWTPIQDrWnK-D_bvlqT5w-NjRKGi?usp=sharing" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Web Development - Google Drive</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" class="icon bookmark-icon"/>https://drive.google.com/drive/folders/1ZqpVJWTPIQDrWnK-D_bvlqT5w-NjRKGi?usp=sharing</div></div><img src="https://drive-thirdparty.googleusercontent.com/128/type/image/png" class="bookmark-image"/></a></figure><p id="9a429540-a962-4773-bb77-d2bfa5689a10" class="">
+</p><h3 id="0ffaca41-c04e-49f7-91b4-7c182dabf3c3" class=""><mark class="highlight-blue"><strong>Free Website builders</strong></mark></h3><p id="d4b892cc-a91f-4e75-ac8c-bc4cc7ce0fe7" class=""><a href="https://t.me/Technitze_PixelGraph/56">https://t.me/Technitze_PixelGraph/56</a></p><p id="602de5f6-8fd7-4f09-ac8b-d2514710e288" class="">
+</p><figure id="31bb9b72-10c2-43bf-8fc5-d0e269a92f79" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/CSS%2031bb9b7210c243bf8fc5d0e269a92f79.html"><span class="icon">💠</span>CSS </a></figure><figure id="a78aaf7d-e7b7-418e-9451-f6c5a68ec0c1" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Javascript%20a78aaf7de7b7418e9451f6c5a68ec0c1.html"><span class="icon">💠</span>Javascript </a></figure><figure id="5f41f8e1-858c-4b9b-95a9-55aa134e240e" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Projects%205f41f8e1858c4b9b95a955aa134e240e.html"><span class="icon">🔘</span>Projects </a></figure><figure id="7ec18f48-0299-4729-8788-c72d10f0bda7" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Extensions%207ec18f48029947298788c72d10f0bda7.html"><span class="icon">🧿</span>Extensions </a></figure><figure id="11500bec-3698-4fd4-b914-943eb6bea511" class="link-to-page"><a href="Web%20Development%2027c116c484b04e03a00ceca6d9cfb557/Free%20Hosting%20Platforms%2011500bec36984fd4b914943eb6bea511.html"><span class="icon">🌎</span>Free Hosting Platforms</a></figure><p id="7b25e4e5-500f-45ff-a945-8565ae1f18fc" class="">
+</p><p id="d35e320d-7c37-4ffb-af77-86541da1ab69" class=""><mark class="highlight-blue"><strong>Getting Started with WEB Development :-</strong></mark></p><p id="d195a0ec-232b-4fd1-82a6-89e4c92160c4" class="">
+</p><figure id="e8e9d4db-d45f-457e-9814-ee9feeded395"><a href="https://www.youtube.com/playlist?list=PLydZ2Hrp_gPTULhN4oJ9l6Wplgrd-hi59" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Getting Started With Web Development</div><div class="bookmark-description">An introduction to the languages and tools you need to build for the web.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/playlist?list=PLydZ2Hrp_gPTULhN4oJ9l6Wplgrd-hi59</div></div><img src="https://i.ytimg.com/vi/a2L8ra2TOMg/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLDOZA8QUvzRrF3APu4H65Zfb9oA7w&amp;days_since_epoch=19205" class="bookmark-image"/></a></figure><p id="b32b84d4-cd64-41d1-81d9-a6ab27248866" class="">
+</p><h3 id="9f02dbae-1986-4bf1-92bb-213a1205ae07" class=""><mark class="highlight-gray"><strong>Full Stack Developer Roadmap</strong></mark></h3><figure id="47f9f28a-c8fd-433d-b51f-271f252e4e96"><a href="https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Full Stack Developer&#x27;s Roadmap 🗺</div><div class="bookmark-description">It&#x27;s easy to focus on the front end of web development, but what about the back end? Learning about the back end improves your front end skills. Here are some resources for full stack development that you can save for later.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lrmEcD2H--/c_limit,f_png,fl_progressive,q_80,w_128/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" class="icon bookmark-icon"/>https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12</div></div><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mneMMN4t--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/s7cj5qsge61za29lvn4s.jpg" class="bookmark-image"/></a></figure><figure id="43bfd021-d0d7-4ece-915b-cb76d885d7e6"><a href="https://github.com/fullstackio/30-days-of-web-development" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - fullstackio/30-days-of-web-development: The Free eBook: Your First 30 Days of Web Development by Angel Garbarino</div><div class="bookmark-description">A Free Introduction to Making Heads or Tails of Web Development in 30 Delightful Lessons. Written by the authors of How to Become A Web Developer: A Field Guide Interested in learning Web Development but having trouble getting started? I wrote this book for the &quot;me&quot; of five years ago: the person who wants to know how to become web developer.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/fullstackio/30-days-of-web-development</div></div><img src="https://repository-images.githubusercontent.com/194187735/0937d200-cb31-11e9-987f-166b56b379ff" class="bookmark-image"/></a></figure><figure id="133f478b-92b4-4fa8-a93f-b425be45f415"><a href="https://www.linkedin.com/learning/paths/become-a-software-developer?trk=lilblog_06-30-20_msft-announcement-reskilling-linkedin-learning_learning" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Become a Software Developer Learning Path | LinkedIn Learning, formerly Lynda.com</div><div class="bookmark-description">Get an introduction to the programming skills needed for a career as a software developer. This learning path provides a broad perspective on core technologies for web development, software development, and databases. It introduces common tools and the bigger picture of how development careers work.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/sc/h/444zstxv7s91nepfm5et6ofge" class="icon bookmark-icon"/>https://www.linkedin.com/learning/paths/become-a-software-developer?trk=lilblog_06-30-20_msft-announcement-reskilling-linkedin-learning_learning</div></div><img src="https://media-exp1.licdn.com/dms/image/C4E0DAQEmpu7qTqI_TA/learning-public-crop_240_432/0/1591384497665?e=1647954000&amp;v=beta&amp;t=53V6KTJhtVyBEe2a_0ZJU9oJPpoW-YnjXOc6qj1pUOI" class="bookmark-image"/></a></figure><p id="a1d1a48e-495b-41bb-a250-93388e92562b" class="">
+</p><p id="a6e95114-9f65-4d48-ac96-2699ce9a13c7" class="">
+</p><figure id="589c2234-a574-4358-8732-8d8bd8748ea9"><div class="source">https://github.com/alex/what-happens-when</div></figure><p id="94d7ae37-8598-4b45-8a75-20fd19616777" class="">
+</p><figure id="341e9a16-fbe1-469d-8735-cefb595c39da"><a href="https://internetfundamentals.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Internet Fundamentals</div><div class="bookmark-description">Take your first steps in building websites by first learning how the web works! This course is aimed at beginners to give you the foundational knowledge of how the web works. You&#x27;ll take a look at the terminology of web servers, web services, and the devices we use to use the internet.</div></div><div class="bookmark-href"><img src="https://internetfundamentals.com/favicon.ico" class="icon bookmark-icon"/>https://internetfundamentals.com/</div></div><img src="https://internetfundamentals.com/img/og-image.jpg" class="bookmark-image"/></a></figure><figure id="1a269b46-d556-4df1-809d-5821c3971c5b"><a href="https://www.codespot.org/what-is-ssl" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is SSL (Secure Sockets Layer)</div><div class="bookmark-description">SSL (Secure Sockets Layer) is a security protocol for establishing authenticated and encrypted links between a server and a client in a network, typically a web server and a browser, or a mail server and a mail client. With SSL we can securely transmit sensitive information like login credentials and credit card numbers.</div></div><div class="bookmark-href"><img src="https://www.codespot.org/favicon-32x32.png?v=225babbcf9bd48099f7a536ea68048ad" class="icon bookmark-icon"/>https://www.codespot.org/what-is-ssl</div></div><img src="https://www.codespot.org/assets/ssl.jpg" class="bookmark-image"/></a></figure><p id="d4b480bd-772f-4aa3-b52a-a63c407030d2" class="">
+</p><h3 id="05556f76-fd6d-458b-a0ca-f23357688801" class=""><mark class="highlight-brown"><strong>TOOLS</strong></mark></h3><figure id="7695bcb4-d174-4840-9ea9-027eb934feff"><a href="https://youtu.be/U_gANjtv28g" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">7 Amazing Developer Tools that you&#x27;re not using yet</div><div class="bookmark-description">Discover seven amazing 🤯 tools for app developers that you have not heard of yet, but should probably be using. None of the selections are sponsored and are...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/54c586d4/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/U_gANjtv28g</div></div><img src="https://i.ytimg.com/vi/U_gANjtv28g/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="965a4a10-6fba-4936-8dcd-1eb70f0b20c8" class="">
+</p><figure id="a7643874-ffb1-461f-b0f0-563466a98dd8"><a href="https://www.browserling.com/tools" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Web Developer Tools</div><div class="bookmark-description">We&#x27;re obsessed with making web developers&#x27; lives easier at Browserling, so we created a collection of the most popular developer tools all in one place. We love simplicity so we made them very simple and obvious how to use. There are no ads, bloated dialogs, or useless checkboxes.</div></div><div class="bookmark-href"><img src="https://www.browserling.com/favicon.ico" class="icon bookmark-icon"/>https://www.browserling.com/tools</div></div><img src="https://www.browserling.com/images/browserling-cross-browser-testing-fb-og-image.png" class="bookmark-image"/></a></figure><p id="cdab7574-d77e-4d5b-b81f-5c452c2644c4" class="">
+</p><figure id="0f166a73-eee6-4d1b-a73c-05b9161534d0"><a href="https://www.similarweb.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Website Traffic - Check and Analyze Any Website | Similarweb</div><div class="bookmark-description">All in one Website analytics &amp; competitive traffic intelligence platform - Compare website traffic and performance, analyze strategies &amp; grow your market share!</div></div><div class="bookmark-href"><img src="https://www.similarweb.com/favicon.ico" class="icon bookmark-icon"/>https://www.similarweb.com/</div></div><img src="https://www.similarweb.com/images/similarweb.png" class="bookmark-image"/></a></figure><p id="88c2c794-61bf-4017-b16f-eeb08299ba4d" class="">
+</p><figure id="52a71fa6-54a8-432b-ba6a-4f05b430644f"><a href="https://domainwat.ch/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DomainWatch - Domain WHOIS Search, Website Information, Database Search</div><div class="bookmark-description">DomainWatchは、WHOISの検索やウェブサイトの調査などさまざまなツールを提供しています。</div></div><div class="bookmark-href">https://domainwat.ch/</div></div><img src="https://domainwat.ch/img/domainwatch-icon.png" class="bookmark-image"/></a></figure><p id="7f8b89cf-251f-4a84-b1a7-4d9ff500377e" class="">
+</p><figure id="bd086726-47aa-4ad7-a86b-70b7ca60c4ca"><a href="https://urlscan.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">urlscan.io</div><div class="bookmark-description">urlscan.io - Website scanner for suspicious and malicious URLs</div></div><div class="bookmark-href"><img src="https://urlscan.io/img/urlscan_256.png" class="icon bookmark-icon"/>https://urlscan.io/</div></div><img src="https://urlscan.io/img/ctm360.png" class="bookmark-image"/></a></figure><p id="5d7b79f7-4382-4c41-ab04-773d626df71a" class="">
+</p><p id="365acfb2-c78e-4375-a092-c0da2348d584" class=""><strong> List of all errors</strong></p><p id="bfcaa1bf-5ed7-4917-93b8-f847e5b984c0" class=""><a href="https://t.me/Technitze_Cybernauts/18">https://t.me/Technitze_Cybernauts/18</a></p><p id="31ac669b-bfa4-4613-be77-c351c4fd4df4" class="">
+</p><figure id="3448a3b1-beda-4085-a243-1036167b6d69"><a href="https://jekyllrb.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Jekyll * Simple, blog-aware, static sites</div><div class="bookmark-description">Sick of dealing with hosting companies? GitHub Pages is powered by Jekyll, so you can easily deploy your site using GitHub for free- custom domain name and all. Learn more about GitHub Pages →</div></div><div class="bookmark-href"><img src="https://jekyllrb.com/favicon.ico" class="icon bookmark-icon"/>https://jekyllrb.com/</div></div><img src="https://jekyllrb.com/img/jekyll-og.png" class="bookmark-image"/></a></figure><p id="9ffe9500-beb3-44aa-92a4-3c40d34927c8" class="">
+</p><figure id="c74b802b-9187-4ec1-a25a-98fb35cf0620"><a href="https://fireship.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fireship.io</div><div class="bookmark-description">Training and Consulting for App Developers | Full Courses, Video Lessons, Chat, and more.</div></div><div class="bookmark-href"><img src="https://fireship.io/img/favicon.png" class="icon bookmark-icon"/>https://fireship.io/</div></div><img src="https://fireship.io/img/covers/default.png" class="bookmark-image"/></a></figure><p id="4d8ff783-0175-40da-9ff7-49d717d2fc1f" class="">
+</p><p id="a5d6520e-f658-4119-a5df-839964be1edf" class="">
+</p><p id="5cfd1fb1-5275-48e8-ade4-42dffee63557" class="">
+</p><p id="e2c38270-d009-4e0d-977c-f849f48a4c86" class="">
+</p><p id="d6a18f99-3d12-4f9a-b514-99ad1d8f04b5" class="">
+</p></div></article></body></html>

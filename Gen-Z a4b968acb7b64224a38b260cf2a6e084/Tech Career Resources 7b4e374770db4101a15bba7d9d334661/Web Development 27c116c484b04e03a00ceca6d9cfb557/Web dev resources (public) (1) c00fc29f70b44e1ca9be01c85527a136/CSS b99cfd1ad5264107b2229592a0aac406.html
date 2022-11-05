@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CSS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b99cfd1a-d526-4107-b222-9592a0aac406" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="CSS%20b99cfd1ad5264107b2229592a0aac406/css3.png"/></div><h1 class="page-title">CSS</h1></header><div class="page-body"><h1 id="42a5f892-853d-4cff-97f4-e92f51b6788b" class="block-color-red_background">❗Great resources</h1><p id="b74067e3-8f1f-4d1b-bf5f-c536eaf2d3a8" class="">CSS Tricks: <a href="https://css-tricks.com/">https://css-tricks.com/</a></p><p id="dd66f00c-9126-42bb-8811-71ca550a70ac" class="">A List Apart: <a href="https://alistapart.com/blog/topic/css/">https://alistapart.com/blog/topic/css/</a></p><hr id="9d58b1e1-cbb0-4e39-a21c-d660096e5adb"/><hr id="0f75b415-df88-45bd-9898-9990ffa4fe97"/><h1 id="a7429086-bcdc-4738-a05d-d4c38ccf4063" class="block-color-gray_background"><strong>Frameworks</strong></h1><p id="0dc04981-9bc9-4e21-b2a8-9d0b2d96e2b0" class=""><a href="https://tailwindcss.com/">https://tailwindcss.com/</a></p><hr id="20dd702d-a406-4783-b61f-db8f1b79d9b8"/><h1 id="ceb8cf4d-998d-4c5f-a531-8bcc5711b8a8" class="block-color-gray_background">Guides and tools</h1><p id="f3c56fce-cd88-4cec-a336-ae8eae396e27" class=""><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p><p id="a87c8bb4-9ebd-4970-8f63-c19b93278a30" class=""><a href="https://semicolon.dev/tutorial/css/complete-css-flex-tutorial">https://semicolon.dev/tutorial/css/complete-css-flex-tutorial</a></p><hr id="7c377d59-d40a-4ab2-ac44-97d4916de373"/><h1 id="4bfee26d-6d2d-4a6b-bf1a-b71e83690b35" class="block-color-gray_background">Animations</h1><p id="aacaa149-9b17-4a4f-96e1-b781a06cc35f" class=""><a href="https://dev.to/afif/100-more-underline-overlay-animations-the-upgraded-css-collection-4c25">Button animations</a></p><p id="a071c350-a445-484e-9f68-86aa7511e6f9" class=""><a href="https://cubic-bezier.com/">Cubic Bezier</a></p><p id="9ca503ec-a672-47cd-841b-fd78ae0c5cac" class=""><a href="http://3d-transforms.webflow.com/#intro">3D transforms with Webflow</a></p><hr id="b096bf7c-e939-46a3-84bf-e543e128c3aa"/><h1 id="5c3811b6-2788-4adf-afc4-5fcdafd19e66" class="block-color-gray_background">Examples</h1><p id="c72fa036-d4c9-4082-9e32-c04449a03f66" class="">CSS Zen Garden: <a href="http://www.csszengarden.com/">http://www.csszengarden.com/</a></p><hr id="9e17aaab-8bd0-4ff3-84a5-c7c6e0367108"/><h1 id="37e7ea4a-861a-4ff4-9351-f9bafaa2f2af" class="block-color-gray_background">Fonts</h1><h2 id="6763e9c1-cbe5-4706-8d80-86d8b7e8af36" class="">Fonts to use</h2><p id="9161d95d-202b-4541-8f0f-534f8e956d86" class="">Font Squirrel: <a href="https://www.fontsquirrel.com/">https://www.fontsquirrel.com/</a></p><p id="49538e8e-8a00-473d-99f3-3dd14ac5f95a" class="">Google Web Fonts: <a href="https://fonts.google.com/">https://fonts.google.com/</a></p><p id="c4981173-9e8a-470d-84f5-74fafb153c09" class="">Typekit: <a href="https://fonts.adobe.com/fonts">https://fonts.adobe.com/fonts</a></p><p id="f84701ab-806d-402e-9296-3baff4d65308" class="">Fonts.com: <a href="https://www.fonts.com/">https://www.fonts.com/</a></p><h2 id="6660f216-6eb4-4bbe-babe-b8990c37707f" class="">Web safe fonts</h2><p id="843d82eb-f74f-4054-806c-aa76b0d11b06" class="">CSS Font Stack: <a href="https://www.cssfontstack.com/">https://www.cssfontstack.com/</a></p><hr id="ec604370-a4b2-48be-832e-fef379a15fb9"/><h1 id="5d524251-f84f-4bdb-b189-f54a03e7bd0f" class="block-color-gray_background">Colors</h1><p id="74192f1f-0754-4416-bf10-3729c512d2bb" class="">Color names: <a href="https://www.w3schools.com/colors/colors_hex.asp">https://www.w3schools.com/colors/colors_hex.asp</a></p><p id="a0931efa-d85e-4340-9694-f5b734ae9991" class="">Hexadecimal to filter(): <a href="https://codepen.io/sosuke/pen/Pjoqqp">https://codepen.io/sosuke/pen/Pjoqqp</a></p><p id="5ac6d3a8-6f67-4e6d-8956-b86242bcb856" class="">⭐  <a href="https://color.cloudflare.design/">Cloudflare</a></p><hr id="d1f77b2e-f350-4e96-ac93-d27a31cf0ca7"/><h1 id="25305a17-7675-4f1e-aadb-b462a0a18336" class="block-color-gray_background">Gradients</h1><p id="62e1c9d0-5e54-4e41-b213-a1f328d0801c" class="">A Complete Guide to CSS Gradients: <a href="https://css-tricks.com/a-complete-guide-to-css-gradients/">https://css-tricks.com/a-complete-guide-to-css-gradients/</a></p><h2 id="bd87ba3a-9dd2-4c70-b02d-fbff63be935a" class="">Patterns</h2><p id="06d48be7-b9e6-4029-81eb-bf6745f7f3b4" class="">Verou: <a href="https://projects.verou.me/css3patterns/">https://projects.verou.me/css3patterns/</a></p><h2 id="e030d983-b1e5-4e07-b97d-775b730a2d55" class="">Buttons</h2><p id="0dcd1565-fe3b-4ffa-bbf7-1f339fb4c8f0" class="">Gradient buttons: <a href="https://gradientbuttons.colorion.co/">https://gradientbuttons.colorion.co/</a></p><h2 id="d02c2347-fea5-43cf-b52c-2a71a5d059c3" class="">📦 Cool gradients</h2><p id="99095850-8ef3-494c-9c6c-8b8265e80444" class="">uiGradients: <a href="https://uigradients.com/#JuicyOrange">https://uigradients.com/#JuicyOrange</a></p><hr id="3314741e-07ca-4c2e-bac2-cab41107631b"/><h1 id="84b26f02-396a-4d1a-893c-e84cf044f81e" class="block-color-gray_background">Shadows</h1><p id="e71777e4-ef21-4bcf-b3ec-81bb3593e804" class="">86 shadow examples: <a href="https://getcssscan.com/css-box-shadow-examples">https://getcssscan.com/css-box-shadow-examples</a></p><hr id="74356640-faab-43a9-98cf-32248de7ae90"/><h1 id="a7fcd19c-4932-4e79-9720-518303c40a08" class="block-color-gray_background">Layout</h1><p id="0798e155-8479-4437-a210-37b349ba7b90" class="">Page layout with floats and positioning (provide support for old browsers): <a href="https://learningwebdesign.com/articles/LWD5_FloatLayout.pdf">https://learningwebdesign.com/articles/LWD5_FloatLayout.pdf</a></p><hr id="cbf330fc-be1b-493d-8fb1-67824572e5ac"/><h1 id="2a54861c-7c55-4502-883b-a869bbf3e034" class="block-color-gray_background">Flexbox</h1><p id="2ebcfc0a-142b-43fa-92a6-b6a75a271a43" class="">A Complete Guide to Flexbox: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p><p id="9c296a86-01ee-4ed8-843d-fccbf58fc6c0" class="">Video course about Flexbox: <a href="https://flexbox.io/">https://flexbox.io/</a></p><p id="b4df2191-44fa-49e5-9691-177bcfc63fa1" class="">See flexbox in action 1: <a href="https://codepen.io/enxaneta/full/adLPwv">https://codepen.io/enxaneta/full/adLPwv</a></p><p id="621e37a3-7fde-4a2e-97d6-b73a9389e6b9" class="">See flexbox in action 2: <a href="https://the-echoplex.net/flexyboxes/">https://the-echoplex.net/flexyboxes/</a></p><p id="a6312a22-2b90-437f-b0ec-aa42582778e9" class="">Detailed Flexbox Tutorial for Beginners (everything you need to know!): <a href="https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/10-flexbox-crash-course/">https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/10-flexbox-crash-course/</a></p><p id="14068565-5d44-46aa-8dec-0c60e0e6a980" class="">Tutorial: <a href="https://www.samanthaming.com/flexbox30/">https://www.samanthaming.com/flexbox30/</a></p><hr id="19336e0d-0508-404c-87d3-0590a8ba89d4"/><h1 id="8e2c79af-b7e4-4370-bc06-769abab5440a" class="block-color-gray_background">Grid</h1><p id="d02f6936-71ab-4aa7-8f4a-5e8b26988d9f" class="">THE EXPERIMENTAL LAYOUT LAB: <a href="https://labs.jensimmons.com/">https://labs.jensimmons.com</a></p><p id="f2cef6cb-5e22-4037-bffb-f53fc7ea2463" class="">Grid by Example: <a href="https://gridbyexample.com/">https://gridbyexample.com</a></p><p id="0ab2dd28-4fda-41bd-91bd-4c98540c1fd0" class="">Definition and explanation: <a href="https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/">https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/</a></p><p id="0736f311-2003-4e06-9106-d2b0521ece12" class="">The Complete CSS Grid Tutorial: <a href="https://jst.hashnode.dev/css-grid-tutorial">https://jst.hashnode.dev/css-grid-tutorial</a></p><p id="b2acf500-0273-4dc5-8537-d37aef02ab30" class="">
+</p><hr id="a6989133-7335-4060-b1d1-53de64124ebe"/><h1 id="776cab86-f2c2-4fea-bf2a-89d7860ce26a" class="block-color-gray_background">Responsive Web Design (RWD)</h1><p id="66b48e65-9dac-4e6f-bfcb-372588ee7acb" class="">W3Schools: Responsive Web Design: <a href="https://www.w3schools.com/css/css_rwd_intro.asp">https://www.w3schools.com/css/css_rwd_intro.asp</a></p><p id="e040988c-a098-4e1d-b341-573c732b315f" class="">Screen sizes: <a href="https://screensiz.es/">https://screensiz.es</a></p><p id="3f10ad70-d7c5-4d81-9871-7f232771876f" class="">Multi-Device Layout Patterns: <a href="https://www.lukew.com/ff/entry.asp?1514">https://www.lukew.com/ff/entry.asp?1514</a></p><p id="f58a782b-d3bc-4c52-8974-aa52b4c48da1" class="">Responsive Patterns: <a href="https://bradfrost.github.io/this-is-responsive/patterns.html">https://bradfrost.github.io/this-is-responsive/patterns.html</a></p><p id="34df72b4-5de0-4cd0-af05-50fb3bbf2279" class="">Get started with variable fonts: <a href="https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7#:~:text=As%20with%20regular%20OpenType%20fonts,%2Dvariations%20or%20truetype%2Dvariations%20">https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7#:~:text=As with regular OpenType fonts,-variations or truetype-variations </a>.</p><p id="ebe28f5e-3f22-486c-9bca-908fcfe59956" class="">Responsive navigation patterns: <a href="https://bradfrost.com/blog/post/responsive-nav-patterns/">https://bradfrost.com/blog/post/responsive-nav-patterns/</a></p><p id="b8177312-8947-45e7-92ca-4dd32be5c86b" class="">Adventures in Responsive Navigation: <a href="https://responsivenavigation.net/">https://responsivenavigation.net/</a></p><p id="ff765732-ad84-4f7e-a4f8-0ed7efb03555" class="">⭐  <a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Resources</a></p><h1 id="c5376496-9eab-4550-8836-d8f274ee08ee" class="block-color-gray_background">Images</h1><p id="696d9051-8896-4dfd-be12-b6f9a8792206" class=""><code>background-image</code> opacity: <a href="https://coder-coder.com/background-image-opacity/">https://coder-coder.com/background-image-opacity/</a></p><p id="2d71a825-9ad9-4e83-baf8-4aa22b7c7a5d" class="">Change colour of PNG images using filter: <a href="https://codepen.io/sosuke/pen/Pjoqqp">https://codepen.io/sosuke/pen/Pjoqqp</a></p><h1 id="0534629b-910b-4d73-91c5-506d045aaabb" class="block-color-gray_background">Borders</h1><p id="a53f8112-f933-4144-8bc2-17e03364c671" class="">Cool border radius: <a href="https://rattibha.com/thread/1392799793135693825">https://rattibha.com/thread/1392799793135693825</a></p><h1 id="ea8d30c1-f2ac-40d9-8372-f99ec2d84f26" class="block-color-gray_background">Media Queries</h1><p id="89a42471-24b5-496c-9b06-3b605c6f64e6" class=""><a href="https://mediaqueri.es/">https://mediaqueri.es/</a></p><h1 id="723e4795-15b0-4e33-b744-68be17b1e3eb" class="block-color-gray_background">Reset styles</h1><p id="118dddad-504d-456e-8084-a897ab7a8b75" class=""><a href="https://meyerweb.com/eric/tools/css/reset/">CSS reset</a></p><p id="2a6439e1-d2a7-405f-accc-784b43bb5e3c" class=""><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></p><p id="9aee3984-a675-495f-9113-7789c7862a74" class=""><a href="https://css-tricks.com/reboot-resets-reasoning/">Reboot, Resets, and Reasoning</a></p><pre id="26b1fc50-41ce-4584-beef-d30f5a83ddf6" class="code code-wrap"><code>/* Initial reset */
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    /*outline: 1px dashed blue; /* Debugging purposes */
+}</code></pre><h1 id="c84201b2-2fd2-4af1-ae35-15dd5dcdb696" class="block-color-gray_background">Reducing HTTP reuqests</h1><p id="67834697-104f-42ec-a9f8-ef5562b2d7ce" class="">Images: <a href="https://css-tricks.com/css-sprites/">CSS sprites</a></p><h1 id="a9758c69-0b29-4f24-bfa3-3993329d9f3d" class="block-color-gray_background">Browser support (CSS, HTML, JavaScript)</h1><p id="9a56326b-bcfe-4b56-a635-975e5a72e4c1" class=""><a href="https://modernizr.com/">Modernizr</a></p><h1 id="55480618-3c6a-4a8c-abe6-23a758e3a539" class="block-color-gray_background">Pre- and Post-processors (and CSS authoring frameworks)</h1><p id="87a5d953-d83f-450a-bc33-b67e533800dd" class=""><a href="https://medium.com/@ddprrt/deconfusing-pre-and-post-processing-d68e3bd078a3">Deconfusing Pre- and Post-processing</a></p><h2 id="1652d342-ed05-450f-9375-ae124cfb6055" class="">Pre-processors</h2><p id="2be6849d-321c-4994-b567-8ee92305cb79" class=""><a href="https://sass-lang.com/">Sass</a></p><p id="e5b5c186-80f8-427c-8c9b-3963f4d68fe9" class="">Less</p><p id="287a9b61-fe62-4a92-b541-0c2c6902df05" class=""><a href="https://stylus-lang.com/">Stylus</a></p><h2 id="df246afd-d44e-4862-b21f-75bef5cf71e7" class="">CSS authoring frameworks</h2><p id="97ab2958-2cc5-4568-b8c8-7473077d7bfa" class=""><a href="http://compass-style.org/">Compass (works well with SASS)</a></p><h2 id="41e49d55-b90e-4739-bd60-4fdfac739165" class="">Post-processors</h2><p id="772f6320-3b5f-4411-925c-e1a8c1a84b20" class=""><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></p><p id="a609eda6-f47c-42d4-b8f6-aeda33570e3e" class=""><a href="https://postcss.org/">PostCSS</a> &gt; <a href="https://www.postcss.parts/">PostCSS.parts</a></p><p id="754d10e7-01f1-4130-bed4-1c605751955e" class="">
+</p></div></article></body></html>

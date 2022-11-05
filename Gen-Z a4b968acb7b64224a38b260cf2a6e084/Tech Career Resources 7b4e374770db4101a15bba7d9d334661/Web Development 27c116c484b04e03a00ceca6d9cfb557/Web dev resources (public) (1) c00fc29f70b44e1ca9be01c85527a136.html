@@ -1,0 +1,674 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Web dev resources (public) (1)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c00fc29f-70b4-4e1c-a9be-01c85527a136" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👨‍💻</span></div><h1 class="page-title">Web dev resources (public) (1)</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3858fdf2-e144-49ca-b128-23d8e70e3fe0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">This is a Notion template made by me, <a href="https://twitter.com/DamianDemasi">Damian Demasi</a>, compiling information and resources related to Web Development. I tried to make it as broad as possible so you can pick and choose what is that you like/need. I’ve also made my best effort to remove any personal or copyrighted information but, if you find any, please <a href="https://twitter.com/DamianDemasi">let me know</a>. Have fun!</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b0e4f001-dfeb-4d43-8d72-dc17a430acec"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">If you want to read my articles, you can visit my blog at <a href="https://blog.damiandemasi.com/">https://blog.damiandemasi.com/</a></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6b8b3bc7-bc31-4574-be43-9477efa93aff"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">🐦 If you want to chat with me, the best way to do it is on <a href="https://twitter.com/DamianDemasi">Twitter</a>. 📰 You can subscribe to my newsletter <a href="https://chipper-designer-8106.ck.page/1a819bffe8">here</a> to know about my latest articles and content.</div></figure><hr id="6e29ba84-4147-4249-a052-165bd6ac3aa3"/><div id="a5b14bbb-e2cd-4c65-85b2-63b1fa0f53b8" class="column-list"><div id="ea43e30d-7121-4cfd-91bf-503d913b5f18" style="width:50%" class="column"><figure id="f7aabc62-bc9b-4451-82c6-a295760ad334" class="image"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Untitled.png"><img style="width:480px" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Untitled.png"/></a></figure></div><div id="5c8d9f39-ce65-4eb2-a34e-f86dec20f423" style="width:50%" class="column"><p id="bb2939bc-1858-4c3e-a2b3-92a7f261922b" class="">If you enjoy this content and want to support me so I can keep writing blog posts and sharing great Notion templates, you can buy me a coffee:</p><p id="91f16b54-db6c-4435-b5bb-42713b239b8c" class=""><strong><a href="https://www.buymeacoffee.com/damiandemasi">https://www.buymeacoffee.com/damiandemasi</a></strong></p></div></div><p id="2a77a0b1-b140-4528-8e40-30f397bc482c" class="">
+</p><hr id="76ad18e1-2141-45fa-92cf-84752f0abe60"/><div id="4da2bade-94b4-47ad-89df-9bc9a30e73d4" class="column-list"><div id="b890cb62-5611-4516-9902-956b20a56f04" style="width:62.5%" class="column"><nav id="2eab319c-1613-462f-9f5a-45e71af56874" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5ba5820d-3a13-4ad8-925a-3ca23b58507d">Core topics</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fefae4a3-38bb-433b-b857-6fadd5e93df7">Study and practice</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8af18f46-0c77-48cb-a2c7-34afa0bf080b">1st layer topics</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f5b8cce-5fa2-4f13-b36f-fcbc1de85f92">2nd layer topics</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7d5b8d7e-2611-4835-99b0-fec9a0feb946">Jobs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#79992f8a-6a57-4a08-9c1d-b38257366729">App and business ideas</a></div></nav><p id="183ae345-1fe0-45e0-a05b-8103b5789b34" class="">
+</p></div><div id="f69536c8-4685-495a-a624-f931b406d151" style="width:37.5%" class="column"><figure id="7d7c1436-9732-4cf8-a584-309b9b0fce9b" class="image"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/unnamed.jpg"><img style="width:240px" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/unnamed.jpg"/></a></figure></div></div><h1 id="5ba5820d-3a13-4ad8-925a-3ca23b58507d" class="block-color-gray_background">Core topics</h1><figure id="b99cfd1a-d526-4107-b222-9592a0aac406" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/CSS%20b99cfd1ad5264107b2229592a0aac406.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/CSS%20b99cfd1ad5264107b2229592a0aac406/css3.png"/>CSS</a></figure><figure id="a9e395b8-48f5-4e08-b6de-473db1b67dfc" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/HTML%20a9e395b848f54e08b6de473db1b67dfc.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/HTML%20a9e395b848f54e08b6de473db1b67dfc/html5.png"/>HTML</a></figure><figure id="fe020103-62a8-46ec-a080-d1e9ab01cd72" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Git,%20GitHub%20&amp;%20GitLab%20fe02010362a846eca080d1e9ab01cd72.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Git,%20GitHub%20&amp;%20GitLab%20fe02010362a846eca080d1e9ab01cd72/kisspng-github-branching-scalable-vector-graphics-computer-git-branch-icon-of-glyph-style-available-in-svg-5d043b5c0a2ee0.3593951115605584280417.png"/>Git, GitHub &amp; GitLab</a></figure><figure id="85c04991-0683-4a8a-8262-e1835f027202" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/JavaScript%2085c0499106834a8a8262e1835f027202.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/JavaScript%2085c0499106834a8a8262e1835f027202/js.png"/>JavaScript</a></figure><figure id="9a8338c5-6923-4a72-a0bb-a9c431ca2253" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/NodeJS%209a8338c569234a72a0bba9c431ca2253.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/NodeJS%209a8338c569234a72a0bba9c431ca2253/pngwing.com.png"/>NodeJS</a></figure><figure id="84e73851-df98-41b1-965c-a7d2e9e64183" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/ReactJS%2084e73851df9841b1965ca7d2e9e64183.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/ReactJS%2084e73851df9841b1965ca7d2e9e64183/react.png"/>ReactJS</a></figure><figure id="b0ec83a5-7dbd-434e-962e-b9f4e8c6dd19" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Ruby%20on%20Rails%20b0ec83a57dbd434e962eb9f4e8c6dd19.html"><img class="icon" src="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Ruby%20on%20Rails%20b0ec83a57dbd434e962eb9f4e8c6dd19/ruby.svg"/>Ruby on Rails</a></figure><figure id="f80a22a7-9291-4e51-a103-dde838dccae9" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/SQL%20(full%20notes)%20f80a22a792914e51a103dde838dccae9.html"><span class="icon">💽</span>SQL (full notes)</a></figure><p id="2b387d36-dad6-4496-96c4-852f34097469" class="">
+</p><h1 id="fefae4a3-38bb-433b-b857-6fadd5e93df7" class="block-color-gray_background">Study and practice</h1><figure id="52159224-001a-4cdc-aa11-41204c71e69e" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Study%20progress%2052159224001a4cdcaa1141204c71e69e.html"><span class="icon">📊</span>Study progress</a></figure><hr id="9e8b67fc-e185-4d6b-a569-ae5c42fe92fd"/><figure id="6f64d899-5eb2-4b71-a252-a79fdb467580" class="block-color-yellow_background link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Spaced%20Repetition%206f64d8995eb24b71a252a79fdb467580.html"><span class="icon">🗂️</span>Spaced Repetition</a></figure><figure id="2291ff85-1919-4ce9-93ae-c8f7cfbbe5b7" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Cheatsheets%202291ff8519194ce993aec8f7cfbbe5b7.html"><span class="icon">📄</span>Cheatsheets</a></figure><hr id="faea94fc-8366-4a1d-b1e3-67899e64b437"/><figure id="38714249-2a5e-4312-8eab-ae8b73ff9d94" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Learning%20387142492a5e43128eabae8b73ff9d94.html"><span class="icon">🦏</span>Learning</a></figure><figure id="72e1df91-5a53-4f85-a742-f42da6162a13" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Tutorials%20and%20courses%2072e1df915a534f85a742f42da6162a13.html"><span class="icon">👨‍🎓</span>Tutorials and courses</a></figure><figure id="54e1deec-ea92-4440-acf6-6063a0c4e914" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Roadmaps%2054e1deecea924440acf66063a0c4e914.html"><span class="icon">🚶‍♂️</span>Roadmaps</a></figure><figure id="a3af70dd-d75a-4a28-ac75-55b5be377f10" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Code%20snippets%20a3af70ddd75a4a28ac7555b5be377f10.html"><span class="icon">👨‍💻</span>Code snippets</a></figure><figure id="0a30d1cc-ab24-4cc1-bd03-578d3504b8ec" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Questions%200a30d1ccab244cc1bd03578d3504b8ec.html"><span class="icon">❓</span>Questions</a></figure><figure id="a2faddcd-e23a-4ebc-9591-14143475177b" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Coding%20challenges,%20practice%20and%20projects%20a2faddcde23a4ebc959114143475177b.html"><span class="icon">🧩</span>Coding challenges, practice and projects</a></figure><figure id="bace6849-7754-4728-aa0c-aca8d74a6537" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Mindset%20%E2%AD%90%EF%B8%8F%20bace684977544728aa0caca8d74a6537.html"><span class="icon">🧠</span>Mindset ⭐️</a></figure><p id="20901132-4c90-4f35-be59-c76dfaa0ea80" class="">
+</p><h1 id="8af18f46-0c77-48cb-a2c7-34afa0bf080b" class="block-color-gray_background">1st layer topics</h1><figure id="5a7b1e6f-4ab1-4cec-b105-72a1e133d29b" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/APIs%205a7b1e6f4ab14cecb10572a1e133d29b.html"><span class="icon">🔌</span>APIs</a></figure><figure id="cf52a8e3-dde9-4880-9b9f-0d026bce22b7" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Apps%20and%20tools%20cf52a8e3dde948809b9f0d026bce22b7.html"><span class="icon">🔧</span>Apps and tools</a></figure><figure id="516608bb-50ff-4374-a3cb-da212aad6394" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Best%20practices%20516608bb50ff4374a3cbda212aad6394.html"><span class="icon">✅</span>Best practices</a></figure><figure id="d911b1c4-7257-4352-a2c9-d299e4400fce" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Build%20tools%20(task%20runners,%20automation)%20d911b1c472574352a2c9d299e4400fce.html"><span class="icon">⚙️</span>Build tools (task runners, automation)</a></figure><figure id="988bc6d4-26b6-49ab-bd42-9991d7131aec" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Code%20practice%20988bc6d426b649abbd429991d7131aec.html"><span class="icon">🥋</span>Code practice</a></figure><figure id="535b24f8-7c91-4567-b2ef-dcedf65fc567" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Documenting%20the%20code%20535b24f87c914567b2efdcedf65fc567.html"><span class="icon">📄</span>Documenting the code</a></figure><figure id="639286bf-681f-463e-9ac4-c52d09fde0ae" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Deployment%20and%20CI%20CD%20639286bf681f463e9ac4c52d09fde0ae.html"><span class="icon">⏬</span>Deployment and CI/CD</a></figure><figure id="2f8acc79-918a-4088-943b-c4988ffd019a" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Docker%20&amp;%20Podman%202f8acc79918a4088943bc4988ffd019a.html"><span class="icon">🐳</span>Docker &amp; Podman</a></figure><figure id="5fc52cf6-3b1b-425e-abfd-73da07f6c6eb" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Libraries%205fc52cf63b1b425eabfd73da07f6c6eb.html"><span class="icon">📚</span>Libraries</a></figure><figure id="cf54d9fc-de84-41c6-8de5-3ae8a6b69060" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/npm%20cf54d9fcde8441c68de53ae8a6b69060.html"><span class="icon">📦</span>npm</a></figure><figure id="cf329bfe-7d31-49ec-a40e-0506203a239d" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Online%20resources%20cf329bfe7d3149eca40e0506203a239d.html"><span class="icon">🔝</span>Online resources</a></figure><figure id="f3c7400c-e1c2-4d3d-9b11-9ec03afedf93" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Packages%20f3c7400ce1c24d3d9b119ec03afedf93.html"><span class="icon">📦</span>Packages</a></figure><figure id="df05364f-b68e-4a9d-8064-e418609e316a" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Problem%20solving%20strategies%20df05364fb68e4a9d8064e418609e316a.html"><span class="icon">⁉️</span>Problem solving strategies</a></figure><figure id="7c4ed645-0993-4e44-9c32-69c241da09e6" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Project%20planning%20and%20checklists%207c4ed64509934e449c3269c241da09e6.html"><span class="icon">☑️</span>Project planning and checklists</a></figure><figure id="0fe8361d-f0d9-4c64-8edf-405028776655" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Tech%20stack%200fe8361df0d94c648edf405028776655.html"><span class="icon">🧑‍💻</span>Tech stack</a></figure><figure id="29759b71-a5f0-4304-b532-4bc52a7643af" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Validators%20and%20browser%20compatibility%2029759b71a5f04304b5324bc52a7643af.html"><span class="icon">✅</span>Validators and browser compatibility</a></figure><figure id="855fd609-930c-4f1e-a758-b69a4f5adc05" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/VSCode%20855fd609930c4f1ea758b69a4f5adc05.html"><span class="icon">👨‍💻</span>VSCode</a></figure><h1 id="0f5b8cce-5fa2-4f13-b36f-fcbc1de85f92" class="block-color-gray_background">2nd layer topics</h1><figure id="ae617791-8c85-4445-8844-667c927e4d73" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Accessibility%20ae6177918c8544458844667c927e4d73.html"><span class="icon">♿</span>Accessibility</a></figure><figure id="cdb6fd6d-fe1e-4e8d-94d0-8b9572ecfe95" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Articles%20cdb6fd6dfe1e4e8d94d08b9572ecfe95.html"><span class="icon">📄</span>Articles</a></figure><figure id="0010ae6f-55aa-41fc-b56a-08c015e1adb7" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Blogs,%20podcasts%20&amp;%20newsletters%200010ae6f55aa41fcb56a08c015e1adb7.html"><span class="icon">📜</span>Blogs, podcasts &amp; newsletters</a></figure><figure id="fede98be-f9d8-489e-a7c5-8fcd90ad7801" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Books%20fede98bef9d8489ea7c58fcd90ad7801.html"><span class="icon">📚</span>Books</a></figure><figure id="775a5c8d-b8de-4a6b-922a-0b434779238c" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Browsers%20775a5c8db8de4a6b922a0b434779238c.html"><span class="icon">🏄</span>Browsers</a></figure><figure id="5842ea53-59cf-4cff-9c56-3b9d2e80b870" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Chats%205842ea5359cf4cff9c563b9d2e80b870.html"><span class="icon">💬</span>Chats</a></figure><figure id="2f021082-072a-4ebf-9352-1b0031129c99" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Colour%20theory%202f021082072a4ebf93521b0031129c99.html"><span class="icon">🎨</span>Colour theory</a></figure><figure id="9ffaf80c-32cd-4134-8e85-57138b831a22" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Design%209ffaf80c32cd41348e8557138b831a22.html"><span class="icon">🎨</span>Design</a></figure><figure id="6e9bf6bd-f1d6-4ed2-8e40-17ef9c6b2aff" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/FTP%20programs%206e9bf6bdf1d64ed28e4017ef9c6b2aff.html"><span class="icon">🗄️</span>FTP programs</a></figure><figure id="f24f6544-afbb-41c8-8ded-f604021c8008" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Hosting%20f24f6544afbb41c88dedf604021c8008.html"><span class="icon">🌐</span>Hosting</a></figure><figure id="a24c9243-a920-4496-ad15-e106663d8680" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Icons%20a24c9243a9204496ad15e106663d8680.html"><span class="icon">😀</span>Icons</a></figure><figure id="48eccd1c-c773-43e5-a9eb-d91353ec3c0e" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Images%2048eccd1cc77343e5a9ebd91353ec3c0e.html"><span class="icon">🖼️</span>Images</a></figure><figure id="cb927bf4-6866-4813-85a6-f03357fa7605" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Internet%20cb927bf46866481385a6f03357fa7605.html"><span class="icon">🌐</span>Internet</a></figure><figure id="6e51ac15-8755-476d-a905-025411abaa5e" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Interviews%206e51ac158755476da905025411abaa5e.html"><span class="icon">🎙️</span>Interviews</a></figure><figure id="9c25a953-bc99-4fd8-a4ba-89db9e89b076" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Linux%209c25a953bc994fd8a4ba89db9e89b076.html"><span class="icon">🐧</span>Linux</a></figure><figure id="adda6740-6b04-44cd-b54c-a2e06db89ee7" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/People%20adda67406b0444cdb54ca2e06db89ee7.html"><span class="icon">🚶</span>People</a></figure><figure id="99671d27-b32d-461a-b9f5-171cf453cada" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Podcasts%2099671d27b32d461ab9f5171cf453cada.html"><span class="icon">🎙️</span>Podcasts</a></figure><figure id="7bc93a91-f86a-45c8-b2bf-500660016cb2" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Portfolios%207bc93a91f86a45c8b2bf500660016cb2.html"><span class="icon">📔</span>Portfolios</a></figure><figure id="e592c29c-4383-4a1f-b7e6-9f2aa079cf9b" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Responsive%20Web%20Design%20e592c29c43834a1fb7e69f2aa079cf9b.html"><span class="icon">↔️</span>Responsive Web Design</a></figure><figure id="ca8ada1a-6a78-4d5a-8c29-56a56813d6c1" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Site%20performance%20ca8ada1a6a784d5a8c2956a56813d6c1.html"><span class="icon">⚡</span>Site performance</a></figure><figure id="f029a5e3-6be5-4dc9-bb1c-11ed5e544bc7" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Standards%20f029a5e36be54dc9bb1c11ed5e544bc7.html"><span class="icon">👌</span>Standards</a></figure><figure id="cc5dd8a5-e528-4661-844f-e854da35f747" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Streaming%20cc5dd8a5e5284661844fe854da35f747.html"><span class="icon">📶</span>Streaming</a></figure><figure id="953fefc8-ad83-4d73-872a-6a5970f47a6d" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Terminal%20953fefc8ad834d73872a6a5970f47a6d.html"><span class="icon">💻</span>Terminal</a></figure><figure id="66936842-d345-4847-bc69-d151577abadf" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Testing%2066936842d3454847bc69d151577abadf.html"><span class="icon">🧪</span>Testing</a></figure><figure id="e401463f-13cd-4839-92e1-a660ccd472b9" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/YouTube%20channels%20e401463f13cd483992e1a660ccd472b9.html"><span class="icon">📺</span>YouTube channels</a></figure><hr id="613aa640-b15d-45d2-a04b-79a2712ac141"/><p id="bf3a30db-c2cf-40ea-8f1c-b399d93be09d" class="">⌨️  <a href="https://www.keybr.com/">Keyboard speed</a></p><hr id="c063fd2f-59af-4950-9c05-586969a5af81"/><h1 id="7d5b8d7e-2611-4835-99b0-fec9a0feb946" class="block-color-gray_background">Jobs</h1><figure id="e802bdf5-47f9-4977-a88d-fc7ab9d5f385" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Interview%20prep%20e802bdf547f94977a88dfc7ab9d5f385.html"><span class="icon">🎤</span>Interview prep</a></figure><figure id="ec08014e-6af2-47ed-8a15-c461f6c21e1b" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Jobs%20ec08014e6af247ed8a15c461f6c21e1b.html"><span class="icon">👨‍💼</span>Jobs</a></figure><h1 id="79992f8a-6a57-4a08-9c1d-b38257366729" class="block-color-gray_background">App and business ideas</h1><figure id="4afe1bac-c414-43ff-94aa-b13f9641b17e" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/Business%20ideas%204afe1bacc41443ff94aab13f9641b17e.html"><span class="icon">🤑</span>Business ideas</a></figure><figure id="8519e53b-c74b-40c5-ab5e-ac6f8127a331" class="link-to-page"><a href="Web%20dev%20resources%20(public)%20(1)%20c00fc29f70b44e1ca9be01c85527a136/App%20ideas%208519e53bc74b40c5ab5eac6f8127a331.html"><span class="icon">💡</span>App ideas</a></figure><p id="a93d959a-9341-444a-9a58-8a1da2e1e632" class="">
+</p></div></article></body></html>

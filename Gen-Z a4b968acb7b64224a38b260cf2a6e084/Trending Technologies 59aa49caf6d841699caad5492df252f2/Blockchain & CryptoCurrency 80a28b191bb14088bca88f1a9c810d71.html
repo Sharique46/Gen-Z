@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Blockchain &amp; CryptoCurrency</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="80a28b19-1bb1-4088-bca8-8f1a9c810d71" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 79.62%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/2592204.png"/></div><h1 class="page-title">Blockchain &amp; CryptoCurrency</h1></header><div class="page-body"><p id="674e38af-895a-4a83-aca2-950413e261b9" class="">
+</p><figure id="02b9e15e-3df6-458e-b33f-77be0be517a3" class="link-to-page"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/TWEETS%2002b9e15e3df6458eb33f77be0be517a3.html"><img class="icon" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/TWEETS%2002b9e15e3df6458eb33f77be0be517a3/Twitter.png"/>TWEETS</a></figure><figure id="053aac5d-253b-4bc3-85ee-ec3a60f391f8"><div class="block-color-blue source"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/Web3-Guide_compressed.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ff9b34d2-a849-48ff-8fc0-89582017f4a0/Web3-Guide_compressed.pdf</a></div></figure><h3 id="910eccd0-2408-43ed-b07e-7662cf209197" class=""><mark class="highlight-brown"><strong>Awesome Github Repos</strong></mark></h3><p id="9ddc5d0a-0680-483c-853b-995c4bdaf8c5" class="">
+</p><figure id="a9cdac55-d485-4f16-a3c5-a45b0be6837b"><div class="source">https://github.com/Xel/Blockchain-stuff</div></figure><p id="c68f72d3-dd06-44e4-a672-c51c92a1e54a" class="">
+</p><figure id="6f0d34ae-07a0-4a08-b83a-aa9b64ddbb57"><div class="source">https://github.com/OffcierCia/DeFi-Developer-Road-Map</div></figure><p id="8e923335-8b8a-4217-8669-8f0d5d72cec0" class="">
+</p><figure id="f712ff16-ce71-4fc7-99a6-083c59a90148"><div class="source">https://github.com/yjjnls/awesome-blockchain</div></figure><p id="7f6ed3d7-e2d4-4f01-ad52-122ed1d2ad0d" class="">
+</p><figure id="c97aebfe-15fe-409d-acaf-9f9201b55cc0"><div class="source">https://github.com/surajondev/awesome-web3.0</div></figure><p id="d6e8e8e1-0208-4b5b-9098-ae41fae72c62" class="">
+</p><p id="bd823eb2-bdae-4e86-bc7e-ce15a37cf9d7" class=""><strong>₿ Awesome Crypto Currency Tools &amp; Algorithms</strong></p><figure id="3435d345-4397-442c-a86d-fd194e0a3890"><div class="source">https://github.com/Zheaoli/awesome-coins</div></figure><p id="a2402e5a-ba1d-41b4-853e-d290b6afc3a2" class=""><a href="https://awesomelists.top/#/">https://awesomelists.top/#/</a> ➡️  <strong>Decentralized Systems</strong></p><p id="80f7e3e7-c202-445a-bc30-f2e69e784713" class="">
+</p><p id="0c85e2c4-33f3-4424-8542-5c52df3efb81" class="">
+</p><h3 id="3bded2e7-d486-4c4c-828e-c4a0551d0cde" class=""><strong>Guides, Tools, Resources</strong></h3><figure id="c8be8760-c1f5-4753-9214-015190a05eed"><a href="https://t.me/CryptoKnowledgePool/9087" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Crypto Knowledge Pool</div><div class="bookmark-description">Guides, tools, resources, platforms: Beginnerguides: Bitcoin Documentary Bitcoin whitepaper Binance Academy Coindesk Learn But how does Bitcoin actually work? Blockchain explained simply Coinmarketcap learn Cryptobriefing education Our articles: Mastering trading with Leverage; a lucid guide. Why you should accumulate KCS with a Grid based Bot. Automated trading on HXRO.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/favicon-16x16.png" class="icon bookmark-icon"/>https://t.me/CryptoKnowledgePool/9087</div></div><img src="https://cdn4.telegram-cdn.org/file/rUcDDIcqs9UXSh_riRjz28b9bMxITagBaJnskv4xpEoeCb55bEcx1yOAFwiNLLJHrd3HAB-sHuRHsKyVEt2-gmVUe2EafwEGVWbCYTS2CNghkDcW6HU9V6a9aMUegt6o2upGwG7G29-hYtYYVg3qCybSPXFOXpMQk-oJ3aiAyyRiFkE0gQY_hJuF81IwdGPRXesNYin_y6qPE9_LoYjXPk-eYz6DUbycw22Hfi3NdOKjMfqWSfb24FO7IoGnfAXK9a64WOnI5MO2pTTpDpBf_2FYehSssPdpwxhvLlodmzSb4XnN9fiKXn3__E8szTW4LK_wY3-f18tHVYkclH9FbQ.jpg" class="bookmark-image"/></a></figure><p id="1ec79609-8cea-4ba3-9e9e-22e995e84843" class="">
+</p><p id="4a35a920-c919-4552-b9b2-c4a94558c432" class="">
+</p><figure id="2d9cc409-1c0f-4d4d-9c4f-203f2b758804"><a href="https://www.simplilearn.com/blockchain-career-guide-pdf" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Blockchain Career Guide: To Become A Blockchain Developer</div><div class="bookmark-description">Blockchain technology is poised to revolutionize the way the digital world handles data and does business and is demonstrating a level of versatility and security that has made many sectors of business and government take notice and begin putting it to their own use.</div></div><div class="bookmark-href"><img src="https://www.simplilearn.com/static/frontend/images/favicon.png" class="icon bookmark-icon"/>https://www.simplilearn.com/blockchain-career-guide-pdf</div></div><img src="https://www.simplilearn.com/ice9/ebooks/Blockchain_Cover_FRS.jpg" class="bookmark-image"/></a></figure><figure id="6799e643-7511-45aa-adef-bdf4a94c2ef7"><a href="https://www.blockchain-council.org/blockchain/career-guide-for-blockchain-enthusiasts/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Career Guide For Blockchain Enthusiasts | Blockchain Council</div><div class="bookmark-description">Are you a blockchain enthusiast, but wondering where to start your career? If your answer is probably yes, you have landed on the right page. This article will focus on the top-most demanding certification courses to help you decide which one suits the best for you.</div></div><div class="bookmark-href"><img src="https://www.blockchain-council.org/wp-content/uploads/2022/02/cropped-cropped-block-only-transparent-fav-192x192.png" class="icon bookmark-icon"/>https://www.blockchain-council.org/blockchain/career-guide-for-blockchain-enthusiasts/</div></div><img src="https://www.blockchain-council.org/wp-content/uploads/2020/05/Carrear-guide-for-blockchain-enthusiasts-1.jpg" class="bookmark-image"/></a></figure><figure id="741e0644-d9ba-4da4-851f-277e01a7b635"><a href="https://www.blockchain-council.org/blockchain/blockchain-a-new-generation-of-decentralized-social-media-platforms/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BLOCKCHAIN: A New Generation of Decentralized Social Media Platforms</div><div class="bookmark-description">Wondering how Blockchain can impact social media platforms? You have landed on the right page. This article will explain what Blockchain-based social media is, concerns related to traditional social media platforms, and what happens when Blockchain is incorporated into such platforms. As there is so much scope in Blockchain technology, you can be a part of the blockchain ecosystem by learning blockchain development skills and create Decentralized applications.</div></div><div class="bookmark-href"><img src="https://www.blockchain-council.org/wp-content/uploads/2022/02/cropped-cropped-block-only-transparent-fav-192x192.png" class="icon bookmark-icon"/>https://www.blockchain-council.org/blockchain/blockchain-a-new-generation-of-decentralized-social-media-platforms/</div></div><img src="https://www.blockchain-council.org/wp-content/uploads/2020/11/BLOCKCHAIN-A-NEW-GENERATION-OF-DECENTRALIZED-SOCIAL-MEDIA-PLATFORMS-1.jpg" class="bookmark-image"/></a></figure><p id="395c3ecf-638c-4f69-b8b5-dfe5271e1087" class="">
+</p><h3 id="e5985d1e-224a-4d2e-8542-ab13dceb60b0" class=""><strong><strong>14 Free Tutorials to Get You Started with Web3</strong></strong></h3><figure id="860d4869-6042-4005-a586-c4581e2f9942"><a href="https://medium.com/javascript-in-plain-english/14-insanely-free-web3-tutorials-youll-ever-find-on-the-internet-no-bs-7e07e8690ced" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://medium.com/javascript-in-plain-english/14-insanely-free-web3-tutorials-youll-ever-find-on-the-internet-no-bs-7e07e8690ced</div></div></a></figure><p id="bf0d1532-fc39-41fb-a511-278c0dd67cfc" class="">
+</p><figure id="4706c564-9686-4330-8da4-f4f68b4eb30b"><div class="source"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/How_to_become_a_Web3_Developer_with_Resources.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86a78a46-ee64-4503-863c-ada32f367fb2/How_to_become_a_Web3_Developer_with_Resources.pdf</a></div></figure><p id="897bd8e4-c5d3-42e8-8927-ea4462d600e0" class="">
+</p><figure id="476994e5-9d5f-4d67-b482-fb5690121b55"><a href="https://youtu.be/uULy2rc6YDc" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to become a Blockchain Developer in 2022? | 🔥 Complete Roadmap + Salary + Tech Stack</div><div class="bookmark-description">Solidity Documentation : https://docs.soliditylang.org/en/v0.8.13/Javascript Documentation : https://developer.mozilla.org/en-US/docs/Web/JavaScriptTimestamp...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/uULy2rc6YDc</div></div><img src="https://i.ytimg.com/vi/uULy2rc6YDc/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="0f2518ff-8d2c-457a-9378-47bfde986792"><a href="https://www.blocktrain.info/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BlockTrain | Learn Web3 and Blockchain</div><div class="bookmark-description">Learn, build, and deploy cool shit in the world of Web2 and Web3. Learn about NFTs, DAOs, metaverse, gaming, and more cool things from our courses.</div></div><div class="bookmark-href"><img src="https://www.blocktrain.info/images/logo-blocktrain.png" class="icon bookmark-icon"/>https://www.blocktrain.info/</div></div><img src="https://user-images.githubusercontent.com/31454667/177287217-c3c69e39-ee67-489f-8ddc-6c9fad35caf4.png" class="bookmark-image"/></a></figure><figure id="671f6b4f-3764-4277-b98f-fc2e924ce373"><a href="https://youtu.be/uGPC9wNTBbw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How To Become a Highly Paid Blockchain Developer in 2022</div><div class="bookmark-description">🤑 Become an in-demand blockchain MASTER:https://dappuniversity.com/bootcamp00:00 - Intro03:16 - Quantify Blockchain Opportunity in 202209:45 - Skills You MU...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/uGPC9wNTBbw</div></div><img src="https://i.ytimg.com/vi/uGPC9wNTBbw/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="72323717-97f7-492e-9321-d67a622e05be" class="">
+</p><figure id="19656061-83eb-4583-931f-b017fa570cb9"><a href="https://blockchaintrainingalliance.com/blogs/news/blockchain-career-paths" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Blockchain Career Paths</div><div class="bookmark-description">Globally recognized blockchain training and certifications for individuals and teams. Over 20 online blockchain courses instructor-led blockchain training bootcamps, or private team training. Beginners and experienced professionals - there&#x27;s blockchain education for everyone.</div></div><div class="bookmark-href"><img src="https://cdn.shopify.com/s/files/1/2137/1081/files/favicon_32x32.png?v=1643906225" class="icon bookmark-icon"/>https://blockchaintrainingalliance.com/blogs/news/blockchain-career-paths</div></div><img src="http://cdn.shopify.com/s/files/1/2137/1081/articles/Blockchain_Career_Paths.jpg?v=1543852615" class="bookmark-image"/></a></figure><figure id="5e7f4aea-8b38-4fc8-bf2c-3eb01c536e0d"><a href="https://101blockchains.com/tips-to-start-blockchain-career/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 10 Tips to Start a Career in Blockchain</div><div class="bookmark-description">Since the inception of cryptocurrencies, blockchain has been gaining attention in the world of technology. The revolutionary technology has been successful in achieving considerable hype for all the right reasons. So, it is reasonable for an expert developer or a programmer, or even a beginner to look for opportunities to start a career in blockchain.</div></div><div class="bookmark-href"><img src="https://101blockchains.com/wp-content/uploads/2021/03/image_2021_02_25T10_04_45_211Z.png" class="icon bookmark-icon"/>https://101blockchains.com/tips-to-start-blockchain-career/</div></div><img src="https://101blockchains.com/wp-content/uploads/2020/09/Tips-to-Start-a-Career-in-Blockchain.png" class="bookmark-image"/></a></figure><p id="7a138c12-726c-4860-85c3-47a84d1e62a3" class="">
+</p><figure id="2c8858a1-001b-4cb0-adec-d34aee789a1e"><a href="https://www.interviewbit.com/blog/blockchain-projects/?amp=1" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Top 15 Blockchain Projects With Source Code [2022 Update]</div><div class="bookmark-description">Many people think that Blockchain is only limited to cryptocurrencies like Bitcoin, however, the field of blockchain is much broader than that. Blockchain is a distributed immutable ledger that is completely transparent. Let&#x27;s discuss each complex term one by one. It is distributed which means every person in the network will have their own copy of the blockchain.</div></div><div class="bookmark-href">https://www.interviewbit.com/blog/blockchain-projects/?amp=1</div></div><img src="https://www.interviewbit.com/blog/wp-content/uploads/2022/01/Blockchain-Projects-2048x1000.png" class="bookmark-image"/></a></figure><figure id="8196489d-042e-4821-b320-6ff012407f1d"><a href="https://www.blockchain-council.org/blockchain/5-skill-sets-a-blockchain-developer-must-have" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5 Skill Sets a Blockchain Developer Must Have | Blockchain Council</div><div class="bookmark-description">Since we all know that cryptocurrency and blockchains have gained a lot of attention in the last few years, it is wise to say that every other company in the country is looking to adopt them for their respective operations. Blockchain is undoubtedly the true hero of the event because it is the fundamental premise that allows cryptocurrencies to function.</div></div><div class="bookmark-href"><img src="https://www.blockchain-council.org/wp-content/uploads/2022/02/cropped-cropped-block-only-transparent-fav-192x192.png" class="icon bookmark-icon"/>https://www.blockchain-council.org/blockchain/5-skill-sets-a-blockchain-developer-must-have</div></div><img src="https://www.blockchain-council.org/wp-content/uploads/2020/01/5-SKILL-SETS-A-BLOCKCHAIN-DEVELOPER-MUST-HAVE.jpg" class="bookmark-image"/></a></figure><p id="9bc8b94c-92a4-4b39-9c7b-b7b92db2cff7" class="">
+</p><figure id="f4bb22bc-49bd-4045-826a-a3becaa10484"><a href="https://techsaa.com/how-to-become-a-blockchain-expert/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://techsaa.com/how-to-become-a-blockchain-expert/</div></div></a></figure><p id="d8242240-553f-4e85-8a47-d518258e4258" class="">
+</p><figure id="446a0367-3084-4bea-aeb8-ad25825e385f"><a href="https://www.codementor.io/learn/blockchain" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learn Blockchain: Blockchain Learning Center | Codementor</div><div class="bookmark-description">A collection of curated resources to help you learn blockchain programming and keep up-to-date with the latest developments in blockchain technology.</div></div><div class="bookmark-href"><img src="https://assets.codementor.io/icons/favicon-196x196.png" class="icon bookmark-icon"/>https://www.codementor.io/learn/blockchain</div></div><img src="https://assets.codementor.io/learn-blockchain/blockchain-learning-center.png" class="bookmark-image"/></a></figure><figure id="64e6f586-df56-4c3a-a14f-f8d9b00c05a2"><a href="https://www.youtube.com/watch?v=giv2f1FebFA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">All you need to know about Blockchain &amp; Alt coins</div><div class="bookmark-description">In this video, You learn the underlying technology behind Cryptocurrency - Blockchain. Along with that, you would learn how to screen Alt Coins. To Invest in...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=giv2f1FebFA</div></div><img src="https://i.ytimg.com/vi/giv2f1FebFA/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="47c9899a-c8b0-4019-b19e-935261d16a7b" class="">
+</p><p id="26adf724-b700-4117-85af-3df31a396bfc" class="">
+</p><figure id="7f077e92-acff-474f-9228-0823bb22f980"><a href="https://youtu.be/YJyXfjbBmc8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">All about Blockchain | Simply Explained</div><div class="bookmark-description">Complete C++ Placement Course (Data Structures+Algorithm) :https://www.youtube.com/playlist?list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJTelegram: https://t.me/apn...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/YJyXfjbBmc8</div></div><img src="https://i.ytimg.com/vi/YJyXfjbBmc8/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="9b12c4ea-1c32-4246-8af4-6b6717fb451c" class="">
+</p><figure id="70780d2f-b29c-457f-b395-6f7e3a04002d"><a href="https://wearebrain.com/blog/innovation-and-transformation-strategy/nfts-a-complete-guide/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">NFTs: A Complete Guide - WeAreBrain Blog</div><div class="bookmark-description">NFT was declared one of 2021&#x27;s words of the year, which is unsurprising given the exponential growth the industry experienced last year. In 2021, NFT tradings spiked 21,000% to more than $17 billion. This year, the industry shows no signs of slowing down.</div></div><div class="bookmark-href"><img src="https://wearebrain.com/blog//app/uploads/2020/03/favicon.ico" class="icon bookmark-icon"/>https://wearebrain.com/blog/innovation-and-transformation-strategy/nfts-a-complete-guide/</div></div><img src="https://wearebrain.com/blog//app/uploads/2022/05/NFT.jpg" class="bookmark-image"/></a></figure><figure id="4325c25f-08b1-4ad4-815e-00f06ab3df65"><a href="https://youtu.be/_0hhgW4YCLs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What are NFTs? Simply Explained | Non-Fungible Token</div><div class="bookmark-description">🔥Java Placement Course : https://www.youtube.com/watch?v=yRpLlJmRo2w&amp;list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop🔥Complete C++ Placement Course (Data Structures...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad3ffe7b/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/_0hhgW4YCLs</div></div><img src="https://i.ytimg.com/vi/_0hhgW4YCLs/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="431e036b-7f5b-49a0-a073-ffe84d8c9c08" class="">
+</p><figure id="ce49046a-28e4-47cb-a6c1-fa6be2fb8efa"><a href="https://www.youtube.com/watch?v=peUF5SyBXJE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">NFTs: How to buy and sell - Complete Guide w/ @Mohit Mamoria | Ankur Warikoo</div></div><div class="bookmark-href">https://www.youtube.com/watch?v=peUF5SyBXJE</div></div><img src="https://i.ytimg.com/vi/peUF5SyBXJE/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="fcdc8aa4-f1f8-4194-ace5-b34984463272" class="">
+</p><p id="f87f6569-0039-4b23-b110-2652f4104865" class=""><strong>Websites</strong></p><p id="b0990a87-33b1-4603-86fe-55d39c6c298b" class="">
+</p><p id="39e355f7-977c-4d97-9cfa-160744f18eec" class="">h<a href="https://coinmarketcap.com/">ttps://coinmarketcap.com/</a></p><p id="57e872af-09c0-4d34-ba2f-6a5aa68d4565" class=""><a href="https://sia.tech/">https://sia.tech/</a></p><p id="2c1d7e34-a941-4435-9528-570bcc6dc770" class=""><a href="https://siasky.net/">https://siasky.net/</a></p><p id="f1efa9af-558c-4922-9c92-206cfcf622b1" class=""><a href="https://www.presearch.org/">https://www.presearch.org/</a></p><p id="d9a51d08-1778-44f0-a621-c8dfe0a97956" class=""><a href="https://brave.com/">https://brave.com/</a></p><p id="2b40548b-67bf-4e9d-a34f-7667301f5d5e" class=""><a href="https://followmyvote.com/">https://followmyvote.com/</a></p><p id="3d6a6a09-7cad-4b22-a5a5-608d1b9c592a" class=""><a href="https://www.dapp.com/">https://www.dapp.com/</a></p><p id="f3f28f0c-404a-495c-91d4-a4fd764af8d4" class=""><a href="https://www.dapp.com/review">https://www.dapp.com/review</a></p><p id="69bff719-702d-49fc-955f-6a99caa1437c" class=""><a href="https://dapp.review/">https://dapp.review/</a></p><p id="cbc1634b-f000-4f64-9cb3-105c813c2cc8" class=""><a href="https://www.hyperledger.org/">https://www.hyperledger.org/</a></p><p id="1a3f8896-c5f5-4289-9c48-949804fbe7fa" class=""><a href="http://libreweb.org/">http://libreweb.org/</a></p><p id="ec6207c3-118e-4f5f-ae91-c817e59cea5a" class=""><a href="https://gofile.io/welcome">https://gofile.io/welcome</a></p><p id="3f02efd1-6249-4198-94bd-9c1afe76dab3" class=""><a href="https://zubi.gitbook.io/community-resources/blockchain-resources">https://zubi.gitbook.io/community-resources/blockchain-resources</a></p><p id="57e8ca82-46d8-46cb-8c89-655c33119833" class=""><a href="https://www.stacks.co/">https://www.stacks.co/</a></p><p id="670cbefa-c6d1-4e44-a8cb-42e55916df02" class=""><a href="https://auxledger.org/">https://auxledger.org/</a></p><p id="4d471470-0ced-4399-baf1-d771ee6f16ab" class=""><a href="https://u.is/en">https://u.is/en</a></p><p id="947d719e-c35b-417e-86fd-3641b0b6f882" class=""><a href="https://opensea.io/">https://opensea.io/</a></p><p id="ba66e6ea-5624-4818-86f9-7bdd0bb1bbde" class=""><a href="https://open.saflelabs.com/">https://open.saflelabs.com/</a></p><p id="bc396ba1-bb99-42bb-a010-fc91fa91bc55" class=""><a href="https://www.buyucoin.com/crypto-labs/5-useful-tools-for-cryptocurrency-investors/?amp=1">https://www.buyucoin.com/crypto-labs/5-useful-tools-for-cryptocurrency-investors/</a></p><p id="b8bafb05-b41d-4f1b-abd1-6f7d4b9c6891" class=""><a href="https://www.interviewbit.com/blog/blockchain-developer-salary/?amp=1">https://www.interviewbit.com/blog/blockchain-developer-salary/</a></p><figure id="3e9b0eb3-fcd4-44e3-862f-084223220517"><a href="https://vocal.media/theChain/industries-that-are-nailing-blockchain-already" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Industries That Are Nailing Blockchain Already</div><div class="bookmark-description">From the retail industry to healthcare, each of these industries are catching on to the incredible advancements that blockchain has to offer to our industries as a digital ledger, or record keeper, for transactions. From improving transparency to reducing costs, blockchain will open opportunities to some of the most powerful industries in the world.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1518542423/bx7rwmscsh4qrlcfiwxm.png" class="icon bookmark-icon"/>https://vocal.media/theChain/industries-that-are-nailing-blockchain-already</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/ymgazythbppk0ohy03xd.png" class="bookmark-image"/></a></figure><p id="6071dfe8-8418-46d6-a3f0-0c117ec4730c" class=""><a href="https://vocal.media/theChain/blockchain-business-leader-in-blockchain-interview-with-sukhi-jutla">https://vocal.media/theChain/blockchain-business-leader-in-blockchain-interview-with-sukhi-jutla</a></p><p id="d473e279-f2cb-40a3-9cfc-dcbcbaa6fb7f" class=""><a href="https://techsaa.com/technology/">https://techsaa.com/technology/</a></p><p id="891f32b2-ed41-426d-8ae8-e98e4f9d1f29" class=""><a href="https://vocal.media/theChain/ethereum-blockchain-app-development-company-in-new-york">https://vocal.media/theChain/ethereum-blockchain-app-development-company-in-new-york</a></p><p id="7087b00c-4d78-4244-9f6a-4226ae3346dc" class=""><a href="https://101blockchains.com/blockchain-consultant-jobs/">https://101blockchains.com/blockchain-consultant-jobs/</a></p><p id="f9008ff9-3921-4699-abfe-697b746072d6" class=""><a href="https://www.upgrad.com/blog/blockchain-developer-salary-india/">https://www.upgrad.com/blog/blockchain-developer-salary-india/</a></p><p id="4227cd05-48e8-4ce8-a044-61e526cd6559" class=""><a href="https://www.upgrad.com/blog/data-scientist-salary-india-freshers-experienced/">https://www.upgrad.com/blog/data-scientist-salary-india-freshers-experienced/</a></p><p id="2f3b3234-fdc6-4b7e-a74f-129735950d62" class=""><a href="https://moralis.io/">https://moralis.io/</a></p><p id="f4612271-6f69-411f-a132-02a9218b9f82" class=""><a href="https://docs.moralis.io/">https://docs.moralis.io/</a></p><p id="ca56bef4-1659-45c0-b288-75fdfe2a974c" class=""><a href="https://www.beyondlife.club/index.php">https://www.beyondlife.club/index.php</a></p><p id="d6b8c7e4-7efb-4864-bc36-3626c25cc0d9" class="">
+</p><figure id="12b3de50-17dc-4be6-a72a-76063a68ddca"><a href="https://vocal.media/theChain" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Chain</div><div class="bookmark-description">One year ago, I published my first article outlining Creatd&#x27;s NFT strategy. At that time, it was clear that our investors and other stakeholders were keen on understanding how our creator-first company would capture value in the new digital frontiers of blockchain, crypto, and their derivative technologies (i.e. NFTs, metaverse lands).</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/jerrick/image/upload/v1518542423/bx7rwmscsh4qrlcfiwxm.png" class="icon bookmark-icon"/>https://vocal.media/theChain</div></div><img src="https://res.cloudinary.com/jerrick/image/upload/v1518542424/rid0rkyqsxgfjleyebu3.jpg" class="bookmark-image"/></a></figure><p id="786c11f4-10c9-4757-8171-8f5f6f470ec8" class="">
+</p><p id="4cc72b1b-12ce-4989-a5f0-6625f855d90b" class="">
+</p><figure id="908d5cbc-0627-44f7-b2a9-2373b0f21cde" class="image"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/Untitled.png"><img style="width:1919px" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/Untitled.png"/></a></figure><p id="7c93b0a5-f48a-4dde-a74a-f21c5e943176" class="">
+</p><figure id="1a4b31bd-7a78-4cf2-9ca0-6dd5927e8461" class="image"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/image_fd41f735-c757-4d55-a146-53c85be7ab9920210618_123833.jpg"><img style="width:1200px" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/image_fd41f735-c757-4d55-a146-53c85be7ab9920210618_123833.jpg"/></a></figure><p id="08bcb21f-1e27-4049-96e6-1e50b9c0f99f" class="">
+</p><figure id="0a9f57c6-19e8-41cd-bd05-9b4d0a3d7004" class="image"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509.jpeg"><img style="width:1209px" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509.jpeg"/></a></figure><p id="e1d7d4d4-34e9-4e49-889d-a986821382e6" class="">
+</p><figure id="ed8aa189-8088-44ab-ac5e-1fb52f09639a" class="image"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509_(1).jpeg"><img style="width:1280px" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509_(1).jpeg"/></a></figure><p id="a16c1877-8573-4c26-8e7b-c86a5edb2285" class="">
+</p><figure id="c4424dc9-802f-4f64-862b-80b5bece2f21" class="image"><a href="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509_(2).jpeg"><img style="width:429px" src="Blockchain%20&amp;%20CryptoCurrency%2080a28b191bb14088bca88f1a9c810d71/photo1606732509_(2).jpeg"/></a></figure><p id="8e7015fc-7ad9-41fe-b5ed-b2c92390948a" class="">
+</p><p id="e5bf7b6a-8a28-41c9-a59b-31cbcf6bb10e" class="">
+</p></div></article></body></html>

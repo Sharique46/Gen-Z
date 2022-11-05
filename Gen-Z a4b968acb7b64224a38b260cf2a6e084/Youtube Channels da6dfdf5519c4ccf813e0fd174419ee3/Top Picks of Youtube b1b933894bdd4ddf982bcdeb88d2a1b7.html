@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Top Picks of Youtube</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b1b93389-4bdd-4ddf-982b-cdeb88d2a1b7" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1548328928-34db1c5fcc1f?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Top%20Picks%20of%20Youtube%20b1b933894bdd4ddf982bcdeb88d2a1b7/0eb79c7c19c1f9cd407b813bf0759286.png"/></div><h1 class="page-title">Top Picks of Youtube</h1></header><div class="page-body"><p id="2e8721c5-fe5b-43af-bb62-021f15f9d297" class="">
+</p><ul id="cdcfd9f3-f296-4191-93ef-4c8054f83ff7" class="bulleted-list"><li style="list-style-type:disc"><strong>Let’s Make Education Simple</strong></li></ul><figure id="f3b166e3-a3cd-4216-ab17-decaaa0307ec"><a href="https://www.youtube.com/c/premanand20081" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Let&#x27;s Make Education Simple</div><div class="bookmark-description">This channel aims to simplify your understanding of &#x27;seemingly&#x27; complex science/Maths/Engineering/technology concepts through practical, day-to-day applications. All our content is in the Tamil language. Our mission is to provide world-class content that makes learning science, simple &amp; fun! ;)</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/premanand20081</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLR_aLnhoVicgVNREI2QdwdI2MOirCwInz0mWma8ig=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="05b243aa-c419-4921-8452-9436db0e9c65" class="">
+</p><ul id="fd70f039-ca6f-4b59-954c-afde128a7ada" class="bulleted-list"><li style="list-style-type:disc"><strong>NasDaily</strong></li></ul><figure id="3f81c6d7-6f15-4e65-a3f6-d1f629eb5916"><a href="https://www.youtube.com/c/NasDaily" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Nas Daily</div><div class="bookmark-description">My name is Nuseir Yassin. Nas means people in Arabic. My mission? To show you the most incredible humans on planet Earth. My company? It&#x27;s called Nas Academy - it&#x27;s a website that turns Creators into Educators. I wear the same T-shirt design because it reminds me to treasure life.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/NasDaily</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQ_-NF5QIHdul-vO7s-1qUNO8iDqnM6IzdiGQB4tg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="435eec1c-f50f-410a-9f2e-90b9889d47a7" class="">
+</p><ul id="c363e046-245f-4b1b-860f-0b9dacedc3ce" class="bulleted-list"><li style="list-style-type:disc"><strong>BestieMedia</strong></li></ul><figure id="be644ca4-b9b3-4b9c-be85-c9bea7bb4188"><a href="https://www.youtube.com/c/BestieMedia" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BestieMedia</div></div></a></figure><ul id="edba9a13-e3d2-4a9e-a8aa-56f0c38ec70f" class="bulleted-list"><li style="list-style-type:disc"><strong>BrightSideOfficial</strong></li></ul><figure id="a3ef3d3c-a18a-4c80-88f3-7b70c04f41b1"><a href="https://www.youtube.com/c/BRIGHTSIDEOFFICIAL" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/BRIGHTSIDEOFFICIAL</div></div></a></figure><p id="01bc7738-db2a-44e5-86c1-76a3cb30945f" class="">
+</p><ul id="6c1956ee-e407-4a91-854c-4bcea1f0a336" class="bulleted-list"><li style="list-style-type:disc"><strong>Munawar Zama</strong></li></ul><figure id="028ae793-e3b3-4a3f-96de-4731db879690"><a href="https://youtube.com/c/MunawarZama" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">https://youtube.com/c/MunawarZama</div><div class="bookmark-description">𝗠𝘂𝗻𝗮𝘄𝗮𝗿 𝗭𝗮𝗺𝗮 is a Renowned Personality Development Trainer, Founder/CEO of English House Academy who has trained 100,000+ individuals across India &amp; Gulf. He conducts Personality Development Workshops at schools, colleges, universities &amp; hotels. 5 Chief Ministers of India applauded his services towards nation building. He also trained the IPS Officers of Delhi &amp; Hyd.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/MunawarZama</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQ5JVbDsIQaTNoYlQZ0DEbVo9sqoHjJIGwhjrWxCg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="e2e978bf-c4f9-414f-8678-c1ca3aa247e0" class="">
+</p><ul id="973ce377-6653-4888-9c3e-24fcdfe9882b" class="bulleted-list"><li style="list-style-type:disc"><strong>Ranveer Allahbadia </strong></li></ul><figure id="ac07ca4a-cdaf-4899-9493-cd0d0926d020"><a href="https://www.youtube.com/c/RanveerAllahbadia" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/RanveerAllahbadia</div></div></a></figure><p id="f260cc0c-ab0c-4d13-bd70-3c44301f0bbb" class="">
+</p><ul id="a270ef21-f5ce-4411-836d-df2e2b2f4967" class="bulleted-list"><li style="list-style-type:disc"><strong>Shivam Malik</strong> </li></ul><figure id="329090c2-b70f-4831-95dc-18e1af015565"><a href="https://www.youtube.com/c/ShivamMalik09" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Shivam Malik</div><div class="bookmark-description">एक वो मदद का हाथ जो आपके लिए हमेशा खड़ा है 😊🙏 .</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ShivamMalik09</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLRuZ9wTV0LhHhEuEswH8vhx32dtNQfsuPoHU38cCg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="590203af-1845-48c5-acab-91d326f19fe5" class="">
+</p><ul id="b22715ab-8d4e-47f0-a222-a1c5ac7bcee2" class="bulleted-list"><li style="list-style-type:disc"><strong>Theneer Idaivelai Science</strong> </li></ul><figure id="5757521a-3e60-41c8-b7b6-8742aac0389b"><a href="https://www.youtube.com/channel/UCRmAofy-eike2_yARG2Td4w" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Theneer Idaivelai Science</div><div class="bookmark-description">&quot;The whole of science is nothing more than a refinement of everyday thinking&quot; - Albert Einstein Everything that we do in a day, right from waking up after Sunrise to sleeping by putting one leg outside the bed-sheet, there is Science behind everything.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCRmAofy-eike2_yARG2Td4w</div></div><img src="https://yt3.ggpht.com/7Wmge5qfSG3pH-iaTEBeAjQrJ_Yaex88lmKrgUH6oFdL4VUo1pFdk8EQvOrkBMPtbhRSB1cKtpk=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="d64e007a-534f-4188-aa8d-aa5fad696b9b" class="">
+</p><ul id="98a83a79-25b8-4cbd-8a30-9c82e4e670f5" class="bulleted-list"><li style="list-style-type:disc"><strong>Business Tamizha</strong></li></ul><figure id="98dba3cc-5a96-4a7e-ba4b-3448ca82136f"><a href="https://youtube.com/c/BusinessTamizha" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Business Tamizha</div><div class="bookmark-description">வணக்கம் மக்களே!! Business Tamizha Is a Pure Business Channel, Which Makes Video About Small Business, Business Ideas, Business Skills. About Me: I am M.Vignesh Velan A young Entrepreneur, Into Business from 2015. What I Share Here Is All My Experience In Business.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/1c192ebe/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/BusinessTamizha</div></div><img src="https://yt3.ggpht.com/ytc/AMLnZu9VUjExoPcp4MhB6TN1dwEORaCsU4ImVWuhNz3YUg=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="8faf334a-e070-4f73-9477-6403a3df8257" class="">
+</p><ul id="7b230af3-68ad-4bf5-ab77-7e96ea4127f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Ask Raghulan</strong> </li></ul><figure id="87c5707c-484f-41d1-ab24-f9edc27f6e44"><a href="https://www.youtube.com/channel/UCt6bbSfEPxGXvWOU-15RC2g" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCt6bbSfEPxGXvWOU-15RC2g</div></div></a></figure><p id="baa4e797-d656-4446-b800-1e2b55f02a33" class="">
+</p><ul id="8c4cb3ea-2c25-471d-a016-a8dcafb86c51" class="bulleted-list"><li style="list-style-type:disc"><strong>Almost Everything</strong></li></ul><figure id="5eedaf33-82a1-4c32-a593-84980c58960c"><a href="https://www.youtube.com/c/ALMOSTEVERYTHING" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/ALMOSTEVERYTHING</div></div></a></figure><p id="21e0cec2-6a63-4f8a-88f5-de1b5ef2b589" class="">
+</p><ul id="25a1a64e-5cc9-4f56-9f07-76b080cd0857" class="bulleted-list"><li style="list-style-type:disc"><strong>Let’stute</strong></li></ul><figure id="10abf257-758c-46f7-9f2a-2173f0c3d712"><a href="https://www.youtube.com/c/Letstute" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Let&#x27;stute</div><div class="bookmark-description">Let&#x27;s tute (Universal Learning Aid) is an E-Learning company based in Mumbai India. Our goal is to make some meaningful positive impact in the education segment by providing quality education content to all students who want to explore, visualize and apply their learning to real life.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Letstute</div></div><img src="https://yt3.ggpht.com/K3Zv-fqe8f2G5yrSHJ9fyoo6ivtRIah3_PwxeZvdMaskT8i7NJ1SbZ9vvEqXX1s37EUrOWtO=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="855cfe1c-815b-4f0b-bb00-3ffc7f53c04e" class="">
+</p><ul id="a33f7255-bd6b-4a4d-9f0c-a062cc317770" class="bulleted-list"><li style="list-style-type:disc"><strong>CrashCourse</strong></li></ul><figure id="5d99ecc4-b107-4ed5-9cad-5b7064016f6d"><a href="https://youtube.com/c/crashcourse" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CrashCourse</div><div class="bookmark-description">At Crash Course, we believe that high quality educational videos should be available to everyone for free! Subscribe for weekly videos from our current courses! Right now, we&#x27;re producing Organic Chemistry and European History. We also recently teamed up with Arizona State University to bring you two more courses: Study Hall Composition, and Study Hall Algebra.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/crashcourse</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTkjgAbnuitYR0B5qujr2V36b9uGG82pdngoyPsVQ=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="8e4edc57-abaf-4bed-93cd-589a28d08fb9" class="">
+</p><ul id="9c0e0bba-65d7-4c22-a674-220c45da5e78" class="bulleted-list"><li style="list-style-type:disc"><strong>Quick Support</strong></li></ul><figure id="1d394ffc-ad39-407d-8a0a-eee5d35b48ff"><a href="https://www.youtube.com/c/QuickSupport" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Quick Support</div><div class="bookmark-description">क्विक सपोर्ट चैनल में आपका स्वागत हैं इस चैनल मैं हम आपको 100% गेरेंटी देते हैं की हम बोरिंग विडियो अपलोड नहीं करेंगे और जिस टॉपिक के बारे में बताया गया होगा उसकी ही बात करेंगे और हर एक टॉपिक्स के उपर हम पूरी जानकारी देने की कोशिश करेंगे थैंक्स!</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/QuickSupport</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQyN5rHqGV2pntJ0FzNRgjaLAywtEmVZ_D7GVIbEA=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="e27469a8-1595-4393-80e9-e5ed6f93d6a9" class="">
+</p><ul id="47dca24a-baf9-4b1d-8337-d9a13c9bbd0f" class="bulleted-list"><li style="list-style-type:disc"><strong>Great Ideas Great Life</strong></li></ul><figure id="c139e68f-ef59-41f5-9a51-df32edb2f0ae"><a href="https://www.youtube.com/c/GREATIDEASGREATLIFE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GREAT IDEAS GREAT LIFE</div><div class="bookmark-description">THIS CHANNEL DEALS ABOUT THREE MOST IMPORTANT THINGS IN HUMAN LIFE:- 1) SELF IMPROVEMENT 2) MOTIVATIONAL STORIES 3)INSPIRATIONAL STORIES WE READ BOOKS AND SHARE IDEAS WITH YOU. SO THAT YOU CAN IMPLEMENT THE IDEAS DIRECTLY WITHOUT GOING INTO THE DETAILS OF THE BOOK. WE HEAR SEMINARS AND BRIG THE ESSENCE TO YOU.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/GREATIDEASGREATLIFE</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLTKA30qGypVplcFM5KXlj7rsoVtiStcFJ3PVTGf6Q=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="6d43e901-bda6-4922-861a-f9883652dbfc" class="">
+</p><ul id="db985b04-df26-42a5-b3c2-80e6fe04dd00" class="bulleted-list"><li style="list-style-type:disc"><strong>Rewirs</strong></li></ul><figure id="f9bd0721-e0ce-42ba-aced-71d27f93007a"><a href="https://www.youtube.com/c/Rewirs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Rewirs</div><div class="bookmark-description">Rewirs is a hub of self-improvement content. So if you want to improve yourself and your life, then please subscribe our channel and be the part of our journey. ✉️ For Business &amp; Sponsership Enquiries: contact.rewirs@gmail.com</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/Rewirs</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLS6b6sr0NdZxNuD5ZPPNtZzPWo1HX7Ie8JK0FZyjw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="b0b3fa01-7e4a-4d7a-b47a-17e6195bc8a4" class="">
+</p><ul id="48bc40fb-168d-4bd1-9d64-6397ebb68280" class="bulleted-list"><li style="list-style-type:disc"><strong>GCF Learn free</strong></li></ul><figure id="ef625431-95ce-4f84-b59e-d3b7fac01dd9"><a href="https://youtube.com/c/GcflearnfreeOrgplus" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/GcflearnfreeOrgplus</div></div></a></figure><p id="cee5a34d-2d93-4d0b-a44b-cd86895a0897" class="">
+</p><ul id="823f1880-c8da-42c7-abb8-804ba77e8783" class="bulleted-list"><li style="list-style-type:disc"><strong>The Book Show</strong> </li></ul><figure id="ff46b075-6009-43fc-a4eb-847a8366145c"><a href="https://www.youtube.com/c/SuthanthiraParavai" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SuthanthiraParavai</div></div></a></figure><p id="d87242e2-90aa-443f-8805-b1ab5684ecfa" class="">
+</p><ul id="b3c359fc-f92c-433b-acc7-41c10e6d60c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Engineering Facts</strong></li></ul><figure id="1ff72fc8-3149-42eb-a742-3ae6d269bad6"><a href="https://youtube.com/c/EngineeringFacts" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Engineering Facts</div><div class="bookmark-description">This channel is created to make our people strong in science &amp; Engineering to manage the future technologies intellectually. And to the students, who are going to grow knowledge for their careers. For ad queries contact below..</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/c/EngineeringFacts</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLQPH7Wpnf08SzGp-422an_9MvhKL9OvQtbpnI7FAw=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="e46c796f-8acc-4b4d-b37c-62ce35f31974" class="">
+</p><ul id="dec0b96c-f817-4e26-8106-8717e2966b9c" class="bulleted-list"><li style="list-style-type:disc"><strong>TED-Ed</strong></li></ul><figure id="3e61f296-7caa-406d-adb4-e23b42ce6342"><a href="https://youtube.com/teded" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" class="icon bookmark-icon"/>https://youtube.com/teded</div></div></a></figure><p id="71740ff4-ba7e-49b4-a5d4-f0a333afaba6" class="">
+</p><ul id="b9d80c8f-578d-4a1a-8357-431a61709eac" class="bulleted-list"><li style="list-style-type:disc"><strong>Ali Abdaal</strong> </li></ul><figure id="904a7fb7-cc73-45fc-ae2a-15818f8afe60"><a href="https://www.youtube.com/c/aliabdaal" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/aliabdaal</div></div></a></figure><p id="5d20f9c8-a038-46b7-bb3f-0ef59a9294c6" class="">
+</p><ul id="ddcb4cf0-c3e1-4034-9292-816b860ffdba" class="bulleted-list"><li style="list-style-type:disc"><strong>Big Brain Co.</strong> </li></ul><figure id="a4d0acbe-6789-4b35-83ee-8b1202cbf4f9"><a href="https://www.youtube.com/channel/UCDHQsUdSQE3p4i5vCXB7uFA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/channel/UCDHQsUdSQE3p4i5vCXB7uFA</div></div></a></figure><p id="1112971c-0162-4c3a-9383-4e68aafd43e5" class="">
+</p><ul id="4b12b9e5-13e7-46c8-9cd6-403a592e9894" class="bulleted-list"><li style="list-style-type:disc"><strong>Sakalakala TV </strong></li></ul><figure id="ecf5c7a3-5fae-4273-96dd-9824f68dbbc2"><a href="https://www.youtube.com/c/SakalakalaTv" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sakalakala Tv</div><div class="bookmark-description">Welcome to Sakalakala Tv. As the name suggests &quot;Sakalakala&quot; specifies to &quot;All-rounder&quot;. This channel provides the viewers an ample of information about science, electrical and electronics, food and health, and so on. More intensely, Sakalakala Tv is well known for posting &quot;solar awareness&quot;,&quot;bringing out new inventions&quot;,&quot;bringing out unknown scientists&quot; and thereby strongly supporting self-sufficient life.</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/c/SakalakalaTv</div></div><img src="https://yt3.ggpht.com/ytc/AKedOLR53_pKRYfTGxddalkR-9iDAkKng8i51GbHE9gl=s900-c-k-c0x00ffffff-no-rj" class="bookmark-image"/></a></figure><p id="263d02af-7b1f-40db-8a58-d4a302fff4ca" class="">
+</p><ul id="7397331d-3a42-497d-ae26-2a1db1df8cbb" class="bulleted-list"><li style="list-style-type:disc"><strong>Civil Engineering Simple </strong></li></ul><figure id="92846776-c582-478b-a42c-80673ea02da0"><a href="https://www.youtube.com/c/civilengineeringsimple" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://www.youtube.com/c/civilengineeringsimple</div></div></a></figure><p id="be045c63-f39c-43fa-a3b6-dc864646a08f" class="">
+</p></div></article></body></html>

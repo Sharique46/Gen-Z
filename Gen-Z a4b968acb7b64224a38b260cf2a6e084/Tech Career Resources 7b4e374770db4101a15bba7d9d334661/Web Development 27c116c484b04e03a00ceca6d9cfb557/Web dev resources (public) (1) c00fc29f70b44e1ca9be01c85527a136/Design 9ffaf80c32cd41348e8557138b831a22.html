@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Design</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9ffaf80c-32cd-4134-8e85-57138b831a22" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎨</span></div><h1 class="page-title">Design</h1></header><div class="page-body"><h1 id="302078f8-062a-40b4-8402-7a36b99d4c5f" class="">Inspiration</h1><p id="e2a5d490-83b0-4974-9f4e-6538559ca792" class=""><a href="https://dribbble.com/">Dribble</a></p><h1 id="52818ba5-6622-46c7-9db7-e69c5225374f" class="">Style tiles</h1><ul id="589092ca-28e7-4439-9da9-19343014119d" class="bulleted-list"><li style="list-style-type:disc"><a href="http://styletil.es/">Style tiles</a></li></ul><ul id="b244bed8-2176-4bee-a2f9-92c3d570098c" class="bulleted-list"><li style="list-style-type:disc"><a href="http://styleguides.io/">Styleguides.io</a></li></ul><h1 id="70e21b40-851b-4b16-9428-9a514097a1f1" class="">User interface and layout tools</h1><ul id="0d1424f5-b902-41c7-b6e3-39b1b0c679e1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sketch.com/">Sketch</a></li></ul><ul id="2398d6a2-385b-44f7-aea6-b861c4be47b0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://affinity.serif.com/en-gb/">Affinity Designer</a></li></ul><ul id="1095c74c-c3d9-4e80-b611-77546276460b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.adobe.com/au/products/xd.html?SDID=KQOYT&amp;mv=search&amp;ef_id=Cj0KCQiA0MD_BRCTARIsADXoopZjwF0oijpF5z3Bgdkr-d1X3KwmHcl2hLTRuSxjwpU7MO0epI4SGsYaAiaxEALw_wcB:G:s&amp;s_kwcid=AL!3085!3!394826879032!e!!g!!adobe%20xd!1643382387!62618984397">Adobe XD</a></li></ul><ul id="6ba1d211-6218-4d72-8438-94963ed5f832" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.figma.com/">Figma</a></li></ul><ul id="31e128f9-86ee-4382-a7a8-f2cc57a18cba" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.uxpin.com/?utm_campaign=&amp;utm_source=adwords&amp;utm_term=uxpin&amp;utm_medium=ppc&amp;hsa_ad=472496290319&amp;hsa_grp=110472655639&amp;hsa_kw=uxpin&amp;hsa_ver=3&amp;hsa_net=adwords&amp;hsa_acc=5123579905&amp;hsa_src=g&amp;hsa_cam=11350157729&amp;hsa_mt=e&amp;hsa_tgt=kwd-373132440687&amp;utm_campaign=FTF%20%7C%20Brand%20%7C%20All%20Countries%20-%20Exact%20Match&amp;utm_source=adwords&amp;utm_term=uxpin&amp;utm_medium=ppc&amp;gclid=Cj0KCQiA0MD_BRCTARIsADXoopbPYpcNJHXJ2KieOmpZQM5VeDDUgdtIH2A-aY2Vcm-20c3drbpsrTcaAmAfEALw_wcB">UXPin</a></li></ul><h1 id="c7cfbd7a-4429-4cd5-9858-5deacc30f5f8" class="">Graphic design</h1><ul id="e72f3c5f-0bb9-41dc-93eb-d09fa69fe558" class="bulleted-list"><li style="list-style-type:disc">Corel PaintShop Pro (Windows)</li></ul><ul id="b2f88a9e-aaf4-4fd3-aead-040bbd45d54f" class="bulleted-list"><li style="list-style-type:disc">Corel Draw (Windows)</li></ul><ul id="d483c32a-72ec-4792-bbc7-ca03c184df5e" class="bulleted-list"><li style="list-style-type:disc">GIMP</li></ul><ul id="b7abb282-f3e1-4e31-9d35-fb526c8c70ff" class="bulleted-list"><li style="list-style-type:disc">Adobe Creative Suite</li></ul><ul id="13980e16-09e4-4046-8f64-ab2cbff7bbbd" class="bulleted-list"><li style="list-style-type:disc">Pixelmator (MacOS) 😀</li></ul><ul id="07186f74-4ec6-4688-87e3-d85f4d89be40" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sumopaint.com/">SumoPaint (online)</a></li></ul><ul id="32c8b02e-63af-49a5-be38-79a3fc2b7057" class="bulleted-list"><li style="list-style-type:disc"><a href="https://pixlr.com/x/">Pixlr (online)</a> 😀</li></ul><p id="f19ffd60-2e83-4a19-a0a1-9fa3f3d76982" class="">
+</p><h1 id="0cbb1442-2de5-4eb5-86e1-087456aacdd6" class="">Fonts</h1><p id="e0bf1137-aa0d-46e0-aed5-583ec9737fff" class=""><a href="https://fontjoy.com/">https://fontjoy.com/</a></p><h1 id="f00ba1b0-e089-4f6c-b1b6-0cdf4cf69483" class="">How to design almost any UI element (list of ~58 articles of how to properly build elements in terms of UI and UX)</h1><p id="2fe0c3f2-bf1f-4c9e-91e0-0e1d62355b6f" class="">Buttons.</p><ul id="7ce2b0f6-115b-4c8d-be16-0e186b1a785c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/m7g1MQ1d3m">7 Basic Rules for Button Design</a> by <a href="https://twitter.com/101babich">@101babich</a></li></ul><ul id="1fa5ac27-8ecd-410f-b314-d676860a131b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/srbgqAOvyV">Button Design</a></li></ul><ul id="bb719142-dcd5-4d2e-b686-fcde7fe31b54" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/4BXUNTEzIw">Cheatsheet for buttons</a> by <a href="https://twitter.com/tessgadd">@tessgadd</a></li></ul><p id="131fa34a-cf70-4e48-937c-755222001fd7" class="">Text fields.</p><ul id="5776bd0d-3674-47ee-97b4-8894b5dfa6f6" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/92eqmsxJz5">UI cheat sheet: text fields (Awesome article!)</a></li></ul><ul id="9139e6ec-374b-484c-a7a4-5fd1771d2172" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/a5OAlsBYYz">Text fields &amp; Forms design — UI components series</a></li></ul><ul id="62c760da-7c1e-43cb-afa6-b51fd4a47ee3" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/BzjdsNLbGp">The Anatomy of Input Field</a></li></ul><p id="1a7b30e9-cf5e-4108-ad1c-67d710a8d55c" class="">Checkboxes &amp; Toggles.</p><ul id="af15bba9-16d4-4a14-9c76-7bbaf24d8ae1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/2qwRITZ7xl">Checkbox vs Toggle Switch</a> by <a href="https://twitter.com/uxplanet">@uxplanet</a></li></ul><ul id="42d870bc-41b4-47fe-a4c0-7e0dd7610291" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/ftcHGs20zy">Toggle-Switch Guidelines</a> by <a href="https://twitter.com/NNgroup">@NNgroup</a></li></ul><ul id="ac195cb9-3171-406f-a726-e151c2e63786" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/jtc0K2esSa">Toggle design patterns</a> from <a href="https://twitter.com/just_in_mind">@just_in_mind</a></li></ul><ul id="3d857efa-b2c8-4195-a35d-044864f35765" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/xuuGxX4wle">38 Checkbox Designs</a></li></ul><p id="328abf39-e37c-4629-88d0-aaaaea010f33" class="">Radio Buttons.</p><ul id="8cecfb3c-2700-40a1-b51f-06b1c1a0126f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/iYM2TOwJJJ">Selection controls — UI component series (AWESOME)</a></li></ul><ul id="13af9ad5-c50c-4ef3-981c-54cae5e82043" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/toIB4ATFsy">Radio Buttons UX Design</a></li></ul><ul id="1e011fe8-7c7d-47d9-8e60-47254a8e0989" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/ju5EKVnCCv">Radio button design: easy selection and decision-making</a></li></ul><p id="06d0a670-31bd-4c0d-99a8-e4ea4f5d519e" class="">Tables.</p><ul id="d80255c5-1bf2-4400-910b-7f23b355f56c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/LkviePrdOS">Design better data tables</a> by <a href="https://twitter.com/CoyleAndrew">@CoyleAndrew</a></li></ul><ul id="a237ebe3-3a39-4fdc-97c2-6318782951ab" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/trFjRmCPsO">The Ultimate Guide to Designing Data Tables</a></li></ul><ul id="09332988-dd70-443c-b7f8-7ce873e3dc69" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/IjBCF2SB3P">Designing better data tables for enterprise UX</a></li></ul><p id="dd53cca8-73c5-47ff-87b5-89d8683d8a25" class="">Datepickers. (It&#x27;s a pain)</p><ul id="4a4507a8-d5c2-42d9-86ca-17283b3ac3c5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/DMoKDpJ6Ri">How to Design a Perfect Date Picker Control?</a></li></ul><ul id="78694cfb-880e-43b4-a171-2784ffa95106" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/PXcZGQ66Zv">Date Picker Design Best Practices</a></li></ul><ul id="81011bd5-0b73-4538-a056-c55314571045" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/cF41bhB5dn">A hunt for the perfect date picker UI</a></li></ul><p id="1acedad4-f74d-4faa-8fb4-b331812f7039" class="">Sliders.</p><ul id="10bee72a-625f-4a6e-90af-e0d41a2bb1ca" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/NoSRmlHN1A">UNBELIEVABLE article</a> <a href="https://twitter.com/smashingmag">@smashingmag</a> is a golden resource really.</li></ul><ul id="5cbe36e6-48a6-427b-b734-a96f30ab7fb8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/G8ymVAlh6l">Slider design UI patterns and examples</a> from <a href="https://twitter.com/just_in_mind">@just_in_mind</a></li></ul><ul id="4ba72253-7955-4a93-9631-e0c38975a36b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/0iXm3teB7F">Slider Design: Rules of Thumb from NNGroup</a></li></ul><p id="9d2f2a7e-4871-420c-bdce-5cc1dc7c359d" class="">Tabs.</p><ul id="c3fe5466-f4b4-40e0-8279-c5eef2e0cb59" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/hLUpxfTUzf">Module Tabs in Web Design: Best Practices and Solutions</a></li></ul><ul id="87f70bcf-f522-4af7-85fd-3a7b32d3eaec" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/HmPNXiNoLV">12 Tabs Design guidelines</a></li></ul><p id="0aeedb70-f433-4d85-b2b1-b2d68e32818a" class="">Dropdowns</p><ul id="863e0dd7-ecdc-4666-8fe1-d642ffff843e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/XMF5mE4jjc">UI cheat sheet: dropdown field (Like this one)</a></li></ul><ul id="273d341c-52be-448d-8a05-abefc417f25d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/wnqYIWvAxF">Dropdowns: Design Guidelines</a></li></ul><ul id="846705df-d098-4a82-bcde-6eff53e83cbd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/gRqNsCawTl">Drop down list design: the complete guide</a></li></ul><p id="d23f9229-4112-47a1-a940-b8db2e7f172c" class="">Pagination</p><ul id="cb764291-bea7-4c9c-ad26-2a4b78d99c16" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/M4qLpZHwxV">Paging, Scrolling, and Infinite Scroll</a> by <a href="https://twitter.com/uxmatters">@uxmatters</a></li></ul><ul id="9f327687-7093-4b88-af43-2ae3165b8b9c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/AZN4ttXUli">UX: Infinite Scrolling vs. Pagination</a> by <a href="https://twitter.com/101babich">@101babich</a></li></ul><ul id="3903b88c-00da-42a2-8c55-46d50a0297a1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/h74qKS8emt">Users&#x27; Pagination Preferences and &quot;View All&quot;</a></li></ul><p id="13d5990a-90be-422c-ac57-132d764a1c83" class="">Search inputs</p><ul id="76d87e05-581d-4cf7-abf6-2fca3e40c667" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/g3qOCcYJ5U">Best UX practices for search inputs</a></li></ul><ul id="eb066bb8-0be7-436b-a939-c93bd2176179" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/O5tt2zIXKq">Design a Perfect Search Box</a></li></ul><ul id="ef36563f-5bba-476c-a611-10228ccd2bfb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/ua5Mfvqnk7">Site Search Suggestions</a> by <a href="https://twitter.com/nngroup">@nngroup</a></li></ul><p id="fd7d9dba-e77f-4c6b-a3ba-e72ca0cecd54" class="">Breadcrumbs.</p><ul id="04805ea3-ad67-453d-a4ba-9c727f4d99ab" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/KQs8QvBJiS">Breadcrumbs: 11 Design Guidelines for Desktop and Mobile</a></li></ul><ul id="c1234d8f-0bbf-43e6-bc3c-653134755156" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/Zet4DHNEb6">Are breadcrumbs still fresh for UX?</a></li></ul><ul id="2a6c9ab2-ba3e-45b7-a04a-dea053837358" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/huUIxvox55">Breadcrumb examples for inspiration</a></li></ul><p id="370495db-13a0-48e1-926f-f964e3553efa" class="">Carousels.</p><ul id="8cfa388f-1e4b-4b86-981f-6f4f07448411" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/TQsCzXfb3S">Carousel/slider design best practices (with examples)</a> by <a href="https://twitter.com/webflow">@webflow</a></li></ul><ul id="cc9cdc67-f712-4e7f-b914-4879539ce695" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/rv2II2WhM9">Carousel Usability: Designing an Effective UI for Websites with Content Overload</a></li></ul><ul id="87d46e87-0998-4a10-97f4-dbcfe5196b85" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/XmNcvJL7jt">Designing a User-Friendly Homepage Carousel</a></li></ul><p id="928cea83-85cd-495b-912c-98f3701f8d64" class="">Modals.</p><ul id="553001b1-b108-4c68-b911-1c25d29c542c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/WxYMZhG61p">Best Practices for Designing UI Overlays</a> by <a href="https://twitter.com/oliverlindberg">@oliverlindberg</a></li></ul><ul id="dc82b3ea-e2d8-4962-b241-feaa5d490382" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/uPVaJ1CLDk">Big, bold UX—using modal windows for in-app user engagement</a> from <a href="https://twitter.com/appcues">@appcues</a></li></ul><ul id="c0d492ec-340b-48ff-8679-9876030410df" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/5GJw7sl3VL">Modal &amp; Nonmodal Dialogs: When (&amp; When Not) to Use Them</a></li></ul><ul id="221fbe95-a234-483b-8892-2bf469361624" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/TXEnv10keD">Modal dialogs</a></li></ul><p id="409b7314-3724-4b37-a15b-6d6d35ba94c5" class="">Cards.</p><ul id="8b8f0622-7ec0-4d2e-ad9d-ec6d323f2733" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/22QfczOP7O">Card UI design: fundamentals and examples</a></li></ul><ul id="65282e79-0f80-46bf-bfd9-efa9ce3d1606" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/4oRf8kwvn8">Simple Design Tips for Crafting Better UI Cards</a></li></ul><ul id="5cc081b9-6556-4161-8a40-4be0653670cd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/nW1BQamhng">Designing cards</a></li></ul><p id="8a8e32dd-6fcc-4ec4-a14e-81844f520801" class="">Tooltips.</p><ul id="cf1ab1e1-f174-4446-8aca-7ba480892ae2" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/Jct5q7ydeR">Tooltip Guidelines</a></li></ul><ul id="a7272dd5-7ee2-451a-95c2-8cc9c8046f8d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/QUwNvDM3NI">Designing Better Tooltips For Mobile User Interfaces</a></li></ul><ul id="e59a3637-9a62-4899-8b75-8f449457512a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/9XPdAFwR6s">Tooltips: your secret weapon for improving feature discovery</a> by <a href="https://twitter.com/sofiaqt">@sofiaqt</a></li></ul><p id="f0ad5a21-b878-4d20-9353-0b960988391c" class="">Navigation.</p><ul id="20c34a4d-714e-4d1f-8e7a-3f6c0e8b1c82" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/4NUG9KoLwN">Navigation design: Almost everything you need to know</a></li></ul><ul id="6c4bd7bd-15d6-4ea8-99c0-5e396116a5fa" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/d3otgDaTMh">UX Design for Navigation Menu</a> from <a href="https://twitter.com/Prototypr">@Prototypr</a></li></ul><ul id="62a744bb-607d-4d59-bcf7-c6d57ead120e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/fNwZQzSFrb">The Fastest Navigation Layout for a Three-Level Menu</a> from <a href="https://twitter.com/uxmovement">@uxmovement</a></li></ul><p id="2c3969ad-9e4d-4534-a277-b86bb63b99ce" class="">Loaders.</p><ul id="13593fb1-1b80-4d0e-881b-e28f10d6afd7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/jOmtMPQ8nU">Progress Indicators Make a Slow System Less Insufferable</a></li></ul><ul id="139e38f7-fd6f-4a0c-bc83-0505ecbee756" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/0O0RBNyX0W">Stop Using A Loading Spinner, There’s Something Better</a></li></ul><ul id="d70fddbd-5997-4ad9-8d39-3f0cf77e6d06" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/lgLY2zJaPm">Best Practices For Animated Progress Indicators</a></li></ul><p id="ccefa6f7-0563-4a09-b53b-3fb282a8bbbc" class="">Forms.</p><ul id="0ccba111-de32-4cf6-bc10-ce117a68f50c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/xJWs2vhuJQ">Design Better Forms</a> by <a href="https://twitter.com/CoyleAndrew">@CoyleAndrew</a> (Really good read!)</li></ul><ul id="afe25132-6f9d-499c-b7bc-be8fc3671d28" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/7ptPrcUQEq">Form Design: 13 Empirically Backed Best Practices</a> by <a href="https://twitter.com/iamalexbirkett">@iamalexbirkett</a></li></ul><ul id="b86eaa81-037c-43e7-ae7e-7c77a9084f25" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.co/nIV8MfUGLY">The UX behind designing better forms</a> by <a href="https://twitter.com/charmiekapoor">@charmiekapoor</a></li></ul></div></article></body></html>
